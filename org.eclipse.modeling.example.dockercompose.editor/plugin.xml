@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated DockerCompose -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="dockercompose.presentation.DockercomposeModelWizardID"
+            name="%_UI_DockercomposeModelWizard_label"
+            class="dockercompose.presentation.DockercomposeModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/DockercomposeModelFile.gif">
+         <description>%_UI_DockercomposeModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated DockerCompose -->
+      <editor
+            id="dockercompose.presentation.DockercomposeEditorID"
+            name="%_UI_DockercomposeEditor_label"
+            icon="icons/full/obj16/DockercomposeModelFile.gif"
+            extensions="dockercompose"
+            class="dockercompose.presentation.DockercomposeEditor"
+            contributorClass="dockercompose.presentation.DockercomposeActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

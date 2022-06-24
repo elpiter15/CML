@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.modeling.example.dockercompose.edit;singleton:=true
+Automatic-Module-Name: org.eclipse.modeling.example.dockercompose.edit
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: dockercompose.provider.DockerComposeEditPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: dockercompose.provider
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.modeling.example.dockercompose;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport
+Bundle-ActivationPolicy: lazy

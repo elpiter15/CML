@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="true"/>
+		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value=""/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value="C:\Users\loren\OneDrive\Desktop\UNI\4º\TFG\proyectos\CML_13_06_2022_PrimerEclipseCompleto.zip"/>
+			<item value="C:\Users\loren\OneDrive\Desktop\UNI\4º\TFG\proyectos\sirius_design_project_17_06_2022_importar.zip"/>
+			<item value="C:\Users\loren\OneDrive\Desktop\UNI\4º\TFG\proyectos\CML_22_06_2022_ProyectoEcore.zip"/>
+		</list>
+	</section>
+</section>

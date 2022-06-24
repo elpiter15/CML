@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.xtext.dockercompose
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.dockercompose
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.dockercompose; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.modeling.example.dockercompose,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.xtext.example.dockercompose.generator,
+ org.xtext.example.dockercompose.parser.antlr,
+ org.xtext.example.dockercompose,
+ org.xtext.example.dockercompose.services,
+ org.xtext.example.dockercompose.scoping,
+ org.xtext.example.dockercompose.validation,
+ org.xtext.example.dockercompose.formatting2,
+ org.xtext.example.dockercompose.parser.antlr.internal,
+ org.xtext.example.dockercompose.serializer
+Import-Package: org.apache.log4j

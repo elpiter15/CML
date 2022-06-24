@@ -1,0 +1,46 @@
+/**
+ */
+package dockercompose;
+
+import org.eclipse.emf.ecore.EObject;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Secret Connector</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link dockercompose.SecretConnector#getSecret <em>Secret</em>}</li>
+ * </ul>
+ *
+ * @see dockercompose.DockercomposePackage#getSecretConnector()
+ * @model
+ * @generated
+ */
+public interface SecretConnector extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Secret</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Secret</em>' reference.
+	 * @see #setSecret(Secret)
+	 * @see dockercompose.DockercomposePackage#getSecretConnector_Secret()
+	 * @model required="true"
+	 * @generated
+	 */
+	Secret getSecret();
+
+	/**
+	 * Sets the value of the '{@link dockercompose.SecretConnector#getSecret <em>Secret</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Secret</em>' reference.
+	 * @see #getSecret()
+	 * @generated
+	 */
+	void setSecret(Secret value);
+
+} // SecretConnector

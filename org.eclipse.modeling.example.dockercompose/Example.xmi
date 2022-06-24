@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dockercompose:DockerCompose xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dockercompose="http://www.eclipse.org/modeling/example/dockercompose/DockerCompose">
+  <services name="a" image="aaa"/>
+  <configs name="c" file="adsfsa"/>
+</dockercompose:DockerCompose>
