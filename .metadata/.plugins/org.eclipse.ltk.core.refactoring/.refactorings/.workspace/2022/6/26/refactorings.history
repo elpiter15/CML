@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 5 resources" deleteContents="true" description="Delete 5 resources" element1="/org.xtext.dockercompose" element2="/org.xtext.dockercompose.ide" element3="/org.xtext.dockercompose.tests" element4="/org.xtext.dockercompose.ui" element5="/org.xtext.dockercompose.ui.tests" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="5" stamp="1656495103595"/>
+</session>

@@ -92,10 +92,24 @@ ruleDockerCompose returns [EObject current=null]
 							{
 								newLeafNode(otherlv_1, grammarAccess.getDockerComposeAccess().getVersionKeyword_0_0());
 							}
-							this_VERSION_2=RULE_VERSION
-							{
-								newLeafNode(this_VERSION_2, grammarAccess.getDockerComposeAccess().getVERSIONTerminalRuleCall_0_1());
-							}
+							(
+								(
+									lv_version_2_0=RULE_VERSION
+									{
+										newLeafNode(lv_version_2_0, grammarAccess.getDockerComposeAccess().getVersionVERSIONTerminalRuleCall_0_1_0());
+									}
+									{
+										if ($current==null) {
+											$current = createModelElement(grammarAccess.getDockerComposeRule());
+										}
+										setWithLastConsumed(
+											$current,
+											"version",
+											lv_version_2_0,
+											"org.xtext.example.dockercompose.DockerCompose.VERSION");
+									}
+								)
+							)
 							))
 				{ 
 					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDockerComposeAccess().getUnorderedGroup());
@@ -652,23 +666,45 @@ ruleService returns [EObject current=null]
 								}
 								(
 									(
-										{
-											newCompositeNode(grammarAccess.getServiceAccess().getNetworksNetworkConnectorParserRuleCall_3_8_1_0());
-										}
-										lv_networks_24_0=ruleNetworkConnector
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getServiceRule());
+										(
+											{
+												newCompositeNode(grammarAccess.getServiceAccess().getNetworksNetworkConnector_shortParserRuleCall_3_8_1_0_0());
 											}
-											add(
-												$current,
-												"networks",
-												lv_networks_24_0,
-												"org.xtext.example.dockercompose.DockerCompose.NetworkConnector");
-											afterParserOrEnumRuleCall();
-										}
-									)
-								)+
+											lv_networks_24_0=ruleNetworkConnector_short
+											{
+												if ($current==null) {
+													$current = createModelElementForParent(grammarAccess.getServiceRule());
+												}
+												add(
+													$current,
+													"networks",
+													lv_networks_24_0,
+													"org.xtext.example.dockercompose.DockerCompose.NetworkConnector_short");
+												afterParserOrEnumRuleCall();
+											}
+										)
+									)+
+									    |
+									(
+										(
+											{
+												newCompositeNode(grammarAccess.getServiceAccess().getNetworksNetworkConnector_longParserRuleCall_3_8_1_1_0());
+											}
+											lv_networks_25_0=ruleNetworkConnector_long
+											{
+												if ($current==null) {
+													$current = createModelElementForParent(grammarAccess.getServiceRule());
+												}
+												add(
+													$current,
+													"networks",
+													lv_networks_25_0,
+													"org.xtext.example.dockercompose.DockerCompose.NetworkConnector_long");
+												afterParserOrEnumRuleCall();
+											}
+										)
+									)+
+								)
 								))
 					{ 
 						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getServiceAccess().getUnorderedGroup_3());
@@ -680,35 +716,63 @@ ruleService returns [EObject current=null]
 					{
 						getUnorderedGroupHelper().select(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 9);
 					}
-								({true}?=>(otherlv_25='volumes:'
+								({true}?=>(otherlv_26='volumes:'
 								{
-									newLeafNode(otherlv_25, grammarAccess.getServiceAccess().getVolumesKeyword_3_9_0());
+									newLeafNode(otherlv_26, grammarAccess.getServiceAccess().getVolumesKeyword_3_9_0());
 								}
 								(
-									otherlv_26='-'
-									{
-										newLeafNode(otherlv_26, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_9_1_0());
-									}
 									(
+										otherlv_27='-'
+										{
+											newLeafNode(otherlv_27, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_9_1_0_0());
+										}
 										(
-											{
-												newCompositeNode(grammarAccess.getServiceAccess().getVolumesVolumeConnectorParserRuleCall_3_9_1_1_0());
-											}
-											lv_volumes_27_0=ruleVolumeConnector
-											{
-												if ($current==null) {
-													$current = createModelElementForParent(grammarAccess.getServiceRule());
+											(
+												{
+													newCompositeNode(grammarAccess.getServiceAccess().getVolumesVolumeConnector_shortParserRuleCall_3_9_1_0_1_0());
 												}
-												add(
-													$current,
-													"volumes",
-													lv_volumes_27_0,
-													"org.xtext.example.dockercompose.DockerCompose.VolumeConnector");
-												afterParserOrEnumRuleCall();
-											}
+												lv_volumes_28_0=ruleVolumeConnector_short
+												{
+													if ($current==null) {
+														$current = createModelElementForParent(grammarAccess.getServiceRule());
+													}
+													add(
+														$current,
+														"volumes",
+														lv_volumes_28_0,
+														"org.xtext.example.dockercompose.DockerCompose.VolumeConnector_short");
+													afterParserOrEnumRuleCall();
+												}
+											)
 										)
-									)
-								)+
+									)+
+									    |
+									(
+										otherlv_29='-'
+										{
+											newLeafNode(otherlv_29, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_9_1_1_0());
+										}
+										(
+											(
+												{
+													newCompositeNode(grammarAccess.getServiceAccess().getVolumesVolumeConnector_longParserRuleCall_3_9_1_1_1_0());
+												}
+												lv_volumes_30_0=ruleVolumeConnector_long
+												{
+													if ($current==null) {
+														$current = createModelElementForParent(grammarAccess.getServiceRule());
+													}
+													add(
+														$current,
+														"volumes",
+														lv_volumes_30_0,
+														"org.xtext.example.dockercompose.DockerCompose.VolumeConnector_long");
+													afterParserOrEnumRuleCall();
+												}
+											)
+										)
+									)+
+								)
 								))
 					{ 
 						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getServiceAccess().getUnorderedGroup_3());
@@ -720,35 +784,63 @@ ruleService returns [EObject current=null]
 					{
 						getUnorderedGroupHelper().select(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 10);
 					}
-								({true}?=>(otherlv_28='configs:'
+								({true}?=>(otherlv_31='configs:'
 								{
-									newLeafNode(otherlv_28, grammarAccess.getServiceAccess().getConfigsKeyword_3_10_0());
+									newLeafNode(otherlv_31, grammarAccess.getServiceAccess().getConfigsKeyword_3_10_0());
 								}
 								(
-									otherlv_29='-'
-									{
-										newLeafNode(otherlv_29, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_10_1_0());
-									}
 									(
+										otherlv_32='-'
+										{
+											newLeafNode(otherlv_32, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_10_1_0_0());
+										}
 										(
-											{
-												newCompositeNode(grammarAccess.getServiceAccess().getConfigsConfigConnectorParserRuleCall_3_10_1_1_0());
-											}
-											lv_configs_30_0=ruleConfigConnector
-											{
-												if ($current==null) {
-													$current = createModelElementForParent(grammarAccess.getServiceRule());
+											(
+												{
+													newCompositeNode(grammarAccess.getServiceAccess().getConfigsConfigConnector_shortParserRuleCall_3_10_1_0_1_0());
 												}
-												add(
-													$current,
-													"configs",
-													lv_configs_30_0,
-													"org.xtext.example.dockercompose.DockerCompose.ConfigConnector");
-												afterParserOrEnumRuleCall();
-											}
+												lv_configs_33_0=ruleConfigConnector_short
+												{
+													if ($current==null) {
+														$current = createModelElementForParent(grammarAccess.getServiceRule());
+													}
+													add(
+														$current,
+														"configs",
+														lv_configs_33_0,
+														"org.xtext.example.dockercompose.DockerCompose.ConfigConnector_short");
+													afterParserOrEnumRuleCall();
+												}
+											)
 										)
-									)
-								)+
+									)+
+									    |
+									(
+										otherlv_34='-'
+										{
+											newLeafNode(otherlv_34, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_10_1_1_0());
+										}
+										(
+											(
+												{
+													newCompositeNode(grammarAccess.getServiceAccess().getConfigsConfigConnector_longParserRuleCall_3_10_1_1_1_0());
+												}
+												lv_configs_35_0=ruleConfigConnector_long
+												{
+													if ($current==null) {
+														$current = createModelElementForParent(grammarAccess.getServiceRule());
+													}
+													add(
+														$current,
+														"configs",
+														lv_configs_35_0,
+														"org.xtext.example.dockercompose.DockerCompose.ConfigConnector_long");
+													afterParserOrEnumRuleCall();
+												}
+											)
+										)
+									)+
+								)
 								))
 					{ 
 						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getServiceAccess().getUnorderedGroup_3());
@@ -760,35 +852,63 @@ ruleService returns [EObject current=null]
 					{
 						getUnorderedGroupHelper().select(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 11);
 					}
-								({true}?=>(otherlv_31='secrets:'
+								({true}?=>(otherlv_36='secrets:'
 								{
-									newLeafNode(otherlv_31, grammarAccess.getServiceAccess().getSecretsKeyword_3_11_0());
+									newLeafNode(otherlv_36, grammarAccess.getServiceAccess().getSecretsKeyword_3_11_0());
 								}
 								(
-									otherlv_32='-'
-									{
-										newLeafNode(otherlv_32, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_11_1_0());
-									}
 									(
+										otherlv_37='-'
+										{
+											newLeafNode(otherlv_37, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_11_1_0_0());
+										}
 										(
-											{
-												newCompositeNode(grammarAccess.getServiceAccess().getSecretsSecretConnectorParserRuleCall_3_11_1_1_0());
-											}
-											lv_secrets_33_0=ruleSecretConnector
-											{
-												if ($current==null) {
-													$current = createModelElementForParent(grammarAccess.getServiceRule());
+											(
+												{
+													newCompositeNode(grammarAccess.getServiceAccess().getSecretsSecretConnector_shortParserRuleCall_3_11_1_0_1_0());
 												}
-												add(
-													$current,
-													"secrets",
-													lv_secrets_33_0,
-													"org.xtext.example.dockercompose.DockerCompose.SecretConnector");
-												afterParserOrEnumRuleCall();
-											}
+												lv_secrets_38_0=ruleSecretConnector_short
+												{
+													if ($current==null) {
+														$current = createModelElementForParent(grammarAccess.getServiceRule());
+													}
+													add(
+														$current,
+														"secrets",
+														lv_secrets_38_0,
+														"org.xtext.example.dockercompose.DockerCompose.SecretConnector_short");
+													afterParserOrEnumRuleCall();
+												}
+											)
 										)
-									)
-								)+
+									)+
+									    |
+									(
+										otherlv_39='-'
+										{
+											newLeafNode(otherlv_39, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_11_1_1_0());
+										}
+										(
+											(
+												{
+													newCompositeNode(grammarAccess.getServiceAccess().getSecretsSecretConnector_longParserRuleCall_3_11_1_1_1_0());
+												}
+												lv_secrets_40_0=ruleSecretConnector_long
+												{
+													if ($current==null) {
+														$current = createModelElementForParent(grammarAccess.getServiceRule());
+													}
+													add(
+														$current,
+														"secrets",
+														lv_secrets_40_0,
+														"org.xtext.example.dockercompose.DockerCompose.SecretConnector_long");
+													afterParserOrEnumRuleCall();
+												}
+											)
+										)
+									)+
+								)
 								))
 					{ 
 						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getServiceAccess().getUnorderedGroup_3());
@@ -800,19 +920,34 @@ ruleService returns [EObject current=null]
 					{
 						getUnorderedGroupHelper().select(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 12);
 					}
-								({true}?=>(otherlv_34='devices:'
+								({true}?=>(otherlv_41='devices:'
 								{
-									newLeafNode(otherlv_34, grammarAccess.getServiceAccess().getDevicesKeyword_3_12_0());
+									newLeafNode(otherlv_41, grammarAccess.getServiceAccess().getDevicesKeyword_3_12_0());
 								}
 								(
-									otherlv_35='-'
+									otherlv_42='-'
 									{
-										newLeafNode(otherlv_35, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_12_1_0());
+										newLeafNode(otherlv_42, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_12_1_0());
 									}
-									this_DEVICE_36=RULE_DEVICE
-									{
-										newLeafNode(this_DEVICE_36, grammarAccess.getServiceAccess().getDEVICETerminalRuleCall_3_12_1_1());
-									}
+									(
+										(
+											{
+												newCompositeNode(grammarAccess.getServiceAccess().getDevicesDeviceParserRuleCall_3_12_1_1_0());
+											}
+											lv_devices_43_0=ruleDevice
+											{
+												if ($current==null) {
+													$current = createModelElementForParent(grammarAccess.getServiceRule());
+												}
+												add(
+													$current,
+													"devices",
+													lv_devices_43_0,
+													"org.xtext.example.dockercompose.DockerCompose.Device");
+												afterParserOrEnumRuleCall();
+											}
+										)
+									)
 								)+
 								))
 					{ 
@@ -825,22 +960,22 @@ ruleService returns [EObject current=null]
 					{
 						getUnorderedGroupHelper().select(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 13);
 					}
-								({true}?=>(otherlv_37='dns:'
+								({true}?=>(otherlv_44='dns:'
 								{
-									newLeafNode(otherlv_37, grammarAccess.getServiceAccess().getDnsKeyword_3_13_0());
+									newLeafNode(otherlv_44, grammarAccess.getServiceAccess().getDnsKeyword_3_13_0());
 								}
 								(
 									(
-										otherlv_38='-'
+										otherlv_45='-'
 										{
-											newLeafNode(otherlv_38, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_13_1_0_0());
+											newLeafNode(otherlv_45, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_13_1_0_0());
 										}
 										(
 											(
 												{
 													newCompositeNode(grammarAccess.getServiceAccess().getDnsDNSParserRuleCall_3_13_1_0_1_0());
 												}
-												lv_dns_39_0=ruleDNS
+												lv_dns_46_0=ruleDNS
 												{
 													if ($current==null) {
 														$current = createModelElementForParent(grammarAccess.getServiceRule());
@@ -848,7 +983,7 @@ ruleService returns [EObject current=null]
 													add(
 														$current,
 														"dns",
-														lv_dns_39_0,
+														lv_dns_46_0,
 														"org.xtext.example.dockercompose.DockerCompose.DNS");
 													afterParserOrEnumRuleCall();
 												}
@@ -861,7 +996,7 @@ ruleService returns [EObject current=null]
 											{
 												newCompositeNode(grammarAccess.getServiceAccess().getDnsDNSParserRuleCall_3_13_1_1_0());
 											}
-											lv_dns_40_0=ruleDNS
+											lv_dns_47_0=ruleDNS
 											{
 												if ($current==null) {
 													$current = createModelElementForParent(grammarAccess.getServiceRule());
@@ -869,7 +1004,7 @@ ruleService returns [EObject current=null]
 												add(
 													$current,
 													"dns",
-													lv_dns_40_0,
+													lv_dns_47_0,
 													"org.xtext.example.dockercompose.DockerCompose.DNS");
 												afterParserOrEnumRuleCall();
 											}
@@ -887,19 +1022,34 @@ ruleService returns [EObject current=null]
 					{
 						getUnorderedGroupHelper().select(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 14);
 					}
-								({true}?=>(otherlv_41='ports:'
+								({true}?=>(otherlv_48='ports:'
 								{
-									newLeafNode(otherlv_41, grammarAccess.getServiceAccess().getPortsKeyword_3_14_0());
+									newLeafNode(otherlv_48, grammarAccess.getServiceAccess().getPortsKeyword_3_14_0());
 								}
 								(
-									otherlv_42='-'
+									otherlv_49='-'
 									{
-										newLeafNode(otherlv_42, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_14_1_0());
+										newLeafNode(otherlv_49, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_14_1_0());
 									}
-									this_PORT_43=RULE_PORT
-									{
-										newLeafNode(this_PORT_43, grammarAccess.getServiceAccess().getPORTTerminalRuleCall_3_14_1_1());
-									}
+									(
+										(
+											{
+												newCompositeNode(grammarAccess.getServiceAccess().getPortsPortParserRuleCall_3_14_1_1_0());
+											}
+											lv_ports_50_0=rulePort
+											{
+												if ($current==null) {
+													$current = createModelElementForParent(grammarAccess.getServiceRule());
+												}
+												add(
+													$current,
+													"ports",
+													lv_ports_50_0,
+													"org.xtext.example.dockercompose.DockerCompose.Port");
+												afterParserOrEnumRuleCall();
+											}
+										)
+									)
 								)+
 								))
 					{ 
@@ -914,6 +1064,94 @@ ruleService returns [EObject current=null]
 				{ 
 				  getUnorderedGroupHelper().leave(grammarAccess.getServiceAccess().getUnorderedGroup_3());
 				}
+		)
+	)
+;
+
+// Entry rule entryRulePort
+entryRulePort returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPortRule()); }
+	iv_rulePort=rulePort
+	{ $current=$iv_rulePort.current; }
+	EOF;
+
+// Rule Port
+rulePort returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getPortAccess().getPortAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_value_1_0=RULE_PORT_DEF
+				{
+					newLeafNode(lv_value_1_0, grammarAccess.getPortAccess().getValuePORT_DEFTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getPortRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"value",
+						lv_value_1_0,
+						"org.xtext.example.dockercompose.DockerCompose.PORT_DEF");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleDevice
+entryRuleDevice returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDeviceRule()); }
+	iv_ruleDevice=ruleDevice
+	{ $current=$iv_ruleDevice.current; }
+	EOF;
+
+// Rule Device
+ruleDevice returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getDeviceAccess().getDeviceAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_value_1_0=RULE_DEVICE_DEF
+				{
+					newLeafNode(lv_value_1_0, grammarAccess.getDeviceAccess().getValueDEVICE_DEFTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDeviceRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"value",
+						lv_value_1_0,
+						"org.xtext.example.dockercompose.DockerCompose.DEVICE_DEF");
+				}
+			)
 		)
 	)
 ;
@@ -1013,15 +1251,15 @@ ruleDependency returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleNetworkConnector
-entryRuleNetworkConnector returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getNetworkConnectorRule()); }
-	iv_ruleNetworkConnector=ruleNetworkConnector
-	{ $current=$iv_ruleNetworkConnector.current; }
+// Entry rule entryRuleNetworkConnector_short
+entryRuleNetworkConnector_short returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getNetworkConnector_shortRule()); }
+	iv_ruleNetworkConnector_short=ruleNetworkConnector_short
+	{ $current=$iv_ruleNetworkConnector_short.current; }
 	EOF;
 
-// Rule NetworkConnector
-ruleNetworkConnector returns [EObject current=null]
+// Rule NetworkConnector_short
+ruleNetworkConnector_short returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1030,220 +1268,239 @@ ruleNetworkConnector returns [EObject current=null]
 }:
 	(
 		(
-			(
-				{
-					$current = forceCreateModelElement(
-						grammarAccess.getNetworkConnectorAccess().getNetworkConnectorAction_0_0(),
-						$current);
-				}
-			)
-			(
-				otherlv_1='-'
-				{
-					newLeafNode(otherlv_1, grammarAccess.getNetworkConnectorAccess().getHyphenMinusKeyword_0_1_0());
-				}
-				(
-					(
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getNetworkConnectorRule());
-							}
-						}
-						{
-							newCompositeNode(grammarAccess.getNetworkConnectorAccess().getNetworkNetworkCrossReference_0_1_1_0());
-						}
-						ruleEString
-						{
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getNetworkConnector_shortAccess().getNetworkConnectorAction_0(),
+					$current);
+			}
 		)
-		    |
+		otherlv_1='-'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getNetworkConnector_shortAccess().getHyphenMinusKeyword_1());
+		}
 		(
 			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getNetworkConnector_shortRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getNetworkConnector_shortAccess().getNetworkNetworkCrossReference_2_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleNetworkConnector_long
+entryRuleNetworkConnector_long returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getNetworkConnector_longRule()); }
+	iv_ruleNetworkConnector_long=ruleNetworkConnector_long
+	{ $current=$iv_ruleNetworkConnector_long.current; }
+	EOF;
+
+// Rule NetworkConnector_long
+ruleNetworkConnector_long returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getNetworkConnector_longAccess().getNetworkConnectorAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getNetworkConnector_longRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getNetworkConnector_longAccess().getNetworkNetworkCrossReference_1_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2=':'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getNetworkConnector_longAccess().getColonKeyword_2());
+		}
+		(
+			(
+				{ 
+				  getUnorderedGroupHelper().enter(grammarAccess.getNetworkConnector_longAccess().getUnorderedGroup_3());
+				}
 				(
+					(
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkConnector_longAccess().getUnorderedGroup_3(), 0)}?=>(
 					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getNetworkConnectorRule());
-						}
+						getUnorderedGroupHelper().select(grammarAccess.getNetworkConnector_longAccess().getUnorderedGroup_3(), 0);
 					}
-					{
-						newCompositeNode(grammarAccess.getNetworkConnectorAccess().getNetworkNetworkCrossReference_1_0_0());
-					}
-					ruleEString
-					{
-						afterParserOrEnumRuleCall();
+								({true}?=>(otherlv_4='ipv4_address:'
+								{
+									newLeafNode(otherlv_4, grammarAccess.getNetworkConnector_longAccess().getIpv4_addressKeyword_3_0_0());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getNetworkConnector_longAccess().getIpv4_addressDNSParserRuleCall_3_0_1_0());
+										}
+										lv_ipv4_address_5_0=ruleDNS
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getNetworkConnector_longRule());
+											}
+											set(
+												$current,
+												"ipv4_address",
+												lv_ipv4_address_5_0,
+												"org.xtext.example.dockercompose.DockerCompose.DNS");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getNetworkConnector_longAccess().getUnorderedGroup_3());
 					}
 				)
-			)
-			otherlv_4=':'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getNetworkConnectorAccess().getColonKeyword_1_1());
-			}
+			)|
 			(
-				(
-					{ 
-					  getUnorderedGroupHelper().enter(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_2());
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkConnector_longAccess().getUnorderedGroup_3(), 1)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getNetworkConnector_longAccess().getUnorderedGroup_3(), 1);
 					}
-					(
-						(
-				(
-					{getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_2(), 0)}?=>(
-						{
-							getUnorderedGroupHelper().select(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_2(), 0);
-						}
-									({true}?=>(otherlv_6='ipv4_address:'
+								({true}?=>(otherlv_6='priority:'
+								{
+									newLeafNode(otherlv_6, grammarAccess.getNetworkConnector_longAccess().getPriorityKeyword_3_1_0());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getNetworkConnector_longAccess().getPriorityEIntParserRuleCall_3_1_1_0());
+										}
+										lv_priority_7_0=ruleEInt
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getNetworkConnector_longRule());
+											}
+											set(
+												$current,
+												"priority",
+												lv_priority_7_0,
+												"org.xtext.example.dockercompose.DockerCompose.EInt");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getNetworkConnector_longAccess().getUnorderedGroup_3());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkConnector_longAccess().getUnorderedGroup_3(), 2)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getNetworkConnector_longAccess().getUnorderedGroup_3(), 2);
+					}
+								({true}?=>(otherlv_8='aliases:'
+								{
+									newLeafNode(otherlv_8, grammarAccess.getNetworkConnector_longAccess().getAliasesKeyword_3_2_0());
+								}
+								(
+									otherlv_9='-'
 									{
-										newLeafNode(otherlv_6, grammarAccess.getNetworkConnectorAccess().getIpv4_addressKeyword_1_2_0_0());
+										newLeafNode(otherlv_9, grammarAccess.getNetworkConnector_longAccess().getHyphenMinusKeyword_3_2_1_0());
 									}
 									(
 										(
 											{
-												newCompositeNode(grammarAccess.getNetworkConnectorAccess().getIpv4_addressDNSParserRuleCall_1_2_0_1_0());
+												newCompositeNode(grammarAccess.getNetworkConnector_longAccess().getAliasesAliasParserRuleCall_3_2_1_1_0());
 											}
-											lv_ipv4_address_7_0=ruleDNS
+											lv_aliases_10_0=ruleAlias
 											{
 												if ($current==null) {
-													$current = createModelElementForParent(grammarAccess.getNetworkConnectorRule());
+													$current = createModelElementForParent(grammarAccess.getNetworkConnector_longRule());
 												}
-												set(
+												add(
 													$current,
-													"ipv4_address",
-													lv_ipv4_address_7_0,
+													"aliases",
+													lv_aliases_10_0,
+													"org.xtext.example.dockercompose.DockerCompose.Alias");
+												afterParserOrEnumRuleCall();
+											}
+										)
+									)
+								)+
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getNetworkConnector_longAccess().getUnorderedGroup_3());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkConnector_longAccess().getUnorderedGroup_3(), 3)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getNetworkConnector_longAccess().getUnorderedGroup_3(), 3);
+					}
+								({true}?=>(otherlv_11='link_local_ips:'
+								{
+									newLeafNode(otherlv_11, grammarAccess.getNetworkConnector_longAccess().getLink_local_ipsKeyword_3_3_0());
+								}
+								(
+									otherlv_12='-'
+									{
+										newLeafNode(otherlv_12, grammarAccess.getNetworkConnector_longAccess().getHyphenMinusKeyword_3_3_1_0());
+									}
+									(
+										(
+											{
+												newCompositeNode(grammarAccess.getNetworkConnector_longAccess().getLink_local_ipsDNSParserRuleCall_3_3_1_1_0());
+											}
+											lv_link_local_ips_13_0=ruleDNS
+											{
+												if ($current==null) {
+													$current = createModelElementForParent(grammarAccess.getNetworkConnector_longRule());
+												}
+												add(
+													$current,
+													"link_local_ips",
+													lv_link_local_ips_13_0,
 													"org.xtext.example.dockercompose.DockerCompose.DNS");
 												afterParserOrEnumRuleCall();
 											}
 										)
 									)
-									))
-						{ 
-							getUnorderedGroupHelper().returnFromSelection(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_2());
-						}
-					)
-				)|
-				(
-					{getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_2(), 1)}?=>(
-						{
-							getUnorderedGroupHelper().select(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_2(), 1);
-						}
-									({true}?=>(otherlv_8='priority:'
-									{
-										newLeafNode(otherlv_8, grammarAccess.getNetworkConnectorAccess().getPriorityKeyword_1_2_1_0());
-									}
-									(
-										(
-											{
-												newCompositeNode(grammarAccess.getNetworkConnectorAccess().getPriorityEIntParserRuleCall_1_2_1_1_0());
-											}
-											lv_priority_9_0=ruleEInt
-											{
-												if ($current==null) {
-													$current = createModelElementForParent(grammarAccess.getNetworkConnectorRule());
-												}
-												set(
-													$current,
-													"priority",
-													lv_priority_9_0,
-													"org.xtext.example.dockercompose.DockerCompose.EInt");
-												afterParserOrEnumRuleCall();
-											}
-										)
-									)
-									))
-						{ 
-							getUnorderedGroupHelper().returnFromSelection(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_2());
-						}
-					)
-				)|
-				(
-					{getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_2(), 2)}?=>(
-						{
-							getUnorderedGroupHelper().select(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_2(), 2);
-						}
-									({true}?=>(otherlv_10='aliases:'
-									{
-										newLeafNode(otherlv_10, grammarAccess.getNetworkConnectorAccess().getAliasesKeyword_1_2_2_0());
-									}
-									(
-										otherlv_11='-'
-										{
-											newLeafNode(otherlv_11, grammarAccess.getNetworkConnectorAccess().getHyphenMinusKeyword_1_2_2_1_0());
-										}
-										(
-											(
-												{
-													newCompositeNode(grammarAccess.getNetworkConnectorAccess().getAliasesAliasParserRuleCall_1_2_2_1_1_0());
-												}
-												lv_aliases_12_0=ruleAlias
-												{
-													if ($current==null) {
-														$current = createModelElementForParent(grammarAccess.getNetworkConnectorRule());
-													}
-													add(
-														$current,
-														"aliases",
-														lv_aliases_12_0,
-														"org.xtext.example.dockercompose.DockerCompose.Alias");
-													afterParserOrEnumRuleCall();
-												}
-											)
-										)
-									)+
-									))
-						{ 
-							getUnorderedGroupHelper().returnFromSelection(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_2());
-						}
-					)
-				)|
-				(
-					{getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_2(), 3)}?=>(
-						{
-							getUnorderedGroupHelper().select(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_2(), 3);
-						}
-									({true}?=>(otherlv_13='link_local_ips:'
-									{
-										newLeafNode(otherlv_13, grammarAccess.getNetworkConnectorAccess().getLink_local_ipsKeyword_1_2_3_0());
-									}
-									(
-										otherlv_14='-'
-										{
-											newLeafNode(otherlv_14, grammarAccess.getNetworkConnectorAccess().getHyphenMinusKeyword_1_2_3_1_0());
-										}
-										(
-											(
-												{
-													newCompositeNode(grammarAccess.getNetworkConnectorAccess().getLink_local_ipsDNSParserRuleCall_1_2_3_1_1_0());
-												}
-												lv_link_local_ips_15_0=ruleDNS
-												{
-													if ($current==null) {
-														$current = createModelElementForParent(grammarAccess.getNetworkConnectorRule());
-													}
-													add(
-														$current,
-														"link_local_ips",
-														lv_link_local_ips_15_0,
-														"org.xtext.example.dockercompose.DockerCompose.DNS");
-													afterParserOrEnumRuleCall();
-												}
-											)
-										)
-									)+
-									))
-						{ 
-							getUnorderedGroupHelper().returnFromSelection(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_2());
-						}
-					)
-				)
-						)*
-					)
-				)
+								)+
+								))
 					{ 
-					  getUnorderedGroupHelper().leave(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_2());
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getNetworkConnector_longAccess().getUnorderedGroup_3());
 					}
+				)
 			)
+					)*
+				)
+			)
+				{ 
+				  getUnorderedGroupHelper().leave(grammarAccess.getNetworkConnector_longAccess().getUnorderedGroup_3());
+				}
 		)
 	)
 ;
@@ -1293,15 +1550,15 @@ ruleAlias returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleVolumeConnector
-entryRuleVolumeConnector returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getVolumeConnectorRule()); }
-	iv_ruleVolumeConnector=ruleVolumeConnector
-	{ $current=$iv_ruleVolumeConnector.current; }
+// Entry rule entryRuleVolumeConnector_short
+entryRuleVolumeConnector_short returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getVolumeConnector_shortRule()); }
+	iv_ruleVolumeConnector_short=ruleVolumeConnector_short
+	{ $current=$iv_ruleVolumeConnector_short.current; }
 	EOF;
 
-// Rule VolumeConnector
-ruleVolumeConnector returns [EObject current=null]
+// Rule VolumeConnector_short
+ruleVolumeConnector_short returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1312,353 +1569,374 @@ ruleVolumeConnector returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getVolumeConnectorAccess().getVolumeConnectorAction_0(),
+					grammarAccess.getVolumeConnector_shortAccess().getVolumeConnectorAction_0(),
 					$current);
 			}
 		)
 		(
 			(
-				(
-					(
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getVolumeConnectorRule());
-							}
-						}
-						{
-							newCompositeNode(grammarAccess.getVolumeConnectorAccess().getVolumeVolumeCrossReference_1_0_0_0());
-						}
-						ruleEString
-						{
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-				otherlv_2=':'
 				{
-					newLeafNode(otherlv_2, grammarAccess.getVolumeConnectorAccess().getColonKeyword_1_0_1());
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getVolumeConnector_shortRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getVolumeConnector_shortAccess().getVolumeVolumeCrossReference_1_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2=':'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getVolumeConnector_shortAccess().getColonKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getVolumeConnector_shortAccess().getContainer_pathPATHParserRuleCall_3_0());
+				}
+				lv_container_path_3_0=rulePATH
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getVolumeConnector_shortRule());
+					}
+					set(
+						$current,
+						"container_path",
+						lv_container_path_3_0,
+						"org.xtext.example.dockercompose.DockerCompose.PATH");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_4=':'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getVolumeConnector_shortAccess().getColonKeyword_4_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getVolumeConnector_shortAccess().getAccess_modeAccessModeEnumRuleCall_4_1_0());
+					}
+					lv_access_mode_5_0=ruleAccessMode
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getVolumeConnector_shortRule());
+						}
+						set(
+							$current,
+							"access_mode",
+							lv_access_mode_5_0,
+							"org.xtext.example.dockercompose.DockerCompose.AccessMode");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+	)
+;
+
+// Entry rule entryRuleVolumeConnector_long
+entryRuleVolumeConnector_long returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getVolumeConnector_longRule()); }
+	iv_ruleVolumeConnector_long=ruleVolumeConnector_long
+	{ $current=$iv_ruleVolumeConnector_long.current; }
+	EOF;
+
+// Rule VolumeConnector_long
+ruleVolumeConnector_long returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getVolumeConnector_longAccess().getVolumeConnectorAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{ 
+				  getUnorderedGroupHelper().enter(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1());
 				}
 				(
 					(
-						{
-							newCompositeNode(grammarAccess.getVolumeConnectorAccess().getContainer_pathPATHParserRuleCall_1_0_2_0());
-						}
-						lv_container_path_3_0=rulePATH
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getVolumeConnectorRule());
-							}
-							set(
-								$current,
-								"container_path",
-								lv_container_path_3_0,
-								"org.xtext.example.dockercompose.DockerCompose.PATH");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-				(
-					otherlv_4=':'
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 0)}?=>(
 					{
-						newLeafNode(otherlv_4, grammarAccess.getVolumeConnectorAccess().getColonKeyword_1_0_3_0());
+						getUnorderedGroupHelper().select(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 0);
 					}
-					(
-						(
-							{
-								newCompositeNode(grammarAccess.getVolumeConnectorAccess().getAccess_modeAccessModeEnumRuleCall_1_0_3_1_0());
-							}
-							lv_access_mode_5_0=ruleAccessMode
-							{
-								if ($current==null) {
-									$current = createModelElementForParent(grammarAccess.getVolumeConnectorRule());
+								({true}?=>(otherlv_2='source:'
+								{
+									newLeafNode(otherlv_2, grammarAccess.getVolumeConnector_longAccess().getSourceKeyword_1_0_0());
 								}
-								set(
-									$current,
-									"access_mode",
-									lv_access_mode_5_0,
-									"org.xtext.example.dockercompose.DockerCompose.AccessMode");
-								afterParserOrEnumRuleCall();
-							}
-						)
-					)
-				)?
-			)
-			    |
+								(
+									(
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getVolumeConnector_longRule());
+											}
+										}
+										{
+											newCompositeNode(grammarAccess.getVolumeConnector_longAccess().getVolumeVolumeCrossReference_1_0_1_0());
+										}
+										ruleEString
+										{
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1());
+					}
+				)
+			)|
 			(
-				(
-					{ 
-					  getUnorderedGroupHelper().enter(grammarAccess.getVolumeConnectorAccess().getUnorderedGroup_1_1());
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 1)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 1);
 					}
-					(
-						(
-				(
-					{getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnectorAccess().getUnorderedGroup_1_1(), 0)}?=>(
-						{
-							getUnorderedGroupHelper().select(grammarAccess.getVolumeConnectorAccess().getUnorderedGroup_1_1(), 0);
-						}
-									({true}?=>(otherlv_7='source:'
-									{
-										newLeafNode(otherlv_7, grammarAccess.getVolumeConnectorAccess().getSourceKeyword_1_1_0_0());
-									}
+								({true}?=>(otherlv_4='type:'
+								{
+									newLeafNode(otherlv_4, grammarAccess.getVolumeConnector_longAccess().getTypeKeyword_1_1_0());
+								}
+								(
 									(
-										(
-											{
-												if ($current==null) {
-													$current = createModelElement(grammarAccess.getVolumeConnectorRule());
-												}
+										{
+											newCompositeNode(grammarAccess.getVolumeConnector_longAccess().getTypeMountTypeEnumRuleCall_1_1_1_0());
+										}
+										lv_type_5_0=ruleMountType
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getVolumeConnector_longRule());
 											}
-											{
-												newCompositeNode(grammarAccess.getVolumeConnectorAccess().getVolumeVolumeCrossReference_1_1_0_1_0());
-											}
-											ruleEString
-											{
-												afterParserOrEnumRuleCall();
-											}
-										)
+											set(
+												$current,
+												"type",
+												lv_type_5_0,
+												"org.xtext.example.dockercompose.DockerCompose.MountType");
+											afterParserOrEnumRuleCall();
+										}
 									)
-									))
-						{ 
-							getUnorderedGroupHelper().returnFromSelection(grammarAccess.getVolumeConnectorAccess().getUnorderedGroup_1_1());
-						}
-					)
-				)|
-				(
-					{getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnectorAccess().getUnorderedGroup_1_1(), 1)}?=>(
-						{
-							getUnorderedGroupHelper().select(grammarAccess.getVolumeConnectorAccess().getUnorderedGroup_1_1(), 1);
-						}
-									({true}?=>(otherlv_9='type:'
-									{
-										newLeafNode(otherlv_9, grammarAccess.getVolumeConnectorAccess().getTypeKeyword_1_1_1_0());
-									}
-									(
-										(
-											{
-												newCompositeNode(grammarAccess.getVolumeConnectorAccess().getTypeMountTypeEnumRuleCall_1_1_1_1_0());
-											}
-											lv_type_10_0=ruleMountType
-											{
-												if ($current==null) {
-													$current = createModelElementForParent(grammarAccess.getVolumeConnectorRule());
-												}
-												set(
-													$current,
-													"type",
-													lv_type_10_0,
-													"org.xtext.example.dockercompose.DockerCompose.MountType");
-												afterParserOrEnumRuleCall();
-											}
-										)
-									)
-									))
-						{ 
-							getUnorderedGroupHelper().returnFromSelection(grammarAccess.getVolumeConnectorAccess().getUnorderedGroup_1_1());
-						}
-					)
-				)|
-				(
-					{getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnectorAccess().getUnorderedGroup_1_1(), 2)}?=>(
-						{
-							getUnorderedGroupHelper().select(grammarAccess.getVolumeConnectorAccess().getUnorderedGroup_1_1(), 2);
-						}
-									({true}?=>(otherlv_11='target:'
-									{
-										newLeafNode(otherlv_11, grammarAccess.getVolumeConnectorAccess().getTargetKeyword_1_1_2_0());
-									}
-									(
-										(
-											{
-												newCompositeNode(grammarAccess.getVolumeConnectorAccess().getContainer_pathPATHParserRuleCall_1_1_2_1_0());
-											}
-											lv_container_path_12_0=rulePATH
-											{
-												if ($current==null) {
-													$current = createModelElementForParent(grammarAccess.getVolumeConnectorRule());
-												}
-												set(
-													$current,
-													"container_path",
-													lv_container_path_12_0,
-													"org.xtext.example.dockercompose.DockerCompose.PATH");
-												afterParserOrEnumRuleCall();
-											}
-										)
-									)
-									))
-						{ 
-							getUnorderedGroupHelper().returnFromSelection(grammarAccess.getVolumeConnectorAccess().getUnorderedGroup_1_1());
-						}
-					)
-				)|
-				(
-					{getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnectorAccess().getUnorderedGroup_1_1(), 3)}?=>(
-						{
-							getUnorderedGroupHelper().select(grammarAccess.getVolumeConnectorAccess().getUnorderedGroup_1_1(), 3);
-						}
-									({true}?=>(otherlv_13='read_only:'
-									{
-										newLeafNode(otherlv_13, grammarAccess.getVolumeConnectorAccess().getRead_onlyKeyword_1_1_3_0());
-									}
-									(
-										(
-											{
-												newCompositeNode(grammarAccess.getVolumeConnectorAccess().getRead_onlyEBooleanParserRuleCall_1_1_3_1_0());
-											}
-											lv_read_only_14_0=ruleEBoolean
-											{
-												if ($current==null) {
-													$current = createModelElementForParent(grammarAccess.getVolumeConnectorRule());
-												}
-												set(
-													$current,
-													"read_only",
-													lv_read_only_14_0,
-													"org.xtext.example.dockercompose.DockerCompose.EBoolean");
-												afterParserOrEnumRuleCall();
-											}
-										)
-									)
-									))
-						{ 
-							getUnorderedGroupHelper().returnFromSelection(grammarAccess.getVolumeConnectorAccess().getUnorderedGroup_1_1());
-						}
-					)
-				)|
-				(
-					{getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnectorAccess().getUnorderedGroup_1_1(), 4)}?=>(
-						{
-							getUnorderedGroupHelper().select(grammarAccess.getVolumeConnectorAccess().getUnorderedGroup_1_1(), 4);
-						}
-									({true}?=>(otherlv_15='bind:'
-									{
-										newLeafNode(otherlv_15, grammarAccess.getVolumeConnectorAccess().getBindKeyword_1_1_4_0());
-									}
-									otherlv_16='propagation:'
-									{
-										newLeafNode(otherlv_16, grammarAccess.getVolumeConnectorAccess().getPropagationKeyword_1_1_4_1());
-									}
-									(
-										(
-											{
-												newCompositeNode(grammarAccess.getVolumeConnectorAccess().getPropagationPropagationTypeEnumRuleCall_1_1_4_2_0());
-											}
-											lv_propagation_17_0=rulePropagationType
-											{
-												if ($current==null) {
-													$current = createModelElementForParent(grammarAccess.getVolumeConnectorRule());
-												}
-												set(
-													$current,
-													"propagation",
-													lv_propagation_17_0,
-													"org.xtext.example.dockercompose.DockerCompose.PropagationType");
-												afterParserOrEnumRuleCall();
-											}
-										)
-									)
-									))
-						{ 
-							getUnorderedGroupHelper().returnFromSelection(grammarAccess.getVolumeConnectorAccess().getUnorderedGroup_1_1());
-						}
-					)
-				)|
-				(
-					{getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnectorAccess().getUnorderedGroup_1_1(), 5)}?=>(
-						{
-							getUnorderedGroupHelper().select(grammarAccess.getVolumeConnectorAccess().getUnorderedGroup_1_1(), 5);
-						}
-									({true}?=>(otherlv_18='volume:'
-									{
-										newLeafNode(otherlv_18, grammarAccess.getVolumeConnectorAccess().getVolumeKeyword_1_1_5_0());
-									}
-									otherlv_19='nocopy:'
-									{
-										newLeafNode(otherlv_19, grammarAccess.getVolumeConnectorAccess().getNocopyKeyword_1_1_5_1());
-									}
-									(
-										(
-											{
-												newCompositeNode(grammarAccess.getVolumeConnectorAccess().getNocopyEBooleanParserRuleCall_1_1_5_2_0());
-											}
-											lv_nocopy_20_0=ruleEBoolean
-											{
-												if ($current==null) {
-													$current = createModelElementForParent(grammarAccess.getVolumeConnectorRule());
-												}
-												set(
-													$current,
-													"nocopy",
-													lv_nocopy_20_0,
-													"org.xtext.example.dockercompose.DockerCompose.EBoolean");
-												afterParserOrEnumRuleCall();
-											}
-										)
-									)
-									))
-						{ 
-							getUnorderedGroupHelper().returnFromSelection(grammarAccess.getVolumeConnectorAccess().getUnorderedGroup_1_1());
-						}
-					)
-				)|
-				(
-					{getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnectorAccess().getUnorderedGroup_1_1(), 6)}?=>(
-						{
-							getUnorderedGroupHelper().select(grammarAccess.getVolumeConnectorAccess().getUnorderedGroup_1_1(), 6);
-						}
-									({true}?=>(otherlv_21='tmpfs:'
-									{
-										newLeafNode(otherlv_21, grammarAccess.getVolumeConnectorAccess().getTmpfsKeyword_1_1_6_0());
-									}
-									otherlv_22='size:'
-									{
-										newLeafNode(otherlv_22, grammarAccess.getVolumeConnectorAccess().getSizeKeyword_1_1_6_1());
-									}
-									(
-										(
-											{
-												newCompositeNode(grammarAccess.getVolumeConnectorAccess().getSizeEIntParserRuleCall_1_1_6_2_0());
-											}
-											lv_size_23_0=ruleEInt
-											{
-												if ($current==null) {
-													$current = createModelElementForParent(grammarAccess.getVolumeConnectorRule());
-												}
-												set(
-													$current,
-													"size",
-													lv_size_23_0,
-													"org.xtext.example.dockercompose.DockerCompose.EInt");
-												afterParserOrEnumRuleCall();
-											}
-										)
-									)
-									))
-						{ 
-							getUnorderedGroupHelper().returnFromSelection(grammarAccess.getVolumeConnectorAccess().getUnorderedGroup_1_1());
-						}
-					)
-				)
-						)+
-						{getUnorderedGroupHelper().canLeave(grammarAccess.getVolumeConnectorAccess().getUnorderedGroup_1_1())}?
-					)
-				)
+								)
+								))
 					{ 
-					  getUnorderedGroupHelper().leave(grammarAccess.getVolumeConnectorAccess().getUnorderedGroup_1_1());
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1());
 					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 2)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 2);
+					}
+								({true}?=>(otherlv_6='target:'
+								{
+									newLeafNode(otherlv_6, grammarAccess.getVolumeConnector_longAccess().getTargetKeyword_1_2_0());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getVolumeConnector_longAccess().getContainer_pathPATHParserRuleCall_1_2_1_0());
+										}
+										lv_container_path_7_0=rulePATH
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getVolumeConnector_longRule());
+											}
+											set(
+												$current,
+												"container_path",
+												lv_container_path_7_0,
+												"org.xtext.example.dockercompose.DockerCompose.PATH");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 3)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 3);
+					}
+								({true}?=>(otherlv_8='read_only:'
+								{
+									newLeafNode(otherlv_8, grammarAccess.getVolumeConnector_longAccess().getRead_onlyKeyword_1_3_0());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getVolumeConnector_longAccess().getRead_onlyEBooleanParserRuleCall_1_3_1_0());
+										}
+										lv_read_only_9_0=ruleEBoolean
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getVolumeConnector_longRule());
+											}
+											set(
+												$current,
+												"read_only",
+												lv_read_only_9_0,
+												"org.xtext.example.dockercompose.DockerCompose.EBoolean");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 4)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 4);
+					}
+								({true}?=>(otherlv_10='bind:'
+								{
+									newLeafNode(otherlv_10, grammarAccess.getVolumeConnector_longAccess().getBindKeyword_1_4_0());
+								}
+								otherlv_11='propagation:'
+								{
+									newLeafNode(otherlv_11, grammarAccess.getVolumeConnector_longAccess().getPropagationKeyword_1_4_1());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getVolumeConnector_longAccess().getPropagationPropagationTypeEnumRuleCall_1_4_2_0());
+										}
+										lv_propagation_12_0=rulePropagationType
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getVolumeConnector_longRule());
+											}
+											set(
+												$current,
+												"propagation",
+												lv_propagation_12_0,
+												"org.xtext.example.dockercompose.DockerCompose.PropagationType");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 5)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 5);
+					}
+								({true}?=>(otherlv_13='volume:'
+								{
+									newLeafNode(otherlv_13, grammarAccess.getVolumeConnector_longAccess().getVolumeKeyword_1_5_0());
+								}
+								otherlv_14='nocopy:'
+								{
+									newLeafNode(otherlv_14, grammarAccess.getVolumeConnector_longAccess().getNocopyKeyword_1_5_1());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getVolumeConnector_longAccess().getNocopyEBooleanParserRuleCall_1_5_2_0());
+										}
+										lv_nocopy_15_0=ruleEBoolean
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getVolumeConnector_longRule());
+											}
+											set(
+												$current,
+												"nocopy",
+												lv_nocopy_15_0,
+												"org.xtext.example.dockercompose.DockerCompose.EBoolean");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 6)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 6);
+					}
+								({true}?=>(otherlv_16='tmpfs:'
+								{
+									newLeafNode(otherlv_16, grammarAccess.getVolumeConnector_longAccess().getTmpfsKeyword_1_6_0());
+								}
+								otherlv_17='size:'
+								{
+									newLeafNode(otherlv_17, grammarAccess.getVolumeConnector_longAccess().getSizeKeyword_1_6_1());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getVolumeConnector_longAccess().getSizeEIntParserRuleCall_1_6_2_0());
+										}
+										lv_size_18_0=ruleEInt
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getVolumeConnector_longRule());
+											}
+											set(
+												$current,
+												"size",
+												lv_size_18_0,
+												"org.xtext.example.dockercompose.DockerCompose.EInt");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1());
+					}
+				)
 			)
+					)+
+					{getUnorderedGroupHelper().canLeave(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1())}?
+				)
+			)
+				{ 
+				  getUnorderedGroupHelper().leave(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1());
+				}
 		)
 	)
 ;
 
-// Entry rule entryRuleConfigConnector
-entryRuleConfigConnector returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getConfigConnectorRule()); }
-	iv_ruleConfigConnector=ruleConfigConnector
-	{ $current=$iv_ruleConfigConnector.current; }
+// Entry rule entryRuleConfigConnector_short
+entryRuleConfigConnector_short returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getConfigConnector_shortRule()); }
+	iv_ruleConfigConnector_short=ruleConfigConnector_short
+	{ $current=$iv_ruleConfigConnector_short.current; }
 	EOF;
 
-// Rule ConfigConnector
-ruleConfigConnector returns [EObject current=null]
+// Rule ConfigConnector_short
+ruleConfigConnector_short returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1669,221 +1947,38 @@ ruleConfigConnector returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getConfigConnectorAccess().getConfigConnectorAction_0(),
+					grammarAccess.getConfigConnector_shortAccess().getConfigConnectorAction_0(),
 					$current);
 			}
 		)
 		(
 			(
-				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getConfigConnectorRule());
-						}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getConfigConnector_shortRule());
 					}
-					{
-						newCompositeNode(grammarAccess.getConfigConnectorAccess().getConfigConfigCrossReference_1_0_0());
-					}
-					ruleEString
-					{
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			    |
-			(
-				(
-					{ 
-					  getUnorderedGroupHelper().enter(grammarAccess.getConfigConnectorAccess().getUnorderedGroup_1_1());
-					}
-					(
-						(
-				(
-					{getUnorderedGroupHelper().canSelect(grammarAccess.getConfigConnectorAccess().getUnorderedGroup_1_1(), 0)}?=>(
-						{
-							getUnorderedGroupHelper().select(grammarAccess.getConfigConnectorAccess().getUnorderedGroup_1_1(), 0);
-						}
-									({true}?=>(otherlv_3='source:'
-									{
-										newLeafNode(otherlv_3, grammarAccess.getConfigConnectorAccess().getSourceKeyword_1_1_0_0());
-									}
-									(
-										(
-											{
-												if ($current==null) {
-													$current = createModelElement(grammarAccess.getConfigConnectorRule());
-												}
-											}
-											{
-												newCompositeNode(grammarAccess.getConfigConnectorAccess().getConfigConfigCrossReference_1_1_0_1_0());
-											}
-											ruleEString
-											{
-												afterParserOrEnumRuleCall();
-											}
-										)
-									)
-									))
-						{ 
-							getUnorderedGroupHelper().returnFromSelection(grammarAccess.getConfigConnectorAccess().getUnorderedGroup_1_1());
-						}
-					)
-				)|
-				(
-					{getUnorderedGroupHelper().canSelect(grammarAccess.getConfigConnectorAccess().getUnorderedGroup_1_1(), 1)}?=>(
-						{
-							getUnorderedGroupHelper().select(grammarAccess.getConfigConnectorAccess().getUnorderedGroup_1_1(), 1);
-						}
-									({true}?=>(otherlv_5='target:'
-									{
-										newLeafNode(otherlv_5, grammarAccess.getConfigConnectorAccess().getTargetKeyword_1_1_1_0());
-									}
-									(
-										(
-											{
-												newCompositeNode(grammarAccess.getConfigConnectorAccess().getTargetPATHParserRuleCall_1_1_1_1_0());
-											}
-											lv_target_6_0=rulePATH
-											{
-												if ($current==null) {
-													$current = createModelElementForParent(grammarAccess.getConfigConnectorRule());
-												}
-												set(
-													$current,
-													"target",
-													lv_target_6_0,
-													"org.xtext.example.dockercompose.DockerCompose.PATH");
-												afterParserOrEnumRuleCall();
-											}
-										)
-									)
-									))
-						{ 
-							getUnorderedGroupHelper().returnFromSelection(grammarAccess.getConfigConnectorAccess().getUnorderedGroup_1_1());
-						}
-					)
-				)|
-				(
-					{getUnorderedGroupHelper().canSelect(grammarAccess.getConfigConnectorAccess().getUnorderedGroup_1_1(), 2)}?=>(
-						{
-							getUnorderedGroupHelper().select(grammarAccess.getConfigConnectorAccess().getUnorderedGroup_1_1(), 2);
-						}
-									({true}?=>(otherlv_7='uid:'
-									{
-										newLeafNode(otherlv_7, grammarAccess.getConfigConnectorAccess().getUidKeyword_1_1_2_0());
-									}
-									(
-										(
-											lv_uid_8_0=RULE_QUOTED_INT
-											{
-												newLeafNode(lv_uid_8_0, grammarAccess.getConfigConnectorAccess().getUidQUOTED_INTTerminalRuleCall_1_1_2_1_0());
-											}
-											{
-												if ($current==null) {
-													$current = createModelElement(grammarAccess.getConfigConnectorRule());
-												}
-												setWithLastConsumed(
-													$current,
-													"uid",
-													lv_uid_8_0,
-													"org.xtext.example.dockercompose.DockerCompose.QUOTED_INT");
-											}
-										)
-									)
-									))
-						{ 
-							getUnorderedGroupHelper().returnFromSelection(grammarAccess.getConfigConnectorAccess().getUnorderedGroup_1_1());
-						}
-					)
-				)|
-				(
-					{getUnorderedGroupHelper().canSelect(grammarAccess.getConfigConnectorAccess().getUnorderedGroup_1_1(), 3)}?=>(
-						{
-							getUnorderedGroupHelper().select(grammarAccess.getConfigConnectorAccess().getUnorderedGroup_1_1(), 3);
-						}
-									({true}?=>(otherlv_9='gid:'
-									{
-										newLeafNode(otherlv_9, grammarAccess.getConfigConnectorAccess().getGidKeyword_1_1_3_0());
-									}
-									(
-										(
-											lv_gid_10_0=RULE_QUOTED_INT
-											{
-												newLeafNode(lv_gid_10_0, grammarAccess.getConfigConnectorAccess().getGidQUOTED_INTTerminalRuleCall_1_1_3_1_0());
-											}
-											{
-												if ($current==null) {
-													$current = createModelElement(grammarAccess.getConfigConnectorRule());
-												}
-												setWithLastConsumed(
-													$current,
-													"gid",
-													lv_gid_10_0,
-													"org.xtext.example.dockercompose.DockerCompose.QUOTED_INT");
-											}
-										)
-									)
-									))
-						{ 
-							getUnorderedGroupHelper().returnFromSelection(grammarAccess.getConfigConnectorAccess().getUnorderedGroup_1_1());
-						}
-					)
-				)|
-				(
-					{getUnorderedGroupHelper().canSelect(grammarAccess.getConfigConnectorAccess().getUnorderedGroup_1_1(), 4)}?=>(
-						{
-							getUnorderedGroupHelper().select(grammarAccess.getConfigConnectorAccess().getUnorderedGroup_1_1(), 4);
-						}
-									({true}?=>(otherlv_11='mode:'
-									{
-										newLeafNode(otherlv_11, grammarAccess.getConfigConnectorAccess().getModeKeyword_1_1_4_0());
-									}
-									(
-										(
-											{
-												newCompositeNode(grammarAccess.getConfigConnectorAccess().getModeEIntParserRuleCall_1_1_4_1_0());
-											}
-											lv_mode_12_0=ruleEInt
-											{
-												if ($current==null) {
-													$current = createModelElementForParent(grammarAccess.getConfigConnectorRule());
-												}
-												set(
-													$current,
-													"mode",
-													lv_mode_12_0,
-													"org.xtext.example.dockercompose.DockerCompose.EInt");
-												afterParserOrEnumRuleCall();
-											}
-										)
-									)
-									))
-						{ 
-							getUnorderedGroupHelper().returnFromSelection(grammarAccess.getConfigConnectorAccess().getUnorderedGroup_1_1());
-						}
-					)
-				)
-						)+
-						{getUnorderedGroupHelper().canLeave(grammarAccess.getConfigConnectorAccess().getUnorderedGroup_1_1())}?
-					)
-				)
-					{ 
-					  getUnorderedGroupHelper().leave(grammarAccess.getConfigConnectorAccess().getUnorderedGroup_1_1());
-					}
+				}
+				{
+					newCompositeNode(grammarAccess.getConfigConnector_shortAccess().getConfigConfigCrossReference_1_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
 			)
 		)
 	)
 ;
 
-// Entry rule entryRuleSecretConnector
-entryRuleSecretConnector returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getSecretConnectorRule()); }
-	iv_ruleSecretConnector=ruleSecretConnector
-	{ $current=$iv_ruleSecretConnector.current; }
+// Entry rule entryRuleConfigConnector_long
+entryRuleConfigConnector_long returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getConfigConnector_longRule()); }
+	iv_ruleConfigConnector_long=ruleConfigConnector_long
+	{ $current=$iv_ruleConfigConnector_long.current; }
 	EOF;
 
-// Rule SecretConnector
-ruleSecretConnector returns [EObject current=null]
+// Rule ConfigConnector_long
+ruleConfigConnector_long returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1894,208 +1989,437 @@ ruleSecretConnector returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getSecretConnectorAccess().getSecretConnectorAction_0(),
+					grammarAccess.getConfigConnector_longAccess().getConfigConnectorAction_0(),
 					$current);
 			}
 		)
 		(
 			(
+				{ 
+				  getUnorderedGroupHelper().enter(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1());
+				}
 				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getSecretConnectorRule());
-						}
-					}
-					{
-						newCompositeNode(grammarAccess.getSecretConnectorAccess().getSecretSecretCrossReference_1_0_0());
-					}
-					ruleEString
-					{
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			    |
-			(
-				(
-					{ 
-					  getUnorderedGroupHelper().enter(grammarAccess.getSecretConnectorAccess().getUnorderedGroup_1_1());
-					}
 					(
-						(
-				(
-					{getUnorderedGroupHelper().canSelect(grammarAccess.getSecretConnectorAccess().getUnorderedGroup_1_1(), 0)}?=>(
-						{
-							getUnorderedGroupHelper().select(grammarAccess.getSecretConnectorAccess().getUnorderedGroup_1_1(), 0);
-						}
-									({true}?=>(otherlv_3='source:'
-									{
-										newLeafNode(otherlv_3, grammarAccess.getSecretConnectorAccess().getSourceKeyword_1_1_0_0());
-									}
-									(
-										(
-											{
-												if ($current==null) {
-													$current = createModelElement(grammarAccess.getSecretConnectorRule());
-												}
-											}
-											{
-												newCompositeNode(grammarAccess.getSecretConnectorAccess().getSecretSecretCrossReference_1_1_0_1_0());
-											}
-											ruleEString
-											{
-												afterParserOrEnumRuleCall();
-											}
-										)
-									)
-									))
-						{ 
-							getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSecretConnectorAccess().getUnorderedGroup_1_1());
-						}
-					)
-				)|
-				(
-					{getUnorderedGroupHelper().canSelect(grammarAccess.getSecretConnectorAccess().getUnorderedGroup_1_1(), 1)}?=>(
-						{
-							getUnorderedGroupHelper().select(grammarAccess.getSecretConnectorAccess().getUnorderedGroup_1_1(), 1);
-						}
-									({true}?=>(otherlv_5='target:'
-									{
-										newLeafNode(otherlv_5, grammarAccess.getSecretConnectorAccess().getTargetKeyword_1_1_1_0());
-									}
-									(
-										(
-											{
-												newCompositeNode(grammarAccess.getSecretConnectorAccess().getTargetPATHParserRuleCall_1_1_1_1_0());
-											}
-											lv_target_6_0=rulePATH
-											{
-												if ($current==null) {
-													$current = createModelElementForParent(grammarAccess.getSecretConnectorRule());
-												}
-												set(
-													$current,
-													"target",
-													lv_target_6_0,
-													"org.xtext.example.dockercompose.DockerCompose.PATH");
-												afterParserOrEnumRuleCall();
-											}
-										)
-									)
-									))
-						{ 
-							getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSecretConnectorAccess().getUnorderedGroup_1_1());
-						}
-					)
-				)|
-				(
-					{getUnorderedGroupHelper().canSelect(grammarAccess.getSecretConnectorAccess().getUnorderedGroup_1_1(), 2)}?=>(
-						{
-							getUnorderedGroupHelper().select(grammarAccess.getSecretConnectorAccess().getUnorderedGroup_1_1(), 2);
-						}
-									({true}?=>(otherlv_7='uid:'
-									{
-										newLeafNode(otherlv_7, grammarAccess.getSecretConnectorAccess().getUidKeyword_1_1_2_0());
-									}
-									(
-										(
-											lv_uid_8_0=RULE_QUOTED_INT
-											{
-												newLeafNode(lv_uid_8_0, grammarAccess.getSecretConnectorAccess().getUidQUOTED_INTTerminalRuleCall_1_1_2_1_0());
-											}
-											{
-												if ($current==null) {
-													$current = createModelElement(grammarAccess.getSecretConnectorRule());
-												}
-												setWithLastConsumed(
-													$current,
-													"uid",
-													lv_uid_8_0,
-													"org.xtext.example.dockercompose.DockerCompose.QUOTED_INT");
-											}
-										)
-									)
-									))
-						{ 
-							getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSecretConnectorAccess().getUnorderedGroup_1_1());
-						}
-					)
-				)|
-				(
-					{getUnorderedGroupHelper().canSelect(grammarAccess.getSecretConnectorAccess().getUnorderedGroup_1_1(), 3)}?=>(
-						{
-							getUnorderedGroupHelper().select(grammarAccess.getSecretConnectorAccess().getUnorderedGroup_1_1(), 3);
-						}
-									({true}?=>(otherlv_9='gid:'
-									{
-										newLeafNode(otherlv_9, grammarAccess.getSecretConnectorAccess().getGidKeyword_1_1_3_0());
-									}
-									(
-										(
-											lv_gid_10_0=RULE_QUOTED_INT
-											{
-												newLeafNode(lv_gid_10_0, grammarAccess.getSecretConnectorAccess().getGidQUOTED_INTTerminalRuleCall_1_1_3_1_0());
-											}
-											{
-												if ($current==null) {
-													$current = createModelElement(grammarAccess.getSecretConnectorRule());
-												}
-												setWithLastConsumed(
-													$current,
-													"gid",
-													lv_gid_10_0,
-													"org.xtext.example.dockercompose.DockerCompose.QUOTED_INT");
-											}
-										)
-									)
-									))
-						{ 
-							getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSecretConnectorAccess().getUnorderedGroup_1_1());
-						}
-					)
-				)|
-				(
-					{getUnorderedGroupHelper().canSelect(grammarAccess.getSecretConnectorAccess().getUnorderedGroup_1_1(), 4)}?=>(
-						{
-							getUnorderedGroupHelper().select(grammarAccess.getSecretConnectorAccess().getUnorderedGroup_1_1(), 4);
-						}
-									({true}?=>(otherlv_11='mode:'
-									{
-										newLeafNode(otherlv_11, grammarAccess.getSecretConnectorAccess().getModeKeyword_1_1_4_0());
-									}
-									(
-										(
-											{
-												newCompositeNode(grammarAccess.getSecretConnectorAccess().getModeEIntParserRuleCall_1_1_4_1_0());
-											}
-											lv_mode_12_0=ruleEInt
-											{
-												if ($current==null) {
-													$current = createModelElementForParent(grammarAccess.getSecretConnectorRule());
-												}
-												set(
-													$current,
-													"mode",
-													lv_mode_12_0,
-													"org.xtext.example.dockercompose.DockerCompose.EInt");
-												afterParserOrEnumRuleCall();
-											}
-										)
-									)
-									))
-						{ 
-							getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSecretConnectorAccess().getUnorderedGroup_1_1());
-						}
-					)
-				)
-						)+
-						{getUnorderedGroupHelper().canLeave(grammarAccess.getSecretConnectorAccess().getUnorderedGroup_1_1())}?
-					)
-				)
-					{ 
-					  getUnorderedGroupHelper().leave(grammarAccess.getSecretConnectorAccess().getUnorderedGroup_1_1());
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 0)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 0);
 					}
+								({true}?=>(otherlv_2='source:'
+								{
+									newLeafNode(otherlv_2, grammarAccess.getConfigConnector_longAccess().getSourceKeyword_1_0_0());
+								}
+								(
+									(
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getConfigConnector_longRule());
+											}
+										}
+										{
+											newCompositeNode(grammarAccess.getConfigConnector_longAccess().getConfigConfigCrossReference_1_0_1_0());
+										}
+										ruleEString
+										{
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 1)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 1);
+					}
+								({true}?=>(otherlv_4='target:'
+								{
+									newLeafNode(otherlv_4, grammarAccess.getConfigConnector_longAccess().getTargetKeyword_1_1_0());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getConfigConnector_longAccess().getTargetPATHParserRuleCall_1_1_1_0());
+										}
+										lv_target_5_0=rulePATH
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getConfigConnector_longRule());
+											}
+											set(
+												$current,
+												"target",
+												lv_target_5_0,
+												"org.xtext.example.dockercompose.DockerCompose.PATH");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 2)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 2);
+					}
+								({true}?=>(otherlv_6='uid:'
+								{
+									newLeafNode(otherlv_6, grammarAccess.getConfigConnector_longAccess().getUidKeyword_1_2_0());
+								}
+								(
+									(
+										lv_uid_7_0=RULE_QUOTED_INT
+										{
+											newLeafNode(lv_uid_7_0, grammarAccess.getConfigConnector_longAccess().getUidQUOTED_INTTerminalRuleCall_1_2_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getConfigConnector_longRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"uid",
+												lv_uid_7_0,
+												"org.xtext.example.dockercompose.DockerCompose.QUOTED_INT");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 3)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 3);
+					}
+								({true}?=>(otherlv_8='gid:'
+								{
+									newLeafNode(otherlv_8, grammarAccess.getConfigConnector_longAccess().getGidKeyword_1_3_0());
+								}
+								(
+									(
+										lv_gid_9_0=RULE_QUOTED_INT
+										{
+											newLeafNode(lv_gid_9_0, grammarAccess.getConfigConnector_longAccess().getGidQUOTED_INTTerminalRuleCall_1_3_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getConfigConnector_longRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"gid",
+												lv_gid_9_0,
+												"org.xtext.example.dockercompose.DockerCompose.QUOTED_INT");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 4)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 4);
+					}
+								({true}?=>(otherlv_10='mode:'
+								{
+									newLeafNode(otherlv_10, grammarAccess.getConfigConnector_longAccess().getModeKeyword_1_4_0());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getConfigConnector_longAccess().getModeEIntParserRuleCall_1_4_1_0());
+										}
+										lv_mode_11_0=ruleEInt
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getConfigConnector_longRule());
+											}
+											set(
+												$current,
+												"mode",
+												lv_mode_11_0,
+												"org.xtext.example.dockercompose.DockerCompose.EInt");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1());
+					}
+				)
 			)
+					)+
+					{getUnorderedGroupHelper().canLeave(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1())}?
+				)
+			)
+				{ 
+				  getUnorderedGroupHelper().leave(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1());
+				}
+		)
+	)
+;
+
+// Entry rule entryRuleSecretConnector_short
+entryRuleSecretConnector_short returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSecretConnector_shortRule()); }
+	iv_ruleSecretConnector_short=ruleSecretConnector_short
+	{ $current=$iv_ruleSecretConnector_short.current; }
+	EOF;
+
+// Rule SecretConnector_short
+ruleSecretConnector_short returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getSecretConnector_shortAccess().getSecretConnectorAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSecretConnector_shortRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getSecretConnector_shortAccess().getSecretSecretCrossReference_1_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleSecretConnector_long
+entryRuleSecretConnector_long returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSecretConnector_longRule()); }
+	iv_ruleSecretConnector_long=ruleSecretConnector_long
+	{ $current=$iv_ruleSecretConnector_long.current; }
+	EOF;
+
+// Rule SecretConnector_long
+ruleSecretConnector_long returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getSecretConnector_longAccess().getSecretConnectorAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{ 
+				  getUnorderedGroupHelper().enter(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1());
+				}
+				(
+					(
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 0)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 0);
+					}
+								({true}?=>(otherlv_2='source:'
+								{
+									newLeafNode(otherlv_2, grammarAccess.getSecretConnector_longAccess().getSourceKeyword_1_0_0());
+								}
+								(
+									(
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getSecretConnector_longRule());
+											}
+										}
+										{
+											newCompositeNode(grammarAccess.getSecretConnector_longAccess().getSecretSecretCrossReference_1_0_1_0());
+										}
+										ruleEString
+										{
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 1)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 1);
+					}
+								({true}?=>(otherlv_4='target:'
+								{
+									newLeafNode(otherlv_4, grammarAccess.getSecretConnector_longAccess().getTargetKeyword_1_1_0());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getSecretConnector_longAccess().getTargetPATHParserRuleCall_1_1_1_0());
+										}
+										lv_target_5_0=rulePATH
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getSecretConnector_longRule());
+											}
+											set(
+												$current,
+												"target",
+												lv_target_5_0,
+												"org.xtext.example.dockercompose.DockerCompose.PATH");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 2)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 2);
+					}
+								({true}?=>(otherlv_6='uid:'
+								{
+									newLeafNode(otherlv_6, grammarAccess.getSecretConnector_longAccess().getUidKeyword_1_2_0());
+								}
+								(
+									(
+										lv_uid_7_0=RULE_QUOTED_INT
+										{
+											newLeafNode(lv_uid_7_0, grammarAccess.getSecretConnector_longAccess().getUidQUOTED_INTTerminalRuleCall_1_2_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getSecretConnector_longRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"uid",
+												lv_uid_7_0,
+												"org.xtext.example.dockercompose.DockerCompose.QUOTED_INT");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 3)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 3);
+					}
+								({true}?=>(otherlv_8='gid:'
+								{
+									newLeafNode(otherlv_8, grammarAccess.getSecretConnector_longAccess().getGidKeyword_1_3_0());
+								}
+								(
+									(
+										lv_gid_9_0=RULE_QUOTED_INT
+										{
+											newLeafNode(lv_gid_9_0, grammarAccess.getSecretConnector_longAccess().getGidQUOTED_INTTerminalRuleCall_1_3_1_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getSecretConnector_longRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"gid",
+												lv_gid_9_0,
+												"org.xtext.example.dockercompose.DockerCompose.QUOTED_INT");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 4)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 4);
+					}
+								({true}?=>(otherlv_10='mode:'
+								{
+									newLeafNode(otherlv_10, grammarAccess.getSecretConnector_longAccess().getModeKeyword_1_4_0());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getSecretConnector_longAccess().getModeEIntParserRuleCall_1_4_1_0());
+										}
+										lv_mode_11_0=ruleEInt
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getSecretConnector_longRule());
+											}
+											set(
+												$current,
+												"mode",
+												lv_mode_11_0,
+												"org.xtext.example.dockercompose.DockerCompose.EInt");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1());
+					}
+				)
+			)
+					)+
+					{getUnorderedGroupHelper().canLeave(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1())}?
+				)
+			)
+				{ 
+				  getUnorderedGroupHelper().leave(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1());
+				}
 		)
 	)
 ;
@@ -4362,9 +4686,9 @@ RULE_VERSION : '"' RULE_INT '.' RULE_INT '"';
 
 RULE_QUOTED_INT : '"' '"';
 
-RULE_PORT : '"' (((('0'..'9'|'0'..'9' '0'..'9'|'1' '0'..'9' '0'..'9'|'2' '0'..'5' '0'..'5') '.' ('0'..'9'|'0'..'9' '0'..'9'|'1' '0'..'9' '0'..'9'|'2' '0'..'5' '0'..'5') '.' ('0'..'9'|'0'..'9' '0'..'9'|'1' '0'..'9' '0'..'9'|'2' '0'..'5' '0'..'5') '.' ('0'..'9'|'0'..'9' '0'..'9'|'1' '0'..'9' '0'..'9'|'2' '0'..'5' '0'..'5') ':')? RULE_INT '-' RULE_INT ':')? RULE_INT '-' RULE_INT ('/' RULE_ID)?|((('0'..'9'|'0'..'9' '0'..'9'|'1' '0'..'9' '0'..'9'|'2' '0'..'5' '0'..'5') '.' ('0'..'9'|'0'..'9' '0'..'9'|'1' '0'..'9' '0'..'9'|'2' '0'..'5' '0'..'5') '.' ('0'..'9'|'0'..'9' '0'..'9'|'1' '0'..'9' '0'..'9'|'2' '0'..'5' '0'..'5') '.' ('0'..'9'|'0'..'9' '0'..'9'|'1' '0'..'9' '0'..'9'|'2' '0'..'5' '0'..'5') ':')? RULE_INT ':')? RULE_INT ('/' RULE_ID)?) '"';
+RULE_PORT_DEF : '"' (((('0'..'9'|'0'..'9' '0'..'9'|'1' '0'..'9' '0'..'9'|'2' '0'..'5' '0'..'5') '.' ('0'..'9'|'0'..'9' '0'..'9'|'1' '0'..'9' '0'..'9'|'2' '0'..'5' '0'..'5') '.' ('0'..'9'|'0'..'9' '0'..'9'|'1' '0'..'9' '0'..'9'|'2' '0'..'5' '0'..'5') '.' ('0'..'9'|'0'..'9' '0'..'9'|'1' '0'..'9' '0'..'9'|'2' '0'..'5' '0'..'5') ':')? RULE_INT '-' RULE_INT ':')? RULE_INT '-' RULE_INT ('/' RULE_ID)?|((('0'..'9'|'0'..'9' '0'..'9'|'1' '0'..'9' '0'..'9'|'2' '0'..'5' '0'..'5') '.' ('0'..'9'|'0'..'9' '0'..'9'|'1' '0'..'9' '0'..'9'|'2' '0'..'5' '0'..'5') '.' ('0'..'9'|'0'..'9' '0'..'9'|'1' '0'..'9' '0'..'9'|'2' '0'..'5' '0'..'5') '.' ('0'..'9'|'0'..'9' '0'..'9'|'1' '0'..'9' '0'..'9'|'2' '0'..'5' '0'..'5') ':')? RULE_INT ':')? RULE_INT ('/' RULE_ID)?) '"';
 
-RULE_DEVICE : '"' '.'? '/'? RULE_ID ':' '.'? '/'? RULE_ID (':' RULE_ID)? '"';
+RULE_DEVICE_DEF : '"' '.'? '/'? RULE_ID ':' '.'? '/'? RULE_ID (':' RULE_ID)? '"';
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'-'|'/'|'.'|'0'..'9')*;
 

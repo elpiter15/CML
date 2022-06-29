@@ -89,7 +89,6 @@ public class DockercomposeTables extends AbstractTables
 	public static final /*@NonInvalid*/ ClassId CLSSid_VolumeConnector = DockercomposeTables.PACKid_http_c_s_s_www_eclipse_org_s_modeling_s_example_s_dockercompose_s_DockerCompose.getClassId("VolumeConnector", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_VolumeDriverOpt = DockercomposeTables.PACKid_http_c_s_s_www_eclipse_org_s_modeling_s_example_s_dockercompose_s_DockerCompose.getClassId("VolumeDriverOpt", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_VolumeLabel = DockercomposeTables.PACKid_http_c_s_s_www_eclipse_org_s_modeling_s_example_s_dockercompose_s_DockerCompose.getClassId("VolumeLabel", 0);
-	public static final /*@NonInvalid*/ DataTypeId DATAid_EDouble = DockercomposeTables.PACKid_http_c_s_s_www_eclipse_org_s_emf_s_2002_s_Ecore.getDataTypeId("EDouble", 0);
 	public static final /*@NonInvalid*/ DataTypeId DATAid_EInt = DockercomposeTables.PACKid_http_c_s_s_www_eclipse_org_s_emf_s_2002_s_Ecore.getDataTypeId("EInt", 0);
 	public static final /*@NonInvalid*/ EnumerationId ENUMid_AccessMode = DockercomposeTables.PACKid_http_c_s_s_www_eclipse_org_s_modeling_s_example_s_dockercompose_s_DockerCompose.getEnumerationId("AccessMode");
 	public static final /*@NonInvalid*/ EnumerationId ENUMid_MountType = DockercomposeTables.PACKid_http_c_s_s_www_eclipse_org_s_modeling_s_example_s_dockercompose_s_DockerCompose.getEnumerationId("MountType");
@@ -462,16 +461,13 @@ public class DockercomposeTables extends AbstractTables
 		public static final ExecutorProperty _DNS__IPAMConfig__gateway = new ExecutorPropertyWithImplementation("IPAMConfig", Types._DNS, 5, new EcoreLibraryOppositeProperty(DockercomposePackage.Literals.IPAM_CONFIG__GATEWAY));
 		public static final ExecutorProperty _DNS__NetworkConnector__ipv4_address = new ExecutorPropertyWithImplementation("NetworkConnector", Types._DNS, 6, new EcoreLibraryOppositeProperty(DockercomposePackage.Literals.NETWORK_CONNECTOR__IPV4_ADDRESS));
 		public static final ExecutorProperty _DNS__NetworkConnector__link_local_ips = new ExecutorPropertyWithImplementation("NetworkConnector", Types._DNS, 7, new EcoreLibraryOppositeProperty(DockercomposePackage.Literals.NETWORK_CONNECTOR__LINK_LOCAL_IPS));
-		public static final ExecutorProperty _DNS__Port__host_ip = new ExecutorPropertyWithImplementation("Port", Types._DNS, 8, new EcoreLibraryOppositeProperty(DockercomposePackage.Literals.PORT__HOST_IP));
-		public static final ExecutorProperty _DNS__Service__dns = new ExecutorPropertyWithImplementation("Service", Types._DNS, 9, new EcoreLibraryOppositeProperty(DockercomposePackage.Literals.SERVICE__DNS));
+		public static final ExecutorProperty _DNS__Service__dns = new ExecutorPropertyWithImplementation("Service", Types._DNS, 8, new EcoreLibraryOppositeProperty(DockercomposePackage.Literals.SERVICE__DNS));
 
 		public static final ExecutorProperty _Dependency__service = new EcoreExecutorProperty(DockercomposePackage.Literals.DEPENDENCY__SERVICE, Types._Dependency, 0);
 		public static final ExecutorProperty _Dependency__Service__depends_on = new ExecutorPropertyWithImplementation("Service", Types._Dependency, 1, new EcoreLibraryOppositeProperty(DockercomposePackage.Literals.SERVICE__DEPENDS_ON));
 
-		public static final ExecutorProperty _Device__cgroup_permissions = new EcoreExecutorProperty(DockercomposePackage.Literals.DEVICE__CGROUP_PERMISSIONS, Types._Device, 0);
-		public static final ExecutorProperty _Device__container_path = new EcoreExecutorProperty(DockercomposePackage.Literals.DEVICE__CONTAINER_PATH, Types._Device, 1);
-		public static final ExecutorProperty _Device__host_path = new EcoreExecutorProperty(DockercomposePackage.Literals.DEVICE__HOST_PATH, Types._Device, 2);
-		public static final ExecutorProperty _Device__Service__devices = new ExecutorPropertyWithImplementation("Service", Types._Device, 3, new EcoreLibraryOppositeProperty(DockercomposePackage.Literals.SERVICE__DEVICES));
+		public static final ExecutorProperty _Device__value = new EcoreExecutorProperty(DockercomposePackage.Literals.DEVICE__VALUE, Types._Device, 0);
+		public static final ExecutorProperty _Device__Service__devices = new ExecutorPropertyWithImplementation("Service", Types._Device, 1, new EcoreLibraryOppositeProperty(DockercomposePackage.Literals.SERVICE__DEVICES));
 
 		public static final ExecutorProperty _DockerCompose__configs = new EcoreExecutorProperty(DockercomposePackage.Literals.DOCKER_COMPOSE__CONFIGS, Types._DockerCompose, 0);
 		public static final ExecutorProperty _DockerCompose__networks = new EcoreExecutorProperty(DockercomposePackage.Literals.DOCKER_COMPOSE__NETWORKS, Types._DockerCompose, 1);
@@ -531,13 +527,8 @@ public class DockercomposeTables extends AbstractTables
 		public static final ExecutorProperty _NetworkLabel__value = new EcoreExecutorProperty(DockercomposePackage.Literals.NETWORK_LABEL__VALUE, Types._NetworkLabel, 1);
 		public static final ExecutorProperty _NetworkLabel__Network__labels = new ExecutorPropertyWithImplementation("Network", Types._NetworkLabel, 2, new EcoreLibraryOppositeProperty(DockercomposePackage.Literals.NETWORK__LABELS));
 
-		public static final ExecutorProperty _Port__container_port = new EcoreExecutorProperty(DockercomposePackage.Literals.PORT__CONTAINER_PORT, Types._Port, 0);
-		public static final ExecutorProperty _Port__container_port_end = new EcoreExecutorProperty(DockercomposePackage.Literals.PORT__CONTAINER_PORT_END, Types._Port, 1);
-		public static final ExecutorProperty _Port__host_ip = new EcoreExecutorProperty(DockercomposePackage.Literals.PORT__HOST_IP, Types._Port, 2);
-		public static final ExecutorProperty _Port__host_port = new EcoreExecutorProperty(DockercomposePackage.Literals.PORT__HOST_PORT, Types._Port, 3);
-		public static final ExecutorProperty _Port__host_port_end = new EcoreExecutorProperty(DockercomposePackage.Literals.PORT__HOST_PORT_END, Types._Port, 4);
-		public static final ExecutorProperty _Port__protocol = new EcoreExecutorProperty(DockercomposePackage.Literals.PORT__PROTOCOL, Types._Port, 5);
-		public static final ExecutorProperty _Port__Service__ports = new ExecutorPropertyWithImplementation("Service", Types._Port, 6, new EcoreLibraryOppositeProperty(DockercomposePackage.Literals.SERVICE__PORTS));
+		public static final ExecutorProperty _Port__value = new EcoreExecutorProperty(DockercomposePackage.Literals.PORT__VALUE, Types._Port, 0);
+		public static final ExecutorProperty _Port__Service__ports = new ExecutorPropertyWithImplementation("Service", Types._Port, 1, new EcoreLibraryOppositeProperty(DockercomposePackage.Literals.SERVICE__PORTS));
 
 		public static final ExecutorProperty _Secret__environment = new EcoreExecutorProperty(DockercomposePackage.Literals.SECRET__ENVIRONMENT, Types._Secret, 0);
 		public static final ExecutorProperty _Secret__external = new EcoreExecutorProperty(DockercomposePackage.Literals.SECRET__EXTERNAL, Types._Secret, 1);
@@ -1903,11 +1894,9 @@ public class DockercomposeTables extends AbstractTables
 		};
 
 		private static final ExecutorProperty /*@NonNull*/ [] _Device = {
-			DockercomposeTables.Properties._Device__cgroup_permissions,
-			DockercomposeTables.Properties._Device__container_path,
-			DockercomposeTables.Properties._Device__host_path,
 			OCLstdlibTables.Properties._OclElement__oclContainer,
-			OCLstdlibTables.Properties._OclElement__oclContents
+			OCLstdlibTables.Properties._OclElement__oclContents,
+			DockercomposeTables.Properties._Device__value
 		};
 
 		private static final ExecutorProperty /*@NonNull*/ [] _DockerCompose = {
@@ -2007,14 +1996,9 @@ public class DockercomposeTables extends AbstractTables
 		};
 
 		private static final ExecutorProperty /*@NonNull*/ [] _Port = {
-			DockercomposeTables.Properties._Port__container_port,
-			DockercomposeTables.Properties._Port__container_port_end,
-			DockercomposeTables.Properties._Port__host_ip,
-			DockercomposeTables.Properties._Port__host_port,
-			DockercomposeTables.Properties._Port__host_port_end,
 			OCLstdlibTables.Properties._OclElement__oclContainer,
 			OCLstdlibTables.Properties._OclElement__oclContents,
-			DockercomposeTables.Properties._Port__protocol
+			DockercomposeTables.Properties._Port__value
 		};
 
 		private static final ExecutorProperty /*@NonNull*/ [] _PropagationType = {

@@ -994,28 +994,8 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDevice_Host_path() {
+	public EAttribute getDevice_Value() {
 		return (EAttribute)deviceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getDevice_Container_path() {
-		return (EAttribute)deviceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getDevice_Cgroup_permissions() {
-		return (EAttribute)deviceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1714,58 +1694,8 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPort_Container_port() {
+	public EAttribute getPort_Value() {
 		return (EAttribute)portEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPort_Container_port_end() {
-		return (EAttribute)portEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPort_Host_port() {
-		return (EAttribute)portEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPort_Host_port_end() {
-		return (EAttribute)portEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPort_Protocol() {
-		return (EAttribute)portEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getPort_Host_ip() {
-		return (EReference)portEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1910,9 +1840,7 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		createEOperation(secretEClass, SECRET___EXTERNAL_NAME__DIAGNOSTICCHAIN_MAP);
 
 		deviceEClass = createEClass(DEVICE);
-		createEAttribute(deviceEClass, DEVICE__HOST_PATH);
-		createEAttribute(deviceEClass, DEVICE__CONTAINER_PATH);
-		createEAttribute(deviceEClass, DEVICE__CGROUP_PERMISSIONS);
+		createEAttribute(deviceEClass, DEVICE__VALUE);
 
 		dnsEClass = createEClass(DNS);
 		createEAttribute(dnsEClass, DNS__DNS1);
@@ -1999,12 +1927,7 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		createEOperation(ipamConfigEClass, IPAM_CONFIG___ANY_PROPERTY__DIAGNOSTICCHAIN_MAP);
 
 		portEClass = createEClass(PORT);
-		createEAttribute(portEClass, PORT__CONTAINER_PORT);
-		createEAttribute(portEClass, PORT__CONTAINER_PORT_END);
-		createEAttribute(portEClass, PORT__HOST_PORT);
-		createEAttribute(portEClass, PORT__HOST_PORT_END);
-		createEAttribute(portEClass, PORT__PROTOCOL);
-		createEReference(portEClass, PORT__HOST_IP);
+		createEAttribute(portEClass, PORT__VALUE);
 
 		// Create enums
 		restartPolicyEEnum = createEEnum(RESTART_POLICY);
@@ -2045,7 +1968,7 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(dockerComposeEClass, DockerCompose.class, "DockerCompose", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDockerCompose_Version(), ecorePackage.getEDouble(), "version", null, 1, 1, DockerCompose.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDockerCompose_Version(), ecorePackage.getEString(), "version", null, 0, 1, DockerCompose.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDockerCompose_Services(), this.getService(), null, "services", null, 1, -1, DockerCompose.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDockerCompose_Networks(), this.getNetwork(), null, "networks", null, 0, -1, DockerCompose.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDockerCompose_Volumes(), this.getVolume(), null, "volumes", null, 0, -1, DockerCompose.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2205,9 +2128,7 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(deviceEClass, Device.class, "Device", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDevice_Host_path(), ecorePackage.getEString(), "host_path", null, 1, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDevice_Container_path(), ecorePackage.getEString(), "container_path", null, 1, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDevice_Cgroup_permissions(), ecorePackage.getEString(), "cgroup_permissions", null, 0, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDevice_Value(), ecorePackage.getEString(), "value", null, 0, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dnsEClass, dockercompose.DNS.class, "DNS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDNS_Dns1(), ecorePackage.getEInt(), "dns1", null, 1, 1, dockercompose.DNS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2318,12 +2239,7 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(portEClass, Port.class, "Port", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPort_Container_port(), ecorePackage.getEInt(), "container_port", null, 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPort_Container_port_end(), ecorePackage.getEInt(), "container_port_end", null, 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPort_Host_port(), ecorePackage.getEInt(), "host_port", null, 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPort_Host_port_end(), ecorePackage.getEInt(), "host_port_end", null, 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPort_Protocol(), ecorePackage.getEString(), "protocol", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPort_Host_ip(), this.getDNS(), null, "host_ip", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPort_Value(), ecorePackage.getEString(), "value", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(restartPolicyEEnum, RestartPolicy.class, "RestartPolicy");

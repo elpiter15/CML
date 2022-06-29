@@ -3,7 +3,6 @@
 package dockercompose.provider;
 
 
-import dockercompose.DockercomposeFactory;
 import dockercompose.DockercomposePackage;
 import dockercompose.Port;
 
@@ -14,9 +13,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -63,153 +59,31 @@ public class PortItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addContainer_portPropertyDescriptor(object);
-			addContainer_port_endPropertyDescriptor(object);
-			addHost_portPropertyDescriptor(object);
-			addHost_port_endPropertyDescriptor(object);
-			addProtocolPropertyDescriptor(object);
+			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Container port feature.
+	 * This adds a property descriptor for the Value feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addContainer_portPropertyDescriptor(Object object) {
+	protected void addValuePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Port_container_port_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_container_port_feature", "_UI_Port_type"),
-				 DockercomposePackage.Literals.PORT__CONTAINER_PORT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Container port end feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContainer_port_endPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Port_container_port_end_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_container_port_end_feature", "_UI_Port_type"),
-				 DockercomposePackage.Literals.PORT__CONTAINER_PORT_END,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Host port feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHost_portPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Port_host_port_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_host_port_feature", "_UI_Port_type"),
-				 DockercomposePackage.Literals.PORT__HOST_PORT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Host port end feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHost_port_endPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Port_host_port_end_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_host_port_end_feature", "_UI_Port_type"),
-				 DockercomposePackage.Literals.PORT__HOST_PORT_END,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Protocol feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addProtocolPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Port_protocol_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_protocol_feature", "_UI_Port_type"),
-				 DockercomposePackage.Literals.PORT__PROTOCOL,
+				 getString("_UI_Port_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Port_value_feature", "_UI_Port_type"),
+				 DockercomposePackage.Literals.PORT__VALUE,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
-	}
-
-	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(DockercomposePackage.Literals.PORT__HOST_IP);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -231,8 +105,10 @@ public class PortItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Port port = (Port)object;
-		return getString("_UI_Port_type") + " " + port.getContainer_port();
+		String label = ((Port)object).getValue();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Port_type") :
+			getString("_UI_Port_type") + " " + label;
 	}
 
 
@@ -248,15 +124,8 @@ public class PortItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Port.class)) {
-			case DockercomposePackage.PORT__CONTAINER_PORT:
-			case DockercomposePackage.PORT__CONTAINER_PORT_END:
-			case DockercomposePackage.PORT__HOST_PORT:
-			case DockercomposePackage.PORT__HOST_PORT_END:
-			case DockercomposePackage.PORT__PROTOCOL:
+			case DockercomposePackage.PORT__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case DockercomposePackage.PORT__HOST_IP:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -272,16 +141,6 @@ public class PortItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DockercomposePackage.Literals.PORT__HOST_IP,
-				 DockercomposeFactory.eINSTANCE.createDNS()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DockercomposePackage.Literals.PORT__HOST_IP,
-				 DockercomposeFactory.eINSTANCE.createNetworkAddress()));
 	}
 
 	/**

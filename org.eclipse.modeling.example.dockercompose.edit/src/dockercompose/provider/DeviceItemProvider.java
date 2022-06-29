@@ -60,71 +60,25 @@ public class DeviceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addHost_pathPropertyDescriptor(object);
-			addContainer_pathPropertyDescriptor(object);
-			addCgroup_permissionsPropertyDescriptor(object);
+			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Host path feature.
+	 * This adds a property descriptor for the Value feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHost_pathPropertyDescriptor(Object object) {
+	protected void addValuePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Device_host_path_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Device_host_path_feature", "_UI_Device_type"),
-				 DockercomposePackage.Literals.DEVICE__HOST_PATH,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Container path feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContainer_pathPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Device_container_path_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Device_container_path_feature", "_UI_Device_type"),
-				 DockercomposePackage.Literals.DEVICE__CONTAINER_PATH,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Cgroup permissions feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCgroup_permissionsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Device_cgroup_permissions_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Device_cgroup_permissions_feature", "_UI_Device_type"),
-				 DockercomposePackage.Literals.DEVICE__CGROUP_PERMISSIONS,
+				 getString("_UI_Device_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Device_value_feature", "_UI_Device_type"),
+				 DockercomposePackage.Literals.DEVICE__VALUE,
 				 true,
 				 false,
 				 false,
@@ -152,7 +106,7 @@ public class DeviceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Device)object).getHost_path();
+		String label = ((Device)object).getValue();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Device_type") :
 			getString("_UI_Device_type") + " " + label;
@@ -171,9 +125,7 @@ public class DeviceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Device.class)) {
-			case DockercomposePackage.DEVICE__HOST_PATH:
-			case DockercomposePackage.DEVICE__CONTAINER_PATH:
-			case DockercomposePackage.DEVICE__CGROUP_PERMISSIONS:
+			case DockercomposePackage.DEVICE__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

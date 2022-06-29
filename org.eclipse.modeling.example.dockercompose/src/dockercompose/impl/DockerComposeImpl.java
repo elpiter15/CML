@@ -53,7 +53,7 @@ public class DockerComposeImpl extends MinimalEObjectImpl.Container implements D
 	 * @generated
 	 * @ordered
 	 */
-	protected static final double VERSION_EDEFAULT = 0.0;
+	protected static final String VERSION_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getVersion() <em>Version</em>}' attribute.
@@ -63,7 +63,7 @@ public class DockerComposeImpl extends MinimalEObjectImpl.Container implements D
 	 * @generated
 	 * @ordered
 	 */
-	protected double version = VERSION_EDEFAULT;
+	protected String version = VERSION_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getServices() <em>Services</em>}' containment reference list.
@@ -140,7 +140,7 @@ public class DockerComposeImpl extends MinimalEObjectImpl.Container implements D
 	 * @generated
 	 */
 	@Override
-	public double getVersion() {
+	public String getVersion() {
 		return version;
 	}
 
@@ -150,8 +150,8 @@ public class DockerComposeImpl extends MinimalEObjectImpl.Container implements D
 	 * @generated
 	 */
 	@Override
-	public void setVersion(double newVersion) {
-		double oldVersion = version;
+	public void setVersion(String newVersion) {
+		String oldVersion = version;
 		version = newVersion;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DockercomposePackage.DOCKER_COMPOSE__VERSION, oldVersion, version));
@@ -278,7 +278,7 @@ public class DockerComposeImpl extends MinimalEObjectImpl.Container implements D
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DockercomposePackage.DOCKER_COMPOSE__VERSION:
-				setVersion((Double)newValue);
+				setVersion((String)newValue);
 				return;
 			case DockercomposePackage.DOCKER_COMPOSE__SERVICES:
 				getServices().clear();
@@ -343,7 +343,7 @@ public class DockerComposeImpl extends MinimalEObjectImpl.Container implements D
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case DockercomposePackage.DOCKER_COMPOSE__VERSION:
-				return version != VERSION_EDEFAULT;
+				return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
 			case DockercomposePackage.DOCKER_COMPOSE__SERVICES:
 				return services != null && !services.isEmpty();
 			case DockercomposePackage.DOCKER_COMPOSE__NETWORKS:

@@ -93,9 +93,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DockerCompose.ecore#//Secret/secret_name"/>
     </genClasses>
     <genClasses ecoreClass="DockerCompose.ecore#//Device">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DockerCompose.ecore#//Device/host_path"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DockerCompose.ecore#//Device/container_path"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DockerCompose.ecore#//Device/cgroup_permissions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DockerCompose.ecore#//Device/value"/>
     </genClasses>
     <genClasses ecoreClass="DockerCompose.ecore#//DNS">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DockerCompose.ecore#//DNS/dns1"/>
@@ -179,12 +177,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DockerCompose.ecore#//IPAMConfig/aux_addresses"/>
     </genClasses>
     <genClasses ecoreClass="DockerCompose.ecore#//Port">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DockerCompose.ecore#//Port/container_port"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DockerCompose.ecore#//Port/container_port_end"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DockerCompose.ecore#//Port/host_port"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DockerCompose.ecore#//Port/host_port_end"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DockerCompose.ecore#//Port/protocol"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DockerCompose.ecore#//Port/host_ip"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DockerCompose.ecore#//Port/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

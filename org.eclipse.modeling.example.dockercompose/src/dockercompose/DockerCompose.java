@@ -33,12 +33,12 @@ public interface DockerCompose extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Version</em>' attribute.
-	 * @see #setVersion(double)
+	 * @see #setVersion(String)
 	 * @see dockercompose.DockercomposePackage#getDockerCompose_Version()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
-	double getVersion();
+	String getVersion();
 
 	/**
 	 * Sets the value of the '{@link dockercompose.DockerCompose#getVersion <em>Version</em>}' attribute.
@@ -48,7 +48,7 @@ public interface DockerCompose extends EObject {
 	 * @see #getVersion()
 	 * @generated
 	 */
-	void setVersion(double value);
+	void setVersion(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Services</b></em>' containment reference list.

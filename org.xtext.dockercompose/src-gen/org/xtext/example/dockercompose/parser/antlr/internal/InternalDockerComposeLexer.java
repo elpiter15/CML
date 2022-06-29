@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalDockerComposeLexer extends Lexer {
+    public static final int RULE_DEVICE_DEF=6;
     public static final int T__50=50;
     public static final int T__90=90;
     public static final int T__19=19;
@@ -33,6 +34,7 @@ public class InternalDockerComposeLexer extends Lexer {
     public static final int T__61=61;
     public static final int RULE_QUOTED_INT=8;
     public static final int RULE_ID=7;
+    public static final int RULE_PORT_DEF=5;
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
@@ -56,7 +58,6 @@ public class InternalDockerComposeLexer extends Lexer {
     public static final int T__70=70;
     public static final int T__71=71;
     public static final int T__72=72;
-    public static final int RULE_PORT=6;
     public static final int RULE_STRING=9;
     public static final int RULE_SL_COMMENT=12;
     public static final int T__37=37;
@@ -82,7 +83,6 @@ public class InternalDockerComposeLexer extends Lexer {
     public static final int T__82=82;
     public static final int T__83=83;
     public static final int RULE_WS=13;
-    public static final int RULE_DEVICE=5;
     public static final int RULE_ANY_OTHER=14;
     public static final int T__48=48;
     public static final int T__49=49;
@@ -1708,8 +1708,8 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = RULE_VERSION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:4361:14: ( '\"' RULE_INT '.' RULE_INT '\"' )
-            // InternalDockerCompose.g:4361:16: '\"' RULE_INT '.' RULE_INT '\"'
+            // InternalDockerCompose.g:4685:14: ( '\"' RULE_INT '.' RULE_INT '\"' )
+            // InternalDockerCompose.g:4685:16: '\"' RULE_INT '.' RULE_INT '\"'
             {
             match('\"'); 
             mRULE_INT(); 
@@ -1732,8 +1732,8 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = RULE_QUOTED_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:4363:17: ( '\"' '\"' )
-            // InternalDockerCompose.g:4363:19: '\"' '\"'
+            // InternalDockerCompose.g:4687:17: ( '\"' '\"' )
+            // InternalDockerCompose.g:4687:19: '\"' '\"'
             {
             match('\"'); 
             match('\"'); 
@@ -1748,49 +1748,49 @@ public class InternalDockerComposeLexer extends Lexer {
     }
     // $ANTLR end "RULE_QUOTED_INT"
 
-    // $ANTLR start "RULE_PORT"
-    public final void mRULE_PORT() throws RecognitionException {
+    // $ANTLR start "RULE_PORT_DEF"
+    public final void mRULE_PORT_DEF() throws RecognitionException {
         try {
-            int _type = RULE_PORT;
+            int _type = RULE_PORT_DEF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:4365:11: ( '\"' ( ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':' )? RULE_INT '-' RULE_INT ( '/' RULE_ID )? | ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':' )? RULE_INT ( '/' RULE_ID )? ) '\"' )
-            // InternalDockerCompose.g:4365:13: '\"' ( ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':' )? RULE_INT '-' RULE_INT ( '/' RULE_ID )? | ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':' )? RULE_INT ( '/' RULE_ID )? ) '\"'
+            // InternalDockerCompose.g:4689:15: ( '\"' ( ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':' )? RULE_INT '-' RULE_INT ( '/' RULE_ID )? | ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':' )? RULE_INT ( '/' RULE_ID )? ) '\"' )
+            // InternalDockerCompose.g:4689:17: '\"' ( ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':' )? RULE_INT '-' RULE_INT ( '/' RULE_ID )? | ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':' )? RULE_INT ( '/' RULE_ID )? ) '\"'
             {
             match('\"'); 
-            // InternalDockerCompose.g:4365:17: ( ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':' )? RULE_INT '-' RULE_INT ( '/' RULE_ID )? | ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':' )? RULE_INT ( '/' RULE_ID )? )
+            // InternalDockerCompose.g:4689:21: ( ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':' )? RULE_INT '-' RULE_INT ( '/' RULE_ID )? | ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':' )? RULE_INT ( '/' RULE_ID )? )
             int alt15=2;
             alt15 = dfa15.predict(input);
             switch (alt15) {
                 case 1 :
-                    // InternalDockerCompose.g:4365:18: ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':' )? RULE_INT '-' RULE_INT ( '/' RULE_ID )?
+                    // InternalDockerCompose.g:4689:22: ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':' )? RULE_INT '-' RULE_INT ( '/' RULE_ID )?
                     {
-                    // InternalDockerCompose.g:4365:18: ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':' )?
+                    // InternalDockerCompose.g:4689:22: ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':' )?
                     int alt6=2;
                     alt6 = dfa6.predict(input);
                     switch (alt6) {
                         case 1 :
-                            // InternalDockerCompose.g:4365:19: ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':'
+                            // InternalDockerCompose.g:4689:23: ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':'
                             {
-                            // InternalDockerCompose.g:4365:19: ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )?
+                            // InternalDockerCompose.g:4689:23: ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )?
                             int alt5=2;
                             alt5 = dfa5.predict(input);
                             switch (alt5) {
                                 case 1 :
-                                    // InternalDockerCompose.g:4365:20: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':'
+                                    // InternalDockerCompose.g:4689:24: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':'
                                     {
-                                    // InternalDockerCompose.g:4365:20: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
+                                    // InternalDockerCompose.g:4689:24: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
                                     int alt1=4;
                                     alt1 = dfa1.predict(input);
                                     switch (alt1) {
                                         case 1 :
-                                            // InternalDockerCompose.g:4365:21: '0' .. '9'
+                                            // InternalDockerCompose.g:4689:25: '0' .. '9'
                                             {
                                             matchRange('0','9'); 
 
                                             }
                                             break;
                                         case 2 :
-                                            // InternalDockerCompose.g:4365:30: '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4689:34: '0' .. '9' '0' .. '9'
                                             {
                                             matchRange('0','9'); 
                                             matchRange('0','9'); 
@@ -1798,7 +1798,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 3 :
-                                            // InternalDockerCompose.g:4365:48: '1' '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4689:52: '1' '0' .. '9' '0' .. '9'
                                             {
                                             match('1'); 
                                             matchRange('0','9'); 
@@ -1807,7 +1807,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 4 :
-                                            // InternalDockerCompose.g:4365:70: '2' '0' .. '5' '0' .. '5'
+                                            // InternalDockerCompose.g:4689:74: '2' '0' .. '5' '0' .. '5'
                                             {
                                             match('2'); 
                                             matchRange('0','5'); 
@@ -1819,19 +1819,19 @@ public class InternalDockerComposeLexer extends Lexer {
                                     }
 
                                     match('.'); 
-                                    // InternalDockerCompose.g:4365:97: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
+                                    // InternalDockerCompose.g:4689:101: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
                                     int alt2=4;
                                     alt2 = dfa2.predict(input);
                                     switch (alt2) {
                                         case 1 :
-                                            // InternalDockerCompose.g:4365:98: '0' .. '9'
+                                            // InternalDockerCompose.g:4689:102: '0' .. '9'
                                             {
                                             matchRange('0','9'); 
 
                                             }
                                             break;
                                         case 2 :
-                                            // InternalDockerCompose.g:4365:107: '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4689:111: '0' .. '9' '0' .. '9'
                                             {
                                             matchRange('0','9'); 
                                             matchRange('0','9'); 
@@ -1839,7 +1839,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 3 :
-                                            // InternalDockerCompose.g:4365:125: '1' '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4689:129: '1' '0' .. '9' '0' .. '9'
                                             {
                                             match('1'); 
                                             matchRange('0','9'); 
@@ -1848,7 +1848,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 4 :
-                                            // InternalDockerCompose.g:4365:147: '2' '0' .. '5' '0' .. '5'
+                                            // InternalDockerCompose.g:4689:151: '2' '0' .. '5' '0' .. '5'
                                             {
                                             match('2'); 
                                             matchRange('0','5'); 
@@ -1860,19 +1860,19 @@ public class InternalDockerComposeLexer extends Lexer {
                                     }
 
                                     match('.'); 
-                                    // InternalDockerCompose.g:4365:174: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
+                                    // InternalDockerCompose.g:4689:178: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
                                     int alt3=4;
                                     alt3 = dfa3.predict(input);
                                     switch (alt3) {
                                         case 1 :
-                                            // InternalDockerCompose.g:4365:175: '0' .. '9'
+                                            // InternalDockerCompose.g:4689:179: '0' .. '9'
                                             {
                                             matchRange('0','9'); 
 
                                             }
                                             break;
                                         case 2 :
-                                            // InternalDockerCompose.g:4365:184: '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4689:188: '0' .. '9' '0' .. '9'
                                             {
                                             matchRange('0','9'); 
                                             matchRange('0','9'); 
@@ -1880,7 +1880,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 3 :
-                                            // InternalDockerCompose.g:4365:202: '1' '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4689:206: '1' '0' .. '9' '0' .. '9'
                                             {
                                             match('1'); 
                                             matchRange('0','9'); 
@@ -1889,7 +1889,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 4 :
-                                            // InternalDockerCompose.g:4365:224: '2' '0' .. '5' '0' .. '5'
+                                            // InternalDockerCompose.g:4689:228: '2' '0' .. '5' '0' .. '5'
                                             {
                                             match('2'); 
                                             matchRange('0','5'); 
@@ -1901,19 +1901,19 @@ public class InternalDockerComposeLexer extends Lexer {
                                     }
 
                                     match('.'); 
-                                    // InternalDockerCompose.g:4365:251: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
+                                    // InternalDockerCompose.g:4689:255: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
                                     int alt4=4;
                                     alt4 = dfa4.predict(input);
                                     switch (alt4) {
                                         case 1 :
-                                            // InternalDockerCompose.g:4365:252: '0' .. '9'
+                                            // InternalDockerCompose.g:4689:256: '0' .. '9'
                                             {
                                             matchRange('0','9'); 
 
                                             }
                                             break;
                                         case 2 :
-                                            // InternalDockerCompose.g:4365:261: '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4689:265: '0' .. '9' '0' .. '9'
                                             {
                                             matchRange('0','9'); 
                                             matchRange('0','9'); 
@@ -1921,7 +1921,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 3 :
-                                            // InternalDockerCompose.g:4365:279: '1' '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4689:283: '1' '0' .. '9' '0' .. '9'
                                             {
                                             match('1'); 
                                             matchRange('0','9'); 
@@ -1930,7 +1930,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 4 :
-                                            // InternalDockerCompose.g:4365:301: '2' '0' .. '5' '0' .. '5'
+                                            // InternalDockerCompose.g:4689:305: '2' '0' .. '5' '0' .. '5'
                                             {
                                             match('2'); 
                                             matchRange('0','5'); 
@@ -1961,7 +1961,7 @@ public class InternalDockerComposeLexer extends Lexer {
                     mRULE_INT(); 
                     match('-'); 
                     mRULE_INT(); 
-                    // InternalDockerCompose.g:4365:380: ( '/' RULE_ID )?
+                    // InternalDockerCompose.g:4689:384: ( '/' RULE_ID )?
                     int alt7=2;
                     int LA7_0 = input.LA(1);
 
@@ -1970,7 +1970,7 @@ public class InternalDockerComposeLexer extends Lexer {
                     }
                     switch (alt7) {
                         case 1 :
-                            // InternalDockerCompose.g:4365:381: '/' RULE_ID
+                            // InternalDockerCompose.g:4689:385: '/' RULE_ID
                             {
                             match('/'); 
                             mRULE_ID(); 
@@ -1984,35 +1984,35 @@ public class InternalDockerComposeLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalDockerCompose.g:4365:395: ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':' )? RULE_INT ( '/' RULE_ID )?
+                    // InternalDockerCompose.g:4689:399: ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':' )? RULE_INT ( '/' RULE_ID )?
                     {
-                    // InternalDockerCompose.g:4365:395: ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':' )?
+                    // InternalDockerCompose.g:4689:399: ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':' )?
                     int alt13=2;
                     alt13 = dfa13.predict(input);
                     switch (alt13) {
                         case 1 :
-                            // InternalDockerCompose.g:4365:396: ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':'
+                            // InternalDockerCompose.g:4689:400: ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':'
                             {
-                            // InternalDockerCompose.g:4365:396: ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )?
+                            // InternalDockerCompose.g:4689:400: ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )?
                             int alt12=2;
                             alt12 = dfa12.predict(input);
                             switch (alt12) {
                                 case 1 :
-                                    // InternalDockerCompose.g:4365:397: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':'
+                                    // InternalDockerCompose.g:4689:401: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':'
                                     {
-                                    // InternalDockerCompose.g:4365:397: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
+                                    // InternalDockerCompose.g:4689:401: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
                                     int alt8=4;
                                     alt8 = dfa8.predict(input);
                                     switch (alt8) {
                                         case 1 :
-                                            // InternalDockerCompose.g:4365:398: '0' .. '9'
+                                            // InternalDockerCompose.g:4689:402: '0' .. '9'
                                             {
                                             matchRange('0','9'); 
 
                                             }
                                             break;
                                         case 2 :
-                                            // InternalDockerCompose.g:4365:407: '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4689:411: '0' .. '9' '0' .. '9'
                                             {
                                             matchRange('0','9'); 
                                             matchRange('0','9'); 
@@ -2020,7 +2020,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 3 :
-                                            // InternalDockerCompose.g:4365:425: '1' '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4689:429: '1' '0' .. '9' '0' .. '9'
                                             {
                                             match('1'); 
                                             matchRange('0','9'); 
@@ -2029,7 +2029,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 4 :
-                                            // InternalDockerCompose.g:4365:447: '2' '0' .. '5' '0' .. '5'
+                                            // InternalDockerCompose.g:4689:451: '2' '0' .. '5' '0' .. '5'
                                             {
                                             match('2'); 
                                             matchRange('0','5'); 
@@ -2041,19 +2041,19 @@ public class InternalDockerComposeLexer extends Lexer {
                                     }
 
                                     match('.'); 
-                                    // InternalDockerCompose.g:4365:474: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
+                                    // InternalDockerCompose.g:4689:478: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
                                     int alt9=4;
                                     alt9 = dfa9.predict(input);
                                     switch (alt9) {
                                         case 1 :
-                                            // InternalDockerCompose.g:4365:475: '0' .. '9'
+                                            // InternalDockerCompose.g:4689:479: '0' .. '9'
                                             {
                                             matchRange('0','9'); 
 
                                             }
                                             break;
                                         case 2 :
-                                            // InternalDockerCompose.g:4365:484: '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4689:488: '0' .. '9' '0' .. '9'
                                             {
                                             matchRange('0','9'); 
                                             matchRange('0','9'); 
@@ -2061,7 +2061,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 3 :
-                                            // InternalDockerCompose.g:4365:502: '1' '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4689:506: '1' '0' .. '9' '0' .. '9'
                                             {
                                             match('1'); 
                                             matchRange('0','9'); 
@@ -2070,7 +2070,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 4 :
-                                            // InternalDockerCompose.g:4365:524: '2' '0' .. '5' '0' .. '5'
+                                            // InternalDockerCompose.g:4689:528: '2' '0' .. '5' '0' .. '5'
                                             {
                                             match('2'); 
                                             matchRange('0','5'); 
@@ -2082,19 +2082,19 @@ public class InternalDockerComposeLexer extends Lexer {
                                     }
 
                                     match('.'); 
-                                    // InternalDockerCompose.g:4365:551: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
+                                    // InternalDockerCompose.g:4689:555: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
                                     int alt10=4;
                                     alt10 = dfa10.predict(input);
                                     switch (alt10) {
                                         case 1 :
-                                            // InternalDockerCompose.g:4365:552: '0' .. '9'
+                                            // InternalDockerCompose.g:4689:556: '0' .. '9'
                                             {
                                             matchRange('0','9'); 
 
                                             }
                                             break;
                                         case 2 :
-                                            // InternalDockerCompose.g:4365:561: '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4689:565: '0' .. '9' '0' .. '9'
                                             {
                                             matchRange('0','9'); 
                                             matchRange('0','9'); 
@@ -2102,7 +2102,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 3 :
-                                            // InternalDockerCompose.g:4365:579: '1' '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4689:583: '1' '0' .. '9' '0' .. '9'
                                             {
                                             match('1'); 
                                             matchRange('0','9'); 
@@ -2111,7 +2111,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 4 :
-                                            // InternalDockerCompose.g:4365:601: '2' '0' .. '5' '0' .. '5'
+                                            // InternalDockerCompose.g:4689:605: '2' '0' .. '5' '0' .. '5'
                                             {
                                             match('2'); 
                                             matchRange('0','5'); 
@@ -2123,19 +2123,19 @@ public class InternalDockerComposeLexer extends Lexer {
                                     }
 
                                     match('.'); 
-                                    // InternalDockerCompose.g:4365:628: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
+                                    // InternalDockerCompose.g:4689:632: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
                                     int alt11=4;
                                     alt11 = dfa11.predict(input);
                                     switch (alt11) {
                                         case 1 :
-                                            // InternalDockerCompose.g:4365:629: '0' .. '9'
+                                            // InternalDockerCompose.g:4689:633: '0' .. '9'
                                             {
                                             matchRange('0','9'); 
 
                                             }
                                             break;
                                         case 2 :
-                                            // InternalDockerCompose.g:4365:638: '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4689:642: '0' .. '9' '0' .. '9'
                                             {
                                             matchRange('0','9'); 
                                             matchRange('0','9'); 
@@ -2143,7 +2143,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 3 :
-                                            // InternalDockerCompose.g:4365:656: '1' '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4689:660: '1' '0' .. '9' '0' .. '9'
                                             {
                                             match('1'); 
                                             matchRange('0','9'); 
@@ -2152,7 +2152,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 4 :
-                                            // InternalDockerCompose.g:4365:678: '2' '0' .. '5' '0' .. '5'
+                                            // InternalDockerCompose.g:4689:682: '2' '0' .. '5' '0' .. '5'
                                             {
                                             match('2'); 
                                             matchRange('0','5'); 
@@ -2179,7 +2179,7 @@ public class InternalDockerComposeLexer extends Lexer {
                     }
 
                     mRULE_INT(); 
-                    // InternalDockerCompose.g:4365:731: ( '/' RULE_ID )?
+                    // InternalDockerCompose.g:4689:735: ( '/' RULE_ID )?
                     int alt14=2;
                     int LA14_0 = input.LA(1);
 
@@ -2188,7 +2188,7 @@ public class InternalDockerComposeLexer extends Lexer {
                     }
                     switch (alt14) {
                         case 1 :
-                            // InternalDockerCompose.g:4365:732: '/' RULE_ID
+                            // InternalDockerCompose.g:4689:736: '/' RULE_ID
                             {
                             match('/'); 
                             mRULE_ID(); 
@@ -2214,18 +2214,18 @@ public class InternalDockerComposeLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "RULE_PORT"
+    // $ANTLR end "RULE_PORT_DEF"
 
-    // $ANTLR start "RULE_DEVICE"
-    public final void mRULE_DEVICE() throws RecognitionException {
+    // $ANTLR start "RULE_DEVICE_DEF"
+    public final void mRULE_DEVICE_DEF() throws RecognitionException {
         try {
-            int _type = RULE_DEVICE;
+            int _type = RULE_DEVICE_DEF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:4367:13: ( '\"' ( '.' )? ( '/' )? RULE_ID ':' ( '.' )? ( '/' )? RULE_ID ( ':' RULE_ID )? '\"' )
-            // InternalDockerCompose.g:4367:15: '\"' ( '.' )? ( '/' )? RULE_ID ':' ( '.' )? ( '/' )? RULE_ID ( ':' RULE_ID )? '\"'
+            // InternalDockerCompose.g:4691:17: ( '\"' ( '.' )? ( '/' )? RULE_ID ':' ( '.' )? ( '/' )? RULE_ID ( ':' RULE_ID )? '\"' )
+            // InternalDockerCompose.g:4691:19: '\"' ( '.' )? ( '/' )? RULE_ID ':' ( '.' )? ( '/' )? RULE_ID ( ':' RULE_ID )? '\"'
             {
             match('\"'); 
-            // InternalDockerCompose.g:4367:19: ( '.' )?
+            // InternalDockerCompose.g:4691:23: ( '.' )?
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -2234,7 +2234,7 @@ public class InternalDockerComposeLexer extends Lexer {
             }
             switch (alt16) {
                 case 1 :
-                    // InternalDockerCompose.g:4367:19: '.'
+                    // InternalDockerCompose.g:4691:23: '.'
                     {
                     match('.'); 
 
@@ -2243,7 +2243,7 @@ public class InternalDockerComposeLexer extends Lexer {
 
             }
 
-            // InternalDockerCompose.g:4367:24: ( '/' )?
+            // InternalDockerCompose.g:4691:28: ( '/' )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -2252,7 +2252,7 @@ public class InternalDockerComposeLexer extends Lexer {
             }
             switch (alt17) {
                 case 1 :
-                    // InternalDockerCompose.g:4367:24: '/'
+                    // InternalDockerCompose.g:4691:28: '/'
                     {
                     match('/'); 
 
@@ -2263,7 +2263,7 @@ public class InternalDockerComposeLexer extends Lexer {
 
             mRULE_ID(); 
             match(':'); 
-            // InternalDockerCompose.g:4367:41: ( '.' )?
+            // InternalDockerCompose.g:4691:45: ( '.' )?
             int alt18=2;
             int LA18_0 = input.LA(1);
 
@@ -2272,7 +2272,7 @@ public class InternalDockerComposeLexer extends Lexer {
             }
             switch (alt18) {
                 case 1 :
-                    // InternalDockerCompose.g:4367:41: '.'
+                    // InternalDockerCompose.g:4691:45: '.'
                     {
                     match('.'); 
 
@@ -2281,7 +2281,7 @@ public class InternalDockerComposeLexer extends Lexer {
 
             }
 
-            // InternalDockerCompose.g:4367:46: ( '/' )?
+            // InternalDockerCompose.g:4691:50: ( '/' )?
             int alt19=2;
             int LA19_0 = input.LA(1);
 
@@ -2290,7 +2290,7 @@ public class InternalDockerComposeLexer extends Lexer {
             }
             switch (alt19) {
                 case 1 :
-                    // InternalDockerCompose.g:4367:46: '/'
+                    // InternalDockerCompose.g:4691:50: '/'
                     {
                     match('/'); 
 
@@ -2300,7 +2300,7 @@ public class InternalDockerComposeLexer extends Lexer {
             }
 
             mRULE_ID(); 
-            // InternalDockerCompose.g:4367:59: ( ':' RULE_ID )?
+            // InternalDockerCompose.g:4691:63: ( ':' RULE_ID )?
             int alt20=2;
             int LA20_0 = input.LA(1);
 
@@ -2309,7 +2309,7 @@ public class InternalDockerComposeLexer extends Lexer {
             }
             switch (alt20) {
                 case 1 :
-                    // InternalDockerCompose.g:4367:60: ':' RULE_ID
+                    // InternalDockerCompose.g:4691:64: ':' RULE_ID
                     {
                     match(':'); 
                     mRULE_ID(); 
@@ -2329,17 +2329,17 @@ public class InternalDockerComposeLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "RULE_DEVICE"
+    // $ANTLR end "RULE_DEVICE_DEF"
 
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:4369:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '-' | '/' | '.' | '0' .. '9' )* )
-            // InternalDockerCompose.g:4369:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '-' | '/' | '.' | '0' .. '9' )*
+            // InternalDockerCompose.g:4693:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '-' | '/' | '.' | '0' .. '9' )* )
+            // InternalDockerCompose.g:4693:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '-' | '/' | '.' | '0' .. '9' )*
             {
-            // InternalDockerCompose.g:4369:11: ( '^' )?
+            // InternalDockerCompose.g:4693:11: ( '^' )?
             int alt21=2;
             int LA21_0 = input.LA(1);
 
@@ -2348,7 +2348,7 @@ public class InternalDockerComposeLexer extends Lexer {
             }
             switch (alt21) {
                 case 1 :
-                    // InternalDockerCompose.g:4369:11: '^'
+                    // InternalDockerCompose.g:4693:11: '^'
                     {
                     match('^'); 
 
@@ -2366,7 +2366,7 @@ public class InternalDockerComposeLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalDockerCompose.g:4369:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '-' | '/' | '.' | '0' .. '9' )*
+            // InternalDockerCompose.g:4693:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '-' | '/' | '.' | '0' .. '9' )*
             loop22:
             do {
                 int alt22=2;
@@ -2415,10 +2415,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:4371:10: ( ( '0' .. '9' )+ )
-            // InternalDockerCompose.g:4371:12: ( '0' .. '9' )+
+            // InternalDockerCompose.g:4695:10: ( ( '0' .. '9' )+ )
+            // InternalDockerCompose.g:4695:12: ( '0' .. '9' )+
             {
-            // InternalDockerCompose.g:4371:12: ( '0' .. '9' )+
+            // InternalDockerCompose.g:4695:12: ( '0' .. '9' )+
             int cnt23=0;
             loop23:
             do {
@@ -2432,7 +2432,7 @@ public class InternalDockerComposeLexer extends Lexer {
 
                 switch (alt23) {
             	case 1 :
-            	    // InternalDockerCompose.g:4371:13: '0' .. '9'
+            	    // InternalDockerCompose.g:4695:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -2464,10 +2464,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:4373:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalDockerCompose.g:4373:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalDockerCompose.g:4697:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalDockerCompose.g:4697:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalDockerCompose.g:4373:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalDockerCompose.g:4697:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt26=2;
             int LA26_0 = input.LA(1);
 
@@ -2485,10 +2485,10 @@ public class InternalDockerComposeLexer extends Lexer {
             }
             switch (alt26) {
                 case 1 :
-                    // InternalDockerCompose.g:4373:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalDockerCompose.g:4697:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalDockerCompose.g:4373:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalDockerCompose.g:4697:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop24:
                     do {
                         int alt24=3;
@@ -2504,7 +2504,7 @@ public class InternalDockerComposeLexer extends Lexer {
 
                         switch (alt24) {
                     	case 1 :
-                    	    // InternalDockerCompose.g:4373:21: '\\\\' .
+                    	    // InternalDockerCompose.g:4697:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2512,7 +2512,7 @@ public class InternalDockerComposeLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalDockerCompose.g:4373:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalDockerCompose.g:4697:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2537,10 +2537,10 @@ public class InternalDockerComposeLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalDockerCompose.g:4373:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalDockerCompose.g:4697:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalDockerCompose.g:4373:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalDockerCompose.g:4697:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop25:
                     do {
                         int alt25=3;
@@ -2556,7 +2556,7 @@ public class InternalDockerComposeLexer extends Lexer {
 
                         switch (alt25) {
                     	case 1 :
-                    	    // InternalDockerCompose.g:4373:54: '\\\\' .
+                    	    // InternalDockerCompose.g:4697:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2564,7 +2564,7 @@ public class InternalDockerComposeLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalDockerCompose.g:4373:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalDockerCompose.g:4697:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2607,12 +2607,12 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:4375:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalDockerCompose.g:4375:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalDockerCompose.g:4699:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalDockerCompose.g:4699:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalDockerCompose.g:4375:24: ( options {greedy=false; } : . )*
+            // InternalDockerCompose.g:4699:24: ( options {greedy=false; } : . )*
             loop27:
             do {
                 int alt27=2;
@@ -2637,7 +2637,7 @@ public class InternalDockerComposeLexer extends Lexer {
 
                 switch (alt27) {
             	case 1 :
-            	    // InternalDockerCompose.g:4375:52: .
+            	    // InternalDockerCompose.g:4699:52: .
             	    {
             	    matchAny(); 
 
@@ -2667,12 +2667,12 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:4377:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalDockerCompose.g:4377:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalDockerCompose.g:4701:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalDockerCompose.g:4701:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalDockerCompose.g:4377:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalDockerCompose.g:4701:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop28:
             do {
                 int alt28=2;
@@ -2685,7 +2685,7 @@ public class InternalDockerComposeLexer extends Lexer {
 
                 switch (alt28) {
             	case 1 :
-            	    // InternalDockerCompose.g:4377:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalDockerCompose.g:4701:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2705,7 +2705,7 @@ public class InternalDockerComposeLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalDockerCompose.g:4377:40: ( ( '\\r' )? '\\n' )?
+            // InternalDockerCompose.g:4701:40: ( ( '\\r' )? '\\n' )?
             int alt30=2;
             int LA30_0 = input.LA(1);
 
@@ -2714,9 +2714,9 @@ public class InternalDockerComposeLexer extends Lexer {
             }
             switch (alt30) {
                 case 1 :
-                    // InternalDockerCompose.g:4377:41: ( '\\r' )? '\\n'
+                    // InternalDockerCompose.g:4701:41: ( '\\r' )? '\\n'
                     {
-                    // InternalDockerCompose.g:4377:41: ( '\\r' )?
+                    // InternalDockerCompose.g:4701:41: ( '\\r' )?
                     int alt29=2;
                     int LA29_0 = input.LA(1);
 
@@ -2725,7 +2725,7 @@ public class InternalDockerComposeLexer extends Lexer {
                     }
                     switch (alt29) {
                         case 1 :
-                            // InternalDockerCompose.g:4377:41: '\\r'
+                            // InternalDockerCompose.g:4701:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2757,10 +2757,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:4379:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalDockerCompose.g:4379:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalDockerCompose.g:4703:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalDockerCompose.g:4703:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalDockerCompose.g:4379:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalDockerCompose.g:4703:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt31=0;
             loop31:
             do {
@@ -2814,8 +2814,8 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:4381:16: ( . )
-            // InternalDockerCompose.g:4381:18: .
+            // InternalDockerCompose.g:4705:16: ( . )
+            // InternalDockerCompose.g:4705:18: .
             {
             matchAny(); 
 
@@ -2830,7 +2830,7 @@ public class InternalDockerComposeLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // InternalDockerCompose.g:1:8: ( T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | RULE_VERSION | RULE_QUOTED_INT | RULE_PORT | RULE_DEVICE | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        // InternalDockerCompose.g:1:8: ( T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | RULE_VERSION | RULE_QUOTED_INT | RULE_PORT_DEF | RULE_DEVICE_DEF | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
         int alt32=87;
         alt32 = dfa32.predict(input);
         switch (alt32) {
@@ -3381,63 +3381,63 @@ public class InternalDockerComposeLexer extends Lexer {
                 }
                 break;
             case 79 :
-                // InternalDockerCompose.g:1:495: RULE_PORT
+                // InternalDockerCompose.g:1:495: RULE_PORT_DEF
                 {
-                mRULE_PORT(); 
+                mRULE_PORT_DEF(); 
 
                 }
                 break;
             case 80 :
-                // InternalDockerCompose.g:1:505: RULE_DEVICE
+                // InternalDockerCompose.g:1:509: RULE_DEVICE_DEF
                 {
-                mRULE_DEVICE(); 
+                mRULE_DEVICE_DEF(); 
 
                 }
                 break;
             case 81 :
-                // InternalDockerCompose.g:1:517: RULE_ID
+                // InternalDockerCompose.g:1:525: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
             case 82 :
-                // InternalDockerCompose.g:1:525: RULE_INT
+                // InternalDockerCompose.g:1:533: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
             case 83 :
-                // InternalDockerCompose.g:1:534: RULE_STRING
+                // InternalDockerCompose.g:1:542: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
             case 84 :
-                // InternalDockerCompose.g:1:546: RULE_ML_COMMENT
+                // InternalDockerCompose.g:1:554: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
             case 85 :
-                // InternalDockerCompose.g:1:562: RULE_SL_COMMENT
+                // InternalDockerCompose.g:1:570: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
             case 86 :
-                // InternalDockerCompose.g:1:578: RULE_WS
+                // InternalDockerCompose.g:1:586: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
             case 87 :
-                // InternalDockerCompose.g:1:586: RULE_ANY_OTHER
+                // InternalDockerCompose.g:1:594: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -3549,7 +3549,7 @@ public class InternalDockerComposeLexer extends Lexer {
             this.transition = DFA15_transition;
         }
         public String getDescription() {
-            return "4365:17: ( ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':' )? RULE_INT '-' RULE_INT ( '/' RULE_ID )? | ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':' )? RULE_INT ( '/' RULE_ID )? )";
+            return "4689:21: ( ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':' )? RULE_INT '-' RULE_INT ( '/' RULE_ID )? | ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':' )? RULE_INT ( '/' RULE_ID )? )";
         }
     }
     static final String DFA6_eotS =
@@ -3611,7 +3611,7 @@ public class InternalDockerComposeLexer extends Lexer {
             this.transition = DFA6_transition;
         }
         public String getDescription() {
-            return "4365:18: ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':' )?";
+            return "4689:22: ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':' )?";
         }
     }
     static final String DFA5_eotS =
@@ -3670,7 +3670,7 @@ public class InternalDockerComposeLexer extends Lexer {
             this.transition = DFA5_transition;
         }
         public String getDescription() {
-            return "4365:19: ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )?";
+            return "4689:23: ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )?";
         }
     }
     static final String DFA1_eotS =
@@ -3728,7 +3728,7 @@ public class InternalDockerComposeLexer extends Lexer {
             this.transition = DFA1_transition;
         }
         public String getDescription() {
-            return "4365:20: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
+            return "4689:24: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
         }
     }
     static final String DFA2_eotS =
@@ -3786,7 +3786,7 @@ public class InternalDockerComposeLexer extends Lexer {
             this.transition = DFA2_transition;
         }
         public String getDescription() {
-            return "4365:97: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
+            return "4689:101: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
         }
     }
     static final String DFA3_eotS =
@@ -3844,7 +3844,7 @@ public class InternalDockerComposeLexer extends Lexer {
             this.transition = DFA3_transition;
         }
         public String getDescription() {
-            return "4365:174: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
+            return "4689:178: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
         }
     }
     static final String DFA4_eotS =
@@ -3902,7 +3902,7 @@ public class InternalDockerComposeLexer extends Lexer {
             this.transition = DFA4_transition;
         }
         public String getDescription() {
-            return "4365:251: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
+            return "4689:255: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
         }
     }
     static final String DFA13_eotS =
@@ -3962,7 +3962,7 @@ public class InternalDockerComposeLexer extends Lexer {
             this.transition = DFA13_transition;
         }
         public String getDescription() {
-            return "4365:395: ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':' )?";
+            return "4689:399: ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':' )?";
         }
     }
     static final String DFA12_eotS =
@@ -4021,7 +4021,7 @@ public class InternalDockerComposeLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "4365:396: ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )?";
+            return "4689:400: ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )?";
         }
     }
     static final String DFA8_eotS =
@@ -4079,7 +4079,7 @@ public class InternalDockerComposeLexer extends Lexer {
             this.transition = DFA8_transition;
         }
         public String getDescription() {
-            return "4365:397: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
+            return "4689:401: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
         }
     }
     static final String DFA9_eotS =
@@ -4137,7 +4137,7 @@ public class InternalDockerComposeLexer extends Lexer {
             this.transition = DFA9_transition;
         }
         public String getDescription() {
-            return "4365:474: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
+            return "4689:478: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
         }
     }
     static final String DFA10_eotS =
@@ -4195,7 +4195,7 @@ public class InternalDockerComposeLexer extends Lexer {
             this.transition = DFA10_transition;
         }
         public String getDescription() {
-            return "4365:551: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
+            return "4689:555: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
         }
     }
     static final String DFA11_eotS =
@@ -4253,7 +4253,7 @@ public class InternalDockerComposeLexer extends Lexer {
             this.transition = DFA11_transition;
         }
         public String getDescription() {
-            return "4365:628: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
+            return "4689:632: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
         }
     }
     static final String DFA32_eotS =
@@ -4854,7 +4854,7 @@ public class InternalDockerComposeLexer extends Lexer {
             this.transition = DFA32_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | RULE_VERSION | RULE_QUOTED_INT | RULE_PORT | RULE_DEVICE | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | RULE_VERSION | RULE_QUOTED_INT | RULE_PORT_DEF | RULE_DEVICE_DEF | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;

@@ -85,7 +85,7 @@ public class DockerComposeItemProvider
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -143,8 +143,10 @@ public class DockerComposeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		DockerCompose dockerCompose = (DockerCompose)object;
-		return getString("_UI_DockerCompose_type") + " " + dockerCompose.getVersion();
+		String label = ((DockerCompose)object).getVersion();
+		return label == null || label.length() == 0 ?
+			getString("_UI_DockerCompose_type") :
+			getString("_UI_DockerCompose_type") + " " + label;
 	}
 
 

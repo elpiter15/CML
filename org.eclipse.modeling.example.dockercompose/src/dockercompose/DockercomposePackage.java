@@ -778,31 +778,13 @@ public interface DockercomposePackage extends EPackage {
 	int DEVICE = 6;
 
 	/**
-	 * The feature id for the '<em><b>Host path</b></em>' attribute.
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE__HOST_PATH = 0;
-
-	/**
-	 * The feature id for the '<em><b>Container path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEVICE__CONTAINER_PATH = 1;
-
-	/**
-	 * The feature id for the '<em><b>Cgroup permissions</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEVICE__CGROUP_PERMISSIONS = 2;
+	int DEVICE__VALUE = 0;
 
 	/**
 	 * The number of structural features of the '<em>Device</em>' class.
@@ -811,7 +793,7 @@ public interface DockercomposePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_FEATURE_COUNT = 3;
+	int DEVICE_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Device</em>' class.
@@ -1794,58 +1776,13 @@ public interface DockercomposePackage extends EPackage {
 	int PORT = 23;
 
 	/**
-	 * The feature id for the '<em><b>Container port</b></em>' attribute.
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__CONTAINER_PORT = 0;
-
-	/**
-	 * The feature id for the '<em><b>Container port end</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__CONTAINER_PORT_END = 1;
-
-	/**
-	 * The feature id for the '<em><b>Host port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__HOST_PORT = 2;
-
-	/**
-	 * The feature id for the '<em><b>Host port end</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__HOST_PORT_END = 3;
-
-	/**
-	 * The feature id for the '<em><b>Protocol</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__PROTOCOL = 4;
-
-	/**
-	 * The feature id for the '<em><b>Host ip</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__HOST_IP = 5;
+	int PORT__VALUE = 0;
 
 	/**
 	 * The number of structural features of the '<em>Port</em>' class.
@@ -1854,7 +1791,7 @@ public interface DockercomposePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_FEATURE_COUNT = 6;
+	int PORT_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Port</em>' class.
@@ -2628,37 +2565,15 @@ public interface DockercomposePackage extends EPackage {
 	EClass getDevice();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dockercompose.Device#getHost_path <em>Host path</em>}'.
+	 * Returns the meta object for the attribute '{@link dockercompose.Device#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Host path</em>'.
-	 * @see dockercompose.Device#getHost_path()
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see dockercompose.Device#getValue()
 	 * @see #getDevice()
 	 * @generated
 	 */
-	EAttribute getDevice_Host_path();
-
-	/**
-	 * Returns the meta object for the attribute '{@link dockercompose.Device#getContainer_path <em>Container path</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Container path</em>'.
-	 * @see dockercompose.Device#getContainer_path()
-	 * @see #getDevice()
-	 * @generated
-	 */
-	EAttribute getDevice_Container_path();
-
-	/**
-	 * Returns the meta object for the attribute '{@link dockercompose.Device#getCgroup_permissions <em>Cgroup permissions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Cgroup permissions</em>'.
-	 * @see dockercompose.Device#getCgroup_permissions()
-	 * @see #getDevice()
-	 * @generated
-	 */
-	EAttribute getDevice_Cgroup_permissions();
+	EAttribute getDevice_Value();
 
 	/**
 	 * Returns the meta object for class '{@link dockercompose.DNS <em>DNS</em>}'.
@@ -3400,70 +3315,15 @@ public interface DockercomposePackage extends EPackage {
 	EClass getPort();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dockercompose.Port#getContainer_port <em>Container port</em>}'.
+	 * Returns the meta object for the attribute '{@link dockercompose.Port#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Container port</em>'.
-	 * @see dockercompose.Port#getContainer_port()
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see dockercompose.Port#getValue()
 	 * @see #getPort()
 	 * @generated
 	 */
-	EAttribute getPort_Container_port();
-
-	/**
-	 * Returns the meta object for the attribute '{@link dockercompose.Port#getContainer_port_end <em>Container port end</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Container port end</em>'.
-	 * @see dockercompose.Port#getContainer_port_end()
-	 * @see #getPort()
-	 * @generated
-	 */
-	EAttribute getPort_Container_port_end();
-
-	/**
-	 * Returns the meta object for the attribute '{@link dockercompose.Port#getHost_port <em>Host port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Host port</em>'.
-	 * @see dockercompose.Port#getHost_port()
-	 * @see #getPort()
-	 * @generated
-	 */
-	EAttribute getPort_Host_port();
-
-	/**
-	 * Returns the meta object for the attribute '{@link dockercompose.Port#getHost_port_end <em>Host port end</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Host port end</em>'.
-	 * @see dockercompose.Port#getHost_port_end()
-	 * @see #getPort()
-	 * @generated
-	 */
-	EAttribute getPort_Host_port_end();
-
-	/**
-	 * Returns the meta object for the attribute '{@link dockercompose.Port#getProtocol <em>Protocol</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Protocol</em>'.
-	 * @see dockercompose.Port#getProtocol()
-	 * @see #getPort()
-	 * @generated
-	 */
-	EAttribute getPort_Protocol();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link dockercompose.Port#getHost_ip <em>Host ip</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Host ip</em>'.
-	 * @see dockercompose.Port#getHost_ip()
-	 * @see #getPort()
-	 * @generated
-	 */
-	EReference getPort_Host_ip();
+	EAttribute getPort_Value();
 
 	/**
 	 * Returns the meta object for enum '{@link dockercompose.RestartPolicy <em>Restart Policy</em>}'.
@@ -4079,28 +3939,12 @@ public interface DockercomposePackage extends EPackage {
 		EClass DEVICE = eINSTANCE.getDevice();
 
 		/**
-		 * The meta object literal for the '<em><b>Host path</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DEVICE__HOST_PATH = eINSTANCE.getDevice_Host_path();
-
-		/**
-		 * The meta object literal for the '<em><b>Container path</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DEVICE__CONTAINER_PATH = eINSTANCE.getDevice_Container_path();
-
-		/**
-		 * The meta object literal for the '<em><b>Cgroup permissions</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DEVICE__CGROUP_PERMISSIONS = eINSTANCE.getDevice_Cgroup_permissions();
+		EAttribute DEVICE__VALUE = eINSTANCE.getDevice_Value();
 
 		/**
 		 * The meta object literal for the '{@link dockercompose.impl.DNSImpl <em>DNS</em>}' class.
@@ -4689,52 +4533,12 @@ public interface DockercomposePackage extends EPackage {
 		EClass PORT = eINSTANCE.getPort();
 
 		/**
-		 * The meta object literal for the '<em><b>Container port</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PORT__CONTAINER_PORT = eINSTANCE.getPort_Container_port();
-
-		/**
-		 * The meta object literal for the '<em><b>Container port end</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PORT__CONTAINER_PORT_END = eINSTANCE.getPort_Container_port_end();
-
-		/**
-		 * The meta object literal for the '<em><b>Host port</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PORT__HOST_PORT = eINSTANCE.getPort_Host_port();
-
-		/**
-		 * The meta object literal for the '<em><b>Host port end</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PORT__HOST_PORT_END = eINSTANCE.getPort_Host_port_end();
-
-		/**
-		 * The meta object literal for the '<em><b>Protocol</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PORT__PROTOCOL = eINSTANCE.getPort_Protocol();
-
-		/**
-		 * The meta object literal for the '<em><b>Host ip</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORT__HOST_IP = eINSTANCE.getPort_Host_ip();
+		EAttribute PORT__VALUE = eINSTANCE.getPort_Value();
 
 		/**
 		 * The meta object literal for the '{@link dockercompose.RestartPolicy <em>Restart Policy</em>}' enum.
