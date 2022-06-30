@@ -15,12 +15,12 @@ Require-Bundle: org.eclipse.modeling.example.dockercompose,
  org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.xtext.example.dockercompose.generator,
+ org.xtext.example.dockercompose.parser.antlr,
  org.xtext.example.dockercompose,
  org.xtext.example.dockercompose.services,
  org.xtext.example.dockercompose.scoping,
  org.xtext.example.dockercompose.validation,
  org.xtext.example.dockercompose.formatting2,
- org.xtext.example.dockercompose.serializer,
- org.xtext.example.dockercompose.parser.antlr,
- org.xtext.example.dockercompose.parser.antlr.internal
+ org.xtext.example.dockercompose.parser.antlr.internal,
+ org.xtext.example.dockercompose.serializer
 Import-Package: org.apache.log4j

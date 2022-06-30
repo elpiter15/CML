@@ -39,40 +39,40 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 		private final Assignment cServicesAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cServicesServiceParserRuleCall_1_1_0 = (RuleCall)cServicesAssignment_1_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cUnorderedGroup.eContents().get(2);
-		private final Keyword cNetworksKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cNetworksAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cNetworksNetworkParserRuleCall_2_1_0 = (RuleCall)cNetworksAssignment_2_1.eContents().get(0);
+		private final Keyword cVolumesKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cVolumesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cVolumesVolumeParserRuleCall_2_1_0 = (RuleCall)cVolumesAssignment_2_1.eContents().get(0);
 		private final Group cGroup_3 = (Group)cUnorderedGroup.eContents().get(3);
-		private final Keyword cVolumesKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cVolumesAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cVolumesVolumeParserRuleCall_3_1_0 = (RuleCall)cVolumesAssignment_3_1.eContents().get(0);
+		private final Keyword cConfigsKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cConfigsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cConfigsConfigParserRuleCall_3_1_0 = (RuleCall)cConfigsAssignment_3_1.eContents().get(0);
 		private final Group cGroup_4 = (Group)cUnorderedGroup.eContents().get(4);
-		private final Keyword cConfigsKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cConfigsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cConfigsConfigParserRuleCall_4_1_0 = (RuleCall)cConfigsAssignment_4_1.eContents().get(0);
+		private final Keyword cSecretsKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cSecretsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cSecretsSecretParserRuleCall_4_1_0 = (RuleCall)cSecretsAssignment_4_1.eContents().get(0);
 		private final Group cGroup_5 = (Group)cUnorderedGroup.eContents().get(5);
-		private final Keyword cSecretsKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cSecretsAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cSecretsSecretParserRuleCall_5_1_0 = (RuleCall)cSecretsAssignment_5_1.eContents().get(0);
+		private final Keyword cNetworksKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cNetworksAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cNetworksNetworkParserRuleCall_5_1_0 = (RuleCall)cNetworksAssignment_5_1.eContents().get(0);
 		
 		//DockerCompose returns DockerCompose:
 		//    (
 		//            ('version:'     version=VERSION)?
 		//        &    ('services:'     (services+=Service)+ )
-		//        &    ('networks:'    (networks+=Network)+ )?
 		//        &    ('volumes:'     (volumes+=Volume)+ )?
 		//        &    ('configs:'     (configs+=Config)+ )?
 		//        &    ('secrets:'     (secrets+=Secret)+ )?
+		//        &    ('networks:'    (networks+=Network)+ )?
 		//    );
 		@Override public ParserRule getRule() { return rule; }
 		
 		//(
 		//        ('version:'     version=VERSION)?
 		//    &    ('services:'     (services+=Service)+ )
-		//    &    ('networks:'    (networks+=Network)+ )?
 		//    &    ('volumes:'     (volumes+=Volume)+ )?
 		//    &    ('configs:'     (configs+=Config)+ )?
 		//    &    ('secrets:'     (secrets+=Secret)+ )?
+		//    &    ('networks:'    (networks+=Network)+ )?
 		//)
 		public UnorderedGroup getUnorderedGroup() { return cUnorderedGroup; }
 		
@@ -100,53 +100,53 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 		//Service
 		public RuleCall getServicesServiceParserRuleCall_1_1_0() { return cServicesServiceParserRuleCall_1_1_0; }
 		
-		//('networks:'	(networks+=Network)+ )?
+		//('volumes:' 	(volumes+=Volume)+ )?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//'networks:'
-		public Keyword getNetworksKeyword_2_0() { return cNetworksKeyword_2_0; }
-		
-		//(networks+=Network)+
-		public Assignment getNetworksAssignment_2_1() { return cNetworksAssignment_2_1; }
-		
-		//Network
-		public RuleCall getNetworksNetworkParserRuleCall_2_1_0() { return cNetworksNetworkParserRuleCall_2_1_0; }
-		
-		//('volumes:' 	(volumes+=Volume)+ )?
-		public Group getGroup_3() { return cGroup_3; }
-		
 		//'volumes:'
-		public Keyword getVolumesKeyword_3_0() { return cVolumesKeyword_3_0; }
+		public Keyword getVolumesKeyword_2_0() { return cVolumesKeyword_2_0; }
 		
 		//(volumes+=Volume)+
-		public Assignment getVolumesAssignment_3_1() { return cVolumesAssignment_3_1; }
+		public Assignment getVolumesAssignment_2_1() { return cVolumesAssignment_2_1; }
 		
 		//Volume
-		public RuleCall getVolumesVolumeParserRuleCall_3_1_0() { return cVolumesVolumeParserRuleCall_3_1_0; }
+		public RuleCall getVolumesVolumeParserRuleCall_2_1_0() { return cVolumesVolumeParserRuleCall_2_1_0; }
 		
 		//('configs:' 	(configs+=Config)+ )?
-		public Group getGroup_4() { return cGroup_4; }
+		public Group getGroup_3() { return cGroup_3; }
 		
 		//'configs:'
-		public Keyword getConfigsKeyword_4_0() { return cConfigsKeyword_4_0; }
+		public Keyword getConfigsKeyword_3_0() { return cConfigsKeyword_3_0; }
 		
 		//(configs+=Config)+
-		public Assignment getConfigsAssignment_4_1() { return cConfigsAssignment_4_1; }
+		public Assignment getConfigsAssignment_3_1() { return cConfigsAssignment_3_1; }
 		
 		//Config
-		public RuleCall getConfigsConfigParserRuleCall_4_1_0() { return cConfigsConfigParserRuleCall_4_1_0; }
+		public RuleCall getConfigsConfigParserRuleCall_3_1_0() { return cConfigsConfigParserRuleCall_3_1_0; }
 		
 		//('secrets:' 	(secrets+=Secret)+ )?
-		public Group getGroup_5() { return cGroup_5; }
+		public Group getGroup_4() { return cGroup_4; }
 		
 		//'secrets:'
-		public Keyword getSecretsKeyword_5_0() { return cSecretsKeyword_5_0; }
+		public Keyword getSecretsKeyword_4_0() { return cSecretsKeyword_4_0; }
 		
 		//(secrets+=Secret)+
-		public Assignment getSecretsAssignment_5_1() { return cSecretsAssignment_5_1; }
+		public Assignment getSecretsAssignment_4_1() { return cSecretsAssignment_4_1; }
 		
 		//Secret
-		public RuleCall getSecretsSecretParserRuleCall_5_1_0() { return cSecretsSecretParserRuleCall_5_1_0; }
+		public RuleCall getSecretsSecretParserRuleCall_4_1_0() { return cSecretsSecretParserRuleCall_4_1_0; }
+		
+		//('networks:'	(networks+=Network)+ )?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//'networks:'
+		public Keyword getNetworksKeyword_5_0() { return cNetworksKeyword_5_0; }
+		
+		//(networks+=Network)+
+		public Assignment getNetworksAssignment_5_1() { return cNetworksAssignment_5_1; }
+		
+		//Network
+		public RuleCall getNetworksNetworkParserRuleCall_5_1_0() { return cNetworksNetworkParserRuleCall_5_1_0; }
 	}
 	public class EDoubleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dockercompose.DockerCompose.EDouble");
@@ -213,72 +213,76 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 		private final Assignment cRead_onlyAssignment_3_6_1 = (Assignment)cGroup_3_6.eContents().get(1);
 		private final RuleCall cRead_onlyEBooleanParserRuleCall_3_6_1_0 = (RuleCall)cRead_onlyAssignment_3_6_1.eContents().get(0);
 		private final Group cGroup_3_7 = (Group)cUnorderedGroup_3.eContents().get(7);
-		private final Keyword cDepends_onKeyword_3_7_0 = (Keyword)cGroup_3_7.eContents().get(0);
+		private final Keyword cLinksKeyword_3_7_0 = (Keyword)cGroup_3_7.eContents().get(0);
 		private final Group cGroup_3_7_1 = (Group)cGroup_3_7.eContents().get(1);
 		private final Keyword cHyphenMinusKeyword_3_7_1_0 = (Keyword)cGroup_3_7_1.eContents().get(0);
-		private final Assignment cDepends_onAssignment_3_7_1_1 = (Assignment)cGroup_3_7_1.eContents().get(1);
-		private final RuleCall cDepends_onDependencyParserRuleCall_3_7_1_1_0 = (RuleCall)cDepends_onAssignment_3_7_1_1.eContents().get(0);
+		private final Assignment cLinksAssignment_3_7_1_1 = (Assignment)cGroup_3_7_1.eContents().get(1);
+		private final RuleCall cLinksLinkParserRuleCall_3_7_1_1_0 = (RuleCall)cLinksAssignment_3_7_1_1.eContents().get(0);
 		private final Group cGroup_3_8 = (Group)cUnorderedGroup_3.eContents().get(8);
-		private final Keyword cNetworksKeyword_3_8_0 = (Keyword)cGroup_3_8.eContents().get(0);
+		private final Keyword cDepends_onKeyword_3_8_0 = (Keyword)cGroup_3_8.eContents().get(0);
 		private final Alternatives cAlternatives_3_8_1 = (Alternatives)cGroup_3_8.eContents().get(1);
-		private final Assignment cNetworksAssignment_3_8_1_0 = (Assignment)cAlternatives_3_8_1.eContents().get(0);
-		private final RuleCall cNetworksNetworkConnector_shortParserRuleCall_3_8_1_0_0 = (RuleCall)cNetworksAssignment_3_8_1_0.eContents().get(0);
-		private final Assignment cNetworksAssignment_3_8_1_1 = (Assignment)cAlternatives_3_8_1.eContents().get(1);
-		private final RuleCall cNetworksNetworkConnector_longParserRuleCall_3_8_1_1_0 = (RuleCall)cNetworksAssignment_3_8_1_1.eContents().get(0);
+		private final Assignment cDepends_onAssignment_3_8_1_0 = (Assignment)cAlternatives_3_8_1.eContents().get(0);
+		private final RuleCall cDepends_onDependency_shortParserRuleCall_3_8_1_0_0 = (RuleCall)cDepends_onAssignment_3_8_1_0.eContents().get(0);
+		private final Assignment cDepends_onAssignment_3_8_1_1 = (Assignment)cAlternatives_3_8_1.eContents().get(1);
+		private final RuleCall cDepends_onDependency_longParserRuleCall_3_8_1_1_0 = (RuleCall)cDepends_onAssignment_3_8_1_1.eContents().get(0);
 		private final Group cGroup_3_9 = (Group)cUnorderedGroup_3.eContents().get(9);
-		private final Keyword cVolumesKeyword_3_9_0 = (Keyword)cGroup_3_9.eContents().get(0);
-		private final Alternatives cAlternatives_3_9_1 = (Alternatives)cGroup_3_9.eContents().get(1);
-		private final Group cGroup_3_9_1_0 = (Group)cAlternatives_3_9_1.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_3_9_1_0_0 = (Keyword)cGroup_3_9_1_0.eContents().get(0);
-		private final Assignment cVolumesAssignment_3_9_1_0_1 = (Assignment)cGroup_3_9_1_0.eContents().get(1);
-		private final RuleCall cVolumesVolumeConnector_shortParserRuleCall_3_9_1_0_1_0 = (RuleCall)cVolumesAssignment_3_9_1_0_1.eContents().get(0);
-		private final Group cGroup_3_9_1_1 = (Group)cAlternatives_3_9_1.eContents().get(1);
-		private final Keyword cHyphenMinusKeyword_3_9_1_1_0 = (Keyword)cGroup_3_9_1_1.eContents().get(0);
-		private final Assignment cVolumesAssignment_3_9_1_1_1 = (Assignment)cGroup_3_9_1_1.eContents().get(1);
-		private final RuleCall cVolumesVolumeConnector_longParserRuleCall_3_9_1_1_1_0 = (RuleCall)cVolumesAssignment_3_9_1_1_1.eContents().get(0);
+		private final Keyword cNetworksKeyword_3_9_0 = (Keyword)cGroup_3_9.eContents().get(0);
+		private final Assignment cNetworksAssignment_3_9_1 = (Assignment)cGroup_3_9.eContents().get(1);
+		private final RuleCall cNetworksNetworkConnectorParserRuleCall_3_9_1_0 = (RuleCall)cNetworksAssignment_3_9_1.eContents().get(0);
 		private final Group cGroup_3_10 = (Group)cUnorderedGroup_3.eContents().get(10);
-		private final Keyword cConfigsKeyword_3_10_0 = (Keyword)cGroup_3_10.eContents().get(0);
+		private final Keyword cVolumesKeyword_3_10_0 = (Keyword)cGroup_3_10.eContents().get(0);
 		private final Alternatives cAlternatives_3_10_1 = (Alternatives)cGroup_3_10.eContents().get(1);
 		private final Group cGroup_3_10_1_0 = (Group)cAlternatives_3_10_1.eContents().get(0);
 		private final Keyword cHyphenMinusKeyword_3_10_1_0_0 = (Keyword)cGroup_3_10_1_0.eContents().get(0);
-		private final Assignment cConfigsAssignment_3_10_1_0_1 = (Assignment)cGroup_3_10_1_0.eContents().get(1);
-		private final RuleCall cConfigsConfigConnector_shortParserRuleCall_3_10_1_0_1_0 = (RuleCall)cConfigsAssignment_3_10_1_0_1.eContents().get(0);
+		private final Assignment cVolumesAssignment_3_10_1_0_1 = (Assignment)cGroup_3_10_1_0.eContents().get(1);
+		private final RuleCall cVolumesVolumeConnector_shortParserRuleCall_3_10_1_0_1_0 = (RuleCall)cVolumesAssignment_3_10_1_0_1.eContents().get(0);
 		private final Group cGroup_3_10_1_1 = (Group)cAlternatives_3_10_1.eContents().get(1);
 		private final Keyword cHyphenMinusKeyword_3_10_1_1_0 = (Keyword)cGroup_3_10_1_1.eContents().get(0);
-		private final Assignment cConfigsAssignment_3_10_1_1_1 = (Assignment)cGroup_3_10_1_1.eContents().get(1);
-		private final RuleCall cConfigsConfigConnector_longParserRuleCall_3_10_1_1_1_0 = (RuleCall)cConfigsAssignment_3_10_1_1_1.eContents().get(0);
+		private final Assignment cVolumesAssignment_3_10_1_1_1 = (Assignment)cGroup_3_10_1_1.eContents().get(1);
+		private final RuleCall cVolumesVolumeConnector_longParserRuleCall_3_10_1_1_1_0 = (RuleCall)cVolumesAssignment_3_10_1_1_1.eContents().get(0);
 		private final Group cGroup_3_11 = (Group)cUnorderedGroup_3.eContents().get(11);
-		private final Keyword cSecretsKeyword_3_11_0 = (Keyword)cGroup_3_11.eContents().get(0);
+		private final Keyword cConfigsKeyword_3_11_0 = (Keyword)cGroup_3_11.eContents().get(0);
 		private final Alternatives cAlternatives_3_11_1 = (Alternatives)cGroup_3_11.eContents().get(1);
 		private final Group cGroup_3_11_1_0 = (Group)cAlternatives_3_11_1.eContents().get(0);
 		private final Keyword cHyphenMinusKeyword_3_11_1_0_0 = (Keyword)cGroup_3_11_1_0.eContents().get(0);
-		private final Assignment cSecretsAssignment_3_11_1_0_1 = (Assignment)cGroup_3_11_1_0.eContents().get(1);
-		private final RuleCall cSecretsSecretConnector_shortParserRuleCall_3_11_1_0_1_0 = (RuleCall)cSecretsAssignment_3_11_1_0_1.eContents().get(0);
+		private final Assignment cConfigsAssignment_3_11_1_0_1 = (Assignment)cGroup_3_11_1_0.eContents().get(1);
+		private final RuleCall cConfigsConfigConnector_shortParserRuleCall_3_11_1_0_1_0 = (RuleCall)cConfigsAssignment_3_11_1_0_1.eContents().get(0);
 		private final Group cGroup_3_11_1_1 = (Group)cAlternatives_3_11_1.eContents().get(1);
 		private final Keyword cHyphenMinusKeyword_3_11_1_1_0 = (Keyword)cGroup_3_11_1_1.eContents().get(0);
-		private final Assignment cSecretsAssignment_3_11_1_1_1 = (Assignment)cGroup_3_11_1_1.eContents().get(1);
-		private final RuleCall cSecretsSecretConnector_longParserRuleCall_3_11_1_1_1_0 = (RuleCall)cSecretsAssignment_3_11_1_1_1.eContents().get(0);
+		private final Assignment cConfigsAssignment_3_11_1_1_1 = (Assignment)cGroup_3_11_1_1.eContents().get(1);
+		private final RuleCall cConfigsConfigConnector_longParserRuleCall_3_11_1_1_1_0 = (RuleCall)cConfigsAssignment_3_11_1_1_1.eContents().get(0);
 		private final Group cGroup_3_12 = (Group)cUnorderedGroup_3.eContents().get(12);
-		private final Keyword cDevicesKeyword_3_12_0 = (Keyword)cGroup_3_12.eContents().get(0);
-		private final Group cGroup_3_12_1 = (Group)cGroup_3_12.eContents().get(1);
-		private final Keyword cHyphenMinusKeyword_3_12_1_0 = (Keyword)cGroup_3_12_1.eContents().get(0);
-		private final Assignment cDevicesAssignment_3_12_1_1 = (Assignment)cGroup_3_12_1.eContents().get(1);
-		private final RuleCall cDevicesDeviceParserRuleCall_3_12_1_1_0 = (RuleCall)cDevicesAssignment_3_12_1_1.eContents().get(0);
+		private final Keyword cSecretsKeyword_3_12_0 = (Keyword)cGroup_3_12.eContents().get(0);
+		private final Alternatives cAlternatives_3_12_1 = (Alternatives)cGroup_3_12.eContents().get(1);
+		private final Group cGroup_3_12_1_0 = (Group)cAlternatives_3_12_1.eContents().get(0);
+		private final Keyword cHyphenMinusKeyword_3_12_1_0_0 = (Keyword)cGroup_3_12_1_0.eContents().get(0);
+		private final Assignment cSecretsAssignment_3_12_1_0_1 = (Assignment)cGroup_3_12_1_0.eContents().get(1);
+		private final RuleCall cSecretsSecretConnector_shortParserRuleCall_3_12_1_0_1_0 = (RuleCall)cSecretsAssignment_3_12_1_0_1.eContents().get(0);
+		private final Group cGroup_3_12_1_1 = (Group)cAlternatives_3_12_1.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_3_12_1_1_0 = (Keyword)cGroup_3_12_1_1.eContents().get(0);
+		private final Assignment cSecretsAssignment_3_12_1_1_1 = (Assignment)cGroup_3_12_1_1.eContents().get(1);
+		private final RuleCall cSecretsSecretConnector_longParserRuleCall_3_12_1_1_1_0 = (RuleCall)cSecretsAssignment_3_12_1_1_1.eContents().get(0);
 		private final Group cGroup_3_13 = (Group)cUnorderedGroup_3.eContents().get(13);
-		private final Keyword cDnsKeyword_3_13_0 = (Keyword)cGroup_3_13.eContents().get(0);
-		private final Alternatives cAlternatives_3_13_1 = (Alternatives)cGroup_3_13.eContents().get(1);
-		private final Group cGroup_3_13_1_0 = (Group)cAlternatives_3_13_1.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_3_13_1_0_0 = (Keyword)cGroup_3_13_1_0.eContents().get(0);
-		private final Assignment cDnsAssignment_3_13_1_0_1 = (Assignment)cGroup_3_13_1_0.eContents().get(1);
-		private final RuleCall cDnsDNSParserRuleCall_3_13_1_0_1_0 = (RuleCall)cDnsAssignment_3_13_1_0_1.eContents().get(0);
-		private final Assignment cDnsAssignment_3_13_1_1 = (Assignment)cAlternatives_3_13_1.eContents().get(1);
-		private final RuleCall cDnsDNSParserRuleCall_3_13_1_1_0 = (RuleCall)cDnsAssignment_3_13_1_1.eContents().get(0);
+		private final Keyword cDevicesKeyword_3_13_0 = (Keyword)cGroup_3_13.eContents().get(0);
+		private final Group cGroup_3_13_1 = (Group)cGroup_3_13.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_3_13_1_0 = (Keyword)cGroup_3_13_1.eContents().get(0);
+		private final Assignment cDevicesAssignment_3_13_1_1 = (Assignment)cGroup_3_13_1.eContents().get(1);
+		private final RuleCall cDevicesDeviceParserRuleCall_3_13_1_1_0 = (RuleCall)cDevicesAssignment_3_13_1_1.eContents().get(0);
 		private final Group cGroup_3_14 = (Group)cUnorderedGroup_3.eContents().get(14);
-		private final Keyword cPortsKeyword_3_14_0 = (Keyword)cGroup_3_14.eContents().get(0);
-		private final Group cGroup_3_14_1 = (Group)cGroup_3_14.eContents().get(1);
-		private final Keyword cHyphenMinusKeyword_3_14_1_0 = (Keyword)cGroup_3_14_1.eContents().get(0);
-		private final Assignment cPortsAssignment_3_14_1_1 = (Assignment)cGroup_3_14_1.eContents().get(1);
-		private final RuleCall cPortsPortParserRuleCall_3_14_1_1_0 = (RuleCall)cPortsAssignment_3_14_1_1.eContents().get(0);
+		private final Keyword cDnsKeyword_3_14_0 = (Keyword)cGroup_3_14.eContents().get(0);
+		private final Alternatives cAlternatives_3_14_1 = (Alternatives)cGroup_3_14.eContents().get(1);
+		private final Group cGroup_3_14_1_0 = (Group)cAlternatives_3_14_1.eContents().get(0);
+		private final Keyword cHyphenMinusKeyword_3_14_1_0_0 = (Keyword)cGroup_3_14_1_0.eContents().get(0);
+		private final Assignment cDnsAssignment_3_14_1_0_1 = (Assignment)cGroup_3_14_1_0.eContents().get(1);
+		private final RuleCall cDnsDNSParserRuleCall_3_14_1_0_1_0 = (RuleCall)cDnsAssignment_3_14_1_0_1.eContents().get(0);
+		private final Assignment cDnsAssignment_3_14_1_1 = (Assignment)cAlternatives_3_14_1.eContents().get(1);
+		private final RuleCall cDnsDNSParserRuleCall_3_14_1_1_0 = (RuleCall)cDnsAssignment_3_14_1_1.eContents().get(0);
+		private final Group cGroup_3_15 = (Group)cUnorderedGroup_3.eContents().get(15);
+		private final Keyword cPortsKeyword_3_15_0 = (Keyword)cGroup_3_15.eContents().get(0);
+		private final Group cGroup_3_15_1 = (Group)cGroup_3_15.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_3_15_1_0 = (Keyword)cGroup_3_15_1.eContents().get(0);
+		private final Assignment cPortsAssignment_3_15_1_1 = (Assignment)cGroup_3_15_1.eContents().get(1);
+		private final RuleCall cPortsPortParserRuleCall_3_15_1_1_0 = (RuleCall)cPortsAssignment_3_15_1_1.eContents().get(0);
 		
 		//Service returns Service:
 		//    {Service}
@@ -292,9 +296,10 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 		//        &    ('restart:'         restart=RestartPolicy)?
 		//        &    ('init:'            init=EBoolean)?
 		//        &    ('read_only:'        read_only=EBoolean)?
-		//        &    ('depends_on:'         ('-'depends_on+=Dependency)+ )?        // añadir condition
-		//        &    ('networks:'         ((networks+=NetworkConnector_short)+ | (networks+=NetworkConnector_long)+ ))?
-		//        //&    ('networks:'         (networks+=NetworkConnector)+ )?
+		//        &    ('links:'             ('-'links+=Link)+ )?
+		//        &    ('depends_on:'         ((depends_on+=Dependency_short)+ | (depends_on+=Dependency_long)+ ))?
+		//        &    ('networks:'         (networks+=NetworkConnector)+)?
+		//        //&    ('networks:'         ((networks+=NetworkConnector_short)+ | (networks+=NetworkConnector_long)+ ))?
 		//        &    ('volumes:'         (('-'volumes+=VolumeConnector_short)+ | ('-'volumes+=VolumeConnector_long)+ ))?
 		//        &    ('configs:'         (('-'configs+=ConfigConnector_short)+ | ('-'configs+=ConfigConnector_long)+ ))?
 		//        &    ('secrets:'         (('-'secrets+=SecretConnector_short)+ | ('-'secrets+=SecretConnector_long)+ ))?
@@ -315,9 +320,10 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 		//    &    ('restart:'         restart=RestartPolicy)?
 		//    &    ('init:'            init=EBoolean)?
 		//    &    ('read_only:'        read_only=EBoolean)?
-		//    &    ('depends_on:'         ('-'depends_on+=Dependency)+ )?        // añadir condition
-		//    &    ('networks:'         ((networks+=NetworkConnector_short)+ | (networks+=NetworkConnector_long)+ ))?
-		//    //&    ('networks:'         (networks+=NetworkConnector)+ )?
+		//    &    ('links:'             ('-'links+=Link)+ )?
+		//    &    ('depends_on:'         ((depends_on+=Dependency_short)+ | (depends_on+=Dependency_long)+ ))?
+		//    &    ('networks:'         (networks+=NetworkConnector)+)?
+		//    //&    ('networks:'         ((networks+=NetworkConnector_short)+ | (networks+=NetworkConnector_long)+ ))?
 		//    &    ('volumes:'         (('-'volumes+=VolumeConnector_short)+ | ('-'volumes+=VolumeConnector_long)+ ))?
 		//    &    ('configs:'         (('-'configs+=ConfigConnector_short)+ | ('-'configs+=ConfigConnector_long)+ ))?
 		//    &    ('secrets:'         (('-'secrets+=SecretConnector_short)+ | ('-'secrets+=SecretConnector_long)+ ))?
@@ -348,9 +354,10 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 		//    &    ('restart:'         restart=RestartPolicy)?
 		//    &    ('init:'            init=EBoolean)?
 		//    &    ('read_only:'        read_only=EBoolean)?
-		//    &    ('depends_on:'         ('-'depends_on+=Dependency)+ )?        // añadir condition
-		//    &    ('networks:'         ((networks+=NetworkConnector_short)+ | (networks+=NetworkConnector_long)+ ))?
-		//    //&    ('networks:'         (networks+=NetworkConnector)+ )?
+		//    &    ('links:'             ('-'links+=Link)+ )?
+		//    &    ('depends_on:'         ((depends_on+=Dependency_short)+ | (depends_on+=Dependency_long)+ ))?
+		//    &    ('networks:'         (networks+=NetworkConnector)+)?
+		//    //&    ('networks:'         ((networks+=NetworkConnector_short)+ | (networks+=NetworkConnector_long)+ ))?
 		//    &    ('volumes:'         (('-'volumes+=VolumeConnector_short)+ | ('-'volumes+=VolumeConnector_long)+ ))?
 		//    &    ('configs:'         (('-'configs+=ConfigConnector_short)+ | ('-'configs+=ConfigConnector_long)+ ))?
 		//    &    ('secrets:'         (('-'secrets+=SecretConnector_short)+ | ('-'secrets+=SecretConnector_long)+ ))?
@@ -460,206 +467,218 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 		//EBoolean
 		public RuleCall getRead_onlyEBooleanParserRuleCall_3_6_1_0() { return cRead_onlyEBooleanParserRuleCall_3_6_1_0; }
 		
-		//('depends_on:' 		('-'depends_on+=Dependency)+ )?
+		//('links:' 			('-'links+=Link)+ )?
 		public Group getGroup_3_7() { return cGroup_3_7; }
 		
-		//'depends_on:'
-		public Keyword getDepends_onKeyword_3_7_0() { return cDepends_onKeyword_3_7_0; }
+		//'links:'
+		public Keyword getLinksKeyword_3_7_0() { return cLinksKeyword_3_7_0; }
 		
-		//('-'depends_on+=Dependency)+
+		//('-'links+=Link)+
 		public Group getGroup_3_7_1() { return cGroup_3_7_1; }
 		
 		//'-'
 		public Keyword getHyphenMinusKeyword_3_7_1_0() { return cHyphenMinusKeyword_3_7_1_0; }
 		
-		//depends_on+=Dependency
-		public Assignment getDepends_onAssignment_3_7_1_1() { return cDepends_onAssignment_3_7_1_1; }
+		//links+=Link
+		public Assignment getLinksAssignment_3_7_1_1() { return cLinksAssignment_3_7_1_1; }
 		
-		//Dependency
-		public RuleCall getDepends_onDependencyParserRuleCall_3_7_1_1_0() { return cDepends_onDependencyParserRuleCall_3_7_1_1_0; }
+		//Link
+		public RuleCall getLinksLinkParserRuleCall_3_7_1_1_0() { return cLinksLinkParserRuleCall_3_7_1_1_0; }
 		
-		//('networks:' 		((networks+=NetworkConnector_short)+ | (networks+=NetworkConnector_long)+ ))?
+		//('depends_on:' 		((depends_on+=Dependency_short)+ | (depends_on+=Dependency_long)+ ))?
 		public Group getGroup_3_8() { return cGroup_3_8; }
 		
-		//'networks:'
-		public Keyword getNetworksKeyword_3_8_0() { return cNetworksKeyword_3_8_0; }
+		//'depends_on:'
+		public Keyword getDepends_onKeyword_3_8_0() { return cDepends_onKeyword_3_8_0; }
 		
-		//((networks+=NetworkConnector_short)+ | (networks+=NetworkConnector_long)+ )
+		//((depends_on+=Dependency_short)+ | (depends_on+=Dependency_long)+ )
 		public Alternatives getAlternatives_3_8_1() { return cAlternatives_3_8_1; }
 		
-		//(networks+=NetworkConnector_short)+
-		public Assignment getNetworksAssignment_3_8_1_0() { return cNetworksAssignment_3_8_1_0; }
+		//(depends_on+=Dependency_short)+
+		public Assignment getDepends_onAssignment_3_8_1_0() { return cDepends_onAssignment_3_8_1_0; }
 		
-		//NetworkConnector_short
-		public RuleCall getNetworksNetworkConnector_shortParserRuleCall_3_8_1_0_0() { return cNetworksNetworkConnector_shortParserRuleCall_3_8_1_0_0; }
+		//Dependency_short
+		public RuleCall getDepends_onDependency_shortParserRuleCall_3_8_1_0_0() { return cDepends_onDependency_shortParserRuleCall_3_8_1_0_0; }
 		
-		//(networks+=NetworkConnector_long)+
-		public Assignment getNetworksAssignment_3_8_1_1() { return cNetworksAssignment_3_8_1_1; }
+		//(depends_on+=Dependency_long)+
+		public Assignment getDepends_onAssignment_3_8_1_1() { return cDepends_onAssignment_3_8_1_1; }
 		
-		//NetworkConnector_long
-		public RuleCall getNetworksNetworkConnector_longParserRuleCall_3_8_1_1_0() { return cNetworksNetworkConnector_longParserRuleCall_3_8_1_1_0; }
+		//Dependency_long
+		public RuleCall getDepends_onDependency_longParserRuleCall_3_8_1_1_0() { return cDepends_onDependency_longParserRuleCall_3_8_1_1_0; }
 		
-		//('volumes:' 		(('-'volumes+=VolumeConnector_short)+ | ('-'volumes+=VolumeConnector_long)+ ))?
+		//('networks:' 		(networks+=NetworkConnector)+)?
 		public Group getGroup_3_9() { return cGroup_3_9; }
 		
-		//'volumes:'
-		public Keyword getVolumesKeyword_3_9_0() { return cVolumesKeyword_3_9_0; }
+		//'networks:'
+		public Keyword getNetworksKeyword_3_9_0() { return cNetworksKeyword_3_9_0; }
 		
-		//(('-'volumes+=VolumeConnector_short)+ | ('-'volumes+=VolumeConnector_long)+ )
-		public Alternatives getAlternatives_3_9_1() { return cAlternatives_3_9_1; }
+		//(networks+=NetworkConnector)+
+		public Assignment getNetworksAssignment_3_9_1() { return cNetworksAssignment_3_9_1; }
 		
-		//('-'volumes+=VolumeConnector_short)+
-		public Group getGroup_3_9_1_0() { return cGroup_3_9_1_0; }
+		//NetworkConnector
+		public RuleCall getNetworksNetworkConnectorParserRuleCall_3_9_1_0() { return cNetworksNetworkConnectorParserRuleCall_3_9_1_0; }
 		
-		//'-'
-		public Keyword getHyphenMinusKeyword_3_9_1_0_0() { return cHyphenMinusKeyword_3_9_1_0_0; }
-		
-		//volumes+=VolumeConnector_short
-		public Assignment getVolumesAssignment_3_9_1_0_1() { return cVolumesAssignment_3_9_1_0_1; }
-		
-		//VolumeConnector_short
-		public RuleCall getVolumesVolumeConnector_shortParserRuleCall_3_9_1_0_1_0() { return cVolumesVolumeConnector_shortParserRuleCall_3_9_1_0_1_0; }
-		
-		//('-'volumes+=VolumeConnector_long)+
-		public Group getGroup_3_9_1_1() { return cGroup_3_9_1_1; }
-		
-		//'-'
-		public Keyword getHyphenMinusKeyword_3_9_1_1_0() { return cHyphenMinusKeyword_3_9_1_1_0; }
-		
-		//volumes+=VolumeConnector_long
-		public Assignment getVolumesAssignment_3_9_1_1_1() { return cVolumesAssignment_3_9_1_1_1; }
-		
-		//VolumeConnector_long
-		public RuleCall getVolumesVolumeConnector_longParserRuleCall_3_9_1_1_1_0() { return cVolumesVolumeConnector_longParserRuleCall_3_9_1_1_1_0; }
-		
-		//('configs:' 		(('-'configs+=ConfigConnector_short)+ | ('-'configs+=ConfigConnector_long)+ ))?
+		//('volumes:' 		(('-'volumes+=VolumeConnector_short)+ | ('-'volumes+=VolumeConnector_long)+ ))?
 		public Group getGroup_3_10() { return cGroup_3_10; }
 		
-		//'configs:'
-		public Keyword getConfigsKeyword_3_10_0() { return cConfigsKeyword_3_10_0; }
+		//'volumes:'
+		public Keyword getVolumesKeyword_3_10_0() { return cVolumesKeyword_3_10_0; }
 		
-		//(('-'configs+=ConfigConnector_short)+ | ('-'configs+=ConfigConnector_long)+ )
+		//(('-'volumes+=VolumeConnector_short)+ | ('-'volumes+=VolumeConnector_long)+ )
 		public Alternatives getAlternatives_3_10_1() { return cAlternatives_3_10_1; }
 		
-		//('-'configs+=ConfigConnector_short)+
+		//('-'volumes+=VolumeConnector_short)+
 		public Group getGroup_3_10_1_0() { return cGroup_3_10_1_0; }
 		
 		//'-'
 		public Keyword getHyphenMinusKeyword_3_10_1_0_0() { return cHyphenMinusKeyword_3_10_1_0_0; }
 		
-		//configs+=ConfigConnector_short
-		public Assignment getConfigsAssignment_3_10_1_0_1() { return cConfigsAssignment_3_10_1_0_1; }
+		//volumes+=VolumeConnector_short
+		public Assignment getVolumesAssignment_3_10_1_0_1() { return cVolumesAssignment_3_10_1_0_1; }
 		
-		//ConfigConnector_short
-		public RuleCall getConfigsConfigConnector_shortParserRuleCall_3_10_1_0_1_0() { return cConfigsConfigConnector_shortParserRuleCall_3_10_1_0_1_0; }
+		//VolumeConnector_short
+		public RuleCall getVolumesVolumeConnector_shortParserRuleCall_3_10_1_0_1_0() { return cVolumesVolumeConnector_shortParserRuleCall_3_10_1_0_1_0; }
 		
-		//('-'configs+=ConfigConnector_long)+
+		//('-'volumes+=VolumeConnector_long)+
 		public Group getGroup_3_10_1_1() { return cGroup_3_10_1_1; }
 		
 		//'-'
 		public Keyword getHyphenMinusKeyword_3_10_1_1_0() { return cHyphenMinusKeyword_3_10_1_1_0; }
 		
-		//configs+=ConfigConnector_long
-		public Assignment getConfigsAssignment_3_10_1_1_1() { return cConfigsAssignment_3_10_1_1_1; }
+		//volumes+=VolumeConnector_long
+		public Assignment getVolumesAssignment_3_10_1_1_1() { return cVolumesAssignment_3_10_1_1_1; }
 		
-		//ConfigConnector_long
-		public RuleCall getConfigsConfigConnector_longParserRuleCall_3_10_1_1_1_0() { return cConfigsConfigConnector_longParserRuleCall_3_10_1_1_1_0; }
+		//VolumeConnector_long
+		public RuleCall getVolumesVolumeConnector_longParserRuleCall_3_10_1_1_1_0() { return cVolumesVolumeConnector_longParserRuleCall_3_10_1_1_1_0; }
 		
-		//('secrets:' 		(('-'secrets+=SecretConnector_short)+ | ('-'secrets+=SecretConnector_long)+ ))?
+		//('configs:' 		(('-'configs+=ConfigConnector_short)+ | ('-'configs+=ConfigConnector_long)+ ))?
 		public Group getGroup_3_11() { return cGroup_3_11; }
 		
-		//'secrets:'
-		public Keyword getSecretsKeyword_3_11_0() { return cSecretsKeyword_3_11_0; }
+		//'configs:'
+		public Keyword getConfigsKeyword_3_11_0() { return cConfigsKeyword_3_11_0; }
 		
-		//(('-'secrets+=SecretConnector_short)+ | ('-'secrets+=SecretConnector_long)+ )
+		//(('-'configs+=ConfigConnector_short)+ | ('-'configs+=ConfigConnector_long)+ )
 		public Alternatives getAlternatives_3_11_1() { return cAlternatives_3_11_1; }
 		
-		//('-'secrets+=SecretConnector_short)+
+		//('-'configs+=ConfigConnector_short)+
 		public Group getGroup_3_11_1_0() { return cGroup_3_11_1_0; }
 		
 		//'-'
 		public Keyword getHyphenMinusKeyword_3_11_1_0_0() { return cHyphenMinusKeyword_3_11_1_0_0; }
 		
-		//secrets+=SecretConnector_short
-		public Assignment getSecretsAssignment_3_11_1_0_1() { return cSecretsAssignment_3_11_1_0_1; }
+		//configs+=ConfigConnector_short
+		public Assignment getConfigsAssignment_3_11_1_0_1() { return cConfigsAssignment_3_11_1_0_1; }
 		
-		//SecretConnector_short
-		public RuleCall getSecretsSecretConnector_shortParserRuleCall_3_11_1_0_1_0() { return cSecretsSecretConnector_shortParserRuleCall_3_11_1_0_1_0; }
+		//ConfigConnector_short
+		public RuleCall getConfigsConfigConnector_shortParserRuleCall_3_11_1_0_1_0() { return cConfigsConfigConnector_shortParserRuleCall_3_11_1_0_1_0; }
 		
-		//('-'secrets+=SecretConnector_long)+
+		//('-'configs+=ConfigConnector_long)+
 		public Group getGroup_3_11_1_1() { return cGroup_3_11_1_1; }
 		
 		//'-'
 		public Keyword getHyphenMinusKeyword_3_11_1_1_0() { return cHyphenMinusKeyword_3_11_1_1_0; }
 		
-		//secrets+=SecretConnector_long
-		public Assignment getSecretsAssignment_3_11_1_1_1() { return cSecretsAssignment_3_11_1_1_1; }
+		//configs+=ConfigConnector_long
+		public Assignment getConfigsAssignment_3_11_1_1_1() { return cConfigsAssignment_3_11_1_1_1; }
 		
-		//SecretConnector_long
-		public RuleCall getSecretsSecretConnector_longParserRuleCall_3_11_1_1_1_0() { return cSecretsSecretConnector_longParserRuleCall_3_11_1_1_1_0; }
+		//ConfigConnector_long
+		public RuleCall getConfigsConfigConnector_longParserRuleCall_3_11_1_1_1_0() { return cConfigsConfigConnector_longParserRuleCall_3_11_1_1_1_0; }
 		
-		//('devices:' 		('-'devices+=Device)+ )?
+		//('secrets:' 		(('-'secrets+=SecretConnector_short)+ | ('-'secrets+=SecretConnector_long)+ ))?
 		public Group getGroup_3_12() { return cGroup_3_12; }
 		
-		//'devices:'
-		public Keyword getDevicesKeyword_3_12_0() { return cDevicesKeyword_3_12_0; }
+		//'secrets:'
+		public Keyword getSecretsKeyword_3_12_0() { return cSecretsKeyword_3_12_0; }
 		
-		//('-'devices+=Device)+
-		public Group getGroup_3_12_1() { return cGroup_3_12_1; }
+		//(('-'secrets+=SecretConnector_short)+ | ('-'secrets+=SecretConnector_long)+ )
+		public Alternatives getAlternatives_3_12_1() { return cAlternatives_3_12_1; }
+		
+		//('-'secrets+=SecretConnector_short)+
+		public Group getGroup_3_12_1_0() { return cGroup_3_12_1_0; }
 		
 		//'-'
-		public Keyword getHyphenMinusKeyword_3_12_1_0() { return cHyphenMinusKeyword_3_12_1_0; }
+		public Keyword getHyphenMinusKeyword_3_12_1_0_0() { return cHyphenMinusKeyword_3_12_1_0_0; }
 		
-		//devices+=Device
-		public Assignment getDevicesAssignment_3_12_1_1() { return cDevicesAssignment_3_12_1_1; }
+		//secrets+=SecretConnector_short
+		public Assignment getSecretsAssignment_3_12_1_0_1() { return cSecretsAssignment_3_12_1_0_1; }
 		
-		//Device
-		public RuleCall getDevicesDeviceParserRuleCall_3_12_1_1_0() { return cDevicesDeviceParserRuleCall_3_12_1_1_0; }
+		//SecretConnector_short
+		public RuleCall getSecretsSecretConnector_shortParserRuleCall_3_12_1_0_1_0() { return cSecretsSecretConnector_shortParserRuleCall_3_12_1_0_1_0; }
 		
-		//('dns:'				(('-'dns+=DNS)+ | dns+=DNS) )?
+		//('-'secrets+=SecretConnector_long)+
+		public Group getGroup_3_12_1_1() { return cGroup_3_12_1_1; }
+		
+		//'-'
+		public Keyword getHyphenMinusKeyword_3_12_1_1_0() { return cHyphenMinusKeyword_3_12_1_1_0; }
+		
+		//secrets+=SecretConnector_long
+		public Assignment getSecretsAssignment_3_12_1_1_1() { return cSecretsAssignment_3_12_1_1_1; }
+		
+		//SecretConnector_long
+		public RuleCall getSecretsSecretConnector_longParserRuleCall_3_12_1_1_1_0() { return cSecretsSecretConnector_longParserRuleCall_3_12_1_1_1_0; }
+		
+		//('devices:' 		('-'devices+=Device)+ )?
 		public Group getGroup_3_13() { return cGroup_3_13; }
 		
-		//'dns:'
-		public Keyword getDnsKeyword_3_13_0() { return cDnsKeyword_3_13_0; }
+		//'devices:'
+		public Keyword getDevicesKeyword_3_13_0() { return cDevicesKeyword_3_13_0; }
 		
-		//(('-'dns+=DNS)+ | dns+=DNS)
-		public Alternatives getAlternatives_3_13_1() { return cAlternatives_3_13_1; }
-		
-		//('-'dns+=DNS)+
-		public Group getGroup_3_13_1_0() { return cGroup_3_13_1_0; }
+		//('-'devices+=Device)+
+		public Group getGroup_3_13_1() { return cGroup_3_13_1; }
 		
 		//'-'
-		public Keyword getHyphenMinusKeyword_3_13_1_0_0() { return cHyphenMinusKeyword_3_13_1_0_0; }
+		public Keyword getHyphenMinusKeyword_3_13_1_0() { return cHyphenMinusKeyword_3_13_1_0; }
 		
-		//dns+=DNS
-		public Assignment getDnsAssignment_3_13_1_0_1() { return cDnsAssignment_3_13_1_0_1; }
+		//devices+=Device
+		public Assignment getDevicesAssignment_3_13_1_1() { return cDevicesAssignment_3_13_1_1; }
 		
-		//DNS
-		public RuleCall getDnsDNSParserRuleCall_3_13_1_0_1_0() { return cDnsDNSParserRuleCall_3_13_1_0_1_0; }
+		//Device
+		public RuleCall getDevicesDeviceParserRuleCall_3_13_1_1_0() { return cDevicesDeviceParserRuleCall_3_13_1_1_0; }
 		
-		//dns+=DNS
-		public Assignment getDnsAssignment_3_13_1_1() { return cDnsAssignment_3_13_1_1; }
-		
-		//DNS
-		public RuleCall getDnsDNSParserRuleCall_3_13_1_1_0() { return cDnsDNSParserRuleCall_3_13_1_1_0; }
-		
-		//('ports:'			('-'ports+=Port)+ )?
+		//('dns:'				(('-'dns+=DNS)+ | dns+=DNS) )?
 		public Group getGroup_3_14() { return cGroup_3_14; }
 		
-		//'ports:'
-		public Keyword getPortsKeyword_3_14_0() { return cPortsKeyword_3_14_0; }
+		//'dns:'
+		public Keyword getDnsKeyword_3_14_0() { return cDnsKeyword_3_14_0; }
 		
-		//('-'ports+=Port)+
-		public Group getGroup_3_14_1() { return cGroup_3_14_1; }
+		//(('-'dns+=DNS)+ | dns+=DNS)
+		public Alternatives getAlternatives_3_14_1() { return cAlternatives_3_14_1; }
+		
+		//('-'dns+=DNS)+
+		public Group getGroup_3_14_1_0() { return cGroup_3_14_1_0; }
 		
 		//'-'
-		public Keyword getHyphenMinusKeyword_3_14_1_0() { return cHyphenMinusKeyword_3_14_1_0; }
+		public Keyword getHyphenMinusKeyword_3_14_1_0_0() { return cHyphenMinusKeyword_3_14_1_0_0; }
+		
+		//dns+=DNS
+		public Assignment getDnsAssignment_3_14_1_0_1() { return cDnsAssignment_3_14_1_0_1; }
+		
+		//DNS
+		public RuleCall getDnsDNSParserRuleCall_3_14_1_0_1_0() { return cDnsDNSParserRuleCall_3_14_1_0_1_0; }
+		
+		//dns+=DNS
+		public Assignment getDnsAssignment_3_14_1_1() { return cDnsAssignment_3_14_1_1; }
+		
+		//DNS
+		public RuleCall getDnsDNSParserRuleCall_3_14_1_1_0() { return cDnsDNSParserRuleCall_3_14_1_1_0; }
+		
+		//('ports:'			('-'ports+=Port)+ )?
+		public Group getGroup_3_15() { return cGroup_3_15; }
+		
+		//'ports:'
+		public Keyword getPortsKeyword_3_15_0() { return cPortsKeyword_3_15_0; }
+		
+		//('-'ports+=Port)+
+		public Group getGroup_3_15_1() { return cGroup_3_15_1; }
+		
+		//'-'
+		public Keyword getHyphenMinusKeyword_3_15_1_0() { return cHyphenMinusKeyword_3_15_1_0; }
 		
 		//ports+=Port
-		public Assignment getPortsAssignment_3_14_1_1() { return cPortsAssignment_3_14_1_1; }
+		public Assignment getPortsAssignment_3_15_1_1() { return cPortsAssignment_3_15_1_1; }
 		
 		//Port
-		public RuleCall getPortsPortParserRuleCall_3_14_1_1_0() { return cPortsPortParserRuleCall_3_14_1_1_0; }
+		public RuleCall getPortsPortParserRuleCall_3_15_1_1_0() { return cPortsPortParserRuleCall_3_15_1_1_0; }
 	}
 	public class PortElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dockercompose.DockerCompose.Port");
@@ -746,22 +765,105 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 		//ID
 		public RuleCall getIDTerminalRuleCall_1_1_1() { return cIDTerminalRuleCall_1_1_1; }
 	}
-	public class DependencyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dockercompose.DockerCompose.Dependency");
+	public class LinkElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dockercompose.DockerCompose.Link");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cLinkAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cServiceAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cServiceServiceCrossReference_1_0 = (CrossReference)cServiceAssignment_1.eContents().get(0);
+		private final RuleCall cServiceServiceEStringParserRuleCall_1_0_1 = (RuleCall)cServiceServiceCrossReference_1_0.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cAliasAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cAliasEStringParserRuleCall_2_1_0 = (RuleCall)cAliasAssignment_2_1.eContents().get(0);
+		
+		//Link returns Link:
+		//    {Link}
+		//    service=[Service|EString](':'alias=EString)?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Link}
+		//service=[Service|EString](':'alias=EString)?
+		public Group getGroup() { return cGroup; }
+		
+		//{Link}
+		public Action getLinkAction_0() { return cLinkAction_0; }
+		
+		//service=[Service|EString]
+		public Assignment getServiceAssignment_1() { return cServiceAssignment_1; }
+		
+		//[Service|EString]
+		public CrossReference getServiceServiceCrossReference_1_0() { return cServiceServiceCrossReference_1_0; }
+		
+		//EString
+		public RuleCall getServiceServiceEStringParserRuleCall_1_0_1() { return cServiceServiceEStringParserRuleCall_1_0_1; }
+		
+		//(':'alias=EString)?
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//':'
+		public Keyword getColonKeyword_2_0() { return cColonKeyword_2_0; }
+		
+		//alias=EString
+		public Assignment getAliasAssignment_2_1() { return cAliasAssignment_2_1; }
+		
+		//EString
+		public RuleCall getAliasEStringParserRuleCall_2_1_0() { return cAliasEStringParserRuleCall_2_1_0; }
+	}
+	public class Dependency_shortElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dockercompose.DockerCompose.Dependency_short");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cDependencyAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cHyphenMinusKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cServiceAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cServiceServiceCrossReference_2_0 = (CrossReference)cServiceAssignment_2.eContents().get(0);
+		private final RuleCall cServiceServiceEStringParserRuleCall_2_0_1 = (RuleCall)cServiceServiceCrossReference_2_0.eContents().get(1);
+		
+		//Dependency_short returns Dependency:
+		//    {Dependency}
+		//    '-'service=[Service|EString];
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Dependency}
+		//'-'service=[Service|EString]
+		public Group getGroup() { return cGroup; }
+		
+		//{Dependency}
+		public Action getDependencyAction_0() { return cDependencyAction_0; }
+		
+		//'-'
+		public Keyword getHyphenMinusKeyword_1() { return cHyphenMinusKeyword_1; }
+		
+		//service=[Service|EString]
+		public Assignment getServiceAssignment_2() { return cServiceAssignment_2; }
+		
+		//[Service|EString]
+		public CrossReference getServiceServiceCrossReference_2_0() { return cServiceServiceCrossReference_2_0; }
+		
+		//EString
+		public RuleCall getServiceServiceEStringParserRuleCall_2_0_1() { return cServiceServiceEStringParserRuleCall_2_0_1; }
+	}
+	public class Dependency_longElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dockercompose.DockerCompose.Dependency_long");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cDependencyAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cServiceAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final CrossReference cServiceServiceCrossReference_1_0 = (CrossReference)cServiceAssignment_1.eContents().get(0);
 		private final RuleCall cServiceServiceEStringParserRuleCall_1_0_1 = (RuleCall)cServiceServiceCrossReference_1_0.eContents().get(1);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cConditionKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cConditionAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cConditionConditionEnumRuleCall_4_0 = (RuleCall)cConditionAssignment_4.eContents().get(0);
 		
-		//Dependency returns Dependency:
+		//Dependency_long returns Dependency:
 		//    {Dependency}
-		//    service=[Service|EString]
-		//    ;
+		//    service=[Service|EString]':'
+		//    'condition:' condition=Condition;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Dependency}
-		//service=[Service|EString]
+		//service=[Service|EString]':'
+		//'condition:' condition=Condition
 		public Group getGroup() { return cGroup; }
 		
 		//{Dependency}
@@ -775,71 +877,57 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 		
 		//EString
 		public RuleCall getServiceServiceEStringParserRuleCall_1_0_1() { return cServiceServiceEStringParserRuleCall_1_0_1; }
+		
+		//':'
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		
+		//'condition:'
+		public Keyword getConditionKeyword_3() { return cConditionKeyword_3; }
+		
+		//condition=Condition
+		public Assignment getConditionAssignment_4() { return cConditionAssignment_4; }
+		
+		//Condition
+		public RuleCall getConditionConditionEnumRuleCall_4_0() { return cConditionConditionEnumRuleCall_4_0; }
 	}
-	public class NetworkConnector_shortElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dockercompose.DockerCompose.NetworkConnector_short");
+	public class NetworkConnectorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dockercompose.DockerCompose.NetworkConnector");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cNetworkConnectorAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNetworkAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cNetworkNetworkCrossReference_2_0 = (CrossReference)cNetworkAssignment_2.eContents().get(0);
-		private final RuleCall cNetworkNetworkEStringParserRuleCall_2_0_1 = (RuleCall)cNetworkNetworkCrossReference_2_0.eContents().get(1);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Group cGroup_1_0 = (Group)cAlternatives_1.eContents().get(0);
+		private final Keyword cHyphenMinusKeyword_1_0_0 = (Keyword)cGroup_1_0.eContents().get(0);
+		private final Assignment cNetworkAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
+		private final CrossReference cNetworkNetworkCrossReference_1_0_1_0 = (CrossReference)cNetworkAssignment_1_0_1.eContents().get(0);
+		private final RuleCall cNetworkNetworkEStringParserRuleCall_1_0_1_0_1 = (RuleCall)cNetworkNetworkCrossReference_1_0_1_0.eContents().get(1);
+		private final Group cGroup_1_1 = (Group)cAlternatives_1.eContents().get(1);
+		private final Assignment cNetworkAssignment_1_1_0 = (Assignment)cGroup_1_1.eContents().get(0);
+		private final CrossReference cNetworkNetworkCrossReference_1_1_0_0 = (CrossReference)cNetworkAssignment_1_1_0.eContents().get(0);
+		private final RuleCall cNetworkNetworkEStringParserRuleCall_1_1_0_0_1 = (RuleCall)cNetworkNetworkCrossReference_1_1_0_0.eContents().get(1);
+		private final Keyword cColonKeyword_1_1_1 = (Keyword)cGroup_1_1.eContents().get(1);
+		private final UnorderedGroup cUnorderedGroup_1_1_2 = (UnorderedGroup)cGroup_1_1.eContents().get(2);
+		private final Group cGroup_1_1_2_0 = (Group)cUnorderedGroup_1_1_2.eContents().get(0);
+		private final Keyword cIpv4_addressKeyword_1_1_2_0_0 = (Keyword)cGroup_1_1_2_0.eContents().get(0);
+		private final Assignment cIpv4_addressAssignment_1_1_2_0_1 = (Assignment)cGroup_1_1_2_0.eContents().get(1);
+		private final RuleCall cIpv4_addressDNSParserRuleCall_1_1_2_0_1_0 = (RuleCall)cIpv4_addressAssignment_1_1_2_0_1.eContents().get(0);
+		private final Group cGroup_1_1_2_1 = (Group)cUnorderedGroup_1_1_2.eContents().get(1);
+		private final Keyword cPriorityKeyword_1_1_2_1_0 = (Keyword)cGroup_1_1_2_1.eContents().get(0);
+		private final Assignment cPriorityAssignment_1_1_2_1_1 = (Assignment)cGroup_1_1_2_1.eContents().get(1);
+		private final RuleCall cPriorityEIntParserRuleCall_1_1_2_1_1_0 = (RuleCall)cPriorityAssignment_1_1_2_1_1.eContents().get(0);
+		private final Group cGroup_1_1_2_2 = (Group)cUnorderedGroup_1_1_2.eContents().get(2);
+		private final Keyword cAliasesKeyword_1_1_2_2_0 = (Keyword)cGroup_1_1_2_2.eContents().get(0);
+		private final Group cGroup_1_1_2_2_1 = (Group)cGroup_1_1_2_2.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_1_1_2_2_1_0 = (Keyword)cGroup_1_1_2_2_1.eContents().get(0);
+		private final Assignment cAliasesAssignment_1_1_2_2_1_1 = (Assignment)cGroup_1_1_2_2_1.eContents().get(1);
+		private final RuleCall cAliasesAliasParserRuleCall_1_1_2_2_1_1_0 = (RuleCall)cAliasesAssignment_1_1_2_2_1_1.eContents().get(0);
+		private final Group cGroup_1_1_2_3 = (Group)cUnorderedGroup_1_1_2.eContents().get(3);
+		private final Keyword cLink_local_ipsKeyword_1_1_2_3_0 = (Keyword)cGroup_1_1_2_3.eContents().get(0);
+		private final Group cGroup_1_1_2_3_1 = (Group)cGroup_1_1_2_3.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_1_1_2_3_1_0 = (Keyword)cGroup_1_1_2_3_1.eContents().get(0);
+		private final Assignment cLink_local_ipsAssignment_1_1_2_3_1_1 = (Assignment)cGroup_1_1_2_3_1.eContents().get(1);
+		private final RuleCall cLink_local_ipsDNSParserRuleCall_1_1_2_3_1_1_0 = (RuleCall)cLink_local_ipsAssignment_1_1_2_3_1_1.eContents().get(0);
 		
-		/////*
-		//NetworkConnector_short returns NetworkConnector:
-		//    {NetworkConnector}
-		//    '-'network=[Network|EString];
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{NetworkConnector}
-		//'-'network=[Network|EString]
-		public Group getGroup() { return cGroup; }
-		
-		//{NetworkConnector}
-		public Action getNetworkConnectorAction_0() { return cNetworkConnectorAction_0; }
-		
-		//'-'
-		public Keyword getHyphenMinusKeyword_1() { return cHyphenMinusKeyword_1; }
-		
-		//network=[Network|EString]
-		public Assignment getNetworkAssignment_2() { return cNetworkAssignment_2; }
-		
-		//[Network|EString]
-		public CrossReference getNetworkNetworkCrossReference_2_0() { return cNetworkNetworkCrossReference_2_0; }
-		
-		//EString
-		public RuleCall getNetworkNetworkEStringParserRuleCall_2_0_1() { return cNetworkNetworkEStringParserRuleCall_2_0_1; }
-	}
-	public class NetworkConnector_longElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dockercompose.DockerCompose.NetworkConnector_long");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cNetworkConnectorAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cNetworkAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cNetworkNetworkCrossReference_1_0 = (CrossReference)cNetworkAssignment_1.eContents().get(0);
-		private final RuleCall cNetworkNetworkEStringParserRuleCall_1_0_1 = (RuleCall)cNetworkNetworkCrossReference_1_0.eContents().get(1);
-		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final UnorderedGroup cUnorderedGroup_3 = (UnorderedGroup)cGroup.eContents().get(3);
-		private final Group cGroup_3_0 = (Group)cUnorderedGroup_3.eContents().get(0);
-		private final Keyword cIpv4_addressKeyword_3_0_0 = (Keyword)cGroup_3_0.eContents().get(0);
-		private final Assignment cIpv4_addressAssignment_3_0_1 = (Assignment)cGroup_3_0.eContents().get(1);
-		private final RuleCall cIpv4_addressDNSParserRuleCall_3_0_1_0 = (RuleCall)cIpv4_addressAssignment_3_0_1.eContents().get(0);
-		private final Group cGroup_3_1 = (Group)cUnorderedGroup_3.eContents().get(1);
-		private final Keyword cPriorityKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
-		private final Assignment cPriorityAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
-		private final RuleCall cPriorityEIntParserRuleCall_3_1_1_0 = (RuleCall)cPriorityAssignment_3_1_1.eContents().get(0);
-		private final Group cGroup_3_2 = (Group)cUnorderedGroup_3.eContents().get(2);
-		private final Keyword cAliasesKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
-		private final Group cGroup_3_2_1 = (Group)cGroup_3_2.eContents().get(1);
-		private final Keyword cHyphenMinusKeyword_3_2_1_0 = (Keyword)cGroup_3_2_1.eContents().get(0);
-		private final Assignment cAliasesAssignment_3_2_1_1 = (Assignment)cGroup_3_2_1.eContents().get(1);
-		private final RuleCall cAliasesAliasParserRuleCall_3_2_1_1_0 = (RuleCall)cAliasesAssignment_3_2_1_1.eContents().get(0);
-		private final Group cGroup_3_3 = (Group)cUnorderedGroup_3.eContents().get(3);
-		private final Keyword cLink_local_ipsKeyword_3_3_0 = (Keyword)cGroup_3_3.eContents().get(0);
-		private final Group cGroup_3_3_1 = (Group)cGroup_3_3.eContents().get(1);
-		private final Keyword cHyphenMinusKeyword_3_3_1_0 = (Keyword)cGroup_3_3_1.eContents().get(0);
-		private final Assignment cLink_local_ipsAssignment_3_3_1_1 = (Assignment)cGroup_3_3_1.eContents().get(1);
-		private final RuleCall cLink_local_ipsDNSParserRuleCall_3_3_1_1_0 = (RuleCall)cLink_local_ipsAssignment_3_3_1_1.eContents().get(0);
-		
+		///*
 		//NetworkConnector_long returns NetworkConnector:
 		//    {NetworkConnector}
 		//    network=[Network|EString]':'
@@ -849,185 +937,60 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 		//        &    ('aliases:'         ('-'aliases+=Alias)+ )?
 		//        &    ('link_local_ips:'     ('-'link_local_ips+=DNS)+ )?
 		//    );
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{NetworkConnector}
-		//network=[Network|EString]':'
-		//(
-		//        ('ipv4_address:'    ipv4_address=DNS)?
-		//    &    ('priority:'        priority=EInt)?
-		//    &    ('aliases:'         ('-'aliases+=Alias)+ )?
-		//    &    ('link_local_ips:'     ('-'link_local_ips+=DNS)+ )?
-		//)
-		public Group getGroup() { return cGroup; }
-		
-		//{NetworkConnector}
-		public Action getNetworkConnectorAction_0() { return cNetworkConnectorAction_0; }
-		
-		//network=[Network|EString]
-		public Assignment getNetworkAssignment_1() { return cNetworkAssignment_1; }
-		
-		//[Network|EString]
-		public CrossReference getNetworkNetworkCrossReference_1_0() { return cNetworkNetworkCrossReference_1_0; }
-		
-		//EString
-		public RuleCall getNetworkNetworkEStringParserRuleCall_1_0_1() { return cNetworkNetworkEStringParserRuleCall_1_0_1; }
-		
-		//':'
-		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
-		
-		//(
-		//        ('ipv4_address:'    ipv4_address=DNS)?
-		//    &    ('priority:'        priority=EInt)?
-		//    &    ('aliases:'         ('-'aliases+=Alias)+ )?
-		//    &    ('link_local_ips:'     ('-'link_local_ips+=DNS)+ )?
-		//)
-		public UnorderedGroup getUnorderedGroup_3() { return cUnorderedGroup_3; }
-		
-		//('ipv4_address:'	ipv4_address=DNS)?
-		public Group getGroup_3_0() { return cGroup_3_0; }
-		
-		//'ipv4_address:'
-		public Keyword getIpv4_addressKeyword_3_0_0() { return cIpv4_addressKeyword_3_0_0; }
-		
-		//ipv4_address=DNS
-		public Assignment getIpv4_addressAssignment_3_0_1() { return cIpv4_addressAssignment_3_0_1; }
-		
-		//DNS
-		public RuleCall getIpv4_addressDNSParserRuleCall_3_0_1_0() { return cIpv4_addressDNSParserRuleCall_3_0_1_0; }
-		
-		//('priority:'		priority=EInt)?
-		public Group getGroup_3_1() { return cGroup_3_1; }
-		
-		//'priority:'
-		public Keyword getPriorityKeyword_3_1_0() { return cPriorityKeyword_3_1_0; }
-		
-		//priority=EInt
-		public Assignment getPriorityAssignment_3_1_1() { return cPriorityAssignment_3_1_1; }
-		
-		//EInt
-		public RuleCall getPriorityEIntParserRuleCall_3_1_1_0() { return cPriorityEIntParserRuleCall_3_1_1_0; }
-		
-		//('aliases:' 		('-'aliases+=Alias)+ )?
-		public Group getGroup_3_2() { return cGroup_3_2; }
-		
-		//'aliases:'
-		public Keyword getAliasesKeyword_3_2_0() { return cAliasesKeyword_3_2_0; }
-		
-		//('-'aliases+=Alias)+
-		public Group getGroup_3_2_1() { return cGroup_3_2_1; }
-		
-		//'-'
-		public Keyword getHyphenMinusKeyword_3_2_1_0() { return cHyphenMinusKeyword_3_2_1_0; }
-		
-		//aliases+=Alias
-		public Assignment getAliasesAssignment_3_2_1_1() { return cAliasesAssignment_3_2_1_1; }
-		
-		//Alias
-		public RuleCall getAliasesAliasParserRuleCall_3_2_1_1_0() { return cAliasesAliasParserRuleCall_3_2_1_1_0; }
-		
-		//('link_local_ips:' 	('-'link_local_ips+=DNS)+ )?
-		public Group getGroup_3_3() { return cGroup_3_3; }
-		
-		//'link_local_ips:'
-		public Keyword getLink_local_ipsKeyword_3_3_0() { return cLink_local_ipsKeyword_3_3_0; }
-		
-		//('-'link_local_ips+=DNS)+
-		public Group getGroup_3_3_1() { return cGroup_3_3_1; }
-		
-		//'-'
-		public Keyword getHyphenMinusKeyword_3_3_1_0() { return cHyphenMinusKeyword_3_3_1_0; }
-		
-		//link_local_ips+=DNS
-		public Assignment getLink_local_ipsAssignment_3_3_1_1() { return cLink_local_ipsAssignment_3_3_1_1; }
-		
-		//DNS
-		public RuleCall getLink_local_ipsDNSParserRuleCall_3_3_1_1_0() { return cLink_local_ipsDNSParserRuleCall_3_3_1_1_0; }
-	}
-	public class NetworkConnectorElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dockercompose.DockerCompose.NetworkConnector");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Action cNetworkConnectorAction_0_0 = (Action)cGroup_0.eContents().get(0);
-		private final Group cGroup_0_1 = (Group)cGroup_0.eContents().get(1);
-		private final Keyword cHyphenMinusKeyword_0_1_0 = (Keyword)cGroup_0_1.eContents().get(0);
-		private final Assignment cNetworkAssignment_0_1_1 = (Assignment)cGroup_0_1.eContents().get(1);
-		private final CrossReference cNetworkNetworkCrossReference_0_1_1_0 = (CrossReference)cNetworkAssignment_0_1_1.eContents().get(0);
-		private final RuleCall cNetworkNetworkEStringParserRuleCall_0_1_1_0_1 = (RuleCall)cNetworkNetworkCrossReference_0_1_1_0.eContents().get(1);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Assignment cNetworkAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
-		private final CrossReference cNetworkNetworkCrossReference_1_0_0 = (CrossReference)cNetworkAssignment_1_0.eContents().get(0);
-		private final RuleCall cNetworkNetworkEStringParserRuleCall_1_0_0_1 = (RuleCall)cNetworkNetworkCrossReference_1_0_0.eContents().get(1);
-		private final Keyword cColonKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final UnorderedGroup cUnorderedGroup_1_2 = (UnorderedGroup)cGroup_1.eContents().get(2);
-		private final Group cGroup_1_2_0 = (Group)cUnorderedGroup_1_2.eContents().get(0);
-		private final Keyword cIpv4_addressKeyword_1_2_0_0 = (Keyword)cGroup_1_2_0.eContents().get(0);
-		private final Assignment cIpv4_addressAssignment_1_2_0_1 = (Assignment)cGroup_1_2_0.eContents().get(1);
-		private final RuleCall cIpv4_addressDNSParserRuleCall_1_2_0_1_0 = (RuleCall)cIpv4_addressAssignment_1_2_0_1.eContents().get(0);
-		private final Group cGroup_1_2_1 = (Group)cUnorderedGroup_1_2.eContents().get(1);
-		private final Keyword cPriorityKeyword_1_2_1_0 = (Keyword)cGroup_1_2_1.eContents().get(0);
-		private final Assignment cPriorityAssignment_1_2_1_1 = (Assignment)cGroup_1_2_1.eContents().get(1);
-		private final RuleCall cPriorityEIntParserRuleCall_1_2_1_1_0 = (RuleCall)cPriorityAssignment_1_2_1_1.eContents().get(0);
-		private final Group cGroup_1_2_2 = (Group)cUnorderedGroup_1_2.eContents().get(2);
-		private final Keyword cAliasesKeyword_1_2_2_0 = (Keyword)cGroup_1_2_2.eContents().get(0);
-		private final Group cGroup_1_2_2_1 = (Group)cGroup_1_2_2.eContents().get(1);
-		private final Keyword cHyphenMinusKeyword_1_2_2_1_0 = (Keyword)cGroup_1_2_2_1.eContents().get(0);
-		private final Assignment cAliasesAssignment_1_2_2_1_1 = (Assignment)cGroup_1_2_2_1.eContents().get(1);
-		private final RuleCall cAliasesAliasParserRuleCall_1_2_2_1_1_0 = (RuleCall)cAliasesAssignment_1_2_2_1_1.eContents().get(0);
-		private final Group cGroup_1_2_3 = (Group)cUnorderedGroup_1_2.eContents().get(3);
-		private final Keyword cLink_local_ipsKeyword_1_2_3_0 = (Keyword)cGroup_1_2_3.eContents().get(0);
-		private final Group cGroup_1_2_3_1 = (Group)cGroup_1_2_3.eContents().get(1);
-		private final Keyword cHyphenMinusKeyword_1_2_3_1_0 = (Keyword)cGroup_1_2_3_1.eContents().get(0);
-		private final Assignment cLink_local_ipsAssignment_1_2_3_1_1 = (Assignment)cGroup_1_2_3_1.eContents().get(1);
-		private final RuleCall cLink_local_ipsDNSParserRuleCall_1_2_3_1_1_0 = (RuleCall)cLink_local_ipsAssignment_1_2_3_1_1.eContents().get(0);
-		
-		////*/
-		/////*
+		//NetworkConnector_short returns NetworkConnector:
+		//    {NetworkConnector}
+		//    '-'network=[Network|EString];
+		// */
 		//NetworkConnector returns NetworkConnector:
 		//    {NetworkConnector}
-		//    ('-'network=[Network|EString]) |
+		//    ('-'network=[Network|EString] |
 		//    (network=[Network|EString]':'
 		//    (
 		//            ('ipv4_address:'    ipv4_address=DNS)?
 		//        &    ('priority:'        priority=EInt)?
 		//        &    ('aliases:'         ('-'aliases+=Alias)+ )?
 		//        &    ('link_local_ips:'     ('-'link_local_ips+=DNS)+ )?
-		//    ))
-		//    ;
+		//    )));
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{NetworkConnector}
-		//('-'network=[Network|EString]) |
+		//('-'network=[Network|EString] |
 		//(network=[Network|EString]':'
 		//(
 		//        ('ipv4_address:'    ipv4_address=DNS)?
 		//    &    ('priority:'        priority=EInt)?
 		//    &    ('aliases:'         ('-'aliases+=Alias)+ )?
 		//    &    ('link_local_ips:'     ('-'link_local_ips+=DNS)+ )?
-		//))
-		public Alternatives getAlternatives() { return cAlternatives; }
+		//)))
+		public Group getGroup() { return cGroup; }
 		
 		//{NetworkConnector}
-		//('-'network=[Network|EString])
-		public Group getGroup_0() { return cGroup_0; }
+		public Action getNetworkConnectorAction_0() { return cNetworkConnectorAction_0; }
 		
-		//{NetworkConnector}
-		public Action getNetworkConnectorAction_0_0() { return cNetworkConnectorAction_0_0; }
+		//('-'network=[Network|EString] |
+		//(network=[Network|EString]':'
+		//(
+		//        ('ipv4_address:'    ipv4_address=DNS)?
+		//    &    ('priority:'        priority=EInt)?
+		//    &    ('aliases:'         ('-'aliases+=Alias)+ )?
+		//    &    ('link_local_ips:'     ('-'link_local_ips+=DNS)+ )?
+		//)))
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
-		//('-'network=[Network|EString])
-		public Group getGroup_0_1() { return cGroup_0_1; }
+		//'-'network=[Network|EString]
+		public Group getGroup_1_0() { return cGroup_1_0; }
 		
 		//'-'
-		public Keyword getHyphenMinusKeyword_0_1_0() { return cHyphenMinusKeyword_0_1_0; }
+		public Keyword getHyphenMinusKeyword_1_0_0() { return cHyphenMinusKeyword_1_0_0; }
 		
 		//network=[Network|EString]
-		public Assignment getNetworkAssignment_0_1_1() { return cNetworkAssignment_0_1_1; }
+		public Assignment getNetworkAssignment_1_0_1() { return cNetworkAssignment_1_0_1; }
 		
 		//[Network|EString]
-		public CrossReference getNetworkNetworkCrossReference_0_1_1_0() { return cNetworkNetworkCrossReference_0_1_1_0; }
+		public CrossReference getNetworkNetworkCrossReference_1_0_1_0() { return cNetworkNetworkCrossReference_1_0_1_0; }
 		
 		//EString
-		public RuleCall getNetworkNetworkEStringParserRuleCall_0_1_1_0_1() { return cNetworkNetworkEStringParserRuleCall_0_1_1_0_1; }
+		public RuleCall getNetworkNetworkEStringParserRuleCall_1_0_1_0_1() { return cNetworkNetworkEStringParserRuleCall_1_0_1_0_1; }
 		
 		//(network=[Network|EString]':'
 		//(
@@ -1036,19 +999,19 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 		//    &    ('aliases:'         ('-'aliases+=Alias)+ )?
 		//    &    ('link_local_ips:'     ('-'link_local_ips+=DNS)+ )?
 		//))
-		public Group getGroup_1() { return cGroup_1; }
+		public Group getGroup_1_1() { return cGroup_1_1; }
 		
 		//network=[Network|EString]
-		public Assignment getNetworkAssignment_1_0() { return cNetworkAssignment_1_0; }
+		public Assignment getNetworkAssignment_1_1_0() { return cNetworkAssignment_1_1_0; }
 		
 		//[Network|EString]
-		public CrossReference getNetworkNetworkCrossReference_1_0_0() { return cNetworkNetworkCrossReference_1_0_0; }
+		public CrossReference getNetworkNetworkCrossReference_1_1_0_0() { return cNetworkNetworkCrossReference_1_1_0_0; }
 		
 		//EString
-		public RuleCall getNetworkNetworkEStringParserRuleCall_1_0_0_1() { return cNetworkNetworkEStringParserRuleCall_1_0_0_1; }
+		public RuleCall getNetworkNetworkEStringParserRuleCall_1_1_0_0_1() { return cNetworkNetworkEStringParserRuleCall_1_1_0_0_1; }
 		
 		//':'
-		public Keyword getColonKeyword_1_1() { return cColonKeyword_1_1; }
+		public Keyword getColonKeyword_1_1_1() { return cColonKeyword_1_1_1; }
 		
 		//(
 		//        ('ipv4_address:'    ipv4_address=DNS)?
@@ -1056,67 +1019,67 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 		//    &    ('aliases:'         ('-'aliases+=Alias)+ )?
 		//    &    ('link_local_ips:'     ('-'link_local_ips+=DNS)+ )?
 		//)
-		public UnorderedGroup getUnorderedGroup_1_2() { return cUnorderedGroup_1_2; }
+		public UnorderedGroup getUnorderedGroup_1_1_2() { return cUnorderedGroup_1_1_2; }
 		
 		//('ipv4_address:'	ipv4_address=DNS)?
-		public Group getGroup_1_2_0() { return cGroup_1_2_0; }
+		public Group getGroup_1_1_2_0() { return cGroup_1_1_2_0; }
 		
 		//'ipv4_address:'
-		public Keyword getIpv4_addressKeyword_1_2_0_0() { return cIpv4_addressKeyword_1_2_0_0; }
+		public Keyword getIpv4_addressKeyword_1_1_2_0_0() { return cIpv4_addressKeyword_1_1_2_0_0; }
 		
 		//ipv4_address=DNS
-		public Assignment getIpv4_addressAssignment_1_2_0_1() { return cIpv4_addressAssignment_1_2_0_1; }
+		public Assignment getIpv4_addressAssignment_1_1_2_0_1() { return cIpv4_addressAssignment_1_1_2_0_1; }
 		
 		//DNS
-		public RuleCall getIpv4_addressDNSParserRuleCall_1_2_0_1_0() { return cIpv4_addressDNSParserRuleCall_1_2_0_1_0; }
+		public RuleCall getIpv4_addressDNSParserRuleCall_1_1_2_0_1_0() { return cIpv4_addressDNSParserRuleCall_1_1_2_0_1_0; }
 		
 		//('priority:'		priority=EInt)?
-		public Group getGroup_1_2_1() { return cGroup_1_2_1; }
+		public Group getGroup_1_1_2_1() { return cGroup_1_1_2_1; }
 		
 		//'priority:'
-		public Keyword getPriorityKeyword_1_2_1_0() { return cPriorityKeyword_1_2_1_0; }
+		public Keyword getPriorityKeyword_1_1_2_1_0() { return cPriorityKeyword_1_1_2_1_0; }
 		
 		//priority=EInt
-		public Assignment getPriorityAssignment_1_2_1_1() { return cPriorityAssignment_1_2_1_1; }
+		public Assignment getPriorityAssignment_1_1_2_1_1() { return cPriorityAssignment_1_1_2_1_1; }
 		
 		//EInt
-		public RuleCall getPriorityEIntParserRuleCall_1_2_1_1_0() { return cPriorityEIntParserRuleCall_1_2_1_1_0; }
+		public RuleCall getPriorityEIntParserRuleCall_1_1_2_1_1_0() { return cPriorityEIntParserRuleCall_1_1_2_1_1_0; }
 		
 		//('aliases:' 		('-'aliases+=Alias)+ )?
-		public Group getGroup_1_2_2() { return cGroup_1_2_2; }
+		public Group getGroup_1_1_2_2() { return cGroup_1_1_2_2; }
 		
 		//'aliases:'
-		public Keyword getAliasesKeyword_1_2_2_0() { return cAliasesKeyword_1_2_2_0; }
+		public Keyword getAliasesKeyword_1_1_2_2_0() { return cAliasesKeyword_1_1_2_2_0; }
 		
 		//('-'aliases+=Alias)+
-		public Group getGroup_1_2_2_1() { return cGroup_1_2_2_1; }
+		public Group getGroup_1_1_2_2_1() { return cGroup_1_1_2_2_1; }
 		
 		//'-'
-		public Keyword getHyphenMinusKeyword_1_2_2_1_0() { return cHyphenMinusKeyword_1_2_2_1_0; }
+		public Keyword getHyphenMinusKeyword_1_1_2_2_1_0() { return cHyphenMinusKeyword_1_1_2_2_1_0; }
 		
 		//aliases+=Alias
-		public Assignment getAliasesAssignment_1_2_2_1_1() { return cAliasesAssignment_1_2_2_1_1; }
+		public Assignment getAliasesAssignment_1_1_2_2_1_1() { return cAliasesAssignment_1_1_2_2_1_1; }
 		
 		//Alias
-		public RuleCall getAliasesAliasParserRuleCall_1_2_2_1_1_0() { return cAliasesAliasParserRuleCall_1_2_2_1_1_0; }
+		public RuleCall getAliasesAliasParserRuleCall_1_1_2_2_1_1_0() { return cAliasesAliasParserRuleCall_1_1_2_2_1_1_0; }
 		
 		//('link_local_ips:' 	('-'link_local_ips+=DNS)+ )?
-		public Group getGroup_1_2_3() { return cGroup_1_2_3; }
+		public Group getGroup_1_1_2_3() { return cGroup_1_1_2_3; }
 		
 		//'link_local_ips:'
-		public Keyword getLink_local_ipsKeyword_1_2_3_0() { return cLink_local_ipsKeyword_1_2_3_0; }
+		public Keyword getLink_local_ipsKeyword_1_1_2_3_0() { return cLink_local_ipsKeyword_1_1_2_3_0; }
 		
 		//('-'link_local_ips+=DNS)+
-		public Group getGroup_1_2_3_1() { return cGroup_1_2_3_1; }
+		public Group getGroup_1_1_2_3_1() { return cGroup_1_1_2_3_1; }
 		
 		//'-'
-		public Keyword getHyphenMinusKeyword_1_2_3_1_0() { return cHyphenMinusKeyword_1_2_3_1_0; }
+		public Keyword getHyphenMinusKeyword_1_1_2_3_1_0() { return cHyphenMinusKeyword_1_1_2_3_1_0; }
 		
 		//link_local_ips+=DNS
-		public Assignment getLink_local_ipsAssignment_1_2_3_1_1() { return cLink_local_ipsAssignment_1_2_3_1_1; }
+		public Assignment getLink_local_ipsAssignment_1_1_2_3_1_1() { return cLink_local_ipsAssignment_1_1_2_3_1_1; }
 		
 		//DNS
-		public RuleCall getLink_local_ipsDNSParserRuleCall_1_2_3_1_1_0() { return cLink_local_ipsDNSParserRuleCall_1_2_3_1_1_0; }
+		public RuleCall getLink_local_ipsDNSParserRuleCall_1_1_2_3_1_1_0() { return cLink_local_ipsDNSParserRuleCall_1_1_2_3_1_1_0; }
 	}
 	public class AliasElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dockercompose.DockerCompose.Alias");
@@ -1125,7 +1088,6 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 		private final Assignment cAliasAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cAliasEStringParserRuleCall_1_0 = (RuleCall)cAliasAssignment_1.eContents().get(0);
 		
-		////    */
 		//Alias returns Alias:
 		//    {Alias}
 		//    alias=EString
@@ -1144,63 +1106,6 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 		
 		//EString
 		public RuleCall getAliasEStringParserRuleCall_1_0() { return cAliasEStringParserRuleCall_1_0; }
-	}
-	public class VolumeConnector_shortElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dockercompose.DockerCompose.VolumeConnector_short");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cVolumeConnectorAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cVolumeAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cVolumeVolumeCrossReference_1_0 = (CrossReference)cVolumeAssignment_1.eContents().get(0);
-		private final RuleCall cVolumeVolumeEStringParserRuleCall_1_0_1 = (RuleCall)cVolumeVolumeCrossReference_1_0.eContents().get(1);
-		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cContainer_pathAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cContainer_pathPATHParserRuleCall_3_0 = (RuleCall)cContainer_pathAssignment_3.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cColonKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cAccess_modeAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cAccess_modeAccessModeEnumRuleCall_4_1_0 = (RuleCall)cAccess_modeAssignment_4_1.eContents().get(0);
-		
-		//VolumeConnector_short returns VolumeConnector:
-		//    {VolumeConnector}
-		//    volume=[Volume|EString]':'container_path=PATH(':'access_mode=AccessMode)?;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{VolumeConnector}
-		//volume=[Volume|EString]':'container_path=PATH(':'access_mode=AccessMode)?
-		public Group getGroup() { return cGroup; }
-		
-		//{VolumeConnector}
-		public Action getVolumeConnectorAction_0() { return cVolumeConnectorAction_0; }
-		
-		//volume=[Volume|EString]
-		public Assignment getVolumeAssignment_1() { return cVolumeAssignment_1; }
-		
-		//[Volume|EString]
-		public CrossReference getVolumeVolumeCrossReference_1_0() { return cVolumeVolumeCrossReference_1_0; }
-		
-		//EString
-		public RuleCall getVolumeVolumeEStringParserRuleCall_1_0_1() { return cVolumeVolumeEStringParserRuleCall_1_0_1; }
-		
-		//':'
-		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
-		
-		//container_path=PATH
-		public Assignment getContainer_pathAssignment_3() { return cContainer_pathAssignment_3; }
-		
-		//PATH
-		public RuleCall getContainer_pathPATHParserRuleCall_3_0() { return cContainer_pathPATHParserRuleCall_3_0; }
-		
-		//(':'access_mode=AccessMode)?
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//':'
-		public Keyword getColonKeyword_4_0() { return cColonKeyword_4_0; }
-		
-		//access_mode=AccessMode
-		public Assignment getAccess_modeAssignment_4_1() { return cAccess_modeAssignment_4_1; }
-		
-		//AccessMode
-		public RuleCall getAccess_modeAccessModeEnumRuleCall_4_1_0() { return cAccess_modeAccessModeEnumRuleCall_4_1_0; }
 	}
 	public class VolumeConnector_longElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dockercompose.DockerCompose.VolumeConnector_long");
@@ -1387,34 +1292,62 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 		//EInt
 		public RuleCall getSizeEIntParserRuleCall_1_6_2_0() { return cSizeEIntParserRuleCall_1_6_2_0; }
 	}
-	public class ConfigConnector_shortElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dockercompose.DockerCompose.ConfigConnector_short");
+	public class VolumeConnector_shortElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dockercompose.DockerCompose.VolumeConnector_short");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cConfigConnectorAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cConfigAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cConfigConfigCrossReference_1_0 = (CrossReference)cConfigAssignment_1.eContents().get(0);
-		private final RuleCall cConfigConfigEStringParserRuleCall_1_0_1 = (RuleCall)cConfigConfigCrossReference_1_0.eContents().get(1);
+		private final Action cVolumeConnectorAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cVolumeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cVolumeVolumeCrossReference_1_0 = (CrossReference)cVolumeAssignment_1.eContents().get(0);
+		private final RuleCall cVolumeVolumeEStringParserRuleCall_1_0_1 = (RuleCall)cVolumeVolumeCrossReference_1_0.eContents().get(1);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cContainer_pathAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cContainer_pathPATHParserRuleCall_3_0 = (RuleCall)cContainer_pathAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cColonKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cAccess_modeAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cAccess_modeAccessModeEnumRuleCall_4_1_0 = (RuleCall)cAccess_modeAssignment_4_1.eContents().get(0);
 		
-		//ConfigConnector_short returns ConfigConnector:
-		//    {ConfigConnector}
-		//    config=[Config|EString];
+		//VolumeConnector_short returns VolumeConnector:
+		//    {VolumeConnector}
+		//    volume=[Volume|EString]':'container_path=PATH(':'access_mode=AccessMode)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{ConfigConnector}
-		//config=[Config|EString]
+		//{VolumeConnector}
+		//volume=[Volume|EString]':'container_path=PATH(':'access_mode=AccessMode)?
 		public Group getGroup() { return cGroup; }
 		
-		//{ConfigConnector}
-		public Action getConfigConnectorAction_0() { return cConfigConnectorAction_0; }
+		//{VolumeConnector}
+		public Action getVolumeConnectorAction_0() { return cVolumeConnectorAction_0; }
 		
-		//config=[Config|EString]
-		public Assignment getConfigAssignment_1() { return cConfigAssignment_1; }
+		//volume=[Volume|EString]
+		public Assignment getVolumeAssignment_1() { return cVolumeAssignment_1; }
 		
-		//[Config|EString]
-		public CrossReference getConfigConfigCrossReference_1_0() { return cConfigConfigCrossReference_1_0; }
+		//[Volume|EString]
+		public CrossReference getVolumeVolumeCrossReference_1_0() { return cVolumeVolumeCrossReference_1_0; }
 		
 		//EString
-		public RuleCall getConfigConfigEStringParserRuleCall_1_0_1() { return cConfigConfigEStringParserRuleCall_1_0_1; }
+		public RuleCall getVolumeVolumeEStringParserRuleCall_1_0_1() { return cVolumeVolumeEStringParserRuleCall_1_0_1; }
+		
+		//':'
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		
+		//container_path=PATH
+		public Assignment getContainer_pathAssignment_3() { return cContainer_pathAssignment_3; }
+		
+		//PATH
+		public RuleCall getContainer_pathPATHParserRuleCall_3_0() { return cContainer_pathPATHParserRuleCall_3_0; }
+		
+		//(':'access_mode=AccessMode)?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//':'
+		public Keyword getColonKeyword_4_0() { return cColonKeyword_4_0; }
+		
+		//access_mode=AccessMode
+		public Assignment getAccess_modeAssignment_4_1() { return cAccess_modeAssignment_4_1; }
+		
+		//AccessMode
+		public RuleCall getAccess_modeAccessModeEnumRuleCall_4_1_0() { return cAccess_modeAccessModeEnumRuleCall_4_1_0; }
 	}
 	public class ConfigConnector_longElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dockercompose.DockerCompose.ConfigConnector_long");
@@ -1451,8 +1384,7 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 		//        &    ('uid:'     uid=QUOTED_INT)?
 		//        &    ('gid:'     gid=QUOTED_INT)?
 		//        &    ('mode:'     mode=EInt)?
-		//    )
-		//    ;
+		//    );
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{ConfigConnector}
@@ -1540,34 +1472,34 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 		//EInt
 		public RuleCall getModeEIntParserRuleCall_1_4_1_0() { return cModeEIntParserRuleCall_1_4_1_0; }
 	}
-	public class SecretConnector_shortElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dockercompose.DockerCompose.SecretConnector_short");
+	public class ConfigConnector_shortElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dockercompose.DockerCompose.ConfigConnector_short");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cSecretConnectorAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cSecretAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cSecretSecretCrossReference_1_0 = (CrossReference)cSecretAssignment_1.eContents().get(0);
-		private final RuleCall cSecretSecretEStringParserRuleCall_1_0_1 = (RuleCall)cSecretSecretCrossReference_1_0.eContents().get(1);
+		private final Action cConfigConnectorAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cConfigAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cConfigConfigCrossReference_1_0 = (CrossReference)cConfigAssignment_1.eContents().get(0);
+		private final RuleCall cConfigConfigEStringParserRuleCall_1_0_1 = (RuleCall)cConfigConfigCrossReference_1_0.eContents().get(1);
 		
-		//SecretConnector_short returns SecretConnector:
-		//    {SecretConnector}
-		//    secret=[Secret|EString];
+		//ConfigConnector_short returns ConfigConnector:
+		//    {ConfigConnector}
+		//    config=[Config|EString];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{SecretConnector}
-		//secret=[Secret|EString]
+		//{ConfigConnector}
+		//config=[Config|EString]
 		public Group getGroup() { return cGroup; }
 		
-		//{SecretConnector}
-		public Action getSecretConnectorAction_0() { return cSecretConnectorAction_0; }
+		//{ConfigConnector}
+		public Action getConfigConnectorAction_0() { return cConfigConnectorAction_0; }
 		
-		//secret=[Secret|EString]
-		public Assignment getSecretAssignment_1() { return cSecretAssignment_1; }
+		//config=[Config|EString]
+		public Assignment getConfigAssignment_1() { return cConfigAssignment_1; }
 		
-		//[Secret|EString]
-		public CrossReference getSecretSecretCrossReference_1_0() { return cSecretSecretCrossReference_1_0; }
+		//[Config|EString]
+		public CrossReference getConfigConfigCrossReference_1_0() { return cConfigConfigCrossReference_1_0; }
 		
 		//EString
-		public RuleCall getSecretSecretEStringParserRuleCall_1_0_1() { return cSecretSecretEStringParserRuleCall_1_0_1; }
+		public RuleCall getConfigConfigEStringParserRuleCall_1_0_1() { return cConfigConfigEStringParserRuleCall_1_0_1; }
 	}
 	public class SecretConnector_longElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dockercompose.DockerCompose.SecretConnector_long");
@@ -1691,6 +1623,35 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 		
 		//EInt
 		public RuleCall getModeEIntParserRuleCall_1_4_1_0() { return cModeEIntParserRuleCall_1_4_1_0; }
+	}
+	public class SecretConnector_shortElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dockercompose.DockerCompose.SecretConnector_short");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cSecretConnectorAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cSecretAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cSecretSecretCrossReference_1_0 = (CrossReference)cSecretAssignment_1.eContents().get(0);
+		private final RuleCall cSecretSecretEStringParserRuleCall_1_0_1 = (RuleCall)cSecretSecretCrossReference_1_0.eContents().get(1);
+		
+		//SecretConnector_short returns SecretConnector:
+		//    {SecretConnector}
+		//    secret=[Secret|EString];
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{SecretConnector}
+		//secret=[Secret|EString]
+		public Group getGroup() { return cGroup; }
+		
+		//{SecretConnector}
+		public Action getSecretConnectorAction_0() { return cSecretConnectorAction_0; }
+		
+		//secret=[Secret|EString]
+		public Assignment getSecretAssignment_1() { return cSecretAssignment_1; }
+		
+		//[Secret|EString]
+		public CrossReference getSecretSecretCrossReference_1_0() { return cSecretSecretCrossReference_1_0; }
+		
+		//EString
+		public RuleCall getSecretSecretEStringParserRuleCall_1_0_1() { return cSecretSecretEStringParserRuleCall_1_0_1; }
 	}
 	public class NetworkElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dockercompose.DockerCompose.Network");
@@ -2749,8 +2710,6 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 		private final Assignment cDns4Assignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cDns4EIntParserRuleCall_6_0 = (RuleCall)cDns4Assignment_6.eContents().get(0);
 		
-		////Device returns Device:
-		//    //host_path='"' EString':'container_path=EString(':'cgroup_permissions=EString)?'"';
 		//DNS returns DNS:
 		//    dns1=EInt'.'dns2=EInt'.'dns3=EInt'.'dns4=EInt;
 		@Override public ParserRule getRule() { return rule; }
@@ -3058,6 +3017,41 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 		//'slave'
 		public Keyword getSlaveSlaveKeyword_5_0() { return cSlaveSlaveKeyword_5_0; }
 	}
+	public class ConditionElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dockercompose.DockerCompose.Condition");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cService_startedEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cService_startedService_startedKeyword_0_0 = (Keyword)cService_startedEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cService_healthyEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cService_healthyService_healthyKeyword_1_0 = (Keyword)cService_healthyEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cService_completed_successfullyEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cService_completed_successfullyService_completed_successfullyKeyword_2_0 = (Keyword)cService_completed_successfullyEnumLiteralDeclaration_2.eContents().get(0);
+		
+		//enum Condition returns Condition:
+		//                service_started = 'service_started' | service_healthy = 'service_healthy' | service_completed_successfully = 'service_completed_successfully';
+		public EnumRule getRule() { return rule; }
+		
+		//service_started = 'service_started' | service_healthy = 'service_healthy' | service_completed_successfully = 'service_completed_successfully'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//service_started = 'service_started'
+		public EnumLiteralDeclaration getService_startedEnumLiteralDeclaration_0() { return cService_startedEnumLiteralDeclaration_0; }
+		
+		//'service_started'
+		public Keyword getService_startedService_startedKeyword_0_0() { return cService_startedService_startedKeyword_0_0; }
+		
+		//service_healthy = 'service_healthy'
+		public EnumLiteralDeclaration getService_healthyEnumLiteralDeclaration_1() { return cService_healthyEnumLiteralDeclaration_1; }
+		
+		//'service_healthy'
+		public Keyword getService_healthyService_healthyKeyword_1_0() { return cService_healthyService_healthyKeyword_1_0; }
+		
+		//service_completed_successfully = 'service_completed_successfully'
+		public EnumLiteralDeclaration getService_completed_successfullyEnumLiteralDeclaration_2() { return cService_completed_successfullyEnumLiteralDeclaration_2; }
+		
+		//'service_completed_successfully'
+		public Keyword getService_completed_successfullyService_completed_successfullyKeyword_2_0() { return cService_completed_successfullyService_completed_successfullyKeyword_2_0; }
+	}
 	
 	private final DockerComposeElements pDockerCompose;
 	private final TerminalRule tVERSION;
@@ -3066,17 +3060,17 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 	private final PortElements pPort;
 	private final DeviceElements pDevice;
 	private final ImageElements pImage;
-	private final DependencyElements pDependency;
-	private final NetworkConnector_shortElements pNetworkConnector_short;
-	private final NetworkConnector_longElements pNetworkConnector_long;
+	private final LinkElements pLink;
+	private final Dependency_shortElements pDependency_short;
+	private final Dependency_longElements pDependency_long;
 	private final NetworkConnectorElements pNetworkConnector;
 	private final AliasElements pAlias;
-	private final VolumeConnector_shortElements pVolumeConnector_short;
 	private final VolumeConnector_longElements pVolumeConnector_long;
-	private final ConfigConnector_shortElements pConfigConnector_short;
+	private final VolumeConnector_shortElements pVolumeConnector_short;
 	private final ConfigConnector_longElements pConfigConnector_long;
-	private final SecretConnector_shortElements pSecretConnector_short;
+	private final ConfigConnector_shortElements pConfigConnector_short;
 	private final SecretConnector_longElements pSecretConnector_long;
+	private final SecretConnector_shortElements pSecretConnector_short;
 	private final TerminalRule tQUOTED_INT;
 	private final NetworkElements pNetwork;
 	private final VolumeElements pVolume;
@@ -3103,6 +3097,7 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 	private final AccessModeElements eAccessMode;
 	private final MountTypeElements eMountType;
 	private final PropagationTypeElements ePropagationType;
+	private final ConditionElements eCondition;
 	
 	private final Grammar grammar;
 	
@@ -3120,17 +3115,17 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 		this.pPort = new PortElements();
 		this.pDevice = new DeviceElements();
 		this.pImage = new ImageElements();
-		this.pDependency = new DependencyElements();
-		this.pNetworkConnector_short = new NetworkConnector_shortElements();
-		this.pNetworkConnector_long = new NetworkConnector_longElements();
+		this.pLink = new LinkElements();
+		this.pDependency_short = new Dependency_shortElements();
+		this.pDependency_long = new Dependency_longElements();
 		this.pNetworkConnector = new NetworkConnectorElements();
 		this.pAlias = new AliasElements();
-		this.pVolumeConnector_short = new VolumeConnector_shortElements();
 		this.pVolumeConnector_long = new VolumeConnector_longElements();
-		this.pConfigConnector_short = new ConfigConnector_shortElements();
+		this.pVolumeConnector_short = new VolumeConnector_shortElements();
 		this.pConfigConnector_long = new ConfigConnector_longElements();
-		this.pSecretConnector_short = new SecretConnector_shortElements();
+		this.pConfigConnector_short = new ConfigConnector_shortElements();
 		this.pSecretConnector_long = new SecretConnector_longElements();
+		this.pSecretConnector_short = new SecretConnector_shortElements();
 		this.tQUOTED_INT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dockercompose.DockerCompose.QUOTED_INT");
 		this.pNetwork = new NetworkElements();
 		this.pVolume = new VolumeElements();
@@ -3157,6 +3152,7 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 		this.eAccessMode = new AccessModeElements();
 		this.eMountType = new MountTypeElements();
 		this.ePropagationType = new PropagationTypeElements();
+		this.eCondition = new ConditionElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -3190,10 +3186,10 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 	//    (
 	//            ('version:'     version=VERSION)?
 	//        &    ('services:'     (services+=Service)+ )
-	//        &    ('networks:'    (networks+=Network)+ )?
 	//        &    ('volumes:'     (volumes+=Volume)+ )?
 	//        &    ('configs:'     (configs+=Config)+ )?
 	//        &    ('secrets:'     (secrets+=Secret)+ )?
+	//        &    ('networks:'    (networks+=Network)+ )?
 	//    );
 	public DockerComposeElements getDockerComposeAccess() {
 		return pDockerCompose;
@@ -3231,9 +3227,10 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 	//        &    ('restart:'         restart=RestartPolicy)?
 	//        &    ('init:'            init=EBoolean)?
 	//        &    ('read_only:'        read_only=EBoolean)?
-	//        &    ('depends_on:'         ('-'depends_on+=Dependency)+ )?        // añadir condition
-	//        &    ('networks:'         ((networks+=NetworkConnector_short)+ | (networks+=NetworkConnector_long)+ ))?
-	//        //&    ('networks:'         (networks+=NetworkConnector)+ )?
+	//        &    ('links:'             ('-'links+=Link)+ )?
+	//        &    ('depends_on:'         ((depends_on+=Dependency_short)+ | (depends_on+=Dependency_long)+ ))?
+	//        &    ('networks:'         (networks+=NetworkConnector)+)?
+	//        //&    ('networks:'         ((networks+=NetworkConnector_short)+ | (networks+=NetworkConnector_long)+ ))?
 	//        &    ('volumes:'         (('-'volumes+=VolumeConnector_short)+ | ('-'volumes+=VolumeConnector_long)+ ))?
 	//        &    ('configs:'         (('-'configs+=ConfigConnector_short)+ | ('-'configs+=ConfigConnector_long)+ ))?
 	//        &    ('secrets:'         (('-'secrets+=SecretConnector_short)+ | ('-'secrets+=SecretConnector_long)+ ))?
@@ -3281,30 +3278,41 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 		return getImageAccess().getRule();
 	}
 	
-	//Dependency returns Dependency:
+	//Link returns Link:
+	//    {Link}
+	//    service=[Service|EString](':'alias=EString)?;
+	public LinkElements getLinkAccess() {
+		return pLink;
+	}
+	
+	public ParserRule getLinkRule() {
+		return getLinkAccess().getRule();
+	}
+	
+	//Dependency_short returns Dependency:
 	//    {Dependency}
-	//    service=[Service|EString]
-	//    ;
-	public DependencyElements getDependencyAccess() {
-		return pDependency;
+	//    '-'service=[Service|EString];
+	public Dependency_shortElements getDependency_shortAccess() {
+		return pDependency_short;
 	}
 	
-	public ParserRule getDependencyRule() {
-		return getDependencyAccess().getRule();
+	public ParserRule getDependency_shortRule() {
+		return getDependency_shortAccess().getRule();
 	}
 	
-	/////*
-	//NetworkConnector_short returns NetworkConnector:
-	//    {NetworkConnector}
-	//    '-'network=[Network|EString];
-	public NetworkConnector_shortElements getNetworkConnector_shortAccess() {
-		return pNetworkConnector_short;
+	//Dependency_long returns Dependency:
+	//    {Dependency}
+	//    service=[Service|EString]':'
+	//    'condition:' condition=Condition;
+	public Dependency_longElements getDependency_longAccess() {
+		return pDependency_long;
 	}
 	
-	public ParserRule getNetworkConnector_shortRule() {
-		return getNetworkConnector_shortAccess().getRule();
+	public ParserRule getDependency_longRule() {
+		return getDependency_longAccess().getRule();
 	}
 	
+	///*
 	//NetworkConnector_long returns NetworkConnector:
 	//    {NetworkConnector}
 	//    network=[Network|EString]':'
@@ -3314,27 +3322,20 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 	//        &    ('aliases:'         ('-'aliases+=Alias)+ )?
 	//        &    ('link_local_ips:'     ('-'link_local_ips+=DNS)+ )?
 	//    );
-	public NetworkConnector_longElements getNetworkConnector_longAccess() {
-		return pNetworkConnector_long;
-	}
-	
-	public ParserRule getNetworkConnector_longRule() {
-		return getNetworkConnector_longAccess().getRule();
-	}
-	
-	////*/
-	/////*
+	//NetworkConnector_short returns NetworkConnector:
+	//    {NetworkConnector}
+	//    '-'network=[Network|EString];
+	// */
 	//NetworkConnector returns NetworkConnector:
 	//    {NetworkConnector}
-	//    ('-'network=[Network|EString]) |
+	//    ('-'network=[Network|EString] |
 	//    (network=[Network|EString]':'
 	//    (
 	//            ('ipv4_address:'    ipv4_address=DNS)?
 	//        &    ('priority:'        priority=EInt)?
 	//        &    ('aliases:'         ('-'aliases+=Alias)+ )?
 	//        &    ('link_local_ips:'     ('-'link_local_ips+=DNS)+ )?
-	//    ))
-	//    ;
+	//    )));
 	public NetworkConnectorElements getNetworkConnectorAccess() {
 		return pNetworkConnector;
 	}
@@ -3343,7 +3344,6 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 		return getNetworkConnectorAccess().getRule();
 	}
 	
-	////    */
 	//Alias returns Alias:
 	//    {Alias}
 	//    alias=EString
@@ -3354,17 +3354,6 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 	
 	public ParserRule getAliasRule() {
 		return getAliasAccess().getRule();
-	}
-	
-	//VolumeConnector_short returns VolumeConnector:
-	//    {VolumeConnector}
-	//    volume=[Volume|EString]':'container_path=PATH(':'access_mode=AccessMode)?;
-	public VolumeConnector_shortElements getVolumeConnector_shortAccess() {
-		return pVolumeConnector_short;
-	}
-	
-	public ParserRule getVolumeConnector_shortRule() {
-		return getVolumeConnector_shortAccess().getRule();
 	}
 	
 	//VolumeConnector_long returns VolumeConnector:
@@ -3389,15 +3378,15 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 		return getVolumeConnector_longAccess().getRule();
 	}
 	
-	//ConfigConnector_short returns ConfigConnector:
-	//    {ConfigConnector}
-	//    config=[Config|EString];
-	public ConfigConnector_shortElements getConfigConnector_shortAccess() {
-		return pConfigConnector_short;
+	//VolumeConnector_short returns VolumeConnector:
+	//    {VolumeConnector}
+	//    volume=[Volume|EString]':'container_path=PATH(':'access_mode=AccessMode)?;
+	public VolumeConnector_shortElements getVolumeConnector_shortAccess() {
+		return pVolumeConnector_short;
 	}
 	
-	public ParserRule getConfigConnector_shortRule() {
-		return getConfigConnector_shortAccess().getRule();
+	public ParserRule getVolumeConnector_shortRule() {
+		return getVolumeConnector_shortAccess().getRule();
 	}
 	
 	//ConfigConnector_long returns ConfigConnector:
@@ -3408,8 +3397,7 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 	//        &    ('uid:'     uid=QUOTED_INT)?
 	//        &    ('gid:'     gid=QUOTED_INT)?
 	//        &    ('mode:'     mode=EInt)?
-	//    )
-	//    ;
+	//    );
 	public ConfigConnector_longElements getConfigConnector_longAccess() {
 		return pConfigConnector_long;
 	}
@@ -3418,15 +3406,15 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 		return getConfigConnector_longAccess().getRule();
 	}
 	
-	//SecretConnector_short returns SecretConnector:
-	//    {SecretConnector}
-	//    secret=[Secret|EString];
-	public SecretConnector_shortElements getSecretConnector_shortAccess() {
-		return pSecretConnector_short;
+	//ConfigConnector_short returns ConfigConnector:
+	//    {ConfigConnector}
+	//    config=[Config|EString];
+	public ConfigConnector_shortElements getConfigConnector_shortAccess() {
+		return pConfigConnector_short;
 	}
 	
-	public ParserRule getSecretConnector_shortRule() {
-		return getSecretConnector_shortAccess().getRule();
+	public ParserRule getConfigConnector_shortRule() {
+		return getConfigConnector_shortAccess().getRule();
 	}
 	
 	//SecretConnector_long returns SecretConnector:
@@ -3444,6 +3432,17 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 	
 	public ParserRule getSecretConnector_longRule() {
 		return getSecretConnector_longAccess().getRule();
+	}
+	
+	//SecretConnector_short returns SecretConnector:
+	//    {SecretConnector}
+	//    secret=[Secret|EString];
+	public SecretConnector_shortElements getSecretConnector_shortAccess() {
+		return pSecretConnector_short;
+	}
+	
+	public ParserRule getSecretConnector_shortRule() {
+		return getSecretConnector_shortAccess().getRule();
 	}
 	
 	//terminal QUOTED_INT:
@@ -3685,8 +3684,6 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 		return tID;
 	}
 	
-	////Device returns Device:
-	//    //host_path='"' EString':'container_path=EString(':'cgroup_permissions=EString)?'"';
 	//DNS returns DNS:
 	//    dns1=EInt'.'dns2=EInt'.'dns3=EInt'.'dns4=EInt;
 	public DNSElements getDNSAccess() {
@@ -3755,6 +3752,16 @@ public class DockerComposeGrammarAccess extends AbstractElementFinder.AbstractGr
 	
 	public EnumRule getPropagationTypeRule() {
 		return getPropagationTypeAccess().getRule();
+	}
+	
+	//enum Condition returns Condition:
+	//                service_started = 'service_started' | service_healthy = 'service_healthy' | service_completed_successfully = 'service_completed_successfully';
+	public ConditionElements getConditionAccess() {
+		return eCondition;
+	}
+	
+	public EnumRule getConditionRule() {
+		return getConditionAccess().getRule();
 	}
 	
 	//terminal INT returns ecore::EInt: ('0'..'9')+;

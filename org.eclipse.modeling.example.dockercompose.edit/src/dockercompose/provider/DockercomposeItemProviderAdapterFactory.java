@@ -624,6 +624,29 @@ public class DockercomposeItemProviderAdapterFactory extends DockercomposeAdapte
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link dockercompose.Link} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LinkItemProvider linkItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dockercompose.Link}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLinkAdapter() {
+		if (linkItemProvider == null) {
+			linkItemProvider = new LinkItemProvider(this);
+		}
+
+		return linkItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -752,6 +775,7 @@ public class DockercomposeItemProviderAdapterFactory extends DockercomposeAdapte
 		if (ipamAddressItemProvider != null) ipamAddressItemProvider.dispose();
 		if (ipamConfigItemProvider != null) ipamConfigItemProvider.dispose();
 		if (portItemProvider != null) portItemProvider.dispose();
+		if (linkItemProvider != null) linkItemProvider.dispose();
 	}
 
 }

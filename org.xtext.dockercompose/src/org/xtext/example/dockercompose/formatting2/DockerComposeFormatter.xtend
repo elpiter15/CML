@@ -70,6 +70,7 @@ class DockerComposeFormatter extends AbstractFormatter2 {
 		}
 		
 		service.prepend[space="\n\t"]
+		service.regionFor.keyword(":").prepend[noSpace];
 		service.regionFor.keyword("image:").prepend[space="\n\t\t"].append[space=" "];
 		service.regionFor.keyword("build:").prepend[space="\n\t\t"].append[space=" "];
 		service.regionFor.keyword("cpu_count:").prepend[space="\n\t\t"].append[space=" "];
@@ -81,6 +82,7 @@ class DockerComposeFormatter extends AbstractFormatter2 {
 		service.regionFor.keyword("devices:").prepend[space="\n\t\t"];
 		service.regionFor.keyword("dns:").prepend[space="\n\t\t"];
 		service.regionFor.keyword("ports:").prepend[space="\n\t\t"];
+		service.regionFor.keyword("links:").prepend[space="\n\t\t"];
 		service.regionFor.keyword("depends_on:").prepend[space="\n\t\t"];
 		service.regionFor.keyword("networks:").prepend[space="\n\t\t"];
 		service.regionFor.keyword("volumes:").prepend[space="\n\t\t"];
@@ -92,8 +94,15 @@ class DockerComposeFormatter extends AbstractFormatter2 {
 		}
 	}
 	
+	def dispatch void format(Dependency dependency, extension IFormattableDocument document) {
+		dependency.prepend[space="\n\t\t\t"]
+		dependency.regionFor.keyword("-").append[space=" "];
+		dependency.regionFor.keyword("condition:").prepend[space="\n\t\t\t\t"].append[space=" "];
+	}
+	
 	def dispatch void format(NetworkConnector connector, extension IFormattableDocument document) {
 		connector.prepend[space="\n\t\t\t"]
+		connector.regionFor.keyword(":").prepend[noSpace];
 		connector.regionFor.keyword("ipv4_address:").prepend[space="\n\t\t\t\t"].append[space=" "];
 		connector.regionFor.keyword("priority:").prepend[space="\n\t\t\t\t"].append[space=" "];
 		connector.regionFor.keyword("aliases:").prepend[space="\n\t\t\t\t"];
@@ -162,6 +171,10 @@ class DockerComposeFormatter extends AbstractFormatter2 {
 		connector.regionFor.keyword("propagation:").prepend[space="\n\t\t\t\t"].append[space=" "];
 		connector.regionFor.keyword("nocopy:").prepend[space="\n\t\t\t\t"].append[space=" "];
 		connector.regionFor.keyword("size:").prepend[space="\n\t\t\t\t"].append[space=" "];
+		
+		for (k : connector.regionFor.keywords(":")) {
+			k.prepend[noSpace].append[noSpace];
+		}
 	}
 	
 	def dispatch void format(ConfigConnector connector, extension IFormattableDocument document) {
@@ -248,6 +261,7 @@ class DockerComposeFormatter extends AbstractFormatter2 {
 	
 	def dispatch void format(Network network, extension IFormattableDocument document) {
 		network.prepend[space="\n\t"]
+		network.regionFor.keyword(":").prepend[noSpace];
 		network.regionFor.keyword("driver:").prepend[space="\n\t\t"].append[space=" "];
 		network.regionFor.keyword("attachable:").prepend[space="\n\t\t"].append[space=" "];
 		network.regionFor.keyword("enable_ipv6:").prepend[space="\n\t\t"].append[space=" "];
@@ -341,6 +355,7 @@ class DockerComposeFormatter extends AbstractFormatter2 {
 	
 	def dispatch void format(Volume volume, extension IFormattableDocument document) {
 		volume.prepend[space="\n\t"]
+		volume.regionFor.keyword(":").prepend[noSpace];
 		volume.regionFor.keyword("external:").prepend[space="\n\t\t"].append[space=" "];
 		volume.regionFor.keyword("driver:").prepend[space="\n\t\t"].append[space=" "];
 		volume.regionFor.keyword("name:").prepend[space="\n\t\t"].append[space=" "];
@@ -371,6 +386,7 @@ class DockerComposeFormatter extends AbstractFormatter2 {
 	
 	def dispatch void format(Config config, extension IFormattableDocument document) {
 		config.prepend[space="\n\t"]
+		config.regionFor.keyword(":").prepend[noSpace];
 		config.regionFor.keyword("external:").prepend[space="\n\t\t"].append[space=" "];
 		config.regionFor.keyword("file:").prepend[space="\n\t\t"].append[space=" "];
 		config.regionFor.keyword("name:").prepend[space="\n\t\t"].append[space=" "];
@@ -382,6 +398,7 @@ class DockerComposeFormatter extends AbstractFormatter2 {
 	
 	def dispatch void format(Secret secret, extension IFormattableDocument document) {
 		secret.prepend[space="\n\t"]
+		secret.regionFor.keyword(":").prepend[noSpace];
 		secret.regionFor.keyword("external:").prepend[space="\n\t\t"].append[space=" "];
 		secret.regionFor.keyword("file:").prepend[space="\n\t\t"].append[space=" "];
 		secret.regionFor.keyword("name:").prepend[space="\n\t\t"].append[space=" "];

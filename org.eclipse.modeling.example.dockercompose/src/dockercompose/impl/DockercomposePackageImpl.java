@@ -4,6 +4,7 @@ package dockercompose.impl;
 
 import dockercompose.AccessMode;
 import dockercompose.Alias;
+import dockercompose.Condition;
 import dockercompose.Config;
 import dockercompose.ConfigConnector;
 import dockercompose.Dependency;
@@ -14,6 +15,7 @@ import dockercompose.DockercomposePackage;
 import dockercompose.IPAMAddress;
 import dockercompose.IPAMConfig;
 import dockercompose.IPAMOption;
+import dockercompose.Link;
 import dockercompose.MountType;
 import dockercompose.Network;
 import dockercompose.NetworkAddress;
@@ -224,6 +226,13 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass linkEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum restartPolicyEEnum = null;
 
 	/**
@@ -246,6 +255,13 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	 * @generated
 	 */
 	private EEnum propagationTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum conditionEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -495,86 +511,6 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	 */
 	@Override
 	public EReference getService_Links() {
-		return (EReference)serviceEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getService_Read_only() {
-		return (EAttribute)serviceEClass.getEStructuralFeatures().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getService_Restart() {
-		return (EAttribute)serviceEClass.getEStructuralFeatures().get(11);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getService_Depends_on() {
-		return (EReference)serviceEClass.getEStructuralFeatures().get(12);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getService_Volumes() {
-		return (EReference)serviceEClass.getEStructuralFeatures().get(13);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getService_Configs() {
-		return (EReference)serviceEClass.getEStructuralFeatures().get(14);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getService_Secrets() {
-		return (EReference)serviceEClass.getEStructuralFeatures().get(15);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getService_Networks() {
-		return (EReference)serviceEClass.getEStructuralFeatures().get(16);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getService_Ports() {
 		return (EReference)serviceEClass.getEStructuralFeatures().get(17);
 	}
 
@@ -584,8 +520,8 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	 * @generated
 	 */
 	@Override
-	public EOperation getService__Image_or_build__DiagnosticChain_Map() {
-		return serviceEClass.getEOperations().get(3);
+	public EAttribute getService_Read_only() {
+		return (EAttribute)serviceEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -594,7 +530,77 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	 * @generated
 	 */
 	@Override
-	public EOperation getService__Different_volumes__DiagnosticChain_Map() {
+	public EAttribute getService_Restart() {
+		return (EAttribute)serviceEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getService_Depends_on() {
+		return (EReference)serviceEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getService_Volumes() {
+		return (EReference)serviceEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getService_Configs() {
+		return (EReference)serviceEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getService_Secrets() {
+		return (EReference)serviceEClass.getEStructuralFeatures().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getService_Networks() {
+		return (EReference)serviceEClass.getEStructuralFeatures().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getService_Ports() {
+		return (EReference)serviceEClass.getEStructuralFeatures().get(16);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getService__Image_or_build__DiagnosticChain_Map() {
 		return serviceEClass.getEOperations().get(4);
 	}
 
@@ -604,7 +610,7 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	 * @generated
 	 */
 	@Override
-	public EOperation getService__Different_networks__DiagnosticChain_Map() {
+	public EOperation getService__Different_volumes__DiagnosticChain_Map() {
 		return serviceEClass.getEOperations().get(5);
 	}
 
@@ -614,7 +620,7 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	 * @generated
 	 */
 	@Override
-	public EOperation getService__Different_dependencies__DiagnosticChain_Map() {
+	public EOperation getService__Different_links__DiagnosticChain_Map() {
 		return serviceEClass.getEOperations().get(6);
 	}
 
@@ -624,7 +630,17 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	 * @generated
 	 */
 	@Override
-	public EOperation getService__No_self_dependencies__DiagnosticChain_Map() {
+	public EOperation getService__Different_networks__DiagnosticChain_Map() {
+		return serviceEClass.getEOperations().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getService__Different_dependencies__DiagnosticChain_Map() {
 		return serviceEClass.getEOperations().get(0);
 	}
 
@@ -634,8 +650,18 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	 * @generated
 	 */
 	@Override
-	public EOperation getService__Different_secrets__DiagnosticChain_Map() {
+	public EOperation getService__No_self_dependencies__DiagnosticChain_Map() {
 		return serviceEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getService__Different_secrets__DiagnosticChain_Map() {
+		return serviceEClass.getEOperations().get(3);
 	}
 
 	/**
@@ -1374,6 +1400,16 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	 * @generated
 	 */
 	@Override
+	public EAttribute getDependency_Condition() {
+		return (EAttribute)dependencyEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getConfigConnector() {
 		return configConnectorEClass;
 	}
@@ -1704,6 +1740,36 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	 * @generated
 	 */
 	@Override
+	public EClass getLink() {
+		return linkEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getLink_Service() {
+		return (EReference)linkEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getLink_Alias() {
+		return (EAttribute)linkEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getRestartPolicy() {
 		return restartPolicyEEnum;
 	}
@@ -1736,6 +1802,16 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	@Override
 	public EEnum getPropagationType() {
 		return propagationTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getCondition() {
+		return conditionEEnum;
 	}
 
 	/**
@@ -1785,7 +1861,6 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		createEReference(serviceEClass, SERVICE__DNS);
 		createEAttribute(serviceEClass, SERVICE__IMAGE);
 		createEAttribute(serviceEClass, SERVICE__INIT);
-		createEReference(serviceEClass, SERVICE__LINKS);
 		createEAttribute(serviceEClass, SERVICE__READ_ONLY);
 		createEAttribute(serviceEClass, SERVICE__RESTART);
 		createEReference(serviceEClass, SERVICE__DEPENDS_ON);
@@ -1794,13 +1869,15 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		createEReference(serviceEClass, SERVICE__SECRETS);
 		createEReference(serviceEClass, SERVICE__NETWORKS);
 		createEReference(serviceEClass, SERVICE__PORTS);
+		createEReference(serviceEClass, SERVICE__LINKS);
+		createEOperation(serviceEClass, SERVICE___DIFFERENT_DEPENDENCIES__DIAGNOSTICCHAIN_MAP);
 		createEOperation(serviceEClass, SERVICE___NO_SELF_DEPENDENCIES__DIAGNOSTICCHAIN_MAP);
-		createEOperation(serviceEClass, SERVICE___DIFFERENT_SECRETS__DIAGNOSTICCHAIN_MAP);
 		createEOperation(serviceEClass, SERVICE___DIFFERENT_CONFIGS__DIAGNOSTICCHAIN_MAP);
+		createEOperation(serviceEClass, SERVICE___DIFFERENT_SECRETS__DIAGNOSTICCHAIN_MAP);
 		createEOperation(serviceEClass, SERVICE___IMAGE_OR_BUILD__DIAGNOSTICCHAIN_MAP);
 		createEOperation(serviceEClass, SERVICE___DIFFERENT_VOLUMES__DIAGNOSTICCHAIN_MAP);
+		createEOperation(serviceEClass, SERVICE___DIFFERENT_LINKS__DIAGNOSTICCHAIN_MAP);
 		createEOperation(serviceEClass, SERVICE___DIFFERENT_NETWORKS__DIAGNOSTICCHAIN_MAP);
-		createEOperation(serviceEClass, SERVICE___DIFFERENT_DEPENDENCIES__DIAGNOSTICCHAIN_MAP);
 
 		networkEClass = createEClass(NETWORK);
 		createEAttribute(networkEClass, NETWORK__NAME);
@@ -1887,6 +1964,7 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 
 		dependencyEClass = createEClass(DEPENDENCY);
 		createEReference(dependencyEClass, DEPENDENCY__SERVICE);
+		createEAttribute(dependencyEClass, DEPENDENCY__CONDITION);
 
 		configConnectorEClass = createEClass(CONFIG_CONNECTOR);
 		createEReference(configConnectorEClass, CONFIG_CONNECTOR__CONFIG);
@@ -1929,11 +2007,16 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		portEClass = createEClass(PORT);
 		createEAttribute(portEClass, PORT__VALUE);
 
+		linkEClass = createEClass(LINK);
+		createEReference(linkEClass, LINK__SERVICE);
+		createEAttribute(linkEClass, LINK__ALIAS);
+
 		// Create enums
 		restartPolicyEEnum = createEEnum(RESTART_POLICY);
 		accessModeEEnum = createEEnum(ACCESS_MODE);
 		mountTypeEEnum = createEEnum(MOUNT_TYPE);
 		propagationTypeEEnum = createEEnum(PROPAGATION_TYPE);
+		conditionEEnum = createEEnum(CONDITION);
 	}
 
 	/**
@@ -1985,7 +2068,6 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		initEReference(getService_Dns(), this.getDNS(), null, "dns", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getService_Image(), ecorePackage.getEString(), "image", null, 0, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getService_Init(), ecorePackage.getEBoolean(), "init", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getService_Links(), this.getService(), null, "links", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getService_Read_only(), ecorePackage.getEBoolean(), "read_only", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getService_Restart(), this.getRestartPolicy(), "restart", null, 0, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getService_Depends_on(), this.getDependency(), null, "depends_on", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1994,8 +2076,9 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		initEReference(getService_Secrets(), this.getSecretConnector(), null, "secrets", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getService_Networks(), this.getNetworkConnector(), null, "networks", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getService_Ports(), this.getPort(), null, "ports", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getService_Links(), this.getLink(), null, "links", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = initEOperation(getService__No_self_dependencies__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "no_self_dependencies", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getService__Different_dependencies__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "different_dependencies", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
 		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2004,7 +2087,7 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getService__Different_secrets__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "different_secrets", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getService__No_self_dependencies__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "no_self_dependencies", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2014,6 +2097,15 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getService__Different_configs__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "different_configs", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getService__Different_secrets__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "different_secrets", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2040,7 +2132,7 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getService__Different_networks__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "different_networks", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getService__Different_links__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "different_links", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2049,7 +2141,7 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getService__Different_dependencies__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "different_dependencies", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getService__Different_networks__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "different_networks", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2191,6 +2283,7 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 
 		initEClass(dependencyEClass, Dependency.class, "Dependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDependency_Service(), this.getService(), null, "service", null, 1, 1, Dependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDependency_Condition(), this.getCondition(), "condition", null, 0, 1, Dependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(configConnectorEClass, ConfigConnector.class, "ConfigConnector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConfigConnector_Config(), this.getConfig(), null, "config", null, 1, 1, ConfigConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2241,6 +2334,10 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		initEClass(portEClass, Port.class, "Port", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPort_Value(), ecorePackage.getEString(), "value", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(linkEClass, Link.class, "Link", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getLink_Service(), this.getService(), null, "service", null, 1, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLink_Alias(), ecorePackage.getEString(), "alias", null, 0, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(restartPolicyEEnum, RestartPolicy.class, "RestartPolicy");
 		addEEnumLiteral(restartPolicyEEnum, RestartPolicy.NO);
@@ -2266,6 +2363,11 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		addEEnumLiteral(propagationTypeEEnum, PropagationType.SHARED);
 		addEEnumLiteral(propagationTypeEEnum, PropagationType.SLAVE);
 		addEEnumLiteral(propagationTypeEEnum, PropagationType.RSLAVE);
+
+		initEEnum(conditionEEnum, Condition.class, "Condition");
+		addEEnumLiteral(conditionEEnum, Condition.SERVICE_STARTED);
+		addEEnumLiteral(conditionEEnum, Condition.SERVICE_HEALTHY);
+		addEEnumLiteral(conditionEEnum, Condition.SERVICE_COMPLETED_SUCCESSFULLY);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -2294,7 +2396,7 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		  (serviceEClass,
 		   source,
 		   new String[] {
-			   "constraints", "different_dependencies"
+			   "constraints", "different_networks"
 		   });
 		addAnnotation
 		  (configEClass,
@@ -2337,22 +2439,28 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	protected void createPivotAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";
 		addAnnotation
+		  (getService__Different_dependencies__DiagnosticChain_Map(),
+		   source,
+		   new String[] {
+			   "body", "self.depends_on.service->isUnique(name)"
+		   });
+		addAnnotation
 		  (getService__No_self_dependencies__DiagnosticChain_Map(),
 		   source,
 		   new String[] {
 			   "body", "self.depends_on.service->excludes(self)"
 		   });
 		addAnnotation
-		  (getService__Different_secrets__DiagnosticChain_Map(),
-		   source,
-		   new String[] {
-			   "body", "self.secrets.secret->isUnique(name)"
-		   });
-		addAnnotation
 		  (getService__Different_configs__DiagnosticChain_Map(),
 		   source,
 		   new String[] {
 			   "body", "self.configs.config->isUnique(name)"
+		   });
+		addAnnotation
+		  (getService__Different_secrets__DiagnosticChain_Map(),
+		   source,
+		   new String[] {
+			   "body", "self.secrets.secret->isUnique(name)"
 		   });
 		addAnnotation
 		  (getService__Image_or_build__DiagnosticChain_Map(),
@@ -2367,16 +2475,16 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 			   "body", "self.volumes.volume->isUnique(name)"
 		   });
 		addAnnotation
+		  (getService__Different_links__DiagnosticChain_Map(),
+		   source,
+		   new String[] {
+			   "body", "self.links.service->isUnique(name)"
+		   });
+		addAnnotation
 		  (getService__Different_networks__DiagnosticChain_Map(),
 		   source,
 		   new String[] {
 			   "body", "self.networks.network->isUnique(name)"
-		   });
-		addAnnotation
-		  (getService__Different_dependencies__DiagnosticChain_Map(),
-		   source,
-		   new String[] {
-			   "body", "self.depends_on.service->isUnique(name)"
 		   });
 		addAnnotation
 		  (getConfig__File_or_external__DiagnosticChain_Map(),

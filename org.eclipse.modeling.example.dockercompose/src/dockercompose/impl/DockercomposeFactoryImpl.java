@@ -81,6 +81,7 @@ public class DockercomposeFactoryImpl extends EFactoryImpl implements Dockercomp
 			case DockercomposePackage.IPAM_ADDRESS: return createIPAMAddress();
 			case DockercomposePackage.IPAM_CONFIG: return createIPAMConfig();
 			case DockercomposePackage.PORT: return createPort();
+			case DockercomposePackage.LINK: return createLink();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -102,6 +103,8 @@ public class DockercomposeFactoryImpl extends EFactoryImpl implements Dockercomp
 				return createMountTypeFromString(eDataType, initialValue);
 			case DockercomposePackage.PROPAGATION_TYPE:
 				return createPropagationTypeFromString(eDataType, initialValue);
+			case DockercomposePackage.CONDITION:
+				return createConditionFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -123,6 +126,8 @@ public class DockercomposeFactoryImpl extends EFactoryImpl implements Dockercomp
 				return convertMountTypeToString(eDataType, instanceValue);
 			case DockercomposePackage.PROPAGATION_TYPE:
 				return convertPropagationTypeToString(eDataType, instanceValue);
+			case DockercomposePackage.CONDITION:
+				return convertConditionToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -397,6 +402,17 @@ public class DockercomposeFactoryImpl extends EFactoryImpl implements Dockercomp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public Link createLink() {
+		LinkImpl link = new LinkImpl();
+		return link;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public RestartPolicy createRestartPolicyFromString(EDataType eDataType, String initialValue) {
 		RestartPolicy result = RestartPolicy.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -469,6 +485,26 @@ public class DockercomposeFactoryImpl extends EFactoryImpl implements Dockercomp
 	 * @generated
 	 */
 	public String convertPropagationTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Condition createConditionFromString(EDataType eDataType, String initialValue) {
+		Condition result = Condition.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertConditionToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

@@ -27,7 +27,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dockercompose.Service#getDns <em>Dns</em>}</li>
  *   <li>{@link dockercompose.Service#getImage <em>Image</em>}</li>
  *   <li>{@link dockercompose.Service#isInit <em>Init</em>}</li>
- *   <li>{@link dockercompose.Service#getLinks <em>Links</em>}</li>
  *   <li>{@link dockercompose.Service#isRead_only <em>Read only</em>}</li>
  *   <li>{@link dockercompose.Service#getRestart <em>Restart</em>}</li>
  *   <li>{@link dockercompose.Service#getDepends_on <em>Depends on</em>}</li>
@@ -36,10 +35,11 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dockercompose.Service#getSecrets <em>Secrets</em>}</li>
  *   <li>{@link dockercompose.Service#getNetworks <em>Networks</em>}</li>
  *   <li>{@link dockercompose.Service#getPorts <em>Ports</em>}</li>
+ *   <li>{@link dockercompose.Service#getLinks <em>Links</em>}</li>
  * </ul>
  *
  * @see dockercompose.DockercomposePackage#getService()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='different_dependencies'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='different_networks'"
  * @generated
  */
 public interface Service extends EObject {
@@ -222,16 +222,16 @@ public interface Service extends EObject {
 	void setInit(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Links</b></em>' reference list.
-	 * The list contents are of type {@link dockercompose.Service}.
+	 * Returns the value of the '<em><b>Links</b></em>' containment reference list.
+	 * The list contents are of type {@link dockercompose.Link}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Links</em>' reference list.
+	 * @return the value of the '<em>Links</em>' containment reference list.
 	 * @see dockercompose.DockercomposePackage#getService_Links()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Service> getLinks();
+	EList<Link> getLinks();
 
 	/**
 	 * Returns the value of the '<em><b>Read only</b></em>' attribute.
@@ -367,6 +367,14 @@ public interface Service extends EObject {
 	 * @generated
 	 */
 	boolean different_volumes(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.links.service-&gt;isUnique(name)'"
+	 * @generated
+	 */
+	boolean different_links(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

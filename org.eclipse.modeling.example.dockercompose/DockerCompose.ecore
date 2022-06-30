@@ -25,7 +25,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Service">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="image_or_build no_self_dependencies different_networks different_volumes different_configs different_secrets different_dependencies"/>
+      <details key="constraints" value="image_or_build no_self_dependencies different_networks different_volumes different_configs different_secrets different_dependencies different_links"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="image_or_build" value="(image->excluding('')->notEmpty() and build->excluding('')->isEmpty()) or (image->excluding('')->isEmpty() and build->excluding('')->notEmpty())"/>
@@ -35,6 +35,7 @@
       <details key="different_configs" value="self.configs.config->isUnique(name)"/>
       <details key="different_secrets" value="self.secrets.secret->isUnique(name)"/>
       <details key="different_dependencies" value="self.depends_on.service->isUnique(name)"/>
+      <details key="different_links" value="self.links.service->isUnique(name)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
@@ -49,8 +50,6 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="image" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="init" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
-        eType="#//Service"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="read_only" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="restart" eType="#//RestartPolicy"/>
@@ -66,6 +65,8 @@
         eType="#//NetworkConnector" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
         eType="#//Port" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
+        eType="#//Link" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Network">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -205,6 +206,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Dependency">
     <eStructuralFeatures xsi:type="ecore:EReference" name="service" lowerBound="1"
         eType="#//Service"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" eType="#//Condition"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConfigConnector">
     <eStructuralFeatures xsi:type="ecore:EReference" name="config" lowerBound="1"
@@ -282,5 +284,15 @@
     <eLiterals name="shared" value="3"/>
     <eLiterals name="slave" value="4"/>
     <eLiterals name="rslave" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Condition">
+    <eLiterals name="service_started"/>
+    <eLiterals name="service_healthy" value="1"/>
+    <eLiterals name="service_completed_successfully" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Link">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="service" lowerBound="1"
+        eType="#//Service"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alias" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

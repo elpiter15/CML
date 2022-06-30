@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="project" version="12.0.0.2017041100">
+  <ownedViewpoints name="DockerComposeViewpoint" modelFileExtension="*.yaml">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="DockerComposeDiagram" label="Docker Compose Diagram" domainClass="dockercompose::DockerCompose" enablePopupBars="true">
+      <metamodel href="http://www.eclipse.org/modeling/example/dockercompose/DockerCompose#/"/>
+      <defaultLayer name="ServiceLayer" label="Service Layer">
+        <nodeMappings name="ServiceNode" label="Service Node" labelDirectEdit="//@ownedViewpoints[name='DockerComposeViewpoint']/@ownedRepresentations[name='DockerComposeDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='EditLabel']" semanticCandidatesExpression="[services/]" domainClass="dockercompose::Service">
+          <style xsi:type="style:SquareDescription" labelSize="10" iconPath="/dockercompose.project.design/images/container_icon.png" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="VolumesEdge" label="Volumes Edge" sourceMapping="//@ownedViewpoints[name='DockerComposeViewpoint']/@ownedRepresentations[name='DockerComposeDiagram']/@defaultLayer/@nodeMappings[name='ServiceNode']" targetMapping="//@ownedViewpoints[name='DockerComposeViewpoint']/@ownedRepresentations[name='DockerComposeDiagram']/@additionalLayers[name='VolumesLayer']/@nodeMappings[name='VolumeNode']" targetFinderExpression="[volume/]" sourceFinderExpression="[eContainer()/]" domainClass="dockercompose::VolumeConnector" useDomainElement="true">
+          <style sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+            <centerLabelStyleDescription labelSize="10" showIcon="false">
+              <labelFormat>italic</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="NetworksEdge" label="Networks Edge" sourceMapping="//@ownedViewpoints[name='DockerComposeViewpoint']/@ownedRepresentations[name='DockerComposeDiagram']/@defaultLayer/@nodeMappings[name='ServiceNode']" targetMapping="//@ownedViewpoints[name='DockerComposeViewpoint']/@ownedRepresentations[name='DockerComposeDiagram']/@additionalLayers[name='NetworksLayer']/@nodeMappings[name='NetworkNode']" targetFinderExpression="[network/]" sourceFinderExpression="[eContainer()/]" domainClass="dockercompose::NetworkConnector" useDomainElement="true">
+          <style sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ConfigsEdge" label="Configs Edge" sourceMapping="//@ownedViewpoints[name='DockerComposeViewpoint']/@ownedRepresentations[name='DockerComposeDiagram']/@defaultLayer/@nodeMappings[name='ServiceNode']" targetMapping="//@ownedViewpoints[name='DockerComposeViewpoint']/@ownedRepresentations[name='DockerComposeDiagram']/@additionalLayers[name='ConfigsLayer']/@nodeMappings[name='ConfigNode']" targetFinderExpression="[config/]" sourceFinderExpression="[eContainer()/]" domainClass="dockercompose::ConfigConnector" useDomainElement="true">
+          <style sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="DependsOnEdge" label="DependsOn Edge" sourceMapping="//@ownedViewpoints[name='DockerComposeViewpoint']/@ownedRepresentations[name='DockerComposeDiagram']/@defaultLayer/@nodeMappings[name='ServiceNode']" targetMapping="//@ownedViewpoints[name='DockerComposeViewpoint']/@ownedRepresentations[name='DockerComposeDiagram']/@defaultLayer/@nodeMappings[name='ServiceNode']" targetFinderExpression="[service/]" sourceFinderExpression="[eContainer()/]" domainClass="dockercompose::Dependency" useDomainElement="true">
+          <style sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="SecretsEdge" label="Secrets Edge" sourceMapping="//@ownedViewpoints[name='DockerComposeViewpoint']/@ownedRepresentations[name='DockerComposeDiagram']/@defaultLayer/@nodeMappings[name='ServiceNode']" targetMapping="//@ownedViewpoints[name='DockerComposeViewpoint']/@ownedRepresentations[name='DockerComposeDiagram']/@additionalLayers[name='SecretsLayer']/@nodeMappings[name='SecretNode']" targetFinderExpression="[secret/]" sourceFinderExpression="[eContainer()/]" domainClass="dockercompose::SecretConnector" useDomainElement="true">
+          <style lineStyle="dash" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_yellow']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="LinksEdge" label="Links Edge" sourceMapping="//@ownedViewpoints[name='DockerComposeViewpoint']/@ownedRepresentations[name='DockerComposeDiagram']/@defaultLayer/@nodeMappings[name='ServiceNode']" targetMapping="//@ownedViewpoints[name='DockerComposeViewpoint']/@ownedRepresentations[name='DockerComposeDiagram']/@defaultLayer/@nodeMappings[name='ServiceNode']" targetFinderExpression="[service/]" sourceFinderExpression="[eContainer()/]" domainClass="dockercompose::Link" useDomainElement="true">
+          <style lineStyle="dash" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections name="NodePalette" label="Nodes">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="ServiceTool" label="Service" nodeMappings="//@ownedViewpoints[name='DockerComposeViewpoint']/@ownedRepresentations[name='DockerComposeDiagram']/@defaultLayer/@nodeMappings[name='ServiceNode']" iconPath="/dockercompose.project.design/images/container_icon_small.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="dockercompose::Service" referenceName="services"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditLabel" label="Edit Label">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="RelationsPalette" label="Relations">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="VolumesTool" label="Volumes" edgeMappings="//@ownedViewpoints[name='DockerComposeViewpoint']/@ownedRepresentations[name='DockerComposeDiagram']/@defaultLayer/@edgeMappings[name='VolumesEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="dockercompose::VolumeConnector" referenceName="volumes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="volume" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="NetworksTool" label="Networks" edgeMappings="//@ownedViewpoints[name='DockerComposeViewpoint']/@ownedRepresentations[name='DockerComposeDiagram']/@defaultLayer/@edgeMappings[name='NetworksEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="dockercompose::NetworkConnector" referenceName="networks">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="network" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="ConfigsTool" label="Configs" edgeMappings="//@ownedViewpoints[name='DockerComposeViewpoint']/@ownedRepresentations[name='DockerComposeDiagram']/@defaultLayer/@edgeMappings[name='ConfigsEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="dockercompose::ConfigConnector" referenceName="configs">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="config" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="DependsOnTool" label="DependsOn" edgeMappings="//@ownedViewpoints[name='DockerComposeViewpoint']/@ownedRepresentations[name='DockerComposeDiagram']/@defaultLayer/@edgeMappings[name='DependsOnEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="dockercompose::Dependency" referenceName="depends_on">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="service" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="SecretsTool" label="Secrets" edgeMappings="//@ownedViewpoints[name='DockerComposeViewpoint']/@ownedRepresentations[name='DockerComposeDiagram']/@defaultLayer/@edgeMappings[name='SecretsEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="dockercompose::SecretConnector" referenceName="secrets">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="secret" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="LinksTool" label="Links" edgeMappings="//@ownedViewpoints[name='DockerComposeViewpoint']/@ownedRepresentations[name='DockerComposeDiagram']/@defaultLayer/@edgeMappings[name='LinksEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="dockercompose::Link" referenceName="links">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="service" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+      <additionalLayers name="NetworksLayer" label="Networks Layer" activeByDefault="true">
+        <nodeMappings name="NetworkNode" label="Network Node" labelDirectEdit="//@ownedViewpoints[name='DockerComposeViewpoint']/@ownedRepresentations[name='DockerComposeDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='EditLabel']" semanticCandidatesExpression="[networks/]" domainClass="dockercompose::Network">
+          <style xsi:type="style:SquareDescription" labelSize="10" iconPath="/dockercompose.project.design/images/network_icon.png" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </nodeMappings>
+        <toolSections name="NodePalette" label="Node Palette">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="NetworkTool" label="Network" nodeMappings="//@ownedViewpoints[name='DockerComposeViewpoint']/@ownedRepresentations[name='DockerComposeDiagram']/@additionalLayers[name='NetworksLayer']/@nodeMappings[name='NetworkNode']" iconPath="/dockercompose.project.design/images/network_icon_small.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="dockercompose::Network" referenceName="networks"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </additionalLayers>
+      <additionalLayers name="ConfigsLayer" label="Configs Layer" activeByDefault="true">
+        <nodeMappings name="ConfigNode" label="Config Node" labelDirectEdit="//@ownedViewpoints[name='DockerComposeViewpoint']/@ownedRepresentations[name='DockerComposeDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='EditLabel']" semanticCandidatesExpression="[configs/]" domainClass="dockercompose::Config">
+          <style xsi:type="style:SquareDescription" labelSize="10" iconPath="/dockercompose.project.design/images/config_icon.png" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </nodeMappings>
+        <toolSections name="NodePalette" label="Node Palette">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="ConfigTool" label="Config" nodeMappings="//@ownedViewpoints[name='DockerComposeViewpoint']/@ownedRepresentations[name='DockerComposeDiagram']/@additionalLayers[name='ConfigsLayer']/@nodeMappings[name='ConfigNode']" iconPath="/dockercompose.project.design/images/config_icon_small.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="dockercompose::Config" referenceName="configs"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </additionalLayers>
+      <additionalLayers name="VolumesLayer" label="Volumes Layer" activeByDefault="true">
+        <nodeMappings name="VolumeNode" label="Volume Node" labelDirectEdit="//@ownedViewpoints[name='DockerComposeViewpoint']/@ownedRepresentations[name='DockerComposeDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='EditLabel']" semanticCandidatesExpression="[volumes/]" domainClass="dockercompose::Volume">
+          <style xsi:type="style:SquareDescription" labelSize="10" iconPath="/dockercompose.project.design/images/volume_icon.png" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </nodeMappings>
+        <toolSections name="NodePalette" label="Node Palette">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="VolumeTool" label="Volume" nodeMappings="//@ownedViewpoints[name='DockerComposeViewpoint']/@ownedRepresentations[name='DockerComposeDiagram']/@additionalLayers[name='VolumesLayer']/@nodeMappings[name='VolumeNode']" iconPath="/dockercompose.project.design/images/volume_icon_small.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="dockercompose::Volume" referenceName="volumes"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </additionalLayers>
+      <additionalLayers name="SecretsLayer" label="Secrets Layer" activeByDefault="true">
+        <nodeMappings name="SecretNode" label="Secret Node" labelDirectEdit="//@ownedViewpoints[name='DockerComposeViewpoint']/@ownedRepresentations[name='DockerComposeDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='EditLabel']" semanticCandidatesExpression="[secrets/]" domainClass="dockercompose::Secret">
+          <style xsi:type="style:SquareDescription" labelSize="10" iconPath="/dockercompose.project.design/images/secret_icon.png" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </nodeMappings>
+        <toolSections name="NodePalette" label="Node Palette">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SecretTool" label="Secret" nodeMappings="//@ownedViewpoints[name='DockerComposeViewpoint']/@ownedRepresentations[name='DockerComposeDiagram']/@additionalLayers[name='SecretsLayer']/@nodeMappings[name='SecretNode']" iconPath="/dockercompose.project.design/images/secret_icon_small.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="dockercompose::Secret" referenceName="secrets"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </additionalLayers>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="dockercompose.project.design.Services"/>
+  </ownedViewpoints>
+  <extensions xsi:type="properties:ViewExtensionDescription" name="Properties">
+    <metamodels href="http://www.eclipse.org/modeling/example/dockercompose/DockerCompose#/"/>
+    <categories name="Default">
+      <pages name="XtextPage" labelExpression="XText" domainClass="dockercompose::Service" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0"/>
+      <groups name="XtextGroup" labelExpression="Xtext" domainClass="dockercompose::Service" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:CustomDescription" name="org.eclipse.sirius.example.xtextwidget.XtextPartialViewer"/>
+      </groups>
+    </categories>
+  </extensions>
+</description:Group>

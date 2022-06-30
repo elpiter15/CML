@@ -233,22 +233,13 @@ public interface DockercomposePackage extends EPackage {
 	int SERVICE__INIT = 8;
 
 	/**
-	 * The feature id for the '<em><b>Links</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE__LINKS = 9;
-
-	/**
 	 * The feature id for the '<em><b>Read only</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE__READ_ONLY = 10;
+	int SERVICE__READ_ONLY = 9;
 
 	/**
 	 * The feature id for the '<em><b>Restart</b></em>' attribute.
@@ -257,7 +248,7 @@ public interface DockercomposePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE__RESTART = 11;
+	int SERVICE__RESTART = 10;
 
 	/**
 	 * The feature id for the '<em><b>Depends on</b></em>' containment reference list.
@@ -266,7 +257,7 @@ public interface DockercomposePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE__DEPENDS_ON = 12;
+	int SERVICE__DEPENDS_ON = 11;
 
 	/**
 	 * The feature id for the '<em><b>Volumes</b></em>' containment reference list.
@@ -275,7 +266,7 @@ public interface DockercomposePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE__VOLUMES = 13;
+	int SERVICE__VOLUMES = 12;
 
 	/**
 	 * The feature id for the '<em><b>Configs</b></em>' containment reference list.
@@ -284,7 +275,7 @@ public interface DockercomposePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE__CONFIGS = 14;
+	int SERVICE__CONFIGS = 13;
 
 	/**
 	 * The feature id for the '<em><b>Secrets</b></em>' containment reference list.
@@ -293,7 +284,7 @@ public interface DockercomposePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE__SECRETS = 15;
+	int SERVICE__SECRETS = 14;
 
 	/**
 	 * The feature id for the '<em><b>Networks</b></em>' containment reference list.
@@ -302,7 +293,7 @@ public interface DockercomposePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE__NETWORKS = 16;
+	int SERVICE__NETWORKS = 15;
 
 	/**
 	 * The feature id for the '<em><b>Ports</b></em>' containment reference list.
@@ -311,7 +302,16 @@ public interface DockercomposePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE__PORTS = 17;
+	int SERVICE__PORTS = 16;
+
+	/**
+	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE__LINKS = 17;
 
 	/**
 	 * The number of structural features of the '<em>Service</em>' class.
@@ -323,22 +323,22 @@ public interface DockercomposePackage extends EPackage {
 	int SERVICE_FEATURE_COUNT = 18;
 
 	/**
+	 * The operation id for the '<em>Different dependencies</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE___DIFFERENT_DEPENDENCIES__DIAGNOSTICCHAIN_MAP = 0;
+
+	/**
 	 * The operation id for the '<em>No self dependencies</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE___NO_SELF_DEPENDENCIES__DIAGNOSTICCHAIN_MAP = 0;
-
-	/**
-	 * The operation id for the '<em>Different secrets</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE___DIFFERENT_SECRETS__DIAGNOSTICCHAIN_MAP = 1;
+	int SERVICE___NO_SELF_DEPENDENCIES__DIAGNOSTICCHAIN_MAP = 1;
 
 	/**
 	 * The operation id for the '<em>Different configs</em>' operation.
@@ -350,13 +350,22 @@ public interface DockercomposePackage extends EPackage {
 	int SERVICE___DIFFERENT_CONFIGS__DIAGNOSTICCHAIN_MAP = 2;
 
 	/**
+	 * The operation id for the '<em>Different secrets</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE___DIFFERENT_SECRETS__DIAGNOSTICCHAIN_MAP = 3;
+
+	/**
 	 * The operation id for the '<em>Image or build</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE___IMAGE_OR_BUILD__DIAGNOSTICCHAIN_MAP = 3;
+	int SERVICE___IMAGE_OR_BUILD__DIAGNOSTICCHAIN_MAP = 4;
 
 	/**
 	 * The operation id for the '<em>Different volumes</em>' operation.
@@ -365,7 +374,16 @@ public interface DockercomposePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE___DIFFERENT_VOLUMES__DIAGNOSTICCHAIN_MAP = 4;
+	int SERVICE___DIFFERENT_VOLUMES__DIAGNOSTICCHAIN_MAP = 5;
+
+	/**
+	 * The operation id for the '<em>Different links</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE___DIFFERENT_LINKS__DIAGNOSTICCHAIN_MAP = 6;
 
 	/**
 	 * The operation id for the '<em>Different networks</em>' operation.
@@ -374,16 +392,7 @@ public interface DockercomposePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE___DIFFERENT_NETWORKS__DIAGNOSTICCHAIN_MAP = 5;
-
-	/**
-	 * The operation id for the '<em>Different dependencies</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE___DIFFERENT_DEPENDENCIES__DIAGNOSTICCHAIN_MAP = 6;
+	int SERVICE___DIFFERENT_NETWORKS__DIAGNOSTICCHAIN_MAP = 7;
 
 	/**
 	 * The number of operations of the '<em>Service</em>' class.
@@ -392,7 +401,7 @@ public interface DockercomposePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_OPERATION_COUNT = 7;
+	int SERVICE_OPERATION_COUNT = 8;
 
 	/**
 	 * The meta object id for the '{@link dockercompose.impl.NetworkImpl <em>Network</em>}' class.
@@ -1291,13 +1300,22 @@ public interface DockercomposePackage extends EPackage {
 	int DEPENDENCY__SERVICE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Condition</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPENDENCY__CONDITION = 1;
+
+	/**
 	 * The number of structural features of the '<em>Dependency</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEPENDENCY_FEATURE_COUNT = 1;
+	int DEPENDENCY_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Dependency</em>' class.
@@ -1803,6 +1821,52 @@ public interface DockercomposePackage extends EPackage {
 	int PORT_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link dockercompose.impl.LinkImpl <em>Link</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dockercompose.impl.LinkImpl
+	 * @see dockercompose.impl.DockercomposePackageImpl#getLink()
+	 * @generated
+	 */
+	int LINK = 24;
+
+	/**
+	 * The feature id for the '<em><b>Service</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK__SERVICE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Alias</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK__ALIAS = 1;
+
+	/**
+	 * The number of structural features of the '<em>Link</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Link</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link dockercompose.RestartPolicy <em>Restart Policy</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1810,7 +1874,7 @@ public interface DockercomposePackage extends EPackage {
 	 * @see dockercompose.impl.DockercomposePackageImpl#getRestartPolicy()
 	 * @generated
 	 */
-	int RESTART_POLICY = 24;
+	int RESTART_POLICY = 25;
 
 	/**
 	 * The meta object id for the '{@link dockercompose.AccessMode <em>Access Mode</em>}' enum.
@@ -1820,7 +1884,7 @@ public interface DockercomposePackage extends EPackage {
 	 * @see dockercompose.impl.DockercomposePackageImpl#getAccessMode()
 	 * @generated
 	 */
-	int ACCESS_MODE = 25;
+	int ACCESS_MODE = 26;
 
 
 	/**
@@ -1831,7 +1895,7 @@ public interface DockercomposePackage extends EPackage {
 	 * @see dockercompose.impl.DockercomposePackageImpl#getMountType()
 	 * @generated
 	 */
-	int MOUNT_TYPE = 26;
+	int MOUNT_TYPE = 27;
 
 
 	/**
@@ -1842,7 +1906,18 @@ public interface DockercomposePackage extends EPackage {
 	 * @see dockercompose.impl.DockercomposePackageImpl#getPropagationType()
 	 * @generated
 	 */
-	int PROPAGATION_TYPE = 27;
+	int PROPAGATION_TYPE = 28;
+
+
+	/**
+	 * The meta object id for the '{@link dockercompose.Condition <em>Condition</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dockercompose.Condition
+	 * @see dockercompose.impl.DockercomposePackageImpl#getCondition()
+	 * @generated
+	 */
+	int CONDITION = 29;
 
 
 	/**
@@ -2031,10 +2106,10 @@ public interface DockercomposePackage extends EPackage {
 	EAttribute getService_Init();
 
 	/**
-	 * Returns the meta object for the reference list '{@link dockercompose.Service#getLinks <em>Links</em>}'.
+	 * Returns the meta object for the containment reference list '{@link dockercompose.Service#getLinks <em>Links</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Links</em>'.
+	 * @return the meta object for the containment reference list '<em>Links</em>'.
 	 * @see dockercompose.Service#getLinks()
 	 * @see #getService()
 	 * @generated
@@ -2148,6 +2223,16 @@ public interface DockercomposePackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getService__Different_volumes__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link dockercompose.Service#different_links(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Different links</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Different links</em>' operation.
+	 * @see dockercompose.Service#different_links(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getService__Different_links__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link dockercompose.Service#different_networks(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Different networks</em>}' operation.
@@ -2972,6 +3057,17 @@ public interface DockercomposePackage extends EPackage {
 	EReference getDependency_Service();
 
 	/**
+	 * Returns the meta object for the attribute '{@link dockercompose.Dependency#getCondition <em>Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Condition</em>'.
+	 * @see dockercompose.Dependency#getCondition()
+	 * @see #getDependency()
+	 * @generated
+	 */
+	EAttribute getDependency_Condition();
+
+	/**
 	 * Returns the meta object for class '{@link dockercompose.ConfigConnector <em>Config Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3326,6 +3422,38 @@ public interface DockercomposePackage extends EPackage {
 	EAttribute getPort_Value();
 
 	/**
+	 * Returns the meta object for class '{@link dockercompose.Link <em>Link</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Link</em>'.
+	 * @see dockercompose.Link
+	 * @generated
+	 */
+	EClass getLink();
+
+	/**
+	 * Returns the meta object for the reference '{@link dockercompose.Link#getService <em>Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Service</em>'.
+	 * @see dockercompose.Link#getService()
+	 * @see #getLink()
+	 * @generated
+	 */
+	EReference getLink_Service();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dockercompose.Link#getAlias <em>Alias</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Alias</em>'.
+	 * @see dockercompose.Link#getAlias()
+	 * @see #getLink()
+	 * @generated
+	 */
+	EAttribute getLink_Alias();
+
+	/**
 	 * Returns the meta object for enum '{@link dockercompose.RestartPolicy <em>Restart Policy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3364,6 +3492,16 @@ public interface DockercomposePackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getPropagationType();
+
+	/**
+	 * Returns the meta object for enum '{@link dockercompose.Condition <em>Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Condition</em>'.
+	 * @see dockercompose.Condition
+	 * @generated
+	 */
+	EEnum getCondition();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -3529,7 +3667,7 @@ public interface DockercomposePackage extends EPackage {
 		EAttribute SERVICE__INIT = eINSTANCE.getService_Init();
 
 		/**
-		 * The meta object literal for the '<em><b>Links</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Links</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3615,6 +3753,14 @@ public interface DockercomposePackage extends EPackage {
 		 * @generated
 		 */
 		EOperation SERVICE___DIFFERENT_VOLUMES__DIAGNOSTICCHAIN_MAP = eINSTANCE.getService__Different_volumes__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Different links</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SERVICE___DIFFERENT_LINKS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getService__Different_links__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>Different networks</b></em>' operation.
@@ -4261,6 +4407,14 @@ public interface DockercomposePackage extends EPackage {
 		EReference DEPENDENCY__SERVICE = eINSTANCE.getDependency_Service();
 
 		/**
+		 * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DEPENDENCY__CONDITION = eINSTANCE.getDependency_Condition();
+
+		/**
 		 * The meta object literal for the '{@link dockercompose.impl.ConfigConnectorImpl <em>Config Connector</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4541,6 +4695,32 @@ public interface DockercomposePackage extends EPackage {
 		EAttribute PORT__VALUE = eINSTANCE.getPort_Value();
 
 		/**
+		 * The meta object literal for the '{@link dockercompose.impl.LinkImpl <em>Link</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dockercompose.impl.LinkImpl
+		 * @see dockercompose.impl.DockercomposePackageImpl#getLink()
+		 * @generated
+		 */
+		EClass LINK = eINSTANCE.getLink();
+
+		/**
+		 * The meta object literal for the '<em><b>Service</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LINK__SERVICE = eINSTANCE.getLink_Service();
+
+		/**
+		 * The meta object literal for the '<em><b>Alias</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LINK__ALIAS = eINSTANCE.getLink_Alias();
+
+		/**
 		 * The meta object literal for the '{@link dockercompose.RestartPolicy <em>Restart Policy</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4579,6 +4759,16 @@ public interface DockercomposePackage extends EPackage {
 		 * @generated
 		 */
 		EEnum PROPAGATION_TYPE = eINSTANCE.getPropagationType();
+
+		/**
+		 * The meta object literal for the '{@link dockercompose.Condition <em>Condition</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dockercompose.Condition
+		 * @see dockercompose.impl.DockercomposePackageImpl#getCondition()
+		 * @generated
+		 */
+		EEnum CONDITION = eINSTANCE.getCondition();
 
 	}
 

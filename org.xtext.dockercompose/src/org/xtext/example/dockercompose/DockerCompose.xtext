@@ -8,10 +8,10 @@ DockerCompose returns DockerCompose:
 	(
 			('version:' 	version=VERSION)?
 		&	('services:' 	(services+=Service)+ )
-		&	('networks:'	(networks+=Network)+ )?
 		&	('volumes:' 	(volumes+=Volume)+ )?
 		&	('configs:' 	(configs+=Config)+ )?
 		&	('secrets:' 	(secrets+=Secret)+ )?
+		&	('networks:'	(networks+=Network)+ )?
 	);
 
 terminal VERSION:
@@ -33,9 +33,10 @@ Service returns Service:
 		&	('init:'			init=EBoolean)?
 		&	('read_only:'		read_only=EBoolean)?
 		
-		&	('depends_on:' 		('-'depends_on+=Dependency)+ )?		// añadir condition
-		&	('networks:' 		((networks+=NetworkConnector_short)+ | (networks+=NetworkConnector_long)+ ))?
-		//&	('networks:' 		(networks+=NetworkConnector)+ )?
+		&	('links:' 			('-'links+=Link)+ )?
+		&	('depends_on:' 		((depends_on+=Dependency_short)+ | (depends_on+=Dependency_long)+ ))?
+		&	('networks:' 		(networks+=NetworkConnector)+)?
+		//&	('networks:' 		((networks+=NetworkConnector_short)+ | (networks+=NetworkConnector_long)+ ))?
 		&	('volumes:' 		(('-'volumes+=VolumeConnector_short)+ | ('-'volumes+=VolumeConnector_long)+ ))?
 		&	('configs:' 		(('-'configs+=ConfigConnector_short)+ | ('-'configs+=ConfigConnector_long)+ ))?
 		&	('secrets:' 		(('-'secrets+=SecretConnector_short)+ | ('-'secrets+=SecretConnector_long)+ ))?
@@ -56,16 +57,19 @@ Device returns Device:
 Image returns ecore::EString:
 		EString | ID(':'ID)+;
 
-Dependency returns Dependency:
+Link returns Link:
+	{Link}
+	service=[Service|EString](':'alias=EString)?;
+
+Dependency_short returns Dependency:
 	{Dependency}
-	service=[Service|EString]
-	;
-
-///*	
-NetworkConnector_short returns NetworkConnector:
-	{NetworkConnector}
-	'-'network=[Network|EString];
-
+	'-'service=[Service|EString];
+	
+Dependency_long returns Dependency:
+	{Dependency}
+	service=[Service|EString]':'
+	'condition:' condition=Condition;
+/*
 NetworkConnector_long returns NetworkConnector:
 	{NetworkConnector}
 	network=[Network|EString]':'
@@ -76,32 +80,27 @@ NetworkConnector_long returns NetworkConnector:
 		&	('aliases:' 		('-'aliases+=Alias)+ )?
 		&	('link_local_ips:' 	('-'link_local_ips+=DNS)+ )?
 	);
-//*/
-
-///*
+	
+NetworkConnector_short returns NetworkConnector:
+	{NetworkConnector}
+	'-'network=[Network|EString];
+ */
 NetworkConnector returns NetworkConnector:
 	{NetworkConnector}
-	('-'network=[Network|EString]) |
-	(network=[Network|EString]':'	
+	('-'network=[Network|EString] |
+	(network=[Network|EString]':'
 	(
 			('ipv4_address:'	ipv4_address=DNS)?
 		&	('priority:'		priority=EInt)?
 		
 		&	('aliases:' 		('-'aliases+=Alias)+ )?
 		&	('link_local_ips:' 	('-'link_local_ips+=DNS)+ )?
-	))
-	;
- 
-//	*/
+	))); 
  
 Alias returns Alias:
 	{Alias}
 	alias=EString
 	;
-
-VolumeConnector_short returns VolumeConnector:
-	{VolumeConnector}
-	volume=[Volume|EString]':'container_path=PATH(':'access_mode=AccessMode)?;
 
 VolumeConnector_long returns VolumeConnector:
 	{VolumeConnector}
@@ -117,11 +116,11 @@ VolumeConnector_long returns VolumeConnector:
 		&	('tmpfs:'
 				'size:' 		size=EInt)?
 	);
-	
-ConfigConnector_short returns ConfigConnector:
-	{ConfigConnector}
-	config=[Config|EString];
 
+VolumeConnector_short returns VolumeConnector:
+	{VolumeConnector}
+	volume=[Volume|EString]':'container_path=PATH(':'access_mode=AccessMode)?;
+	
 ConfigConnector_long returns ConfigConnector:
 	{ConfigConnector}
 	(
@@ -130,12 +129,11 @@ ConfigConnector_long returns ConfigConnector:
 		&	('uid:' 	uid=QUOTED_INT)?
 		&	('gid:' 	gid=QUOTED_INT)?
 		&	('mode:' 	mode=EInt)?
-	)
-	;
-
-SecretConnector_short returns SecretConnector:
-	{SecretConnector}
-	secret=[Secret|EString];
+	);
+	
+ConfigConnector_short returns ConfigConnector:
+	{ConfigConnector}
+	config=[Config|EString];
 
 SecretConnector_long returns SecretConnector:
 	{SecretConnector}
@@ -146,6 +144,10 @@ SecretConnector_long returns SecretConnector:
 		&	('gid:' 	gid=QUOTED_INT)?
 		&	('mode:' 	mode=EInt)?
 	);
+
+SecretConnector_short returns SecretConnector:
+	{SecretConnector}
+	secret=[Secret|EString];
 	
 terminal QUOTED_INT:
 	'"'/*INT*/'"';
@@ -274,9 +276,6 @@ EInt returns ecore::EInt:
 terminal ID: 
 	('^')?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'-'|'/'|'.'|'0'..'9')*;
 
-//Device returns Device:
-	//host_path='"' EString':'container_path=EString(':'cgroup_permissions=EString)?'"';
-
 DNS returns DNS:
 	dns1=EInt'.'dns2=EInt'.'dns3=EInt'.'dns4=EInt;
 	
@@ -297,3 +296,7 @@ enum MountType returns MountType:
 				
 enum PropagationType returns PropagationType:
 				rprivate = 'rprivate' | private = 'private' | rshared = 'rshared' | shared = 'shared' | rslave = 'rslave' | slave = 'slave';
+				
+enum Condition returns Condition:
+				service_started = 'service_started' | service_healthy = 'service_healthy' | service_completed_successfully = 'service_completed_successfully';
+				

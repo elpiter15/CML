@@ -2,6 +2,7 @@
  */
 package dockercompose.impl;
 
+import dockercompose.Condition;
 import dockercompose.Dependency;
 import dockercompose.DockercomposePackage;
 import dockercompose.Service;
@@ -23,6 +24,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link dockercompose.impl.DependencyImpl#getService <em>Service</em>}</li>
+ *   <li>{@link dockercompose.impl.DependencyImpl#getCondition <em>Condition</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,6 +39,25 @@ public class DependencyImpl extends MinimalEObjectImpl.Container implements Depe
 	 * @ordered
 	 */
 	protected Service service;
+
+	/**
+	 * The default value of the '{@link #getCondition() <em>Condition</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCondition()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Condition CONDITION_EDEFAULT = Condition.SERVICE_STARTED;
+	/**
+	 * The cached value of the '{@link #getCondition() <em>Condition</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCondition()
+	 * @generated
+	 * @ordered
+	 */
+	protected Condition condition = CONDITION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -103,11 +124,36 @@ public class DependencyImpl extends MinimalEObjectImpl.Container implements Depe
 	 * @generated
 	 */
 	@Override
+	public Condition getCondition() {
+		return condition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCondition(Condition newCondition) {
+		Condition oldCondition = condition;
+		condition = newCondition == null ? CONDITION_EDEFAULT : newCondition;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DockercomposePackage.DEPENDENCY__CONDITION, oldCondition, condition));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case DockercomposePackage.DEPENDENCY__SERVICE:
 				if (resolve) return getService();
 				return basicGetService();
+			case DockercomposePackage.DEPENDENCY__CONDITION:
+				return getCondition();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -122,6 +168,9 @@ public class DependencyImpl extends MinimalEObjectImpl.Container implements Depe
 		switch (featureID) {
 			case DockercomposePackage.DEPENDENCY__SERVICE:
 				setService((Service)newValue);
+				return;
+			case DockercomposePackage.DEPENDENCY__CONDITION:
+				setCondition((Condition)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -138,6 +187,9 @@ public class DependencyImpl extends MinimalEObjectImpl.Container implements Depe
 			case DockercomposePackage.DEPENDENCY__SERVICE:
 				setService((Service)null);
 				return;
+			case DockercomposePackage.DEPENDENCY__CONDITION:
+				setCondition(CONDITION_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -152,8 +204,26 @@ public class DependencyImpl extends MinimalEObjectImpl.Container implements Depe
 		switch (featureID) {
 			case DockercomposePackage.DEPENDENCY__SERVICE:
 				return service != null;
+			case DockercomposePackage.DEPENDENCY__CONDITION:
+				return condition != CONDITION_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (condition: ");
+		result.append(condition);
+		result.append(')');
+		return result.toString();
 	}
 
 } //DependencyImpl

@@ -9,6 +9,7 @@ import dockercompose.Dependency;
 import dockercompose.Device;
 import dockercompose.DockercomposePackage;
 import dockercompose.DockercomposeTables;
+import dockercompose.Link;
 import dockercompose.Network;
 import dockercompose.NetworkConnector;
 import dockercompose.Port;
@@ -39,7 +40,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.ocl.pivot.evaluation.Executor;
@@ -87,7 +87,6 @@ import org.eclipse.ocl.pivot.values.SetValue;
  *   <li>{@link dockercompose.impl.ServiceImpl#getDns <em>Dns</em>}</li>
  *   <li>{@link dockercompose.impl.ServiceImpl#getImage <em>Image</em>}</li>
  *   <li>{@link dockercompose.impl.ServiceImpl#isInit <em>Init</em>}</li>
- *   <li>{@link dockercompose.impl.ServiceImpl#getLinks <em>Links</em>}</li>
  *   <li>{@link dockercompose.impl.ServiceImpl#isRead_only <em>Read only</em>}</li>
  *   <li>{@link dockercompose.impl.ServiceImpl#getRestart <em>Restart</em>}</li>
  *   <li>{@link dockercompose.impl.ServiceImpl#getDepends_on <em>Depends on</em>}</li>
@@ -96,6 +95,7 @@ import org.eclipse.ocl.pivot.values.SetValue;
  *   <li>{@link dockercompose.impl.ServiceImpl#getSecrets <em>Secrets</em>}</li>
  *   <li>{@link dockercompose.impl.ServiceImpl#getNetworks <em>Networks</em>}</li>
  *   <li>{@link dockercompose.impl.ServiceImpl#getPorts <em>Ports</em>}</li>
+ *   <li>{@link dockercompose.impl.ServiceImpl#getLinks <em>Links</em>}</li>
  * </ul>
  *
  * @generated
@@ -262,16 +262,6 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	protected boolean init = INIT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getLinks() <em>Links</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLinks()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Service> links;
-
-	/**
 	 * The default value of the '{@link #isRead_only() <em>Read only</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -370,6 +360,16 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * @ordered
 	 */
 	protected EList<Port> ports;
+
+	/**
+	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Link> links;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -583,9 +583,9 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * @generated
 	 */
 	@Override
-	public EList<Service> getLinks() {
+	public EList<Link> getLinks() {
 		if (links == null) {
-			links = new EObjectResolvingEList<Service>(Service.class, this, DockercomposePackage.SERVICE__LINKS);
+			links = new EObjectContainmentEList<Link>(Link.class, this, DockercomposePackage.SERVICE__LINKS);
 		}
 		return links;
 	}
@@ -944,6 +944,87 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 						break;
 					}
 					/*@NonInvalid*/ Volume _1_0 = (Volume)ITERATOR__1_0.next();
+					/**
+					 * name
+					 */
+					final /*@NonInvalid*/ String name = _1_0.getName();
+					//
+					if (accumulator_0.includes(name) == ValueUtil.TRUE_VALUE) {
+						result = false;
+						break;			// Abort after second find
+					}
+					else {
+						accumulator_0.add(name);
+					}
+				}
+				final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, constraintName, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, DockercomposeTables.INT_0).booleanValue();
+				local_0 = logDiagnostic;
+			}
+			return local_0;
+		}
+		catch (Throwable e) {
+			return ValueUtil.validationFailedDiagnostic(constraintName, this, diagnostics, context, e);
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean different_links(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		final String constraintName = "Service::different_links";
+		try {
+			/**
+			 *
+			 * inv different_links:
+			 *   let severity : Integer[1] = constraintName.getSeverity()
+			 *   in
+			 *     if severity <= 0
+			 *     then true
+			 *     else
+			 *       let result : Boolean[1] = self.links.service->isUnique(name)
+			 *       in
+			 *         constraintName.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+			 *     endif
+			 */
+			final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this, context);
+			final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
+			final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, DockercomposePackage.Literals.SERVICE___DIFFERENT_LINKS__DIAGNOSTICCHAIN_MAP);
+			final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, DockercomposeTables.INT_0).booleanValue();
+			/*@NonInvalid*/ boolean local_0;
+			if (le) {
+				local_0 = true;
+			}
+			else {
+				final /*@NonInvalid*/ List<Link> links = this.getLinks();
+				final /*@NonInvalid*/ OrderedSetValue BOXED_links = idResolver.createOrderedSetOfAll(DockercomposeTables.ORD_CLSSid_Link, links);
+				/*@Thrown*/ Accumulator accumulator = ValueUtil.createSequenceAccumulatorValue(DockercomposeTables.SEQ_CLSSid_Service);
+				Iterator<Object> ITERATOR__1 = BOXED_links.iterator();
+				/*@NonInvalid*/ SequenceValue collect;
+				while (true) {
+					if (!ITERATOR__1.hasNext()) {
+						collect = accumulator;
+						break;
+					}
+					/*@NonInvalid*/ Link _1 = (Link)ITERATOR__1.next();
+					/**
+					 * service
+					 */
+					final /*@NonInvalid*/ Service service = _1.getService();
+					//
+					accumulator.add(service);
+				}
+				/*@Thrown*/ org.eclipse.ocl.pivot.values.SetValue.Accumulator accumulator_0 = ValueUtil.createSetAccumulatorValue(DockercomposeTables.SEQ_CLSSid_Service);
+				Iterator<Object> ITERATOR__1_0 = collect.iterator();
+				/*@NonInvalid*/ boolean result;
+				while (true) {
+					if (!ITERATOR__1_0.hasNext()) {
+						result = true;
+						break;
+					}
+					/*@NonInvalid*/ Service _1_0 = (Service)ITERATOR__1_0.next();
 					/**
 					 * name
 					 */
@@ -1375,6 +1456,8 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 				return ((InternalEList<?>)getNetworks()).basicRemove(otherEnd, msgs);
 			case DockercomposePackage.SERVICE__PORTS:
 				return ((InternalEList<?>)getPorts()).basicRemove(otherEnd, msgs);
+			case DockercomposePackage.SERVICE__LINKS:
+				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -1405,8 +1488,6 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 				return getImage();
 			case DockercomposePackage.SERVICE__INIT:
 				return isInit();
-			case DockercomposePackage.SERVICE__LINKS:
-				return getLinks();
 			case DockercomposePackage.SERVICE__READ_ONLY:
 				return isRead_only();
 			case DockercomposePackage.SERVICE__RESTART:
@@ -1423,6 +1504,8 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 				return getNetworks();
 			case DockercomposePackage.SERVICE__PORTS:
 				return getPorts();
+			case DockercomposePackage.SERVICE__LINKS:
+				return getLinks();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1465,10 +1548,6 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 			case DockercomposePackage.SERVICE__INIT:
 				setInit((Boolean)newValue);
 				return;
-			case DockercomposePackage.SERVICE__LINKS:
-				getLinks().clear();
-				getLinks().addAll((Collection<? extends Service>)newValue);
-				return;
 			case DockercomposePackage.SERVICE__READ_ONLY:
 				setRead_only((Boolean)newValue);
 				return;
@@ -1498,6 +1577,10 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 			case DockercomposePackage.SERVICE__PORTS:
 				getPorts().clear();
 				getPorts().addAll((Collection<? extends Port>)newValue);
+				return;
+			case DockercomposePackage.SERVICE__LINKS:
+				getLinks().clear();
+				getLinks().addAll((Collection<? extends Link>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1538,9 +1621,6 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 			case DockercomposePackage.SERVICE__INIT:
 				setInit(INIT_EDEFAULT);
 				return;
-			case DockercomposePackage.SERVICE__LINKS:
-				getLinks().clear();
-				return;
 			case DockercomposePackage.SERVICE__READ_ONLY:
 				setRead_only(READ_ONLY_EDEFAULT);
 				return;
@@ -1564,6 +1644,9 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 				return;
 			case DockercomposePackage.SERVICE__PORTS:
 				getPorts().clear();
+				return;
+			case DockercomposePackage.SERVICE__LINKS:
+				getLinks().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -1595,8 +1678,6 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 				return IMAGE_EDEFAULT == null ? image != null : !IMAGE_EDEFAULT.equals(image);
 			case DockercomposePackage.SERVICE__INIT:
 				return init != INIT_EDEFAULT;
-			case DockercomposePackage.SERVICE__LINKS:
-				return links != null && !links.isEmpty();
 			case DockercomposePackage.SERVICE__READ_ONLY:
 				return read_only != READ_ONLY_EDEFAULT;
 			case DockercomposePackage.SERVICE__RESTART:
@@ -1613,6 +1694,8 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 				return networks != null && !networks.isEmpty();
 			case DockercomposePackage.SERVICE__PORTS:
 				return ports != null && !ports.isEmpty();
+			case DockercomposePackage.SERVICE__LINKS:
+				return links != null && !links.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1626,20 +1709,22 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
+			case DockercomposePackage.SERVICE___DIFFERENT_DEPENDENCIES__DIAGNOSTICCHAIN_MAP:
+				return different_dependencies((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 			case DockercomposePackage.SERVICE___NO_SELF_DEPENDENCIES__DIAGNOSTICCHAIN_MAP:
 				return no_self_dependencies((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case DockercomposePackage.SERVICE___DIFFERENT_SECRETS__DIAGNOSTICCHAIN_MAP:
-				return different_secrets((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 			case DockercomposePackage.SERVICE___DIFFERENT_CONFIGS__DIAGNOSTICCHAIN_MAP:
 				return different_configs((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case DockercomposePackage.SERVICE___DIFFERENT_SECRETS__DIAGNOSTICCHAIN_MAP:
+				return different_secrets((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 			case DockercomposePackage.SERVICE___IMAGE_OR_BUILD__DIAGNOSTICCHAIN_MAP:
 				return image_or_build((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 			case DockercomposePackage.SERVICE___DIFFERENT_VOLUMES__DIAGNOSTICCHAIN_MAP:
 				return different_volumes((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case DockercomposePackage.SERVICE___DIFFERENT_LINKS__DIAGNOSTICCHAIN_MAP:
+				return different_links((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 			case DockercomposePackage.SERVICE___DIFFERENT_NETWORKS__DIAGNOSTICCHAIN_MAP:
 				return different_networks((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case DockercomposePackage.SERVICE___DIFFERENT_DEPENDENCIES__DIAGNOSTICCHAIN_MAP:
-				return different_dependencies((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

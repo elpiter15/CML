@@ -21,58 +21,56 @@ import org.xtext.example.dockercompose.services.DockerComposeGrammarAccess;
 public class DockerComposeSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected DockerComposeGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_DockerCompose_ConfigsKeyword_4_0_q;
-	protected AbstractElementAlias match_DockerCompose_NetworksKeyword_2_0_q;
-	protected AbstractElementAlias match_DockerCompose_SecretsKeyword_5_0_q;
+	protected AbstractElementAlias match_DockerCompose_ConfigsKeyword_3_0_q;
+	protected AbstractElementAlias match_DockerCompose_NetworksKeyword_5_0_q;
+	protected AbstractElementAlias match_DockerCompose_SecretsKeyword_4_0_q;
 	protected AbstractElementAlias match_DockerCompose_ServicesKeyword_1_0_q;
-	protected AbstractElementAlias match_DockerCompose_VolumesKeyword_3_0_q;
+	protected AbstractElementAlias match_DockerCompose_VolumesKeyword_2_0_q;
 	protected AbstractElementAlias match_IPAMConfig_Aux_addressesKeyword_1_3_0_q;
 	protected AbstractElementAlias match_IPAM_ConfigKeyword_1_1_0_q;
 	protected AbstractElementAlias match_IPAM_OptionsKeyword_1_2_0_q;
-	protected AbstractElementAlias match_NetworkConnector_AliasesKeyword_1_2_2_0_q;
-	protected AbstractElementAlias match_NetworkConnector_Link_local_ipsKeyword_1_2_3_0_q;
-	protected AbstractElementAlias match_NetworkConnector_long_AliasesKeyword_3_2_0_q;
-	protected AbstractElementAlias match_NetworkConnector_long_Link_local_ipsKeyword_3_3_0_q;
+	protected AbstractElementAlias match_NetworkConnector_AliasesKeyword_1_1_2_2_0_q;
+	protected AbstractElementAlias match_NetworkConnector_Link_local_ipsKeyword_1_1_2_3_0_q;
 	protected AbstractElementAlias match_Network_Driver_optsKeyword_3_1_7_0_q;
 	protected AbstractElementAlias match_Network_LabelsKeyword_3_1_6_0_q;
 	protected AbstractElementAlias match_Network___LeftCurlyBracketKeyword_3_0_0_RightCurlyBracketKeyword_3_0_1__q;
-	protected AbstractElementAlias match_Service_ConfigsKeyword_3_10_0_q;
-	protected AbstractElementAlias match_Service_Depends_onKeyword_3_7_0_q;
-	protected AbstractElementAlias match_Service_DevicesKeyword_3_12_0_q;
-	protected AbstractElementAlias match_Service_DnsKeyword_3_13_0_q;
-	protected AbstractElementAlias match_Service_NetworksKeyword_3_8_0_q;
-	protected AbstractElementAlias match_Service_PortsKeyword_3_14_0_q;
-	protected AbstractElementAlias match_Service_SecretsKeyword_3_11_0_q;
-	protected AbstractElementAlias match_Service_VolumesKeyword_3_9_0_q;
+	protected AbstractElementAlias match_Service_ConfigsKeyword_3_11_0_q;
+	protected AbstractElementAlias match_Service_Depends_onKeyword_3_8_0_q;
+	protected AbstractElementAlias match_Service_DevicesKeyword_3_13_0_q;
+	protected AbstractElementAlias match_Service_DnsKeyword_3_14_0_q;
+	protected AbstractElementAlias match_Service_LinksKeyword_3_7_0_q;
+	protected AbstractElementAlias match_Service_NetworksKeyword_3_9_0_q;
+	protected AbstractElementAlias match_Service_PortsKeyword_3_15_0_q;
+	protected AbstractElementAlias match_Service_SecretsKeyword_3_12_0_q;
+	protected AbstractElementAlias match_Service_VolumesKeyword_3_10_0_q;
 	protected AbstractElementAlias match_Volume_Driver_optsKeyword_3_4_0_q;
 	protected AbstractElementAlias match_Volume_LabelsKeyword_3_3_0_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (DockerComposeGrammarAccess) access;
-		match_DockerCompose_ConfigsKeyword_4_0_q = new TokenAlias(false, true, grammarAccess.getDockerComposeAccess().getConfigsKeyword_4_0());
-		match_DockerCompose_NetworksKeyword_2_0_q = new TokenAlias(false, true, grammarAccess.getDockerComposeAccess().getNetworksKeyword_2_0());
-		match_DockerCompose_SecretsKeyword_5_0_q = new TokenAlias(false, true, grammarAccess.getDockerComposeAccess().getSecretsKeyword_5_0());
+		match_DockerCompose_ConfigsKeyword_3_0_q = new TokenAlias(false, true, grammarAccess.getDockerComposeAccess().getConfigsKeyword_3_0());
+		match_DockerCompose_NetworksKeyword_5_0_q = new TokenAlias(false, true, grammarAccess.getDockerComposeAccess().getNetworksKeyword_5_0());
+		match_DockerCompose_SecretsKeyword_4_0_q = new TokenAlias(false, true, grammarAccess.getDockerComposeAccess().getSecretsKeyword_4_0());
 		match_DockerCompose_ServicesKeyword_1_0_q = new TokenAlias(false, true, grammarAccess.getDockerComposeAccess().getServicesKeyword_1_0());
-		match_DockerCompose_VolumesKeyword_3_0_q = new TokenAlias(false, true, grammarAccess.getDockerComposeAccess().getVolumesKeyword_3_0());
+		match_DockerCompose_VolumesKeyword_2_0_q = new TokenAlias(false, true, grammarAccess.getDockerComposeAccess().getVolumesKeyword_2_0());
 		match_IPAMConfig_Aux_addressesKeyword_1_3_0_q = new TokenAlias(false, true, grammarAccess.getIPAMConfigAccess().getAux_addressesKeyword_1_3_0());
 		match_IPAM_ConfigKeyword_1_1_0_q = new TokenAlias(false, true, grammarAccess.getIPAMAccess().getConfigKeyword_1_1_0());
 		match_IPAM_OptionsKeyword_1_2_0_q = new TokenAlias(false, true, grammarAccess.getIPAMAccess().getOptionsKeyword_1_2_0());
-		match_NetworkConnector_AliasesKeyword_1_2_2_0_q = new TokenAlias(false, true, grammarAccess.getNetworkConnectorAccess().getAliasesKeyword_1_2_2_0());
-		match_NetworkConnector_Link_local_ipsKeyword_1_2_3_0_q = new TokenAlias(false, true, grammarAccess.getNetworkConnectorAccess().getLink_local_ipsKeyword_1_2_3_0());
-		match_NetworkConnector_long_AliasesKeyword_3_2_0_q = new TokenAlias(false, true, grammarAccess.getNetworkConnector_longAccess().getAliasesKeyword_3_2_0());
-		match_NetworkConnector_long_Link_local_ipsKeyword_3_3_0_q = new TokenAlias(false, true, grammarAccess.getNetworkConnector_longAccess().getLink_local_ipsKeyword_3_3_0());
+		match_NetworkConnector_AliasesKeyword_1_1_2_2_0_q = new TokenAlias(false, true, grammarAccess.getNetworkConnectorAccess().getAliasesKeyword_1_1_2_2_0());
+		match_NetworkConnector_Link_local_ipsKeyword_1_1_2_3_0_q = new TokenAlias(false, true, grammarAccess.getNetworkConnectorAccess().getLink_local_ipsKeyword_1_1_2_3_0());
 		match_Network_Driver_optsKeyword_3_1_7_0_q = new TokenAlias(false, true, grammarAccess.getNetworkAccess().getDriver_optsKeyword_3_1_7_0());
 		match_Network_LabelsKeyword_3_1_6_0_q = new TokenAlias(false, true, grammarAccess.getNetworkAccess().getLabelsKeyword_3_1_6_0());
 		match_Network___LeftCurlyBracketKeyword_3_0_0_RightCurlyBracketKeyword_3_0_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getNetworkAccess().getLeftCurlyBracketKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getNetworkAccess().getRightCurlyBracketKeyword_3_0_1()));
-		match_Service_ConfigsKeyword_3_10_0_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getConfigsKeyword_3_10_0());
-		match_Service_Depends_onKeyword_3_7_0_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getDepends_onKeyword_3_7_0());
-		match_Service_DevicesKeyword_3_12_0_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getDevicesKeyword_3_12_0());
-		match_Service_DnsKeyword_3_13_0_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getDnsKeyword_3_13_0());
-		match_Service_NetworksKeyword_3_8_0_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getNetworksKeyword_3_8_0());
-		match_Service_PortsKeyword_3_14_0_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getPortsKeyword_3_14_0());
-		match_Service_SecretsKeyword_3_11_0_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getSecretsKeyword_3_11_0());
-		match_Service_VolumesKeyword_3_9_0_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getVolumesKeyword_3_9_0());
+		match_Service_ConfigsKeyword_3_11_0_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getConfigsKeyword_3_11_0());
+		match_Service_Depends_onKeyword_3_8_0_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getDepends_onKeyword_3_8_0());
+		match_Service_DevicesKeyword_3_13_0_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getDevicesKeyword_3_13_0());
+		match_Service_DnsKeyword_3_14_0_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getDnsKeyword_3_14_0());
+		match_Service_LinksKeyword_3_7_0_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getLinksKeyword_3_7_0());
+		match_Service_NetworksKeyword_3_9_0_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getNetworksKeyword_3_9_0());
+		match_Service_PortsKeyword_3_15_0_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getPortsKeyword_3_15_0());
+		match_Service_SecretsKeyword_3_12_0_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getSecretsKeyword_3_12_0());
+		match_Service_VolumesKeyword_3_10_0_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getVolumesKeyword_3_10_0());
 		match_Volume_Driver_optsKeyword_3_4_0_q = new TokenAlias(false, true, grammarAccess.getVolumeAccess().getDriver_optsKeyword_3_4_0());
 		match_Volume_LabelsKeyword_3_3_0_q = new TokenAlias(false, true, grammarAccess.getVolumeAccess().getLabelsKeyword_3_3_0());
 	}
@@ -100,52 +98,50 @@ public class DockerComposeSyntacticSequencer extends AbstractSyntacticSequencer 
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_DockerCompose_ConfigsKeyword_4_0_q.equals(syntax))
-				emit_DockerCompose_ConfigsKeyword_4_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_DockerCompose_NetworksKeyword_2_0_q.equals(syntax))
-				emit_DockerCompose_NetworksKeyword_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_DockerCompose_SecretsKeyword_5_0_q.equals(syntax))
-				emit_DockerCompose_SecretsKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_DockerCompose_ConfigsKeyword_3_0_q.equals(syntax))
+				emit_DockerCompose_ConfigsKeyword_3_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_DockerCompose_NetworksKeyword_5_0_q.equals(syntax))
+				emit_DockerCompose_NetworksKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_DockerCompose_SecretsKeyword_4_0_q.equals(syntax))
+				emit_DockerCompose_SecretsKeyword_4_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_DockerCompose_ServicesKeyword_1_0_q.equals(syntax))
 				emit_DockerCompose_ServicesKeyword_1_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_DockerCompose_VolumesKeyword_3_0_q.equals(syntax))
-				emit_DockerCompose_VolumesKeyword_3_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_DockerCompose_VolumesKeyword_2_0_q.equals(syntax))
+				emit_DockerCompose_VolumesKeyword_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_IPAMConfig_Aux_addressesKeyword_1_3_0_q.equals(syntax))
 				emit_IPAMConfig_Aux_addressesKeyword_1_3_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_IPAM_ConfigKeyword_1_1_0_q.equals(syntax))
 				emit_IPAM_ConfigKeyword_1_1_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_IPAM_OptionsKeyword_1_2_0_q.equals(syntax))
 				emit_IPAM_OptionsKeyword_1_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_NetworkConnector_AliasesKeyword_1_2_2_0_q.equals(syntax))
-				emit_NetworkConnector_AliasesKeyword_1_2_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_NetworkConnector_Link_local_ipsKeyword_1_2_3_0_q.equals(syntax))
-				emit_NetworkConnector_Link_local_ipsKeyword_1_2_3_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_NetworkConnector_long_AliasesKeyword_3_2_0_q.equals(syntax))
-				emit_NetworkConnector_long_AliasesKeyword_3_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_NetworkConnector_long_Link_local_ipsKeyword_3_3_0_q.equals(syntax))
-				emit_NetworkConnector_long_Link_local_ipsKeyword_3_3_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_NetworkConnector_AliasesKeyword_1_1_2_2_0_q.equals(syntax))
+				emit_NetworkConnector_AliasesKeyword_1_1_2_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_NetworkConnector_Link_local_ipsKeyword_1_1_2_3_0_q.equals(syntax))
+				emit_NetworkConnector_Link_local_ipsKeyword_1_1_2_3_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Network_Driver_optsKeyword_3_1_7_0_q.equals(syntax))
 				emit_Network_Driver_optsKeyword_3_1_7_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Network_LabelsKeyword_3_1_6_0_q.equals(syntax))
 				emit_Network_LabelsKeyword_3_1_6_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Network___LeftCurlyBracketKeyword_3_0_0_RightCurlyBracketKeyword_3_0_1__q.equals(syntax))
 				emit_Network___LeftCurlyBracketKeyword_3_0_0_RightCurlyBracketKeyword_3_0_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Service_ConfigsKeyword_3_10_0_q.equals(syntax))
-				emit_Service_ConfigsKeyword_3_10_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Service_Depends_onKeyword_3_7_0_q.equals(syntax))
-				emit_Service_Depends_onKeyword_3_7_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Service_DevicesKeyword_3_12_0_q.equals(syntax))
-				emit_Service_DevicesKeyword_3_12_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Service_DnsKeyword_3_13_0_q.equals(syntax))
-				emit_Service_DnsKeyword_3_13_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Service_NetworksKeyword_3_8_0_q.equals(syntax))
-				emit_Service_NetworksKeyword_3_8_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Service_PortsKeyword_3_14_0_q.equals(syntax))
-				emit_Service_PortsKeyword_3_14_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Service_SecretsKeyword_3_11_0_q.equals(syntax))
-				emit_Service_SecretsKeyword_3_11_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Service_VolumesKeyword_3_9_0_q.equals(syntax))
-				emit_Service_VolumesKeyword_3_9_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Service_ConfigsKeyword_3_11_0_q.equals(syntax))
+				emit_Service_ConfigsKeyword_3_11_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Service_Depends_onKeyword_3_8_0_q.equals(syntax))
+				emit_Service_Depends_onKeyword_3_8_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Service_DevicesKeyword_3_13_0_q.equals(syntax))
+				emit_Service_DevicesKeyword_3_13_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Service_DnsKeyword_3_14_0_q.equals(syntax))
+				emit_Service_DnsKeyword_3_14_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Service_LinksKeyword_3_7_0_q.equals(syntax))
+				emit_Service_LinksKeyword_3_7_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Service_NetworksKeyword_3_9_0_q.equals(syntax))
+				emit_Service_NetworksKeyword_3_9_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Service_PortsKeyword_3_15_0_q.equals(syntax))
+				emit_Service_PortsKeyword_3_15_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Service_SecretsKeyword_3_12_0_q.equals(syntax))
+				emit_Service_SecretsKeyword_3_12_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Service_VolumesKeyword_3_10_0_q.equals(syntax))
+				emit_Service_VolumesKeyword_3_10_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Volume_Driver_optsKeyword_3_4_0_q.equals(syntax))
 				emit_Volume_Driver_optsKeyword_3_4_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Volume_LabelsKeyword_3_3_0_q.equals(syntax))
@@ -164,7 +160,7 @@ public class DockerComposeSyntacticSequencer extends AbstractSyntacticSequencer 
 	 
 	 * </pre>
 	 */
-	protected void emit_DockerCompose_ConfigsKeyword_4_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_DockerCompose_ConfigsKeyword_3_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -178,7 +174,7 @@ public class DockerComposeSyntacticSequencer extends AbstractSyntacticSequencer 
 	 
 	 * </pre>
 	 */
-	protected void emit_DockerCompose_NetworksKeyword_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_DockerCompose_NetworksKeyword_5_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -192,7 +188,7 @@ public class DockerComposeSyntacticSequencer extends AbstractSyntacticSequencer 
 	 
 	 * </pre>
 	 */
-	protected void emit_DockerCompose_SecretsKeyword_5_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_DockerCompose_SecretsKeyword_4_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -220,7 +216,7 @@ public class DockerComposeSyntacticSequencer extends AbstractSyntacticSequencer 
 	 
 	 * </pre>
 	 */
-	protected void emit_DockerCompose_VolumesKeyword_3_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_DockerCompose_VolumesKeyword_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -276,7 +272,7 @@ public class DockerComposeSyntacticSequencer extends AbstractSyntacticSequencer 
 	 
 	 * </pre>
 	 */
-	protected void emit_NetworkConnector_AliasesKeyword_1_2_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_NetworkConnector_AliasesKeyword_1_1_2_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -290,35 +286,7 @@ public class DockerComposeSyntacticSequencer extends AbstractSyntacticSequencer 
 	 
 	 * </pre>
 	 */
-	protected void emit_NetworkConnector_Link_local_ipsKeyword_1_2_3_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * <pre>
-	 * Ambiguous syntax:
-	 *     'aliases:'?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     aliases+=Alias (ambiguity) '-' aliases+=Alias
-	 
-	 * </pre>
-	 */
-	protected void emit_NetworkConnector_long_AliasesKeyword_3_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * <pre>
-	 * Ambiguous syntax:
-	 *     'link_local_ips:'?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     link_local_ips+=DNS (ambiguity) '-' link_local_ips+=DNS
-	 
-	 * </pre>
-	 */
-	protected void emit_NetworkConnector_long_Link_local_ipsKeyword_3_3_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_NetworkConnector_Link_local_ipsKeyword_1_1_2_3_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -375,7 +343,7 @@ public class DockerComposeSyntacticSequencer extends AbstractSyntacticSequencer 
 	 
 	 * </pre>
 	 */
-	protected void emit_Service_ConfigsKeyword_3_10_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Service_ConfigsKeyword_3_11_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -385,11 +353,12 @@ public class DockerComposeSyntacticSequencer extends AbstractSyntacticSequencer 
 	 *     'depends_on:'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     depends_on+=Dependency (ambiguity) '-' depends_on+=Dependency
+	 *     depends_on+=Dependency_long (ambiguity) depends_on+=Dependency_long
+	 *     depends_on+=Dependency_short (ambiguity) depends_on+=Dependency_short
 	 
 	 * </pre>
 	 */
-	protected void emit_Service_Depends_onKeyword_3_7_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Service_Depends_onKeyword_3_8_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -403,7 +372,7 @@ public class DockerComposeSyntacticSequencer extends AbstractSyntacticSequencer 
 	 
 	 * </pre>
 	 */
-	protected void emit_Service_DevicesKeyword_3_12_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Service_DevicesKeyword_3_13_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -417,7 +386,21 @@ public class DockerComposeSyntacticSequencer extends AbstractSyntacticSequencer 
 	 
 	 * </pre>
 	 */
-	protected void emit_Service_DnsKeyword_3_13_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Service_DnsKeyword_3_14_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     'links:'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     links+=Link (ambiguity) '-' links+=Link
+	 
+	 * </pre>
+	 */
+	protected void emit_Service_LinksKeyword_3_7_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -427,12 +410,11 @@ public class DockerComposeSyntacticSequencer extends AbstractSyntacticSequencer 
 	 *     'networks:'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     networks+=NetworkConnector_long (ambiguity) networks+=NetworkConnector_long
-	 *     networks+=NetworkConnector_short (ambiguity) networks+=NetworkConnector_short
+	 *     networks+=NetworkConnector (ambiguity) networks+=NetworkConnector
 	 
 	 * </pre>
 	 */
-	protected void emit_Service_NetworksKeyword_3_8_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Service_NetworksKeyword_3_9_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -446,7 +428,7 @@ public class DockerComposeSyntacticSequencer extends AbstractSyntacticSequencer 
 	 
 	 * </pre>
 	 */
-	protected void emit_Service_PortsKeyword_3_14_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Service_PortsKeyword_3_15_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -461,7 +443,7 @@ public class DockerComposeSyntacticSequencer extends AbstractSyntacticSequencer 
 	 
 	 * </pre>
 	 */
-	protected void emit_Service_SecretsKeyword_3_11_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Service_SecretsKeyword_3_12_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -476,7 +458,7 @@ public class DockerComposeSyntacticSequencer extends AbstractSyntacticSequencer 
 	 
 	 * </pre>
 	 */
-	protected void emit_Service_VolumesKeyword_3_9_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Service_VolumesKeyword_3_10_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

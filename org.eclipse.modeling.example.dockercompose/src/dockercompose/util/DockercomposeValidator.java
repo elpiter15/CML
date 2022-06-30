@@ -45,7 +45,7 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SERVICE__IMAGE_OR_BUILD = 4;
+	public static final int SERVICE__IMAGE_OR_BUILD = 5;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Different volumes' of 'Service'.
@@ -53,7 +53,15 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SERVICE__DIFFERENT_VOLUMES = 5;
+	public static final int SERVICE__DIFFERENT_VOLUMES = 6;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Different links' of 'Service'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SERVICE__DIFFERENT_LINKS = 7;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Different networks' of 'Service'.
@@ -61,7 +69,7 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SERVICE__DIFFERENT_NETWORKS = 6;
+	public static final int SERVICE__DIFFERENT_NETWORKS = 8;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Different dependencies' of 'Service'.
@@ -69,7 +77,7 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SERVICE__DIFFERENT_DEPENDENCIES = 7;
+	public static final int SERVICE__DIFFERENT_DEPENDENCIES = 1;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'No self dependencies' of 'Service'.
@@ -77,7 +85,7 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SERVICE__NO_SELF_DEPENDENCIES = 1;
+	public static final int SERVICE__NO_SELF_DEPENDENCIES = 2;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Different secrets' of 'Service'.
@@ -85,7 +93,7 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SERVICE__DIFFERENT_SECRETS = 2;
+	public static final int SERVICE__DIFFERENT_SECRETS = 4;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Different configs' of 'Service'.
@@ -101,7 +109,7 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONFIG__FILE_OR_EXTERNAL = 8;
+	public static final int CONFIG__FILE_OR_EXTERNAL = 9;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'External name' of 'Config'.
@@ -109,7 +117,7 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONFIG__EXTERNAL_NAME = 9;
+	public static final int CONFIG__EXTERNAL_NAME = 10;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'File or external' of 'Secret'.
@@ -117,7 +125,7 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SECRET__FILE_OR_EXTERNAL = 10;
+	public static final int SECRET__FILE_OR_EXTERNAL = 11;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'External name' of 'Secret'.
@@ -125,7 +133,7 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SECRET__EXTERNAL_NAME = 11;
+	public static final int SECRET__EXTERNAL_NAME = 12;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Correct Ip Format' of 'DNS'.
@@ -133,7 +141,7 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int DNS__CORRECT_IP_FORMAT = 12;
+	public static final int DNS__CORRECT_IP_FORMAT = 13;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Any property' of 'IPAM'.
@@ -141,7 +149,7 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int IPAM__ANY_PROPERTY = 13;
+	public static final int IPAM__ANY_PROPERTY = 14;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Any property' of 'IPAM Config'.
@@ -149,7 +157,7 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int IPAM_CONFIG__ANY_PROPERTY = 14;
+	public static final int IPAM_CONFIG__ANY_PROPERTY = 15;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -157,7 +165,7 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 14;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 15;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -245,6 +253,8 @@ public class DockercomposeValidator extends EObjectValidator {
 				return validateIPAMConfig((IPAMConfig)value, diagnostics, context);
 			case DockercomposePackage.PORT:
 				return validatePort((Port)value, diagnostics, context);
+			case DockercomposePackage.LINK:
+				return validateLink((Link)value, diagnostics, context);
 			case DockercomposePackage.RESTART_POLICY:
 				return validateRestartPolicy((RestartPolicy)value, diagnostics, context);
 			case DockercomposePackage.ACCESS_MODE:
@@ -253,6 +263,8 @@ public class DockercomposeValidator extends EObjectValidator {
 				return validateMountType((MountType)value, diagnostics, context);
 			case DockercomposePackage.PROPAGATION_TYPE:
 				return validatePropagationType((PropagationType)value, diagnostics, context);
+			case DockercomposePackage.CONDITION:
+				return validateCondition((Condition)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -282,13 +294,14 @@ public class DockercomposeValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(service, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(service, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(service, diagnostics, context);
+		if (result || diagnostics != null) result &= validateService_different_networks(service, diagnostics, context);
 		if (result || diagnostics != null) result &= validateService_different_dependencies(service, diagnostics, context);
 		if (result || diagnostics != null) result &= validateService_no_self_dependencies(service, diagnostics, context);
-		if (result || diagnostics != null) result &= validateService_different_secrets(service, diagnostics, context);
 		if (result || diagnostics != null) result &= validateService_different_configs(service, diagnostics, context);
+		if (result || diagnostics != null) result &= validateService_different_secrets(service, diagnostics, context);
 		if (result || diagnostics != null) result &= validateService_image_or_build(service, diagnostics, context);
 		if (result || diagnostics != null) result &= validateService_different_volumes(service, diagnostics, context);
-		if (result || diagnostics != null) result &= validateService_different_networks(service, diagnostics, context);
+		if (result || diagnostics != null) result &= validateService_different_links(service, diagnostics, context);
 		return result;
 	}
 
@@ -340,6 +353,16 @@ public class DockercomposeValidator extends EObjectValidator {
 	 */
 	public boolean validateService_different_volumes(Service service, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return service.different_volumes(diagnostics, context);
+	}
+
+	/**
+	 * Validates the different_links constraint of '<em>Service</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateService_different_links(Service service, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return service.different_links(diagnostics, context);
 	}
 
 	/**
@@ -697,6 +720,15 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateLink(Link link, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(link, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateRestartPolicy(RestartPolicy restartPolicy, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
@@ -725,6 +757,15 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validatePropagationType(PropagationType propagationType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCondition(Condition condition, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

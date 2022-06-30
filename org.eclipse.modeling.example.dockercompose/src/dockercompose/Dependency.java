@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link dockercompose.Dependency#getService <em>Service</em>}</li>
+ *   <li>{@link dockercompose.Dependency#getCondition <em>Condition</em>}</li>
  * </ul>
  *
  * @see dockercompose.DockercomposePackage#getDependency()
@@ -42,5 +43,30 @@ public interface Dependency extends EObject {
 	 * @generated
 	 */
 	void setService(Service value);
+
+	/**
+	 * Returns the value of the '<em><b>Condition</b></em>' attribute.
+	 * The literals are from the enumeration {@link dockercompose.Condition}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Condition</em>' attribute.
+	 * @see dockercompose.Condition
+	 * @see #setCondition(Condition)
+	 * @see dockercompose.DockercomposePackage#getDependency_Condition()
+	 * @model
+	 * @generated
+	 */
+	Condition getCondition();
+
+	/**
+	 * Sets the value of the '{@link dockercompose.Dependency#getCondition <em>Condition</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Condition</em>' attribute.
+	 * @see dockercompose.Condition
+	 * @see #getCondition()
+	 * @generated
+	 */
+	void setCondition(Condition value);
 
 } // Dependency

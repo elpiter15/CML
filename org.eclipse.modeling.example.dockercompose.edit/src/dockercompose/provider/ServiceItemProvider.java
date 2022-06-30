@@ -70,7 +70,6 @@ public class ServiceItemProvider
 			addContainer_namePropertyDescriptor(object);
 			addImagePropertyDescriptor(object);
 			addInitPropertyDescriptor(object);
-			addLinksPropertyDescriptor(object);
 			addRead_onlyPropertyDescriptor(object);
 			addRestartPropertyDescriptor(object);
 		}
@@ -232,28 +231,6 @@ public class ServiceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Links feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLinksPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Service_links_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Service_links_feature", "_UI_Service_type"),
-				 DockercomposePackage.Literals.SERVICE__LINKS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Read only feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -317,6 +294,7 @@ public class ServiceItemProvider
 			childrenFeatures.add(DockercomposePackage.Literals.SERVICE__SECRETS);
 			childrenFeatures.add(DockercomposePackage.Literals.SERVICE__NETWORKS);
 			childrenFeatures.add(DockercomposePackage.Literals.SERVICE__PORTS);
+			childrenFeatures.add(DockercomposePackage.Literals.SERVICE__LINKS);
 		}
 		return childrenFeatures;
 	}
@@ -391,6 +369,7 @@ public class ServiceItemProvider
 			case DockercomposePackage.SERVICE__SECRETS:
 			case DockercomposePackage.SERVICE__NETWORKS:
 			case DockercomposePackage.SERVICE__PORTS:
+			case DockercomposePackage.SERVICE__LINKS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -452,6 +431,11 @@ public class ServiceItemProvider
 			(createChildParameter
 				(DockercomposePackage.Literals.SERVICE__PORTS,
 				 DockercomposeFactory.eINSTANCE.createPort()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DockercomposePackage.Literals.SERVICE__LINKS,
+				 DockercomposeFactory.eINSTANCE.createLink()));
 	}
 
 	/**

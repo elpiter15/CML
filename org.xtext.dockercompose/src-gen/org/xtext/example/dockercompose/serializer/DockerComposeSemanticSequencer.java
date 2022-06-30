@@ -16,6 +16,7 @@ import dockercompose.IPAM;
 import dockercompose.IPAMAddress;
 import dockercompose.IPAMConfig;
 import dockercompose.IPAMOption;
+import dockercompose.Link;
 import dockercompose.Network;
 import dockercompose.NetworkAddress;
 import dockercompose.NetworkConnector;
@@ -75,8 +76,15 @@ public class DockerComposeSemanticSequencer extends AbstractDelegatingSemanticSe
 				sequence_DNS(context, (DNS) semanticObject); 
 				return; 
 			case DockercomposePackage.DEPENDENCY:
-				sequence_Dependency(context, (Dependency) semanticObject); 
-				return; 
+				if (rule == grammarAccess.getDependency_longRule()) {
+					sequence_Dependency_long(context, (Dependency) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getDependency_shortRule()) {
+					sequence_Dependency_short(context, (Dependency) semanticObject); 
+					return; 
+				}
+				else break;
 			case DockercomposePackage.DEVICE:
 				sequence_Device(context, (Device) semanticObject); 
 				return; 
@@ -95,6 +103,9 @@ public class DockerComposeSemanticSequencer extends AbstractDelegatingSemanticSe
 			case DockercomposePackage.IPAM_OPTION:
 				sequence_IPAMOption(context, (IPAMOption) semanticObject); 
 				return; 
+			case DockercomposePackage.LINK:
+				sequence_Link(context, (Link) semanticObject); 
+				return; 
 			case DockercomposePackage.NETWORK:
 				sequence_Network(context, (Network) semanticObject); 
 				return; 
@@ -102,19 +113,8 @@ public class DockerComposeSemanticSequencer extends AbstractDelegatingSemanticSe
 				sequence_NetworkAddress(context, (NetworkAddress) semanticObject); 
 				return; 
 			case DockercomposePackage.NETWORK_CONNECTOR:
-				if (rule == grammarAccess.getNetworkConnectorRule()) {
-					sequence_NetworkConnector(context, (NetworkConnector) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getNetworkConnector_longRule()) {
-					sequence_NetworkConnector_long(context, (NetworkConnector) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getNetworkConnector_shortRule()) {
-					sequence_NetworkConnector_short(context, (NetworkConnector) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_NetworkConnector(context, (NetworkConnector) semanticObject); 
+				return; 
 			case DockercomposePackage.NETWORK_DRIVER_OPT:
 				sequence_NetworkDriverOpt(context, (NetworkDriverOpt) semanticObject); 
 				return; 
@@ -264,19 +264,42 @@ public class DockerComposeSemanticSequencer extends AbstractDelegatingSemanticSe
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Dependency returns Dependency
+	 *     Dependency_long returns Dependency
+	 *
+	 * Constraint:
+	 *     (service=[Service|EString] condition=Condition)
+	 * </pre>
+	 */
+	protected void sequence_Dependency_long(ISerializationContext context, Dependency semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, DockercomposePackage.Literals.DEPENDENCY__SERVICE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DockercomposePackage.Literals.DEPENDENCY__SERVICE));
+			if (transientValues.isValueTransient(semanticObject, DockercomposePackage.Literals.DEPENDENCY__CONDITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DockercomposePackage.Literals.DEPENDENCY__CONDITION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDependency_longAccess().getServiceServiceEStringParserRuleCall_1_0_1(), semanticObject.eGet(DockercomposePackage.Literals.DEPENDENCY__SERVICE, false));
+		feeder.accept(grammarAccess.getDependency_longAccess().getConditionConditionEnumRuleCall_4_0(), semanticObject.getCondition());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Dependency_short returns Dependency
 	 *
 	 * Constraint:
 	 *     service=[Service|EString]
 	 * </pre>
 	 */
-	protected void sequence_Dependency(ISerializationContext context, Dependency semanticObject) {
+	protected void sequence_Dependency_short(ISerializationContext context, Dependency semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, DockercomposePackage.Literals.DEPENDENCY__SERVICE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DockercomposePackage.Literals.DEPENDENCY__SERVICE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getDependencyAccess().getServiceServiceEStringParserRuleCall_1_0_1(), semanticObject.eGet(DockercomposePackage.Literals.DEPENDENCY__SERVICE, false));
+		feeder.accept(grammarAccess.getDependency_shortAccess().getServiceServiceEStringParserRuleCall_2_0_1(), semanticObject.eGet(DockercomposePackage.Literals.DEPENDENCY__SERVICE, false));
 		feeder.finish();
 	}
 	
@@ -310,10 +333,10 @@ public class DockerComposeSemanticSequencer extends AbstractDelegatingSemanticSe
 	 *     (
 	 *         version=VERSION | 
 	 *         services+=Service | 
-	 *         networks+=Network | 
 	 *         volumes+=Volume | 
 	 *         configs+=Config | 
-	 *         secrets+=Secret
+	 *         secrets+=Secret | 
+	 *         networks+=Network
 	 *     )+
 	 * </pre>
 	 */
@@ -399,6 +422,20 @@ public class DockerComposeSemanticSequencer extends AbstractDelegatingSemanticSe
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Link returns Link
+	 *
+	 * Constraint:
+	 *     (service=[Service|EString] alias=EString?)
+	 * </pre>
+	 */
+	protected void sequence_Link(ISerializationContext context, Link semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     NetworkAddress returns NetworkAddress
 	 *
 	 * Constraint:
@@ -439,40 +476,6 @@ public class DockerComposeSemanticSequencer extends AbstractDelegatingSemanticSe
 	 */
 	protected void sequence_NetworkConnector(ISerializationContext context, NetworkConnector semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     NetworkConnector_long returns NetworkConnector
-	 *
-	 * Constraint:
-	 *     (network=[Network|EString] (ipv4_address=DNS | priority=EInt | aliases+=Alias | link_local_ips+=DNS)*)
-	 * </pre>
-	 */
-	protected void sequence_NetworkConnector_long(ISerializationContext context, NetworkConnector semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     NetworkConnector_short returns NetworkConnector
-	 *
-	 * Constraint:
-	 *     network=[Network|EString]
-	 * </pre>
-	 */
-	protected void sequence_NetworkConnector_short(ISerializationContext context, NetworkConnector semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DockercomposePackage.Literals.NETWORK_CONNECTOR__NETWORK) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DockercomposePackage.Literals.NETWORK_CONNECTOR__NETWORK));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getNetworkConnector_shortAccess().getNetworkNetworkEStringParserRuleCall_2_0_1(), semanticObject.eGet(DockercomposePackage.Literals.NETWORK_CONNECTOR__NETWORK, false));
-		feeder.finish();
 	}
 	
 	
@@ -634,9 +637,10 @@ public class DockerComposeSemanticSequencer extends AbstractDelegatingSemanticSe
 	 *             restart=RestartPolicy | 
 	 *             init=EBoolean | 
 	 *             read_only=EBoolean | 
-	 *             depends_on+=Dependency | 
-	 *             networks+=NetworkConnector_short | 
-	 *             networks+=NetworkConnector_long | 
+	 *             links+=Link | 
+	 *             depends_on+=Dependency_short | 
+	 *             depends_on+=Dependency_long | 
+	 *             networks+=NetworkConnector | 
 	 *             volumes+=VolumeConnector_short | 
 	 *             volumes+=VolumeConnector_long | 
 	 *             configs+=ConfigConnector_short | 

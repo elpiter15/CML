@@ -12,16 +12,9 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalDockerComposeLexer extends Lexer {
-    public static final int RULE_DEVICE_DEF=6;
     public static final int T__50=50;
-    public static final int T__90=90;
-    public static final int T__19=19;
     public static final int RULE_VERSION=4;
-    public static final int T__15=15;
     public static final int T__59=59;
-    public static final int T__16=16;
-    public static final int T__17=17;
-    public static final int T__18=18;
     public static final int T__55=55;
     public static final int T__56=56;
     public static final int T__57=57;
@@ -32,51 +25,73 @@ public class InternalDockerComposeLexer extends Lexer {
     public static final int T__54=54;
     public static final int T__60=60;
     public static final int T__61=61;
-    public static final int RULE_QUOTED_INT=8;
     public static final int RULE_ID=7;
     public static final int RULE_PORT_DEF=5;
-    public static final int T__26=26;
-    public static final int T__27=27;
-    public static final int T__28=28;
     public static final int RULE_INT=10;
-    public static final int T__29=29;
-    public static final int T__22=22;
     public static final int T__66=66;
     public static final int RULE_ML_COMMENT=11;
-    public static final int T__23=23;
     public static final int T__67=67;
-    public static final int T__24=24;
     public static final int T__68=68;
-    public static final int T__25=25;
     public static final int T__69=69;
     public static final int T__62=62;
     public static final int T__63=63;
-    public static final int T__20=20;
     public static final int T__64=64;
-    public static final int T__21=21;
     public static final int T__65=65;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
+    public static final int T__33=33;
+    public static final int T__34=34;
+    public static final int T__35=35;
+    public static final int T__36=36;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
+    public static final int T__48=48;
+    public static final int T__49=49;
+    public static final int T__44=44;
+    public static final int T__45=45;
+    public static final int T__46=46;
+    public static final int T__47=47;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__42=42;
+    public static final int T__43=43;
+    public static final int T__91=91;
+    public static final int T__92=92;
+    public static final int RULE_DEVICE_DEF=6;
+    public static final int T__93=93;
+    public static final int T__94=94;
+    public static final int T__90=90;
+    public static final int T__19=19;
+    public static final int T__15=15;
+    public static final int T__16=16;
+    public static final int T__17=17;
+    public static final int T__18=18;
+    public static final int T__95=95;
+    public static final int RULE_QUOTED_INT=8;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
+    public static final int T__29=29;
+    public static final int T__22=22;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
+    public static final int T__20=20;
+    public static final int T__21=21;
     public static final int T__70=70;
     public static final int T__71=71;
     public static final int T__72=72;
     public static final int RULE_STRING=9;
     public static final int RULE_SL_COMMENT=12;
-    public static final int T__37=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
-    public static final int T__33=33;
     public static final int T__77=77;
-    public static final int T__34=34;
     public static final int T__78=78;
-    public static final int T__35=35;
     public static final int T__79=79;
-    public static final int T__36=36;
     public static final int T__73=73;
     public static final int EOF=-1;
-    public static final int T__30=30;
     public static final int T__74=74;
-    public static final int T__31=31;
     public static final int T__75=75;
-    public static final int T__32=32;
     public static final int T__76=76;
     public static final int T__80=80;
     public static final int T__81=81;
@@ -84,21 +99,11 @@ public class InternalDockerComposeLexer extends Lexer {
     public static final int T__83=83;
     public static final int RULE_WS=13;
     public static final int RULE_ANY_OTHER=14;
-    public static final int T__48=48;
-    public static final int T__49=49;
-    public static final int T__44=44;
     public static final int T__88=88;
-    public static final int T__45=45;
     public static final int T__89=89;
-    public static final int T__46=46;
-    public static final int T__47=47;
-    public static final int T__40=40;
     public static final int T__84=84;
-    public static final int T__41=41;
     public static final int T__85=85;
-    public static final int T__42=42;
     public static final int T__86=86;
-    public static final int T__43=43;
     public static final int T__87=87;
 
     // delegates
@@ -161,10 +166,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:13:7: ( 'networks:' )
-            // InternalDockerCompose.g:13:9: 'networks:'
+            // InternalDockerCompose.g:13:7: ( 'volumes:' )
+            // InternalDockerCompose.g:13:9: 'volumes:'
             {
-            match("networks:"); 
+            match("volumes:"); 
 
 
             }
@@ -182,10 +187,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:14:7: ( 'volumes:' )
-            // InternalDockerCompose.g:14:9: 'volumes:'
+            // InternalDockerCompose.g:14:7: ( 'configs:' )
+            // InternalDockerCompose.g:14:9: 'configs:'
             {
-            match("volumes:"); 
+            match("configs:"); 
 
 
             }
@@ -203,10 +208,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:15:7: ( 'configs:' )
-            // InternalDockerCompose.g:15:9: 'configs:'
+            // InternalDockerCompose.g:15:7: ( 'secrets:' )
+            // InternalDockerCompose.g:15:9: 'secrets:'
             {
-            match("configs:"); 
+            match("secrets:"); 
 
 
             }
@@ -224,10 +229,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:16:7: ( 'secrets:' )
-            // InternalDockerCompose.g:16:9: 'secrets:'
+            // InternalDockerCompose.g:16:7: ( 'networks:' )
+            // InternalDockerCompose.g:16:9: 'networks:'
             {
-            match("secrets:"); 
+            match("networks:"); 
 
 
             }
@@ -433,10 +438,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:26:7: ( 'depends_on:' )
-            // InternalDockerCompose.g:26:9: 'depends_on:'
+            // InternalDockerCompose.g:26:7: ( 'links:' )
+            // InternalDockerCompose.g:26:9: 'links:'
             {
-            match("depends_on:"); 
+            match("links:"); 
 
 
             }
@@ -474,10 +479,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:28:7: ( 'devices:' )
-            // InternalDockerCompose.g:28:9: 'devices:'
+            // InternalDockerCompose.g:28:7: ( 'depends_on:' )
+            // InternalDockerCompose.g:28:9: 'depends_on:'
             {
-            match("devices:"); 
+            match("depends_on:"); 
 
 
             }
@@ -495,10 +500,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:29:7: ( 'dns:' )
-            // InternalDockerCompose.g:29:9: 'dns:'
+            // InternalDockerCompose.g:29:7: ( 'devices:' )
+            // InternalDockerCompose.g:29:9: 'devices:'
             {
-            match("dns:"); 
+            match("devices:"); 
 
 
             }
@@ -516,10 +521,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:30:7: ( 'ports:' )
-            // InternalDockerCompose.g:30:9: 'ports:'
+            // InternalDockerCompose.g:30:7: ( 'dns:' )
+            // InternalDockerCompose.g:30:9: 'dns:'
             {
-            match("ports:"); 
+            match("dns:"); 
 
 
             }
@@ -537,10 +542,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:31:7: ( 'ipv4_address:' )
-            // InternalDockerCompose.g:31:9: 'ipv4_address:'
+            // InternalDockerCompose.g:31:7: ( 'ports:' )
+            // InternalDockerCompose.g:31:9: 'ports:'
             {
-            match("ipv4_address:"); 
+            match("ports:"); 
 
 
             }
@@ -558,10 +563,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:32:7: ( 'priority:' )
-            // InternalDockerCompose.g:32:9: 'priority:'
+            // InternalDockerCompose.g:32:7: ( 'condition:' )
+            // InternalDockerCompose.g:32:9: 'condition:'
             {
-            match("priority:"); 
+            match("condition:"); 
 
 
             }
@@ -579,10 +584,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:33:7: ( 'aliases:' )
-            // InternalDockerCompose.g:33:9: 'aliases:'
+            // InternalDockerCompose.g:33:7: ( 'ipv4_address:' )
+            // InternalDockerCompose.g:33:9: 'ipv4_address:'
             {
-            match("aliases:"); 
+            match("ipv4_address:"); 
 
 
             }
@@ -600,10 +605,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:34:7: ( 'link_local_ips:' )
-            // InternalDockerCompose.g:34:9: 'link_local_ips:'
+            // InternalDockerCompose.g:34:7: ( 'priority:' )
+            // InternalDockerCompose.g:34:9: 'priority:'
             {
-            match("link_local_ips:"); 
+            match("priority:"); 
 
 
             }
@@ -621,10 +626,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:35:7: ( 'source:' )
-            // InternalDockerCompose.g:35:9: 'source:'
+            // InternalDockerCompose.g:35:7: ( 'aliases:' )
+            // InternalDockerCompose.g:35:9: 'aliases:'
             {
-            match("source:"); 
+            match("aliases:"); 
 
 
             }
@@ -642,10 +647,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:36:7: ( 'type:' )
-            // InternalDockerCompose.g:36:9: 'type:'
+            // InternalDockerCompose.g:36:7: ( 'link_local_ips:' )
+            // InternalDockerCompose.g:36:9: 'link_local_ips:'
             {
-            match("type:"); 
+            match("link_local_ips:"); 
 
 
             }
@@ -663,10 +668,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:37:7: ( 'target:' )
-            // InternalDockerCompose.g:37:9: 'target:'
+            // InternalDockerCompose.g:37:7: ( 'source:' )
+            // InternalDockerCompose.g:37:9: 'source:'
             {
-            match("target:"); 
+            match("source:"); 
 
 
             }
@@ -684,10 +689,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:38:7: ( 'bind:' )
-            // InternalDockerCompose.g:38:9: 'bind:'
+            // InternalDockerCompose.g:38:7: ( 'type:' )
+            // InternalDockerCompose.g:38:9: 'type:'
             {
-            match("bind:"); 
+            match("type:"); 
 
 
             }
@@ -705,10 +710,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:39:7: ( 'propagation:' )
-            // InternalDockerCompose.g:39:9: 'propagation:'
+            // InternalDockerCompose.g:39:7: ( 'target:' )
+            // InternalDockerCompose.g:39:9: 'target:'
             {
-            match("propagation:"); 
+            match("target:"); 
 
 
             }
@@ -726,10 +731,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:40:7: ( 'volume:' )
-            // InternalDockerCompose.g:40:9: 'volume:'
+            // InternalDockerCompose.g:40:7: ( 'bind:' )
+            // InternalDockerCompose.g:40:9: 'bind:'
             {
-            match("volume:"); 
+            match("bind:"); 
 
 
             }
@@ -747,10 +752,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:41:7: ( 'nocopy:' )
-            // InternalDockerCompose.g:41:9: 'nocopy:'
+            // InternalDockerCompose.g:41:7: ( 'propagation:' )
+            // InternalDockerCompose.g:41:9: 'propagation:'
             {
-            match("nocopy:"); 
+            match("propagation:"); 
 
 
             }
@@ -768,10 +773,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:42:7: ( 'tmpfs:' )
-            // InternalDockerCompose.g:42:9: 'tmpfs:'
+            // InternalDockerCompose.g:42:7: ( 'volume:' )
+            // InternalDockerCompose.g:42:9: 'volume:'
             {
-            match("tmpfs:"); 
+            match("volume:"); 
 
 
             }
@@ -789,10 +794,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:43:7: ( 'size:' )
-            // InternalDockerCompose.g:43:9: 'size:'
+            // InternalDockerCompose.g:43:7: ( 'nocopy:' )
+            // InternalDockerCompose.g:43:9: 'nocopy:'
             {
-            match("size:"); 
+            match("nocopy:"); 
 
 
             }
@@ -810,10 +815,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:44:7: ( 'uid:' )
-            // InternalDockerCompose.g:44:9: 'uid:'
+            // InternalDockerCompose.g:44:7: ( 'tmpfs:' )
+            // InternalDockerCompose.g:44:9: 'tmpfs:'
             {
-            match("uid:"); 
+            match("tmpfs:"); 
 
 
             }
@@ -831,10 +836,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:45:7: ( 'gid:' )
-            // InternalDockerCompose.g:45:9: 'gid:'
+            // InternalDockerCompose.g:45:7: ( 'size:' )
+            // InternalDockerCompose.g:45:9: 'size:'
             {
-            match("gid:"); 
+            match("size:"); 
 
 
             }
@@ -852,10 +857,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:46:7: ( 'mode:' )
-            // InternalDockerCompose.g:46:9: 'mode:'
+            // InternalDockerCompose.g:46:7: ( 'uid:' )
+            // InternalDockerCompose.g:46:9: 'uid:'
             {
-            match("mode:"); 
+            match("uid:"); 
 
 
             }
@@ -873,10 +878,11 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:47:7: ( '{' )
-            // InternalDockerCompose.g:47:9: '{'
+            // InternalDockerCompose.g:47:7: ( 'gid:' )
+            // InternalDockerCompose.g:47:9: 'gid:'
             {
-            match('{'); 
+            match("gid:"); 
+
 
             }
 
@@ -893,10 +899,11 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:48:7: ( '}' )
-            // InternalDockerCompose.g:48:9: '}'
+            // InternalDockerCompose.g:48:7: ( 'mode:' )
+            // InternalDockerCompose.g:48:9: 'mode:'
             {
-            match('}'); 
+            match("mode:"); 
+
 
             }
 
@@ -913,11 +920,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:49:7: ( 'driver:' )
-            // InternalDockerCompose.g:49:9: 'driver:'
+            // InternalDockerCompose.g:49:7: ( '{' )
+            // InternalDockerCompose.g:49:9: '{'
             {
-            match("driver:"); 
-
+            match('{'); 
 
             }
 
@@ -934,11 +940,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:50:7: ( 'attachable:' )
-            // InternalDockerCompose.g:50:9: 'attachable:'
+            // InternalDockerCompose.g:50:7: ( '}' )
+            // InternalDockerCompose.g:50:9: '}'
             {
-            match("attachable:"); 
-
+            match('}'); 
 
             }
 
@@ -955,10 +960,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:51:7: ( 'enable_ipv6:' )
-            // InternalDockerCompose.g:51:9: 'enable_ipv6:'
+            // InternalDockerCompose.g:51:7: ( 'driver:' )
+            // InternalDockerCompose.g:51:9: 'driver:'
             {
-            match("enable_ipv6:"); 
+            match("driver:"); 
 
 
             }
@@ -976,10 +981,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:52:7: ( 'internal:' )
-            // InternalDockerCompose.g:52:9: 'internal:'
+            // InternalDockerCompose.g:52:7: ( 'attachable:' )
+            // InternalDockerCompose.g:52:9: 'attachable:'
             {
-            match("internal:"); 
+            match("attachable:"); 
 
 
             }
@@ -997,10 +1002,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:53:7: ( 'external:' )
-            // InternalDockerCompose.g:53:9: 'external:'
+            // InternalDockerCompose.g:53:7: ( 'enable_ipv6:' )
+            // InternalDockerCompose.g:53:9: 'enable_ipv6:'
             {
-            match("external:"); 
+            match("enable_ipv6:"); 
 
 
             }
@@ -1018,10 +1023,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:54:7: ( 'name:' )
-            // InternalDockerCompose.g:54:9: 'name:'
+            // InternalDockerCompose.g:54:7: ( 'internal:' )
+            // InternalDockerCompose.g:54:9: 'internal:'
             {
-            match("name:"); 
+            match("internal:"); 
 
 
             }
@@ -1039,10 +1044,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__59;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:55:7: ( 'labels:' )
-            // InternalDockerCompose.g:55:9: 'labels:'
+            // InternalDockerCompose.g:55:7: ( 'external:' )
+            // InternalDockerCompose.g:55:9: 'external:'
             {
-            match("labels:"); 
+            match("external:"); 
 
 
             }
@@ -1060,10 +1065,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__60;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:56:7: ( 'driver_opts:' )
-            // InternalDockerCompose.g:56:9: 'driver_opts:'
+            // InternalDockerCompose.g:56:7: ( 'name:' )
+            // InternalDockerCompose.g:56:9: 'name:'
             {
-            match("driver_opts:"); 
+            match("name:"); 
 
 
             }
@@ -1081,10 +1086,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__61;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:57:7: ( 'ipam:' )
-            // InternalDockerCompose.g:57:9: 'ipam:'
+            // InternalDockerCompose.g:57:7: ( 'labels:' )
+            // InternalDockerCompose.g:57:9: 'labels:'
             {
-            match("ipam:"); 
+            match("labels:"); 
 
 
             }
@@ -1102,10 +1107,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__62;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:58:7: ( 'file:' )
-            // InternalDockerCompose.g:58:9: 'file:'
+            // InternalDockerCompose.g:58:7: ( 'driver_opts:' )
+            // InternalDockerCompose.g:58:9: 'driver_opts:'
             {
-            match("file:"); 
+            match("driver_opts:"); 
 
 
             }
@@ -1123,10 +1128,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__63;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:59:7: ( 'environment:' )
-            // InternalDockerCompose.g:59:9: 'environment:'
+            // InternalDockerCompose.g:59:7: ( 'ipam:' )
+            // InternalDockerCompose.g:59:9: 'ipam:'
             {
-            match("environment:"); 
+            match("ipam:"); 
 
 
             }
@@ -1144,10 +1149,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__64;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:60:7: ( 'config:' )
-            // InternalDockerCompose.g:60:9: 'config:'
+            // InternalDockerCompose.g:60:7: ( 'file:' )
+            // InternalDockerCompose.g:60:9: 'file:'
             {
-            match("config:"); 
+            match("file:"); 
 
 
             }
@@ -1165,10 +1170,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__65;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:61:7: ( 'options:' )
-            // InternalDockerCompose.g:61:9: 'options:'
+            // InternalDockerCompose.g:61:7: ( 'environment:' )
+            // InternalDockerCompose.g:61:9: 'environment:'
             {
-            match("options:"); 
+            match("environment:"); 
 
 
             }
@@ -1186,10 +1191,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__66;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:62:7: ( 'subnet:' )
-            // InternalDockerCompose.g:62:9: 'subnet:'
+            // InternalDockerCompose.g:62:7: ( 'config:' )
+            // InternalDockerCompose.g:62:9: 'config:'
             {
-            match("subnet:"); 
+            match("config:"); 
 
 
             }
@@ -1207,10 +1212,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__67;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:63:7: ( 'ip_range:' )
-            // InternalDockerCompose.g:63:9: 'ip_range:'
+            // InternalDockerCompose.g:63:7: ( 'options:' )
+            // InternalDockerCompose.g:63:9: 'options:'
             {
-            match("ip_range:"); 
+            match("options:"); 
 
 
             }
@@ -1228,10 +1233,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__68;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:64:7: ( 'gateway:' )
-            // InternalDockerCompose.g:64:9: 'gateway:'
+            // InternalDockerCompose.g:64:7: ( 'subnet:' )
+            // InternalDockerCompose.g:64:9: 'subnet:'
             {
-            match("gateway:"); 
+            match("subnet:"); 
 
 
             }
@@ -1249,10 +1254,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__69;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:65:7: ( 'aux_addresses:' )
-            // InternalDockerCompose.g:65:9: 'aux_addresses:'
+            // InternalDockerCompose.g:65:7: ( 'ip_range:' )
+            // InternalDockerCompose.g:65:9: 'ip_range:'
             {
-            match("aux_addresses:"); 
+            match("ip_range:"); 
 
 
             }
@@ -1270,10 +1275,11 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__70;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:66:7: ( '.' )
-            // InternalDockerCompose.g:66:9: '.'
+            // InternalDockerCompose.g:66:7: ( 'gateway:' )
+            // InternalDockerCompose.g:66:9: 'gateway:'
             {
-            match('.'); 
+            match("gateway:"); 
+
 
             }
 
@@ -1290,10 +1296,11 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__71;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:67:7: ( '/' )
-            // InternalDockerCompose.g:67:9: '/'
+            // InternalDockerCompose.g:67:7: ( 'aux_addresses:' )
+            // InternalDockerCompose.g:67:9: 'aux_addresses:'
             {
-            match('/'); 
+            match("aux_addresses:"); 
+
 
             }
 
@@ -1310,11 +1317,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__72;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:68:7: ( 'true' )
-            // InternalDockerCompose.g:68:9: 'true'
+            // InternalDockerCompose.g:68:7: ( '.' )
+            // InternalDockerCompose.g:68:9: '.'
             {
-            match("true"); 
-
+            match('.'); 
 
             }
 
@@ -1331,11 +1337,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__73;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:69:7: ( 'false' )
-            // InternalDockerCompose.g:69:9: 'false'
+            // InternalDockerCompose.g:69:7: ( '/' )
+            // InternalDockerCompose.g:69:9: '/'
             {
-            match("false"); 
-
+            match('/'); 
 
             }
 
@@ -1352,10 +1357,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__74;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:70:7: ( '\"no\"' )
-            // InternalDockerCompose.g:70:9: '\"no\"'
+            // InternalDockerCompose.g:70:7: ( 'true' )
+            // InternalDockerCompose.g:70:9: 'true'
             {
-            match("\"no\""); 
+            match("true"); 
 
 
             }
@@ -1373,10 +1378,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__75;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:71:7: ( 'always' )
-            // InternalDockerCompose.g:71:9: 'always'
+            // InternalDockerCompose.g:71:7: ( 'false' )
+            // InternalDockerCompose.g:71:9: 'false'
             {
-            match("always"); 
+            match("false"); 
 
 
             }
@@ -1394,10 +1399,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__76;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:72:7: ( 'on-failure' )
-            // InternalDockerCompose.g:72:9: 'on-failure'
+            // InternalDockerCompose.g:72:7: ( '\"no\"' )
+            // InternalDockerCompose.g:72:9: '\"no\"'
             {
-            match("on-failure"); 
+            match("\"no\""); 
 
 
             }
@@ -1415,10 +1420,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__77;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:73:7: ( 'unless-stopped' )
-            // InternalDockerCompose.g:73:9: 'unless-stopped'
+            // InternalDockerCompose.g:73:7: ( 'always' )
+            // InternalDockerCompose.g:73:9: 'always'
             {
-            match("unless-stopped"); 
+            match("always"); 
 
 
             }
@@ -1436,10 +1441,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__78;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:74:7: ( 'rw' )
-            // InternalDockerCompose.g:74:9: 'rw'
+            // InternalDockerCompose.g:74:7: ( 'on-failure' )
+            // InternalDockerCompose.g:74:9: 'on-failure'
             {
-            match("rw"); 
+            match("on-failure"); 
 
 
             }
@@ -1457,10 +1462,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__79;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:75:7: ( 'ro' )
-            // InternalDockerCompose.g:75:9: 'ro'
+            // InternalDockerCompose.g:75:7: ( 'unless-stopped' )
+            // InternalDockerCompose.g:75:9: 'unless-stopped'
             {
-            match("ro"); 
+            match("unless-stopped"); 
 
 
             }
@@ -1478,10 +1483,11 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__80;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:76:7: ( 'z' )
-            // InternalDockerCompose.g:76:9: 'z'
+            // InternalDockerCompose.g:76:7: ( 'rw' )
+            // InternalDockerCompose.g:76:9: 'rw'
             {
-            match('z'); 
+            match("rw"); 
+
 
             }
 
@@ -1498,10 +1504,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__81;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:77:7: ( 'volume' )
-            // InternalDockerCompose.g:77:9: 'volume'
+            // InternalDockerCompose.g:77:7: ( 'ro' )
+            // InternalDockerCompose.g:77:9: 'ro'
             {
-            match("volume"); 
+            match("ro"); 
 
 
             }
@@ -1519,11 +1525,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__82;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:78:7: ( 'bind' )
-            // InternalDockerCompose.g:78:9: 'bind'
+            // InternalDockerCompose.g:78:7: ( 'z' )
+            // InternalDockerCompose.g:78:9: 'z'
             {
-            match("bind"); 
-
+            match('z'); 
 
             }
 
@@ -1540,10 +1545,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__83;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:79:7: ( 'tmpfs' )
-            // InternalDockerCompose.g:79:9: 'tmpfs'
+            // InternalDockerCompose.g:79:7: ( 'volume' )
+            // InternalDockerCompose.g:79:9: 'volume'
             {
-            match("tmpfs"); 
+            match("volume"); 
 
 
             }
@@ -1561,10 +1566,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__84;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:80:7: ( 'npipe' )
-            // InternalDockerCompose.g:80:9: 'npipe'
+            // InternalDockerCompose.g:80:7: ( 'bind' )
+            // InternalDockerCompose.g:80:9: 'bind'
             {
-            match("npipe"); 
+            match("bind"); 
 
 
             }
@@ -1582,10 +1587,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__85;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:81:7: ( 'rprivate' )
-            // InternalDockerCompose.g:81:9: 'rprivate'
+            // InternalDockerCompose.g:81:7: ( 'tmpfs' )
+            // InternalDockerCompose.g:81:9: 'tmpfs'
             {
-            match("rprivate"); 
+            match("tmpfs"); 
 
 
             }
@@ -1603,10 +1608,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__86;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:82:7: ( 'private' )
-            // InternalDockerCompose.g:82:9: 'private'
+            // InternalDockerCompose.g:82:7: ( 'npipe' )
+            // InternalDockerCompose.g:82:9: 'npipe'
             {
-            match("private"); 
+            match("npipe"); 
 
 
             }
@@ -1624,10 +1629,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__87;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:83:7: ( 'rshared' )
-            // InternalDockerCompose.g:83:9: 'rshared'
+            // InternalDockerCompose.g:83:7: ( 'rprivate' )
+            // InternalDockerCompose.g:83:9: 'rprivate'
             {
-            match("rshared"); 
+            match("rprivate"); 
 
 
             }
@@ -1645,10 +1650,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__88;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:84:7: ( 'shared' )
-            // InternalDockerCompose.g:84:9: 'shared'
+            // InternalDockerCompose.g:84:7: ( 'private' )
+            // InternalDockerCompose.g:84:9: 'private'
             {
-            match("shared"); 
+            match("private"); 
 
 
             }
@@ -1666,10 +1671,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__89;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:85:7: ( 'rslave' )
-            // InternalDockerCompose.g:85:9: 'rslave'
+            // InternalDockerCompose.g:85:7: ( 'rshared' )
+            // InternalDockerCompose.g:85:9: 'rshared'
             {
-            match("rslave"); 
+            match("rshared"); 
 
 
             }
@@ -1687,10 +1692,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = T__90;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:86:7: ( 'slave' )
-            // InternalDockerCompose.g:86:9: 'slave'
+            // InternalDockerCompose.g:86:7: ( 'shared' )
+            // InternalDockerCompose.g:86:9: 'shared'
             {
-            match("slave"); 
+            match("shared"); 
 
 
             }
@@ -1703,13 +1708,118 @@ public class InternalDockerComposeLexer extends Lexer {
     }
     // $ANTLR end "T__90"
 
+    // $ANTLR start "T__91"
+    public final void mT__91() throws RecognitionException {
+        try {
+            int _type = T__91;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalDockerCompose.g:87:7: ( 'rslave' )
+            // InternalDockerCompose.g:87:9: 'rslave'
+            {
+            match("rslave"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__91"
+
+    // $ANTLR start "T__92"
+    public final void mT__92() throws RecognitionException {
+        try {
+            int _type = T__92;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalDockerCompose.g:88:7: ( 'slave' )
+            // InternalDockerCompose.g:88:9: 'slave'
+            {
+            match("slave"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__92"
+
+    // $ANTLR start "T__93"
+    public final void mT__93() throws RecognitionException {
+        try {
+            int _type = T__93;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalDockerCompose.g:89:7: ( 'service_started' )
+            // InternalDockerCompose.g:89:9: 'service_started'
+            {
+            match("service_started"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__93"
+
+    // $ANTLR start "T__94"
+    public final void mT__94() throws RecognitionException {
+        try {
+            int _type = T__94;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalDockerCompose.g:90:7: ( 'service_healthy' )
+            // InternalDockerCompose.g:90:9: 'service_healthy'
+            {
+            match("service_healthy"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__94"
+
+    // $ANTLR start "T__95"
+    public final void mT__95() throws RecognitionException {
+        try {
+            int _type = T__95;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalDockerCompose.g:91:7: ( 'service_completed_successfully' )
+            // InternalDockerCompose.g:91:9: 'service_completed_successfully'
+            {
+            match("service_completed_successfully"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__95"
+
     // $ANTLR start "RULE_VERSION"
     public final void mRULE_VERSION() throws RecognitionException {
         try {
             int _type = RULE_VERSION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:4685:14: ( '\"' RULE_INT '.' RULE_INT '\"' )
-            // InternalDockerCompose.g:4685:16: '\"' RULE_INT '.' RULE_INT '\"'
+            // InternalDockerCompose.g:4875:14: ( '\"' RULE_INT '.' RULE_INT '\"' )
+            // InternalDockerCompose.g:4875:16: '\"' RULE_INT '.' RULE_INT '\"'
             {
             match('\"'); 
             mRULE_INT(); 
@@ -1732,8 +1842,8 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = RULE_QUOTED_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:4687:17: ( '\"' '\"' )
-            // InternalDockerCompose.g:4687:19: '\"' '\"'
+            // InternalDockerCompose.g:4877:17: ( '\"' '\"' )
+            // InternalDockerCompose.g:4877:19: '\"' '\"'
             {
             match('\"'); 
             match('\"'); 
@@ -1753,44 +1863,44 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = RULE_PORT_DEF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:4689:15: ( '\"' ( ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':' )? RULE_INT '-' RULE_INT ( '/' RULE_ID )? | ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':' )? RULE_INT ( '/' RULE_ID )? ) '\"' )
-            // InternalDockerCompose.g:4689:17: '\"' ( ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':' )? RULE_INT '-' RULE_INT ( '/' RULE_ID )? | ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':' )? RULE_INT ( '/' RULE_ID )? ) '\"'
+            // InternalDockerCompose.g:4879:15: ( '\"' ( ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':' )? RULE_INT '-' RULE_INT ( '/' RULE_ID )? | ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':' )? RULE_INT ( '/' RULE_ID )? ) '\"' )
+            // InternalDockerCompose.g:4879:17: '\"' ( ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':' )? RULE_INT '-' RULE_INT ( '/' RULE_ID )? | ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':' )? RULE_INT ( '/' RULE_ID )? ) '\"'
             {
             match('\"'); 
-            // InternalDockerCompose.g:4689:21: ( ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':' )? RULE_INT '-' RULE_INT ( '/' RULE_ID )? | ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':' )? RULE_INT ( '/' RULE_ID )? )
+            // InternalDockerCompose.g:4879:21: ( ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':' )? RULE_INT '-' RULE_INT ( '/' RULE_ID )? | ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':' )? RULE_INT ( '/' RULE_ID )? )
             int alt15=2;
             alt15 = dfa15.predict(input);
             switch (alt15) {
                 case 1 :
-                    // InternalDockerCompose.g:4689:22: ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':' )? RULE_INT '-' RULE_INT ( '/' RULE_ID )?
+                    // InternalDockerCompose.g:4879:22: ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':' )? RULE_INT '-' RULE_INT ( '/' RULE_ID )?
                     {
-                    // InternalDockerCompose.g:4689:22: ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':' )?
+                    // InternalDockerCompose.g:4879:22: ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':' )?
                     int alt6=2;
                     alt6 = dfa6.predict(input);
                     switch (alt6) {
                         case 1 :
-                            // InternalDockerCompose.g:4689:23: ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':'
+                            // InternalDockerCompose.g:4879:23: ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':'
                             {
-                            // InternalDockerCompose.g:4689:23: ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )?
+                            // InternalDockerCompose.g:4879:23: ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )?
                             int alt5=2;
                             alt5 = dfa5.predict(input);
                             switch (alt5) {
                                 case 1 :
-                                    // InternalDockerCompose.g:4689:24: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':'
+                                    // InternalDockerCompose.g:4879:24: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':'
                                     {
-                                    // InternalDockerCompose.g:4689:24: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
+                                    // InternalDockerCompose.g:4879:24: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
                                     int alt1=4;
                                     alt1 = dfa1.predict(input);
                                     switch (alt1) {
                                         case 1 :
-                                            // InternalDockerCompose.g:4689:25: '0' .. '9'
+                                            // InternalDockerCompose.g:4879:25: '0' .. '9'
                                             {
                                             matchRange('0','9'); 
 
                                             }
                                             break;
                                         case 2 :
-                                            // InternalDockerCompose.g:4689:34: '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4879:34: '0' .. '9' '0' .. '9'
                                             {
                                             matchRange('0','9'); 
                                             matchRange('0','9'); 
@@ -1798,7 +1908,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 3 :
-                                            // InternalDockerCompose.g:4689:52: '1' '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4879:52: '1' '0' .. '9' '0' .. '9'
                                             {
                                             match('1'); 
                                             matchRange('0','9'); 
@@ -1807,7 +1917,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 4 :
-                                            // InternalDockerCompose.g:4689:74: '2' '0' .. '5' '0' .. '5'
+                                            // InternalDockerCompose.g:4879:74: '2' '0' .. '5' '0' .. '5'
                                             {
                                             match('2'); 
                                             matchRange('0','5'); 
@@ -1819,19 +1929,19 @@ public class InternalDockerComposeLexer extends Lexer {
                                     }
 
                                     match('.'); 
-                                    // InternalDockerCompose.g:4689:101: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
+                                    // InternalDockerCompose.g:4879:101: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
                                     int alt2=4;
                                     alt2 = dfa2.predict(input);
                                     switch (alt2) {
                                         case 1 :
-                                            // InternalDockerCompose.g:4689:102: '0' .. '9'
+                                            // InternalDockerCompose.g:4879:102: '0' .. '9'
                                             {
                                             matchRange('0','9'); 
 
                                             }
                                             break;
                                         case 2 :
-                                            // InternalDockerCompose.g:4689:111: '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4879:111: '0' .. '9' '0' .. '9'
                                             {
                                             matchRange('0','9'); 
                                             matchRange('0','9'); 
@@ -1839,7 +1949,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 3 :
-                                            // InternalDockerCompose.g:4689:129: '1' '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4879:129: '1' '0' .. '9' '0' .. '9'
                                             {
                                             match('1'); 
                                             matchRange('0','9'); 
@@ -1848,7 +1958,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 4 :
-                                            // InternalDockerCompose.g:4689:151: '2' '0' .. '5' '0' .. '5'
+                                            // InternalDockerCompose.g:4879:151: '2' '0' .. '5' '0' .. '5'
                                             {
                                             match('2'); 
                                             matchRange('0','5'); 
@@ -1860,19 +1970,19 @@ public class InternalDockerComposeLexer extends Lexer {
                                     }
 
                                     match('.'); 
-                                    // InternalDockerCompose.g:4689:178: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
+                                    // InternalDockerCompose.g:4879:178: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
                                     int alt3=4;
                                     alt3 = dfa3.predict(input);
                                     switch (alt3) {
                                         case 1 :
-                                            // InternalDockerCompose.g:4689:179: '0' .. '9'
+                                            // InternalDockerCompose.g:4879:179: '0' .. '9'
                                             {
                                             matchRange('0','9'); 
 
                                             }
                                             break;
                                         case 2 :
-                                            // InternalDockerCompose.g:4689:188: '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4879:188: '0' .. '9' '0' .. '9'
                                             {
                                             matchRange('0','9'); 
                                             matchRange('0','9'); 
@@ -1880,7 +1990,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 3 :
-                                            // InternalDockerCompose.g:4689:206: '1' '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4879:206: '1' '0' .. '9' '0' .. '9'
                                             {
                                             match('1'); 
                                             matchRange('0','9'); 
@@ -1889,7 +1999,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 4 :
-                                            // InternalDockerCompose.g:4689:228: '2' '0' .. '5' '0' .. '5'
+                                            // InternalDockerCompose.g:4879:228: '2' '0' .. '5' '0' .. '5'
                                             {
                                             match('2'); 
                                             matchRange('0','5'); 
@@ -1901,19 +2011,19 @@ public class InternalDockerComposeLexer extends Lexer {
                                     }
 
                                     match('.'); 
-                                    // InternalDockerCompose.g:4689:255: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
+                                    // InternalDockerCompose.g:4879:255: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
                                     int alt4=4;
                                     alt4 = dfa4.predict(input);
                                     switch (alt4) {
                                         case 1 :
-                                            // InternalDockerCompose.g:4689:256: '0' .. '9'
+                                            // InternalDockerCompose.g:4879:256: '0' .. '9'
                                             {
                                             matchRange('0','9'); 
 
                                             }
                                             break;
                                         case 2 :
-                                            // InternalDockerCompose.g:4689:265: '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4879:265: '0' .. '9' '0' .. '9'
                                             {
                                             matchRange('0','9'); 
                                             matchRange('0','9'); 
@@ -1921,7 +2031,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 3 :
-                                            // InternalDockerCompose.g:4689:283: '1' '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4879:283: '1' '0' .. '9' '0' .. '9'
                                             {
                                             match('1'); 
                                             matchRange('0','9'); 
@@ -1930,7 +2040,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 4 :
-                                            // InternalDockerCompose.g:4689:305: '2' '0' .. '5' '0' .. '5'
+                                            // InternalDockerCompose.g:4879:305: '2' '0' .. '5' '0' .. '5'
                                             {
                                             match('2'); 
                                             matchRange('0','5'); 
@@ -1961,7 +2071,7 @@ public class InternalDockerComposeLexer extends Lexer {
                     mRULE_INT(); 
                     match('-'); 
                     mRULE_INT(); 
-                    // InternalDockerCompose.g:4689:384: ( '/' RULE_ID )?
+                    // InternalDockerCompose.g:4879:384: ( '/' RULE_ID )?
                     int alt7=2;
                     int LA7_0 = input.LA(1);
 
@@ -1970,7 +2080,7 @@ public class InternalDockerComposeLexer extends Lexer {
                     }
                     switch (alt7) {
                         case 1 :
-                            // InternalDockerCompose.g:4689:385: '/' RULE_ID
+                            // InternalDockerCompose.g:4879:385: '/' RULE_ID
                             {
                             match('/'); 
                             mRULE_ID(); 
@@ -1984,35 +2094,35 @@ public class InternalDockerComposeLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalDockerCompose.g:4689:399: ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':' )? RULE_INT ( '/' RULE_ID )?
+                    // InternalDockerCompose.g:4879:399: ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':' )? RULE_INT ( '/' RULE_ID )?
                     {
-                    // InternalDockerCompose.g:4689:399: ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':' )?
+                    // InternalDockerCompose.g:4879:399: ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':' )?
                     int alt13=2;
                     alt13 = dfa13.predict(input);
                     switch (alt13) {
                         case 1 :
-                            // InternalDockerCompose.g:4689:400: ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':'
+                            // InternalDockerCompose.g:4879:400: ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':'
                             {
-                            // InternalDockerCompose.g:4689:400: ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )?
+                            // InternalDockerCompose.g:4879:400: ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )?
                             int alt12=2;
                             alt12 = dfa12.predict(input);
                             switch (alt12) {
                                 case 1 :
-                                    // InternalDockerCompose.g:4689:401: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':'
+                                    // InternalDockerCompose.g:4879:401: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':'
                                     {
-                                    // InternalDockerCompose.g:4689:401: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
+                                    // InternalDockerCompose.g:4879:401: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
                                     int alt8=4;
                                     alt8 = dfa8.predict(input);
                                     switch (alt8) {
                                         case 1 :
-                                            // InternalDockerCompose.g:4689:402: '0' .. '9'
+                                            // InternalDockerCompose.g:4879:402: '0' .. '9'
                                             {
                                             matchRange('0','9'); 
 
                                             }
                                             break;
                                         case 2 :
-                                            // InternalDockerCompose.g:4689:411: '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4879:411: '0' .. '9' '0' .. '9'
                                             {
                                             matchRange('0','9'); 
                                             matchRange('0','9'); 
@@ -2020,7 +2130,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 3 :
-                                            // InternalDockerCompose.g:4689:429: '1' '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4879:429: '1' '0' .. '9' '0' .. '9'
                                             {
                                             match('1'); 
                                             matchRange('0','9'); 
@@ -2029,7 +2139,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 4 :
-                                            // InternalDockerCompose.g:4689:451: '2' '0' .. '5' '0' .. '5'
+                                            // InternalDockerCompose.g:4879:451: '2' '0' .. '5' '0' .. '5'
                                             {
                                             match('2'); 
                                             matchRange('0','5'); 
@@ -2041,19 +2151,19 @@ public class InternalDockerComposeLexer extends Lexer {
                                     }
 
                                     match('.'); 
-                                    // InternalDockerCompose.g:4689:478: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
+                                    // InternalDockerCompose.g:4879:478: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
                                     int alt9=4;
                                     alt9 = dfa9.predict(input);
                                     switch (alt9) {
                                         case 1 :
-                                            // InternalDockerCompose.g:4689:479: '0' .. '9'
+                                            // InternalDockerCompose.g:4879:479: '0' .. '9'
                                             {
                                             matchRange('0','9'); 
 
                                             }
                                             break;
                                         case 2 :
-                                            // InternalDockerCompose.g:4689:488: '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4879:488: '0' .. '9' '0' .. '9'
                                             {
                                             matchRange('0','9'); 
                                             matchRange('0','9'); 
@@ -2061,7 +2171,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 3 :
-                                            // InternalDockerCompose.g:4689:506: '1' '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4879:506: '1' '0' .. '9' '0' .. '9'
                                             {
                                             match('1'); 
                                             matchRange('0','9'); 
@@ -2070,7 +2180,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 4 :
-                                            // InternalDockerCompose.g:4689:528: '2' '0' .. '5' '0' .. '5'
+                                            // InternalDockerCompose.g:4879:528: '2' '0' .. '5' '0' .. '5'
                                             {
                                             match('2'); 
                                             matchRange('0','5'); 
@@ -2082,19 +2192,19 @@ public class InternalDockerComposeLexer extends Lexer {
                                     }
 
                                     match('.'); 
-                                    // InternalDockerCompose.g:4689:555: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
+                                    // InternalDockerCompose.g:4879:555: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
                                     int alt10=4;
                                     alt10 = dfa10.predict(input);
                                     switch (alt10) {
                                         case 1 :
-                                            // InternalDockerCompose.g:4689:556: '0' .. '9'
+                                            // InternalDockerCompose.g:4879:556: '0' .. '9'
                                             {
                                             matchRange('0','9'); 
 
                                             }
                                             break;
                                         case 2 :
-                                            // InternalDockerCompose.g:4689:565: '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4879:565: '0' .. '9' '0' .. '9'
                                             {
                                             matchRange('0','9'); 
                                             matchRange('0','9'); 
@@ -2102,7 +2212,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 3 :
-                                            // InternalDockerCompose.g:4689:583: '1' '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4879:583: '1' '0' .. '9' '0' .. '9'
                                             {
                                             match('1'); 
                                             matchRange('0','9'); 
@@ -2111,7 +2221,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 4 :
-                                            // InternalDockerCompose.g:4689:605: '2' '0' .. '5' '0' .. '5'
+                                            // InternalDockerCompose.g:4879:605: '2' '0' .. '5' '0' .. '5'
                                             {
                                             match('2'); 
                                             matchRange('0','5'); 
@@ -2123,19 +2233,19 @@ public class InternalDockerComposeLexer extends Lexer {
                                     }
 
                                     match('.'); 
-                                    // InternalDockerCompose.g:4689:632: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
+                                    // InternalDockerCompose.g:4879:632: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )
                                     int alt11=4;
                                     alt11 = dfa11.predict(input);
                                     switch (alt11) {
                                         case 1 :
-                                            // InternalDockerCompose.g:4689:633: '0' .. '9'
+                                            // InternalDockerCompose.g:4879:633: '0' .. '9'
                                             {
                                             matchRange('0','9'); 
 
                                             }
                                             break;
                                         case 2 :
-                                            // InternalDockerCompose.g:4689:642: '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4879:642: '0' .. '9' '0' .. '9'
                                             {
                                             matchRange('0','9'); 
                                             matchRange('0','9'); 
@@ -2143,7 +2253,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 3 :
-                                            // InternalDockerCompose.g:4689:660: '1' '0' .. '9' '0' .. '9'
+                                            // InternalDockerCompose.g:4879:660: '1' '0' .. '9' '0' .. '9'
                                             {
                                             match('1'); 
                                             matchRange('0','9'); 
@@ -2152,7 +2262,7 @@ public class InternalDockerComposeLexer extends Lexer {
                                             }
                                             break;
                                         case 4 :
-                                            // InternalDockerCompose.g:4689:682: '2' '0' .. '5' '0' .. '5'
+                                            // InternalDockerCompose.g:4879:682: '2' '0' .. '5' '0' .. '5'
                                             {
                                             match('2'); 
                                             matchRange('0','5'); 
@@ -2179,7 +2289,7 @@ public class InternalDockerComposeLexer extends Lexer {
                     }
 
                     mRULE_INT(); 
-                    // InternalDockerCompose.g:4689:735: ( '/' RULE_ID )?
+                    // InternalDockerCompose.g:4879:735: ( '/' RULE_ID )?
                     int alt14=2;
                     int LA14_0 = input.LA(1);
 
@@ -2188,7 +2298,7 @@ public class InternalDockerComposeLexer extends Lexer {
                     }
                     switch (alt14) {
                         case 1 :
-                            // InternalDockerCompose.g:4689:736: '/' RULE_ID
+                            // InternalDockerCompose.g:4879:736: '/' RULE_ID
                             {
                             match('/'); 
                             mRULE_ID(); 
@@ -2221,11 +2331,11 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = RULE_DEVICE_DEF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:4691:17: ( '\"' ( '.' )? ( '/' )? RULE_ID ':' ( '.' )? ( '/' )? RULE_ID ( ':' RULE_ID )? '\"' )
-            // InternalDockerCompose.g:4691:19: '\"' ( '.' )? ( '/' )? RULE_ID ':' ( '.' )? ( '/' )? RULE_ID ( ':' RULE_ID )? '\"'
+            // InternalDockerCompose.g:4881:17: ( '\"' ( '.' )? ( '/' )? RULE_ID ':' ( '.' )? ( '/' )? RULE_ID ( ':' RULE_ID )? '\"' )
+            // InternalDockerCompose.g:4881:19: '\"' ( '.' )? ( '/' )? RULE_ID ':' ( '.' )? ( '/' )? RULE_ID ( ':' RULE_ID )? '\"'
             {
             match('\"'); 
-            // InternalDockerCompose.g:4691:23: ( '.' )?
+            // InternalDockerCompose.g:4881:23: ( '.' )?
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -2234,7 +2344,7 @@ public class InternalDockerComposeLexer extends Lexer {
             }
             switch (alt16) {
                 case 1 :
-                    // InternalDockerCompose.g:4691:23: '.'
+                    // InternalDockerCompose.g:4881:23: '.'
                     {
                     match('.'); 
 
@@ -2243,7 +2353,7 @@ public class InternalDockerComposeLexer extends Lexer {
 
             }
 
-            // InternalDockerCompose.g:4691:28: ( '/' )?
+            // InternalDockerCompose.g:4881:28: ( '/' )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -2252,7 +2362,7 @@ public class InternalDockerComposeLexer extends Lexer {
             }
             switch (alt17) {
                 case 1 :
-                    // InternalDockerCompose.g:4691:28: '/'
+                    // InternalDockerCompose.g:4881:28: '/'
                     {
                     match('/'); 
 
@@ -2263,7 +2373,7 @@ public class InternalDockerComposeLexer extends Lexer {
 
             mRULE_ID(); 
             match(':'); 
-            // InternalDockerCompose.g:4691:45: ( '.' )?
+            // InternalDockerCompose.g:4881:45: ( '.' )?
             int alt18=2;
             int LA18_0 = input.LA(1);
 
@@ -2272,7 +2382,7 @@ public class InternalDockerComposeLexer extends Lexer {
             }
             switch (alt18) {
                 case 1 :
-                    // InternalDockerCompose.g:4691:45: '.'
+                    // InternalDockerCompose.g:4881:45: '.'
                     {
                     match('.'); 
 
@@ -2281,7 +2391,7 @@ public class InternalDockerComposeLexer extends Lexer {
 
             }
 
-            // InternalDockerCompose.g:4691:50: ( '/' )?
+            // InternalDockerCompose.g:4881:50: ( '/' )?
             int alt19=2;
             int LA19_0 = input.LA(1);
 
@@ -2290,7 +2400,7 @@ public class InternalDockerComposeLexer extends Lexer {
             }
             switch (alt19) {
                 case 1 :
-                    // InternalDockerCompose.g:4691:50: '/'
+                    // InternalDockerCompose.g:4881:50: '/'
                     {
                     match('/'); 
 
@@ -2300,7 +2410,7 @@ public class InternalDockerComposeLexer extends Lexer {
             }
 
             mRULE_ID(); 
-            // InternalDockerCompose.g:4691:63: ( ':' RULE_ID )?
+            // InternalDockerCompose.g:4881:63: ( ':' RULE_ID )?
             int alt20=2;
             int LA20_0 = input.LA(1);
 
@@ -2309,7 +2419,7 @@ public class InternalDockerComposeLexer extends Lexer {
             }
             switch (alt20) {
                 case 1 :
-                    // InternalDockerCompose.g:4691:64: ':' RULE_ID
+                    // InternalDockerCompose.g:4881:64: ':' RULE_ID
                     {
                     match(':'); 
                     mRULE_ID(); 
@@ -2336,10 +2446,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:4693:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '-' | '/' | '.' | '0' .. '9' )* )
-            // InternalDockerCompose.g:4693:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '-' | '/' | '.' | '0' .. '9' )*
+            // InternalDockerCompose.g:4883:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '-' | '/' | '.' | '0' .. '9' )* )
+            // InternalDockerCompose.g:4883:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '-' | '/' | '.' | '0' .. '9' )*
             {
-            // InternalDockerCompose.g:4693:11: ( '^' )?
+            // InternalDockerCompose.g:4883:11: ( '^' )?
             int alt21=2;
             int LA21_0 = input.LA(1);
 
@@ -2348,7 +2458,7 @@ public class InternalDockerComposeLexer extends Lexer {
             }
             switch (alt21) {
                 case 1 :
-                    // InternalDockerCompose.g:4693:11: '^'
+                    // InternalDockerCompose.g:4883:11: '^'
                     {
                     match('^'); 
 
@@ -2366,7 +2476,7 @@ public class InternalDockerComposeLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalDockerCompose.g:4693:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '-' | '/' | '.' | '0' .. '9' )*
+            // InternalDockerCompose.g:4883:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '-' | '/' | '.' | '0' .. '9' )*
             loop22:
             do {
                 int alt22=2;
@@ -2415,10 +2525,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:4695:10: ( ( '0' .. '9' )+ )
-            // InternalDockerCompose.g:4695:12: ( '0' .. '9' )+
+            // InternalDockerCompose.g:4885:10: ( ( '0' .. '9' )+ )
+            // InternalDockerCompose.g:4885:12: ( '0' .. '9' )+
             {
-            // InternalDockerCompose.g:4695:12: ( '0' .. '9' )+
+            // InternalDockerCompose.g:4885:12: ( '0' .. '9' )+
             int cnt23=0;
             loop23:
             do {
@@ -2432,7 +2542,7 @@ public class InternalDockerComposeLexer extends Lexer {
 
                 switch (alt23) {
             	case 1 :
-            	    // InternalDockerCompose.g:4695:13: '0' .. '9'
+            	    // InternalDockerCompose.g:4885:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -2464,10 +2574,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:4697:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalDockerCompose.g:4697:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalDockerCompose.g:4887:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalDockerCompose.g:4887:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalDockerCompose.g:4697:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalDockerCompose.g:4887:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt26=2;
             int LA26_0 = input.LA(1);
 
@@ -2485,10 +2595,10 @@ public class InternalDockerComposeLexer extends Lexer {
             }
             switch (alt26) {
                 case 1 :
-                    // InternalDockerCompose.g:4697:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalDockerCompose.g:4887:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalDockerCompose.g:4697:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalDockerCompose.g:4887:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop24:
                     do {
                         int alt24=3;
@@ -2504,7 +2614,7 @@ public class InternalDockerComposeLexer extends Lexer {
 
                         switch (alt24) {
                     	case 1 :
-                    	    // InternalDockerCompose.g:4697:21: '\\\\' .
+                    	    // InternalDockerCompose.g:4887:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2512,7 +2622,7 @@ public class InternalDockerComposeLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalDockerCompose.g:4697:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalDockerCompose.g:4887:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2537,10 +2647,10 @@ public class InternalDockerComposeLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalDockerCompose.g:4697:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalDockerCompose.g:4887:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalDockerCompose.g:4697:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalDockerCompose.g:4887:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop25:
                     do {
                         int alt25=3;
@@ -2556,7 +2666,7 @@ public class InternalDockerComposeLexer extends Lexer {
 
                         switch (alt25) {
                     	case 1 :
-                    	    // InternalDockerCompose.g:4697:54: '\\\\' .
+                    	    // InternalDockerCompose.g:4887:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2564,7 +2674,7 @@ public class InternalDockerComposeLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalDockerCompose.g:4697:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalDockerCompose.g:4887:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2607,12 +2717,12 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:4699:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalDockerCompose.g:4699:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalDockerCompose.g:4889:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalDockerCompose.g:4889:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalDockerCompose.g:4699:24: ( options {greedy=false; } : . )*
+            // InternalDockerCompose.g:4889:24: ( options {greedy=false; } : . )*
             loop27:
             do {
                 int alt27=2;
@@ -2637,7 +2747,7 @@ public class InternalDockerComposeLexer extends Lexer {
 
                 switch (alt27) {
             	case 1 :
-            	    // InternalDockerCompose.g:4699:52: .
+            	    // InternalDockerCompose.g:4889:52: .
             	    {
             	    matchAny(); 
 
@@ -2667,12 +2777,12 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:4701:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalDockerCompose.g:4701:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalDockerCompose.g:4891:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalDockerCompose.g:4891:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalDockerCompose.g:4701:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalDockerCompose.g:4891:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop28:
             do {
                 int alt28=2;
@@ -2685,7 +2795,7 @@ public class InternalDockerComposeLexer extends Lexer {
 
                 switch (alt28) {
             	case 1 :
-            	    // InternalDockerCompose.g:4701:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalDockerCompose.g:4891:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2705,7 +2815,7 @@ public class InternalDockerComposeLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalDockerCompose.g:4701:40: ( ( '\\r' )? '\\n' )?
+            // InternalDockerCompose.g:4891:40: ( ( '\\r' )? '\\n' )?
             int alt30=2;
             int LA30_0 = input.LA(1);
 
@@ -2714,9 +2824,9 @@ public class InternalDockerComposeLexer extends Lexer {
             }
             switch (alt30) {
                 case 1 :
-                    // InternalDockerCompose.g:4701:41: ( '\\r' )? '\\n'
+                    // InternalDockerCompose.g:4891:41: ( '\\r' )? '\\n'
                     {
-                    // InternalDockerCompose.g:4701:41: ( '\\r' )?
+                    // InternalDockerCompose.g:4891:41: ( '\\r' )?
                     int alt29=2;
                     int LA29_0 = input.LA(1);
 
@@ -2725,7 +2835,7 @@ public class InternalDockerComposeLexer extends Lexer {
                     }
                     switch (alt29) {
                         case 1 :
-                            // InternalDockerCompose.g:4701:41: '\\r'
+                            // InternalDockerCompose.g:4891:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2757,10 +2867,10 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:4703:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalDockerCompose.g:4703:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalDockerCompose.g:4893:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalDockerCompose.g:4893:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalDockerCompose.g:4703:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalDockerCompose.g:4893:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt31=0;
             loop31:
             do {
@@ -2814,8 +2924,8 @@ public class InternalDockerComposeLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDockerCompose.g:4705:16: ( . )
-            // InternalDockerCompose.g:4705:18: .
+            // InternalDockerCompose.g:4895:16: ( . )
+            // InternalDockerCompose.g:4895:18: .
             {
             matchAny(); 
 
@@ -2830,8 +2940,8 @@ public class InternalDockerComposeLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // InternalDockerCompose.g:1:8: ( T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | RULE_VERSION | RULE_QUOTED_INT | RULE_PORT_DEF | RULE_DEVICE_DEF | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt32=87;
+        // InternalDockerCompose.g:1:8: ( T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | RULE_VERSION | RULE_QUOTED_INT | RULE_PORT_DEF | RULE_DEVICE_DEF | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt32=92;
         alt32 = dfa32.predict(input);
         switch (alt32) {
             case 1 :
@@ -3367,77 +3477,112 @@ public class InternalDockerComposeLexer extends Lexer {
                 }
                 break;
             case 77 :
-                // InternalDockerCompose.g:1:466: RULE_VERSION
+                // InternalDockerCompose.g:1:466: T__91
+                {
+                mT__91(); 
+
+                }
+                break;
+            case 78 :
+                // InternalDockerCompose.g:1:472: T__92
+                {
+                mT__92(); 
+
+                }
+                break;
+            case 79 :
+                // InternalDockerCompose.g:1:478: T__93
+                {
+                mT__93(); 
+
+                }
+                break;
+            case 80 :
+                // InternalDockerCompose.g:1:484: T__94
+                {
+                mT__94(); 
+
+                }
+                break;
+            case 81 :
+                // InternalDockerCompose.g:1:490: T__95
+                {
+                mT__95(); 
+
+                }
+                break;
+            case 82 :
+                // InternalDockerCompose.g:1:496: RULE_VERSION
                 {
                 mRULE_VERSION(); 
 
                 }
                 break;
-            case 78 :
-                // InternalDockerCompose.g:1:479: RULE_QUOTED_INT
+            case 83 :
+                // InternalDockerCompose.g:1:509: RULE_QUOTED_INT
                 {
                 mRULE_QUOTED_INT(); 
 
                 }
                 break;
-            case 79 :
-                // InternalDockerCompose.g:1:495: RULE_PORT_DEF
+            case 84 :
+                // InternalDockerCompose.g:1:525: RULE_PORT_DEF
                 {
                 mRULE_PORT_DEF(); 
 
                 }
                 break;
-            case 80 :
-                // InternalDockerCompose.g:1:509: RULE_DEVICE_DEF
+            case 85 :
+                // InternalDockerCompose.g:1:539: RULE_DEVICE_DEF
                 {
                 mRULE_DEVICE_DEF(); 
 
                 }
                 break;
-            case 81 :
-                // InternalDockerCompose.g:1:525: RULE_ID
+            case 86 :
+                // InternalDockerCompose.g:1:555: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 82 :
-                // InternalDockerCompose.g:1:533: RULE_INT
+            case 87 :
+                // InternalDockerCompose.g:1:563: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 83 :
-                // InternalDockerCompose.g:1:542: RULE_STRING
+            case 88 :
+                // InternalDockerCompose.g:1:572: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 84 :
-                // InternalDockerCompose.g:1:554: RULE_ML_COMMENT
+            case 89 :
+                // InternalDockerCompose.g:1:584: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 85 :
-                // InternalDockerCompose.g:1:570: RULE_SL_COMMENT
+            case 90 :
+                // InternalDockerCompose.g:1:600: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 86 :
-                // InternalDockerCompose.g:1:586: RULE_WS
+            case 91 :
+                // InternalDockerCompose.g:1:616: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 87 :
-                // InternalDockerCompose.g:1:594: RULE_ANY_OTHER
+            case 92 :
+                // InternalDockerCompose.g:1:624: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -3549,7 +3694,7 @@ public class InternalDockerComposeLexer extends Lexer {
             this.transition = DFA15_transition;
         }
         public String getDescription() {
-            return "4689:21: ( ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':' )? RULE_INT '-' RULE_INT ( '/' RULE_ID )? | ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':' )? RULE_INT ( '/' RULE_ID )? )";
+            return "4879:21: ( ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':' )? RULE_INT '-' RULE_INT ( '/' RULE_ID )? | ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':' )? RULE_INT ( '/' RULE_ID )? )";
         }
     }
     static final String DFA6_eotS =
@@ -3611,7 +3756,7 @@ public class InternalDockerComposeLexer extends Lexer {
             this.transition = DFA6_transition;
         }
         public String getDescription() {
-            return "4689:22: ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':' )?";
+            return "4879:22: ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT '-' RULE_INT ':' )?";
         }
     }
     static final String DFA5_eotS =
@@ -3670,7 +3815,7 @@ public class InternalDockerComposeLexer extends Lexer {
             this.transition = DFA5_transition;
         }
         public String getDescription() {
-            return "4689:23: ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )?";
+            return "4879:23: ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )?";
         }
     }
     static final String DFA1_eotS =
@@ -3728,7 +3873,7 @@ public class InternalDockerComposeLexer extends Lexer {
             this.transition = DFA1_transition;
         }
         public String getDescription() {
-            return "4689:24: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
+            return "4879:24: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
         }
     }
     static final String DFA2_eotS =
@@ -3786,7 +3931,7 @@ public class InternalDockerComposeLexer extends Lexer {
             this.transition = DFA2_transition;
         }
         public String getDescription() {
-            return "4689:101: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
+            return "4879:101: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
         }
     }
     static final String DFA3_eotS =
@@ -3844,7 +3989,7 @@ public class InternalDockerComposeLexer extends Lexer {
             this.transition = DFA3_transition;
         }
         public String getDescription() {
-            return "4689:178: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
+            return "4879:178: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
         }
     }
     static final String DFA4_eotS =
@@ -3902,7 +4047,7 @@ public class InternalDockerComposeLexer extends Lexer {
             this.transition = DFA4_transition;
         }
         public String getDescription() {
-            return "4689:255: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
+            return "4879:255: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
         }
     }
     static final String DFA13_eotS =
@@ -3962,7 +4107,7 @@ public class InternalDockerComposeLexer extends Lexer {
             this.transition = DFA13_transition;
         }
         public String getDescription() {
-            return "4689:399: ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':' )?";
+            return "4879:399: ( ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )? RULE_INT ':' )?";
         }
     }
     static final String DFA12_eotS =
@@ -4021,7 +4166,7 @@ public class InternalDockerComposeLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "4689:400: ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )?";
+            return "4879:400: ( ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) '.' ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' ) ':' )?";
         }
     }
     static final String DFA8_eotS =
@@ -4079,7 +4224,7 @@ public class InternalDockerComposeLexer extends Lexer {
             this.transition = DFA8_transition;
         }
         public String getDescription() {
-            return "4689:401: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
+            return "4879:401: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
         }
     }
     static final String DFA9_eotS =
@@ -4137,7 +4282,7 @@ public class InternalDockerComposeLexer extends Lexer {
             this.transition = DFA9_transition;
         }
         public String getDescription() {
-            return "4689:478: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
+            return "4879:478: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
         }
     }
     static final String DFA10_eotS =
@@ -4195,7 +4340,7 @@ public class InternalDockerComposeLexer extends Lexer {
             this.transition = DFA10_transition;
         }
         public String getDescription() {
-            return "4689:555: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
+            return "4879:555: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
         }
     }
     static final String DFA11_eotS =
@@ -4253,36 +4398,36 @@ public class InternalDockerComposeLexer extends Lexer {
             this.transition = DFA11_transition;
         }
         public String getDescription() {
-            return "4689:632: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
+            return "4879:632: ( '0' .. '9' | '0' .. '9' '0' .. '9' | '1' '0' .. '9' '0' .. '9' | '2' '0' .. '5' '0' .. '5' )";
         }
     }
     static final String DFA32_eotS =
-        "\1\uffff\4\43\1\uffff\4\43\1\uffff\7\43\2\uffff\3\43\1\uffff\1\132\1\40\1\145\1\40\2\uffff\1\40\2\uffff\2\43\1\uffff\14\43\1\uffff\6\43\1\u0082\1\u0083\5\43\1\uffff\20\43\2\uffff\6\43\21\uffff\32\43\2\uffff\40\43\14\uffff\22\43\1\u010f\15\43\1\uffff\16\43\1\u012b\1\uffff\1\43\1\uffff\11\43\20\uffff\5\43\1\uffff\2\43\1\u014a\2\43\1\uffff\1\u014d\5\43\2\uffff\1\43\1\uffff\2\43\1\uffff\23\43\1\uffff\1\43\1\u016b\1\uffff\2\43\1\uffff\3\43\1\uffff\1\u0171\2\43\15\uffff\1\43\1\u0184\4\43\1\u0189\1\uffff\2\43\1\uffff\4\43\2\uffff\7\43\1\u0198\3\43\1\uffff\4\43\1\u01a1\5\43\2\uffff\5\43\1\uffff\2\43\15\uffff\2\43\2\uffff\2\43\3\uffff\1\43\1\uffff\1\43\1\uffff\11\43\1\u01c4\1\uffff\2\43\1\uffff\2\43\1\u01c9\2\43\1\uffff\3\43\2\uffff\7\43\11\uffff\1\43\1\uffff\1\43\1\uffff\1\43\1\uffff\4\43\1\uffff\1\43\1\u01e4\1\uffff\1\43\1\uffff\2\43\1\uffff\1\43\1\uffff\4\43\1\uffff\3\43\1\uffff\1\43\10\uffff\2\43\1\uffff\1\43\1\uffff\1\43\1\uffff\2\43\1\uffff\7\43\1\uffff\1\43\4\uffff\1\43\1\uffff\1\43\1\uffff\11\43\1\u0211\3\uffff\2\43\1\uffff\2\43\1\uffff\5\43\2\uffff\2\43\2\uffff\3\43\3\uffff\1\43\1\uffff\4\43\1\uffff\1\43\1\u0228\3\uffff";
+        "\1\uffff\4\43\1\uffff\4\43\1\uffff\7\43\2\uffff\3\43\1\uffff\1\132\1\40\1\145\1\40\2\uffff\1\40\2\uffff\2\43\1\uffff\14\43\1\uffff\6\43\1\u0082\1\u0083\4\43\1\uffff\21\43\2\uffff\6\43\21\uffff\32\43\2\uffff\40\43\14\uffff\23\43\1\u0111\17\43\1\uffff\14\43\1\u012e\1\uffff\1\43\1\uffff\11\43\20\uffff\5\43\1\uffff\2\43\1\u014d\7\43\1\uffff\1\u0155\1\43\2\uffff\1\43\1\uffff\2\43\1\uffff\24\43\1\uffff\1\43\1\u0170\1\uffff\2\43\1\uffff\3\43\1\uffff\1\u0176\2\43\15\uffff\1\43\1\u0189\4\43\1\u018e\1\uffff\7\43\3\uffff\7\43\1\u019e\1\uffff\5\43\1\uffff\4\43\1\u01a9\3\43\2\uffff\5\43\1\uffff\2\43\15\uffff\2\43\2\uffff\2\43\3\uffff\1\43\1\uffff\5\43\1\uffff\6\43\1\u01cc\1\uffff\1\43\1\uffff\2\43\1\uffff\2\43\1\u01d2\2\43\1\uffff\2\43\1\uffff\7\43\11\uffff\2\43\2\uffff\2\43\1\uffff\5\43\1\uffff\1\43\1\u01f0\1\uffff\2\43\1\uffff\2\43\1\uffff\1\43\1\uffff\3\43\1\uffff\3\43\1\uffff\1\43\7\uffff\6\43\2\uffff\1\43\1\uffff\1\43\1\uffff\3\43\1\uffff\6\43\1\uffff\1\43\4\uffff\4\43\2\uffff\1\43\1\uffff\11\43\1\u0224\3\uffff\6\43\1\uffff\2\43\1\uffff\4\43\2\uffff\6\43\2\uffff\2\43\3\uffff\4\43\1\uffff\10\43\1\uffff\1\u0247\1\u0248\1\u0249\1\43\5\uffff\16\43\1\u0259\1\uffff";
     static final String DFA32_eofS =
-        "\u0229\uffff";
+        "\u025a\uffff";
     static final String DFA32_minS =
-        "\1\0\2\145\1\141\1\157\1\uffff\1\151\1\155\2\145\1\uffff\1\157\1\154\2\141\1\151\1\141\1\157\2\uffff\1\156\1\141\1\156\1\uffff\1\52\1\0\1\55\1\101\2\uffff\1\0\2\uffff\1\162\1\154\1\uffff\1\143\1\165\1\172\1\142\2\141\1\164\1\143\1\155\1\151\1\155\1\165\1\uffff\1\151\1\156\1\141\1\151\1\137\1\141\2\55\1\162\1\150\1\160\1\163\1\151\1\uffff\1\162\2\151\1\164\1\170\1\156\1\142\1\160\1\162\1\160\1\165\1\144\1\154\1\144\1\164\1\144\2\uffff\1\141\1\164\2\154\1\164\1\55\4\uffff\1\0\1\uffff\7\0\4\uffff\1\163\1\165\1\166\2\162\1\145\1\156\1\162\1\166\1\167\1\157\1\145\1\160\1\146\1\155\1\137\1\154\1\144\1\147\1\164\1\145\1\64\1\155\1\162\1\164\1\144\2\uffff\1\151\2\141\1\145\1\151\1\72\1\166\1\164\1\157\1\160\3\141\1\137\1\153\2\145\1\147\1\146\1\145\1\72\1\145\1\72\2\145\1\142\1\151\2\145\1\163\1\151\1\146\3\0\1\uffff\2\0\1\uffff\5\0\1\151\1\155\1\151\1\145\1\143\1\72\3\145\1\157\1\160\1\72\1\145\1\151\2\141\1\143\1\144\1\55\1\145\1\72\1\162\1\137\1\72\2\141\1\137\1\166\1\162\1\166\1\156\1\143\1\uffff\1\145\1\163\1\162\2\141\1\163\1\171\1\143\1\141\1\137\1\154\1\72\1\145\1\163\1\55\1\uffff\1\163\1\uffff\1\167\1\72\1\154\2\162\1\72\1\145\1\157\1\141\1\uffff\7\0\1\uffff\7\0\1\157\1\145\1\143\1\164\1\145\1\uffff\1\164\1\144\1\55\1\162\1\171\1\uffff\1\55\1\147\1\151\1\156\1\157\1\72\2\uffff\1\72\1\uffff\1\156\1\141\1\uffff\1\156\1\162\1\157\1\141\2\145\1\144\1\145\1\162\1\72\1\151\1\164\1\147\1\145\1\163\1\150\1\144\1\154\1\163\1\uffff\1\164\1\55\1\uffff\1\163\1\141\1\uffff\1\145\1\157\1\156\1\uffff\1\55\1\156\1\151\1\uffff\2\0\1\uffff\4\0\1\uffff\4\0\1\156\1\55\1\145\1\163\2\72\1\55\1\uffff\1\153\1\72\1\uffff\1\72\1\156\1\144\1\165\2\uffff\1\141\1\144\1\147\1\164\1\156\1\164\1\144\1\55\2\163\1\72\1\uffff\1\164\1\145\1\141\1\163\1\55\1\141\1\144\1\157\2\72\2\uffff\1\55\1\171\1\137\1\156\1\141\1\uffff\1\163\1\154\2\0\1\uffff\4\0\1\uffff\5\0\2\72\2\uffff\1\163\1\72\3\uffff\1\163\1\uffff\1\72\1\uffff\1\145\1\72\1\156\1\154\1\144\1\145\1\72\1\154\1\145\1\55\1\uffff\1\137\1\72\1\uffff\1\157\1\171\1\55\1\164\1\72\1\uffff\1\142\1\162\1\143\2\uffff\1\163\1\72\1\151\1\155\1\154\1\72\1\165\7\0\2\uffff\1\72\1\uffff\1\72\1\uffff\1\162\1\uffff\1\164\1\72\1\162\1\72\1\uffff\1\171\1\55\1\uffff\1\157\1\uffff\1\160\1\72\1\uffff\1\151\1\uffff\1\154\1\145\1\141\1\164\1\uffff\1\160\1\145\1\72\1\uffff\1\162\6\0\2\uffff\1\137\1\72\1\uffff\1\145\1\uffff\1\72\1\uffff\1\156\1\164\1\uffff\1\157\1\145\1\163\1\154\1\157\1\166\1\156\1\uffff\1\145\4\0\1\156\1\uffff\1\163\1\uffff\1\72\1\163\1\156\1\72\1\163\1\137\1\160\1\66\1\164\1\55\3\0\1\141\1\163\1\uffff\2\72\1\uffff\1\145\1\151\1\160\2\72\1\uffff\1\0\1\155\1\72\2\uffff\1\163\1\160\1\145\2\uffff\1\0\1\145\1\uffff\1\72\1\163\1\144\1\72\1\uffff\1\72\1\55\3\uffff";
+        "\1\0\2\145\1\157\1\141\1\uffff\1\151\1\155\1\145\1\141\1\uffff\1\145\1\157\1\154\1\141\1\151\1\141\1\157\2\uffff\1\156\1\141\1\156\1\uffff\1\52\1\0\1\55\1\101\2\uffff\1\0\2\uffff\1\162\1\154\1\uffff\1\143\1\165\1\172\1\142\2\141\1\155\1\165\1\164\1\143\1\155\1\151\1\uffff\1\151\1\156\1\141\1\151\1\137\1\141\2\55\1\162\1\150\1\156\1\142\1\uffff\1\160\1\163\1\151\1\162\2\151\1\164\1\170\1\160\1\162\1\160\1\165\1\144\1\154\1\144\1\164\1\144\2\uffff\1\141\1\164\2\154\1\164\1\55\4\uffff\1\0\1\uffff\7\0\4\uffff\1\163\1\165\1\166\2\162\1\145\1\156\1\162\1\166\1\144\1\155\1\137\1\167\1\157\1\145\1\160\1\154\1\144\1\147\1\164\1\145\1\64\1\155\1\162\1\164\1\144\2\uffff\1\151\2\141\1\153\2\145\1\151\1\72\1\166\1\164\1\157\1\160\3\141\1\137\1\145\1\147\1\146\1\145\1\72\1\145\1\72\2\145\1\142\1\151\2\145\1\163\1\151\1\146\3\0\1\uffff\2\0\1\uffff\5\0\1\151\1\155\1\151\1\145\1\143\1\72\3\145\1\151\1\141\1\151\1\141\1\143\1\157\1\160\1\72\1\145\1\144\1\55\1\145\1\72\1\162\1\137\1\72\2\141\1\137\1\166\1\162\1\166\1\137\1\154\1\156\1\143\1\uffff\1\145\1\163\1\162\2\141\1\163\1\171\1\143\1\141\1\72\1\145\1\163\1\55\1\uffff\1\163\1\uffff\1\167\1\72\1\154\2\162\1\72\1\145\1\157\1\141\1\uffff\6\0\1\uffff\10\0\1\157\1\145\1\143\1\164\1\145\1\uffff\1\164\1\144\1\55\1\147\1\151\1\164\1\156\1\157\1\162\1\171\1\uffff\1\55\1\72\2\uffff\1\72\1\uffff\1\156\1\141\1\uffff\1\156\1\162\1\157\1\141\2\145\1\72\1\154\1\163\1\144\1\145\1\162\1\72\1\151\1\164\1\147\1\145\1\163\1\150\1\144\1\uffff\1\164\1\55\1\uffff\1\163\1\141\1\uffff\1\145\1\157\1\156\1\uffff\1\55\1\156\1\151\1\uffff\2\0\1\uffff\3\0\1\uffff\5\0\1\156\1\55\1\145\1\163\2\72\1\55\1\uffff\1\72\1\156\1\151\1\144\1\165\1\153\1\72\3\uffff\1\141\1\144\1\147\1\164\1\156\1\164\1\144\1\55\1\uffff\1\157\1\72\2\163\1\72\1\uffff\1\164\1\145\1\141\1\163\1\55\1\141\1\144\1\72\2\uffff\1\55\1\171\1\137\1\156\1\141\1\uffff\1\163\1\154\2\0\1\uffff\4\0\1\uffff\5\0\2\72\2\uffff\1\137\1\72\3\uffff\1\72\1\uffff\1\145\1\157\1\72\1\156\1\163\1\uffff\1\154\1\144\1\145\1\72\1\154\1\145\1\55\1\uffff\1\143\1\uffff\1\137\1\72\1\uffff\1\157\1\171\1\55\1\164\1\72\1\uffff\1\142\1\162\1\uffff\1\163\1\72\1\151\1\155\1\154\1\72\1\165\7\0\2\uffff\1\72\1\143\2\uffff\1\162\1\156\1\uffff\1\164\2\72\1\162\1\72\1\uffff\1\171\1\55\1\uffff\1\141\1\157\1\uffff\1\160\1\72\1\uffff\1\151\1\uffff\1\154\1\145\1\164\1\uffff\1\160\1\145\1\72\1\uffff\1\162\6\0\1\uffff\1\164\1\145\1\157\1\137\2\72\2\uffff\1\145\1\uffff\1\72\1\uffff\1\154\1\156\1\164\1\uffff\1\157\1\145\1\163\1\157\1\166\1\156\1\uffff\1\145\4\0\2\141\1\155\1\156\2\uffff\1\163\1\uffff\1\137\1\72\1\163\1\156\1\72\1\163\1\160\1\66\1\164\1\55\3\0\1\162\1\154\1\160\1\141\1\163\1\151\1\uffff\2\72\1\uffff\1\145\1\160\2\72\1\uffff\1\0\2\164\1\154\1\155\1\72\1\160\2\uffff\1\163\1\145\2\uffff\1\0\1\145\1\150\2\145\1\uffff\1\163\1\72\2\144\1\171\1\164\2\72\1\uffff\3\55\1\145\5\uffff\1\144\1\137\1\163\1\165\2\143\1\145\2\163\1\146\1\165\2\154\1\171\1\55\1\uffff";
     static final String DFA32_maxS =
-        "\1\uffff\1\157\1\165\2\160\1\uffff\1\165\1\160\1\167\1\162\1\uffff\1\162\1\165\1\151\1\171\1\156\1\151\1\157\2\uffff\1\170\1\151\1\160\1\uffff\1\57\1\uffff\2\172\2\uffff\1\uffff\2\uffff\1\162\1\154\1\uffff\1\162\1\165\1\172\1\142\2\141\1\164\1\143\1\155\1\151\1\156\1\165\1\uffff\1\151\1\156\1\141\1\164\1\166\1\163\2\172\1\162\1\154\1\166\1\163\1\151\1\uffff\1\162\1\157\1\167\1\164\1\170\1\156\1\142\1\160\1\162\1\160\1\165\1\144\1\154\1\144\1\164\1\144\2\uffff\1\166\1\164\2\154\1\164\1\55\4\uffff\1\uffff\1\uffff\7\uffff\4\uffff\1\163\1\165\1\166\2\162\1\145\1\156\1\162\1\166\1\167\1\157\1\145\1\160\1\164\1\155\1\137\1\154\1\144\1\147\1\164\1\145\1\64\1\155\1\162\1\164\1\144\2\uffff\1\151\2\141\1\145\1\151\1\72\1\166\1\164\1\166\1\160\3\141\1\137\1\153\2\145\1\147\1\146\1\145\1\72\1\145\1\72\2\145\1\142\1\151\2\145\1\163\1\151\1\146\3\uffff\1\uffff\2\uffff\1\uffff\5\uffff\1\151\1\155\1\151\1\145\1\143\1\72\3\145\1\157\1\160\1\72\1\145\1\151\2\141\1\143\1\144\1\172\1\145\1\72\1\162\1\137\1\72\2\141\1\137\1\166\1\162\1\166\1\156\1\143\1\uffff\1\145\1\163\1\162\2\141\1\163\1\171\1\143\1\141\1\137\1\154\1\72\1\145\1\163\1\172\1\uffff\1\163\1\uffff\1\167\1\72\1\154\2\162\1\72\1\145\1\157\1\141\1\uffff\7\uffff\1\uffff\7\uffff\1\157\1\145\1\143\1\164\1\145\1\uffff\1\164\1\144\1\172\1\162\1\171\1\uffff\1\172\1\147\1\151\1\156\1\157\1\72\2\uffff\1\72\1\uffff\1\156\1\141\1\uffff\1\156\1\162\1\157\1\141\2\145\1\144\1\145\1\162\1\72\1\151\1\164\1\147\1\145\1\163\1\150\1\144\1\154\1\163\1\uffff\1\164\1\172\1\uffff\1\163\1\141\1\uffff\1\145\1\157\1\156\1\uffff\1\172\1\156\1\151\1\uffff\2\uffff\1\uffff\4\uffff\1\uffff\4\uffff\1\156\1\172\1\145\1\163\2\72\1\172\1\uffff\1\153\1\72\1\uffff\1\163\1\156\1\144\1\165\2\uffff\1\141\1\144\1\147\1\164\1\156\1\164\1\144\1\172\2\163\1\137\1\uffff\1\164\1\145\1\141\1\163\1\172\1\141\1\144\1\157\2\72\2\uffff\1\55\1\171\1\137\1\156\1\141\1\uffff\1\163\1\154\2\uffff\1\uffff\4\uffff\1\uffff\5\uffff\2\72\2\uffff\1\163\1\72\3\uffff\1\163\1\uffff\1\72\1\uffff\1\145\1\72\1\156\1\154\1\144\1\145\1\72\1\154\1\145\1\172\1\uffff\1\137\1\72\1\uffff\1\157\1\171\1\172\1\164\1\72\1\uffff\1\142\1\162\1\143\2\uffff\1\163\1\72\1\151\1\155\1\154\1\72\1\165\7\uffff\2\uffff\1\72\1\uffff\1\72\1\uffff\1\162\1\uffff\1\164\1\72\1\162\1\72\1\uffff\1\171\1\172\1\uffff\1\157\1\uffff\1\160\1\72\1\uffff\1\151\1\uffff\1\154\1\145\1\141\1\164\1\uffff\1\160\1\145\1\72\1\uffff\1\162\6\uffff\2\uffff\1\137\1\72\1\uffff\1\145\1\uffff\1\72\1\uffff\1\156\1\164\1\uffff\1\157\1\145\1\163\1\154\1\157\1\166\1\156\1\uffff\1\145\4\uffff\1\156\1\uffff\1\163\1\uffff\1\72\1\163\1\156\1\72\1\163\1\137\1\160\1\66\1\164\1\172\3\uffff\1\141\1\163\1\uffff\2\72\1\uffff\1\145\1\151\1\160\2\72\1\uffff\1\uffff\1\155\1\72\2\uffff\1\163\1\160\1\145\2\uffff\1\uffff\1\145\1\uffff\1\72\1\163\1\144\1\72\1\uffff\1\72\1\172\3\uffff";
+        "\1\uffff\1\157\1\165\2\160\1\uffff\1\165\1\160\1\167\1\151\1\uffff\2\162\1\165\1\171\1\156\1\151\1\157\2\uffff\1\170\1\151\1\160\1\uffff\1\57\1\uffff\2\172\2\uffff\1\uffff\2\uffff\1\162\1\154\1\uffff\1\162\1\165\1\172\1\142\2\141\1\156\1\165\1\164\1\143\1\155\1\151\1\uffff\1\151\1\156\1\141\1\164\1\166\1\163\2\172\1\162\1\154\1\156\1\142\1\uffff\1\166\1\163\1\151\1\162\1\157\1\167\1\164\1\170\1\160\1\162\1\160\1\165\1\144\1\154\1\144\1\164\1\144\2\uffff\1\166\1\164\2\154\1\164\1\55\4\uffff\1\uffff\1\uffff\7\uffff\4\uffff\1\163\1\165\1\166\2\162\1\145\1\156\1\162\1\166\1\164\1\155\1\137\1\167\1\157\1\145\1\160\1\154\1\144\1\147\1\164\1\145\1\64\1\155\1\162\1\164\1\144\2\uffff\1\151\2\141\1\153\2\145\1\151\1\72\1\166\1\164\1\166\1\160\3\141\1\137\1\145\1\147\1\146\1\145\1\72\1\145\1\72\2\145\1\142\1\151\2\145\1\163\1\151\1\146\3\uffff\1\uffff\2\uffff\1\uffff\5\uffff\1\151\1\155\1\151\1\145\1\143\1\72\3\145\1\151\1\141\1\151\1\141\1\143\1\157\1\160\1\72\1\145\1\144\1\172\1\145\1\72\1\162\1\137\1\72\2\141\1\137\1\166\1\162\1\166\1\163\1\154\1\156\1\143\1\uffff\1\145\1\163\1\162\2\141\1\163\1\171\1\143\1\141\1\72\1\145\1\163\1\172\1\uffff\1\163\1\uffff\1\167\1\72\1\154\2\162\1\72\1\145\1\157\1\141\1\uffff\6\uffff\1\uffff\10\uffff\1\157\1\145\1\143\1\164\1\145\1\uffff\1\164\1\144\1\172\1\147\1\151\1\164\1\156\1\157\1\162\1\171\1\uffff\1\172\1\72\2\uffff\1\72\1\uffff\1\156\1\141\1\uffff\1\156\1\162\1\157\1\141\2\145\1\72\1\154\1\163\1\144\1\145\1\162\1\72\1\151\1\164\1\147\1\145\1\163\1\150\1\144\1\uffff\1\164\1\172\1\uffff\1\163\1\141\1\uffff\1\145\1\157\1\156\1\uffff\1\172\1\156\1\151\1\uffff\2\uffff\1\uffff\3\uffff\1\uffff\5\uffff\1\156\1\172\1\145\1\163\2\72\1\172\1\uffff\1\163\1\156\1\151\1\144\1\165\1\153\1\72\3\uffff\1\141\1\144\1\147\1\164\1\156\1\164\1\144\1\172\1\uffff\1\157\1\72\2\163\1\137\1\uffff\1\164\1\145\1\141\1\163\1\172\1\141\1\144\1\72\2\uffff\1\55\1\171\1\137\1\156\1\141\1\uffff\1\163\1\154\2\uffff\1\uffff\4\uffff\1\uffff\5\uffff\2\72\2\uffff\1\163\1\72\3\uffff\1\72\1\uffff\1\145\1\157\1\72\1\156\1\163\1\uffff\1\154\1\144\1\145\1\72\1\154\1\145\1\172\1\uffff\1\143\1\uffff\1\137\1\72\1\uffff\1\157\1\171\1\172\1\164\1\72\1\uffff\1\142\1\162\1\uffff\1\163\1\72\1\151\1\155\1\154\1\72\1\165\7\uffff\2\uffff\1\72\1\163\2\uffff\1\162\1\156\1\uffff\1\164\2\72\1\162\1\72\1\uffff\1\171\1\172\1\uffff\1\141\1\157\1\uffff\1\160\1\72\1\uffff\1\151\1\uffff\1\154\1\145\1\164\1\uffff\1\160\1\145\1\72\1\uffff\1\162\6\uffff\1\uffff\1\164\1\145\1\157\1\137\2\72\2\uffff\1\145\1\uffff\1\72\1\uffff\1\154\1\156\1\164\1\uffff\1\157\1\145\1\163\1\157\1\166\1\156\1\uffff\1\145\4\uffff\2\141\1\155\1\156\2\uffff\1\163\1\uffff\1\137\1\72\1\163\1\156\1\72\1\163\1\160\1\66\1\164\1\172\3\uffff\1\162\1\154\1\160\1\141\1\163\1\151\1\uffff\2\72\1\uffff\1\145\1\160\2\72\1\uffff\1\uffff\2\164\1\154\1\155\1\72\1\160\2\uffff\1\163\1\145\2\uffff\1\uffff\1\145\1\150\2\145\1\uffff\1\163\1\72\2\144\1\171\1\164\2\72\1\uffff\3\172\1\145\5\uffff\1\144\1\137\1\163\1\165\2\143\1\145\2\163\1\146\1\165\2\154\1\171\1\172\1\uffff";
     static final String DFA32_acceptS =
-        "\5\uffff\1\7\4\uffff\1\21\7\uffff\1\45\1\46\3\uffff\1\70\4\uffff\1\121\1\122\1\uffff\1\126\1\127\2\uffff\1\121\14\uffff\1\7\15\uffff\1\21\20\uffff\1\45\1\46\6\uffff\1\70\1\124\1\125\1\71\1\uffff\1\116\7\uffff\1\123\1\102\1\122\1\126\32\uffff\1\100\1\101\43\uffff\1\116\2\uffff\1\117\45\uffff\1\23\17\uffff\1\42\1\uffff\1\43\11\uffff\1\74\7\uffff\1\117\14\uffff\1\41\5\uffff\1\54\6\uffff\1\34\1\104\1\uffff\1\16\2\uffff\1\57\23\uffff\1\32\2\uffff\1\72\2\uffff\1\44\3\uffff\1\60\3\uffff\1\74\2\uffff\1\120\4\uffff\1\115\13\uffff\1\114\2\uffff\1\106\4\uffff\1\10\1\11\13\uffff\1\24\12\uffff\1\40\1\105\5\uffff\1\73\4\uffff\1\120\4\uffff\1\115\7\uffff\1\36\1\103\2\uffff\1\31\1\64\1\112\1\uffff\1\37\1\uffff\1\62\12\uffff\1\113\2\uffff\1\47\5\uffff\1\75\3\uffff\1\55\1\33\16\uffff\1\1\1\4\1\uffff\1\6\1\uffff\1\5\1\uffff\1\13\4\uffff\1\15\2\uffff\1\111\1\uffff\1\22\2\uffff\1\110\1\uffff\1\27\4\uffff\1\66\3\uffff\1\63\7\uffff\1\2\1\3\2\uffff\1\52\1\uffff\1\65\1\uffff\1\107\2\uffff\1\26\7\uffff\1\53\6\uffff\1\12\1\uffff\1\17\17\uffff\1\20\2\uffff\1\50\5\uffff\1\76\3\uffff\1\56\1\35\3\uffff\1\51\1\61\2\uffff\1\25\4\uffff\1\67\2\uffff\1\14\1\30\1\77";
+        "\5\uffff\1\7\4\uffff\1\21\7\uffff\1\47\1\50\3\uffff\1\72\4\uffff\1\126\1\127\1\uffff\1\133\1\134\2\uffff\1\126\14\uffff\1\7\14\uffff\1\21\21\uffff\1\47\1\50\6\uffff\1\72\1\131\1\132\1\73\1\uffff\1\123\7\uffff\1\130\1\104\1\127\1\133\32\uffff\1\102\1\103\43\uffff\1\123\2\uffff\1\124\50\uffff\1\24\15\uffff\1\44\1\uffff\1\45\11\uffff\1\76\6\uffff\1\124\15\uffff\1\43\12\uffff\1\56\2\uffff\1\36\1\106\1\uffff\1\16\2\uffff\1\61\24\uffff\1\34\2\uffff\1\74\2\uffff\1\46\3\uffff\1\62\3\uffff\1\76\2\uffff\1\125\3\uffff\1\122\14\uffff\1\116\7\uffff\1\110\1\10\1\11\10\uffff\1\20\5\uffff\1\25\10\uffff\1\42\1\107\5\uffff\1\75\4\uffff\1\125\4\uffff\1\122\7\uffff\1\40\1\105\2\uffff\1\33\1\66\1\114\1\uffff\1\64\5\uffff\1\41\7\uffff\1\115\1\uffff\1\57\2\uffff\1\51\5\uffff\1\77\2\uffff\1\35\16\uffff\1\1\1\3\2\uffff\1\5\1\4\2\uffff\1\13\5\uffff\1\15\2\uffff\1\113\2\uffff\1\23\2\uffff\1\112\1\uffff\1\31\3\uffff\1\70\3\uffff\1\65\7\uffff\1\2\6\uffff\1\6\1\54\1\uffff\1\67\1\uffff\1\111\3\uffff\1\30\6\uffff\1\55\11\uffff\1\26\1\12\1\uffff\1\17\23\uffff\1\22\2\uffff\1\52\4\uffff\1\100\7\uffff\1\60\1\37\2\uffff\1\53\1\63\5\uffff\1\27\10\uffff\1\71\4\uffff\1\14\1\32\1\101\1\117\1\120\17\uffff\1\121";
     static final String DFA32_specialS =
-        "\1\31\30\uffff\1\51\4\uffff\1\113\74\uffff\1\33\1\uffff\1\53\1\55\1\54\1\15\1\45\1\21\1\50\100\uffff\1\71\1\3\1\72\1\uffff\1\57\1\30\1\uffff\1\11\1\26\1\34\1\61\1\60\75\uffff\1\32\1\46\1\22\1\42\1\62\1\17\1\70\1\uffff\1\47\1\73\1\114\1\115\1\102\1\63\1\56\73\uffff\1\74\1\35\1\uffff\1\43\1\10\1\111\1\106\1\uffff\1\64\1\110\1\75\1\66\61\uffff\1\23\1\65\1\uffff\1\20\1\52\1\103\1\76\1\uffff\1\12\1\13\1\0\1\101\1\67\55\uffff\1\36\1\14\1\104\1\1\1\7\1\4\1\105\41\uffff\1\37\1\107\1\40\1\41\1\16\1\112\25\uffff\1\24\1\44\1\25\1\2\16\uffff\1\5\1\27\1\6\14\uffff\1\77\11\uffff\1\100\14\uffff}>";
+        "\1\15\30\uffff\1\43\4\uffff\1\14\74\uffff\1\65\1\uffff\1\12\1\13\1\102\1\110\1\100\1\7\1\103\100\uffff\1\3\1\32\1\104\1\uffff\1\105\1\77\1\uffff\1\51\1\31\1\54\1\106\1\66\76\uffff\1\1\1\101\1\10\1\22\1\70\1\64\1\uffff\1\60\1\111\1\112\1\67\1\5\1\41\1\72\1\36\75\uffff\1\47\1\57\1\uffff\1\42\1\33\1\71\1\uffff\1\16\1\73\1\50\1\74\1\114\63\uffff\1\11\1\30\1\uffff\1\6\1\27\1\21\1\52\1\uffff\1\62\1\63\1\35\1\53\1\115\56\uffff\1\61\1\55\1\24\1\37\1\56\1\40\1\0\43\uffff\1\113\1\2\1\75\1\76\1\44\1\4\31\uffff\1\45\1\34\1\46\1\23\22\uffff\1\25\1\107\1\26\17\uffff\1\17\14\uffff\1\20\47\uffff}>";
     static final String[] DFA32_transitionS = {
-            "\11\40\2\37\2\40\1\37\22\40\1\37\1\40\1\31\4\40\1\36\5\40\1\12\1\27\1\30\12\35\1\5\6\40\32\34\3\40\1\33\1\34\1\40\1\14\1\6\1\4\1\11\1\24\1\25\1\20\1\34\1\7\2\34\1\15\1\21\1\3\1\26\1\13\1\34\1\10\1\2\1\16\1\17\1\1\3\34\1\32\1\22\1\40\1\23\uff82\40",
+            "\11\40\2\37\2\40\1\37\22\40\1\37\1\40\1\31\4\40\1\36\5\40\1\12\1\27\1\30\12\35\1\5\6\40\32\34\3\40\1\33\1\34\1\40\1\15\1\6\1\3\1\13\1\24\1\25\1\20\1\34\1\7\2\34\1\11\1\21\1\4\1\26\1\14\1\34\1\10\1\2\1\16\1\17\1\1\3\34\1\32\1\22\1\40\1\23\uff82\40",
             "\1\41\11\uffff\1\42",
             "\1\44\2\uffff\1\50\1\46\2\uffff\1\51\2\uffff\1\45\5\uffff\1\47",
-            "\1\54\3\uffff\1\52\11\uffff\1\53\1\55",
-            "\1\56\1\57",
+            "\1\52\1\53",
+            "\1\56\3\uffff\1\54\11\uffff\1\55\1\57",
             "",
             "\1\62\13\uffff\1\61",
             "\1\63\1\64\1\uffff\1\65",
             "\1\66\11\uffff\1\70\1\71\2\uffff\1\72\3\uffff\1\67",
-            "\1\73\10\uffff\1\74\3\uffff\1\75",
+            "\1\74\7\uffff\1\73",
             "",
-            "\1\77\2\uffff\1\100",
-            "\1\101\7\uffff\1\102\1\103",
-            "\1\105\7\uffff\1\104",
+            "\1\76\10\uffff\1\77\3\uffff\1\100",
+            "\1\101\2\uffff\1\102",
+            "\1\103\7\uffff\1\104\1\105",
             "\1\107\13\uffff\1\110\4\uffff\1\111\6\uffff\1\106",
             "\1\112\4\uffff\1\113",
             "\1\115\7\uffff\1\114",
@@ -4311,11 +4456,11 @@ public class InternalDockerComposeLexer extends Lexer {
             "\1\156",
             "\1\157",
             "\1\160",
-            "\1\161",
-            "\1\162",
+            "\1\162\1\161",
             "\1\163",
             "\1\164",
-            "\1\166\1\165",
+            "\1\165",
+            "\1\166",
             "\1\167",
             "",
             "\1\170",
@@ -4328,15 +4473,15 @@ public class InternalDockerComposeLexer extends Lexer {
             "\15\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "\1\u0084",
             "\1\u0085\3\uffff\1\u0086",
-            "\1\u0087\5\uffff\1\u0088",
-            "\1\u0089",
-            "\1\u008a",
+            "\1\u0087",
+            "\1\u0088",
             "",
+            "\1\u0089\5\uffff\1\u008a",
             "\1\u008b",
-            "\1\u008c\5\uffff\1\u008d",
-            "\1\u008e\15\uffff\1\u008f",
-            "\1\u0090",
-            "\1\u0091",
+            "\1\u008c",
+            "\1\u008d",
+            "\1\u008e\5\uffff\1\u008f",
+            "\1\u0090\15\uffff\1\u0091",
             "\1\u0092",
             "\1\u0093",
             "\1\u0094",
@@ -4362,9 +4507,9 @@ public class InternalDockerComposeLexer extends Lexer {
             "",
             "\55\144\15\u00a5\1\u00a6\6\144\32\u00a5\4\144\1\u00a5\1\144\16\u00a5\1\u00a4\13\u00a5\uff85\144",
             "",
-            "\42\144\1\u00aa\12\144\1\u00ab\1\u00ad\1\u00a9\12\u00a8\1\u00ac\uffc5\144",
-            "\42\144\1\u00aa\12\144\1\u00ab\1\u00ad\1\u00a9\6\u00ae\4\u00af\1\u00ac\uffc5\144",
-            "\42\144\1\u00aa\12\144\1\u00ab\1\u00ad\1\u00a9\12\u00af\1\u00ac\uffc5\144",
+            "\42\144\1\u00aa\12\144\1\u00a9\1\u00ac\1\u00ad\12\u00a8\1\u00ab\uffc5\144",
+            "\42\144\1\u00aa\12\144\1\u00a9\1\u00ac\1\u00ad\6\u00ae\4\u00af\1\u00ab\uffc5\144",
+            "\42\144\1\u00aa\12\144\1\u00a9\1\u00ac\1\u00ad\12\u00af\1\u00ab\uffc5\144",
             "\57\144\1\141\21\144\32\143\3\144\1\142\1\143\1\144\32\143\uff85\144",
             "\101\144\32\143\3\144\1\142\1\143\1\144\32\143\uff85\144",
             "\101\144\32\143\4\144\1\143\1\144\32\143\uff85\144",
@@ -4382,11 +4527,10 @@ public class InternalDockerComposeLexer extends Lexer {
             "\1\u00b6",
             "\1\u00b7",
             "\1\u00b8",
-            "\1\u00b9",
-            "\1\u00ba",
-            "\1\u00bb",
+            "\1\u00bb\1\uffff\1\u00b9\15\uffff\1\u00ba",
             "\1\u00bc",
-            "\1\u00bd\15\uffff\1\u00be",
+            "\1\u00bd",
+            "\1\u00be",
             "\1\u00bf",
             "\1\u00c0",
             "\1\u00c1",
@@ -4399,9 +4543,9 @@ public class InternalDockerComposeLexer extends Lexer {
             "\1\u00c8",
             "\1\u00c9",
             "\1\u00ca",
-            "",
-            "",
             "\1\u00cb",
+            "",
+            "",
             "\1\u00cc",
             "\1\u00cd",
             "\1\u00ce",
@@ -4409,10 +4553,10 @@ public class InternalDockerComposeLexer extends Lexer {
             "\1\u00d0",
             "\1\u00d1",
             "\1\u00d2",
-            "\1\u00d3\6\uffff\1\u00d4",
+            "\1\u00d3",
+            "\1\u00d4",
             "\1\u00d5",
-            "\1\u00d6",
-            "\1\u00d7",
+            "\1\u00d6\6\uffff\1\u00d7",
             "\1\u00d8",
             "\1\u00d9",
             "\1\u00da",
@@ -4433,19 +4577,19 @@ public class InternalDockerComposeLexer extends Lexer {
             "\1\u00e9",
             "\1\u00ea",
             "\1\u00eb",
-            "\42\144\1\u00ec\12\144\15\u00a5\1\u00a6\6\144\32\u00a5\4\144\1\u00a5\1\144\32\u00a5\uff85\144",
+            "\1\u00ec",
+            "\42\144\1\u00ed\12\144\15\u00a5\1\u00a6\6\144\32\u00a5\4\144\1\u00a5\1\144\32\u00a5\uff85\144",
             "\55\144\15\u00a5\1\u00a6\6\144\32\u00a5\4\144\1\u00a5\1\144\32\u00a5\uff85\144",
-            "\56\144\1\u00ed\1\u00ee\21\144\32\u00f0\3\144\1\u00ef\1\u00f0\1\144\32\u00f0\uff85\144",
+            "\56\144\1\u00ee\1\u00ef\21\144\32\u00f1\3\144\1\u00f0\1\u00f1\1\144\32\u00f1\uff85\144",
             "",
-            "\42\144\1\u00aa\12\144\1\u00ab\1\u00ad\1\u00a9\12\u00f1\1\u00ac\uffc5\144",
-            "\101\144\32\u00f3\3\144\1\u00f2\1\u00f3\1\144\32\u00f3\uff85\144",
+            "\42\144\1\u00aa\12\144\1\u00a9\1\u00ac\1\u00ad\12\u00f2\1\u00ab\uffc5\144",
+            "\60\144\12\u00f3\uffc6\144",
             "",
             "\60\144\12\u00f5\uffc6\144",
-            "\60\144\12\u00f6\uffc6\144",
-            "\60\144\1\u00f9\1\u00f7\1\u00f8\7\u00f9\uffc6\144",
-            "\42\144\1\u00aa\12\144\1\u00ab\1\u00ad\1\u00a9\6\u00fa\4\u00fb\1\u00ac\uffc5\144",
-            "\42\144\1\u00aa\12\144\1\u00ab\1\u00ad\1\u00a9\12\u00fb\1\u00ac\uffc5\144",
-            "\1\u00fc",
+            "\60\144\1\u00f8\1\u00f6\1\u00f7\7\u00f8\uffc6\144",
+            "\101\144\32\u00fa\3\144\1\u00f9\1\u00fa\1\144\32\u00fa\uff85\144",
+            "\42\144\1\u00aa\12\144\1\u00a9\1\u00ac\1\u00ad\6\u00fb\4\u00fc\1\u00ab\uffc5\144",
+            "\42\144\1\u00aa\12\144\1\u00a9\1\u00ac\1\u00ad\12\u00fc\1\u00ab\uffc5\144",
             "\1\u00fd",
             "\1\u00fe",
             "\1\u00ff",
@@ -4463,9 +4607,9 @@ public class InternalDockerComposeLexer extends Lexer {
             "\1\u010b",
             "\1\u010c",
             "\1\u010d",
-            "\15\43\1\u010e\6\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
-            "\1\u0110",
-            "\1\u0111",
+            "\1\u010e",
+            "\1\u010f",
+            "\15\43\1\u0110\6\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "\1\u0112",
             "\1\u0113",
             "\1\u0114",
@@ -4477,12 +4621,11 @@ public class InternalDockerComposeLexer extends Lexer {
             "\1\u011a",
             "\1\u011b",
             "\1\u011c",
-            "",
-            "\1\u011d",
-            "\1\u011e",
+            "\1\u011e\23\uffff\1\u011d",
             "\1\u011f",
             "\1\u0120",
             "\1\u0121",
+            "",
             "\1\u0122",
             "\1\u0123",
             "\1\u0124",
@@ -4492,64 +4635,64 @@ public class InternalDockerComposeLexer extends Lexer {
             "\1\u0128",
             "\1\u0129",
             "\1\u012a",
+            "\1\u012b",
+            "\1\u012c",
+            "\1\u012d",
             "\15\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "",
-            "\1\u012c",
-            "",
-            "\1\u012d",
-            "\1\u012e",
             "\1\u012f",
+            "",
             "\1\u0130",
             "\1\u0131",
             "\1\u0132",
             "\1\u0133",
             "\1\u0134",
             "\1\u0135",
+            "\1\u0136",
+            "\1\u0137",
+            "\1\u0138",
             "",
-            "\57\144\1\u00ee\21\144\32\u00f0\3\144\1\u00ef\1\u00f0\1\144\32\u00f0\uff85\144",
-            "\101\144\32\u00f0\3\144\1\u00ef\1\u00f0\1\144\32\u00f0\uff85\144",
-            "\101\144\32\u00f0\4\144\1\u00f0\1\144\32\u00f0\uff85\144",
-            "\42\144\1\u0139\12\144\15\u0137\1\u0138\6\144\32\u0137\4\144\1\u0137\1\144\32\u0137\uff85\144",
-            "\42\144\1\u00aa\12\144\1\u00ab\1\u00ad\1\u00a9\12\u00fb\1\u00ac\uffc5\144",
-            "\101\144\32\u00f3\4\144\1\u00f3\1\144\32\u00f3\uff85\144",
-            "\42\144\1\u00aa\12\144\15\u013a\7\144\32\u013a\4\144\1\u013a\1\144\32\u013a\uff85\144",
+            "\57\144\1\u00ef\21\144\32\u00f1\3\144\1\u00f0\1\u00f1\1\144\32\u00f1\uff85\144",
+            "\101\144\32\u00f1\3\144\1\u00f0\1\u00f1\1\144\32\u00f1\uff85\144",
+            "\101\144\32\u00f1\4\144\1\u00f1\1\144\32\u00f1\uff85\144",
+            "\42\144\1\u013c\12\144\15\u013a\1\u013b\6\144\32\u013a\4\144\1\u013a\1\144\32\u013a\uff85\144",
+            "\42\144\1\u00aa\12\144\1\u00a9\1\u00ac\1\u00ad\12\u00fc\1\u00ab\uffc5\144",
+            "\42\144\1\u00aa\14\144\1\u013d\12\u00f3\1\u013e\uffc5\144",
             "",
-            "\42\144\1\u00aa\14\144\1\u013b\12\u00f5\1\u013c\uffc5\144",
-            "\42\144\1\u00aa\14\144\1\u00a9\12\u00f6\uffc6\144",
-            "\42\144\1\u013e\13\144\1\u013f\1\144\12\u013d\uffc6\144",
-            "\42\144\1\u013e\13\144\1\u013f\1\144\6\u0140\4\u0141\uffc6\144",
-            "\42\144\1\u013e\13\144\1\u013f\1\144\12\u0141\uffc6\144",
-            "\42\144\1\u00aa\12\144\1\u00ab\1\u00ad\1\u00a9\12\u00fb\1\u00ac\uffc5\144",
-            "\42\144\1\u00aa\12\144\1\u00ab\1\u0142\1\u00a9\12\u00fb\1\u00ac\uffc5\144",
-            "\1\u0143",
-            "\1\u0144",
-            "\1\u0145",
+            "\42\144\1\u00aa\14\144\1\u00ad\12\u00f5\uffc6\144",
+            "\42\144\1\u0140\13\144\1\u0141\1\144\12\u013f\uffc6\144",
+            "\42\144\1\u0140\13\144\1\u0141\1\144\6\u0142\4\u0143\uffc6\144",
+            "\42\144\1\u0140\13\144\1\u0141\1\144\12\u0143\uffc6\144",
+            "\101\144\32\u00fa\4\144\1\u00fa\1\144\32\u00fa\uff85\144",
+            "\42\144\1\u00aa\12\144\15\u0144\7\144\32\u0144\4\144\1\u0144\1\144\32\u0144\uff85\144",
+            "\42\144\1\u00aa\12\144\1\u00a9\1\u00ac\1\u00ad\12\u00fc\1\u00ab\uffc5\144",
+            "\42\144\1\u00aa\12\144\1\u00a9\1\u0145\1\u00ad\12\u00fc\1\u00ab\uffc5\144",
             "\1\u0146",
             "\1\u0147",
-            "",
             "\1\u0148",
             "\1\u0149",
-            "\15\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "\1\u014a",
+            "",
             "\1\u014b",
             "\1\u014c",
-            "",
             "\15\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "\1\u014e",
             "\1\u014f",
             "\1\u0150",
             "\1\u0151",
             "\1\u0152",
-            "",
-            "",
             "\1\u0153",
-            "",
             "\1\u0154",
-            "\1\u0155",
             "",
+            "\15\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "\1\u0156",
+            "",
+            "",
             "\1\u0157",
+            "",
             "\1\u0158",
             "\1\u0159",
+            "",
             "\1\u015a",
             "\1\u015b",
             "\1\u015c",
@@ -4565,262 +4708,313 @@ public class InternalDockerComposeLexer extends Lexer {
             "\1\u0166",
             "\1\u0167",
             "\1\u0168",
-            "",
             "\1\u0169",
-            "\15\43\1\u016a\6\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
-            "",
+            "\1\u016a",
+            "\1\u016b",
             "\1\u016c",
             "\1\u016d",
             "",
             "\1\u016e",
-            "\1\u016f",
-            "\1\u0170",
+            "\15\43\1\u016f\6\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "",
-            "\15\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "\1\u0171",
             "\1\u0172",
+            "",
             "\1\u0173",
+            "\1\u0174",
+            "\1\u0175",
             "",
-            "\42\144\1\u0139\12\144\15\u0137\1\u0138\6\144\32\u0137\4\144\1\u0137\1\144\32\u0137\uff85\144",
-            "\101\144\32\u0175\3\144\1\u0174\1\u0175\1\144\32\u0175\uff85\144",
-            "",
-            "\42\144\1\u00aa\12\144\15\u013a\7\144\32\u013a\4\144\1\u013a\1\144\32\u013a\uff85\144",
-            "\101\144\32\u0178\3\144\1\u0177\1\u0178\1\144\32\u0178\uff85\144",
-            "\60\144\12\u0179\uffc6\144",
-            "\42\144\1\u013e\13\144\1\u013f\1\144\12\u017a\uffc6\144",
-            "",
-            "\60\144\1\u017e\1\u017c\1\u017d\7\u017e\uffc6\144",
-            "\42\144\1\u013e\13\144\1\u013f\1\144\6\u017f\4\u0180\uffc6\144",
-            "\42\144\1\u013e\13\144\1\u013f\1\144\12\u0180\uffc6\144",
-            "\60\144\12\u0180\uffc6\144",
-            "\1\u0181",
-            "\15\43\1\u0183\6\uffff\32\43\4\uffff\1\43\1\uffff\22\43\1\u0182\7\43",
-            "\1\u0185",
-            "\1\u0186",
-            "\1\u0187",
-            "\1\u0188",
             "\15\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "\1\u0177",
+            "\1\u0178",
             "",
+            "\42\144\1\u013c\12\144\15\u013a\1\u013b\6\144\32\u013a\4\144\1\u013a\1\144\32\u013a\uff85\144",
+            "\101\144\32\u017a\3\144\1\u0179\1\u017a\1\144\32\u017a\uff85\144",
+            "",
+            "\101\144\32\u017d\3\144\1\u017c\1\u017d\1\144\32\u017d\uff85\144",
+            "\60\144\12\u017e\uffc6\144",
+            "\42\144\1\u0140\13\144\1\u0141\1\144\12\u017f\uffc6\144",
+            "",
+            "\60\144\1\u0183\1\u0181\1\u0182\7\u0183\uffc6\144",
+            "\42\144\1\u0140\13\144\1\u0141\1\144\6\u0184\4\u0185\uffc6\144",
+            "\42\144\1\u0140\13\144\1\u0141\1\144\12\u0185\uffc6\144",
+            "\42\144\1\u00aa\12\144\15\u0144\7\144\32\u0144\4\144\1\u0144\1\144\32\u0144\uff85\144",
+            "\60\144\12\u0185\uffc6\144",
+            "\1\u0186",
+            "\15\43\1\u0188\6\uffff\32\43\4\uffff\1\43\1\uffff\22\43\1\u0187\7\43",
             "\1\u018a",
             "\1\u018b",
+            "\1\u018c",
+            "\1\u018d",
+            "\15\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "",
-            "\1\u018d\70\uffff\1\u018c",
-            "\1\u018e",
-            "\1\u018f",
-            "\1\u0190",
-            "",
-            "",
+            "\1\u0190\70\uffff\1\u018f",
             "\1\u0191",
             "\1\u0192",
             "\1\u0193",
             "\1\u0194",
             "\1\u0195",
             "\1\u0196",
+            "",
+            "",
+            "",
             "\1\u0197",
-            "\15\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "\1\u0198",
             "\1\u0199",
             "\1\u019a",
-            "\1\u019b\44\uffff\1\u019c",
-            "",
+            "\1\u019b",
+            "\1\u019c",
             "\1\u019d",
-            "\1\u019e",
+            "\15\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "",
             "\1\u019f",
             "\1\u01a0",
-            "\15\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "\1\u01a1",
             "\1\u01a2",
-            "\1\u01a3",
-            "\1\u01a4",
+            "\1\u01a3\44\uffff\1\u01a4",
+            "",
             "\1\u01a5",
             "\1\u01a6",
-            "",
-            "",
             "\1\u01a7",
             "\1\u01a8",
-            "\1\u01a9",
+            "\15\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "\1\u01aa",
             "\1\u01ab",
-            "",
             "\1\u01ac",
+            "",
+            "",
             "\1\u01ad",
-            "\101\144\32\u0175\4\144\1\u0175\1\144\32\u0175\uff85\144",
-            "\42\144\1\u0139\12\144\15\u01ae\7\144\32\u01ae\4\144\1\u01ae\1\144\32\u01ae\uff85\144",
+            "\1\u01ae",
+            "\1\u01af",
+            "\1\u01b0",
+            "\1\u01b1",
             "",
-            "\101\144\32\u0178\4\144\1\u0178\1\144\32\u0178\uff85\144",
-            "\42\144\1\u00aa\12\144\15\u01af\7\144\32\u01af\4\144\1\u01af\1\144\32\u01af\uff85\144",
-            "\55\144\1\u01b0\2\144\12\u0179\uffc6\144",
-            "\42\144\1\u013e\13\144\1\u013f\1\144\12\u0180\uffc6\144",
+            "\1\u01b2",
+            "\1\u01b3",
+            "\101\144\32\u017a\4\144\1\u017a\1\144\32\u017a\uff85\144",
+            "\42\144\1\u013c\12\144\15\u01b4\7\144\32\u01b4\4\144\1\u01b4\1\144\32\u01b4\uff85\144",
             "",
-            "\56\144\1\u01b2\1\144\12\u01b1\uffc6\144",
-            "\56\144\1\u01b2\1\144\6\u01b3\4\u01b4\uffc6\144",
-            "\56\144\1\u01b2\1\144\12\u01b4\uffc6\144",
-            "\42\144\1\u013e\13\144\1\u013f\1\144\12\u0180\uffc6\144",
-            "\42\144\1\u013e\15\144\12\u0180\uffc6\144",
-            "\1\u01b5",
-            "\1\u01b6",
+            "\101\144\32\u017d\4\144\1\u017d\1\144\32\u017d\uff85\144",
+            "\42\144\1\u00aa\12\144\15\u01b5\7\144\32\u01b5\4\144\1\u01b5\1\144\32\u01b5\uff85\144",
+            "\55\144\1\u01b6\2\144\12\u017e\uffc6\144",
+            "\42\144\1\u0140\13\144\1\u0141\1\144\12\u0185\uffc6\144",
             "",
-            "",
-            "\1\u01b7",
-            "\1\u01b8",
-            "",
-            "",
-            "",
-            "\1\u01b9",
-            "",
-            "\1\u01ba",
-            "",
+            "\56\144\1\u01b8\1\144\12\u01b7\uffc6\144",
+            "\56\144\1\u01b8\1\144\6\u01b9\4\u01ba\uffc6\144",
+            "\56\144\1\u01b8\1\144\12\u01ba\uffc6\144",
+            "\42\144\1\u0140\13\144\1\u0141\1\144\12\u0185\uffc6\144",
+            "\42\144\1\u0140\15\144\12\u0185\uffc6\144",
             "\1\u01bb",
             "\1\u01bc",
-            "\1\u01bd",
-            "\1\u01be",
+            "",
+            "",
+            "\1\u01be\23\uffff\1\u01bd",
             "\1\u01bf",
+            "",
+            "",
+            "",
             "\1\u01c0",
+            "",
             "\1\u01c1",
             "\1\u01c2",
             "\1\u01c3",
-            "\15\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
-            "",
+            "\1\u01c4",
             "\1\u01c5",
-            "\1\u01c6",
             "",
+            "\1\u01c6",
             "\1\u01c7",
             "\1\u01c8",
-            "\15\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "\1\u01c9",
             "\1\u01ca",
             "\1\u01cb",
-            "",
-            "\1\u01cc",
-            "\1\u01cd",
-            "\1\u01ce",
-            "",
-            "",
-            "\1\u01cf",
-            "\1\u01d0",
-            "\1\u01d1",
-            "\1\u01d2",
-            "\1\u01d3",
-            "\1\u01d4",
-            "\1\u01d5",
-            "\42\144\1\u0139\12\144\15\u01ae\7\144\32\u01ae\4\144\1\u01ae\1\144\32\u01ae\uff85\144",
-            "\42\144\1\u00aa\12\144\15\u01af\7\144\32\u01af\4\144\1\u01af\1\144\32\u01af\uff85\144",
-            "\60\144\12\u01d6\uffc6\144",
-            "\56\144\1\u01b2\1\144\12\u01d7\uffc6\144",
-            "\60\144\1\u01da\1\u01d8\1\u01d9\7\u01da\uffc6\144",
-            "\56\144\1\u01b2\1\144\6\u01db\uffca\144",
-            "\56\144\1\u01b2\uffd1\144",
-            "",
-            "",
-            "\1\u01dc",
-            "",
-            "\1\u01dd",
-            "",
-            "\1\u01de",
-            "",
-            "\1\u01df",
-            "\1\u01e0",
-            "\1\u01e1",
-            "\1\u01e2",
-            "",
-            "\1\u01e3",
             "\15\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "",
-            "\1\u01e5",
+            "\1\u01cd",
             "",
-            "\1\u01e6",
-            "\1\u01e7",
+            "\1\u01ce",
+            "\1\u01cf",
+            "",
+            "\1\u01d0",
+            "\1\u01d1",
+            "\15\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "\1\u01d3",
+            "\1\u01d4",
+            "",
+            "\1\u01d5",
+            "\1\u01d6",
+            "",
+            "\1\u01d7",
+            "\1\u01d8",
+            "\1\u01d9",
+            "\1\u01da",
+            "\1\u01db",
+            "\1\u01dc",
+            "\1\u01dd",
+            "\42\144\1\u013c\12\144\15\u01b4\7\144\32\u01b4\4\144\1\u01b4\1\144\32\u01b4\uff85\144",
+            "\42\144\1\u00aa\12\144\15\u01b5\7\144\32\u01b5\4\144\1\u01b5\1\144\32\u01b5\uff85\144",
+            "\60\144\12\u01de\uffc6\144",
+            "\56\144\1\u01b8\1\144\12\u01df\uffc6\144",
+            "\60\144\1\u01e2\1\u01e0\1\u01e1\7\u01e2\uffc6\144",
+            "\56\144\1\u01b8\1\144\6\u01e3\uffca\144",
+            "\56\144\1\u01b8\uffd1\144",
+            "",
+            "",
+            "\1\u01e4",
+            "\1\u01e7\4\uffff\1\u01e6\12\uffff\1\u01e5",
+            "",
             "",
             "\1\u01e8",
-            "",
             "\1\u01e9",
+            "",
             "\1\u01ea",
             "\1\u01eb",
             "\1\u01ec",
-            "",
             "\1\u01ed",
             "\1\u01ee",
+            "",
             "\1\u01ef",
+            "\15\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "",
-            "\1\u01f0",
-            "\42\144\1\u00aa\14\144\1\u013b\12\u01d6\uffc6\144",
-            "\56\144\1\u01b2\uffd1\144",
-            "\60\144\12\u01f1\1\u01f2\uffc5\144",
-            "\60\144\6\u01f3\4\u01f4\1\u01f2\uffc5\144",
-            "\60\144\12\u01f4\1\u01f2\uffc5\144",
-            "\56\144\1\u01b2\uffd1\144",
+            "\1\u01f1",
+            "\1\u01f2",
             "",
+            "\1\u01f3",
+            "\1\u01f4",
             "",
             "\1\u01f5",
+            "",
             "\1\u01f6",
-            "",
             "\1\u01f7",
-            "",
             "\1\u01f8",
             "",
             "\1\u01f9",
             "\1\u01fa",
-            "",
             "\1\u01fb",
-            "\1\u01fc",
-            "\1\u01fd",
-            "\1\u01fe",
-            "\1\u01ff",
-            "\1\u0200",
-            "\1\u0201",
             "",
+            "\1\u01fc",
+            "\42\144\1\u00aa\14\144\1\u013d\12\u01de\uffc6\144",
+            "\56\144\1\u01b8\uffd1\144",
+            "\60\144\12\u01fd\1\u01fe\uffc5\144",
+            "\60\144\6\u01ff\4\u0200\1\u01fe\uffc5\144",
+            "\60\144\12\u0200\1\u01fe\uffc5\144",
+            "\56\144\1\u01b8\uffd1\144",
+            "",
+            "\1\u0201",
             "\1\u0202",
-            "\60\144\12\u0203\1\u01f2\uffc5\144",
-            "\60\144\12\u0204\uffc6\144",
-            "\60\144\6\u0205\4\144\1\u01f2\uffc5\144",
-            "\72\144\1\u01f2\uffc5\144",
+            "\1\u0203",
+            "\1\u0204",
+            "\1\u0205",
             "\1\u0206",
+            "",
             "",
             "\1\u0207",
             "",
             "\1\u0208",
+            "",
             "\1\u0209",
             "\1\u020a",
             "\1\u020b",
+            "",
             "\1\u020c",
             "\1\u020d",
             "\1\u020e",
             "\1\u020f",
             "\1\u0210",
-            "\15\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
-            "\72\144\1\u01f2\uffc5\144",
-            "\55\144\1\u0212\2\144\12\u0204\1\u00ac\uffc5\144",
-            "\72\144\1\u01f2\uffc5\144",
-            "\1\u0213",
-            "\1\u0214",
+            "\1\u0211",
             "",
-            "\1\u0215",
+            "\1\u0212",
+            "\60\144\12\u0213\1\u01fe\uffc5\144",
+            "\60\144\12\u0214\uffc6\144",
+            "\60\144\6\u0215\4\144\1\u01fe\uffc5\144",
+            "\72\144\1\u01fe\uffc5\144",
             "\1\u0216",
-            "",
             "\1\u0217",
             "\1\u0218",
             "\1\u0219",
-            "\1\u021a",
-            "\1\u021b",
             "",
-            "\60\144\12\u021c\uffc6\144",
+            "",
+            "\1\u021a",
+            "",
+            "\1\u021b",
+            "\1\u021c",
             "\1\u021d",
             "\1\u021e",
-            "",
-            "",
             "\1\u021f",
             "\1\u0220",
             "\1\u0221",
-            "",
-            "",
-            "\60\144\12\u021c\1\u013c\uffc5\144",
             "\1\u0222",
-            "",
             "\1\u0223",
-            "\1\u0224",
-            "\1\u0225",
-            "\1\u0226",
-            "",
-            "\1\u0227",
             "\15\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "\72\144\1\u01fe\uffc5\144",
+            "\55\144\1\u0225\2\144\12\u0214\1\u00ab\uffc5\144",
+            "\72\144\1\u01fe\uffc5\144",
+            "\1\u0226",
+            "\1\u0227",
+            "\1\u0228",
+            "\1\u0229",
+            "\1\u022a",
+            "\1\u022b",
+            "",
+            "\1\u022c",
+            "\1\u022d",
+            "",
+            "\1\u022e",
+            "\1\u022f",
+            "\1\u0230",
+            "\1\u0231",
+            "",
+            "\60\144\12\u0232\uffc6\144",
+            "\1\u0233",
+            "\1\u0234",
+            "\1\u0235",
+            "\1\u0236",
+            "\1\u0237",
+            "\1\u0238",
             "",
             "",
+            "\1\u0239",
+            "\1\u023a",
+            "",
+            "",
+            "\60\144\12\u0232\1\u013e\uffc5\144",
+            "\1\u023b",
+            "\1\u023c",
+            "\1\u023d",
+            "\1\u023e",
+            "",
+            "\1\u023f",
+            "\1\u0240",
+            "\1\u0241",
+            "\1\u0242",
+            "\1\u0243",
+            "\1\u0244",
+            "\1\u0245",
+            "\1\u0246",
+            "",
+            "\15\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "\15\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "\15\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "\1\u024a",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u024b",
+            "\1\u024c",
+            "\1\u024d",
+            "\1\u024e",
+            "\1\u024f",
+            "\1\u0250",
+            "\1\u0251",
+            "\1\u0252",
+            "\1\u0253",
+            "\1\u0254",
+            "\1\u0255",
+            "\1\u0256",
+            "\1\u0257",
+            "\1\u0258",
+            "\15\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             ""
     };
 
@@ -4854,301 +5048,173 @@ public class InternalDockerComposeLexer extends Lexer {
             this.transition = DFA32_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | RULE_VERSION | RULE_QUOTED_INT | RULE_PORT_DEF | RULE_DEVICE_DEF | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | RULE_VERSION | RULE_QUOTED_INT | RULE_PORT_DEF | RULE_DEVICE_DEF | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA32_382 = input.LA(1);
+                        int LA32_442 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA32_382>='0' && LA32_382<='9')) ) {s = 436;}
+                        if ( (LA32_442=='.') ) {s = 440;}
 
-                        else if ( ((LA32_382>='\u0000' && LA32_382<='-')||LA32_382=='/'||(LA32_382>=':' && LA32_382<='\uFFFF')) ) {s = 100;}
-
-                        else if ( (LA32_382=='.') ) {s = 434;}
+                        else if ( ((LA32_442>='\u0000' && LA32_442<='-')||(LA32_442>='/' && LA32_442<='\uFFFF')) ) {s = 100;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA32_433 = input.LA(1);
+                        int LA32_238 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA32_433>='0' && LA32_433<='9')) ) {s = 471;}
+                        if ( ((LA32_238>='\u0000' && LA32_238<='.')||(LA32_238>='0' && LA32_238<='@')||(LA32_238>='[' && LA32_238<=']')||LA32_238=='`'||(LA32_238>='{' && LA32_238<='\uFFFF')) ) {s = 100;}
 
-                        else if ( (LA32_433=='.') ) {s = 434;}
+                        else if ( (LA32_238=='/') ) {s = 239;}
 
-                        else if ( ((LA32_433>='\u0000' && LA32_433<='-')||LA32_433=='/'||(LA32_433>=':' && LA32_433<='\uFFFF')) ) {s = 100;}
+                        else if ( (LA32_238=='^') ) {s = 240;}
+
+                        else if ( ((LA32_238>='A' && LA32_238<='Z')||LA32_238=='_'||(LA32_238>='a' && LA32_238<='z')) ) {s = 241;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA32_500 = input.LA(1);
+                        int LA32_479 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA32_500>='\u0000' && LA32_500<='9')||(LA32_500>=';' && LA32_500<='\uFFFF')) ) {s = 100;}
+                        if ( (LA32_479=='.') ) {s = 440;}
 
-                        else if ( (LA32_500==':') ) {s = 498;}
+                        else if ( ((LA32_479>='\u0000' && LA32_479<='-')||(LA32_479>='/' && LA32_479<='\uFFFF')) ) {s = 100;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 3 : 
-                        int LA32_165 = input.LA(1);
+                        int LA32_164 = input.LA(1);
 
                         s = -1;
-                        if ( (LA32_165==':') ) {s = 166;}
+                        if ( (LA32_164=='\"') ) {s = 237;}
 
-                        else if ( ((LA32_165>='-' && LA32_165<='9')||(LA32_165>='A' && LA32_165<='Z')||LA32_165=='_'||(LA32_165>='a' && LA32_165<='z')) ) {s = 165;}
+                        else if ( (LA32_164==':') ) {s = 166;}
 
-                        else if ( ((LA32_165>='\u0000' && LA32_165<=',')||(LA32_165>=';' && LA32_165<='@')||(LA32_165>='[' && LA32_165<='^')||LA32_165=='`'||(LA32_165>='{' && LA32_165<='\uFFFF')) ) {s = 100;}
+                        else if ( ((LA32_164>='-' && LA32_164<='9')||(LA32_164>='A' && LA32_164<='Z')||LA32_164=='_'||(LA32_164>='a' && LA32_164<='z')) ) {s = 165;}
+
+                        else if ( ((LA32_164>='\u0000' && LA32_164<='!')||(LA32_164>='#' && LA32_164<=',')||(LA32_164>=';' && LA32_164<='@')||(LA32_164>='[' && LA32_164<='^')||LA32_164=='`'||(LA32_164>='{' && LA32_164<='\uFFFF')) ) {s = 100;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 4 : 
-                        int LA32_435 = input.LA(1);
+                        int LA32_483 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA32_435>='0' && LA32_435<='5')) ) {s = 475;}
+                        if ( ((LA32_483>='\u0000' && LA32_483<='-')||(LA32_483>='/' && LA32_483<='\uFFFF')) ) {s = 100;}
 
-                        else if ( (LA32_435=='.') ) {s = 434;}
-
-                        else if ( ((LA32_435>='\u0000' && LA32_435<='-')||LA32_435=='/'||(LA32_435>='6' && LA32_435<='\uFFFF')) ) {s = 100;}
+                        else if ( (LA32_483=='.') ) {s = 440;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 5 : 
-                        int LA32_515 = input.LA(1);
+                        int LA32_249 = input.LA(1);
 
                         s = -1;
-                        if ( (LA32_515==':') ) {s = 498;}
+                        if ( ((LA32_249>='A' && LA32_249<='Z')||LA32_249=='_'||(LA32_249>='a' && LA32_249<='z')) ) {s = 250;}
 
-                        else if ( ((LA32_515>='\u0000' && LA32_515<='9')||(LA32_515>=';' && LA32_515<='\uFFFF')) ) {s = 100;}
+                        else if ( ((LA32_249>='\u0000' && LA32_249<='@')||(LA32_249>='[' && LA32_249<='^')||LA32_249=='`'||(LA32_249>='{' && LA32_249<='\uFFFF')) ) {s = 100;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 6 : 
-                        int LA32_517 = input.LA(1);
+                        int LA32_380 = input.LA(1);
 
                         s = -1;
-                        if ( (LA32_517==':') ) {s = 498;}
+                        if ( ((LA32_380>='\u0000' && LA32_380<='@')||(LA32_380>='[' && LA32_380<='^')||LA32_380=='`'||(LA32_380>='{' && LA32_380<='\uFFFF')) ) {s = 100;}
 
-                        else if ( ((LA32_517>='\u0000' && LA32_517<='9')||(LA32_517>=';' && LA32_517<='\uFFFF')) ) {s = 100;}
+                        else if ( ((LA32_380>='A' && LA32_380<='Z')||LA32_380=='_'||(LA32_380>='a' && LA32_380<='z')) ) {s = 381;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 7 : 
-                        int LA32_434 = input.LA(1);
+                        int LA32_98 = input.LA(1);
 
                         s = -1;
-                        if ( (LA32_434=='1') ) {s = 472;}
+                        if ( ((LA32_98>='\u0000' && LA32_98<='@')||(LA32_98>='[' && LA32_98<='^')||LA32_98=='`'||(LA32_98>='{' && LA32_98<='\uFFFF')) ) {s = 100;}
 
-                        else if ( (LA32_434=='2') ) {s = 473;}
-
-                        else if ( (LA32_434=='0'||(LA32_434>='3' && LA32_434<='9')) ) {s = 474;}
-
-                        else if ( ((LA32_434>='\u0000' && LA32_434<='/')||(LA32_434>=':' && LA32_434<='\uFFFF')) ) {s = 100;}
+                        else if ( ((LA32_98>='A' && LA32_98<='Z')||LA32_98=='_'||(LA32_98>='a' && LA32_98<='z')) ) {s = 99;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 8 : 
-                        int LA32_315 = input.LA(1);
+                        int LA32_240 = input.LA(1);
 
                         s = -1;
-                        if ( (LA32_315=='^') ) {s = 375;}
+                        if ( ((LA32_240>='\u0000' && LA32_240<='@')||(LA32_240>='[' && LA32_240<='^')||LA32_240=='`'||(LA32_240>='{' && LA32_240<='\uFFFF')) ) {s = 100;}
 
-                        else if ( ((LA32_315>='A' && LA32_315<='Z')||LA32_315=='_'||(LA32_315>='a' && LA32_315<='z')) ) {s = 376;}
-
-                        else if ( ((LA32_315>='\u0000' && LA32_315<='@')||(LA32_315>='[' && LA32_315<=']')||LA32_315=='`'||(LA32_315>='{' && LA32_315<='\uFFFF')) ) {s = 100;}
+                        else if ( ((LA32_240>='A' && LA32_240<='Z')||LA32_240=='_'||(LA32_240>='a' && LA32_240<='z')) ) {s = 241;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 9 : 
-                        int LA32_171 = input.LA(1);
+                        int LA32_377 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA32_171>='0' && LA32_171<='9')) ) {s = 245;}
+                        if ( ((LA32_377>='A' && LA32_377<='Z')||LA32_377=='_'||(LA32_377>='a' && LA32_377<='z')) ) {s = 378;}
 
-                        else if ( ((LA32_171>='\u0000' && LA32_171<='/')||(LA32_171>=':' && LA32_171<='\uFFFF')) ) {s = 100;}
+                        else if ( ((LA32_377>='\u0000' && LA32_377<='@')||(LA32_377>='[' && LA32_377<='^')||LA32_377=='`'||(LA32_377>='{' && LA32_377<='\uFFFF')) ) {s = 100;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 10 : 
-                        int LA32_380 = input.LA(1);
+                        int LA32_93 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA32_380>='0' && LA32_380<='9')) ) {s = 433;}
+                        if ( ((LA32_93>='0' && LA32_93<='9')) ) {s = 168;}
 
-                        else if ( ((LA32_380>='\u0000' && LA32_380<='-')||LA32_380=='/'||(LA32_380>=':' && LA32_380<='\uFFFF')) ) {s = 100;}
+                        else if ( (LA32_93=='-') ) {s = 169;}
 
-                        else if ( (LA32_380=='.') ) {s = 434;}
+                        else if ( (LA32_93=='\"') ) {s = 170;}
+
+                        else if ( ((LA32_93>='\u0000' && LA32_93<='!')||(LA32_93>='#' && LA32_93<=',')||(LA32_93>=';' && LA32_93<='\uFFFF')) ) {s = 100;}
+
+                        else if ( (LA32_93==':') ) {s = 171;}
+
+                        else if ( (LA32_93=='.') ) {s = 172;}
+
+                        else if ( (LA32_93=='/') ) {s = 173;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 11 : 
-                        int LA32_381 = input.LA(1);
+                        int LA32_94 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA32_381>='0' && LA32_381<='5')) ) {s = 435;}
+                        if ( ((LA32_94>='0' && LA32_94<='5')) ) {s = 174;}
 
-                        else if ( ((LA32_381>='6' && LA32_381<='9')) ) {s = 436;}
+                        else if ( ((LA32_94>='6' && LA32_94<='9')) ) {s = 175;}
 
-                        else if ( ((LA32_381>='\u0000' && LA32_381<='-')||LA32_381=='/'||(LA32_381>=':' && LA32_381<='\uFFFF')) ) {s = 100;}
+                        else if ( (LA32_94=='-') ) {s = 169;}
 
-                        else if ( (LA32_381=='.') ) {s = 434;}
+                        else if ( (LA32_94=='\"') ) {s = 170;}
+
+                        else if ( ((LA32_94>='\u0000' && LA32_94<='!')||(LA32_94>='#' && LA32_94<=',')||(LA32_94>=';' && LA32_94<='\uFFFF')) ) {s = 100;}
+
+                        else if ( (LA32_94==':') ) {s = 171;}
+
+                        else if ( (LA32_94=='.') ) {s = 172;}
+
+                        else if ( (LA32_94=='/') ) {s = 173;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 12 : 
-                        int LA32_431 = input.LA(1);
+                        int LA32_30 = input.LA(1);
 
                         s = -1;
-                        if ( (LA32_431=='\"') ) {s = 170;}
+                        if ( ((LA32_30>='\u0000' && LA32_30<='\uFFFF')) ) {s = 100;}
 
-                        else if ( ((LA32_431>='-' && LA32_431<='9')||(LA32_431>='A' && LA32_431<='Z')||LA32_431=='_'||(LA32_431>='a' && LA32_431<='z')) ) {s = 431;}
-
-                        else if ( ((LA32_431>='\u0000' && LA32_431<='!')||(LA32_431>='#' && LA32_431<=',')||(LA32_431>=':' && LA32_431<='@')||(LA32_431>='[' && LA32_431<='^')||LA32_431=='`'||(LA32_431>='{' && LA32_431<='\uFFFF')) ) {s = 100;}
+                        else s = 32;
 
                         if ( s>=0 ) return s;
                         break;
                     case 13 : 
-                        int LA32_96 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA32_96>='\u0000' && LA32_96<='.')||(LA32_96>='0' && LA32_96<='@')||(LA32_96>='[' && LA32_96<=']')||LA32_96=='`'||(LA32_96>='{' && LA32_96<='\uFFFF')) ) {s = 100;}
-
-                        else if ( (LA32_96=='/') ) {s = 97;}
-
-                        else if ( (LA32_96=='^') ) {s = 98;}
-
-                        else if ( ((LA32_96>='A' && LA32_96<='Z')||LA32_96=='_'||(LA32_96>='a' && LA32_96<='z')) ) {s = 99;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 14 : 
-                        int LA32_474 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA32_474>='0' && LA32_474<='9')) ) {s = 500;}
-
-                        else if ( (LA32_474==':') ) {s = 498;}
-
-                        else if ( ((LA32_474>='\u0000' && LA32_474<='/')||(LA32_474>=';' && LA32_474<='\uFFFF')) ) {s = 100;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 15 : 
-                        int LA32_242 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA32_242>='A' && LA32_242<='Z')||LA32_242=='_'||(LA32_242>='a' && LA32_242<='z')) ) {s = 243;}
-
-                        else if ( ((LA32_242>='\u0000' && LA32_242<='@')||(LA32_242>='[' && LA32_242<='^')||LA32_242=='`'||(LA32_242>='{' && LA32_242<='\uFFFF')) ) {s = 100;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 16 : 
-                        int LA32_375 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA32_375>='\u0000' && LA32_375<='@')||(LA32_375>='[' && LA32_375<='^')||LA32_375=='`'||(LA32_375>='{' && LA32_375<='\uFFFF')) ) {s = 100;}
-
-                        else if ( ((LA32_375>='A' && LA32_375<='Z')||LA32_375=='_'||(LA32_375>='a' && LA32_375<='z')) ) {s = 376;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 17 : 
-                        int LA32_98 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA32_98>='A' && LA32_98<='Z')||LA32_98=='_'||(LA32_98>='a' && LA32_98<='z')) ) {s = 99;}
-
-                        else if ( ((LA32_98>='\u0000' && LA32_98<='@')||(LA32_98>='[' && LA32_98<='^')||LA32_98=='`'||(LA32_98>='{' && LA32_98<='\uFFFF')) ) {s = 100;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 18 : 
-                        int LA32_239 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA32_239>='\u0000' && LA32_239<='@')||(LA32_239>='[' && LA32_239<='^')||LA32_239=='`'||(LA32_239>='{' && LA32_239<='\uFFFF')) ) {s = 100;}
-
-                        else if ( ((LA32_239>='A' && LA32_239<='Z')||LA32_239=='_'||(LA32_239>='a' && LA32_239<='z')) ) {s = 240;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 19 : 
-                        int LA32_372 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA32_372>='A' && LA32_372<='Z')||LA32_372=='_'||(LA32_372>='a' && LA32_372<='z')) ) {s = 373;}
-
-                        else if ( ((LA32_372>='\u0000' && LA32_372<='@')||(LA32_372>='[' && LA32_372<='^')||LA32_372=='`'||(LA32_372>='{' && LA32_372<='\uFFFF')) ) {s = 100;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 20 : 
-                        int LA32_497 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA32_497>='0' && LA32_497<='9')) ) {s = 515;}
-
-                        else if ( ((LA32_497>='\u0000' && LA32_497<='/')||(LA32_497>=';' && LA32_497<='\uFFFF')) ) {s = 100;}
-
-                        else if ( (LA32_497==':') ) {s = 498;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 21 : 
-                        int LA32_499 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA32_499>='0' && LA32_499<='5')) ) {s = 517;}
-
-                        else if ( ((LA32_499>='\u0000' && LA32_499<='/')||(LA32_499>='6' && LA32_499<='9')||(LA32_499>=';' && LA32_499<='\uFFFF')) ) {s = 100;}
-
-                        else if ( (LA32_499==':') ) {s = 498;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 22 : 
-                        int LA32_172 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA32_172>='0' && LA32_172<='9')) ) {s = 246;}
-
-                        else if ( ((LA32_172>='\u0000' && LA32_172<='/')||(LA32_172>=':' && LA32_172<='\uFFFF')) ) {s = 100;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 23 : 
-                        int LA32_516 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA32_516>='\u0000' && LA32_516<=',')||(LA32_516>='.' && LA32_516<='/')||(LA32_516>=';' && LA32_516<='\uFFFF')) ) {s = 100;}
-
-                        else if ( (LA32_516==':') ) {s = 172;}
-
-                        else if ( ((LA32_516>='0' && LA32_516<='9')) ) {s = 516;}
-
-                        else if ( (LA32_516=='-') ) {s = 530;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 24 : 
-                        int LA32_169 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA32_169>='\u0000' && LA32_169<='@')||(LA32_169>='[' && LA32_169<=']')||LA32_169=='`'||(LA32_169>='{' && LA32_169<='\uFFFF')) ) {s = 100;}
-
-                        else if ( (LA32_169=='^') ) {s = 242;}
-
-                        else if ( ((LA32_169>='A' && LA32_169<='Z')||LA32_169=='_'||(LA32_169>='a' && LA32_169<='z')) ) {s = 243;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 25 : 
                         int LA32_0 = input.LA(1);
 
                         s = -1;
@@ -5156,9 +5222,9 @@ public class InternalDockerComposeLexer extends Lexer {
 
                         else if ( (LA32_0=='s') ) {s = 2;}
 
-                        else if ( (LA32_0=='n') ) {s = 3;}
+                        else if ( (LA32_0=='c') ) {s = 3;}
 
-                        else if ( (LA32_0=='c') ) {s = 4;}
+                        else if ( (LA32_0=='n') ) {s = 4;}
 
                         else if ( (LA32_0==':') ) {s = 5;}
 
@@ -5168,15 +5234,15 @@ public class InternalDockerComposeLexer extends Lexer {
 
                         else if ( (LA32_0=='r') ) {s = 8;}
 
-                        else if ( (LA32_0=='d') ) {s = 9;}
+                        else if ( (LA32_0=='l') ) {s = 9;}
 
                         else if ( (LA32_0=='-') ) {s = 10;}
 
-                        else if ( (LA32_0=='p') ) {s = 11;}
+                        else if ( (LA32_0=='d') ) {s = 11;}
 
-                        else if ( (LA32_0=='a') ) {s = 12;}
+                        else if ( (LA32_0=='p') ) {s = 12;}
 
-                        else if ( (LA32_0=='l') ) {s = 13;}
+                        else if ( (LA32_0=='a') ) {s = 13;}
 
                         else if ( (LA32_0=='t') ) {s = 14;}
 
@@ -5218,201 +5284,259 @@ public class InternalDockerComposeLexer extends Lexer {
 
                         if ( s>=0 ) return s;
                         break;
-                    case 26 : 
-                        int LA32_237 = input.LA(1);
+                    case 14 : 
+                        int LA32_321 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA32_237>='\u0000' && LA32_237<='.')||(LA32_237>='0' && LA32_237<='@')||(LA32_237>='[' && LA32_237<=']')||LA32_237=='`'||(LA32_237>='{' && LA32_237<='\uFFFF')) ) {s = 100;}
+                        if ( ((LA32_321>='\u0000' && LA32_321<='/')||(LA32_321>=':' && LA32_321<='\uFFFF')) ) {s = 100;}
 
-                        else if ( (LA32_237=='/') ) {s = 238;}
+                        else if ( (LA32_321=='1') ) {s = 385;}
 
-                        else if ( (LA32_237=='^') ) {s = 239;}
+                        else if ( (LA32_321=='2') ) {s = 386;}
 
-                        else if ( ((LA32_237>='A' && LA32_237<='Z')||LA32_237=='_'||(LA32_237>='a' && LA32_237<='z')) ) {s = 240;}
+                        else if ( (LA32_321=='0'||(LA32_321>='3' && LA32_321<='9')) ) {s = 387;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 15 : 
+                        int LA32_549 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA32_549>='0' && LA32_549<='9')) ) {s = 562;}
+
+                        else if ( ((LA32_549>='\u0000' && LA32_549<='/')||(LA32_549>=':' && LA32_549<='\uFFFF')) ) {s = 100;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 16 : 
+                        int LA32_562 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA32_562>='\u0000' && LA32_562<='/')||(LA32_562>=';' && LA32_562<='\uFFFF')) ) {s = 100;}
+
+                        else if ( (LA32_562==':') ) {s = 318;}
+
+                        else if ( ((LA32_562>='0' && LA32_562<='9')) ) {s = 562;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 17 : 
+                        int LA32_382 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA32_382=='-') ) {s = 438;}
+
+                        else if ( ((LA32_382>='0' && LA32_382<='9')) ) {s = 382;}
+
+                        else if ( ((LA32_382>='\u0000' && LA32_382<=',')||(LA32_382>='.' && LA32_382<='/')||(LA32_382>=':' && LA32_382<='\uFFFF')) ) {s = 100;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 18 : 
+                        int LA32_241 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA32_241>='-' && LA32_241<='9')||(LA32_241>='A' && LA32_241<='Z')||LA32_241=='_'||(LA32_241>='a' && LA32_241<='z')) ) {s = 314;}
+
+                        else if ( (LA32_241==':') ) {s = 315;}
+
+                        else if ( (LA32_241=='\"') ) {s = 316;}
+
+                        else if ( ((LA32_241>='\u0000' && LA32_241<='!')||(LA32_241>='#' && LA32_241<=',')||(LA32_241>=';' && LA32_241<='@')||(LA32_241>='[' && LA32_241<='^')||LA32_241=='`'||(LA32_241>='{' && LA32_241<='\uFFFF')) ) {s = 100;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 19 : 
+                        int LA32_512 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA32_512>='\u0000' && LA32_512<='9')||(LA32_512>=';' && LA32_512<='\uFFFF')) ) {s = 100;}
+
+                        else if ( (LA32_512==':') ) {s = 510;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 20 : 
+                        int LA32_438 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA32_438>='\u0000' && LA32_438<='/')||(LA32_438>=':' && LA32_438<='\uFFFF')) ) {s = 100;}
+
+                        else if ( ((LA32_438>='0' && LA32_438<='9')) ) {s = 478;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 21 : 
+                        int LA32_531 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA32_531==':') ) {s = 510;}
+
+                        else if ( ((LA32_531>='\u0000' && LA32_531<='9')||(LA32_531>=';' && LA32_531<='\uFFFF')) ) {s = 100;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 22 : 
+                        int LA32_533 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA32_533==':') ) {s = 510;}
+
+                        else if ( ((LA32_533>='\u0000' && LA32_533<='9')||(LA32_533>=';' && LA32_533<='\uFFFF')) ) {s = 100;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 23 : 
+                        int LA32_381 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA32_381>='-' && LA32_381<='9')||(LA32_381>='A' && LA32_381<='Z')||LA32_381=='_'||(LA32_381>='a' && LA32_381<='z')) ) {s = 437;}
+
+                        else if ( (LA32_381=='\"') ) {s = 170;}
+
+                        else if ( ((LA32_381>='\u0000' && LA32_381<='!')||(LA32_381>='#' && LA32_381<=',')||(LA32_381>=':' && LA32_381<='@')||(LA32_381>='[' && LA32_381<='^')||LA32_381=='`'||(LA32_381>='{' && LA32_381<='\uFFFF')) ) {s = 100;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 24 : 
+                        int LA32_378 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA32_378>='-' && LA32_378<='9')||(LA32_378>='A' && LA32_378<='Z')||LA32_378=='_'||(LA32_378>='a' && LA32_378<='z')) ) {s = 436;}
+
+                        else if ( (LA32_378=='\"') ) {s = 316;}
+
+                        else if ( ((LA32_378>='\u0000' && LA32_378<='!')||(LA32_378>='#' && LA32_378<=',')||(LA32_378>=':' && LA32_378<='@')||(LA32_378>='[' && LA32_378<='^')||LA32_378=='`'||(LA32_378>='{' && LA32_378<='\uFFFF')) ) {s = 100;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 25 : 
+                        int LA32_172 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA32_172=='1') ) {s = 246;}
+
+                        else if ( (LA32_172=='2') ) {s = 247;}
+
+                        else if ( (LA32_172=='0'||(LA32_172>='3' && LA32_172<='9')) ) {s = 248;}
+
+                        else if ( ((LA32_172>='\u0000' && LA32_172<='/')||(LA32_172>=':' && LA32_172<='\uFFFF')) ) {s = 100;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 26 : 
+                        int LA32_165 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA32_165==':') ) {s = 166;}
+
+                        else if ( ((LA32_165>='-' && LA32_165<='9')||(LA32_165>='A' && LA32_165<='Z')||LA32_165=='_'||(LA32_165>='a' && LA32_165<='z')) ) {s = 165;}
+
+                        else if ( ((LA32_165>='\u0000' && LA32_165<=',')||(LA32_165>=';' && LA32_165<='@')||(LA32_165>='[' && LA32_165<='^')||LA32_165=='`'||(LA32_165>='{' && LA32_165<='\uFFFF')) ) {s = 100;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 27 : 
-                        int LA32_91 = input.LA(1);
+                        int LA32_318 = input.LA(1);
 
                         s = -1;
-                        if ( (LA32_91=='o') ) {s = 164;}
+                        if ( ((LA32_318>='\u0000' && LA32_318<='/')||(LA32_318>=':' && LA32_318<='\uFFFF')) ) {s = 100;}
 
-                        else if ( ((LA32_91>='-' && LA32_91<='9')||(LA32_91>='A' && LA32_91<='Z')||LA32_91=='_'||(LA32_91>='a' && LA32_91<='n')||(LA32_91>='p' && LA32_91<='z')) ) {s = 165;}
-
-                        else if ( (LA32_91==':') ) {s = 166;}
-
-                        else if ( ((LA32_91>='\u0000' && LA32_91<=',')||(LA32_91>=';' && LA32_91<='@')||(LA32_91>='[' && LA32_91<='^')||LA32_91=='`'||(LA32_91>='{' && LA32_91<='\uFFFF')) ) {s = 100;}
+                        else if ( ((LA32_318>='0' && LA32_318<='9')) ) {s = 382;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 28 : 
-                        int LA32_173 = input.LA(1);
+                        int LA32_510 = input.LA(1);
 
                         s = -1;
-                        if ( (LA32_173=='1') ) {s = 247;}
+                        if ( ((LA32_510>='\u0000' && LA32_510<='/')||(LA32_510>=':' && LA32_510<='\uFFFF')) ) {s = 100;}
 
-                        else if ( (LA32_173=='2') ) {s = 248;}
-
-                        else if ( (LA32_173=='0'||(LA32_173>='3' && LA32_173<='9')) ) {s = 249;}
-
-                        else if ( ((LA32_173>='\u0000' && LA32_173<='/')||(LA32_173>=':' && LA32_173<='\uFFFF')) ) {s = 100;}
+                        else if ( ((LA32_510>='0' && LA32_510<='9')) ) {s = 532;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 29 : 
-                        int LA32_312 = input.LA(1);
+                        int LA32_387 = input.LA(1);
 
                         s = -1;
-                        if ( (LA32_312=='^') ) {s = 372;}
+                        if ( ((LA32_387>='0' && LA32_387<='9')) ) {s = 442;}
 
-                        else if ( ((LA32_312>='A' && LA32_312<='Z')||LA32_312=='_'||(LA32_312>='a' && LA32_312<='z')) ) {s = 373;}
+                        else if ( ((LA32_387>='\u0000' && LA32_387<='-')||LA32_387=='/'||(LA32_387>=':' && LA32_387<='\uFFFF')) ) {s = 100;}
 
-                        else if ( ((LA32_312>='\u0000' && LA32_312<='@')||(LA32_312>='[' && LA32_312<=']')||LA32_312=='`'||(LA32_312>='{' && LA32_312<='\uFFFF')) ) {s = 100;}
+                        else if ( (LA32_387=='.') ) {s = 440;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 30 : 
-                        int LA32_430 = input.LA(1);
+                        int LA32_252 = input.LA(1);
 
                         s = -1;
-                        if ( (LA32_430=='\"') ) {s = 313;}
+                        if ( (LA32_252=='-') ) {s = 169;}
 
-                        else if ( ((LA32_430>='\u0000' && LA32_430<='!')||(LA32_430>='#' && LA32_430<=',')||(LA32_430>=':' && LA32_430<='@')||(LA32_430>='[' && LA32_430<='^')||LA32_430=='`'||(LA32_430>='{' && LA32_430<='\uFFFF')) ) {s = 100;}
+                        else if ( ((LA32_252>='0' && LA32_252<='9')) ) {s = 252;}
 
-                        else if ( ((LA32_430>='-' && LA32_430<='9')||(LA32_430>='A' && LA32_430<='Z')||LA32_430=='_'||(LA32_430>='a' && LA32_430<='z')) ) {s = 430;}
+                        else if ( (LA32_252=='\"') ) {s = 170;}
+
+                        else if ( ((LA32_252>='\u0000' && LA32_252<='!')||(LA32_252>='#' && LA32_252<=',')||(LA32_252>=';' && LA32_252<='\uFFFF')) ) {s = 100;}
+
+                        else if ( (LA32_252==':') ) {s = 171;}
+
+                        else if ( (LA32_252=='.') ) {s = 325;}
+
+                        else if ( (LA32_252=='/') ) {s = 173;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 31 : 
-                        int LA32_470 = input.LA(1);
+                        int LA32_439 = input.LA(1);
 
                         s = -1;
-                        if ( (LA32_470=='\"') ) {s = 170;}
+                        if ( ((LA32_439>='0' && LA32_439<='9')) ) {s = 479;}
 
-                        else if ( ((LA32_470>='\u0000' && LA32_470<='!')||(LA32_470>='#' && LA32_470<='.')||(LA32_470>=':' && LA32_470<='\uFFFF')) ) {s = 100;}
+                        else if ( (LA32_439=='.') ) {s = 440;}
 
-                        else if ( (LA32_470=='/') ) {s = 315;}
-
-                        else if ( ((LA32_470>='0' && LA32_470<='9')) ) {s = 470;}
+                        else if ( ((LA32_439>='\u0000' && LA32_439<='-')||LA32_439=='/'||(LA32_439>=':' && LA32_439<='\uFFFF')) ) {s = 100;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 32 : 
-                        int LA32_472 = input.LA(1);
+                        int LA32_441 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA32_472>='0' && LA32_472<='9')) ) {s = 497;}
+                        if ( ((LA32_441>='0' && LA32_441<='5')) ) {s = 483;}
 
-                        else if ( (LA32_472==':') ) {s = 498;}
+                        else if ( (LA32_441=='.') ) {s = 440;}
 
-                        else if ( ((LA32_472>='\u0000' && LA32_472<='/')||(LA32_472>=';' && LA32_472<='\uFFFF')) ) {s = 100;}
+                        else if ( ((LA32_441>='\u0000' && LA32_441<='-')||LA32_441=='/'||(LA32_441>='6' && LA32_441<='\uFFFF')) ) {s = 100;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 33 : 
-                        int LA32_473 = input.LA(1);
+                        int LA32_250 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA32_473>='0' && LA32_473<='5')) ) {s = 499;}
+                        if ( (LA32_250=='\"') ) {s = 170;}
 
-                        else if ( ((LA32_473>='6' && LA32_473<='9')) ) {s = 500;}
+                        else if ( ((LA32_250>='\u0000' && LA32_250<='!')||(LA32_250>='#' && LA32_250<=',')||(LA32_250>=':' && LA32_250<='@')||(LA32_250>='[' && LA32_250<='^')||LA32_250=='`'||(LA32_250>='{' && LA32_250<='\uFFFF')) ) {s = 100;}
 
-                        else if ( (LA32_473==':') ) {s = 498;}
-
-                        else if ( ((LA32_473>='\u0000' && LA32_473<='/')||(LA32_473>=';' && LA32_473<='\uFFFF')) ) {s = 100;}
+                        else if ( ((LA32_250>='-' && LA32_250<='9')||(LA32_250>='A' && LA32_250<='Z')||LA32_250=='_'||(LA32_250>='a' && LA32_250<='z')) ) {s = 324;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 34 : 
-                        int LA32_240 = input.LA(1);
+                        int LA32_317 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA32_240>='-' && LA32_240<='9')||(LA32_240>='A' && LA32_240<='Z')||LA32_240=='_'||(LA32_240>='a' && LA32_240<='z')) ) {s = 311;}
+                        if ( (LA32_317=='^') ) {s = 380;}
 
-                        else if ( (LA32_240==':') ) {s = 312;}
+                        else if ( ((LA32_317>='A' && LA32_317<='Z')||LA32_317=='_'||(LA32_317>='a' && LA32_317<='z')) ) {s = 381;}
 
-                        else if ( (LA32_240=='\"') ) {s = 313;}
-
-                        else if ( ((LA32_240>='\u0000' && LA32_240<='!')||(LA32_240>='#' && LA32_240<=',')||(LA32_240>=';' && LA32_240<='@')||(LA32_240>='[' && LA32_240<='^')||LA32_240=='`'||(LA32_240>='{' && LA32_240<='\uFFFF')) ) {s = 100;}
+                        else if ( ((LA32_317>='\u0000' && LA32_317<='@')||(LA32_317>='[' && LA32_317<=']')||LA32_317=='`'||(LA32_317>='{' && LA32_317<='\uFFFF')) ) {s = 100;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 35 : 
-                        int LA32_314 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA32_314=='\"') ) {s = 170;}
-
-                        else if ( ((LA32_314>='\u0000' && LA32_314<='!')||(LA32_314>='#' && LA32_314<=',')||(LA32_314>=':' && LA32_314<='@')||(LA32_314>='[' && LA32_314<='^')||LA32_314=='`'||(LA32_314>='{' && LA32_314<='\uFFFF')) ) {s = 100;}
-
-                        else if ( ((LA32_314>='-' && LA32_314<='9')||(LA32_314>='A' && LA32_314<='Z')||LA32_314=='_'||(LA32_314>='a' && LA32_314<='z')) ) {s = 314;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 36 : 
-                        int LA32_498 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA32_498>='\u0000' && LA32_498<='/')||(LA32_498>=':' && LA32_498<='\uFFFF')) ) {s = 100;}
-
-                        else if ( ((LA32_498>='0' && LA32_498<='9')) ) {s = 516;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 37 : 
-                        int LA32_97 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA32_97=='^') ) {s = 98;}
-
-                        else if ( ((LA32_97>='A' && LA32_97<='Z')||LA32_97=='_'||(LA32_97>='a' && LA32_97<='z')) ) {s = 99;}
-
-                        else if ( ((LA32_97>='\u0000' && LA32_97<='@')||(LA32_97>='[' && LA32_97<=']')||LA32_97=='`'||(LA32_97>='{' && LA32_97<='\uFFFF')) ) {s = 100;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 38 : 
-                        int LA32_238 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA32_238=='^') ) {s = 239;}
-
-                        else if ( ((LA32_238>='A' && LA32_238<='Z')||LA32_238=='_'||(LA32_238>='a' && LA32_238<='z')) ) {s = 240;}
-
-                        else if ( ((LA32_238>='\u0000' && LA32_238<='@')||(LA32_238>='[' && LA32_238<=']')||LA32_238=='`'||(LA32_238>='{' && LA32_238<='\uFFFF')) ) {s = 100;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 39 : 
-                        int LA32_245 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA32_245=='\"') ) {s = 170;}
-
-                        else if ( ((LA32_245>='\u0000' && LA32_245<='!')||(LA32_245>='#' && LA32_245<='.')||(LA32_245>=';' && LA32_245<='\uFFFF')) ) {s = 100;}
-
-                        else if ( (LA32_245=='/') ) {s = 315;}
-
-                        else if ( ((LA32_245>='0' && LA32_245<='9')) ) {s = 245;}
-
-                        else if ( (LA32_245==':') ) {s = 316;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 40 : 
-                        int LA32_99 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA32_99>='-' && LA32_99<='9')||(LA32_99>='A' && LA32_99<='Z')||LA32_99=='_'||(LA32_99>='a' && LA32_99<='z')) ) {s = 165;}
-
-                        else if ( (LA32_99==':') ) {s = 166;}
-
-                        else if ( ((LA32_99>='\u0000' && LA32_99<=',')||(LA32_99>=';' && LA32_99<='@')||(LA32_99>='[' && LA32_99<='^')||LA32_99=='`'||(LA32_99>='{' && LA32_99<='\uFFFF')) ) {s = 100;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 41 : 
                         int LA32_25 = input.LA(1);
 
                         s = -1;
@@ -5440,527 +5564,597 @@ public class InternalDockerComposeLexer extends Lexer {
 
                         if ( s>=0 ) return s;
                         break;
-                    case 42 : 
-                        int LA32_376 = input.LA(1);
+                    case 36 : 
+                        int LA32_482 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA32_376>='-' && LA32_376<='9')||(LA32_376>='A' && LA32_376<='Z')||LA32_376=='_'||(LA32_376>='a' && LA32_376<='z')) ) {s = 431;}
+                        if ( ((LA32_482>='0' && LA32_482<='9')) ) {s = 512;}
 
-                        else if ( (LA32_376=='\"') ) {s = 170;}
+                        else if ( (LA32_482==':') ) {s = 510;}
 
-                        else if ( ((LA32_376>='\u0000' && LA32_376<='!')||(LA32_376>='#' && LA32_376<=',')||(LA32_376>=':' && LA32_376<='@')||(LA32_376>='[' && LA32_376<='^')||LA32_376=='`'||(LA32_376>='{' && LA32_376<='\uFFFF')) ) {s = 100;}
+                        else if ( ((LA32_482>='\u0000' && LA32_482<='/')||(LA32_482>=';' && LA32_482<='\uFFFF')) ) {s = 100;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 37 : 
+                        int LA32_509 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA32_509>='0' && LA32_509<='9')) ) {s = 531;}
+
+                        else if ( ((LA32_509>='\u0000' && LA32_509<='/')||(LA32_509>=';' && LA32_509<='\uFFFF')) ) {s = 100;}
+
+                        else if ( (LA32_509==':') ) {s = 510;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 38 : 
+                        int LA32_511 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA32_511>='0' && LA32_511<='5')) ) {s = 533;}
+
+                        else if ( ((LA32_511>='\u0000' && LA32_511<='/')||(LA32_511>='6' && LA32_511<='9')||(LA32_511>=';' && LA32_511<='\uFFFF')) ) {s = 100;}
+
+                        else if ( (LA32_511==':') ) {s = 510;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 39 : 
+                        int LA32_314 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA32_314==':') ) {s = 315;}
+
+                        else if ( (LA32_314=='\"') ) {s = 316;}
+
+                        else if ( ((LA32_314>='-' && LA32_314<='9')||(LA32_314>='A' && LA32_314<='Z')||LA32_314=='_'||(LA32_314>='a' && LA32_314<='z')) ) {s = 314;}
+
+                        else if ( ((LA32_314>='\u0000' && LA32_314<='!')||(LA32_314>='#' && LA32_314<=',')||(LA32_314>=';' && LA32_314<='@')||(LA32_314>='[' && LA32_314<='^')||LA32_314=='`'||(LA32_314>='{' && LA32_314<='\uFFFF')) ) {s = 100;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 40 : 
+                        int LA32_323 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA32_323=='\"') ) {s = 320;}
+
+                        else if ( ((LA32_323>='0' && LA32_323<='9')) ) {s = 389;}
+
+                        else if ( (LA32_323=='.') ) {s = 321;}
+
+                        else if ( ((LA32_323>='\u0000' && LA32_323<='!')||(LA32_323>='#' && LA32_323<='-')||LA32_323=='/'||(LA32_323>=':' && LA32_323<='\uFFFF')) ) {s = 100;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 41 : 
+                        int LA32_171 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA32_171>='0' && LA32_171<='9')) ) {s = 245;}
+
+                        else if ( ((LA32_171>='\u0000' && LA32_171<='/')||(LA32_171>=':' && LA32_171<='\uFFFF')) ) {s = 100;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 42 : 
+                        int LA32_383 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA32_383=='\"') ) {s = 320;}
+
+                        else if ( ((LA32_383>='0' && LA32_383<='9')) ) {s = 389;}
+
+                        else if ( ((LA32_383>='\u0000' && LA32_383<='!')||(LA32_383>='#' && LA32_383<='-')||LA32_383=='/'||(LA32_383>=':' && LA32_383<='\uFFFF')) ) {s = 100;}
+
+                        else if ( (LA32_383=='.') ) {s = 321;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 43 : 
-                        int LA32_93 = input.LA(1);
+                        int LA32_388 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA32_93>='0' && LA32_93<='9')) ) {s = 168;}
+                        if ( (LA32_388=='\"') ) {s = 320;}
 
-                        else if ( (LA32_93=='/') ) {s = 169;}
+                        else if ( ((LA32_388>='0' && LA32_388<='9')) ) {s = 389;}
 
-                        else if ( (LA32_93=='\"') ) {s = 170;}
+                        else if ( (LA32_388=='.') ) {s = 321;}
 
-                        else if ( (LA32_93=='-') ) {s = 171;}
-
-                        else if ( ((LA32_93>='\u0000' && LA32_93<='!')||(LA32_93>='#' && LA32_93<=',')||(LA32_93>=';' && LA32_93<='\uFFFF')) ) {s = 100;}
-
-                        else if ( (LA32_93==':') ) {s = 172;}
-
-                        else if ( (LA32_93=='.') ) {s = 173;}
+                        else if ( ((LA32_388>='\u0000' && LA32_388<='!')||(LA32_388>='#' && LA32_388<='-')||LA32_388=='/'||(LA32_388>=':' && LA32_388<='\uFFFF')) ) {s = 100;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 44 : 
-                        int LA32_95 = input.LA(1);
+                        int LA32_173 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA32_95>='0' && LA32_95<='9')) ) {s = 175;}
+                        if ( ((LA32_173>='\u0000' && LA32_173<='@')||(LA32_173>='[' && LA32_173<=']')||LA32_173=='`'||(LA32_173>='{' && LA32_173<='\uFFFF')) ) {s = 100;}
 
-                        else if ( (LA32_95=='/') ) {s = 169;}
+                        else if ( (LA32_173=='^') ) {s = 249;}
 
-                        else if ( (LA32_95=='\"') ) {s = 170;}
-
-                        else if ( (LA32_95=='-') ) {s = 171;}
-
-                        else if ( ((LA32_95>='\u0000' && LA32_95<='!')||(LA32_95>='#' && LA32_95<=',')||(LA32_95>=';' && LA32_95<='\uFFFF')) ) {s = 100;}
-
-                        else if ( (LA32_95==':') ) {s = 172;}
-
-                        else if ( (LA32_95=='.') ) {s = 173;}
+                        else if ( ((LA32_173>='A' && LA32_173<='Z')||LA32_173=='_'||(LA32_173>='a' && LA32_173<='z')) ) {s = 250;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 45 : 
-                        int LA32_94 = input.LA(1);
+                        int LA32_437 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA32_94>='0' && LA32_94<='5')) ) {s = 174;}
+                        if ( (LA32_437=='\"') ) {s = 170;}
 
-                        else if ( ((LA32_94>='6' && LA32_94<='9')) ) {s = 175;}
+                        else if ( ((LA32_437>='-' && LA32_437<='9')||(LA32_437>='A' && LA32_437<='Z')||LA32_437=='_'||(LA32_437>='a' && LA32_437<='z')) ) {s = 437;}
 
-                        else if ( (LA32_94=='/') ) {s = 169;}
-
-                        else if ( (LA32_94=='\"') ) {s = 170;}
-
-                        else if ( (LA32_94=='-') ) {s = 171;}
-
-                        else if ( ((LA32_94>='\u0000' && LA32_94<='!')||(LA32_94>='#' && LA32_94<=',')||(LA32_94>=';' && LA32_94<='\uFFFF')) ) {s = 100;}
-
-                        else if ( (LA32_94==':') ) {s = 172;}
-
-                        else if ( (LA32_94=='.') ) {s = 173;}
+                        else if ( ((LA32_437>='\u0000' && LA32_437<='!')||(LA32_437>='#' && LA32_437<=',')||(LA32_437>=':' && LA32_437<='@')||(LA32_437>='[' && LA32_437<='^')||LA32_437=='`'||(LA32_437>='{' && LA32_437<='\uFFFF')) ) {s = 100;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 46 : 
-                        int LA32_251 = input.LA(1);
+                        int LA32_440 = input.LA(1);
 
                         s = -1;
-                        if ( (LA32_251=='/') ) {s = 169;}
+                        if ( (LA32_440=='1') ) {s = 480;}
 
-                        else if ( (LA32_251=='\"') ) {s = 170;}
+                        else if ( (LA32_440=='2') ) {s = 481;}
 
-                        else if ( ((LA32_251>='0' && LA32_251<='9')) ) {s = 251;}
+                        else if ( (LA32_440=='0'||(LA32_440>='3' && LA32_440<='9')) ) {s = 482;}
 
-                        else if ( (LA32_251=='-') ) {s = 171;}
-
-                        else if ( ((LA32_251>='\u0000' && LA32_251<='!')||(LA32_251>='#' && LA32_251<=',')||(LA32_251>=';' && LA32_251<='\uFFFF')) ) {s = 100;}
-
-                        else if ( (LA32_251==':') ) {s = 172;}
-
-                        else if ( (LA32_251=='.') ) {s = 322;}
+                        else if ( ((LA32_440>='\u0000' && LA32_440<='/')||(LA32_440>=':' && LA32_440<='\uFFFF')) ) {s = 100;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 47 : 
-                        int LA32_168 = input.LA(1);
+                        int LA32_315 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA32_168>='0' && LA32_168<='9')) ) {s = 241;}
+                        if ( (LA32_315=='^') ) {s = 377;}
 
-                        else if ( (LA32_168=='.') ) {s = 173;}
+                        else if ( ((LA32_315>='A' && LA32_315<='Z')||LA32_315=='_'||(LA32_315>='a' && LA32_315<='z')) ) {s = 378;}
 
-                        else if ( (LA32_168=='/') ) {s = 169;}
-
-                        else if ( (LA32_168=='\"') ) {s = 170;}
-
-                        else if ( (LA32_168=='-') ) {s = 171;}
-
-                        else if ( ((LA32_168>='\u0000' && LA32_168<='!')||(LA32_168>='#' && LA32_168<=',')||(LA32_168>=';' && LA32_168<='\uFFFF')) ) {s = 100;}
-
-                        else if ( (LA32_168==':') ) {s = 172;}
+                        else if ( ((LA32_315>='\u0000' && LA32_315<='@')||(LA32_315>='[' && LA32_315<=']')||LA32_315=='`'||(LA32_315>='{' && LA32_315<='\uFFFF')) ) {s = 100;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 48 : 
-                        int LA32_175 = input.LA(1);
+                        int LA32_245 = input.LA(1);
 
                         s = -1;
-                        if ( (LA32_175=='.') ) {s = 173;}
+                        if ( (LA32_245=='\"') ) {s = 170;}
 
-                        else if ( (LA32_175=='/') ) {s = 169;}
+                        else if ( ((LA32_245>='\u0000' && LA32_245<='!')||(LA32_245>='#' && LA32_245<='.')||(LA32_245>=':' && LA32_245<='\uFFFF')) ) {s = 100;}
 
-                        else if ( (LA32_175=='\"') ) {s = 170;}
+                        else if ( (LA32_245=='/') ) {s = 173;}
 
-                        else if ( ((LA32_175>='0' && LA32_175<='9')) ) {s = 251;}
-
-                        else if ( (LA32_175=='-') ) {s = 171;}
-
-                        else if ( ((LA32_175>='\u0000' && LA32_175<='!')||(LA32_175>='#' && LA32_175<=',')||(LA32_175>=';' && LA32_175<='\uFFFF')) ) {s = 100;}
-
-                        else if ( (LA32_175==':') ) {s = 172;}
+                        else if ( ((LA32_245>='0' && LA32_245<='9')) ) {s = 245;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 49 : 
-                        int LA32_174 = input.LA(1);
+                        int LA32_436 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA32_174>='0' && LA32_174<='5')) ) {s = 250;}
+                        if ( (LA32_436=='\"') ) {s = 316;}
 
-                        else if ( (LA32_174=='.') ) {s = 173;}
+                        else if ( ((LA32_436>='\u0000' && LA32_436<='!')||(LA32_436>='#' && LA32_436<=',')||(LA32_436>=':' && LA32_436<='@')||(LA32_436>='[' && LA32_436<='^')||LA32_436=='`'||(LA32_436>='{' && LA32_436<='\uFFFF')) ) {s = 100;}
 
-                        else if ( (LA32_174=='/') ) {s = 169;}
-
-                        else if ( (LA32_174=='\"') ) {s = 170;}
-
-                        else if ( ((LA32_174>='6' && LA32_174<='9')) ) {s = 251;}
-
-                        else if ( (LA32_174=='-') ) {s = 171;}
-
-                        else if ( ((LA32_174>='\u0000' && LA32_174<='!')||(LA32_174>='#' && LA32_174<=',')||(LA32_174>=';' && LA32_174<='\uFFFF')) ) {s = 100;}
-
-                        else if ( (LA32_174==':') ) {s = 172;}
+                        else if ( ((LA32_436>='-' && LA32_436<='9')||(LA32_436>='A' && LA32_436<='Z')||LA32_436=='_'||(LA32_436>='a' && LA32_436<='z')) ) {s = 436;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 50 : 
-                        int LA32_241 = input.LA(1);
+                        int LA32_385 = input.LA(1);
 
                         s = -1;
-                        if ( (LA32_241=='/') ) {s = 169;}
+                        if ( ((LA32_385>='0' && LA32_385<='9')) ) {s = 439;}
 
-                        else if ( (LA32_241=='\"') ) {s = 170;}
+                        else if ( ((LA32_385>='\u0000' && LA32_385<='-')||LA32_385=='/'||(LA32_385>=':' && LA32_385<='\uFFFF')) ) {s = 100;}
 
-                        else if ( ((LA32_241>='0' && LA32_241<='9')) ) {s = 251;}
-
-                        else if ( (LA32_241=='.') ) {s = 173;}
-
-                        else if ( (LA32_241=='-') ) {s = 171;}
-
-                        else if ( ((LA32_241>='\u0000' && LA32_241<='!')||(LA32_241>='#' && LA32_241<=',')||(LA32_241>=';' && LA32_241<='\uFFFF')) ) {s = 100;}
-
-                        else if ( (LA32_241==':') ) {s = 172;}
+                        else if ( (LA32_385=='.') ) {s = 440;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 51 : 
-                        int LA32_250 = input.LA(1);
+                        int LA32_386 = input.LA(1);
 
                         s = -1;
-                        if ( (LA32_250=='/') ) {s = 169;}
+                        if ( ((LA32_386>='0' && LA32_386<='5')) ) {s = 441;}
 
-                        else if ( (LA32_250=='\"') ) {s = 170;}
+                        else if ( ((LA32_386>='6' && LA32_386<='9')) ) {s = 442;}
 
-                        else if ( ((LA32_250>='0' && LA32_250<='9')) ) {s = 251;}
+                        else if ( ((LA32_386>='\u0000' && LA32_386<='-')||LA32_386=='/'||(LA32_386>=':' && LA32_386<='\uFFFF')) ) {s = 100;}
 
-                        else if ( (LA32_250=='-') ) {s = 171;}
-
-                        else if ( ((LA32_250>='\u0000' && LA32_250<='!')||(LA32_250>='#' && LA32_250<=',')||(LA32_250>=';' && LA32_250<='\uFFFF')) ) {s = 100;}
-
-                        else if ( (LA32_250==':') ) {s = 172;}
-
-                        else if ( (LA32_250=='.') ) {s = 173;}
+                        else if ( (LA32_386=='.') ) {s = 440;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 52 : 
-                        int LA32_319 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA32_319>='\u0000' && LA32_319<='/')||(LA32_319>=':' && LA32_319<='\uFFFF')) ) {s = 100;}
-
-                        else if ( (LA32_319=='1') ) {s = 380;}
-
-                        else if ( (LA32_319=='2') ) {s = 381;}
-
-                        else if ( (LA32_319=='0'||(LA32_319>='3' && LA32_319<='9')) ) {s = 382;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 53 : 
-                        int LA32_373 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA32_373>='-' && LA32_373<='9')||(LA32_373>='A' && LA32_373<='Z')||LA32_373=='_'||(LA32_373>='a' && LA32_373<='z')) ) {s = 430;}
-
-                        else if ( (LA32_373=='\"') ) {s = 313;}
-
-                        else if ( ((LA32_373>='\u0000' && LA32_373<='!')||(LA32_373>='#' && LA32_373<=',')||(LA32_373>=':' && LA32_373<='@')||(LA32_373>='[' && LA32_373<='^')||LA32_373=='`'||(LA32_373>='{' && LA32_373<='\uFFFF')) ) {s = 100;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 54 : 
-                        int LA32_322 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA32_322>='\u0000' && LA32_322<='/')||(LA32_322>=':' && LA32_322<='\uFFFF')) ) {s = 100;}
-
-                        else if ( ((LA32_322>='0' && LA32_322<='9')) ) {s = 384;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 55 : 
-                        int LA32_384 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA32_384=='\"') ) {s = 318;}
-
-                        else if ( ((LA32_384>='0' && LA32_384<='9')) ) {s = 384;}
-
-                        else if ( ((LA32_384>='\u0000' && LA32_384<='!')||(LA32_384>='#' && LA32_384<='/')||(LA32_384>=':' && LA32_384<='\uFFFF')) ) {s = 100;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 56 : 
                         int LA32_243 = input.LA(1);
 
                         s = -1;
                         if ( (LA32_243=='\"') ) {s = 170;}
 
-                        else if ( ((LA32_243>='\u0000' && LA32_243<='!')||(LA32_243>='#' && LA32_243<=',')||(LA32_243>=':' && LA32_243<='@')||(LA32_243>='[' && LA32_243<='^')||LA32_243=='`'||(LA32_243>='{' && LA32_243<='\uFFFF')) ) {s = 100;}
+                        else if ( ((LA32_243>='\u0000' && LA32_243<='!')||(LA32_243>='#' && LA32_243<='.')||(LA32_243>=';' && LA32_243<='\uFFFF')) ) {s = 100;}
 
-                        else if ( ((LA32_243>='-' && LA32_243<='9')||(LA32_243>='A' && LA32_243<='Z')||LA32_243=='_'||(LA32_243>='a' && LA32_243<='z')) ) {s = 314;}
+                        else if ( (LA32_243=='/') ) {s = 317;}
+
+                        else if ( ((LA32_243>='0' && LA32_243<='9')) ) {s = 243;}
+
+                        else if ( (LA32_243==':') ) {s = 318;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 53 : 
+                        int LA32_91 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA32_91=='o') ) {s = 164;}
+
+                        else if ( ((LA32_91>='-' && LA32_91<='9')||(LA32_91>='A' && LA32_91<='Z')||LA32_91=='_'||(LA32_91>='a' && LA32_91<='n')||(LA32_91>='p' && LA32_91<='z')) ) {s = 165;}
+
+                        else if ( (LA32_91==':') ) {s = 166;}
+
+                        else if ( ((LA32_91>='\u0000' && LA32_91<=',')||(LA32_91>=';' && LA32_91<='@')||(LA32_91>='[' && LA32_91<='^')||LA32_91=='`'||(LA32_91>='{' && LA32_91<='\uFFFF')) ) {s = 100;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 54 : 
+                        int LA32_175 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA32_175=='-') ) {s = 169;}
+
+                        else if ( ((LA32_175>='0' && LA32_175<='9')) ) {s = 252;}
+
+                        else if ( (LA32_175=='\"') ) {s = 170;}
+
+                        else if ( ((LA32_175>='\u0000' && LA32_175<='!')||(LA32_175>='#' && LA32_175<=',')||(LA32_175>=';' && LA32_175<='\uFFFF')) ) {s = 100;}
+
+                        else if ( (LA32_175==':') ) {s = 171;}
+
+                        else if ( (LA32_175=='.') ) {s = 172;}
+
+                        else if ( (LA32_175=='/') ) {s = 173;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 55 : 
+                        int LA32_248 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA32_248>='0' && LA32_248<='9')) ) {s = 323;}
+
+                        else if ( (LA32_248=='\"') ) {s = 320;}
+
+                        else if ( (LA32_248=='.') ) {s = 321;}
+
+                        else if ( ((LA32_248>='\u0000' && LA32_248<='!')||(LA32_248>='#' && LA32_248<='-')||LA32_248=='/'||(LA32_248>=':' && LA32_248<='\uFFFF')) ) {s = 100;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 56 : 
+                        int LA32_242 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA32_242=='.') ) {s = 172;}
+
+                        else if ( (LA32_242=='-') ) {s = 169;}
+
+                        else if ( ((LA32_242>='0' && LA32_242<='9')) ) {s = 252;}
+
+                        else if ( (LA32_242=='\"') ) {s = 170;}
+
+                        else if ( ((LA32_242>='\u0000' && LA32_242<='!')||(LA32_242>='#' && LA32_242<=',')||(LA32_242>=';' && LA32_242<='\uFFFF')) ) {s = 100;}
+
+                        else if ( (LA32_242==':') ) {s = 171;}
+
+                        else if ( (LA32_242=='/') ) {s = 173;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 57 : 
-                        int LA32_164 = input.LA(1);
+                        int LA32_319 = input.LA(1);
 
                         s = -1;
-                        if ( (LA32_164=='\"') ) {s = 236;}
+                        if ( ((LA32_319>='0' && LA32_319<='9')) ) {s = 383;}
 
-                        else if ( (LA32_164==':') ) {s = 166;}
+                        else if ( (LA32_319=='\"') ) {s = 320;}
 
-                        else if ( ((LA32_164>='-' && LA32_164<='9')||(LA32_164>='A' && LA32_164<='Z')||LA32_164=='_'||(LA32_164>='a' && LA32_164<='z')) ) {s = 165;}
+                        else if ( (LA32_319=='.') ) {s = 321;}
 
-                        else if ( ((LA32_164>='\u0000' && LA32_164<='!')||(LA32_164>='#' && LA32_164<=',')||(LA32_164>=';' && LA32_164<='@')||(LA32_164>='[' && LA32_164<='^')||LA32_164=='`'||(LA32_164>='{' && LA32_164<='\uFFFF')) ) {s = 100;}
+                        else if ( ((LA32_319>='\u0000' && LA32_319<='!')||(LA32_319>='#' && LA32_319<='-')||LA32_319=='/'||(LA32_319>=':' && LA32_319<='\uFFFF')) ) {s = 100;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 58 : 
+                        int LA32_251 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA32_251=='-') ) {s = 169;}
+
+                        else if ( ((LA32_251>='0' && LA32_251<='9')) ) {s = 252;}
+
+                        else if ( (LA32_251=='\"') ) {s = 170;}
+
+                        else if ( ((LA32_251>='\u0000' && LA32_251<='!')||(LA32_251>='#' && LA32_251<=',')||(LA32_251>=';' && LA32_251<='\uFFFF')) ) {s = 100;}
+
+                        else if ( (LA32_251==':') ) {s = 171;}
+
+                        else if ( (LA32_251=='.') ) {s = 172;}
+
+                        else if ( (LA32_251=='/') ) {s = 173;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 59 : 
+                        int LA32_322 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA32_322>='0' && LA32_322<='5')) ) {s = 388;}
+
+                        else if ( (LA32_322=='\"') ) {s = 320;}
+
+                        else if ( ((LA32_322>='6' && LA32_322<='9')) ) {s = 389;}
+
+                        else if ( (LA32_322=='.') ) {s = 321;}
+
+                        else if ( ((LA32_322>='\u0000' && LA32_322<='!')||(LA32_322>='#' && LA32_322<='-')||LA32_322=='/'||(LA32_322>=':' && LA32_322<='\uFFFF')) ) {s = 100;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 60 : 
+                        int LA32_324 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA32_324=='\"') ) {s = 170;}
+
+                        else if ( ((LA32_324>='\u0000' && LA32_324<='!')||(LA32_324>='#' && LA32_324<=',')||(LA32_324>=':' && LA32_324<='@')||(LA32_324>='[' && LA32_324<='^')||LA32_324=='`'||(LA32_324>='{' && LA32_324<='\uFFFF')) ) {s = 100;}
+
+                        else if ( ((LA32_324>='-' && LA32_324<='9')||(LA32_324>='A' && LA32_324<='Z')||LA32_324=='_'||(LA32_324>='a' && LA32_324<='z')) ) {s = 324;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 61 : 
+                        int LA32_480 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA32_480>='0' && LA32_480<='9')) ) {s = 509;}
+
+                        else if ( (LA32_480==':') ) {s = 510;}
+
+                        else if ( ((LA32_480>='\u0000' && LA32_480<='/')||(LA32_480>=';' && LA32_480<='\uFFFF')) ) {s = 100;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 62 : 
+                        int LA32_481 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA32_481>='0' && LA32_481<='5')) ) {s = 511;}
+
+                        else if ( ((LA32_481>='6' && LA32_481<='9')) ) {s = 512;}
+
+                        else if ( (LA32_481==':') ) {s = 510;}
+
+                        else if ( ((LA32_481>='\u0000' && LA32_481<='/')||(LA32_481>=';' && LA32_481<='\uFFFF')) ) {s = 100;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 63 : 
+                        int LA32_169 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA32_169>='0' && LA32_169<='9')) ) {s = 243;}
+
+                        else if ( ((LA32_169>='\u0000' && LA32_169<='/')||(LA32_169>=':' && LA32_169<='\uFFFF')) ) {s = 100;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 64 : 
+                        int LA32_97 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA32_97=='^') ) {s = 98;}
+
+                        else if ( ((LA32_97>='A' && LA32_97<='Z')||LA32_97=='_'||(LA32_97>='a' && LA32_97<='z')) ) {s = 99;}
+
+                        else if ( ((LA32_97>='\u0000' && LA32_97<='@')||(LA32_97>='[' && LA32_97<=']')||LA32_97=='`'||(LA32_97>='{' && LA32_97<='\uFFFF')) ) {s = 100;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 65 : 
+                        int LA32_239 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA32_239>='\u0000' && LA32_239<='@')||(LA32_239>='[' && LA32_239<=']')||LA32_239=='`'||(LA32_239>='{' && LA32_239<='\uFFFF')) ) {s = 100;}
+
+                        else if ( (LA32_239=='^') ) {s = 240;}
+
+                        else if ( ((LA32_239>='A' && LA32_239<='Z')||LA32_239=='_'||(LA32_239>='a' && LA32_239<='z')) ) {s = 241;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 66 : 
+                        int LA32_95 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA32_95>='0' && LA32_95<='9')) ) {s = 175;}
+
+                        else if ( (LA32_95=='-') ) {s = 169;}
+
+                        else if ( (LA32_95=='\"') ) {s = 170;}
+
+                        else if ( ((LA32_95>='\u0000' && LA32_95<='!')||(LA32_95>='#' && LA32_95<=',')||(LA32_95>=';' && LA32_95<='\uFFFF')) ) {s = 100;}
+
+                        else if ( (LA32_95==':') ) {s = 171;}
+
+                        else if ( (LA32_95=='.') ) {s = 172;}
+
+                        else if ( (LA32_95=='/') ) {s = 173;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 67 : 
+                        int LA32_99 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA32_99>='-' && LA32_99<='9')||(LA32_99>='A' && LA32_99<='Z')||LA32_99=='_'||(LA32_99>='a' && LA32_99<='z')) ) {s = 165;}
+
+                        else if ( (LA32_99==':') ) {s = 166;}
+
+                        else if ( ((LA32_99>='\u0000' && LA32_99<=',')||(LA32_99>=';' && LA32_99<='@')||(LA32_99>='[' && LA32_99<='^')||LA32_99=='`'||(LA32_99>='{' && LA32_99<='\uFFFF')) ) {s = 100;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 68 : 
                         int LA32_166 = input.LA(1);
 
                         s = -1;
                         if ( ((LA32_166>='\u0000' && LA32_166<='-')||(LA32_166>='0' && LA32_166<='@')||(LA32_166>='[' && LA32_166<=']')||LA32_166=='`'||(LA32_166>='{' && LA32_166<='\uFFFF')) ) {s = 100;}
 
-                        else if ( (LA32_166=='.') ) {s = 237;}
+                        else if ( (LA32_166=='.') ) {s = 238;}
 
-                        else if ( (LA32_166=='/') ) {s = 238;}
+                        else if ( (LA32_166=='/') ) {s = 239;}
 
-                        else if ( (LA32_166=='^') ) {s = 239;}
+                        else if ( (LA32_166=='^') ) {s = 240;}
 
-                        else if ( ((LA32_166>='A' && LA32_166<='Z')||LA32_166=='_'||(LA32_166>='a' && LA32_166<='z')) ) {s = 240;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 59 : 
-                        int LA32_246 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA32_246=='/') ) {s = 169;}
-
-                        else if ( (LA32_246=='\"') ) {s = 170;}
-
-                        else if ( ((LA32_246>='0' && LA32_246<='9')) ) {s = 246;}
-
-                        else if ( ((LA32_246>='\u0000' && LA32_246<='!')||(LA32_246>='#' && LA32_246<='.')||(LA32_246>=':' && LA32_246<='\uFFFF')) ) {s = 100;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 60 : 
-                        int LA32_311 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA32_311==':') ) {s = 312;}
-
-                        else if ( (LA32_311=='\"') ) {s = 313;}
-
-                        else if ( ((LA32_311>='-' && LA32_311<='9')||(LA32_311>='A' && LA32_311<='Z')||LA32_311=='_'||(LA32_311>='a' && LA32_311<='z')) ) {s = 311;}
-
-                        else if ( ((LA32_311>='\u0000' && LA32_311<='!')||(LA32_311>='#' && LA32_311<=',')||(LA32_311>=';' && LA32_311<='@')||(LA32_311>='[' && LA32_311<='^')||LA32_311=='`'||(LA32_311>='{' && LA32_311<='\uFFFF')) ) {s = 100;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 61 : 
-                        int LA32_321 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA32_321=='\"') ) {s = 318;}
-
-                        else if ( ((LA32_321>='0' && LA32_321<='9')) ) {s = 384;}
-
-                        else if ( (LA32_321=='.') ) {s = 319;}
-
-                        else if ( ((LA32_321>='\u0000' && LA32_321<='!')||(LA32_321>='#' && LA32_321<='-')||LA32_321=='/'||(LA32_321>=':' && LA32_321<='\uFFFF')) ) {s = 100;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 62 : 
-                        int LA32_378 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA32_378=='\"') ) {s = 318;}
-
-                        else if ( ((LA32_378>='0' && LA32_378<='9')) ) {s = 384;}
-
-                        else if ( ((LA32_378>='\u0000' && LA32_378<='!')||(LA32_378>='#' && LA32_378<='-')||LA32_378=='/'||(LA32_378>=':' && LA32_378<='\uFFFF')) ) {s = 100;}
-
-                        else if ( (LA32_378=='.') ) {s = 319;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 63 : 
-                        int LA32_530 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA32_530>='0' && LA32_530<='9')) ) {s = 540;}
-
-                        else if ( ((LA32_530>='\u0000' && LA32_530<='/')||(LA32_530>=':' && LA32_530<='\uFFFF')) ) {s = 100;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 64 : 
-                        int LA32_540 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA32_540>='\u0000' && LA32_540<='/')||(LA32_540>=';' && LA32_540<='\uFFFF')) ) {s = 100;}
-
-                        else if ( (LA32_540==':') ) {s = 316;}
-
-                        else if ( ((LA32_540>='0' && LA32_540<='9')) ) {s = 540;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 65 : 
-                        int LA32_383 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA32_383=='\"') ) {s = 318;}
-
-                        else if ( ((LA32_383>='0' && LA32_383<='9')) ) {s = 384;}
-
-                        else if ( (LA32_383=='.') ) {s = 319;}
-
-                        else if ( ((LA32_383>='\u0000' && LA32_383<='!')||(LA32_383>='#' && LA32_383<='-')||LA32_383=='/'||(LA32_383>=':' && LA32_383<='\uFFFF')) ) {s = 100;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 66 : 
-                        int LA32_249 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA32_249>='0' && LA32_249<='9')) ) {s = 321;}
-
-                        else if ( (LA32_249=='\"') ) {s = 318;}
-
-                        else if ( (LA32_249=='.') ) {s = 319;}
-
-                        else if ( ((LA32_249>='\u0000' && LA32_249<='!')||(LA32_249>='#' && LA32_249<='-')||LA32_249=='/'||(LA32_249>=':' && LA32_249<='\uFFFF')) ) {s = 100;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 67 : 
-                        int LA32_377 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA32_377=='-') ) {s = 432;}
-
-                        else if ( ((LA32_377>='0' && LA32_377<='9')) ) {s = 377;}
-
-                        else if ( ((LA32_377>='\u0000' && LA32_377<=',')||(LA32_377>='.' && LA32_377<='/')||(LA32_377>=':' && LA32_377<='\uFFFF')) ) {s = 100;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 68 : 
-                        int LA32_432 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA32_432>='0' && LA32_432<='9')) ) {s = 470;}
-
-                        else if ( ((LA32_432>='\u0000' && LA32_432<='/')||(LA32_432>=':' && LA32_432<='\uFFFF')) ) {s = 100;}
+                        else if ( ((LA32_166>='A' && LA32_166<='Z')||LA32_166=='_'||(LA32_166>='a' && LA32_166<='z')) ) {s = 241;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 69 : 
-                        int LA32_436 = input.LA(1);
+                        int LA32_168 = input.LA(1);
 
                         s = -1;
-                        if ( (LA32_436=='.') ) {s = 434;}
+                        if ( ((LA32_168>='0' && LA32_168<='9')) ) {s = 242;}
 
-                        else if ( ((LA32_436>='\u0000' && LA32_436<='-')||(LA32_436>='/' && LA32_436<='\uFFFF')) ) {s = 100;}
+                        else if ( (LA32_168=='-') ) {s = 169;}
+
+                        else if ( (LA32_168=='\"') ) {s = 170;}
+
+                        else if ( ((LA32_168>='\u0000' && LA32_168<='!')||(LA32_168>='#' && LA32_168<=',')||(LA32_168>=';' && LA32_168<='\uFFFF')) ) {s = 100;}
+
+                        else if ( (LA32_168==':') ) {s = 171;}
+
+                        else if ( (LA32_168=='.') ) {s = 172;}
+
+                        else if ( (LA32_168=='/') ) {s = 173;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 70 : 
-                        int LA32_317 = input.LA(1);
+                        int LA32_174 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA32_317>='0' && LA32_317<='9')) ) {s = 378;}
+                        if ( ((LA32_174>='0' && LA32_174<='5')) ) {s = 251;}
 
-                        else if ( (LA32_317=='\"') ) {s = 318;}
+                        else if ( (LA32_174=='-') ) {s = 169;}
 
-                        else if ( (LA32_317=='.') ) {s = 319;}
+                        else if ( ((LA32_174>='6' && LA32_174<='9')) ) {s = 252;}
 
-                        else if ( ((LA32_317>='\u0000' && LA32_317<='!')||(LA32_317>='#' && LA32_317<='-')||LA32_317=='/'||(LA32_317>=':' && LA32_317<='\uFFFF')) ) {s = 100;}
+                        else if ( (LA32_174=='\"') ) {s = 170;}
+
+                        else if ( ((LA32_174>='\u0000' && LA32_174<='!')||(LA32_174>='#' && LA32_174<=',')||(LA32_174>=';' && LA32_174<='\uFFFF')) ) {s = 100;}
+
+                        else if ( (LA32_174==':') ) {s = 171;}
+
+                        else if ( (LA32_174=='.') ) {s = 172;}
+
+                        else if ( (LA32_174=='/') ) {s = 173;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 71 : 
-                        int LA32_471 = input.LA(1);
+                        int LA32_532 = input.LA(1);
 
                         s = -1;
-                        if ( (LA32_471=='.') ) {s = 434;}
+                        if ( ((LA32_532>='\u0000' && LA32_532<=',')||(LA32_532>='.' && LA32_532<='/')||(LA32_532>=';' && LA32_532<='\uFFFF')) ) {s = 100;}
 
-                        else if ( ((LA32_471>='\u0000' && LA32_471<='-')||(LA32_471>='/' && LA32_471<='\uFFFF')) ) {s = 100;}
+                        else if ( (LA32_532==':') ) {s = 171;}
+
+                        else if ( ((LA32_532>='0' && LA32_532<='9')) ) {s = 532;}
+
+                        else if ( (LA32_532=='-') ) {s = 549;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 72 : 
-                        int LA32_320 = input.LA(1);
+                        int LA32_96 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA32_320>='0' && LA32_320<='5')) ) {s = 383;}
+                        if ( ((LA32_96>='\u0000' && LA32_96<='.')||(LA32_96>='0' && LA32_96<='@')||(LA32_96>='[' && LA32_96<=']')||LA32_96=='`'||(LA32_96>='{' && LA32_96<='\uFFFF')) ) {s = 100;}
 
-                        else if ( (LA32_320=='\"') ) {s = 318;}
+                        else if ( (LA32_96=='/') ) {s = 97;}
 
-                        else if ( ((LA32_320>='6' && LA32_320<='9')) ) {s = 384;}
+                        else if ( (LA32_96=='^') ) {s = 98;}
 
-                        else if ( (LA32_320=='.') ) {s = 319;}
-
-                        else if ( ((LA32_320>='\u0000' && LA32_320<='!')||(LA32_320>='#' && LA32_320<='-')||LA32_320=='/'||(LA32_320>=':' && LA32_320<='\uFFFF')) ) {s = 100;}
+                        else if ( ((LA32_96>='A' && LA32_96<='Z')||LA32_96=='_'||(LA32_96>='a' && LA32_96<='z')) ) {s = 99;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 73 : 
-                        int LA32_316 = input.LA(1);
+                        int LA32_246 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA32_316>='\u0000' && LA32_316<='/')||(LA32_316>=':' && LA32_316<='\uFFFF')) ) {s = 100;}
+                        if ( ((LA32_246>='0' && LA32_246<='9')) ) {s = 319;}
 
-                        else if ( ((LA32_316>='0' && LA32_316<='9')) ) {s = 377;}
+                        else if ( (LA32_246=='\"') ) {s = 320;}
+
+                        else if ( (LA32_246=='.') ) {s = 321;}
+
+                        else if ( ((LA32_246>='\u0000' && LA32_246<='!')||(LA32_246>='#' && LA32_246<='-')||LA32_246=='/'||(LA32_246>=':' && LA32_246<='\uFFFF')) ) {s = 100;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 74 : 
-                        int LA32_475 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA32_475>='\u0000' && LA32_475<='-')||(LA32_475>='/' && LA32_475<='\uFFFF')) ) {s = 100;}
-
-                        else if ( (LA32_475=='.') ) {s = 434;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 75 : 
-                        int LA32_30 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA32_30>='\u0000' && LA32_30<='\uFFFF')) ) {s = 100;}
-
-                        else s = 32;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 76 : 
                         int LA32_247 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA32_247>='0' && LA32_247<='9')) ) {s = 317;}
+                        if ( ((LA32_247>='0' && LA32_247<='5')) ) {s = 322;}
 
-                        else if ( (LA32_247=='\"') ) {s = 318;}
+                        else if ( ((LA32_247>='6' && LA32_247<='9')) ) {s = 323;}
 
-                        else if ( (LA32_247=='.') ) {s = 319;}
+                        else if ( (LA32_247=='\"') ) {s = 320;}
+
+                        else if ( (LA32_247=='.') ) {s = 321;}
 
                         else if ( ((LA32_247>='\u0000' && LA32_247<='!')||(LA32_247>='#' && LA32_247<='-')||LA32_247=='/'||(LA32_247>=':' && LA32_247<='\uFFFF')) ) {s = 100;}
 
                         if ( s>=0 ) return s;
                         break;
-                    case 77 : 
-                        int LA32_248 = input.LA(1);
+                    case 75 : 
+                        int LA32_478 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA32_248>='0' && LA32_248<='5')) ) {s = 320;}
+                        if ( (LA32_478=='\"') ) {s = 170;}
 
-                        else if ( ((LA32_248>='6' && LA32_248<='9')) ) {s = 321;}
+                        else if ( ((LA32_478>='\u0000' && LA32_478<='!')||(LA32_478>='#' && LA32_478<='.')||(LA32_478>=':' && LA32_478<='\uFFFF')) ) {s = 100;}
 
-                        else if ( (LA32_248=='\"') ) {s = 318;}
+                        else if ( (LA32_478=='/') ) {s = 317;}
 
-                        else if ( (LA32_248=='.') ) {s = 319;}
+                        else if ( ((LA32_478>='0' && LA32_478<='9')) ) {s = 478;}
 
-                        else if ( ((LA32_248>='\u0000' && LA32_248<='!')||(LA32_248>='#' && LA32_248<='-')||LA32_248=='/'||(LA32_248>=':' && LA32_248<='\uFFFF')) ) {s = 100;}
+                        if ( s>=0 ) return s;
+                        break;
+                    case 76 : 
+                        int LA32_325 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA32_325>='\u0000' && LA32_325<='/')||(LA32_325>=':' && LA32_325<='\uFFFF')) ) {s = 100;}
+
+                        else if ( ((LA32_325>='0' && LA32_325<='9')) ) {s = 389;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 77 : 
+                        int LA32_389 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA32_389=='\"') ) {s = 320;}
+
+                        else if ( ((LA32_389>='0' && LA32_389<='9')) ) {s = 389;}
+
+                        else if ( ((LA32_389>='\u0000' && LA32_389<='!')||(LA32_389>='#' && LA32_389<='/')||(LA32_389>=':' && LA32_389<='\uFFFF')) ) {s = 100;}
 
                         if ( s>=0 ) return s;
                         break;
