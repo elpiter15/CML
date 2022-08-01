@@ -68,6 +68,9 @@ class DockerComposeFormatter extends AbstractFormatter2 {
 		for (port : service.ports) {
 			port.format
 		}
+		for (env : service.environment) {
+			env.format
+		}
 		
 		service.prepend[space="\n\t"]
 		service.regionFor.keyword(":").prepend[noSpace];
@@ -79,6 +82,7 @@ class DockerComposeFormatter extends AbstractFormatter2 {
 		service.regionFor.keyword("restart:").prepend[space="\n\t\t"].append[space=" "];
 		service.regionFor.keyword("init:").prepend[space="\n\t\t"].append[space=" "];
 		service.regionFor.keyword("read_only:").prepend[space="\n\t\t"].append[space=" "];
+		service.regionFor.keyword("environment:").prepend[space="\n\t\t"];
 		service.regionFor.keyword("devices:").prepend[space="\n\t\t"];
 		service.regionFor.keyword("dns:").prepend[space="\n\t\t"];
 		service.regionFor.keyword("ports:").prepend[space="\n\t\t"];
@@ -91,6 +95,24 @@ class DockerComposeFormatter extends AbstractFormatter2 {
 		
 		for (k : service.regionFor.keywords("-")) {
 			k.prepend[space="\n\t\t\t"].append[space=" "];
+		}
+	}
+	
+	def dispatch void format(EnvironmentVariable env, extension IFormattableDocument document) {
+		
+		env.prepend[space="\n\t\t\t"];
+		
+		if (env.regionFor.keyword("-") !== null) {
+			if (env.regionFor.keyword("-").offset == env.allSemanticRegions.get(0).offset) {
+				env.regionFor.keyword("=").prepend[noSpace].append[noSpace];
+				env.regionFor.keyword("-").append[space=" "];
+			}
+			else {
+				env.regionFor.keyword(":").prepend[noSpace].append[space=" "];
+			}
+		}
+		else {
+			env.regionFor.keyword(":").prepend[noSpace].append[space=" "];
 		}
 	}
 	

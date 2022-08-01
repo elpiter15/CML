@@ -255,6 +255,8 @@ public class DockercomposeValidator extends EObjectValidator {
 				return validatePort((Port)value, diagnostics, context);
 			case DockercomposePackage.LINK:
 				return validateLink((Link)value, diagnostics, context);
+			case DockercomposePackage.ENVIRONMENT_VARIABLE:
+				return validateEnvironmentVariable((EnvironmentVariable)value, diagnostics, context);
 			case DockercomposePackage.RESTART_POLICY:
 				return validateRestartPolicy((RestartPolicy)value, diagnostics, context);
 			case DockercomposePackage.ACCESS_MODE:
@@ -722,6 +724,15 @@ public class DockercomposeValidator extends EObjectValidator {
 	 */
 	public boolean validateLink(Link link, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(link, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEnvironmentVariable(EnvironmentVariable environmentVariable, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(environmentVariable, diagnostics, context);
 	}
 
 	/**

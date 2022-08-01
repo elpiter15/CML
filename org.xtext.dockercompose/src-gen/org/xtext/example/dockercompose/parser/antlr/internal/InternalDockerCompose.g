@@ -456,20 +456,19 @@ ruleService returns [EObject current=null]
 								}
 								(
 									(
+										lv_command_11_0=RULE_ID
 										{
-											newCompositeNode(grammarAccess.getServiceAccess().getCommandEStringParserRuleCall_3_2_1_0());
+											newLeafNode(lv_command_11_0, grammarAccess.getServiceAccess().getCommandIDTerminalRuleCall_3_2_1_0());
 										}
-										lv_command_11_0=ruleEString
 										{
 											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getServiceRule());
+												$current = createModelElement(grammarAccess.getServiceRule());
 											}
-											set(
+											setWithLastConsumed(
 												$current,
 												"command",
 												lv_command_11_0,
-												"org.xtext.example.dockercompose.DockerCompose.EString");
-											afterParserOrEnumRuleCall();
+												"org.xtext.example.dockercompose.DockerCompose.ID");
 										}
 									)
 								)
@@ -954,21 +953,77 @@ ruleService returns [EObject current=null]
 					{
 						getUnorderedGroupHelper().select(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 13);
 					}
-								({true}?=>(otherlv_43='devices:'
+								({true}?=>(otherlv_43='environment:'
 								{
-									newLeafNode(otherlv_43, grammarAccess.getServiceAccess().getDevicesKeyword_3_13_0());
+									newLeafNode(otherlv_43, grammarAccess.getServiceAccess().getEnvironmentKeyword_3_13_0());
 								}
 								(
-									otherlv_44='-'
+									(
+										(
+											{
+												newCompositeNode(grammarAccess.getServiceAccess().getEnvironmentEnvironmentVariableMapParserRuleCall_3_13_1_0_0());
+											}
+											lv_environment_44_0=ruleEnvironmentVariableMap
+											{
+												if ($current==null) {
+													$current = createModelElementForParent(grammarAccess.getServiceRule());
+												}
+												add(
+													$current,
+													"environment",
+													lv_environment_44_0,
+													"org.xtext.example.dockercompose.DockerCompose.EnvironmentVariableMap");
+												afterParserOrEnumRuleCall();
+											}
+										)
+									)+
+									    |
+									(
+										(
+											{
+												newCompositeNode(grammarAccess.getServiceAccess().getEnvironmentEnvironmentVariableListParserRuleCall_3_13_1_1_0());
+											}
+											lv_environment_45_0=ruleEnvironmentVariableList
+											{
+												if ($current==null) {
+													$current = createModelElementForParent(grammarAccess.getServiceRule());
+												}
+												add(
+													$current,
+													"environment",
+													lv_environment_45_0,
+													"org.xtext.example.dockercompose.DockerCompose.EnvironmentVariableList");
+												afterParserOrEnumRuleCall();
+											}
+										)
+									)+
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getServiceAccess().getUnorderedGroup_3());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 14)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 14);
+					}
+								({true}?=>(otherlv_46='devices:'
+								{
+									newLeafNode(otherlv_46, grammarAccess.getServiceAccess().getDevicesKeyword_3_14_0());
+								}
+								(
+									otherlv_47='-'
 									{
-										newLeafNode(otherlv_44, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_13_1_0());
+										newLeafNode(otherlv_47, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_14_1_0());
 									}
 									(
 										(
 											{
-												newCompositeNode(grammarAccess.getServiceAccess().getDevicesDeviceParserRuleCall_3_13_1_1_0());
+												newCompositeNode(grammarAccess.getServiceAccess().getDevicesDeviceParserRuleCall_3_14_1_1_0());
 											}
-											lv_devices_45_0=ruleDevice
+											lv_devices_48_0=ruleDevice
 											{
 												if ($current==null) {
 													$current = createModelElementForParent(grammarAccess.getServiceRule());
@@ -976,7 +1031,7 @@ ruleService returns [EObject current=null]
 												add(
 													$current,
 													"devices",
-													lv_devices_45_0,
+													lv_devices_48_0,
 													"org.xtext.example.dockercompose.DockerCompose.Device");
 												afterParserOrEnumRuleCall();
 											}
@@ -990,26 +1045,26 @@ ruleService returns [EObject current=null]
 				)
 			)|
 			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 14)}?=>(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 15)}?=>(
 					{
-						getUnorderedGroupHelper().select(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 14);
+						getUnorderedGroupHelper().select(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 15);
 					}
-								({true}?=>(otherlv_46='dns:'
+								({true}?=>(otherlv_49='dns:'
 								{
-									newLeafNode(otherlv_46, grammarAccess.getServiceAccess().getDnsKeyword_3_14_0());
+									newLeafNode(otherlv_49, grammarAccess.getServiceAccess().getDnsKeyword_3_15_0());
 								}
 								(
 									(
-										otherlv_47='-'
+										otherlv_50='-'
 										{
-											newLeafNode(otherlv_47, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_14_1_0_0());
+											newLeafNode(otherlv_50, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_15_1_0_0());
 										}
 										(
 											(
 												{
-													newCompositeNode(grammarAccess.getServiceAccess().getDnsDNSParserRuleCall_3_14_1_0_1_0());
+													newCompositeNode(grammarAccess.getServiceAccess().getDnsDNSParserRuleCall_3_15_1_0_1_0());
 												}
-												lv_dns_48_0=ruleDNS
+												lv_dns_51_0=ruleDNS
 												{
 													if ($current==null) {
 														$current = createModelElementForParent(grammarAccess.getServiceRule());
@@ -1017,7 +1072,7 @@ ruleService returns [EObject current=null]
 													add(
 														$current,
 														"dns",
-														lv_dns_48_0,
+														lv_dns_51_0,
 														"org.xtext.example.dockercompose.DockerCompose.DNS");
 													afterParserOrEnumRuleCall();
 												}
@@ -1028,9 +1083,9 @@ ruleService returns [EObject current=null]
 									(
 										(
 											{
-												newCompositeNode(grammarAccess.getServiceAccess().getDnsDNSParserRuleCall_3_14_1_1_0());
+												newCompositeNode(grammarAccess.getServiceAccess().getDnsDNSParserRuleCall_3_15_1_1_0());
 											}
-											lv_dns_49_0=ruleDNS
+											lv_dns_52_0=ruleDNS
 											{
 												if ($current==null) {
 													$current = createModelElementForParent(grammarAccess.getServiceRule());
@@ -1038,7 +1093,7 @@ ruleService returns [EObject current=null]
 												add(
 													$current,
 													"dns",
-													lv_dns_49_0,
+													lv_dns_52_0,
 													"org.xtext.example.dockercompose.DockerCompose.DNS");
 												afterParserOrEnumRuleCall();
 											}
@@ -1052,25 +1107,25 @@ ruleService returns [EObject current=null]
 				)
 			)|
 			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 15)}?=>(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 16)}?=>(
 					{
-						getUnorderedGroupHelper().select(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 15);
+						getUnorderedGroupHelper().select(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 16);
 					}
-								({true}?=>(otherlv_50='ports:'
+								({true}?=>(otherlv_53='ports:'
 								{
-									newLeafNode(otherlv_50, grammarAccess.getServiceAccess().getPortsKeyword_3_15_0());
+									newLeafNode(otherlv_53, grammarAccess.getServiceAccess().getPortsKeyword_3_16_0());
 								}
 								(
-									otherlv_51='-'
+									otherlv_54='-'
 									{
-										newLeafNode(otherlv_51, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_15_1_0());
+										newLeafNode(otherlv_54, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_16_1_0());
 									}
 									(
 										(
 											{
-												newCompositeNode(grammarAccess.getServiceAccess().getPortsPortParserRuleCall_3_15_1_1_0());
+												newCompositeNode(grammarAccess.getServiceAccess().getPortsPortParserRuleCall_3_16_1_1_0());
 											}
-											lv_ports_52_0=rulePort
+											lv_ports_55_0=rulePort
 											{
 												if ($current==null) {
 													$current = createModelElementForParent(grammarAccess.getServiceRule());
@@ -1078,7 +1133,7 @@ ruleService returns [EObject current=null]
 												add(
 													$current,
 													"ports",
-													lv_ports_52_0,
+													lv_ports_55_0,
 													"org.xtext.example.dockercompose.DockerCompose.Port");
 												afterParserOrEnumRuleCall();
 											}
@@ -1099,6 +1154,146 @@ ruleService returns [EObject current=null]
 				  getUnorderedGroupHelper().leave(grammarAccess.getServiceAccess().getUnorderedGroup_3());
 				}
 		)
+	)
+;
+
+// Entry rule entryRuleEnvironmentVariableMap
+entryRuleEnvironmentVariableMap returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getEnvironmentVariableMapRule()); }
+	iv_ruleEnvironmentVariableMap=ruleEnvironmentVariableMap
+	{ $current=$iv_ruleEnvironmentVariableMap.current; }
+	EOF;
+
+// Rule EnvironmentVariableMap
+ruleEnvironmentVariableMap returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getEnvironmentVariableMapAccess().getEnvironmentVariableAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getEnvironmentVariableMapAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getEnvironmentVariableMapRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.xtext.example.dockercompose.DockerCompose.ID");
+				}
+			)
+		)
+		otherlv_2=':'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getEnvironmentVariableMapAccess().getColonKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getEnvironmentVariableMapAccess().getValueEStringParserRuleCall_3_0());
+				}
+				lv_value_3_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getEnvironmentVariableMapRule());
+					}
+					set(
+						$current,
+						"value",
+						lv_value_3_0,
+						"org.xtext.example.dockercompose.DockerCompose.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+	)
+;
+
+// Entry rule entryRuleEnvironmentVariableList
+entryRuleEnvironmentVariableList returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getEnvironmentVariableListRule()); }
+	iv_ruleEnvironmentVariableList=ruleEnvironmentVariableList
+	{ $current=$iv_ruleEnvironmentVariableList.current; }
+	EOF;
+
+// Rule EnvironmentVariableList
+ruleEnvironmentVariableList returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getEnvironmentVariableListAccess().getEnvironmentVariableAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='-'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getEnvironmentVariableListAccess().getHyphenMinusKeyword_1());
+		}
+		(
+			(
+				lv_name_2_0=RULE_ID
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getEnvironmentVariableListAccess().getNameIDTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getEnvironmentVariableListRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_2_0,
+						"org.xtext.example.dockercompose.DockerCompose.ID");
+				}
+			)
+		)
+		(
+			otherlv_3='='
+			{
+				newLeafNode(otherlv_3, grammarAccess.getEnvironmentVariableListAccess().getEqualsSignKeyword_3_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getEnvironmentVariableListAccess().getValueEStringParserRuleCall_3_1_0());
+					}
+					lv_value_4_0=ruleEString
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getEnvironmentVariableListRule());
+						}
+						set(
+							$current,
+							"value",
+							lv_value_4_0,
+							"org.xtext.example.dockercompose.DockerCompose.EString");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
 	)
 ;
 
@@ -1206,24 +1401,41 @@ ruleImage returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 	leaveRule();
 }:
 	(
-		{
-			newCompositeNode(grammarAccess.getImageAccess().getEStringParserRuleCall_0());
-		}
-		this_EString_0=ruleEString
-		{
-			$current.merge(this_EString_0);
-		}
-		{
-			afterParserOrEnumRuleCall();
-		}
-		    |
 		(
-			this_ID_1=RULE_ID
+			this_ID_0=RULE_ID
 			{
-				$current.merge(this_ID_1);
+				$current.merge(this_ID_0);
 			}
 			{
-				newLeafNode(this_ID_1, grammarAccess.getImageAccess().getIDTerminalRuleCall_1_0());
+				newLeafNode(this_ID_0, grammarAccess.getImageAccess().getIDTerminalRuleCall_0_0());
+			}
+			(
+				kw=':'
+				{
+					$current.merge(kw);
+					newLeafNode(kw, grammarAccess.getImageAccess().getColonKeyword_0_1_0());
+				}
+				this_ID_2=RULE_ID
+				{
+					$current.merge(this_ID_2);
+				}
+				{
+					newLeafNode(this_ID_2, grammarAccess.getImageAccess().getIDTerminalRuleCall_0_1_1());
+				}
+			)*
+			kw='/'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getImageAccess().getSolidusKeyword_0_2());
+			}
+		)?
+		(
+			this_ID_4=RULE_ID
+			{
+				$current.merge(this_ID_4);
+			}
+			{
+				newLeafNode(this_ID_4, grammarAccess.getImageAccess().getIDTerminalRuleCall_1_0());
 			}
 			(
 				kw=':'
@@ -1231,15 +1443,72 @@ ruleImage returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 					$current.merge(kw);
 					newLeafNode(kw, grammarAccess.getImageAccess().getColonKeyword_1_1_0());
 				}
-				this_ID_3=RULE_ID
+				this_ID_6=RULE_ID
 				{
-					$current.merge(this_ID_3);
+					$current.merge(this_ID_6);
 				}
 				{
-					newLeafNode(this_ID_3, grammarAccess.getImageAccess().getIDTerminalRuleCall_1_1_1());
+					newLeafNode(this_ID_6, grammarAccess.getImageAccess().getIDTerminalRuleCall_1_1_1());
 				}
-			)+
-		)
+			)*
+			kw='/'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getImageAccess().getSolidusKeyword_1_2());
+			}
+		)?
+		this_ID_8=RULE_ID
+		{
+			$current.merge(this_ID_8);
+		}
+		{
+			newLeafNode(this_ID_8, grammarAccess.getImageAccess().getIDTerminalRuleCall_2());
+		}
+		(
+			(
+				kw=':'
+				{
+					$current.merge(kw);
+					newLeafNode(kw, grammarAccess.getImageAccess().getColonKeyword_3_0_0());
+				}
+				this_ID_10=RULE_ID
+				{
+					$current.merge(this_ID_10);
+				}
+				{
+					newLeafNode(this_ID_10, grammarAccess.getImageAccess().getIDTerminalRuleCall_3_0_1());
+				}
+			)
+			    |
+			(
+				kw='@'
+				{
+					$current.merge(kw);
+					newLeafNode(kw, grammarAccess.getImageAccess().getCommercialAtKeyword_3_1_0());
+				}
+				this_ID_12=RULE_ID
+				{
+					$current.merge(this_ID_12);
+				}
+				{
+					newLeafNode(this_ID_12, grammarAccess.getImageAccess().getIDTerminalRuleCall_3_1_1());
+				}
+				(
+					kw=':'
+					{
+						$current.merge(kw);
+						newLeafNode(kw, grammarAccess.getImageAccess().getColonKeyword_3_1_2_0());
+					}
+					this_ID_14=RULE_ID
+					{
+						$current.merge(this_ID_14);
+					}
+					{
+						newLeafNode(this_ID_14, grammarAccess.getImageAccess().getIDTerminalRuleCall_3_1_2_1());
+					}
+				)*
+			)
+		)?
 	)
 ;
 
@@ -4307,28 +4576,184 @@ rulePATH returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 }:
 	(
 		(
-			kw='.'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getPATHAccess().getFullStopKeyword_0());
-			}
-		)?
+			(
+				(
+					this_ID_0=RULE_ID
+					{
+						$current.merge(this_ID_0);
+					}
+					{
+						newLeafNode(this_ID_0, grammarAccess.getPATHAccess().getIDTerminalRuleCall_0_0_0_0());
+					}
+					(
+						kw='.'
+						{
+							$current.merge(kw);
+							newLeafNode(kw, grammarAccess.getPATHAccess().getFullStopKeyword_0_0_0_1_0());
+						}
+						this_ID_2=RULE_ID
+						{
+							$current.merge(this_ID_2);
+						}
+						{
+							newLeafNode(this_ID_2, grammarAccess.getPATHAccess().getIDTerminalRuleCall_0_0_0_1_1());
+						}
+					)*
+				)
+				    |
+				kw='.'
+				{
+					$current.merge(kw);
+					newLeafNode(kw, grammarAccess.getPATHAccess().getFullStopKeyword_0_0_1());
+				}
+				    |
+				kw='..'
+				{
+					$current.merge(kw);
+					newLeafNode(kw, grammarAccess.getPATHAccess().getFullStopFullStopKeyword_0_0_2());
+				}
+			)
+			(
+				kw='/'
+				{
+					$current.merge(kw);
+					newLeafNode(kw, grammarAccess.getPATHAccess().getSolidusKeyword_0_1_0());
+				}
+				(
+					(
+						this_ID_6=RULE_ID
+						{
+							$current.merge(this_ID_6);
+						}
+						{
+							newLeafNode(this_ID_6, grammarAccess.getPATHAccess().getIDTerminalRuleCall_0_1_1_0_0());
+						}
+						(
+							kw='.'
+							{
+								$current.merge(kw);
+								newLeafNode(kw, grammarAccess.getPATHAccess().getFullStopKeyword_0_1_1_0_1_0());
+							}
+							this_ID_8=RULE_ID
+							{
+								$current.merge(this_ID_8);
+							}
+							{
+								newLeafNode(this_ID_8, grammarAccess.getPATHAccess().getIDTerminalRuleCall_0_1_1_0_1_1());
+							}
+						)*
+					)
+					    |
+					kw='.'
+					{
+						$current.merge(kw);
+						newLeafNode(kw, grammarAccess.getPATHAccess().getFullStopKeyword_0_1_1_1());
+					}
+					    |
+					kw='..'
+					{
+						$current.merge(kw);
+						newLeafNode(kw, grammarAccess.getPATHAccess().getFullStopFullStopKeyword_0_1_1_2());
+					}
+				)
+			)*
+			(
+				kw='/'
+				{
+					$current.merge(kw);
+					newLeafNode(kw, grammarAccess.getPATHAccess().getSolidusKeyword_0_2());
+				}
+			)?
+		)
+		    |
 		(
 			kw='/'
 			{
 				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getPATHAccess().getSolidusKeyword_1());
+				newLeafNode(kw, grammarAccess.getPATHAccess().getSolidusKeyword_1_0());
 			}
-		)?
-		(
-			this_ID_2=RULE_ID
-			{
-				$current.merge(this_ID_2);
-			}
-			{
-				newLeafNode(this_ID_2, grammarAccess.getPATHAccess().getIDTerminalRuleCall_2());
-			}
-		)*
+			(
+				(
+					(
+						this_ID_13=RULE_ID
+						{
+							$current.merge(this_ID_13);
+						}
+						{
+							newLeafNode(this_ID_13, grammarAccess.getPATHAccess().getIDTerminalRuleCall_1_1_0_0_0());
+						}
+						(
+							kw='.'
+							{
+								$current.merge(kw);
+								newLeafNode(kw, grammarAccess.getPATHAccess().getFullStopKeyword_1_1_0_0_1_0());
+							}
+							this_ID_15=RULE_ID
+							{
+								$current.merge(this_ID_15);
+							}
+							{
+								newLeafNode(this_ID_15, grammarAccess.getPATHAccess().getIDTerminalRuleCall_1_1_0_0_1_1());
+							}
+						)*
+					)
+					    |
+					kw='.'
+					{
+						$current.merge(kw);
+						newLeafNode(kw, grammarAccess.getPATHAccess().getFullStopKeyword_1_1_0_1());
+					}
+					    |
+					kw='..'
+					{
+						$current.merge(kw);
+						newLeafNode(kw, grammarAccess.getPATHAccess().getFullStopFullStopKeyword_1_1_0_2());
+					}
+				)
+				kw='/'
+				{
+					$current.merge(kw);
+					newLeafNode(kw, grammarAccess.getPATHAccess().getSolidusKeyword_1_1_1());
+				}
+			)*
+			(
+				(
+					this_ID_19=RULE_ID
+					{
+						$current.merge(this_ID_19);
+					}
+					{
+						newLeafNode(this_ID_19, grammarAccess.getPATHAccess().getIDTerminalRuleCall_1_2_0_0());
+					}
+					(
+						kw='.'
+						{
+							$current.merge(kw);
+							newLeafNode(kw, grammarAccess.getPATHAccess().getFullStopKeyword_1_2_0_1_0());
+						}
+						this_ID_21=RULE_ID
+						{
+							$current.merge(this_ID_21);
+						}
+						{
+							newLeafNode(this_ID_21, grammarAccess.getPATHAccess().getIDTerminalRuleCall_1_2_0_1_1());
+						}
+					)*
+				)
+				    |
+				kw='.'
+				{
+					$current.merge(kw);
+					newLeafNode(kw, grammarAccess.getPATHAccess().getFullStopKeyword_1_2_1());
+				}
+				    |
+				kw='..'
+				{
+					$current.merge(kw);
+					newLeafNode(kw, grammarAccess.getPATHAccess().getFullStopFullStopKeyword_1_2_2());
+				}
+			)?
+		)
 	)
 ;
 
@@ -4872,15 +5297,17 @@ ruleCondition returns [Enumerator current=null]
 	)
 ;
 
-RULE_VERSION : '"' RULE_INT '.' RULE_INT '"';
+RULE_VERSION : '"' ('1'|'2'|'2.' '1'..'9'|'3'|'3.' '1'..'9') '"';
 
 RULE_QUOTED_INT : '"' '"';
 
 RULE_PORT_DEF : '"' (((('0'..'9'|'0'..'9' '0'..'9'|'1' '0'..'9' '0'..'9'|'2' '0'..'5' '0'..'5') '.' ('0'..'9'|'0'..'9' '0'..'9'|'1' '0'..'9' '0'..'9'|'2' '0'..'5' '0'..'5') '.' ('0'..'9'|'0'..'9' '0'..'9'|'1' '0'..'9' '0'..'9'|'2' '0'..'5' '0'..'5') '.' ('0'..'9'|'0'..'9' '0'..'9'|'1' '0'..'9' '0'..'9'|'2' '0'..'5' '0'..'5') ':')? RULE_INT '-' RULE_INT ':')? RULE_INT '-' RULE_INT ('/' RULE_ID)?|((('0'..'9'|'0'..'9' '0'..'9'|'1' '0'..'9' '0'..'9'|'2' '0'..'5' '0'..'5') '.' ('0'..'9'|'0'..'9' '0'..'9'|'1' '0'..'9' '0'..'9'|'2' '0'..'5' '0'..'5') '.' ('0'..'9'|'0'..'9' '0'..'9'|'1' '0'..'9' '0'..'9'|'2' '0'..'5' '0'..'5') '.' ('0'..'9'|'0'..'9' '0'..'9'|'1' '0'..'9' '0'..'9'|'2' '0'..'5' '0'..'5') ':')? RULE_INT ':')? RULE_INT ('/' RULE_ID)?) '"';
 
-RULE_DEVICE_DEF : '"' '.'? '/'? RULE_ID ':' '.'? '/'? RULE_ID (':' RULE_ID)? '"';
+RULE_DEVICE_DEF : '"' ((RULE_ID ('.' RULE_ID)*|'.'|'..') ('/' (RULE_ID ('.' RULE_ID)*|'.'|'..'))* '/'?|'/' ((RULE_ID ('.' RULE_ID)*|'.'|'..') '/')* (RULE_ID ('.' RULE_ID)*|'.'|'..')?) ':' ((RULE_ID ('.' RULE_ID)*|'.'|'..') ('/' (RULE_ID ('.' RULE_ID)*|'.'|'..'))* '/'?|'/' ((RULE_ID ('.' RULE_ID)*|'.'|'..') '/')* (RULE_ID ('.' RULE_ID)*|'.'|'..')?) (':' RULE_PERMISSION)? '"';
 
-RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'-'|'/'|'.'|'0'..'9')*;
+fragment RULE_PERMISSION : ('r'|'w'|'m'|'rw'|'wr'|'rm'|'mr'|'mw'|'wm'|'rwm'|'rmw'|'wrm'|'wmr'|'mrw'|'mwr');
+
+RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'-'|'0'..'9')*;
 
 RULE_INT : ('0'..'9')+;
 

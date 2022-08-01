@@ -217,6 +217,12 @@ public class DockercomposeSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case DockercomposePackage.ENVIRONMENT_VARIABLE: {
+				EnvironmentVariable environmentVariable = (EnvironmentVariable)theEObject;
+				T result = caseEnvironmentVariable(environmentVariable);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -593,6 +599,21 @@ public class DockercomposeSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseLink(Link object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Environment Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Environment Variable</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEnvironmentVariable(EnvironmentVariable object) {
 		return null;
 	}
 

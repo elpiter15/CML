@@ -82,6 +82,7 @@ public class DockercomposeFactoryImpl extends EFactoryImpl implements Dockercomp
 			case DockercomposePackage.IPAM_CONFIG: return createIPAMConfig();
 			case DockercomposePackage.PORT: return createPort();
 			case DockercomposePackage.LINK: return createLink();
+			case DockercomposePackage.ENVIRONMENT_VARIABLE: return createEnvironmentVariable();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -406,6 +407,17 @@ public class DockercomposeFactoryImpl extends EFactoryImpl implements Dockercomp
 	public Link createLink() {
 		LinkImpl link = new LinkImpl();
 		return link;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EnvironmentVariable createEnvironmentVariable() {
+		EnvironmentVariableImpl environmentVariable = new EnvironmentVariableImpl();
+		return environmentVariable;
 	}
 
 	/**

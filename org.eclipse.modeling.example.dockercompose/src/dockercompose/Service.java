@@ -36,6 +36,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dockercompose.Service#getNetworks <em>Networks</em>}</li>
  *   <li>{@link dockercompose.Service#getPorts <em>Ports</em>}</li>
  *   <li>{@link dockercompose.Service#getLinks <em>Links</em>}</li>
+ *   <li>{@link dockercompose.Service#getEnvironment <em>Environment</em>}</li>
  * </ul>
  *
  * @see dockercompose.DockercomposePackage#getService()
@@ -232,6 +233,18 @@ public interface Service extends EObject {
 	 * @generated
 	 */
 	EList<Link> getLinks();
+
+	/**
+	 * Returns the value of the '<em><b>Environment</b></em>' containment reference list.
+	 * The list contents are of type {@link dockercompose.EnvironmentVariable}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Environment</em>' containment reference list.
+	 * @see dockercompose.DockercomposePackage#getService_Environment()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<EnvironmentVariable> getEnvironment();
 
 	/**
 	 * Returns the value of the '<em><b>Read only</b></em>' attribute.

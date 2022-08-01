@@ -63,6 +63,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DockerCompose.ecore#//Service/networks"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DockerCompose.ecore#//Service/ports"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DockerCompose.ecore#//Service/links"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DockerCompose.ecore#//Service/environment"/>
     </genClasses>
     <genClasses ecoreClass="DockerCompose.ecore#//Network">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DockerCompose.ecore#//Network/name"/>
@@ -188,6 +189,10 @@
     <genClasses ecoreClass="DockerCompose.ecore#//Link">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DockerCompose.ecore#//Link/service"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DockerCompose.ecore#//Link/alias"/>
+    </genClasses>
+    <genClasses ecoreClass="DockerCompose.ecore#//EnvironmentVariable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DockerCompose.ecore#//EnvironmentVariable/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DockerCompose.ecore#//EnvironmentVariable/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

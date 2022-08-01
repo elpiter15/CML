@@ -12,6 +12,7 @@ import dockercompose.Dependency;
 import dockercompose.Device;
 import dockercompose.DockerCompose;
 import dockercompose.DockercomposePackage;
+import dockercompose.EnvironmentVariable;
 import dockercompose.IPAM;
 import dockercompose.IPAMAddress;
 import dockercompose.IPAMConfig;
@@ -91,6 +92,16 @@ public class DockerComposeSemanticSequencer extends AbstractDelegatingSemanticSe
 			case DockercomposePackage.DOCKER_COMPOSE:
 				sequence_DockerCompose(context, (DockerCompose) semanticObject); 
 				return; 
+			case DockercomposePackage.ENVIRONMENT_VARIABLE:
+				if (rule == grammarAccess.getEnvironmentVariableListRule()) {
+					sequence_EnvironmentVariableList(context, (EnvironmentVariable) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getEnvironmentVariableMapRule()) {
+					sequence_EnvironmentVariableMap(context, (EnvironmentVariable) semanticObject); 
+					return; 
+				}
+				else break;
 			case DockercomposePackage.IPAM:
 				sequence_IPAM(context, (IPAM) semanticObject); 
 				return; 
@@ -341,6 +352,34 @@ public class DockerComposeSemanticSequencer extends AbstractDelegatingSemanticSe
 	 * </pre>
 	 */
 	protected void sequence_DockerCompose(ISerializationContext context, DockerCompose semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     EnvironmentVariableList returns EnvironmentVariable
+	 *
+	 * Constraint:
+	 *     (name=ID value=EString?)
+	 * </pre>
+	 */
+	protected void sequence_EnvironmentVariableList(ISerializationContext context, EnvironmentVariable semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     EnvironmentVariableMap returns EnvironmentVariable
+	 *
+	 * Constraint:
+	 *     (name=ID value=EString?)
+	 * </pre>
+	 */
+	protected void sequence_EnvironmentVariableMap(ISerializationContext context, EnvironmentVariable semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -632,7 +671,7 @@ public class DockerComposeSemanticSequencer extends AbstractDelegatingSemanticSe
 	 *             build=PATH | 
 	 *             image=Image | 
 	 *             cpu_count=EInt | 
-	 *             command=EString | 
+	 *             command=ID | 
 	 *             container_name=EString | 
 	 *             restart=RestartPolicy | 
 	 *             init=EBoolean | 
@@ -647,6 +686,8 @@ public class DockerComposeSemanticSequencer extends AbstractDelegatingSemanticSe
 	 *             configs+=ConfigConnector_long | 
 	 *             secrets+=SecretConnector_short | 
 	 *             secrets+=SecretConnector_long | 
+	 *             environment+=EnvironmentVariableMap | 
+	 *             environment+=EnvironmentVariableList | 
 	 *             devices+=Device | 
 	 *             dns+=DNS | 
 	 *             dns+=DNS | 

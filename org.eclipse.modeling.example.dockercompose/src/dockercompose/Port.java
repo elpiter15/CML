@@ -28,7 +28,7 @@ public interface Port extends EObject {
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
 	 * @see dockercompose.DockercomposePackage#getPort_Value()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getValue();

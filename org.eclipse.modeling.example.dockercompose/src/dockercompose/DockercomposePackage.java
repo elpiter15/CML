@@ -314,13 +314,22 @@ public interface DockercomposePackage extends EPackage {
 	int SERVICE__LINKS = 17;
 
 	/**
+	 * The feature id for the '<em><b>Environment</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE__ENVIRONMENT = 18;
+
+	/**
 	 * The number of structural features of the '<em>Service</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_FEATURE_COUNT = 18;
+	int SERVICE_FEATURE_COUNT = 19;
 
 	/**
 	 * The operation id for the '<em>Different dependencies</em>' operation.
@@ -1867,6 +1876,52 @@ public interface DockercomposePackage extends EPackage {
 	int LINK_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link dockercompose.impl.EnvironmentVariableImpl <em>Environment Variable</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dockercompose.impl.EnvironmentVariableImpl
+	 * @see dockercompose.impl.DockercomposePackageImpl#getEnvironmentVariable()
+	 * @generated
+	 */
+	int ENVIRONMENT_VARIABLE = 25;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT_VARIABLE__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT_VARIABLE__VALUE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Environment Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT_VARIABLE_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Environment Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT_VARIABLE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link dockercompose.RestartPolicy <em>Restart Policy</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1874,7 +1929,7 @@ public interface DockercomposePackage extends EPackage {
 	 * @see dockercompose.impl.DockercomposePackageImpl#getRestartPolicy()
 	 * @generated
 	 */
-	int RESTART_POLICY = 25;
+	int RESTART_POLICY = 26;
 
 	/**
 	 * The meta object id for the '{@link dockercompose.AccessMode <em>Access Mode</em>}' enum.
@@ -1884,7 +1939,7 @@ public interface DockercomposePackage extends EPackage {
 	 * @see dockercompose.impl.DockercomposePackageImpl#getAccessMode()
 	 * @generated
 	 */
-	int ACCESS_MODE = 26;
+	int ACCESS_MODE = 27;
 
 
 	/**
@@ -1895,7 +1950,7 @@ public interface DockercomposePackage extends EPackage {
 	 * @see dockercompose.impl.DockercomposePackageImpl#getMountType()
 	 * @generated
 	 */
-	int MOUNT_TYPE = 27;
+	int MOUNT_TYPE = 28;
 
 
 	/**
@@ -1906,7 +1961,7 @@ public interface DockercomposePackage extends EPackage {
 	 * @see dockercompose.impl.DockercomposePackageImpl#getPropagationType()
 	 * @generated
 	 */
-	int PROPAGATION_TYPE = 28;
+	int PROPAGATION_TYPE = 29;
 
 
 	/**
@@ -1917,7 +1972,7 @@ public interface DockercomposePackage extends EPackage {
 	 * @see dockercompose.impl.DockercomposePackageImpl#getCondition()
 	 * @generated
 	 */
-	int CONDITION = 29;
+	int CONDITION = 30;
 
 
 	/**
@@ -2115,6 +2170,17 @@ public interface DockercomposePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getService_Links();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dockercompose.Service#getEnvironment <em>Environment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Environment</em>'.
+	 * @see dockercompose.Service#getEnvironment()
+	 * @see #getService()
+	 * @generated
+	 */
+	EReference getService_Environment();
 
 	/**
 	 * Returns the meta object for the attribute '{@link dockercompose.Service#isRead_only <em>Read only</em>}'.
@@ -3454,6 +3520,38 @@ public interface DockercomposePackage extends EPackage {
 	EAttribute getLink_Alias();
 
 	/**
+	 * Returns the meta object for class '{@link dockercompose.EnvironmentVariable <em>Environment Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Environment Variable</em>'.
+	 * @see dockercompose.EnvironmentVariable
+	 * @generated
+	 */
+	EClass getEnvironmentVariable();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dockercompose.EnvironmentVariable#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see dockercompose.EnvironmentVariable#getName()
+	 * @see #getEnvironmentVariable()
+	 * @generated
+	 */
+	EAttribute getEnvironmentVariable_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dockercompose.EnvironmentVariable#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see dockercompose.EnvironmentVariable#getValue()
+	 * @see #getEnvironmentVariable()
+	 * @generated
+	 */
+	EAttribute getEnvironmentVariable_Value();
+
+	/**
 	 * Returns the meta object for enum '{@link dockercompose.RestartPolicy <em>Restart Policy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3673,6 +3771,14 @@ public interface DockercomposePackage extends EPackage {
 		 * @generated
 		 */
 		EReference SERVICE__LINKS = eINSTANCE.getService_Links();
+
+		/**
+		 * The meta object literal for the '<em><b>Environment</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SERVICE__ENVIRONMENT = eINSTANCE.getService_Environment();
 
 		/**
 		 * The meta object literal for the '<em><b>Read only</b></em>' attribute feature.
@@ -4719,6 +4825,32 @@ public interface DockercomposePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute LINK__ALIAS = eINSTANCE.getLink_Alias();
+
+		/**
+		 * The meta object literal for the '{@link dockercompose.impl.EnvironmentVariableImpl <em>Environment Variable</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dockercompose.impl.EnvironmentVariableImpl
+		 * @see dockercompose.impl.DockercomposePackageImpl#getEnvironmentVariable()
+		 * @generated
+		 */
+		EClass ENVIRONMENT_VARIABLE = eINSTANCE.getEnvironmentVariable();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENVIRONMENT_VARIABLE__NAME = eINSTANCE.getEnvironmentVariable_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENVIRONMENT_VARIABLE__VALUE = eINSTANCE.getEnvironmentVariable_Value();
 
 		/**
 		 * The meta object literal for the '{@link dockercompose.RestartPolicy <em>Restart Policy</em>}' enum.

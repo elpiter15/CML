@@ -295,6 +295,7 @@ public class ServiceItemProvider
 			childrenFeatures.add(DockercomposePackage.Literals.SERVICE__NETWORKS);
 			childrenFeatures.add(DockercomposePackage.Literals.SERVICE__PORTS);
 			childrenFeatures.add(DockercomposePackage.Literals.SERVICE__LINKS);
+			childrenFeatures.add(DockercomposePackage.Literals.SERVICE__ENVIRONMENT);
 		}
 		return childrenFeatures;
 	}
@@ -370,6 +371,7 @@ public class ServiceItemProvider
 			case DockercomposePackage.SERVICE__NETWORKS:
 			case DockercomposePackage.SERVICE__PORTS:
 			case DockercomposePackage.SERVICE__LINKS:
+			case DockercomposePackage.SERVICE__ENVIRONMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -436,6 +438,11 @@ public class ServiceItemProvider
 			(createChildParameter
 				(DockercomposePackage.Literals.SERVICE__LINKS,
 				 DockercomposeFactory.eINSTANCE.createLink()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DockercomposePackage.Literals.SERVICE__ENVIRONMENT,
+				 DockercomposeFactory.eINSTANCE.createEnvironmentVariable()));
 	}
 
 	/**

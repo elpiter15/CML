@@ -15,7 +15,7 @@ DockerCompose returns DockerCompose:
 	);
 
 terminal VERSION:
-	'"'INT '.' INT'"';
+	'"'('1'|'2'|'2.'('1'..'9')|'3'|'3.'('1'..'9'))'"';
 
 EDouble returns ecore::EDouble:
 	INT '.' INT;
@@ -27,7 +27,7 @@ Service returns Service:
 			(('build:' 			build=PATH) |
 			('image:' 			image=Image))
 		&	('cpu_count:' 		cpu_count=EInt)?
-		&	('command:' 		command=EString)?
+		&	('command:' 		command=ID)?
 		&	('container_name:' 	container_name=EString)?
 		&	('restart:' 		restart=RestartPolicy)?
 		&	('init:'			init=EBoolean)?
@@ -41,10 +41,21 @@ Service returns Service:
 		&	('configs:' 		(('-'configs+=ConfigConnector_short)+ | ('-'configs+=ConfigConnector_long)+ ))?
 		&	('secrets:' 		(('-'secrets+=SecretConnector_short)+ | ('-'secrets+=SecretConnector_long)+ ))?
 		 
+		&	('environment:' 	((environment+=EnvironmentVariableMap)+ | (environment+=EnvironmentVariableList)+ ))?
 		&	('devices:' 		('-'devices+=Device)+ )?
 		&	('dns:'				(('-'dns+=DNS)+ | dns+=DNS) )?
 		&	('ports:'			('-'ports+=Port)+ )?
 	);
+
+EnvironmentVariableMap returns EnvironmentVariable:
+	{EnvironmentVariable}
+	name=ID':' (value=EString)?
+;
+
+EnvironmentVariableList returns EnvironmentVariable:
+	{EnvironmentVariable}
+	'-' name=ID('='value=EString)?
+;
 
 Port returns Port:
 	{Port}
@@ -55,7 +66,7 @@ Device returns Device:
 	value=DEVICE_DEF;
 
 Image returns ecore::EString:
-		EString | ID(':'ID)+;
+	(ID(':'ID)*'/')? (ID(':'ID)*'/')? ID (':'ID|'@'ID(':'ID)*)?;
 
 Link returns Link:
 	{Link}
@@ -262,11 +273,14 @@ terminal PORT_DEF:
 	(('0'..'9')|('0'..'9')('0'..'9')|'1'('0'..'9')('0'..'9')|'2'('0'..'5')('0'..'5'))':')?INT':')?INT('/'ID)?))'"';
 
 terminal DEVICE_DEF:
-	'"''.'?'/'?ID':''.'?'/'?ID(':'ID)?'"';
+	'"'(((ID('.'ID)*|'.'|'..') ('/'(ID('.'ID)*|'.'|'..'))* '/'?) | ('/' ((ID('.'ID)*|'.'|'..')'/')* (ID('.'ID)*|'.'|'..')?))':'(((ID('.'ID)*|'.'|'..') ('/'(ID('.'ID)*|'.'|'..'))* '/'?) | ('/' ((ID('.'ID)*|'.'|'..')'/')* (ID('.'ID)*|'.'|'..')?))(':'PERMISSION)?'"';
+	
+terminal PERMISSION:
+	'r'|'w'|'m'|'rw'|'wr'|'rm'|'mr'|'mw'|'wm'|'rwm'|'rmw'|'wrm'|'wmr'|'mrw'|'mwr';
 
 PATH returns ecore::EString:
-	'.'? '/'? (ID)*;
-
+	((ID('.'ID)*|'.'|'..') ('/'(ID('.'ID)*|'.'|'..'))* '/'?) | ('/' ((ID('.'ID)*|'.'|'..')'/')* (ID('.'ID)*|'.'|'..')?);
+	
 EString returns ecore::EString:
 	STRING | ID;
 
@@ -274,7 +288,8 @@ EInt returns ecore::EInt:
 	INT;
 
 terminal ID: 
-	('^')?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'-'|'/'|'.'|'0'..'9')*;
+	//('^')?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'-'|'/'|'.'|'0'..'9')*;
+	('^')?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'-'|'0'..'9')*;
 
 DNS returns DNS:
 	dns1=EInt'.'dns2=EInt'.'dns3=EInt'.'dns4=EInt;
@@ -299,4 +314,3 @@ enum PropagationType returns PropagationType:
 				
 enum Condition returns Condition:
 				service_started = 'service_started' | service_healthy = 'service_healthy' | service_completed_successfully = 'service_completed_successfully';
-				

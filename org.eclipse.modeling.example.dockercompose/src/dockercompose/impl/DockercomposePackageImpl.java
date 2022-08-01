@@ -12,6 +12,7 @@ import dockercompose.Device;
 import dockercompose.DockerCompose;
 import dockercompose.DockercomposeFactory;
 import dockercompose.DockercomposePackage;
+import dockercompose.EnvironmentVariable;
 import dockercompose.IPAMAddress;
 import dockercompose.IPAMConfig;
 import dockercompose.IPAMOption;
@@ -227,6 +228,13 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	 * @generated
 	 */
 	private EClass linkEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass environmentVariableEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -512,6 +520,16 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	@Override
 	public EReference getService_Links() {
 		return (EReference)serviceEClass.getEStructuralFeatures().get(17);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getService_Environment() {
+		return (EReference)serviceEClass.getEStructuralFeatures().get(18);
 	}
 
 	/**
@@ -1770,6 +1788,36 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	 * @generated
 	 */
 	@Override
+	public EClass getEnvironmentVariable() {
+		return environmentVariableEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEnvironmentVariable_Name() {
+		return (EAttribute)environmentVariableEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEnvironmentVariable_Value() {
+		return (EAttribute)environmentVariableEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getRestartPolicy() {
 		return restartPolicyEEnum;
 	}
@@ -1870,6 +1918,7 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		createEReference(serviceEClass, SERVICE__NETWORKS);
 		createEReference(serviceEClass, SERVICE__PORTS);
 		createEReference(serviceEClass, SERVICE__LINKS);
+		createEReference(serviceEClass, SERVICE__ENVIRONMENT);
 		createEOperation(serviceEClass, SERVICE___DIFFERENT_DEPENDENCIES__DIAGNOSTICCHAIN_MAP);
 		createEOperation(serviceEClass, SERVICE___NO_SELF_DEPENDENCIES__DIAGNOSTICCHAIN_MAP);
 		createEOperation(serviceEClass, SERVICE___DIFFERENT_CONFIGS__DIAGNOSTICCHAIN_MAP);
@@ -2011,6 +2060,10 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		createEReference(linkEClass, LINK__SERVICE);
 		createEAttribute(linkEClass, LINK__ALIAS);
 
+		environmentVariableEClass = createEClass(ENVIRONMENT_VARIABLE);
+		createEAttribute(environmentVariableEClass, ENVIRONMENT_VARIABLE__NAME);
+		createEAttribute(environmentVariableEClass, ENVIRONMENT_VARIABLE__VALUE);
+
 		// Create enums
 		restartPolicyEEnum = createEEnum(RESTART_POLICY);
 		accessModeEEnum = createEEnum(ACCESS_MODE);
@@ -2077,6 +2130,7 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		initEReference(getService_Networks(), this.getNetworkConnector(), null, "networks", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getService_Ports(), this.getPort(), null, "ports", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getService_Links(), this.getLink(), null, "links", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getService_Environment(), this.getEnvironmentVariable(), null, "environment", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = initEOperation(getService__Different_dependencies__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "different_dependencies", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -2220,7 +2274,7 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(deviceEClass, Device.class, "Device", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDevice_Value(), ecorePackage.getEString(), "value", null, 0, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDevice_Value(), ecorePackage.getEString(), "value", null, 1, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dnsEClass, dockercompose.DNS.class, "DNS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDNS_Dns1(), ecorePackage.getEInt(), "dns1", null, 1, 1, dockercompose.DNS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2332,11 +2386,15 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(portEClass, Port.class, "Port", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPort_Value(), ecorePackage.getEString(), "value", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPort_Value(), ecorePackage.getEString(), "value", null, 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(linkEClass, Link.class, "Link", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLink_Service(), this.getService(), null, "service", null, 1, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLink_Alias(), ecorePackage.getEString(), "alias", null, 0, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(environmentVariableEClass, EnvironmentVariable.class, "EnvironmentVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEnvironmentVariable_Name(), ecorePackage.getEString(), "name", null, 1, 1, EnvironmentVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEnvironmentVariable_Value(), ecorePackage.getEString(), "value", null, 0, 1, EnvironmentVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(restartPolicyEEnum, RestartPolicy.class, "RestartPolicy");

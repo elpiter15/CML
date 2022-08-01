@@ -72,6 +72,7 @@ public class DockercomposeTables extends AbstractTables
 	public static final /*@NonInvalid*/ ClassId CLSSid_Dependency = DockercomposeTables.PACKid_http_c_s_s_www_eclipse_org_s_modeling_s_example_s_dockercompose_s_DockerCompose.getClassId("Dependency", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_Device = DockercomposeTables.PACKid_http_c_s_s_www_eclipse_org_s_modeling_s_example_s_dockercompose_s_DockerCompose.getClassId("Device", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_DockerCompose = DockercomposeTables.PACKid_http_c_s_s_www_eclipse_org_s_modeling_s_example_s_dockercompose_s_DockerCompose.getClassId("DockerCompose", 0);
+	public static final /*@NonInvalid*/ ClassId CLSSid_EnvironmentVariable = DockercomposeTables.PACKid_http_c_s_s_www_eclipse_org_s_modeling_s_example_s_dockercompose_s_DockerCompose.getClassId("EnvironmentVariable", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_IPAM = DockercomposeTables.PACKid_http_c_s_s_www_eclipse_org_s_modeling_s_example_s_dockercompose_s_DockerCompose.getClassId("IPAM", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_IPAMAddress = DockercomposeTables.PACKid_http_c_s_s_www_eclipse_org_s_modeling_s_example_s_dockercompose_s_DockerCompose.getClassId("IPAMAddress", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_IPAMConfig = DockercomposeTables.PACKid_http_c_s_s_www_eclipse_org_s_modeling_s_example_s_dockercompose_s_DockerCompose.getClassId("IPAMConfig", 0);
@@ -112,6 +113,7 @@ public class DockercomposeTables extends AbstractTables
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_DNS = TypeId.ORDERED_SET.getSpecializedId(DockercomposeTables.CLSSid_DNS);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_Dependency = TypeId.ORDERED_SET.getSpecializedId(DockercomposeTables.CLSSid_Dependency);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_Device = TypeId.ORDERED_SET.getSpecializedId(DockercomposeTables.CLSSid_Device);
+	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_EnvironmentVariable = TypeId.ORDERED_SET.getSpecializedId(DockercomposeTables.CLSSid_EnvironmentVariable);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_IPAMAddress = TypeId.ORDERED_SET.getSpecializedId(DockercomposeTables.CLSSid_IPAMAddress);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_IPAMConfig = TypeId.ORDERED_SET.getSpecializedId(DockercomposeTables.CLSSid_IPAMConfig);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_IPAMOption = TypeId.ORDERED_SET.getSpecializedId(DockercomposeTables.CLSSid_IPAMOption);
@@ -173,6 +175,7 @@ public class DockercomposeTables extends AbstractTables
 		public static final EcoreExecutorType _Dependency = new EcoreExecutorType(DockercomposePackage.Literals.DEPENDENCY, PACKAGE, 0);
 		public static final EcoreExecutorType _Device = new EcoreExecutorType(DockercomposePackage.Literals.DEVICE, PACKAGE, 0);
 		public static final EcoreExecutorType _DockerCompose = new EcoreExecutorType(DockercomposePackage.Literals.DOCKER_COMPOSE, PACKAGE, 0);
+		public static final EcoreExecutorType _EnvironmentVariable = new EcoreExecutorType(DockercomposePackage.Literals.ENVIRONMENT_VARIABLE, PACKAGE, 0);
 		public static final EcoreExecutorType _IPAM = new EcoreExecutorType(DockercomposePackage.Literals.IPAM, PACKAGE, 0);
 		public static final EcoreExecutorType _IPAMAddress = new EcoreExecutorType(DockercomposePackage.Literals.IPAM_ADDRESS, PACKAGE, 0);
 		public static final EcoreExecutorType _IPAMConfig = new EcoreExecutorType(DockercomposePackage.Literals.IPAM_CONFIG, PACKAGE, 0);
@@ -205,6 +208,7 @@ public class DockercomposeTables extends AbstractTables
 			_Dependency,
 			_Device,
 			_DockerCompose,
+			_EnvironmentVariable,
 			_IPAM,
 			_IPAMAddress,
 			_IPAMConfig,
@@ -290,6 +294,10 @@ public class DockercomposeTables extends AbstractTables
 		private static final ExecutorFragment _DockerCompose__DockerCompose = new ExecutorFragment(Types._DockerCompose, DockercomposeTables.Types._DockerCompose);
 		private static final ExecutorFragment _DockerCompose__OclAny = new ExecutorFragment(Types._DockerCompose, OCLstdlibTables.Types._OclAny);
 		private static final ExecutorFragment _DockerCompose__OclElement = new ExecutorFragment(Types._DockerCompose, OCLstdlibTables.Types._OclElement);
+
+		private static final ExecutorFragment _EnvironmentVariable__EnvironmentVariable = new ExecutorFragment(Types._EnvironmentVariable, DockercomposeTables.Types._EnvironmentVariable);
+		private static final ExecutorFragment _EnvironmentVariable__OclAny = new ExecutorFragment(Types._EnvironmentVariable, OCLstdlibTables.Types._OclAny);
+		private static final ExecutorFragment _EnvironmentVariable__OclElement = new ExecutorFragment(Types._EnvironmentVariable, OCLstdlibTables.Types._OclElement);
 
 		private static final ExecutorFragment _IPAM__IPAM = new ExecutorFragment(Types._IPAM, DockercomposeTables.Types._IPAM);
 		private static final ExecutorFragment _IPAM__OclAny = new ExecutorFragment(Types._IPAM, OCLstdlibTables.Types._OclAny);
@@ -494,6 +502,10 @@ public class DockercomposeTables extends AbstractTables
 		public static final ExecutorProperty _DockerCompose__version = new EcoreExecutorProperty(DockercomposePackage.Literals.DOCKER_COMPOSE__VERSION, Types._DockerCompose, 4);
 		public static final ExecutorProperty _DockerCompose__volumes = new EcoreExecutorProperty(DockercomposePackage.Literals.DOCKER_COMPOSE__VOLUMES, Types._DockerCompose, 5);
 
+		public static final ExecutorProperty _EnvironmentVariable__name = new EcoreExecutorProperty(DockercomposePackage.Literals.ENVIRONMENT_VARIABLE__NAME, Types._EnvironmentVariable, 0);
+		public static final ExecutorProperty _EnvironmentVariable__value = new EcoreExecutorProperty(DockercomposePackage.Literals.ENVIRONMENT_VARIABLE__VALUE, Types._EnvironmentVariable, 1);
+		public static final ExecutorProperty _EnvironmentVariable__Service__environment = new ExecutorPropertyWithImplementation("Service", Types._EnvironmentVariable, 2, new EcoreLibraryOppositeProperty(DockercomposePackage.Literals.SERVICE__ENVIRONMENT));
+
 		public static final ExecutorProperty _IPAM__configs = new EcoreExecutorProperty(DockercomposePackage.Literals.IPAM__CONFIGS, Types._IPAM, 0);
 		public static final ExecutorProperty _IPAM__driver = new EcoreExecutorProperty(DockercomposePackage.Literals.IPAM__DRIVER, Types._IPAM, 1);
 		public static final ExecutorProperty _IPAM__options = new EcoreExecutorProperty(DockercomposePackage.Literals.IPAM__OPTIONS, Types._IPAM, 2);
@@ -575,19 +587,20 @@ public class DockercomposeTables extends AbstractTables
 		public static final ExecutorProperty _Service__depends_on = new EcoreExecutorProperty(DockercomposePackage.Literals.SERVICE__DEPENDS_ON, Types._Service, 5);
 		public static final ExecutorProperty _Service__devices = new EcoreExecutorProperty(DockercomposePackage.Literals.SERVICE__DEVICES, Types._Service, 6);
 		public static final ExecutorProperty _Service__dns = new EcoreExecutorProperty(DockercomposePackage.Literals.SERVICE__DNS, Types._Service, 7);
-		public static final ExecutorProperty _Service__image = new EcoreExecutorProperty(DockercomposePackage.Literals.SERVICE__IMAGE, Types._Service, 8);
-		public static final ExecutorProperty _Service__init = new EcoreExecutorProperty(DockercomposePackage.Literals.SERVICE__INIT, Types._Service, 9);
-		public static final ExecutorProperty _Service__links = new EcoreExecutorProperty(DockercomposePackage.Literals.SERVICE__LINKS, Types._Service, 10);
-		public static final ExecutorProperty _Service__name = new EcoreExecutorProperty(DockercomposePackage.Literals.SERVICE__NAME, Types._Service, 11);
-		public static final ExecutorProperty _Service__networks = new EcoreExecutorProperty(DockercomposePackage.Literals.SERVICE__NETWORKS, Types._Service, 12);
-		public static final ExecutorProperty _Service__ports = new EcoreExecutorProperty(DockercomposePackage.Literals.SERVICE__PORTS, Types._Service, 13);
-		public static final ExecutorProperty _Service__read_only = new EcoreExecutorProperty(DockercomposePackage.Literals.SERVICE__READ_ONLY, Types._Service, 14);
-		public static final ExecutorProperty _Service__restart = new EcoreExecutorProperty(DockercomposePackage.Literals.SERVICE__RESTART, Types._Service, 15);
-		public static final ExecutorProperty _Service__secrets = new EcoreExecutorProperty(DockercomposePackage.Literals.SERVICE__SECRETS, Types._Service, 16);
-		public static final ExecutorProperty _Service__volumes = new EcoreExecutorProperty(DockercomposePackage.Literals.SERVICE__VOLUMES, Types._Service, 17);
-		public static final ExecutorProperty _Service__Dependency__service = new ExecutorPropertyWithImplementation("Dependency", Types._Service, 18, new EcoreLibraryOppositeProperty(DockercomposePackage.Literals.DEPENDENCY__SERVICE));
-		public static final ExecutorProperty _Service__DockerCompose__services = new ExecutorPropertyWithImplementation("DockerCompose", Types._Service, 19, new EcoreLibraryOppositeProperty(DockercomposePackage.Literals.DOCKER_COMPOSE__SERVICES));
-		public static final ExecutorProperty _Service__Link__service = new ExecutorPropertyWithImplementation("Link", Types._Service, 20, new EcoreLibraryOppositeProperty(DockercomposePackage.Literals.LINK__SERVICE));
+		public static final ExecutorProperty _Service__environment = new EcoreExecutorProperty(DockercomposePackage.Literals.SERVICE__ENVIRONMENT, Types._Service, 8);
+		public static final ExecutorProperty _Service__image = new EcoreExecutorProperty(DockercomposePackage.Literals.SERVICE__IMAGE, Types._Service, 9);
+		public static final ExecutorProperty _Service__init = new EcoreExecutorProperty(DockercomposePackage.Literals.SERVICE__INIT, Types._Service, 10);
+		public static final ExecutorProperty _Service__links = new EcoreExecutorProperty(DockercomposePackage.Literals.SERVICE__LINKS, Types._Service, 11);
+		public static final ExecutorProperty _Service__name = new EcoreExecutorProperty(DockercomposePackage.Literals.SERVICE__NAME, Types._Service, 12);
+		public static final ExecutorProperty _Service__networks = new EcoreExecutorProperty(DockercomposePackage.Literals.SERVICE__NETWORKS, Types._Service, 13);
+		public static final ExecutorProperty _Service__ports = new EcoreExecutorProperty(DockercomposePackage.Literals.SERVICE__PORTS, Types._Service, 14);
+		public static final ExecutorProperty _Service__read_only = new EcoreExecutorProperty(DockercomposePackage.Literals.SERVICE__READ_ONLY, Types._Service, 15);
+		public static final ExecutorProperty _Service__restart = new EcoreExecutorProperty(DockercomposePackage.Literals.SERVICE__RESTART, Types._Service, 16);
+		public static final ExecutorProperty _Service__secrets = new EcoreExecutorProperty(DockercomposePackage.Literals.SERVICE__SECRETS, Types._Service, 17);
+		public static final ExecutorProperty _Service__volumes = new EcoreExecutorProperty(DockercomposePackage.Literals.SERVICE__VOLUMES, Types._Service, 18);
+		public static final ExecutorProperty _Service__Dependency__service = new ExecutorPropertyWithImplementation("Dependency", Types._Service, 19, new EcoreLibraryOppositeProperty(DockercomposePackage.Literals.DEPENDENCY__SERVICE));
+		public static final ExecutorProperty _Service__DockerCompose__services = new ExecutorPropertyWithImplementation("DockerCompose", Types._Service, 20, new EcoreLibraryOppositeProperty(DockercomposePackage.Literals.DOCKER_COMPOSE__SERVICES));
+		public static final ExecutorProperty _Service__Link__service = new ExecutorPropertyWithImplementation("Link", Types._Service, 21, new EcoreLibraryOppositeProperty(DockercomposePackage.Literals.LINK__SERVICE));
 
 		public static final ExecutorProperty _Volume__driver = new EcoreExecutorProperty(DockercomposePackage.Literals.VOLUME__DRIVER, Types._Volume, 0);
 		public static final ExecutorProperty _Volume__driver_opts = new EcoreExecutorProperty(DockercomposePackage.Literals.VOLUME__DRIVER_OPTS, Types._Volume, 1);
@@ -709,6 +722,14 @@ public class DockercomposeTables extends AbstractTables
 				Fragments._DockerCompose__DockerCompose /* 2 */
 			};
 		private static final int /*@NonNull*/ [] __DockerCompose = { 1,1,1 };
+
+		private static final ExecutorFragment /*@NonNull*/ [] _EnvironmentVariable =
+			{
+				Fragments._EnvironmentVariable__OclAny /* 0 */,
+				Fragments._EnvironmentVariable__OclElement /* 1 */,
+				Fragments._EnvironmentVariable__EnvironmentVariable /* 2 */
+			};
+		private static final int /*@NonNull*/ [] __EnvironmentVariable = { 1,1,1 };
 
 		private static final ExecutorFragment /*@NonNull*/ [] _IPAM =
 			{
@@ -898,6 +919,7 @@ public class DockercomposeTables extends AbstractTables
 			Types._Dependency.initFragments(_Dependency, __Dependency);
 			Types._Device.initFragments(_Device, __Device);
 			Types._DockerCompose.initFragments(_DockerCompose, __DockerCompose);
+			Types._EnvironmentVariable.initFragments(_EnvironmentVariable, __EnvironmentVariable);
 			Types._IPAM.initFragments(_IPAM, __IPAM);
 			Types._IPAMAddress.initFragments(_IPAMAddress, __IPAMAddress);
 			Types._IPAMConfig.initFragments(_IPAMConfig, __IPAMConfig);
@@ -1193,6 +1215,34 @@ public class DockercomposeTables extends AbstractTables
 			OCLstdlibTables.Operations._OclAny__toString /* toString() */
 		};
 		private static final ExecutorOperation /*@NonNull*/ [] _DockerCompose__OclElement = {
+			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[1]) */,
+			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[1]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
+		};
+
+		private static final ExecutorOperation /*@NonNull*/ [] _EnvironmentVariable__EnvironmentVariable = {};
+		private static final ExecutorOperation /*@NonNull*/ [] _EnvironmentVariable__OclAny = {
+			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
+			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[1]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
+			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[1]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
+			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[1]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
+			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
+			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[1]) */,
+			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
+			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
+			OCLstdlibTables.Operations._OclAny__toString /* toString() */
+		};
+		private static final ExecutorOperation /*@NonNull*/ [] _EnvironmentVariable__OclElement = {
 			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
 			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[1]) */,
 			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
@@ -1853,6 +1903,10 @@ public class DockercomposeTables extends AbstractTables
 			Fragments._DockerCompose__OclAny.initOperations(_DockerCompose__OclAny);
 			Fragments._DockerCompose__OclElement.initOperations(_DockerCompose__OclElement);
 
+			Fragments._EnvironmentVariable__EnvironmentVariable.initOperations(_EnvironmentVariable__EnvironmentVariable);
+			Fragments._EnvironmentVariable__OclAny.initOperations(_EnvironmentVariable__OclAny);
+			Fragments._EnvironmentVariable__OclElement.initOperations(_EnvironmentVariable__OclElement);
+
 			Fragments._IPAM__IPAM.initOperations(_IPAM__IPAM);
 			Fragments._IPAM__OclAny.initOperations(_IPAM__OclAny);
 			Fragments._IPAM__OclElement.initOperations(_IPAM__OclElement);
@@ -2030,6 +2084,13 @@ public class DockercomposeTables extends AbstractTables
 			DockercomposeTables.Properties._DockerCompose__volumes
 		};
 
+		private static final ExecutorProperty /*@NonNull*/ [] _EnvironmentVariable = {
+			DockercomposeTables.Properties._EnvironmentVariable__name,
+			OCLstdlibTables.Properties._OclElement__oclContainer,
+			OCLstdlibTables.Properties._OclElement__oclContents,
+			DockercomposeTables.Properties._EnvironmentVariable__value
+		};
+
 		private static final ExecutorProperty /*@NonNull*/ [] _IPAM = {
 			DockercomposeTables.Properties._IPAM__configs,
 			DockercomposeTables.Properties._IPAM__driver,
@@ -2167,6 +2228,7 @@ public class DockercomposeTables extends AbstractTables
 			DockercomposeTables.Properties._Service__depends_on,
 			DockercomposeTables.Properties._Service__devices,
 			DockercomposeTables.Properties._Service__dns,
+			DockercomposeTables.Properties._Service__environment,
 			DockercomposeTables.Properties._Service__image,
 			DockercomposeTables.Properties._Service__init,
 			DockercomposeTables.Properties._Service__links,
@@ -2232,6 +2294,7 @@ public class DockercomposeTables extends AbstractTables
 			Fragments._Dependency__Dependency.initProperties(_Dependency);
 			Fragments._Device__Device.initProperties(_Device);
 			Fragments._DockerCompose__DockerCompose.initProperties(_DockerCompose);
+			Fragments._EnvironmentVariable__EnvironmentVariable.initProperties(_EnvironmentVariable);
 			Fragments._IPAM__IPAM.initProperties(_IPAM);
 			Fragments._IPAMAddress__IPAMAddress.initProperties(_IPAMAddress);
 			Fragments._IPAMConfig__IPAMConfig.initProperties(_IPAMConfig);

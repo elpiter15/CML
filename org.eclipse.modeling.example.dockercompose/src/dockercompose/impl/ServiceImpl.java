@@ -9,6 +9,7 @@ import dockercompose.Dependency;
 import dockercompose.Device;
 import dockercompose.DockercomposePackage;
 import dockercompose.DockercomposeTables;
+import dockercompose.EnvironmentVariable;
 import dockercompose.Link;
 import dockercompose.Network;
 import dockercompose.NetworkConnector;
@@ -96,6 +97,7 @@ import org.eclipse.ocl.pivot.values.SetValue;
  *   <li>{@link dockercompose.impl.ServiceImpl#getNetworks <em>Networks</em>}</li>
  *   <li>{@link dockercompose.impl.ServiceImpl#getPorts <em>Ports</em>}</li>
  *   <li>{@link dockercompose.impl.ServiceImpl#getLinks <em>Links</em>}</li>
+ *   <li>{@link dockercompose.impl.ServiceImpl#getEnvironment <em>Environment</em>}</li>
  * </ul>
  *
  * @generated
@@ -372,6 +374,16 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	protected EList<Link> links;
 
 	/**
+	 * The cached value of the '{@link #getEnvironment() <em>Environment</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEnvironment()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EnvironmentVariable> environment;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -588,6 +600,19 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 			links = new EObjectContainmentEList<Link>(Link.class, this, DockercomposePackage.SERVICE__LINKS);
 		}
 		return links;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<EnvironmentVariable> getEnvironment() {
+		if (environment == null) {
+			environment = new EObjectContainmentEList<EnvironmentVariable>(EnvironmentVariable.class, this, DockercomposePackage.SERVICE__ENVIRONMENT);
+		}
+		return environment;
 	}
 
 	/**
@@ -1458,6 +1483,8 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 				return ((InternalEList<?>)getPorts()).basicRemove(otherEnd, msgs);
 			case DockercomposePackage.SERVICE__LINKS:
 				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
+			case DockercomposePackage.SERVICE__ENVIRONMENT:
+				return ((InternalEList<?>)getEnvironment()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -1506,6 +1533,8 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 				return getPorts();
 			case DockercomposePackage.SERVICE__LINKS:
 				return getLinks();
+			case DockercomposePackage.SERVICE__ENVIRONMENT:
+				return getEnvironment();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1582,6 +1611,10 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 				getLinks().clear();
 				getLinks().addAll((Collection<? extends Link>)newValue);
 				return;
+			case DockercomposePackage.SERVICE__ENVIRONMENT:
+				getEnvironment().clear();
+				getEnvironment().addAll((Collection<? extends EnvironmentVariable>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1648,6 +1681,9 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 			case DockercomposePackage.SERVICE__LINKS:
 				getLinks().clear();
 				return;
+			case DockercomposePackage.SERVICE__ENVIRONMENT:
+				getEnvironment().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1696,6 +1732,8 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 				return ports != null && !ports.isEmpty();
 			case DockercomposePackage.SERVICE__LINKS:
 				return links != null && !links.isEmpty();
+			case DockercomposePackage.SERVICE__ENVIRONMENT:
+				return environment != null && !environment.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -10,6 +10,7 @@ import dockercompose.DNS;
 import dockercompose.Dependency;
 import dockercompose.Device;
 import dockercompose.DockerCompose;
+import dockercompose.EnvironmentVariable;
 import dockercompose.IPAM;
 import dockercompose.IPAMAddress;
 import dockercompose.IPAMConfig;
@@ -122,6 +123,10 @@ public class DockerComposeFormatter extends AbstractFormatter2 {
     for (final Port port : _ports) {
       document.<Port>format(port);
     }
+    EList<EnvironmentVariable> _environment = service.getEnvironment();
+    for (final EnvironmentVariable env : _environment) {
+      document.<EnvironmentVariable>format(env);
+    }
     final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
       it.setSpace("\n\t");
     };
@@ -189,48 +194,95 @@ public class DockerComposeFormatter extends AbstractFormatter2 {
     final Procedure1<IHiddenRegionFormatter> _function_18 = (IHiddenRegionFormatter it) -> {
       it.setSpace("\n\t\t");
     };
-    document.prepend(this.textRegionExtensions.regionFor(service).keyword("devices:"), _function_18);
+    document.prepend(this.textRegionExtensions.regionFor(service).keyword("environment:"), _function_18);
     final Procedure1<IHiddenRegionFormatter> _function_19 = (IHiddenRegionFormatter it) -> {
       it.setSpace("\n\t\t");
     };
-    document.prepend(this.textRegionExtensions.regionFor(service).keyword("dns:"), _function_19);
+    document.prepend(this.textRegionExtensions.regionFor(service).keyword("devices:"), _function_19);
     final Procedure1<IHiddenRegionFormatter> _function_20 = (IHiddenRegionFormatter it) -> {
       it.setSpace("\n\t\t");
     };
-    document.prepend(this.textRegionExtensions.regionFor(service).keyword("ports:"), _function_20);
+    document.prepend(this.textRegionExtensions.regionFor(service).keyword("dns:"), _function_20);
     final Procedure1<IHiddenRegionFormatter> _function_21 = (IHiddenRegionFormatter it) -> {
       it.setSpace("\n\t\t");
     };
-    document.prepend(this.textRegionExtensions.regionFor(service).keyword("links:"), _function_21);
+    document.prepend(this.textRegionExtensions.regionFor(service).keyword("ports:"), _function_21);
     final Procedure1<IHiddenRegionFormatter> _function_22 = (IHiddenRegionFormatter it) -> {
       it.setSpace("\n\t\t");
     };
-    document.prepend(this.textRegionExtensions.regionFor(service).keyword("depends_on:"), _function_22);
+    document.prepend(this.textRegionExtensions.regionFor(service).keyword("links:"), _function_22);
     final Procedure1<IHiddenRegionFormatter> _function_23 = (IHiddenRegionFormatter it) -> {
       it.setSpace("\n\t\t");
     };
-    document.prepend(this.textRegionExtensions.regionFor(service).keyword("networks:"), _function_23);
+    document.prepend(this.textRegionExtensions.regionFor(service).keyword("depends_on:"), _function_23);
     final Procedure1<IHiddenRegionFormatter> _function_24 = (IHiddenRegionFormatter it) -> {
       it.setSpace("\n\t\t");
     };
-    document.prepend(this.textRegionExtensions.regionFor(service).keyword("volumes:"), _function_24);
+    document.prepend(this.textRegionExtensions.regionFor(service).keyword("networks:"), _function_24);
     final Procedure1<IHiddenRegionFormatter> _function_25 = (IHiddenRegionFormatter it) -> {
       it.setSpace("\n\t\t");
     };
-    document.prepend(this.textRegionExtensions.regionFor(service).keyword("configs:"), _function_25);
+    document.prepend(this.textRegionExtensions.regionFor(service).keyword("volumes:"), _function_25);
     final Procedure1<IHiddenRegionFormatter> _function_26 = (IHiddenRegionFormatter it) -> {
       it.setSpace("\n\t\t");
     };
-    document.prepend(this.textRegionExtensions.regionFor(service).keyword("secrets:"), _function_26);
+    document.prepend(this.textRegionExtensions.regionFor(service).keyword("configs:"), _function_26);
+    final Procedure1<IHiddenRegionFormatter> _function_27 = (IHiddenRegionFormatter it) -> {
+      it.setSpace("\n\t\t");
+    };
+    document.prepend(this.textRegionExtensions.regionFor(service).keyword("secrets:"), _function_27);
     List<ISemanticRegion> _keywords = this.textRegionExtensions.regionFor(service).keywords("-");
     for (final ISemanticRegion k : _keywords) {
-      final Procedure1<IHiddenRegionFormatter> _function_27 = (IHiddenRegionFormatter it) -> {
+      final Procedure1<IHiddenRegionFormatter> _function_28 = (IHiddenRegionFormatter it) -> {
         it.setSpace("\n\t\t\t");
       };
-      final Procedure1<IHiddenRegionFormatter> _function_28 = (IHiddenRegionFormatter it) -> {
+      final Procedure1<IHiddenRegionFormatter> _function_29 = (IHiddenRegionFormatter it) -> {
         it.setSpace(" ");
       };
-      document.append(document.prepend(k, _function_27), _function_28);
+      document.append(document.prepend(k, _function_28), _function_29);
+    }
+  }
+
+  protected void _format(final EnvironmentVariable env, @Extension final IFormattableDocument document) {
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.setSpace("\n\t\t\t");
+    };
+    document.<EnvironmentVariable>prepend(env, _function);
+    ISemanticRegion _keyword = this.textRegionExtensions.regionFor(env).keyword("-");
+    boolean _tripleNotEquals = (_keyword != null);
+    if (_tripleNotEquals) {
+      int _offset = this.textRegionExtensions.regionFor(env).keyword("-").getOffset();
+      int _offset_1 = (((ISemanticRegion[])Conversions.unwrapArray(this.textRegionExtensions.allSemanticRegions(env), ISemanticRegion.class))[0]).getOffset();
+      boolean _equals = (_offset == _offset_1);
+      if (_equals) {
+        final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+          it.noSpace();
+        };
+        final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+          it.noSpace();
+        };
+        document.append(document.prepend(this.textRegionExtensions.regionFor(env).keyword("="), _function_1), _function_2);
+        final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+          it.setSpace(" ");
+        };
+        document.append(this.textRegionExtensions.regionFor(env).keyword("-"), _function_3);
+      } else {
+        final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+          it.noSpace();
+        };
+        final Procedure1<IHiddenRegionFormatter> _function_5 = (IHiddenRegionFormatter it) -> {
+          it.setSpace(" ");
+        };
+        document.append(document.prepend(this.textRegionExtensions.regionFor(env).keyword(":"), _function_4), _function_5);
+      }
+    } else {
+      final Procedure1<IHiddenRegionFormatter> _function_6 = (IHiddenRegionFormatter it) -> {
+        it.noSpace();
+      };
+      final Procedure1<IHiddenRegionFormatter> _function_7 = (IHiddenRegionFormatter it) -> {
+        it.setSpace(" ");
+      };
+      document.append(document.prepend(this.textRegionExtensions.regionFor(env).keyword(":"), _function_6), _function_7);
     }
   }
 
@@ -1014,6 +1066,9 @@ public class DockerComposeFormatter extends AbstractFormatter2 {
       return;
     } else if (config instanceof DockerCompose) {
       _format((DockerCompose)config, document);
+      return;
+    } else if (config instanceof EnvironmentVariable) {
+      _format((EnvironmentVariable)config, document);
       return;
     } else if (config instanceof IPAM) {
       _format((IPAM)config, document);

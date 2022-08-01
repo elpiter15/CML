@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_VERSION", "RULE_PORT_DEF", "RULE_DEVICE_DEF", "RULE_ID", "RULE_QUOTED_INT", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'version:'", "'services:'", "'volumes:'", "'configs:'", "'secrets:'", "'networks:'", "':'", "'build:'", "'image:'", "'cpu_count:'", "'command:'", "'container_name:'", "'restart:'", "'init:'", "'read_only:'", "'links:'", "'-'", "'depends_on:'", "'devices:'", "'dns:'", "'ports:'", "'condition:'", "'ipv4_address:'", "'priority:'", "'aliases:'", "'link_local_ips:'", "'source:'", "'type:'", "'target:'", "'bind:'", "'propagation:'", "'volume:'", "'nocopy:'", "'tmpfs:'", "'size:'", "'uid:'", "'gid:'", "'mode:'", "'{'", "'}'", "'driver:'", "'attachable:'", "'enable_ipv6:'", "'internal:'", "'external:'", "'name:'", "'labels:'", "'driver_opts:'", "'ipam:'", "'file:'", "'environment:'", "'config:'", "'options:'", "'subnet:'", "'ip_range:'", "'gateway:'", "'aux_addresses:'", "'.'", "'/'", "'true'", "'false'", "'\"no\"'", "'always'", "'on-failure'", "'unless-stopped'", "'rw'", "'ro'", "'z'", "'volume'", "'bind'", "'tmpfs'", "'npipe'", "'rprivate'", "'private'", "'rshared'", "'shared'", "'rslave'", "'slave'", "'service_started'", "'service_healthy'", "'service_completed_successfully'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_VERSION", "RULE_ID", "RULE_PORT_DEF", "RULE_DEVICE_DEF", "RULE_QUOTED_INT", "RULE_STRING", "RULE_INT", "RULE_PERMISSION", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'version:'", "'services:'", "'volumes:'", "'configs:'", "'secrets:'", "'networks:'", "':'", "'build:'", "'image:'", "'cpu_count:'", "'command:'", "'container_name:'", "'restart:'", "'init:'", "'read_only:'", "'links:'", "'-'", "'depends_on:'", "'environment:'", "'devices:'", "'dns:'", "'ports:'", "'='", "'/'", "'@'", "'condition:'", "'ipv4_address:'", "'priority:'", "'aliases:'", "'link_local_ips:'", "'source:'", "'type:'", "'target:'", "'bind:'", "'propagation:'", "'volume:'", "'nocopy:'", "'tmpfs:'", "'size:'", "'uid:'", "'gid:'", "'mode:'", "'{'", "'}'", "'driver:'", "'attachable:'", "'enable_ipv6:'", "'internal:'", "'external:'", "'name:'", "'labels:'", "'driver_opts:'", "'ipam:'", "'file:'", "'config:'", "'options:'", "'subnet:'", "'ip_range:'", "'gateway:'", "'aux_addresses:'", "'.'", "'..'", "'true'", "'false'", "'\"no\"'", "'always'", "'on-failure'", "'unless-stopped'", "'rw'", "'ro'", "'z'", "'volume'", "'bind'", "'tmpfs'", "'npipe'", "'rprivate'", "'private'", "'rshared'", "'shared'", "'rslave'", "'slave'", "'service_started'", "'service_healthy'", "'service_completed_successfully'"
     };
     public static final int T__50=50;
     public static final int RULE_VERSION=4;
@@ -37,11 +37,11 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
     public static final int T__54=54;
     public static final int T__60=60;
     public static final int T__61=61;
-    public static final int RULE_ID=7;
-    public static final int RULE_PORT_DEF=5;
+    public static final int RULE_ID=5;
+    public static final int RULE_PORT_DEF=6;
     public static final int RULE_INT=10;
     public static final int T__66=66;
-    public static final int RULE_ML_COMMENT=11;
+    public static final int RULE_ML_COMMENT=12;
     public static final int T__67=67;
     public static final int T__68=68;
     public static final int T__69=69;
@@ -49,6 +49,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
     public static final int T__63=63;
     public static final int T__64=64;
     public static final int T__65=65;
+    public static final int RULE_PERMISSION=11;
     public static final int T__37=37;
     public static final int T__38=38;
     public static final int T__39=39;
@@ -71,16 +72,19 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
     public static final int T__43=43;
     public static final int T__91=91;
     public static final int T__92=92;
-    public static final int RULE_DEVICE_DEF=6;
+    public static final int RULE_DEVICE_DEF=7;
     public static final int T__93=93;
     public static final int T__94=94;
     public static final int T__90=90;
     public static final int T__19=19;
-    public static final int T__15=15;
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
+    public static final int T__99=99;
     public static final int T__95=95;
+    public static final int T__96=96;
+    public static final int T__97=97;
+    public static final int T__98=98;
     public static final int RULE_QUOTED_INT=8;
     public static final int T__26=26;
     public static final int T__27=27;
@@ -96,7 +100,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
     public static final int T__71=71;
     public static final int T__72=72;
     public static final int RULE_STRING=9;
-    public static final int RULE_SL_COMMENT=12;
+    public static final int RULE_SL_COMMENT=13;
     public static final int T__77=77;
     public static final int T__78=78;
     public static final int T__79=79;
@@ -109,8 +113,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
     public static final int T__81=81;
     public static final int T__82=82;
     public static final int T__83=83;
-    public static final int RULE_WS=13;
-    public static final int RULE_ANY_OTHER=14;
+    public static final int RULE_WS=14;
+    public static final int RULE_ANY_OTHER=15;
     public static final int T__88=88;
     public static final int T__89=89;
     public static final int T__84=84;
@@ -242,22 +246,22 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                 int alt6=7;
                 int LA6_0 = input.LA(1);
 
-                if ( LA6_0 == 15 && getUnorderedGroupHelper().canSelect(grammarAccess.getDockerComposeAccess().getUnorderedGroup(), 0) ) {
+                if ( LA6_0 == 16 && getUnorderedGroupHelper().canSelect(grammarAccess.getDockerComposeAccess().getUnorderedGroup(), 0) ) {
                     alt6=1;
                 }
-                else if ( LA6_0 == 16 && getUnorderedGroupHelper().canSelect(grammarAccess.getDockerComposeAccess().getUnorderedGroup(), 1) ) {
+                else if ( LA6_0 == 17 && getUnorderedGroupHelper().canSelect(grammarAccess.getDockerComposeAccess().getUnorderedGroup(), 1) ) {
                     alt6=2;
                 }
-                else if ( LA6_0 == 17 && getUnorderedGroupHelper().canSelect(grammarAccess.getDockerComposeAccess().getUnorderedGroup(), 2) ) {
+                else if ( LA6_0 == 18 && getUnorderedGroupHelper().canSelect(grammarAccess.getDockerComposeAccess().getUnorderedGroup(), 2) ) {
                     alt6=3;
                 }
-                else if ( LA6_0 == 18 && getUnorderedGroupHelper().canSelect(grammarAccess.getDockerComposeAccess().getUnorderedGroup(), 3) ) {
+                else if ( LA6_0 == 19 && getUnorderedGroupHelper().canSelect(grammarAccess.getDockerComposeAccess().getUnorderedGroup(), 3) ) {
                     alt6=4;
                 }
-                else if ( LA6_0 == 19 && getUnorderedGroupHelper().canSelect(grammarAccess.getDockerComposeAccess().getUnorderedGroup(), 4) ) {
+                else if ( LA6_0 == 20 && getUnorderedGroupHelper().canSelect(grammarAccess.getDockerComposeAccess().getUnorderedGroup(), 4) ) {
                     alt6=5;
                 }
-                else if ( LA6_0 == 20 && getUnorderedGroupHelper().canSelect(grammarAccess.getDockerComposeAccess().getUnorderedGroup(), 5) ) {
+                else if ( LA6_0 == 21 && getUnorderedGroupHelper().canSelect(grammarAccess.getDockerComposeAccess().getUnorderedGroup(), 5) ) {
                     alt6=6;
                 }
 
@@ -287,7 +291,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    // InternalDockerCompose.g:91:18: (otherlv_1= 'version:' ( (lv_version_2_0= RULE_VERSION ) ) )
             	    // InternalDockerCompose.g:91:19: otherlv_1= 'version:' ( (lv_version_2_0= RULE_VERSION ) )
             	    {
-            	    otherlv_1=(Token)match(input,15,FOLLOW_3); 
+            	    otherlv_1=(Token)match(input,16,FOLLOW_3); 
 
             	    								newLeafNode(otherlv_1, grammarAccess.getDockerComposeAccess().getVersionKeyword_0_0());
             	    							
@@ -359,7 +363,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    // InternalDockerCompose.g:124:18: (otherlv_3= 'services:' ( (lv_services_4_0= ruleService ) )+ )
             	    // InternalDockerCompose.g:124:19: otherlv_3= 'services:' ( (lv_services_4_0= ruleService ) )+
             	    {
-            	    otherlv_3=(Token)match(input,16,FOLLOW_5); 
+            	    otherlv_3=(Token)match(input,17,FOLLOW_5); 
 
             	    								newLeafNode(otherlv_3, grammarAccess.getDockerComposeAccess().getServicesKeyword_1_0());
             	    							
@@ -459,7 +463,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    // InternalDockerCompose.g:158:18: (otherlv_5= 'volumes:' ( (lv_volumes_6_0= ruleVolume ) )+ )
             	    // InternalDockerCompose.g:158:19: otherlv_5= 'volumes:' ( (lv_volumes_6_0= ruleVolume ) )+
             	    {
-            	    otherlv_5=(Token)match(input,17,FOLLOW_5); 
+            	    otherlv_5=(Token)match(input,18,FOLLOW_5); 
 
             	    								newLeafNode(otherlv_5, grammarAccess.getDockerComposeAccess().getVolumesKeyword_2_0());
             	    							
@@ -559,7 +563,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    // InternalDockerCompose.g:192:18: (otherlv_7= 'configs:' ( (lv_configs_8_0= ruleConfig ) )+ )
             	    // InternalDockerCompose.g:192:19: otherlv_7= 'configs:' ( (lv_configs_8_0= ruleConfig ) )+
             	    {
-            	    otherlv_7=(Token)match(input,18,FOLLOW_5); 
+            	    otherlv_7=(Token)match(input,19,FOLLOW_5); 
 
             	    								newLeafNode(otherlv_7, grammarAccess.getDockerComposeAccess().getConfigsKeyword_3_0());
             	    							
@@ -659,7 +663,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    // InternalDockerCompose.g:226:18: (otherlv_9= 'secrets:' ( (lv_secrets_10_0= ruleSecret ) )+ )
             	    // InternalDockerCompose.g:226:19: otherlv_9= 'secrets:' ( (lv_secrets_10_0= ruleSecret ) )+
             	    {
-            	    otherlv_9=(Token)match(input,19,FOLLOW_5); 
+            	    otherlv_9=(Token)match(input,20,FOLLOW_5); 
 
             	    								newLeafNode(otherlv_9, grammarAccess.getDockerComposeAccess().getSecretsKeyword_4_0());
             	    							
@@ -759,7 +763,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    // InternalDockerCompose.g:260:18: (otherlv_11= 'networks:' ( (lv_networks_12_0= ruleNetwork ) )+ )
             	    // InternalDockerCompose.g:260:19: otherlv_11= 'networks:' ( (lv_networks_12_0= ruleNetwork ) )+
             	    {
-            	    otherlv_11=(Token)match(input,20,FOLLOW_5); 
+            	    otherlv_11=(Token)match(input,21,FOLLOW_5); 
 
             	    								newLeafNode(otherlv_11, grammarAccess.getDockerComposeAccess().getNetworksKeyword_5_0());
             	    							
@@ -916,7 +920,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleService"
-    // InternalDockerCompose.g:307:1: ruleService returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => ( (otherlv_4= 'build:' ( (lv_build_5_0= rulePATH ) ) ) | (otherlv_6= 'image:' ( (lv_image_7_0= ruleImage ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'cpu_count:' ( (lv_cpu_count_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'devices:' (otherlv_44= '-' ( (lv_devices_45_0= ruleDevice ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_46= 'dns:' ( (otherlv_47= '-' ( (lv_dns_48_0= ruleDNS ) ) )+ | ( (lv_dns_49_0= ruleDNS ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_50= 'ports:' (otherlv_51= '-' ( (lv_ports_52_0= rulePort ) ) )+ ) ) ) ) )+ {...}?) ) ) ) ;
+    // InternalDockerCompose.g:307:1: ruleService returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => ( (otherlv_4= 'build:' ( (lv_build_5_0= rulePATH ) ) ) | (otherlv_6= 'image:' ( (lv_image_7_0= ruleImage ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'cpu_count:' ( (lv_cpu_count_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'environment:' ( ( (lv_environment_44_0= ruleEnvironmentVariableMap ) )+ | ( (lv_environment_45_0= ruleEnvironmentVariableList ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_46= 'devices:' (otherlv_47= '-' ( (lv_devices_48_0= ruleDevice ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'dns:' ( (otherlv_50= '-' ( (lv_dns_51_0= ruleDNS ) ) )+ | ( (lv_dns_52_0= ruleDNS ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'ports:' (otherlv_54= '-' ( (lv_ports_55_0= rulePort ) ) )+ ) ) ) ) )+ {...}?) ) ) ) ;
     public final EObject ruleService() throws RecognitionException {
         EObject current = null;
 
@@ -925,6 +929,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         Token otherlv_6=null;
         Token otherlv_8=null;
         Token otherlv_10=null;
+        Token lv_command_11_0=null;
         Token otherlv_12=null;
         Token otherlv_14=null;
         Token otherlv_16=null;
@@ -943,11 +948,12 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         Token otherlv_39=null;
         Token otherlv_41=null;
         Token otherlv_43=null;
-        Token otherlv_44=null;
         Token otherlv_46=null;
         Token otherlv_47=null;
+        Token otherlv_49=null;
         Token otherlv_50=null;
-        Token otherlv_51=null;
+        Token otherlv_53=null;
+        Token otherlv_54=null;
         AntlrDatatypeRuleToken lv_name_1_0 = null;
 
         AntlrDatatypeRuleToken lv_build_5_0 = null;
@@ -955,8 +961,6 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         AntlrDatatypeRuleToken lv_image_7_0 = null;
 
         AntlrDatatypeRuleToken lv_cpu_count_9_0 = null;
-
-        AntlrDatatypeRuleToken lv_command_11_0 = null;
 
         AntlrDatatypeRuleToken lv_container_name_13_0 = null;
 
@@ -986,24 +990,28 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
         EObject lv_secrets_42_0 = null;
 
-        EObject lv_devices_45_0 = null;
+        EObject lv_environment_44_0 = null;
 
-        EObject lv_dns_48_0 = null;
+        EObject lv_environment_45_0 = null;
 
-        EObject lv_dns_49_0 = null;
+        EObject lv_devices_48_0 = null;
 
-        EObject lv_ports_52_0 = null;
+        EObject lv_dns_51_0 = null;
+
+        EObject lv_dns_52_0 = null;
+
+        EObject lv_ports_55_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:313:2: ( ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => ( (otherlv_4= 'build:' ( (lv_build_5_0= rulePATH ) ) ) | (otherlv_6= 'image:' ( (lv_image_7_0= ruleImage ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'cpu_count:' ( (lv_cpu_count_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'devices:' (otherlv_44= '-' ( (lv_devices_45_0= ruleDevice ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_46= 'dns:' ( (otherlv_47= '-' ( (lv_dns_48_0= ruleDNS ) ) )+ | ( (lv_dns_49_0= ruleDNS ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_50= 'ports:' (otherlv_51= '-' ( (lv_ports_52_0= rulePort ) ) )+ ) ) ) ) )+ {...}?) ) ) ) )
-            // InternalDockerCompose.g:314:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => ( (otherlv_4= 'build:' ( (lv_build_5_0= rulePATH ) ) ) | (otherlv_6= 'image:' ( (lv_image_7_0= ruleImage ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'cpu_count:' ( (lv_cpu_count_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'devices:' (otherlv_44= '-' ( (lv_devices_45_0= ruleDevice ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_46= 'dns:' ( (otherlv_47= '-' ( (lv_dns_48_0= ruleDNS ) ) )+ | ( (lv_dns_49_0= ruleDNS ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_50= 'ports:' (otherlv_51= '-' ( (lv_ports_52_0= rulePort ) ) )+ ) ) ) ) )+ {...}?) ) ) )
+            // InternalDockerCompose.g:313:2: ( ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => ( (otherlv_4= 'build:' ( (lv_build_5_0= rulePATH ) ) ) | (otherlv_6= 'image:' ( (lv_image_7_0= ruleImage ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'cpu_count:' ( (lv_cpu_count_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'environment:' ( ( (lv_environment_44_0= ruleEnvironmentVariableMap ) )+ | ( (lv_environment_45_0= ruleEnvironmentVariableList ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_46= 'devices:' (otherlv_47= '-' ( (lv_devices_48_0= ruleDevice ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'dns:' ( (otherlv_50= '-' ( (lv_dns_51_0= ruleDNS ) ) )+ | ( (lv_dns_52_0= ruleDNS ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'ports:' (otherlv_54= '-' ( (lv_ports_55_0= rulePort ) ) )+ ) ) ) ) )+ {...}?) ) ) ) )
+            // InternalDockerCompose.g:314:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => ( (otherlv_4= 'build:' ( (lv_build_5_0= rulePATH ) ) ) | (otherlv_6= 'image:' ( (lv_image_7_0= ruleImage ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'cpu_count:' ( (lv_cpu_count_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'environment:' ( ( (lv_environment_44_0= ruleEnvironmentVariableMap ) )+ | ( (lv_environment_45_0= ruleEnvironmentVariableList ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_46= 'devices:' (otherlv_47= '-' ( (lv_devices_48_0= ruleDevice ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'dns:' ( (otherlv_50= '-' ( (lv_dns_51_0= ruleDNS ) ) )+ | ( (lv_dns_52_0= ruleDNS ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'ports:' (otherlv_54= '-' ( (lv_ports_55_0= rulePort ) ) )+ ) ) ) ) )+ {...}?) ) ) )
             {
-            // InternalDockerCompose.g:314:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => ( (otherlv_4= 'build:' ( (lv_build_5_0= rulePATH ) ) ) | (otherlv_6= 'image:' ( (lv_image_7_0= ruleImage ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'cpu_count:' ( (lv_cpu_count_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'devices:' (otherlv_44= '-' ( (lv_devices_45_0= ruleDevice ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_46= 'dns:' ( (otherlv_47= '-' ( (lv_dns_48_0= ruleDNS ) ) )+ | ( (lv_dns_49_0= ruleDNS ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_50= 'ports:' (otherlv_51= '-' ( (lv_ports_52_0= rulePort ) ) )+ ) ) ) ) )+ {...}?) ) ) )
-            // InternalDockerCompose.g:315:3: () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => ( (otherlv_4= 'build:' ( (lv_build_5_0= rulePATH ) ) ) | (otherlv_6= 'image:' ( (lv_image_7_0= ruleImage ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'cpu_count:' ( (lv_cpu_count_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'devices:' (otherlv_44= '-' ( (lv_devices_45_0= ruleDevice ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_46= 'dns:' ( (otherlv_47= '-' ( (lv_dns_48_0= ruleDNS ) ) )+ | ( (lv_dns_49_0= ruleDNS ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_50= 'ports:' (otherlv_51= '-' ( (lv_ports_52_0= rulePort ) ) )+ ) ) ) ) )+ {...}?) ) )
+            // InternalDockerCompose.g:314:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => ( (otherlv_4= 'build:' ( (lv_build_5_0= rulePATH ) ) ) | (otherlv_6= 'image:' ( (lv_image_7_0= ruleImage ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'cpu_count:' ( (lv_cpu_count_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'environment:' ( ( (lv_environment_44_0= ruleEnvironmentVariableMap ) )+ | ( (lv_environment_45_0= ruleEnvironmentVariableList ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_46= 'devices:' (otherlv_47= '-' ( (lv_devices_48_0= ruleDevice ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'dns:' ( (otherlv_50= '-' ( (lv_dns_51_0= ruleDNS ) ) )+ | ( (lv_dns_52_0= ruleDNS ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'ports:' (otherlv_54= '-' ( (lv_ports_55_0= rulePort ) ) )+ ) ) ) ) )+ {...}?) ) ) )
+            // InternalDockerCompose.g:315:3: () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => ( (otherlv_4= 'build:' ( (lv_build_5_0= rulePATH ) ) ) | (otherlv_6= 'image:' ( (lv_image_7_0= ruleImage ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'cpu_count:' ( (lv_cpu_count_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'environment:' ( ( (lv_environment_44_0= ruleEnvironmentVariableMap ) )+ | ( (lv_environment_45_0= ruleEnvironmentVariableList ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_46= 'devices:' (otherlv_47= '-' ( (lv_devices_48_0= ruleDevice ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'dns:' ( (otherlv_50= '-' ( (lv_dns_51_0= ruleDNS ) ) )+ | ( (lv_dns_52_0= ruleDNS ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'ports:' (otherlv_54= '-' ( (lv_ports_55_0= rulePort ) ) )+ ) ) ) ) )+ {...}?) ) )
             {
             // InternalDockerCompose.g:315:3: ()
             // InternalDockerCompose.g:316:4: 
@@ -1047,29 +1055,29 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,21,FOLLOW_8); 
+            otherlv_2=(Token)match(input,22,FOLLOW_8); 
 
             			newLeafNode(otherlv_2, grammarAccess.getServiceAccess().getColonKeyword_2());
             		
-            // InternalDockerCompose.g:345:3: ( ( ( ( ({...}? => ( ({...}? => ( (otherlv_4= 'build:' ( (lv_build_5_0= rulePATH ) ) ) | (otherlv_6= 'image:' ( (lv_image_7_0= ruleImage ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'cpu_count:' ( (lv_cpu_count_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'devices:' (otherlv_44= '-' ( (lv_devices_45_0= ruleDevice ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_46= 'dns:' ( (otherlv_47= '-' ( (lv_dns_48_0= ruleDNS ) ) )+ | ( (lv_dns_49_0= ruleDNS ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_50= 'ports:' (otherlv_51= '-' ( (lv_ports_52_0= rulePort ) ) )+ ) ) ) ) )+ {...}?) ) )
-            // InternalDockerCompose.g:346:4: ( ( ( ({...}? => ( ({...}? => ( (otherlv_4= 'build:' ( (lv_build_5_0= rulePATH ) ) ) | (otherlv_6= 'image:' ( (lv_image_7_0= ruleImage ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'cpu_count:' ( (lv_cpu_count_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'devices:' (otherlv_44= '-' ( (lv_devices_45_0= ruleDevice ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_46= 'dns:' ( (otherlv_47= '-' ( (lv_dns_48_0= ruleDNS ) ) )+ | ( (lv_dns_49_0= ruleDNS ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_50= 'ports:' (otherlv_51= '-' ( (lv_ports_52_0= rulePort ) ) )+ ) ) ) ) )+ {...}?) )
+            // InternalDockerCompose.g:345:3: ( ( ( ( ({...}? => ( ({...}? => ( (otherlv_4= 'build:' ( (lv_build_5_0= rulePATH ) ) ) | (otherlv_6= 'image:' ( (lv_image_7_0= ruleImage ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'cpu_count:' ( (lv_cpu_count_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'environment:' ( ( (lv_environment_44_0= ruleEnvironmentVariableMap ) )+ | ( (lv_environment_45_0= ruleEnvironmentVariableList ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_46= 'devices:' (otherlv_47= '-' ( (lv_devices_48_0= ruleDevice ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'dns:' ( (otherlv_50= '-' ( (lv_dns_51_0= ruleDNS ) ) )+ | ( (lv_dns_52_0= ruleDNS ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'ports:' (otherlv_54= '-' ( (lv_ports_55_0= rulePort ) ) )+ ) ) ) ) )+ {...}?) ) )
+            // InternalDockerCompose.g:346:4: ( ( ( ({...}? => ( ({...}? => ( (otherlv_4= 'build:' ( (lv_build_5_0= rulePATH ) ) ) | (otherlv_6= 'image:' ( (lv_image_7_0= ruleImage ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'cpu_count:' ( (lv_cpu_count_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'environment:' ( ( (lv_environment_44_0= ruleEnvironmentVariableMap ) )+ | ( (lv_environment_45_0= ruleEnvironmentVariableList ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_46= 'devices:' (otherlv_47= '-' ( (lv_devices_48_0= ruleDevice ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'dns:' ( (otherlv_50= '-' ( (lv_dns_51_0= ruleDNS ) ) )+ | ( (lv_dns_52_0= ruleDNS ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'ports:' (otherlv_54= '-' ( (lv_ports_55_0= rulePort ) ) )+ ) ) ) ) )+ {...}?) )
             {
-            // InternalDockerCompose.g:346:4: ( ( ( ({...}? => ( ({...}? => ( (otherlv_4= 'build:' ( (lv_build_5_0= rulePATH ) ) ) | (otherlv_6= 'image:' ( (lv_image_7_0= ruleImage ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'cpu_count:' ( (lv_cpu_count_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'devices:' (otherlv_44= '-' ( (lv_devices_45_0= ruleDevice ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_46= 'dns:' ( (otherlv_47= '-' ( (lv_dns_48_0= ruleDNS ) ) )+ | ( (lv_dns_49_0= ruleDNS ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_50= 'ports:' (otherlv_51= '-' ( (lv_ports_52_0= rulePort ) ) )+ ) ) ) ) )+ {...}?) )
-            // InternalDockerCompose.g:347:5: ( ( ({...}? => ( ({...}? => ( (otherlv_4= 'build:' ( (lv_build_5_0= rulePATH ) ) ) | (otherlv_6= 'image:' ( (lv_image_7_0= ruleImage ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'cpu_count:' ( (lv_cpu_count_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'devices:' (otherlv_44= '-' ( (lv_devices_45_0= ruleDevice ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_46= 'dns:' ( (otherlv_47= '-' ( (lv_dns_48_0= ruleDNS ) ) )+ | ( (lv_dns_49_0= ruleDNS ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_50= 'ports:' (otherlv_51= '-' ( (lv_ports_52_0= rulePort ) ) )+ ) ) ) ) )+ {...}?)
+            // InternalDockerCompose.g:346:4: ( ( ( ({...}? => ( ({...}? => ( (otherlv_4= 'build:' ( (lv_build_5_0= rulePATH ) ) ) | (otherlv_6= 'image:' ( (lv_image_7_0= ruleImage ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'cpu_count:' ( (lv_cpu_count_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'environment:' ( ( (lv_environment_44_0= ruleEnvironmentVariableMap ) )+ | ( (lv_environment_45_0= ruleEnvironmentVariableList ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_46= 'devices:' (otherlv_47= '-' ( (lv_devices_48_0= ruleDevice ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'dns:' ( (otherlv_50= '-' ( (lv_dns_51_0= ruleDNS ) ) )+ | ( (lv_dns_52_0= ruleDNS ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'ports:' (otherlv_54= '-' ( (lv_ports_55_0= rulePort ) ) )+ ) ) ) ) )+ {...}?) )
+            // InternalDockerCompose.g:347:5: ( ( ({...}? => ( ({...}? => ( (otherlv_4= 'build:' ( (lv_build_5_0= rulePATH ) ) ) | (otherlv_6= 'image:' ( (lv_image_7_0= ruleImage ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'cpu_count:' ( (lv_cpu_count_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'environment:' ( ( (lv_environment_44_0= ruleEnvironmentVariableMap ) )+ | ( (lv_environment_45_0= ruleEnvironmentVariableList ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_46= 'devices:' (otherlv_47= '-' ( (lv_devices_48_0= ruleDevice ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'dns:' ( (otherlv_50= '-' ( (lv_dns_51_0= ruleDNS ) ) )+ | ( (lv_dns_52_0= ruleDNS ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'ports:' (otherlv_54= '-' ( (lv_ports_55_0= rulePort ) ) )+ ) ) ) ) )+ {...}?)
             {
              
             				  getUnorderedGroupHelper().enter(grammarAccess.getServiceAccess().getUnorderedGroup_3());
             				
-            // InternalDockerCompose.g:350:5: ( ( ({...}? => ( ({...}? => ( (otherlv_4= 'build:' ( (lv_build_5_0= rulePATH ) ) ) | (otherlv_6= 'image:' ( (lv_image_7_0= ruleImage ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'cpu_count:' ( (lv_cpu_count_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'devices:' (otherlv_44= '-' ( (lv_devices_45_0= ruleDevice ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_46= 'dns:' ( (otherlv_47= '-' ( (lv_dns_48_0= ruleDNS ) ) )+ | ( (lv_dns_49_0= ruleDNS ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_50= 'ports:' (otherlv_51= '-' ( (lv_ports_52_0= rulePort ) ) )+ ) ) ) ) )+ {...}?)
-            // InternalDockerCompose.g:351:6: ( ({...}? => ( ({...}? => ( (otherlv_4= 'build:' ( (lv_build_5_0= rulePATH ) ) ) | (otherlv_6= 'image:' ( (lv_image_7_0= ruleImage ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'cpu_count:' ( (lv_cpu_count_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'devices:' (otherlv_44= '-' ( (lv_devices_45_0= ruleDevice ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_46= 'dns:' ( (otherlv_47= '-' ( (lv_dns_48_0= ruleDNS ) ) )+ | ( (lv_dns_49_0= ruleDNS ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_50= 'ports:' (otherlv_51= '-' ( (lv_ports_52_0= rulePort ) ) )+ ) ) ) ) )+ {...}?
+            // InternalDockerCompose.g:350:5: ( ( ({...}? => ( ({...}? => ( (otherlv_4= 'build:' ( (lv_build_5_0= rulePATH ) ) ) | (otherlv_6= 'image:' ( (lv_image_7_0= ruleImage ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'cpu_count:' ( (lv_cpu_count_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'environment:' ( ( (lv_environment_44_0= ruleEnvironmentVariableMap ) )+ | ( (lv_environment_45_0= ruleEnvironmentVariableList ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_46= 'devices:' (otherlv_47= '-' ( (lv_devices_48_0= ruleDevice ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'dns:' ( (otherlv_50= '-' ( (lv_dns_51_0= ruleDNS ) ) )+ | ( (lv_dns_52_0= ruleDNS ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'ports:' (otherlv_54= '-' ( (lv_ports_55_0= rulePort ) ) )+ ) ) ) ) )+ {...}?)
+            // InternalDockerCompose.g:351:6: ( ({...}? => ( ({...}? => ( (otherlv_4= 'build:' ( (lv_build_5_0= rulePATH ) ) ) | (otherlv_6= 'image:' ( (lv_image_7_0= ruleImage ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'cpu_count:' ( (lv_cpu_count_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'environment:' ( ( (lv_environment_44_0= ruleEnvironmentVariableMap ) )+ | ( (lv_environment_45_0= ruleEnvironmentVariableList ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_46= 'devices:' (otherlv_47= '-' ( (lv_devices_48_0= ruleDevice ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'dns:' ( (otherlv_50= '-' ( (lv_dns_51_0= ruleDNS ) ) )+ | ( (lv_dns_52_0= ruleDNS ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'ports:' (otherlv_54= '-' ( (lv_ports_55_0= rulePort ) ) )+ ) ) ) ) )+ {...}?
             {
-            // InternalDockerCompose.g:351:6: ( ({...}? => ( ({...}? => ( (otherlv_4= 'build:' ( (lv_build_5_0= rulePATH ) ) ) | (otherlv_6= 'image:' ( (lv_image_7_0= ruleImage ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'cpu_count:' ( (lv_cpu_count_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'devices:' (otherlv_44= '-' ( (lv_devices_45_0= ruleDevice ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_46= 'dns:' ( (otherlv_47= '-' ( (lv_dns_48_0= ruleDNS ) ) )+ | ( (lv_dns_49_0= ruleDNS ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_50= 'ports:' (otherlv_51= '-' ( (lv_ports_52_0= rulePort ) ) )+ ) ) ) ) )+
-            int cnt26=0;
-            loop26:
+            // InternalDockerCompose.g:351:6: ( ({...}? => ( ({...}? => ( (otherlv_4= 'build:' ( (lv_build_5_0= rulePATH ) ) ) | (otherlv_6= 'image:' ( (lv_image_7_0= ruleImage ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'cpu_count:' ( (lv_cpu_count_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'environment:' ( ( (lv_environment_44_0= ruleEnvironmentVariableMap ) )+ | ( (lv_environment_45_0= ruleEnvironmentVariableList ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_46= 'devices:' (otherlv_47= '-' ( (lv_devices_48_0= ruleDevice ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'dns:' ( (otherlv_50= '-' ( (lv_dns_51_0= ruleDNS ) ) )+ | ( (lv_dns_52_0= ruleDNS ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'ports:' (otherlv_54= '-' ( (lv_ports_55_0= rulePort ) ) )+ ) ) ) ) )+
+            int cnt29=0;
+            loop29:
             do {
-                int alt26=17;
-                alt26 = dfa26.predict(input);
-                switch (alt26) {
+                int alt29=18;
+                alt29 = dfa29.predict(input);
+                switch (alt29) {
             	case 1 :
             	    // InternalDockerCompose.g:352:4: ({...}? => ( ({...}? => ( (otherlv_4= 'build:' ( (lv_build_5_0= rulePATH ) ) ) | (otherlv_6= 'image:' ( (lv_image_7_0= ruleImage ) ) ) ) ) ) )
             	    {
@@ -1095,10 +1103,10 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    int alt7=2;
             	    int LA7_0 = input.LA(1);
 
-            	    if ( (LA7_0==22) ) {
+            	    if ( (LA7_0==23) ) {
             	        alt7=1;
             	    }
-            	    else if ( (LA7_0==23) ) {
+            	    else if ( (LA7_0==24) ) {
             	        alt7=2;
             	    }
             	    else {
@@ -1114,7 +1122,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	            // InternalDockerCompose.g:357:20: (otherlv_4= 'build:' ( (lv_build_5_0= rulePATH ) ) )
             	            // InternalDockerCompose.g:358:10: otherlv_4= 'build:' ( (lv_build_5_0= rulePATH ) )
             	            {
-            	            otherlv_4=(Token)match(input,22,FOLLOW_9); 
+            	            otherlv_4=(Token)match(input,23,FOLLOW_9); 
 
             	            										newLeafNode(otherlv_4, grammarAccess.getServiceAccess().getBuildKeyword_3_0_0_0());
             	            									
@@ -1161,7 +1169,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	            // InternalDockerCompose.g:383:9: (otherlv_6= 'image:' ( (lv_image_7_0= ruleImage ) ) )
             	            // InternalDockerCompose.g:384:10: otherlv_6= 'image:' ( (lv_image_7_0= ruleImage ) )
             	            {
-            	            otherlv_6=(Token)match(input,23,FOLLOW_5); 
+            	            otherlv_6=(Token)match(input,24,FOLLOW_11); 
 
             	            										newLeafNode(otherlv_6, grammarAccess.getServiceAccess().getImageKeyword_3_0_1_0());
             	            									
@@ -1244,7 +1252,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    // InternalDockerCompose.g:419:19: (otherlv_8= 'cpu_count:' ( (lv_cpu_count_9_0= ruleEInt ) ) )
             	    // InternalDockerCompose.g:419:20: otherlv_8= 'cpu_count:' ( (lv_cpu_count_9_0= ruleEInt ) )
             	    {
-            	    otherlv_8=(Token)match(input,24,FOLLOW_11); 
+            	    otherlv_8=(Token)match(input,25,FOLLOW_12); 
 
             	    									newLeafNode(otherlv_8, grammarAccess.getServiceAccess().getCpu_countKeyword_3_1_0());
             	    								
@@ -1298,57 +1306,52 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 3 :
-            	    // InternalDockerCompose.g:448:4: ({...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= ruleEString ) ) ) ) ) )
+            	    // InternalDockerCompose.g:448:4: ({...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= RULE_ID ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:448:4: ({...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= ruleEString ) ) ) ) ) )
-            	    // InternalDockerCompose.g:449:5: {...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= ruleEString ) ) ) ) )
+            	    // InternalDockerCompose.g:448:4: ({...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= RULE_ID ) ) ) ) ) )
+            	    // InternalDockerCompose.g:449:5: {...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= RULE_ID ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 2) ) {
             	        throw new FailedPredicateException(input, "ruleService", "getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 2)");
             	    }
-            	    // InternalDockerCompose.g:449:104: ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= ruleEString ) ) ) ) )
-            	    // InternalDockerCompose.g:450:6: ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= ruleEString ) ) ) )
+            	    // InternalDockerCompose.g:449:104: ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= RULE_ID ) ) ) ) )
+            	    // InternalDockerCompose.g:450:6: ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= RULE_ID ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 2);
             	    					
-            	    // InternalDockerCompose.g:453:9: ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= ruleEString ) ) ) )
-            	    // InternalDockerCompose.g:453:10: {...}? => (otherlv_10= 'command:' ( (lv_command_11_0= ruleEString ) ) )
+            	    // InternalDockerCompose.g:453:9: ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= RULE_ID ) ) ) )
+            	    // InternalDockerCompose.g:453:10: {...}? => (otherlv_10= 'command:' ( (lv_command_11_0= RULE_ID ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleService", "true");
             	    }
-            	    // InternalDockerCompose.g:453:19: (otherlv_10= 'command:' ( (lv_command_11_0= ruleEString ) ) )
-            	    // InternalDockerCompose.g:453:20: otherlv_10= 'command:' ( (lv_command_11_0= ruleEString ) )
+            	    // InternalDockerCompose.g:453:19: (otherlv_10= 'command:' ( (lv_command_11_0= RULE_ID ) ) )
+            	    // InternalDockerCompose.g:453:20: otherlv_10= 'command:' ( (lv_command_11_0= RULE_ID ) )
             	    {
-            	    otherlv_10=(Token)match(input,25,FOLLOW_5); 
+            	    otherlv_10=(Token)match(input,26,FOLLOW_11); 
 
             	    									newLeafNode(otherlv_10, grammarAccess.getServiceAccess().getCommandKeyword_3_2_0());
             	    								
-            	    // InternalDockerCompose.g:457:9: ( (lv_command_11_0= ruleEString ) )
-            	    // InternalDockerCompose.g:458:10: (lv_command_11_0= ruleEString )
+            	    // InternalDockerCompose.g:457:9: ( (lv_command_11_0= RULE_ID ) )
+            	    // InternalDockerCompose.g:458:10: (lv_command_11_0= RULE_ID )
             	    {
-            	    // InternalDockerCompose.g:458:10: (lv_command_11_0= ruleEString )
-            	    // InternalDockerCompose.g:459:11: lv_command_11_0= ruleEString
+            	    // InternalDockerCompose.g:458:10: (lv_command_11_0= RULE_ID )
+            	    // InternalDockerCompose.g:459:11: lv_command_11_0= RULE_ID
             	    {
+            	    lv_command_11_0=(Token)match(input,RULE_ID,FOLLOW_10); 
 
-            	    											newCompositeNode(grammarAccess.getServiceAccess().getCommandEStringParserRuleCall_3_2_1_0());
+            	    											newLeafNode(lv_command_11_0, grammarAccess.getServiceAccess().getCommandIDTerminalRuleCall_3_2_1_0());
             	    										
-            	    pushFollow(FOLLOW_10);
-            	    lv_command_11_0=ruleEString();
-
-            	    state._fsp--;
-
 
             	    											if (current==null) {
-            	    												current = createModelElementForParent(grammarAccess.getServiceRule());
+            	    												current = createModelElement(grammarAccess.getServiceRule());
             	    											}
-            	    											set(
+            	    											setWithLastConsumed(
             	    												current,
             	    												"command",
             	    												lv_command_11_0,
-            	    												"org.xtext.example.dockercompose.DockerCompose.EString");
-            	    											afterParserOrEnumRuleCall();
+            	    												"org.xtext.example.dockercompose.DockerCompose.ID");
             	    										
 
             	    }
@@ -1375,38 +1378,38 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 4 :
-            	    // InternalDockerCompose.g:482:4: ({...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) ) )
+            	    // InternalDockerCompose.g:481:4: ({...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:482:4: ({...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) ) )
-            	    // InternalDockerCompose.g:483:5: {...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) )
+            	    // InternalDockerCompose.g:481:4: ({...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) ) )
+            	    // InternalDockerCompose.g:482:5: {...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 3) ) {
             	        throw new FailedPredicateException(input, "ruleService", "getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 3)");
             	    }
-            	    // InternalDockerCompose.g:483:104: ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) )
-            	    // InternalDockerCompose.g:484:6: ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) )
+            	    // InternalDockerCompose.g:482:104: ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) )
+            	    // InternalDockerCompose.g:483:6: ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 3);
             	    					
-            	    // InternalDockerCompose.g:487:9: ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) )
-            	    // InternalDockerCompose.g:487:10: {...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) )
+            	    // InternalDockerCompose.g:486:9: ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) )
+            	    // InternalDockerCompose.g:486:10: {...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleService", "true");
             	    }
-            	    // InternalDockerCompose.g:487:19: (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) )
-            	    // InternalDockerCompose.g:487:20: otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) )
+            	    // InternalDockerCompose.g:486:19: (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) )
+            	    // InternalDockerCompose.g:486:20: otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) )
             	    {
-            	    otherlv_12=(Token)match(input,26,FOLLOW_5); 
+            	    otherlv_12=(Token)match(input,27,FOLLOW_5); 
 
             	    									newLeafNode(otherlv_12, grammarAccess.getServiceAccess().getContainer_nameKeyword_3_3_0());
             	    								
-            	    // InternalDockerCompose.g:491:9: ( (lv_container_name_13_0= ruleEString ) )
-            	    // InternalDockerCompose.g:492:10: (lv_container_name_13_0= ruleEString )
+            	    // InternalDockerCompose.g:490:9: ( (lv_container_name_13_0= ruleEString ) )
+            	    // InternalDockerCompose.g:491:10: (lv_container_name_13_0= ruleEString )
             	    {
-            	    // InternalDockerCompose.g:492:10: (lv_container_name_13_0= ruleEString )
-            	    // InternalDockerCompose.g:493:11: lv_container_name_13_0= ruleEString
+            	    // InternalDockerCompose.g:491:10: (lv_container_name_13_0= ruleEString )
+            	    // InternalDockerCompose.g:492:11: lv_container_name_13_0= ruleEString
             	    {
 
             	    											newCompositeNode(grammarAccess.getServiceAccess().getContainer_nameEStringParserRuleCall_3_3_1_0());
@@ -1452,38 +1455,38 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 5 :
-            	    // InternalDockerCompose.g:516:4: ({...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) ) )
+            	    // InternalDockerCompose.g:515:4: ({...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:516:4: ({...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) ) )
-            	    // InternalDockerCompose.g:517:5: {...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) )
+            	    // InternalDockerCompose.g:515:4: ({...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) ) )
+            	    // InternalDockerCompose.g:516:5: {...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 4) ) {
             	        throw new FailedPredicateException(input, "ruleService", "getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 4)");
             	    }
-            	    // InternalDockerCompose.g:517:104: ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) )
-            	    // InternalDockerCompose.g:518:6: ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) )
+            	    // InternalDockerCompose.g:516:104: ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) )
+            	    // InternalDockerCompose.g:517:6: ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 4);
             	    					
-            	    // InternalDockerCompose.g:521:9: ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) )
-            	    // InternalDockerCompose.g:521:10: {...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) )
+            	    // InternalDockerCompose.g:520:9: ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) )
+            	    // InternalDockerCompose.g:520:10: {...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleService", "true");
             	    }
-            	    // InternalDockerCompose.g:521:19: (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) )
-            	    // InternalDockerCompose.g:521:20: otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) )
+            	    // InternalDockerCompose.g:520:19: (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) )
+            	    // InternalDockerCompose.g:520:20: otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) )
             	    {
-            	    otherlv_14=(Token)match(input,27,FOLLOW_12); 
+            	    otherlv_14=(Token)match(input,28,FOLLOW_13); 
 
             	    									newLeafNode(otherlv_14, grammarAccess.getServiceAccess().getRestartKeyword_3_4_0());
             	    								
-            	    // InternalDockerCompose.g:525:9: ( (lv_restart_15_0= ruleRestartPolicy ) )
-            	    // InternalDockerCompose.g:526:10: (lv_restart_15_0= ruleRestartPolicy )
+            	    // InternalDockerCompose.g:524:9: ( (lv_restart_15_0= ruleRestartPolicy ) )
+            	    // InternalDockerCompose.g:525:10: (lv_restart_15_0= ruleRestartPolicy )
             	    {
-            	    // InternalDockerCompose.g:526:10: (lv_restart_15_0= ruleRestartPolicy )
-            	    // InternalDockerCompose.g:527:11: lv_restart_15_0= ruleRestartPolicy
+            	    // InternalDockerCompose.g:525:10: (lv_restart_15_0= ruleRestartPolicy )
+            	    // InternalDockerCompose.g:526:11: lv_restart_15_0= ruleRestartPolicy
             	    {
 
             	    											newCompositeNode(grammarAccess.getServiceAccess().getRestartRestartPolicyEnumRuleCall_3_4_1_0());
@@ -1529,38 +1532,38 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 6 :
-            	    // InternalDockerCompose.g:550:4: ({...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) ) )
+            	    // InternalDockerCompose.g:549:4: ({...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:550:4: ({...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) ) )
-            	    // InternalDockerCompose.g:551:5: {...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) )
+            	    // InternalDockerCompose.g:549:4: ({...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) ) )
+            	    // InternalDockerCompose.g:550:5: {...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 5) ) {
             	        throw new FailedPredicateException(input, "ruleService", "getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 5)");
             	    }
-            	    // InternalDockerCompose.g:551:104: ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) )
-            	    // InternalDockerCompose.g:552:6: ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) )
+            	    // InternalDockerCompose.g:550:104: ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) )
+            	    // InternalDockerCompose.g:551:6: ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 5);
             	    					
-            	    // InternalDockerCompose.g:555:9: ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) )
-            	    // InternalDockerCompose.g:555:10: {...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) )
+            	    // InternalDockerCompose.g:554:9: ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) )
+            	    // InternalDockerCompose.g:554:10: {...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleService", "true");
             	    }
-            	    // InternalDockerCompose.g:555:19: (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) )
-            	    // InternalDockerCompose.g:555:20: otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) )
+            	    // InternalDockerCompose.g:554:19: (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) )
+            	    // InternalDockerCompose.g:554:20: otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) )
             	    {
-            	    otherlv_16=(Token)match(input,28,FOLLOW_13); 
+            	    otherlv_16=(Token)match(input,29,FOLLOW_14); 
 
             	    									newLeafNode(otherlv_16, grammarAccess.getServiceAccess().getInitKeyword_3_5_0());
             	    								
-            	    // InternalDockerCompose.g:559:9: ( (lv_init_17_0= ruleEBoolean ) )
-            	    // InternalDockerCompose.g:560:10: (lv_init_17_0= ruleEBoolean )
+            	    // InternalDockerCompose.g:558:9: ( (lv_init_17_0= ruleEBoolean ) )
+            	    // InternalDockerCompose.g:559:10: (lv_init_17_0= ruleEBoolean )
             	    {
-            	    // InternalDockerCompose.g:560:10: (lv_init_17_0= ruleEBoolean )
-            	    // InternalDockerCompose.g:561:11: lv_init_17_0= ruleEBoolean
+            	    // InternalDockerCompose.g:559:10: (lv_init_17_0= ruleEBoolean )
+            	    // InternalDockerCompose.g:560:11: lv_init_17_0= ruleEBoolean
             	    {
 
             	    											newCompositeNode(grammarAccess.getServiceAccess().getInitEBooleanParserRuleCall_3_5_1_0());
@@ -1606,38 +1609,38 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 7 :
-            	    // InternalDockerCompose.g:584:4: ({...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) ) )
+            	    // InternalDockerCompose.g:583:4: ({...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:584:4: ({...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) ) )
-            	    // InternalDockerCompose.g:585:5: {...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) )
+            	    // InternalDockerCompose.g:583:4: ({...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) ) )
+            	    // InternalDockerCompose.g:584:5: {...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 6) ) {
             	        throw new FailedPredicateException(input, "ruleService", "getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 6)");
             	    }
-            	    // InternalDockerCompose.g:585:104: ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) )
-            	    // InternalDockerCompose.g:586:6: ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) )
+            	    // InternalDockerCompose.g:584:104: ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) )
+            	    // InternalDockerCompose.g:585:6: ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 6);
             	    					
-            	    // InternalDockerCompose.g:589:9: ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) )
-            	    // InternalDockerCompose.g:589:10: {...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) )
+            	    // InternalDockerCompose.g:588:9: ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) )
+            	    // InternalDockerCompose.g:588:10: {...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleService", "true");
             	    }
-            	    // InternalDockerCompose.g:589:19: (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) )
-            	    // InternalDockerCompose.g:589:20: otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) )
+            	    // InternalDockerCompose.g:588:19: (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) )
+            	    // InternalDockerCompose.g:588:20: otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) )
             	    {
-            	    otherlv_18=(Token)match(input,29,FOLLOW_13); 
+            	    otherlv_18=(Token)match(input,30,FOLLOW_14); 
 
             	    									newLeafNode(otherlv_18, grammarAccess.getServiceAccess().getRead_onlyKeyword_3_6_0());
             	    								
-            	    // InternalDockerCompose.g:593:9: ( (lv_read_only_19_0= ruleEBoolean ) )
-            	    // InternalDockerCompose.g:594:10: (lv_read_only_19_0= ruleEBoolean )
+            	    // InternalDockerCompose.g:592:9: ( (lv_read_only_19_0= ruleEBoolean ) )
+            	    // InternalDockerCompose.g:593:10: (lv_read_only_19_0= ruleEBoolean )
             	    {
-            	    // InternalDockerCompose.g:594:10: (lv_read_only_19_0= ruleEBoolean )
-            	    // InternalDockerCompose.g:595:11: lv_read_only_19_0= ruleEBoolean
+            	    // InternalDockerCompose.g:593:10: (lv_read_only_19_0= ruleEBoolean )
+            	    // InternalDockerCompose.g:594:11: lv_read_only_19_0= ruleEBoolean
             	    {
 
             	    											newCompositeNode(grammarAccess.getServiceAccess().getRead_onlyEBooleanParserRuleCall_3_6_1_0());
@@ -1683,63 +1686,63 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 8 :
-            	    // InternalDockerCompose.g:618:4: ({...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) ) )
+            	    // InternalDockerCompose.g:617:4: ({...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:618:4: ({...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) ) )
-            	    // InternalDockerCompose.g:619:5: {...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) )
+            	    // InternalDockerCompose.g:617:4: ({...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) ) )
+            	    // InternalDockerCompose.g:618:5: {...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 7) ) {
             	        throw new FailedPredicateException(input, "ruleService", "getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 7)");
             	    }
-            	    // InternalDockerCompose.g:619:104: ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) )
-            	    // InternalDockerCompose.g:620:6: ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) )
+            	    // InternalDockerCompose.g:618:104: ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) )
+            	    // InternalDockerCompose.g:619:6: ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 7);
             	    					
-            	    // InternalDockerCompose.g:623:9: ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) )
-            	    // InternalDockerCompose.g:623:10: {...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ )
+            	    // InternalDockerCompose.g:622:9: ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) )
+            	    // InternalDockerCompose.g:622:10: {...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleService", "true");
             	    }
-            	    // InternalDockerCompose.g:623:19: (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ )
-            	    // InternalDockerCompose.g:623:20: otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+
+            	    // InternalDockerCompose.g:622:19: (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ )
+            	    // InternalDockerCompose.g:622:20: otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+
             	    {
-            	    otherlv_20=(Token)match(input,30,FOLLOW_14); 
+            	    otherlv_20=(Token)match(input,31,FOLLOW_15); 
 
             	    									newLeafNode(otherlv_20, grammarAccess.getServiceAccess().getLinksKeyword_3_7_0());
             	    								
-            	    // InternalDockerCompose.g:627:9: (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+
+            	    // InternalDockerCompose.g:626:9: (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+
             	    int cnt8=0;
             	    loop8:
             	    do {
             	        int alt8=2;
             	        int LA8_0 = input.LA(1);
 
-            	        if ( (LA8_0==31) ) {
+            	        if ( (LA8_0==32) ) {
             	            alt8=1;
             	        }
 
 
             	        switch (alt8) {
             	    	case 1 :
-            	    	    // InternalDockerCompose.g:628:10: otherlv_21= '-' ( (lv_links_22_0= ruleLink ) )
+            	    	    // InternalDockerCompose.g:627:10: otherlv_21= '-' ( (lv_links_22_0= ruleLink ) )
             	    	    {
-            	    	    otherlv_21=(Token)match(input,31,FOLLOW_5); 
+            	    	    otherlv_21=(Token)match(input,32,FOLLOW_5); 
 
             	    	    										newLeafNode(otherlv_21, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_7_1_0());
             	    	    									
-            	    	    // InternalDockerCompose.g:632:10: ( (lv_links_22_0= ruleLink ) )
-            	    	    // InternalDockerCompose.g:633:11: (lv_links_22_0= ruleLink )
+            	    	    // InternalDockerCompose.g:631:10: ( (lv_links_22_0= ruleLink ) )
+            	    	    // InternalDockerCompose.g:632:11: (lv_links_22_0= ruleLink )
             	    	    {
-            	    	    // InternalDockerCompose.g:633:11: (lv_links_22_0= ruleLink )
-            	    	    // InternalDockerCompose.g:634:12: lv_links_22_0= ruleLink
+            	    	    // InternalDockerCompose.g:632:11: (lv_links_22_0= ruleLink )
+            	    	    // InternalDockerCompose.g:633:12: lv_links_22_0= ruleLink
             	    	    {
 
             	    	    												newCompositeNode(grammarAccess.getServiceAccess().getLinksLinkParserRuleCall_3_7_1_1_0());
             	    	    											
-            	    	    pushFollow(FOLLOW_15);
+            	    	    pushFollow(FOLLOW_16);
             	    	    lv_links_22_0=ruleLink();
 
             	    	    state._fsp--;
@@ -1793,38 +1796,38 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 9 :
-            	    // InternalDockerCompose.g:658:4: ({...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) ) )
+            	    // InternalDockerCompose.g:657:4: ({...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:658:4: ({...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) ) )
-            	    // InternalDockerCompose.g:659:5: {...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) )
+            	    // InternalDockerCompose.g:657:4: ({...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) ) )
+            	    // InternalDockerCompose.g:658:5: {...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 8) ) {
             	        throw new FailedPredicateException(input, "ruleService", "getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 8)");
             	    }
-            	    // InternalDockerCompose.g:659:104: ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) )
-            	    // InternalDockerCompose.g:660:6: ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) )
+            	    // InternalDockerCompose.g:658:104: ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) )
+            	    // InternalDockerCompose.g:659:6: ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 8);
             	    					
-            	    // InternalDockerCompose.g:663:9: ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) )
-            	    // InternalDockerCompose.g:663:10: {...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) )
+            	    // InternalDockerCompose.g:662:9: ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) )
+            	    // InternalDockerCompose.g:662:10: {...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleService", "true");
             	    }
-            	    // InternalDockerCompose.g:663:19: (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) )
-            	    // InternalDockerCompose.g:663:20: otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ )
+            	    // InternalDockerCompose.g:662:19: (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) )
+            	    // InternalDockerCompose.g:662:20: otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ )
             	    {
-            	    otherlv_23=(Token)match(input,32,FOLLOW_16); 
+            	    otherlv_23=(Token)match(input,33,FOLLOW_17); 
 
             	    									newLeafNode(otherlv_23, grammarAccess.getServiceAccess().getDepends_onKeyword_3_8_0());
             	    								
-            	    // InternalDockerCompose.g:667:9: ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ )
+            	    // InternalDockerCompose.g:666:9: ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ )
             	    int alt11=2;
             	    int LA11_0 = input.LA(1);
 
-            	    if ( (LA11_0==31) ) {
+            	    if ( (LA11_0==32) ) {
             	        alt11=1;
             	    }
             	    else if ( (LA11_0==RULE_ID||LA11_0==RULE_STRING) ) {
@@ -1838,31 +1841,31 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    switch (alt11) {
             	        case 1 :
-            	            // InternalDockerCompose.g:668:10: ( (lv_depends_on_24_0= ruleDependency_short ) )+
+            	            // InternalDockerCompose.g:667:10: ( (lv_depends_on_24_0= ruleDependency_short ) )+
             	            {
-            	            // InternalDockerCompose.g:668:10: ( (lv_depends_on_24_0= ruleDependency_short ) )+
+            	            // InternalDockerCompose.g:667:10: ( (lv_depends_on_24_0= ruleDependency_short ) )+
             	            int cnt9=0;
             	            loop9:
             	            do {
             	                int alt9=2;
             	                int LA9_0 = input.LA(1);
 
-            	                if ( (LA9_0==31) ) {
+            	                if ( (LA9_0==32) ) {
             	                    alt9=1;
             	                }
 
 
             	                switch (alt9) {
             	            	case 1 :
-            	            	    // InternalDockerCompose.g:669:11: (lv_depends_on_24_0= ruleDependency_short )
+            	            	    // InternalDockerCompose.g:668:11: (lv_depends_on_24_0= ruleDependency_short )
             	            	    {
-            	            	    // InternalDockerCompose.g:669:11: (lv_depends_on_24_0= ruleDependency_short )
-            	            	    // InternalDockerCompose.g:670:12: lv_depends_on_24_0= ruleDependency_short
+            	            	    // InternalDockerCompose.g:668:11: (lv_depends_on_24_0= ruleDependency_short )
+            	            	    // InternalDockerCompose.g:669:12: lv_depends_on_24_0= ruleDependency_short
             	            	    {
 
             	            	    												newCompositeNode(grammarAccess.getServiceAccess().getDepends_onDependency_shortParserRuleCall_3_8_1_0_0());
             	            	    											
-            	            	    pushFollow(FOLLOW_15);
+            	            	    pushFollow(FOLLOW_16);
             	            	    lv_depends_on_24_0=ruleDependency_short();
 
             	            	    state._fsp--;
@@ -1898,9 +1901,9 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // InternalDockerCompose.g:688:10: ( (lv_depends_on_25_0= ruleDependency_long ) )+
+            	            // InternalDockerCompose.g:687:10: ( (lv_depends_on_25_0= ruleDependency_long ) )+
             	            {
-            	            // InternalDockerCompose.g:688:10: ( (lv_depends_on_25_0= ruleDependency_long ) )+
+            	            // InternalDockerCompose.g:687:10: ( (lv_depends_on_25_0= ruleDependency_long ) )+
             	            int cnt10=0;
             	            loop10:
             	            do {
@@ -1910,10 +1913,10 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	                if ( (LA10_0==RULE_STRING) ) {
             	                    int LA10_2 = input.LA(2);
 
-            	                    if ( (LA10_2==21) ) {
+            	                    if ( (LA10_2==22) ) {
             	                        int LA10_4 = input.LA(3);
 
-            	                        if ( (LA10_4==36) ) {
+            	                        if ( (LA10_4==41) ) {
             	                            alt10=1;
             	                        }
 
@@ -1925,10 +1928,10 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	                else if ( (LA10_0==RULE_ID) ) {
             	                    int LA10_3 = input.LA(2);
 
-            	                    if ( (LA10_3==21) ) {
+            	                    if ( (LA10_3==22) ) {
             	                        int LA10_4 = input.LA(3);
 
-            	                        if ( (LA10_4==36) ) {
+            	                        if ( (LA10_4==41) ) {
             	                            alt10=1;
             	                        }
 
@@ -1941,15 +1944,15 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             	                switch (alt10) {
             	            	case 1 :
-            	            	    // InternalDockerCompose.g:689:11: (lv_depends_on_25_0= ruleDependency_long )
+            	            	    // InternalDockerCompose.g:688:11: (lv_depends_on_25_0= ruleDependency_long )
             	            	    {
-            	            	    // InternalDockerCompose.g:689:11: (lv_depends_on_25_0= ruleDependency_long )
-            	            	    // InternalDockerCompose.g:690:12: lv_depends_on_25_0= ruleDependency_long
+            	            	    // InternalDockerCompose.g:688:11: (lv_depends_on_25_0= ruleDependency_long )
+            	            	    // InternalDockerCompose.g:689:12: lv_depends_on_25_0= ruleDependency_long
             	            	    {
 
             	            	    												newCompositeNode(grammarAccess.getServiceAccess().getDepends_onDependency_longParserRuleCall_3_8_1_1_0());
             	            	    											
-            	            	    pushFollow(FOLLOW_17);
+            	            	    pushFollow(FOLLOW_18);
             	            	    lv_depends_on_25_0=ruleDependency_long();
 
             	            	    state._fsp--;
@@ -2006,34 +2009,34 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 10 :
-            	    // InternalDockerCompose.g:714:4: ({...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) ) )
+            	    // InternalDockerCompose.g:713:4: ({...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:714:4: ({...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) ) )
-            	    // InternalDockerCompose.g:715:5: {...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) )
+            	    // InternalDockerCompose.g:713:4: ({...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) ) )
+            	    // InternalDockerCompose.g:714:5: {...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 9) ) {
             	        throw new FailedPredicateException(input, "ruleService", "getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 9)");
             	    }
-            	    // InternalDockerCompose.g:715:104: ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) )
-            	    // InternalDockerCompose.g:716:6: ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) )
+            	    // InternalDockerCompose.g:714:104: ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) )
+            	    // InternalDockerCompose.g:715:6: ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 9);
             	    					
-            	    // InternalDockerCompose.g:719:9: ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) )
-            	    // InternalDockerCompose.g:719:10: {...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ )
+            	    // InternalDockerCompose.g:718:9: ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) )
+            	    // InternalDockerCompose.g:718:10: {...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleService", "true");
             	    }
-            	    // InternalDockerCompose.g:719:19: (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ )
-            	    // InternalDockerCompose.g:719:20: otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+
+            	    // InternalDockerCompose.g:718:19: (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ )
+            	    // InternalDockerCompose.g:718:20: otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+
             	    {
-            	    otherlv_26=(Token)match(input,20,FOLLOW_16); 
+            	    otherlv_26=(Token)match(input,21,FOLLOW_17); 
 
             	    									newLeafNode(otherlv_26, grammarAccess.getServiceAccess().getNetworksKeyword_3_9_0());
             	    								
-            	    // InternalDockerCompose.g:723:9: ( (lv_networks_27_0= ruleNetworkConnector ) )+
+            	    // InternalDockerCompose.g:722:9: ( (lv_networks_27_0= ruleNetworkConnector ) )+
             	    int cnt12=0;
             	    loop12:
             	    do {
@@ -2043,7 +2046,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	            {
             	            int LA12_2 = input.LA(2);
 
-            	            if ( (LA12_2==21) ) {
+            	            if ( (LA12_2==22) ) {
             	                alt12=1;
             	            }
 
@@ -2054,14 +2057,14 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	            {
             	            int LA12_3 = input.LA(2);
 
-            	            if ( (LA12_3==21) ) {
+            	            if ( (LA12_3==22) ) {
             	                alt12=1;
             	            }
 
 
             	            }
             	            break;
-            	        case 31:
+            	        case 32:
             	            {
             	            alt12=1;
             	            }
@@ -2071,15 +2074,15 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             	        switch (alt12) {
             	    	case 1 :
-            	    	    // InternalDockerCompose.g:724:10: (lv_networks_27_0= ruleNetworkConnector )
+            	    	    // InternalDockerCompose.g:723:10: (lv_networks_27_0= ruleNetworkConnector )
             	    	    {
-            	    	    // InternalDockerCompose.g:724:10: (lv_networks_27_0= ruleNetworkConnector )
-            	    	    // InternalDockerCompose.g:725:11: lv_networks_27_0= ruleNetworkConnector
+            	    	    // InternalDockerCompose.g:723:10: (lv_networks_27_0= ruleNetworkConnector )
+            	    	    // InternalDockerCompose.g:724:11: lv_networks_27_0= ruleNetworkConnector
             	    	    {
 
             	    	    											newCompositeNode(grammarAccess.getServiceAccess().getNetworksNetworkConnectorParserRuleCall_3_9_1_0());
             	    	    										
-            	    	    pushFollow(FOLLOW_17);
+            	    	    pushFollow(FOLLOW_18);
             	    	    lv_networks_27_0=ruleNetworkConnector();
 
             	    	    state._fsp--;
@@ -2130,44 +2133,44 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 11 :
-            	    // InternalDockerCompose.g:748:4: ({...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) ) )
+            	    // InternalDockerCompose.g:747:4: ({...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:748:4: ({...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) ) )
-            	    // InternalDockerCompose.g:749:5: {...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) )
+            	    // InternalDockerCompose.g:747:4: ({...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) ) )
+            	    // InternalDockerCompose.g:748:5: {...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 10) ) {
             	        throw new FailedPredicateException(input, "ruleService", "getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 10)");
             	    }
-            	    // InternalDockerCompose.g:749:105: ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) )
-            	    // InternalDockerCompose.g:750:6: ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) )
+            	    // InternalDockerCompose.g:748:105: ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) )
+            	    // InternalDockerCompose.g:749:6: ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 10);
             	    					
-            	    // InternalDockerCompose.g:753:9: ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) )
-            	    // InternalDockerCompose.g:753:10: {...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) )
+            	    // InternalDockerCompose.g:752:9: ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) )
+            	    // InternalDockerCompose.g:752:10: {...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleService", "true");
             	    }
-            	    // InternalDockerCompose.g:753:19: (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) )
-            	    // InternalDockerCompose.g:753:20: otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ )
+            	    // InternalDockerCompose.g:752:19: (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) )
+            	    // InternalDockerCompose.g:752:20: otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ )
             	    {
-            	    otherlv_28=(Token)match(input,17,FOLLOW_14); 
+            	    otherlv_28=(Token)match(input,18,FOLLOW_15); 
 
             	    									newLeafNode(otherlv_28, grammarAccess.getServiceAccess().getVolumesKeyword_3_10_0());
             	    								
-            	    // InternalDockerCompose.g:757:9: ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ )
+            	    // InternalDockerCompose.g:756:9: ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ )
             	    int alt15=2;
             	    int LA15_0 = input.LA(1);
 
-            	    if ( (LA15_0==31) ) {
+            	    if ( (LA15_0==32) ) {
             	        int LA15_1 = input.LA(2);
 
             	        if ( (LA15_1==RULE_ID||LA15_1==RULE_STRING) ) {
             	            alt15=1;
             	        }
-            	        else if ( (LA15_1==29||(LA15_1>=41 && LA15_1<=44)||LA15_1==46||LA15_1==48) ) {
+            	        else if ( (LA15_1==30||(LA15_1>=46 && LA15_1<=49)||LA15_1==51||LA15_1==53) ) {
             	            alt15=2;
             	        }
             	        else {
@@ -2185,38 +2188,38 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    switch (alt15) {
             	        case 1 :
-            	            // InternalDockerCompose.g:758:10: (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+
+            	            // InternalDockerCompose.g:757:10: (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+
             	            {
-            	            // InternalDockerCompose.g:758:10: (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+
+            	            // InternalDockerCompose.g:757:10: (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+
             	            int cnt13=0;
             	            loop13:
             	            do {
             	                int alt13=2;
             	                int LA13_0 = input.LA(1);
 
-            	                if ( (LA13_0==31) ) {
+            	                if ( (LA13_0==32) ) {
             	                    alt13=1;
             	                }
 
 
             	                switch (alt13) {
             	            	case 1 :
-            	            	    // InternalDockerCompose.g:759:11: otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) )
+            	            	    // InternalDockerCompose.g:758:11: otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) )
             	            	    {
-            	            	    otherlv_29=(Token)match(input,31,FOLLOW_5); 
+            	            	    otherlv_29=(Token)match(input,32,FOLLOW_5); 
 
             	            	    											newLeafNode(otherlv_29, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_10_1_0_0());
             	            	    										
-            	            	    // InternalDockerCompose.g:763:11: ( (lv_volumes_30_0= ruleVolumeConnector_short ) )
-            	            	    // InternalDockerCompose.g:764:12: (lv_volumes_30_0= ruleVolumeConnector_short )
+            	            	    // InternalDockerCompose.g:762:11: ( (lv_volumes_30_0= ruleVolumeConnector_short ) )
+            	            	    // InternalDockerCompose.g:763:12: (lv_volumes_30_0= ruleVolumeConnector_short )
             	            	    {
-            	            	    // InternalDockerCompose.g:764:12: (lv_volumes_30_0= ruleVolumeConnector_short )
-            	            	    // InternalDockerCompose.g:765:13: lv_volumes_30_0= ruleVolumeConnector_short
+            	            	    // InternalDockerCompose.g:763:12: (lv_volumes_30_0= ruleVolumeConnector_short )
+            	            	    // InternalDockerCompose.g:764:13: lv_volumes_30_0= ruleVolumeConnector_short
             	            	    {
 
             	            	    													newCompositeNode(grammarAccess.getServiceAccess().getVolumesVolumeConnector_shortParserRuleCall_3_10_1_0_1_0());
             	            	    												
-            	            	    pushFollow(FOLLOW_15);
+            	            	    pushFollow(FOLLOW_16);
             	            	    lv_volumes_30_0=ruleVolumeConnector_short();
 
             	            	    state._fsp--;
@@ -2255,38 +2258,38 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // InternalDockerCompose.g:784:10: (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+
+            	            // InternalDockerCompose.g:783:10: (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+
             	            {
-            	            // InternalDockerCompose.g:784:10: (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+
+            	            // InternalDockerCompose.g:783:10: (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+
             	            int cnt14=0;
             	            loop14:
             	            do {
             	                int alt14=2;
             	                int LA14_0 = input.LA(1);
 
-            	                if ( (LA14_0==31) ) {
+            	                if ( (LA14_0==32) ) {
             	                    alt14=1;
             	                }
 
 
             	                switch (alt14) {
             	            	case 1 :
-            	            	    // InternalDockerCompose.g:785:11: otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) )
+            	            	    // InternalDockerCompose.g:784:11: otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) )
             	            	    {
-            	            	    otherlv_31=(Token)match(input,31,FOLLOW_18); 
+            	            	    otherlv_31=(Token)match(input,32,FOLLOW_19); 
 
             	            	    											newLeafNode(otherlv_31, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_10_1_1_0());
             	            	    										
-            	            	    // InternalDockerCompose.g:789:11: ( (lv_volumes_32_0= ruleVolumeConnector_long ) )
-            	            	    // InternalDockerCompose.g:790:12: (lv_volumes_32_0= ruleVolumeConnector_long )
+            	            	    // InternalDockerCompose.g:788:11: ( (lv_volumes_32_0= ruleVolumeConnector_long ) )
+            	            	    // InternalDockerCompose.g:789:12: (lv_volumes_32_0= ruleVolumeConnector_long )
             	            	    {
-            	            	    // InternalDockerCompose.g:790:12: (lv_volumes_32_0= ruleVolumeConnector_long )
-            	            	    // InternalDockerCompose.g:791:13: lv_volumes_32_0= ruleVolumeConnector_long
+            	            	    // InternalDockerCompose.g:789:12: (lv_volumes_32_0= ruleVolumeConnector_long )
+            	            	    // InternalDockerCompose.g:790:13: lv_volumes_32_0= ruleVolumeConnector_long
             	            	    {
 
             	            	    													newCompositeNode(grammarAccess.getServiceAccess().getVolumesVolumeConnector_longParserRuleCall_3_10_1_1_1_0());
             	            	    												
-            	            	    pushFollow(FOLLOW_15);
+            	            	    pushFollow(FOLLOW_16);
             	            	    lv_volumes_32_0=ruleVolumeConnector_long();
 
             	            	    state._fsp--;
@@ -2346,44 +2349,44 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 12 :
-            	    // InternalDockerCompose.g:816:4: ({...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) ) )
+            	    // InternalDockerCompose.g:815:4: ({...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:816:4: ({...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) ) )
-            	    // InternalDockerCompose.g:817:5: {...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) )
+            	    // InternalDockerCompose.g:815:4: ({...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) ) )
+            	    // InternalDockerCompose.g:816:5: {...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 11) ) {
             	        throw new FailedPredicateException(input, "ruleService", "getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 11)");
             	    }
-            	    // InternalDockerCompose.g:817:105: ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) )
-            	    // InternalDockerCompose.g:818:6: ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) )
+            	    // InternalDockerCompose.g:816:105: ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) )
+            	    // InternalDockerCompose.g:817:6: ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 11);
             	    					
-            	    // InternalDockerCompose.g:821:9: ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) )
-            	    // InternalDockerCompose.g:821:10: {...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) )
+            	    // InternalDockerCompose.g:820:9: ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) )
+            	    // InternalDockerCompose.g:820:10: {...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleService", "true");
             	    }
-            	    // InternalDockerCompose.g:821:19: (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) )
-            	    // InternalDockerCompose.g:821:20: otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ )
+            	    // InternalDockerCompose.g:820:19: (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) )
+            	    // InternalDockerCompose.g:820:20: otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ )
             	    {
-            	    otherlv_33=(Token)match(input,18,FOLLOW_14); 
+            	    otherlv_33=(Token)match(input,19,FOLLOW_15); 
 
             	    									newLeafNode(otherlv_33, grammarAccess.getServiceAccess().getConfigsKeyword_3_11_0());
             	    								
-            	    // InternalDockerCompose.g:825:9: ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ )
+            	    // InternalDockerCompose.g:824:9: ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ )
             	    int alt18=2;
             	    int LA18_0 = input.LA(1);
 
-            	    if ( (LA18_0==31) ) {
+            	    if ( (LA18_0==32) ) {
             	        int LA18_1 = input.LA(2);
 
             	        if ( (LA18_1==RULE_ID||LA18_1==RULE_STRING) ) {
             	            alt18=1;
             	        }
-            	        else if ( (LA18_1==41||LA18_1==43||(LA18_1>=50 && LA18_1<=52)) ) {
+            	        else if ( (LA18_1==46||LA18_1==48||(LA18_1>=55 && LA18_1<=57)) ) {
             	            alt18=2;
             	        }
             	        else {
@@ -2401,38 +2404,38 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    switch (alt18) {
             	        case 1 :
-            	            // InternalDockerCompose.g:826:10: (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+
+            	            // InternalDockerCompose.g:825:10: (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+
             	            {
-            	            // InternalDockerCompose.g:826:10: (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+
+            	            // InternalDockerCompose.g:825:10: (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+
             	            int cnt16=0;
             	            loop16:
             	            do {
             	                int alt16=2;
             	                int LA16_0 = input.LA(1);
 
-            	                if ( (LA16_0==31) ) {
+            	                if ( (LA16_0==32) ) {
             	                    alt16=1;
             	                }
 
 
             	                switch (alt16) {
             	            	case 1 :
-            	            	    // InternalDockerCompose.g:827:11: otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) )
+            	            	    // InternalDockerCompose.g:826:11: otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) )
             	            	    {
-            	            	    otherlv_34=(Token)match(input,31,FOLLOW_5); 
+            	            	    otherlv_34=(Token)match(input,32,FOLLOW_5); 
 
             	            	    											newLeafNode(otherlv_34, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_11_1_0_0());
             	            	    										
-            	            	    // InternalDockerCompose.g:831:11: ( (lv_configs_35_0= ruleConfigConnector_short ) )
-            	            	    // InternalDockerCompose.g:832:12: (lv_configs_35_0= ruleConfigConnector_short )
+            	            	    // InternalDockerCompose.g:830:11: ( (lv_configs_35_0= ruleConfigConnector_short ) )
+            	            	    // InternalDockerCompose.g:831:12: (lv_configs_35_0= ruleConfigConnector_short )
             	            	    {
-            	            	    // InternalDockerCompose.g:832:12: (lv_configs_35_0= ruleConfigConnector_short )
-            	            	    // InternalDockerCompose.g:833:13: lv_configs_35_0= ruleConfigConnector_short
+            	            	    // InternalDockerCompose.g:831:12: (lv_configs_35_0= ruleConfigConnector_short )
+            	            	    // InternalDockerCompose.g:832:13: lv_configs_35_0= ruleConfigConnector_short
             	            	    {
 
             	            	    													newCompositeNode(grammarAccess.getServiceAccess().getConfigsConfigConnector_shortParserRuleCall_3_11_1_0_1_0());
             	            	    												
-            	            	    pushFollow(FOLLOW_15);
+            	            	    pushFollow(FOLLOW_16);
             	            	    lv_configs_35_0=ruleConfigConnector_short();
 
             	            	    state._fsp--;
@@ -2471,38 +2474,38 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // InternalDockerCompose.g:852:10: (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+
+            	            // InternalDockerCompose.g:851:10: (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+
             	            {
-            	            // InternalDockerCompose.g:852:10: (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+
+            	            // InternalDockerCompose.g:851:10: (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+
             	            int cnt17=0;
             	            loop17:
             	            do {
             	                int alt17=2;
             	                int LA17_0 = input.LA(1);
 
-            	                if ( (LA17_0==31) ) {
+            	                if ( (LA17_0==32) ) {
             	                    alt17=1;
             	                }
 
 
             	                switch (alt17) {
             	            	case 1 :
-            	            	    // InternalDockerCompose.g:853:11: otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) )
+            	            	    // InternalDockerCompose.g:852:11: otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) )
             	            	    {
-            	            	    otherlv_36=(Token)match(input,31,FOLLOW_19); 
+            	            	    otherlv_36=(Token)match(input,32,FOLLOW_20); 
 
             	            	    											newLeafNode(otherlv_36, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_11_1_1_0());
             	            	    										
-            	            	    // InternalDockerCompose.g:857:11: ( (lv_configs_37_0= ruleConfigConnector_long ) )
-            	            	    // InternalDockerCompose.g:858:12: (lv_configs_37_0= ruleConfigConnector_long )
+            	            	    // InternalDockerCompose.g:856:11: ( (lv_configs_37_0= ruleConfigConnector_long ) )
+            	            	    // InternalDockerCompose.g:857:12: (lv_configs_37_0= ruleConfigConnector_long )
             	            	    {
-            	            	    // InternalDockerCompose.g:858:12: (lv_configs_37_0= ruleConfigConnector_long )
-            	            	    // InternalDockerCompose.g:859:13: lv_configs_37_0= ruleConfigConnector_long
+            	            	    // InternalDockerCompose.g:857:12: (lv_configs_37_0= ruleConfigConnector_long )
+            	            	    // InternalDockerCompose.g:858:13: lv_configs_37_0= ruleConfigConnector_long
             	            	    {
 
             	            	    													newCompositeNode(grammarAccess.getServiceAccess().getConfigsConfigConnector_longParserRuleCall_3_11_1_1_1_0());
             	            	    												
-            	            	    pushFollow(FOLLOW_15);
+            	            	    pushFollow(FOLLOW_16);
             	            	    lv_configs_37_0=ruleConfigConnector_long();
 
             	            	    state._fsp--;
@@ -2562,44 +2565,44 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 13 :
-            	    // InternalDockerCompose.g:884:4: ({...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) ) )
+            	    // InternalDockerCompose.g:883:4: ({...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:884:4: ({...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) ) )
-            	    // InternalDockerCompose.g:885:5: {...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) )
+            	    // InternalDockerCompose.g:883:4: ({...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) ) )
+            	    // InternalDockerCompose.g:884:5: {...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 12) ) {
             	        throw new FailedPredicateException(input, "ruleService", "getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 12)");
             	    }
-            	    // InternalDockerCompose.g:885:105: ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) )
-            	    // InternalDockerCompose.g:886:6: ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) )
+            	    // InternalDockerCompose.g:884:105: ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) )
+            	    // InternalDockerCompose.g:885:6: ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 12);
             	    					
-            	    // InternalDockerCompose.g:889:9: ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) )
-            	    // InternalDockerCompose.g:889:10: {...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) )
+            	    // InternalDockerCompose.g:888:9: ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) )
+            	    // InternalDockerCompose.g:888:10: {...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleService", "true");
             	    }
-            	    // InternalDockerCompose.g:889:19: (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) )
-            	    // InternalDockerCompose.g:889:20: otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ )
+            	    // InternalDockerCompose.g:888:19: (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) )
+            	    // InternalDockerCompose.g:888:20: otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ )
             	    {
-            	    otherlv_38=(Token)match(input,19,FOLLOW_14); 
+            	    otherlv_38=(Token)match(input,20,FOLLOW_15); 
 
             	    									newLeafNode(otherlv_38, grammarAccess.getServiceAccess().getSecretsKeyword_3_12_0());
             	    								
-            	    // InternalDockerCompose.g:893:9: ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ )
+            	    // InternalDockerCompose.g:892:9: ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ )
             	    int alt21=2;
             	    int LA21_0 = input.LA(1);
 
-            	    if ( (LA21_0==31) ) {
+            	    if ( (LA21_0==32) ) {
             	        int LA21_1 = input.LA(2);
 
             	        if ( (LA21_1==RULE_ID||LA21_1==RULE_STRING) ) {
             	            alt21=1;
             	        }
-            	        else if ( (LA21_1==41||LA21_1==43||(LA21_1>=50 && LA21_1<=52)) ) {
+            	        else if ( (LA21_1==46||LA21_1==48||(LA21_1>=55 && LA21_1<=57)) ) {
             	            alt21=2;
             	        }
             	        else {
@@ -2617,38 +2620,38 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    switch (alt21) {
             	        case 1 :
-            	            // InternalDockerCompose.g:894:10: (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+
+            	            // InternalDockerCompose.g:893:10: (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+
             	            {
-            	            // InternalDockerCompose.g:894:10: (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+
+            	            // InternalDockerCompose.g:893:10: (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+
             	            int cnt19=0;
             	            loop19:
             	            do {
             	                int alt19=2;
             	                int LA19_0 = input.LA(1);
 
-            	                if ( (LA19_0==31) ) {
+            	                if ( (LA19_0==32) ) {
             	                    alt19=1;
             	                }
 
 
             	                switch (alt19) {
             	            	case 1 :
-            	            	    // InternalDockerCompose.g:895:11: otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) )
+            	            	    // InternalDockerCompose.g:894:11: otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) )
             	            	    {
-            	            	    otherlv_39=(Token)match(input,31,FOLLOW_5); 
+            	            	    otherlv_39=(Token)match(input,32,FOLLOW_5); 
 
             	            	    											newLeafNode(otherlv_39, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_12_1_0_0());
             	            	    										
-            	            	    // InternalDockerCompose.g:899:11: ( (lv_secrets_40_0= ruleSecretConnector_short ) )
-            	            	    // InternalDockerCompose.g:900:12: (lv_secrets_40_0= ruleSecretConnector_short )
+            	            	    // InternalDockerCompose.g:898:11: ( (lv_secrets_40_0= ruleSecretConnector_short ) )
+            	            	    // InternalDockerCompose.g:899:12: (lv_secrets_40_0= ruleSecretConnector_short )
             	            	    {
-            	            	    // InternalDockerCompose.g:900:12: (lv_secrets_40_0= ruleSecretConnector_short )
-            	            	    // InternalDockerCompose.g:901:13: lv_secrets_40_0= ruleSecretConnector_short
+            	            	    // InternalDockerCompose.g:899:12: (lv_secrets_40_0= ruleSecretConnector_short )
+            	            	    // InternalDockerCompose.g:900:13: lv_secrets_40_0= ruleSecretConnector_short
             	            	    {
 
             	            	    													newCompositeNode(grammarAccess.getServiceAccess().getSecretsSecretConnector_shortParserRuleCall_3_12_1_0_1_0());
             	            	    												
-            	            	    pushFollow(FOLLOW_15);
+            	            	    pushFollow(FOLLOW_16);
             	            	    lv_secrets_40_0=ruleSecretConnector_short();
 
             	            	    state._fsp--;
@@ -2687,38 +2690,38 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // InternalDockerCompose.g:920:10: (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+
+            	            // InternalDockerCompose.g:919:10: (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+
             	            {
-            	            // InternalDockerCompose.g:920:10: (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+
+            	            // InternalDockerCompose.g:919:10: (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+
             	            int cnt20=0;
             	            loop20:
             	            do {
             	                int alt20=2;
             	                int LA20_0 = input.LA(1);
 
-            	                if ( (LA20_0==31) ) {
+            	                if ( (LA20_0==32) ) {
             	                    alt20=1;
             	                }
 
 
             	                switch (alt20) {
             	            	case 1 :
-            	            	    // InternalDockerCompose.g:921:11: otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) )
+            	            	    // InternalDockerCompose.g:920:11: otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) )
             	            	    {
-            	            	    otherlv_41=(Token)match(input,31,FOLLOW_19); 
+            	            	    otherlv_41=(Token)match(input,32,FOLLOW_20); 
 
             	            	    											newLeafNode(otherlv_41, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_12_1_1_0());
             	            	    										
-            	            	    // InternalDockerCompose.g:925:11: ( (lv_secrets_42_0= ruleSecretConnector_long ) )
-            	            	    // InternalDockerCompose.g:926:12: (lv_secrets_42_0= ruleSecretConnector_long )
+            	            	    // InternalDockerCompose.g:924:11: ( (lv_secrets_42_0= ruleSecretConnector_long ) )
+            	            	    // InternalDockerCompose.g:925:12: (lv_secrets_42_0= ruleSecretConnector_long )
             	            	    {
-            	            	    // InternalDockerCompose.g:926:12: (lv_secrets_42_0= ruleSecretConnector_long )
-            	            	    // InternalDockerCompose.g:927:13: lv_secrets_42_0= ruleSecretConnector_long
+            	            	    // InternalDockerCompose.g:925:12: (lv_secrets_42_0= ruleSecretConnector_long )
+            	            	    // InternalDockerCompose.g:926:13: lv_secrets_42_0= ruleSecretConnector_long
             	            	    {
 
             	            	    													newCompositeNode(grammarAccess.getServiceAccess().getSecretsSecretConnector_longParserRuleCall_3_12_1_1_1_0());
             	            	    												
-            	            	    pushFollow(FOLLOW_15);
+            	            	    pushFollow(FOLLOW_16);
             	            	    lv_secrets_42_0=ruleSecretConnector_long();
 
             	            	    state._fsp--;
@@ -2778,96 +2781,178 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 14 :
-            	    // InternalDockerCompose.g:952:4: ({...}? => ( ({...}? => (otherlv_43= 'devices:' (otherlv_44= '-' ( (lv_devices_45_0= ruleDevice ) ) )+ ) ) ) )
+            	    // InternalDockerCompose.g:951:4: ({...}? => ( ({...}? => (otherlv_43= 'environment:' ( ( (lv_environment_44_0= ruleEnvironmentVariableMap ) )+ | ( (lv_environment_45_0= ruleEnvironmentVariableList ) )+ ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:952:4: ({...}? => ( ({...}? => (otherlv_43= 'devices:' (otherlv_44= '-' ( (lv_devices_45_0= ruleDevice ) ) )+ ) ) ) )
-            	    // InternalDockerCompose.g:953:5: {...}? => ( ({...}? => (otherlv_43= 'devices:' (otherlv_44= '-' ( (lv_devices_45_0= ruleDevice ) ) )+ ) ) )
+            	    // InternalDockerCompose.g:951:4: ({...}? => ( ({...}? => (otherlv_43= 'environment:' ( ( (lv_environment_44_0= ruleEnvironmentVariableMap ) )+ | ( (lv_environment_45_0= ruleEnvironmentVariableList ) )+ ) ) ) ) )
+            	    // InternalDockerCompose.g:952:5: {...}? => ( ({...}? => (otherlv_43= 'environment:' ( ( (lv_environment_44_0= ruleEnvironmentVariableMap ) )+ | ( (lv_environment_45_0= ruleEnvironmentVariableList ) )+ ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 13) ) {
             	        throw new FailedPredicateException(input, "ruleService", "getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 13)");
             	    }
-            	    // InternalDockerCompose.g:953:105: ( ({...}? => (otherlv_43= 'devices:' (otherlv_44= '-' ( (lv_devices_45_0= ruleDevice ) ) )+ ) ) )
-            	    // InternalDockerCompose.g:954:6: ({...}? => (otherlv_43= 'devices:' (otherlv_44= '-' ( (lv_devices_45_0= ruleDevice ) ) )+ ) )
+            	    // InternalDockerCompose.g:952:105: ( ({...}? => (otherlv_43= 'environment:' ( ( (lv_environment_44_0= ruleEnvironmentVariableMap ) )+ | ( (lv_environment_45_0= ruleEnvironmentVariableList ) )+ ) ) ) )
+            	    // InternalDockerCompose.g:953:6: ({...}? => (otherlv_43= 'environment:' ( ( (lv_environment_44_0= ruleEnvironmentVariableMap ) )+ | ( (lv_environment_45_0= ruleEnvironmentVariableList ) )+ ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 13);
             	    					
-            	    // InternalDockerCompose.g:957:9: ({...}? => (otherlv_43= 'devices:' (otherlv_44= '-' ( (lv_devices_45_0= ruleDevice ) ) )+ ) )
-            	    // InternalDockerCompose.g:957:10: {...}? => (otherlv_43= 'devices:' (otherlv_44= '-' ( (lv_devices_45_0= ruleDevice ) ) )+ )
+            	    // InternalDockerCompose.g:956:9: ({...}? => (otherlv_43= 'environment:' ( ( (lv_environment_44_0= ruleEnvironmentVariableMap ) )+ | ( (lv_environment_45_0= ruleEnvironmentVariableList ) )+ ) ) )
+            	    // InternalDockerCompose.g:956:10: {...}? => (otherlv_43= 'environment:' ( ( (lv_environment_44_0= ruleEnvironmentVariableMap ) )+ | ( (lv_environment_45_0= ruleEnvironmentVariableList ) )+ ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleService", "true");
             	    }
-            	    // InternalDockerCompose.g:957:19: (otherlv_43= 'devices:' (otherlv_44= '-' ( (lv_devices_45_0= ruleDevice ) ) )+ )
-            	    // InternalDockerCompose.g:957:20: otherlv_43= 'devices:' (otherlv_44= '-' ( (lv_devices_45_0= ruleDevice ) ) )+
+            	    // InternalDockerCompose.g:956:19: (otherlv_43= 'environment:' ( ( (lv_environment_44_0= ruleEnvironmentVariableMap ) )+ | ( (lv_environment_45_0= ruleEnvironmentVariableList ) )+ ) )
+            	    // InternalDockerCompose.g:956:20: otherlv_43= 'environment:' ( ( (lv_environment_44_0= ruleEnvironmentVariableMap ) )+ | ( (lv_environment_45_0= ruleEnvironmentVariableList ) )+ )
             	    {
-            	    otherlv_43=(Token)match(input,33,FOLLOW_14); 
+            	    otherlv_43=(Token)match(input,34,FOLLOW_21); 
 
-            	    									newLeafNode(otherlv_43, grammarAccess.getServiceAccess().getDevicesKeyword_3_13_0());
+            	    									newLeafNode(otherlv_43, grammarAccess.getServiceAccess().getEnvironmentKeyword_3_13_0());
             	    								
-            	    // InternalDockerCompose.g:961:9: (otherlv_44= '-' ( (lv_devices_45_0= ruleDevice ) ) )+
-            	    int cnt22=0;
-            	    loop22:
-            	    do {
-            	        int alt22=2;
-            	        int LA22_0 = input.LA(1);
+            	    // InternalDockerCompose.g:960:9: ( ( (lv_environment_44_0= ruleEnvironmentVariableMap ) )+ | ( (lv_environment_45_0= ruleEnvironmentVariableList ) )+ )
+            	    int alt24=2;
+            	    int LA24_0 = input.LA(1);
 
-            	        if ( (LA22_0==31) ) {
-            	            alt22=1;
-            	        }
+            	    if ( (LA24_0==RULE_ID) ) {
+            	        alt24=1;
+            	    }
+            	    else if ( (LA24_0==32) ) {
+            	        alt24=2;
+            	    }
+            	    else {
+            	        NoViableAltException nvae =
+            	            new NoViableAltException("", 24, 0, input);
 
+            	        throw nvae;
+            	    }
+            	    switch (alt24) {
+            	        case 1 :
+            	            // InternalDockerCompose.g:961:10: ( (lv_environment_44_0= ruleEnvironmentVariableMap ) )+
+            	            {
+            	            // InternalDockerCompose.g:961:10: ( (lv_environment_44_0= ruleEnvironmentVariableMap ) )+
+            	            int cnt22=0;
+            	            loop22:
+            	            do {
+            	                int alt22=2;
+            	                int LA22_0 = input.LA(1);
 
-            	        switch (alt22) {
-            	    	case 1 :
-            	    	    // InternalDockerCompose.g:962:10: otherlv_44= '-' ( (lv_devices_45_0= ruleDevice ) )
-            	    	    {
-            	    	    otherlv_44=(Token)match(input,31,FOLLOW_20); 
+            	                if ( (LA22_0==RULE_ID) ) {
+            	                    int LA22_2 = input.LA(2);
 
-            	    	    										newLeafNode(otherlv_44, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_13_1_0());
-            	    	    									
-            	    	    // InternalDockerCompose.g:966:10: ( (lv_devices_45_0= ruleDevice ) )
-            	    	    // InternalDockerCompose.g:967:11: (lv_devices_45_0= ruleDevice )
-            	    	    {
-            	    	    // InternalDockerCompose.g:967:11: (lv_devices_45_0= ruleDevice )
-            	    	    // InternalDockerCompose.g:968:12: lv_devices_45_0= ruleDevice
-            	    	    {
-
-            	    	    												newCompositeNode(grammarAccess.getServiceAccess().getDevicesDeviceParserRuleCall_3_13_1_1_0());
-            	    	    											
-            	    	    pushFollow(FOLLOW_15);
-            	    	    lv_devices_45_0=ruleDevice();
-
-            	    	    state._fsp--;
-
-
-            	    	    												if (current==null) {
-            	    	    													current = createModelElementForParent(grammarAccess.getServiceRule());
-            	    	    												}
-            	    	    												add(
-            	    	    													current,
-            	    	    													"devices",
-            	    	    													lv_devices_45_0,
-            	    	    													"org.xtext.example.dockercompose.DockerCompose.Device");
-            	    	    												afterParserOrEnumRuleCall();
-            	    	    											
-
-            	    	    }
+            	                    if ( (LA22_2==22) ) {
+            	                        alt22=1;
+            	                    }
 
 
-            	    	    }
+            	                }
 
 
-            	    	    }
-            	    	    break;
+            	                switch (alt22) {
+            	            	case 1 :
+            	            	    // InternalDockerCompose.g:962:11: (lv_environment_44_0= ruleEnvironmentVariableMap )
+            	            	    {
+            	            	    // InternalDockerCompose.g:962:11: (lv_environment_44_0= ruleEnvironmentVariableMap )
+            	            	    // InternalDockerCompose.g:963:12: lv_environment_44_0= ruleEnvironmentVariableMap
+            	            	    {
 
-            	    	default :
-            	    	    if ( cnt22 >= 1 ) break loop22;
-            	                EarlyExitException eee =
-            	                    new EarlyExitException(22, input);
-            	                throw eee;
-            	        }
-            	        cnt22++;
-            	    } while (true);
+            	            	    												newCompositeNode(grammarAccess.getServiceAccess().getEnvironmentEnvironmentVariableMapParserRuleCall_3_13_1_0_0());
+            	            	    											
+            	            	    pushFollow(FOLLOW_22);
+            	            	    lv_environment_44_0=ruleEnvironmentVariableMap();
+
+            	            	    state._fsp--;
+
+
+            	            	    												if (current==null) {
+            	            	    													current = createModelElementForParent(grammarAccess.getServiceRule());
+            	            	    												}
+            	            	    												add(
+            	            	    													current,
+            	            	    													"environment",
+            	            	    													lv_environment_44_0,
+            	            	    													"org.xtext.example.dockercompose.DockerCompose.EnvironmentVariableMap");
+            	            	    												afterParserOrEnumRuleCall();
+            	            	    											
+
+            	            	    }
+
+
+            	            	    }
+            	            	    break;
+
+            	            	default :
+            	            	    if ( cnt22 >= 1 ) break loop22;
+            	                        EarlyExitException eee =
+            	                            new EarlyExitException(22, input);
+            	                        throw eee;
+            	                }
+            	                cnt22++;
+            	            } while (true);
+
+
+            	            }
+            	            break;
+            	        case 2 :
+            	            // InternalDockerCompose.g:981:10: ( (lv_environment_45_0= ruleEnvironmentVariableList ) )+
+            	            {
+            	            // InternalDockerCompose.g:981:10: ( (lv_environment_45_0= ruleEnvironmentVariableList ) )+
+            	            int cnt23=0;
+            	            loop23:
+            	            do {
+            	                int alt23=2;
+            	                int LA23_0 = input.LA(1);
+
+            	                if ( (LA23_0==32) ) {
+            	                    alt23=1;
+            	                }
+
+
+            	                switch (alt23) {
+            	            	case 1 :
+            	            	    // InternalDockerCompose.g:982:11: (lv_environment_45_0= ruleEnvironmentVariableList )
+            	            	    {
+            	            	    // InternalDockerCompose.g:982:11: (lv_environment_45_0= ruleEnvironmentVariableList )
+            	            	    // InternalDockerCompose.g:983:12: lv_environment_45_0= ruleEnvironmentVariableList
+            	            	    {
+
+            	            	    												newCompositeNode(grammarAccess.getServiceAccess().getEnvironmentEnvironmentVariableListParserRuleCall_3_13_1_1_0());
+            	            	    											
+            	            	    pushFollow(FOLLOW_23);
+            	            	    lv_environment_45_0=ruleEnvironmentVariableList();
+
+            	            	    state._fsp--;
+
+
+            	            	    												if (current==null) {
+            	            	    													current = createModelElementForParent(grammarAccess.getServiceRule());
+            	            	    												}
+            	            	    												add(
+            	            	    													current,
+            	            	    													"environment",
+            	            	    													lv_environment_45_0,
+            	            	    													"org.xtext.example.dockercompose.DockerCompose.EnvironmentVariableList");
+            	            	    												afterParserOrEnumRuleCall();
+            	            	    											
+
+            	            	    }
+
+
+            	            	    }
+            	            	    break;
+
+            	            	default :
+            	            	    if ( cnt23 >= 1 ) break loop23;
+            	                        EarlyExitException eee =
+            	                            new EarlyExitException(23, input);
+            	                        throw eee;
+            	                }
+            	                cnt23++;
+            	            } while (true);
+
+
+            	            }
+            	            break;
+
+            	    }
 
 
             	    }
@@ -2888,237 +2973,64 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 15 :
-            	    // InternalDockerCompose.g:992:4: ({...}? => ( ({...}? => (otherlv_46= 'dns:' ( (otherlv_47= '-' ( (lv_dns_48_0= ruleDNS ) ) )+ | ( (lv_dns_49_0= ruleDNS ) ) ) ) ) ) )
+            	    // InternalDockerCompose.g:1007:4: ({...}? => ( ({...}? => (otherlv_46= 'devices:' (otherlv_47= '-' ( (lv_devices_48_0= ruleDevice ) ) )+ ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:992:4: ({...}? => ( ({...}? => (otherlv_46= 'dns:' ( (otherlv_47= '-' ( (lv_dns_48_0= ruleDNS ) ) )+ | ( (lv_dns_49_0= ruleDNS ) ) ) ) ) ) )
-            	    // InternalDockerCompose.g:993:5: {...}? => ( ({...}? => (otherlv_46= 'dns:' ( (otherlv_47= '-' ( (lv_dns_48_0= ruleDNS ) ) )+ | ( (lv_dns_49_0= ruleDNS ) ) ) ) ) )
+            	    // InternalDockerCompose.g:1007:4: ({...}? => ( ({...}? => (otherlv_46= 'devices:' (otherlv_47= '-' ( (lv_devices_48_0= ruleDevice ) ) )+ ) ) ) )
+            	    // InternalDockerCompose.g:1008:5: {...}? => ( ({...}? => (otherlv_46= 'devices:' (otherlv_47= '-' ( (lv_devices_48_0= ruleDevice ) ) )+ ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 14) ) {
             	        throw new FailedPredicateException(input, "ruleService", "getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 14)");
             	    }
-            	    // InternalDockerCompose.g:993:105: ( ({...}? => (otherlv_46= 'dns:' ( (otherlv_47= '-' ( (lv_dns_48_0= ruleDNS ) ) )+ | ( (lv_dns_49_0= ruleDNS ) ) ) ) ) )
-            	    // InternalDockerCompose.g:994:6: ({...}? => (otherlv_46= 'dns:' ( (otherlv_47= '-' ( (lv_dns_48_0= ruleDNS ) ) )+ | ( (lv_dns_49_0= ruleDNS ) ) ) ) )
+            	    // InternalDockerCompose.g:1008:105: ( ({...}? => (otherlv_46= 'devices:' (otherlv_47= '-' ( (lv_devices_48_0= ruleDevice ) ) )+ ) ) )
+            	    // InternalDockerCompose.g:1009:6: ({...}? => (otherlv_46= 'devices:' (otherlv_47= '-' ( (lv_devices_48_0= ruleDevice ) ) )+ ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 14);
             	    					
-            	    // InternalDockerCompose.g:997:9: ({...}? => (otherlv_46= 'dns:' ( (otherlv_47= '-' ( (lv_dns_48_0= ruleDNS ) ) )+ | ( (lv_dns_49_0= ruleDNS ) ) ) ) )
-            	    // InternalDockerCompose.g:997:10: {...}? => (otherlv_46= 'dns:' ( (otherlv_47= '-' ( (lv_dns_48_0= ruleDNS ) ) )+ | ( (lv_dns_49_0= ruleDNS ) ) ) )
+            	    // InternalDockerCompose.g:1012:9: ({...}? => (otherlv_46= 'devices:' (otherlv_47= '-' ( (lv_devices_48_0= ruleDevice ) ) )+ ) )
+            	    // InternalDockerCompose.g:1012:10: {...}? => (otherlv_46= 'devices:' (otherlv_47= '-' ( (lv_devices_48_0= ruleDevice ) ) )+ )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleService", "true");
             	    }
-            	    // InternalDockerCompose.g:997:19: (otherlv_46= 'dns:' ( (otherlv_47= '-' ( (lv_dns_48_0= ruleDNS ) ) )+ | ( (lv_dns_49_0= ruleDNS ) ) ) )
-            	    // InternalDockerCompose.g:997:20: otherlv_46= 'dns:' ( (otherlv_47= '-' ( (lv_dns_48_0= ruleDNS ) ) )+ | ( (lv_dns_49_0= ruleDNS ) ) )
+            	    // InternalDockerCompose.g:1012:19: (otherlv_46= 'devices:' (otherlv_47= '-' ( (lv_devices_48_0= ruleDevice ) ) )+ )
+            	    // InternalDockerCompose.g:1012:20: otherlv_46= 'devices:' (otherlv_47= '-' ( (lv_devices_48_0= ruleDevice ) ) )+
             	    {
-            	    otherlv_46=(Token)match(input,34,FOLLOW_21); 
+            	    otherlv_46=(Token)match(input,35,FOLLOW_15); 
 
-            	    									newLeafNode(otherlv_46, grammarAccess.getServiceAccess().getDnsKeyword_3_14_0());
+            	    									newLeafNode(otherlv_46, grammarAccess.getServiceAccess().getDevicesKeyword_3_14_0());
             	    								
-            	    // InternalDockerCompose.g:1001:9: ( (otherlv_47= '-' ( (lv_dns_48_0= ruleDNS ) ) )+ | ( (lv_dns_49_0= ruleDNS ) ) )
-            	    int alt24=2;
-            	    int LA24_0 = input.LA(1);
-
-            	    if ( (LA24_0==31) ) {
-            	        alt24=1;
-            	    }
-            	    else if ( (LA24_0==RULE_INT) ) {
-            	        alt24=2;
-            	    }
-            	    else {
-            	        NoViableAltException nvae =
-            	            new NoViableAltException("", 24, 0, input);
-
-            	        throw nvae;
-            	    }
-            	    switch (alt24) {
-            	        case 1 :
-            	            // InternalDockerCompose.g:1002:10: (otherlv_47= '-' ( (lv_dns_48_0= ruleDNS ) ) )+
-            	            {
-            	            // InternalDockerCompose.g:1002:10: (otherlv_47= '-' ( (lv_dns_48_0= ruleDNS ) ) )+
-            	            int cnt23=0;
-            	            loop23:
-            	            do {
-            	                int alt23=2;
-            	                int LA23_0 = input.LA(1);
-
-            	                if ( (LA23_0==31) ) {
-            	                    alt23=1;
-            	                }
-
-
-            	                switch (alt23) {
-            	            	case 1 :
-            	            	    // InternalDockerCompose.g:1003:11: otherlv_47= '-' ( (lv_dns_48_0= ruleDNS ) )
-            	            	    {
-            	            	    otherlv_47=(Token)match(input,31,FOLLOW_21); 
-
-            	            	    											newLeafNode(otherlv_47, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_14_1_0_0());
-            	            	    										
-            	            	    // InternalDockerCompose.g:1007:11: ( (lv_dns_48_0= ruleDNS ) )
-            	            	    // InternalDockerCompose.g:1008:12: (lv_dns_48_0= ruleDNS )
-            	            	    {
-            	            	    // InternalDockerCompose.g:1008:12: (lv_dns_48_0= ruleDNS )
-            	            	    // InternalDockerCompose.g:1009:13: lv_dns_48_0= ruleDNS
-            	            	    {
-
-            	            	    													newCompositeNode(grammarAccess.getServiceAccess().getDnsDNSParserRuleCall_3_14_1_0_1_0());
-            	            	    												
-            	            	    pushFollow(FOLLOW_15);
-            	            	    lv_dns_48_0=ruleDNS();
-
-            	            	    state._fsp--;
-
-
-            	            	    													if (current==null) {
-            	            	    														current = createModelElementForParent(grammarAccess.getServiceRule());
-            	            	    													}
-            	            	    													add(
-            	            	    														current,
-            	            	    														"dns",
-            	            	    														lv_dns_48_0,
-            	            	    														"org.xtext.example.dockercompose.DockerCompose.DNS");
-            	            	    													afterParserOrEnumRuleCall();
-            	            	    												
-
-            	            	    }
-
-
-            	            	    }
-
-
-            	            	    }
-            	            	    break;
-
-            	            	default :
-            	            	    if ( cnt23 >= 1 ) break loop23;
-            	                        EarlyExitException eee =
-            	                            new EarlyExitException(23, input);
-            	                        throw eee;
-            	                }
-            	                cnt23++;
-            	            } while (true);
-
-
-            	            }
-            	            break;
-            	        case 2 :
-            	            // InternalDockerCompose.g:1028:10: ( (lv_dns_49_0= ruleDNS ) )
-            	            {
-            	            // InternalDockerCompose.g:1028:10: ( (lv_dns_49_0= ruleDNS ) )
-            	            // InternalDockerCompose.g:1029:11: (lv_dns_49_0= ruleDNS )
-            	            {
-            	            // InternalDockerCompose.g:1029:11: (lv_dns_49_0= ruleDNS )
-            	            // InternalDockerCompose.g:1030:12: lv_dns_49_0= ruleDNS
-            	            {
-
-            	            												newCompositeNode(grammarAccess.getServiceAccess().getDnsDNSParserRuleCall_3_14_1_1_0());
-            	            											
-            	            pushFollow(FOLLOW_10);
-            	            lv_dns_49_0=ruleDNS();
-
-            	            state._fsp--;
-
-
-            	            												if (current==null) {
-            	            													current = createModelElementForParent(grammarAccess.getServiceRule());
-            	            												}
-            	            												add(
-            	            													current,
-            	            													"dns",
-            	            													lv_dns_49_0,
-            	            													"org.xtext.example.dockercompose.DockerCompose.DNS");
-            	            												afterParserOrEnumRuleCall();
-            	            											
-
-            	            }
-
-
-            	            }
-
-
-            	            }
-            	            break;
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-            	     
-            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getServiceAccess().getUnorderedGroup_3());
-            	    					
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-            	case 16 :
-            	    // InternalDockerCompose.g:1054:4: ({...}? => ( ({...}? => (otherlv_50= 'ports:' (otherlv_51= '-' ( (lv_ports_52_0= rulePort ) ) )+ ) ) ) )
-            	    {
-            	    // InternalDockerCompose.g:1054:4: ({...}? => ( ({...}? => (otherlv_50= 'ports:' (otherlv_51= '-' ( (lv_ports_52_0= rulePort ) ) )+ ) ) ) )
-            	    // InternalDockerCompose.g:1055:5: {...}? => ( ({...}? => (otherlv_50= 'ports:' (otherlv_51= '-' ( (lv_ports_52_0= rulePort ) ) )+ ) ) )
-            	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 15) ) {
-            	        throw new FailedPredicateException(input, "ruleService", "getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 15)");
-            	    }
-            	    // InternalDockerCompose.g:1055:105: ( ({...}? => (otherlv_50= 'ports:' (otherlv_51= '-' ( (lv_ports_52_0= rulePort ) ) )+ ) ) )
-            	    // InternalDockerCompose.g:1056:6: ({...}? => (otherlv_50= 'ports:' (otherlv_51= '-' ( (lv_ports_52_0= rulePort ) ) )+ ) )
-            	    {
-
-            	    						getUnorderedGroupHelper().select(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 15);
-            	    					
-            	    // InternalDockerCompose.g:1059:9: ({...}? => (otherlv_50= 'ports:' (otherlv_51= '-' ( (lv_ports_52_0= rulePort ) ) )+ ) )
-            	    // InternalDockerCompose.g:1059:10: {...}? => (otherlv_50= 'ports:' (otherlv_51= '-' ( (lv_ports_52_0= rulePort ) ) )+ )
-            	    {
-            	    if ( !((true)) ) {
-            	        throw new FailedPredicateException(input, "ruleService", "true");
-            	    }
-            	    // InternalDockerCompose.g:1059:19: (otherlv_50= 'ports:' (otherlv_51= '-' ( (lv_ports_52_0= rulePort ) ) )+ )
-            	    // InternalDockerCompose.g:1059:20: otherlv_50= 'ports:' (otherlv_51= '-' ( (lv_ports_52_0= rulePort ) ) )+
-            	    {
-            	    otherlv_50=(Token)match(input,35,FOLLOW_14); 
-
-            	    									newLeafNode(otherlv_50, grammarAccess.getServiceAccess().getPortsKeyword_3_15_0());
-            	    								
-            	    // InternalDockerCompose.g:1063:9: (otherlv_51= '-' ( (lv_ports_52_0= rulePort ) ) )+
+            	    // InternalDockerCompose.g:1016:9: (otherlv_47= '-' ( (lv_devices_48_0= ruleDevice ) ) )+
             	    int cnt25=0;
             	    loop25:
             	    do {
             	        int alt25=2;
             	        int LA25_0 = input.LA(1);
 
-            	        if ( (LA25_0==31) ) {
+            	        if ( (LA25_0==32) ) {
             	            alt25=1;
             	        }
 
 
             	        switch (alt25) {
             	    	case 1 :
-            	    	    // InternalDockerCompose.g:1064:10: otherlv_51= '-' ( (lv_ports_52_0= rulePort ) )
+            	    	    // InternalDockerCompose.g:1017:10: otherlv_47= '-' ( (lv_devices_48_0= ruleDevice ) )
             	    	    {
-            	    	    otherlv_51=(Token)match(input,31,FOLLOW_22); 
+            	    	    otherlv_47=(Token)match(input,32,FOLLOW_24); 
 
-            	    	    										newLeafNode(otherlv_51, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_15_1_0());
+            	    	    										newLeafNode(otherlv_47, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_14_1_0());
             	    	    									
-            	    	    // InternalDockerCompose.g:1068:10: ( (lv_ports_52_0= rulePort ) )
-            	    	    // InternalDockerCompose.g:1069:11: (lv_ports_52_0= rulePort )
+            	    	    // InternalDockerCompose.g:1021:10: ( (lv_devices_48_0= ruleDevice ) )
+            	    	    // InternalDockerCompose.g:1022:11: (lv_devices_48_0= ruleDevice )
             	    	    {
-            	    	    // InternalDockerCompose.g:1069:11: (lv_ports_52_0= rulePort )
-            	    	    // InternalDockerCompose.g:1070:12: lv_ports_52_0= rulePort
+            	    	    // InternalDockerCompose.g:1022:11: (lv_devices_48_0= ruleDevice )
+            	    	    // InternalDockerCompose.g:1023:12: lv_devices_48_0= ruleDevice
             	    	    {
 
-            	    	    												newCompositeNode(grammarAccess.getServiceAccess().getPortsPortParserRuleCall_3_15_1_1_0());
+            	    	    												newCompositeNode(grammarAccess.getServiceAccess().getDevicesDeviceParserRuleCall_3_14_1_1_0());
             	    	    											
-            	    	    pushFollow(FOLLOW_15);
-            	    	    lv_ports_52_0=rulePort();
+            	    	    pushFollow(FOLLOW_16);
+            	    	    lv_devices_48_0=ruleDevice();
 
             	    	    state._fsp--;
 
@@ -3128,9 +3040,9 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    	    												}
             	    	    												add(
             	    	    													current,
-            	    	    													"ports",
-            	    	    													lv_ports_52_0,
-            	    	    													"org.xtext.example.dockercompose.DockerCompose.Port");
+            	    	    													"devices",
+            	    	    													lv_devices_48_0,
+            	    	    													"org.xtext.example.dockercompose.DockerCompose.Device");
             	    	    												afterParserOrEnumRuleCall();
             	    	    											
 
@@ -3170,14 +3082,297 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             	    }
             	    break;
+            	case 16 :
+            	    // InternalDockerCompose.g:1047:4: ({...}? => ( ({...}? => (otherlv_49= 'dns:' ( (otherlv_50= '-' ( (lv_dns_51_0= ruleDNS ) ) )+ | ( (lv_dns_52_0= ruleDNS ) ) ) ) ) ) )
+            	    {
+            	    // InternalDockerCompose.g:1047:4: ({...}? => ( ({...}? => (otherlv_49= 'dns:' ( (otherlv_50= '-' ( (lv_dns_51_0= ruleDNS ) ) )+ | ( (lv_dns_52_0= ruleDNS ) ) ) ) ) ) )
+            	    // InternalDockerCompose.g:1048:5: {...}? => ( ({...}? => (otherlv_49= 'dns:' ( (otherlv_50= '-' ( (lv_dns_51_0= ruleDNS ) ) )+ | ( (lv_dns_52_0= ruleDNS ) ) ) ) ) )
+            	    {
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 15) ) {
+            	        throw new FailedPredicateException(input, "ruleService", "getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 15)");
+            	    }
+            	    // InternalDockerCompose.g:1048:105: ( ({...}? => (otherlv_49= 'dns:' ( (otherlv_50= '-' ( (lv_dns_51_0= ruleDNS ) ) )+ | ( (lv_dns_52_0= ruleDNS ) ) ) ) ) )
+            	    // InternalDockerCompose.g:1049:6: ({...}? => (otherlv_49= 'dns:' ( (otherlv_50= '-' ( (lv_dns_51_0= ruleDNS ) ) )+ | ( (lv_dns_52_0= ruleDNS ) ) ) ) )
+            	    {
+
+            	    						getUnorderedGroupHelper().select(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 15);
+            	    					
+            	    // InternalDockerCompose.g:1052:9: ({...}? => (otherlv_49= 'dns:' ( (otherlv_50= '-' ( (lv_dns_51_0= ruleDNS ) ) )+ | ( (lv_dns_52_0= ruleDNS ) ) ) ) )
+            	    // InternalDockerCompose.g:1052:10: {...}? => (otherlv_49= 'dns:' ( (otherlv_50= '-' ( (lv_dns_51_0= ruleDNS ) ) )+ | ( (lv_dns_52_0= ruleDNS ) ) ) )
+            	    {
+            	    if ( !((true)) ) {
+            	        throw new FailedPredicateException(input, "ruleService", "true");
+            	    }
+            	    // InternalDockerCompose.g:1052:19: (otherlv_49= 'dns:' ( (otherlv_50= '-' ( (lv_dns_51_0= ruleDNS ) ) )+ | ( (lv_dns_52_0= ruleDNS ) ) ) )
+            	    // InternalDockerCompose.g:1052:20: otherlv_49= 'dns:' ( (otherlv_50= '-' ( (lv_dns_51_0= ruleDNS ) ) )+ | ( (lv_dns_52_0= ruleDNS ) ) )
+            	    {
+            	    otherlv_49=(Token)match(input,36,FOLLOW_25); 
+
+            	    									newLeafNode(otherlv_49, grammarAccess.getServiceAccess().getDnsKeyword_3_15_0());
+            	    								
+            	    // InternalDockerCompose.g:1056:9: ( (otherlv_50= '-' ( (lv_dns_51_0= ruleDNS ) ) )+ | ( (lv_dns_52_0= ruleDNS ) ) )
+            	    int alt27=2;
+            	    int LA27_0 = input.LA(1);
+
+            	    if ( (LA27_0==32) ) {
+            	        alt27=1;
+            	    }
+            	    else if ( (LA27_0==RULE_INT) ) {
+            	        alt27=2;
+            	    }
+            	    else {
+            	        NoViableAltException nvae =
+            	            new NoViableAltException("", 27, 0, input);
+
+            	        throw nvae;
+            	    }
+            	    switch (alt27) {
+            	        case 1 :
+            	            // InternalDockerCompose.g:1057:10: (otherlv_50= '-' ( (lv_dns_51_0= ruleDNS ) ) )+
+            	            {
+            	            // InternalDockerCompose.g:1057:10: (otherlv_50= '-' ( (lv_dns_51_0= ruleDNS ) ) )+
+            	            int cnt26=0;
+            	            loop26:
+            	            do {
+            	                int alt26=2;
+            	                int LA26_0 = input.LA(1);
+
+            	                if ( (LA26_0==32) ) {
+            	                    alt26=1;
+            	                }
+
+
+            	                switch (alt26) {
+            	            	case 1 :
+            	            	    // InternalDockerCompose.g:1058:11: otherlv_50= '-' ( (lv_dns_51_0= ruleDNS ) )
+            	            	    {
+            	            	    otherlv_50=(Token)match(input,32,FOLLOW_25); 
+
+            	            	    											newLeafNode(otherlv_50, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_15_1_0_0());
+            	            	    										
+            	            	    // InternalDockerCompose.g:1062:11: ( (lv_dns_51_0= ruleDNS ) )
+            	            	    // InternalDockerCompose.g:1063:12: (lv_dns_51_0= ruleDNS )
+            	            	    {
+            	            	    // InternalDockerCompose.g:1063:12: (lv_dns_51_0= ruleDNS )
+            	            	    // InternalDockerCompose.g:1064:13: lv_dns_51_0= ruleDNS
+            	            	    {
+
+            	            	    													newCompositeNode(grammarAccess.getServiceAccess().getDnsDNSParserRuleCall_3_15_1_0_1_0());
+            	            	    												
+            	            	    pushFollow(FOLLOW_16);
+            	            	    lv_dns_51_0=ruleDNS();
+
+            	            	    state._fsp--;
+
+
+            	            	    													if (current==null) {
+            	            	    														current = createModelElementForParent(grammarAccess.getServiceRule());
+            	            	    													}
+            	            	    													add(
+            	            	    														current,
+            	            	    														"dns",
+            	            	    														lv_dns_51_0,
+            	            	    														"org.xtext.example.dockercompose.DockerCompose.DNS");
+            	            	    													afterParserOrEnumRuleCall();
+            	            	    												
+
+            	            	    }
+
+
+            	            	    }
+
+
+            	            	    }
+            	            	    break;
+
+            	            	default :
+            	            	    if ( cnt26 >= 1 ) break loop26;
+            	                        EarlyExitException eee =
+            	                            new EarlyExitException(26, input);
+            	                        throw eee;
+            	                }
+            	                cnt26++;
+            	            } while (true);
+
+
+            	            }
+            	            break;
+            	        case 2 :
+            	            // InternalDockerCompose.g:1083:10: ( (lv_dns_52_0= ruleDNS ) )
+            	            {
+            	            // InternalDockerCompose.g:1083:10: ( (lv_dns_52_0= ruleDNS ) )
+            	            // InternalDockerCompose.g:1084:11: (lv_dns_52_0= ruleDNS )
+            	            {
+            	            // InternalDockerCompose.g:1084:11: (lv_dns_52_0= ruleDNS )
+            	            // InternalDockerCompose.g:1085:12: lv_dns_52_0= ruleDNS
+            	            {
+
+            	            												newCompositeNode(grammarAccess.getServiceAccess().getDnsDNSParserRuleCall_3_15_1_1_0());
+            	            											
+            	            pushFollow(FOLLOW_10);
+            	            lv_dns_52_0=ruleDNS();
+
+            	            state._fsp--;
+
+
+            	            												if (current==null) {
+            	            													current = createModelElementForParent(grammarAccess.getServiceRule());
+            	            												}
+            	            												add(
+            	            													current,
+            	            													"dns",
+            	            													lv_dns_52_0,
+            	            													"org.xtext.example.dockercompose.DockerCompose.DNS");
+            	            												afterParserOrEnumRuleCall();
+            	            											
+
+            	            }
+
+
+            	            }
+
+
+            	            }
+            	            break;
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+
+            	     
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getServiceAccess().getUnorderedGroup_3());
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+            	case 17 :
+            	    // InternalDockerCompose.g:1109:4: ({...}? => ( ({...}? => (otherlv_53= 'ports:' (otherlv_54= '-' ( (lv_ports_55_0= rulePort ) ) )+ ) ) ) )
+            	    {
+            	    // InternalDockerCompose.g:1109:4: ({...}? => ( ({...}? => (otherlv_53= 'ports:' (otherlv_54= '-' ( (lv_ports_55_0= rulePort ) ) )+ ) ) ) )
+            	    // InternalDockerCompose.g:1110:5: {...}? => ( ({...}? => (otherlv_53= 'ports:' (otherlv_54= '-' ( (lv_ports_55_0= rulePort ) ) )+ ) ) )
+            	    {
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 16) ) {
+            	        throw new FailedPredicateException(input, "ruleService", "getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 16)");
+            	    }
+            	    // InternalDockerCompose.g:1110:105: ( ({...}? => (otherlv_53= 'ports:' (otherlv_54= '-' ( (lv_ports_55_0= rulePort ) ) )+ ) ) )
+            	    // InternalDockerCompose.g:1111:6: ({...}? => (otherlv_53= 'ports:' (otherlv_54= '-' ( (lv_ports_55_0= rulePort ) ) )+ ) )
+            	    {
+
+            	    						getUnorderedGroupHelper().select(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 16);
+            	    					
+            	    // InternalDockerCompose.g:1114:9: ({...}? => (otherlv_53= 'ports:' (otherlv_54= '-' ( (lv_ports_55_0= rulePort ) ) )+ ) )
+            	    // InternalDockerCompose.g:1114:10: {...}? => (otherlv_53= 'ports:' (otherlv_54= '-' ( (lv_ports_55_0= rulePort ) ) )+ )
+            	    {
+            	    if ( !((true)) ) {
+            	        throw new FailedPredicateException(input, "ruleService", "true");
+            	    }
+            	    // InternalDockerCompose.g:1114:19: (otherlv_53= 'ports:' (otherlv_54= '-' ( (lv_ports_55_0= rulePort ) ) )+ )
+            	    // InternalDockerCompose.g:1114:20: otherlv_53= 'ports:' (otherlv_54= '-' ( (lv_ports_55_0= rulePort ) ) )+
+            	    {
+            	    otherlv_53=(Token)match(input,37,FOLLOW_15); 
+
+            	    									newLeafNode(otherlv_53, grammarAccess.getServiceAccess().getPortsKeyword_3_16_0());
+            	    								
+            	    // InternalDockerCompose.g:1118:9: (otherlv_54= '-' ( (lv_ports_55_0= rulePort ) ) )+
+            	    int cnt28=0;
+            	    loop28:
+            	    do {
+            	        int alt28=2;
+            	        int LA28_0 = input.LA(1);
+
+            	        if ( (LA28_0==32) ) {
+            	            alt28=1;
+            	        }
+
+
+            	        switch (alt28) {
+            	    	case 1 :
+            	    	    // InternalDockerCompose.g:1119:10: otherlv_54= '-' ( (lv_ports_55_0= rulePort ) )
+            	    	    {
+            	    	    otherlv_54=(Token)match(input,32,FOLLOW_26); 
+
+            	    	    										newLeafNode(otherlv_54, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_16_1_0());
+            	    	    									
+            	    	    // InternalDockerCompose.g:1123:10: ( (lv_ports_55_0= rulePort ) )
+            	    	    // InternalDockerCompose.g:1124:11: (lv_ports_55_0= rulePort )
+            	    	    {
+            	    	    // InternalDockerCompose.g:1124:11: (lv_ports_55_0= rulePort )
+            	    	    // InternalDockerCompose.g:1125:12: lv_ports_55_0= rulePort
+            	    	    {
+
+            	    	    												newCompositeNode(grammarAccess.getServiceAccess().getPortsPortParserRuleCall_3_16_1_1_0());
+            	    	    											
+            	    	    pushFollow(FOLLOW_16);
+            	    	    lv_ports_55_0=rulePort();
+
+            	    	    state._fsp--;
+
+
+            	    	    												if (current==null) {
+            	    	    													current = createModelElementForParent(grammarAccess.getServiceRule());
+            	    	    												}
+            	    	    												add(
+            	    	    													current,
+            	    	    													"ports",
+            	    	    													lv_ports_55_0,
+            	    	    													"org.xtext.example.dockercompose.DockerCompose.Port");
+            	    	    												afterParserOrEnumRuleCall();
+            	    	    											
+
+            	    	    }
+
+
+            	    	    }
+
+
+            	    	    }
+            	    	    break;
+
+            	    	default :
+            	    	    if ( cnt28 >= 1 ) break loop28;
+            	                EarlyExitException eee =
+            	                    new EarlyExitException(28, input);
+            	                throw eee;
+            	        }
+            	        cnt28++;
+            	    } while (true);
+
+
+            	    }
+
+
+            	    }
+
+            	     
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getServiceAccess().getUnorderedGroup_3());
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
 
             	default :
-            	    if ( cnt26 >= 1 ) break loop26;
+            	    if ( cnt29 >= 1 ) break loop29;
                         EarlyExitException eee =
-                            new EarlyExitException(26, input);
+                            new EarlyExitException(29, input);
                         throw eee;
                 }
-                cnt26++;
+                cnt29++;
             } while (true);
 
             if ( ! getUnorderedGroupHelper().canLeave(grammarAccess.getServiceAccess().getUnorderedGroup_3()) ) {
@@ -3217,8 +3412,352 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleService"
 
 
+    // $ANTLR start "entryRuleEnvironmentVariableMap"
+    // InternalDockerCompose.g:1161:1: entryRuleEnvironmentVariableMap returns [EObject current=null] : iv_ruleEnvironmentVariableMap= ruleEnvironmentVariableMap EOF ;
+    public final EObject entryRuleEnvironmentVariableMap() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleEnvironmentVariableMap = null;
+
+
+        try {
+            // InternalDockerCompose.g:1161:63: (iv_ruleEnvironmentVariableMap= ruleEnvironmentVariableMap EOF )
+            // InternalDockerCompose.g:1162:2: iv_ruleEnvironmentVariableMap= ruleEnvironmentVariableMap EOF
+            {
+             newCompositeNode(grammarAccess.getEnvironmentVariableMapRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleEnvironmentVariableMap=ruleEnvironmentVariableMap();
+
+            state._fsp--;
+
+             current =iv_ruleEnvironmentVariableMap; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleEnvironmentVariableMap"
+
+
+    // $ANTLR start "ruleEnvironmentVariableMap"
+    // InternalDockerCompose.g:1168:1: ruleEnvironmentVariableMap returns [EObject current=null] : ( () ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) )? ) ;
+    public final EObject ruleEnvironmentVariableMap() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_name_1_0=null;
+        Token otherlv_2=null;
+        AntlrDatatypeRuleToken lv_value_3_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalDockerCompose.g:1174:2: ( ( () ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) )? ) )
+            // InternalDockerCompose.g:1175:2: ( () ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) )? )
+            {
+            // InternalDockerCompose.g:1175:2: ( () ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) )? )
+            // InternalDockerCompose.g:1176:3: () ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) )?
+            {
+            // InternalDockerCompose.g:1176:3: ()
+            // InternalDockerCompose.g:1177:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getEnvironmentVariableMapAccess().getEnvironmentVariableAction_0(),
+            					current);
+            			
+
+            }
+
+            // InternalDockerCompose.g:1183:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalDockerCompose.g:1184:4: (lv_name_1_0= RULE_ID )
+            {
+            // InternalDockerCompose.g:1184:4: (lv_name_1_0= RULE_ID )
+            // InternalDockerCompose.g:1185:5: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_7); 
+
+            					newLeafNode(lv_name_1_0, grammarAccess.getEnvironmentVariableMapAccess().getNameIDTerminalRuleCall_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getEnvironmentVariableMapRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"name",
+            						lv_name_1_0,
+            						"org.xtext.example.dockercompose.DockerCompose.ID");
+            				
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,22,FOLLOW_27); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getEnvironmentVariableMapAccess().getColonKeyword_2());
+            		
+            // InternalDockerCompose.g:1205:3: ( (lv_value_3_0= ruleEString ) )?
+            int alt30=2;
+            int LA30_0 = input.LA(1);
+
+            if ( (LA30_0==RULE_STRING) ) {
+                int LA30_1 = input.LA(2);
+
+                if ( (LA30_1==EOF||LA30_1==RULE_ID||LA30_1==RULE_STRING||(LA30_1>=16 && LA30_1<=21)||(LA30_1>=23 && LA30_1<=31)||(LA30_1>=33 && LA30_1<=37)) ) {
+                    alt30=1;
+                }
+            }
+            else if ( (LA30_0==RULE_ID) ) {
+                int LA30_2 = input.LA(2);
+
+                if ( (LA30_2==EOF||LA30_2==RULE_ID||LA30_2==RULE_STRING||(LA30_2>=16 && LA30_2<=21)||(LA30_2>=23 && LA30_2<=31)||(LA30_2>=33 && LA30_2<=37)) ) {
+                    alt30=1;
+                }
+            }
+            switch (alt30) {
+                case 1 :
+                    // InternalDockerCompose.g:1206:4: (lv_value_3_0= ruleEString )
+                    {
+                    // InternalDockerCompose.g:1206:4: (lv_value_3_0= ruleEString )
+                    // InternalDockerCompose.g:1207:5: lv_value_3_0= ruleEString
+                    {
+
+                    					newCompositeNode(grammarAccess.getEnvironmentVariableMapAccess().getValueEStringParserRuleCall_3_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_value_3_0=ruleEString();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getEnvironmentVariableMapRule());
+                    					}
+                    					set(
+                    						current,
+                    						"value",
+                    						lv_value_3_0,
+                    						"org.xtext.example.dockercompose.DockerCompose.EString");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleEnvironmentVariableMap"
+
+
+    // $ANTLR start "entryRuleEnvironmentVariableList"
+    // InternalDockerCompose.g:1228:1: entryRuleEnvironmentVariableList returns [EObject current=null] : iv_ruleEnvironmentVariableList= ruleEnvironmentVariableList EOF ;
+    public final EObject entryRuleEnvironmentVariableList() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleEnvironmentVariableList = null;
+
+
+        try {
+            // InternalDockerCompose.g:1228:64: (iv_ruleEnvironmentVariableList= ruleEnvironmentVariableList EOF )
+            // InternalDockerCompose.g:1229:2: iv_ruleEnvironmentVariableList= ruleEnvironmentVariableList EOF
+            {
+             newCompositeNode(grammarAccess.getEnvironmentVariableListRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleEnvironmentVariableList=ruleEnvironmentVariableList();
+
+            state._fsp--;
+
+             current =iv_ruleEnvironmentVariableList; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleEnvironmentVariableList"
+
+
+    // $ANTLR start "ruleEnvironmentVariableList"
+    // InternalDockerCompose.g:1235:1: ruleEnvironmentVariableList returns [EObject current=null] : ( () otherlv_1= '-' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= '=' ( (lv_value_4_0= ruleEString ) ) )? ) ;
+    public final EObject ruleEnvironmentVariableList() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        Token lv_name_2_0=null;
+        Token otherlv_3=null;
+        AntlrDatatypeRuleToken lv_value_4_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalDockerCompose.g:1241:2: ( ( () otherlv_1= '-' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= '=' ( (lv_value_4_0= ruleEString ) ) )? ) )
+            // InternalDockerCompose.g:1242:2: ( () otherlv_1= '-' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= '=' ( (lv_value_4_0= ruleEString ) ) )? )
+            {
+            // InternalDockerCompose.g:1242:2: ( () otherlv_1= '-' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= '=' ( (lv_value_4_0= ruleEString ) ) )? )
+            // InternalDockerCompose.g:1243:3: () otherlv_1= '-' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= '=' ( (lv_value_4_0= ruleEString ) ) )?
+            {
+            // InternalDockerCompose.g:1243:3: ()
+            // InternalDockerCompose.g:1244:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getEnvironmentVariableListAccess().getEnvironmentVariableAction_0(),
+            					current);
+            			
+
+            }
+
+            otherlv_1=(Token)match(input,32,FOLLOW_11); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getEnvironmentVariableListAccess().getHyphenMinusKeyword_1());
+            		
+            // InternalDockerCompose.g:1254:3: ( (lv_name_2_0= RULE_ID ) )
+            // InternalDockerCompose.g:1255:4: (lv_name_2_0= RULE_ID )
+            {
+            // InternalDockerCompose.g:1255:4: (lv_name_2_0= RULE_ID )
+            // InternalDockerCompose.g:1256:5: lv_name_2_0= RULE_ID
+            {
+            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_28); 
+
+            					newLeafNode(lv_name_2_0, grammarAccess.getEnvironmentVariableListAccess().getNameIDTerminalRuleCall_2_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getEnvironmentVariableListRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"name",
+            						lv_name_2_0,
+            						"org.xtext.example.dockercompose.DockerCompose.ID");
+            				
+
+            }
+
+
+            }
+
+            // InternalDockerCompose.g:1272:3: (otherlv_3= '=' ( (lv_value_4_0= ruleEString ) ) )?
+            int alt31=2;
+            int LA31_0 = input.LA(1);
+
+            if ( (LA31_0==38) ) {
+                alt31=1;
+            }
+            switch (alt31) {
+                case 1 :
+                    // InternalDockerCompose.g:1273:4: otherlv_3= '=' ( (lv_value_4_0= ruleEString ) )
+                    {
+                    otherlv_3=(Token)match(input,38,FOLLOW_5); 
+
+                    				newLeafNode(otherlv_3, grammarAccess.getEnvironmentVariableListAccess().getEqualsSignKeyword_3_0());
+                    			
+                    // InternalDockerCompose.g:1277:4: ( (lv_value_4_0= ruleEString ) )
+                    // InternalDockerCompose.g:1278:5: (lv_value_4_0= ruleEString )
+                    {
+                    // InternalDockerCompose.g:1278:5: (lv_value_4_0= ruleEString )
+                    // InternalDockerCompose.g:1279:6: lv_value_4_0= ruleEString
+                    {
+
+                    						newCompositeNode(grammarAccess.getEnvironmentVariableListAccess().getValueEStringParserRuleCall_3_1_0());
+                    					
+                    pushFollow(FOLLOW_2);
+                    lv_value_4_0=ruleEString();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getEnvironmentVariableListRule());
+                    						}
+                    						set(
+                    							current,
+                    							"value",
+                    							lv_value_4_0,
+                    							"org.xtext.example.dockercompose.DockerCompose.EString");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleEnvironmentVariableList"
+
+
     // $ANTLR start "entryRulePort"
-    // InternalDockerCompose.g:1106:1: entryRulePort returns [EObject current=null] : iv_rulePort= rulePort EOF ;
+    // InternalDockerCompose.g:1301:1: entryRulePort returns [EObject current=null] : iv_rulePort= rulePort EOF ;
     public final EObject entryRulePort() throws RecognitionException {
         EObject current = null;
 
@@ -3226,8 +3765,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:1106:45: (iv_rulePort= rulePort EOF )
-            // InternalDockerCompose.g:1107:2: iv_rulePort= rulePort EOF
+            // InternalDockerCompose.g:1301:45: (iv_rulePort= rulePort EOF )
+            // InternalDockerCompose.g:1302:2: iv_rulePort= rulePort EOF
             {
              newCompositeNode(grammarAccess.getPortRule()); 
             pushFollow(FOLLOW_1);
@@ -3254,7 +3793,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePort"
-    // InternalDockerCompose.g:1113:1: rulePort returns [EObject current=null] : ( () ( (lv_value_1_0= RULE_PORT_DEF ) ) ) ;
+    // InternalDockerCompose.g:1308:1: rulePort returns [EObject current=null] : ( () ( (lv_value_1_0= RULE_PORT_DEF ) ) ) ;
     public final EObject rulePort() throws RecognitionException {
         EObject current = null;
 
@@ -3264,14 +3803,14 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:1119:2: ( ( () ( (lv_value_1_0= RULE_PORT_DEF ) ) ) )
-            // InternalDockerCompose.g:1120:2: ( () ( (lv_value_1_0= RULE_PORT_DEF ) ) )
+            // InternalDockerCompose.g:1314:2: ( ( () ( (lv_value_1_0= RULE_PORT_DEF ) ) ) )
+            // InternalDockerCompose.g:1315:2: ( () ( (lv_value_1_0= RULE_PORT_DEF ) ) )
             {
-            // InternalDockerCompose.g:1120:2: ( () ( (lv_value_1_0= RULE_PORT_DEF ) ) )
-            // InternalDockerCompose.g:1121:3: () ( (lv_value_1_0= RULE_PORT_DEF ) )
+            // InternalDockerCompose.g:1315:2: ( () ( (lv_value_1_0= RULE_PORT_DEF ) ) )
+            // InternalDockerCompose.g:1316:3: () ( (lv_value_1_0= RULE_PORT_DEF ) )
             {
-            // InternalDockerCompose.g:1121:3: ()
-            // InternalDockerCompose.g:1122:4: 
+            // InternalDockerCompose.g:1316:3: ()
+            // InternalDockerCompose.g:1317:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3281,11 +3820,11 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDockerCompose.g:1128:3: ( (lv_value_1_0= RULE_PORT_DEF ) )
-            // InternalDockerCompose.g:1129:4: (lv_value_1_0= RULE_PORT_DEF )
+            // InternalDockerCompose.g:1323:3: ( (lv_value_1_0= RULE_PORT_DEF ) )
+            // InternalDockerCompose.g:1324:4: (lv_value_1_0= RULE_PORT_DEF )
             {
-            // InternalDockerCompose.g:1129:4: (lv_value_1_0= RULE_PORT_DEF )
-            // InternalDockerCompose.g:1130:5: lv_value_1_0= RULE_PORT_DEF
+            // InternalDockerCompose.g:1324:4: (lv_value_1_0= RULE_PORT_DEF )
+            // InternalDockerCompose.g:1325:5: lv_value_1_0= RULE_PORT_DEF
             {
             lv_value_1_0=(Token)match(input,RULE_PORT_DEF,FOLLOW_2); 
 
@@ -3330,7 +3869,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDevice"
-    // InternalDockerCompose.g:1150:1: entryRuleDevice returns [EObject current=null] : iv_ruleDevice= ruleDevice EOF ;
+    // InternalDockerCompose.g:1345:1: entryRuleDevice returns [EObject current=null] : iv_ruleDevice= ruleDevice EOF ;
     public final EObject entryRuleDevice() throws RecognitionException {
         EObject current = null;
 
@@ -3338,8 +3877,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:1150:47: (iv_ruleDevice= ruleDevice EOF )
-            // InternalDockerCompose.g:1151:2: iv_ruleDevice= ruleDevice EOF
+            // InternalDockerCompose.g:1345:47: (iv_ruleDevice= ruleDevice EOF )
+            // InternalDockerCompose.g:1346:2: iv_ruleDevice= ruleDevice EOF
             {
              newCompositeNode(grammarAccess.getDeviceRule()); 
             pushFollow(FOLLOW_1);
@@ -3366,7 +3905,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDevice"
-    // InternalDockerCompose.g:1157:1: ruleDevice returns [EObject current=null] : ( () ( (lv_value_1_0= RULE_DEVICE_DEF ) ) ) ;
+    // InternalDockerCompose.g:1352:1: ruleDevice returns [EObject current=null] : ( () ( (lv_value_1_0= RULE_DEVICE_DEF ) ) ) ;
     public final EObject ruleDevice() throws RecognitionException {
         EObject current = null;
 
@@ -3376,14 +3915,14 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:1163:2: ( ( () ( (lv_value_1_0= RULE_DEVICE_DEF ) ) ) )
-            // InternalDockerCompose.g:1164:2: ( () ( (lv_value_1_0= RULE_DEVICE_DEF ) ) )
+            // InternalDockerCompose.g:1358:2: ( ( () ( (lv_value_1_0= RULE_DEVICE_DEF ) ) ) )
+            // InternalDockerCompose.g:1359:2: ( () ( (lv_value_1_0= RULE_DEVICE_DEF ) ) )
             {
-            // InternalDockerCompose.g:1164:2: ( () ( (lv_value_1_0= RULE_DEVICE_DEF ) ) )
-            // InternalDockerCompose.g:1165:3: () ( (lv_value_1_0= RULE_DEVICE_DEF ) )
+            // InternalDockerCompose.g:1359:2: ( () ( (lv_value_1_0= RULE_DEVICE_DEF ) ) )
+            // InternalDockerCompose.g:1360:3: () ( (lv_value_1_0= RULE_DEVICE_DEF ) )
             {
-            // InternalDockerCompose.g:1165:3: ()
-            // InternalDockerCompose.g:1166:4: 
+            // InternalDockerCompose.g:1360:3: ()
+            // InternalDockerCompose.g:1361:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3393,11 +3932,11 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDockerCompose.g:1172:3: ( (lv_value_1_0= RULE_DEVICE_DEF ) )
-            // InternalDockerCompose.g:1173:4: (lv_value_1_0= RULE_DEVICE_DEF )
+            // InternalDockerCompose.g:1367:3: ( (lv_value_1_0= RULE_DEVICE_DEF ) )
+            // InternalDockerCompose.g:1368:4: (lv_value_1_0= RULE_DEVICE_DEF )
             {
-            // InternalDockerCompose.g:1173:4: (lv_value_1_0= RULE_DEVICE_DEF )
-            // InternalDockerCompose.g:1174:5: lv_value_1_0= RULE_DEVICE_DEF
+            // InternalDockerCompose.g:1368:4: (lv_value_1_0= RULE_DEVICE_DEF )
+            // InternalDockerCompose.g:1369:5: lv_value_1_0= RULE_DEVICE_DEF
             {
             lv_value_1_0=(Token)match(input,RULE_DEVICE_DEF,FOLLOW_2); 
 
@@ -3442,7 +3981,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleImage"
-    // InternalDockerCompose.g:1194:1: entryRuleImage returns [String current=null] : iv_ruleImage= ruleImage EOF ;
+    // InternalDockerCompose.g:1389:1: entryRuleImage returns [String current=null] : iv_ruleImage= ruleImage EOF ;
     public final String entryRuleImage() throws RecognitionException {
         String current = null;
 
@@ -3450,8 +3989,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:1194:45: (iv_ruleImage= ruleImage EOF )
-            // InternalDockerCompose.g:1195:2: iv_ruleImage= ruleImage EOF
+            // InternalDockerCompose.g:1389:45: (iv_ruleImage= ruleImage EOF )
+            // InternalDockerCompose.g:1390:2: iv_ruleImage= ruleImage EOF
             {
              newCompositeNode(grammarAccess.getImageRule()); 
             pushFollow(FOLLOW_1);
@@ -3478,125 +4017,265 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImage"
-    // InternalDockerCompose.g:1201:1: ruleImage returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_EString_0= ruleEString | (this_ID_1= RULE_ID (kw= ':' this_ID_3= RULE_ID )+ ) ) ;
+    // InternalDockerCompose.g:1396:1: ruleImage returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (this_ID_0= RULE_ID (kw= ':' this_ID_2= RULE_ID )* kw= '/' )? (this_ID_4= RULE_ID (kw= ':' this_ID_6= RULE_ID )* kw= '/' )? this_ID_8= RULE_ID ( (kw= ':' this_ID_10= RULE_ID ) | (kw= '@' this_ID_12= RULE_ID (kw= ':' this_ID_14= RULE_ID )* ) )? ) ;
     public final AntlrDatatypeRuleToken ruleImage() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
-        Token this_ID_1=null;
+        Token this_ID_0=null;
         Token kw=null;
-        Token this_ID_3=null;
-        AntlrDatatypeRuleToken this_EString_0 = null;
-
+        Token this_ID_2=null;
+        Token this_ID_4=null;
+        Token this_ID_6=null;
+        Token this_ID_8=null;
+        Token this_ID_10=null;
+        Token this_ID_12=null;
+        Token this_ID_14=null;
 
 
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:1207:2: ( (this_EString_0= ruleEString | (this_ID_1= RULE_ID (kw= ':' this_ID_3= RULE_ID )+ ) ) )
-            // InternalDockerCompose.g:1208:2: (this_EString_0= ruleEString | (this_ID_1= RULE_ID (kw= ':' this_ID_3= RULE_ID )+ ) )
+            // InternalDockerCompose.g:1402:2: ( ( (this_ID_0= RULE_ID (kw= ':' this_ID_2= RULE_ID )* kw= '/' )? (this_ID_4= RULE_ID (kw= ':' this_ID_6= RULE_ID )* kw= '/' )? this_ID_8= RULE_ID ( (kw= ':' this_ID_10= RULE_ID ) | (kw= '@' this_ID_12= RULE_ID (kw= ':' this_ID_14= RULE_ID )* ) )? ) )
+            // InternalDockerCompose.g:1403:2: ( (this_ID_0= RULE_ID (kw= ':' this_ID_2= RULE_ID )* kw= '/' )? (this_ID_4= RULE_ID (kw= ':' this_ID_6= RULE_ID )* kw= '/' )? this_ID_8= RULE_ID ( (kw= ':' this_ID_10= RULE_ID ) | (kw= '@' this_ID_12= RULE_ID (kw= ':' this_ID_14= RULE_ID )* ) )? )
             {
-            // InternalDockerCompose.g:1208:2: (this_EString_0= ruleEString | (this_ID_1= RULE_ID (kw= ':' this_ID_3= RULE_ID )+ ) )
-            int alt28=2;
-            int LA28_0 = input.LA(1);
-
-            if ( (LA28_0==RULE_STRING) ) {
-                alt28=1;
-            }
-            else if ( (LA28_0==RULE_ID) ) {
-                int LA28_2 = input.LA(2);
-
-                if ( (LA28_2==21) ) {
-                    alt28=2;
-                }
-                else if ( (LA28_2==EOF||LA28_2==RULE_ID||LA28_2==RULE_STRING||(LA28_2>=15 && LA28_2<=20)||(LA28_2>=22 && LA28_2<=30)||(LA28_2>=32 && LA28_2<=35)) ) {
-                    alt28=1;
-                }
-                else {
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 28, 2, input);
-
-                    throw nvae;
-                }
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 28, 0, input);
-
-                throw nvae;
-            }
-            switch (alt28) {
+            // InternalDockerCompose.g:1403:2: ( (this_ID_0= RULE_ID (kw= ':' this_ID_2= RULE_ID )* kw= '/' )? (this_ID_4= RULE_ID (kw= ':' this_ID_6= RULE_ID )* kw= '/' )? this_ID_8= RULE_ID ( (kw= ':' this_ID_10= RULE_ID ) | (kw= '@' this_ID_12= RULE_ID (kw= ':' this_ID_14= RULE_ID )* ) )? )
+            // InternalDockerCompose.g:1404:3: (this_ID_0= RULE_ID (kw= ':' this_ID_2= RULE_ID )* kw= '/' )? (this_ID_4= RULE_ID (kw= ':' this_ID_6= RULE_ID )* kw= '/' )? this_ID_8= RULE_ID ( (kw= ':' this_ID_10= RULE_ID ) | (kw= '@' this_ID_12= RULE_ID (kw= ':' this_ID_14= RULE_ID )* ) )?
+            {
+            // InternalDockerCompose.g:1404:3: (this_ID_0= RULE_ID (kw= ':' this_ID_2= RULE_ID )* kw= '/' )?
+            int alt33=2;
+            alt33 = dfa33.predict(input);
+            switch (alt33) {
                 case 1 :
-                    // InternalDockerCompose.g:1209:3: this_EString_0= ruleEString
+                    // InternalDockerCompose.g:1405:4: this_ID_0= RULE_ID (kw= ':' this_ID_2= RULE_ID )* kw= '/'
                     {
+                    this_ID_0=(Token)match(input,RULE_ID,FOLLOW_29); 
 
-                    			newCompositeNode(grammarAccess.getImageAccess().getEStringParserRuleCall_0());
-                    		
-                    pushFollow(FOLLOW_2);
-                    this_EString_0=ruleEString();
-
-                    state._fsp--;
-
-
-                    			current.merge(this_EString_0);
-                    		
-
-                    			afterParserOrEnumRuleCall();
-                    		
-
-                    }
-                    break;
-                case 2 :
-                    // InternalDockerCompose.g:1220:3: (this_ID_1= RULE_ID (kw= ':' this_ID_3= RULE_ID )+ )
-                    {
-                    // InternalDockerCompose.g:1220:3: (this_ID_1= RULE_ID (kw= ':' this_ID_3= RULE_ID )+ )
-                    // InternalDockerCompose.g:1221:4: this_ID_1= RULE_ID (kw= ':' this_ID_3= RULE_ID )+
-                    {
-                    this_ID_1=(Token)match(input,RULE_ID,FOLLOW_7); 
-
-                    				current.merge(this_ID_1);
+                    				current.merge(this_ID_0);
                     			
 
-                    				newLeafNode(this_ID_1, grammarAccess.getImageAccess().getIDTerminalRuleCall_1_0());
+                    				newLeafNode(this_ID_0, grammarAccess.getImageAccess().getIDTerminalRuleCall_0_0());
                     			
-                    // InternalDockerCompose.g:1228:4: (kw= ':' this_ID_3= RULE_ID )+
-                    int cnt27=0;
-                    loop27:
+                    // InternalDockerCompose.g:1412:4: (kw= ':' this_ID_2= RULE_ID )*
+                    loop32:
                     do {
-                        int alt27=2;
-                        int LA27_0 = input.LA(1);
+                        int alt32=2;
+                        int LA32_0 = input.LA(1);
 
-                        if ( (LA27_0==21) ) {
-                            alt27=1;
+                        if ( (LA32_0==22) ) {
+                            alt32=1;
                         }
 
 
-                        switch (alt27) {
+                        switch (alt32) {
                     	case 1 :
-                    	    // InternalDockerCompose.g:1229:5: kw= ':' this_ID_3= RULE_ID
+                    	    // InternalDockerCompose.g:1413:5: kw= ':' this_ID_2= RULE_ID
                     	    {
-                    	    kw=(Token)match(input,21,FOLLOW_23); 
+                    	    kw=(Token)match(input,22,FOLLOW_11); 
 
                     	    					current.merge(kw);
-                    	    					newLeafNode(kw, grammarAccess.getImageAccess().getColonKeyword_1_1_0());
+                    	    					newLeafNode(kw, grammarAccess.getImageAccess().getColonKeyword_0_1_0());
                     	    				
-                    	    this_ID_3=(Token)match(input,RULE_ID,FOLLOW_24); 
+                    	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_29); 
 
-                    	    					current.merge(this_ID_3);
+                    	    					current.merge(this_ID_2);
                     	    				
 
-                    	    					newLeafNode(this_ID_3, grammarAccess.getImageAccess().getIDTerminalRuleCall_1_1_1());
+                    	    					newLeafNode(this_ID_2, grammarAccess.getImageAccess().getIDTerminalRuleCall_0_1_1());
                     	    				
 
                     	    }
                     	    break;
 
                     	default :
-                    	    if ( cnt27 >= 1 ) break loop27;
-                                EarlyExitException eee =
-                                    new EarlyExitException(27, input);
-                                throw eee;
+                    	    break loop32;
                         }
-                        cnt27++;
+                    } while (true);
+
+                    kw=(Token)match(input,39,FOLLOW_11); 
+
+                    				current.merge(kw);
+                    				newLeafNode(kw, grammarAccess.getImageAccess().getSolidusKeyword_0_2());
+                    			
+
+                    }
+                    break;
+
+            }
+
+            // InternalDockerCompose.g:1432:3: (this_ID_4= RULE_ID (kw= ':' this_ID_6= RULE_ID )* kw= '/' )?
+            int alt35=2;
+            int LA35_0 = input.LA(1);
+
+            if ( (LA35_0==RULE_ID) ) {
+                int LA35_1 = input.LA(2);
+
+                if ( (LA35_1==22) ) {
+                    int LA35_2 = input.LA(3);
+
+                    if ( (LA35_2==RULE_ID) ) {
+                        int LA35_5 = input.LA(4);
+
+                        if ( (LA35_5==22||LA35_5==39) ) {
+                            alt35=1;
+                        }
+                    }
+                }
+                else if ( (LA35_1==39) ) {
+                    alt35=1;
+                }
+            }
+            switch (alt35) {
+                case 1 :
+                    // InternalDockerCompose.g:1433:4: this_ID_4= RULE_ID (kw= ':' this_ID_6= RULE_ID )* kw= '/'
+                    {
+                    this_ID_4=(Token)match(input,RULE_ID,FOLLOW_29); 
+
+                    				current.merge(this_ID_4);
+                    			
+
+                    				newLeafNode(this_ID_4, grammarAccess.getImageAccess().getIDTerminalRuleCall_1_0());
+                    			
+                    // InternalDockerCompose.g:1440:4: (kw= ':' this_ID_6= RULE_ID )*
+                    loop34:
+                    do {
+                        int alt34=2;
+                        int LA34_0 = input.LA(1);
+
+                        if ( (LA34_0==22) ) {
+                            alt34=1;
+                        }
+
+
+                        switch (alt34) {
+                    	case 1 :
+                    	    // InternalDockerCompose.g:1441:5: kw= ':' this_ID_6= RULE_ID
+                    	    {
+                    	    kw=(Token)match(input,22,FOLLOW_11); 
+
+                    	    					current.merge(kw);
+                    	    					newLeafNode(kw, grammarAccess.getImageAccess().getColonKeyword_1_1_0());
+                    	    				
+                    	    this_ID_6=(Token)match(input,RULE_ID,FOLLOW_29); 
+
+                    	    					current.merge(this_ID_6);
+                    	    				
+
+                    	    					newLeafNode(this_ID_6, grammarAccess.getImageAccess().getIDTerminalRuleCall_1_1_1());
+                    	    				
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop34;
+                        }
+                    } while (true);
+
+                    kw=(Token)match(input,39,FOLLOW_11); 
+
+                    				current.merge(kw);
+                    				newLeafNode(kw, grammarAccess.getImageAccess().getSolidusKeyword_1_2());
+                    			
+
+                    }
+                    break;
+
+            }
+
+            this_ID_8=(Token)match(input,RULE_ID,FOLLOW_30); 
+
+            			current.merge(this_ID_8);
+            		
+
+            			newLeafNode(this_ID_8, grammarAccess.getImageAccess().getIDTerminalRuleCall_2());
+            		
+            // InternalDockerCompose.g:1467:3: ( (kw= ':' this_ID_10= RULE_ID ) | (kw= '@' this_ID_12= RULE_ID (kw= ':' this_ID_14= RULE_ID )* ) )?
+            int alt37=3;
+            int LA37_0 = input.LA(1);
+
+            if ( (LA37_0==22) ) {
+                alt37=1;
+            }
+            else if ( (LA37_0==40) ) {
+                alt37=2;
+            }
+            switch (alt37) {
+                case 1 :
+                    // InternalDockerCompose.g:1468:4: (kw= ':' this_ID_10= RULE_ID )
+                    {
+                    // InternalDockerCompose.g:1468:4: (kw= ':' this_ID_10= RULE_ID )
+                    // InternalDockerCompose.g:1469:5: kw= ':' this_ID_10= RULE_ID
+                    {
+                    kw=(Token)match(input,22,FOLLOW_11); 
+
+                    					current.merge(kw);
+                    					newLeafNode(kw, grammarAccess.getImageAccess().getColonKeyword_3_0_0());
+                    				
+                    this_ID_10=(Token)match(input,RULE_ID,FOLLOW_2); 
+
+                    					current.merge(this_ID_10);
+                    				
+
+                    					newLeafNode(this_ID_10, grammarAccess.getImageAccess().getIDTerminalRuleCall_3_0_1());
+                    				
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalDockerCompose.g:1483:4: (kw= '@' this_ID_12= RULE_ID (kw= ':' this_ID_14= RULE_ID )* )
+                    {
+                    // InternalDockerCompose.g:1483:4: (kw= '@' this_ID_12= RULE_ID (kw= ':' this_ID_14= RULE_ID )* )
+                    // InternalDockerCompose.g:1484:5: kw= '@' this_ID_12= RULE_ID (kw= ':' this_ID_14= RULE_ID )*
+                    {
+                    kw=(Token)match(input,40,FOLLOW_11); 
+
+                    					current.merge(kw);
+                    					newLeafNode(kw, grammarAccess.getImageAccess().getCommercialAtKeyword_3_1_0());
+                    				
+                    this_ID_12=(Token)match(input,RULE_ID,FOLLOW_31); 
+
+                    					current.merge(this_ID_12);
+                    				
+
+                    					newLeafNode(this_ID_12, grammarAccess.getImageAccess().getIDTerminalRuleCall_3_1_1());
+                    				
+                    // InternalDockerCompose.g:1496:5: (kw= ':' this_ID_14= RULE_ID )*
+                    loop36:
+                    do {
+                        int alt36=2;
+                        int LA36_0 = input.LA(1);
+
+                        if ( (LA36_0==22) ) {
+                            alt36=1;
+                        }
+
+
+                        switch (alt36) {
+                    	case 1 :
+                    	    // InternalDockerCompose.g:1497:6: kw= ':' this_ID_14= RULE_ID
+                    	    {
+                    	    kw=(Token)match(input,22,FOLLOW_11); 
+
+                    	    						current.merge(kw);
+                    	    						newLeafNode(kw, grammarAccess.getImageAccess().getColonKeyword_3_1_2_0());
+                    	    					
+                    	    this_ID_14=(Token)match(input,RULE_ID,FOLLOW_31); 
+
+                    	    						current.merge(this_ID_14);
+                    	    					
+
+                    	    						newLeafNode(this_ID_14, grammarAccess.getImageAccess().getIDTerminalRuleCall_3_1_2_1());
+                    	    					
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop36;
+                        }
                     } while (true);
 
 
@@ -3605,6 +4284,9 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
+
+            }
+
 
             }
 
@@ -3628,7 +4310,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLink"
-    // InternalDockerCompose.g:1247:1: entryRuleLink returns [EObject current=null] : iv_ruleLink= ruleLink EOF ;
+    // InternalDockerCompose.g:1516:1: entryRuleLink returns [EObject current=null] : iv_ruleLink= ruleLink EOF ;
     public final EObject entryRuleLink() throws RecognitionException {
         EObject current = null;
 
@@ -3636,8 +4318,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:1247:45: (iv_ruleLink= ruleLink EOF )
-            // InternalDockerCompose.g:1248:2: iv_ruleLink= ruleLink EOF
+            // InternalDockerCompose.g:1516:45: (iv_ruleLink= ruleLink EOF )
+            // InternalDockerCompose.g:1517:2: iv_ruleLink= ruleLink EOF
             {
              newCompositeNode(grammarAccess.getLinkRule()); 
             pushFollow(FOLLOW_1);
@@ -3664,7 +4346,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLink"
-    // InternalDockerCompose.g:1254:1: ruleLink returns [EObject current=null] : ( () ( ( ruleEString ) ) (otherlv_2= ':' ( (lv_alias_3_0= ruleEString ) ) )? ) ;
+    // InternalDockerCompose.g:1523:1: ruleLink returns [EObject current=null] : ( () ( ( ruleEString ) ) (otherlv_2= ':' ( (lv_alias_3_0= ruleEString ) ) )? ) ;
     public final EObject ruleLink() throws RecognitionException {
         EObject current = null;
 
@@ -3676,14 +4358,14 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:1260:2: ( ( () ( ( ruleEString ) ) (otherlv_2= ':' ( (lv_alias_3_0= ruleEString ) ) )? ) )
-            // InternalDockerCompose.g:1261:2: ( () ( ( ruleEString ) ) (otherlv_2= ':' ( (lv_alias_3_0= ruleEString ) ) )? )
+            // InternalDockerCompose.g:1529:2: ( ( () ( ( ruleEString ) ) (otherlv_2= ':' ( (lv_alias_3_0= ruleEString ) ) )? ) )
+            // InternalDockerCompose.g:1530:2: ( () ( ( ruleEString ) ) (otherlv_2= ':' ( (lv_alias_3_0= ruleEString ) ) )? )
             {
-            // InternalDockerCompose.g:1261:2: ( () ( ( ruleEString ) ) (otherlv_2= ':' ( (lv_alias_3_0= ruleEString ) ) )? )
-            // InternalDockerCompose.g:1262:3: () ( ( ruleEString ) ) (otherlv_2= ':' ( (lv_alias_3_0= ruleEString ) ) )?
+            // InternalDockerCompose.g:1530:2: ( () ( ( ruleEString ) ) (otherlv_2= ':' ( (lv_alias_3_0= ruleEString ) ) )? )
+            // InternalDockerCompose.g:1531:3: () ( ( ruleEString ) ) (otherlv_2= ':' ( (lv_alias_3_0= ruleEString ) ) )?
             {
-            // InternalDockerCompose.g:1262:3: ()
-            // InternalDockerCompose.g:1263:4: 
+            // InternalDockerCompose.g:1531:3: ()
+            // InternalDockerCompose.g:1532:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3693,11 +4375,11 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDockerCompose.g:1269:3: ( ( ruleEString ) )
-            // InternalDockerCompose.g:1270:4: ( ruleEString )
+            // InternalDockerCompose.g:1538:3: ( ( ruleEString ) )
+            // InternalDockerCompose.g:1539:4: ( ruleEString )
             {
-            // InternalDockerCompose.g:1270:4: ( ruleEString )
-            // InternalDockerCompose.g:1271:5: ruleEString
+            // InternalDockerCompose.g:1539:4: ( ruleEString )
+            // InternalDockerCompose.g:1540:5: ruleEString
             {
 
             					if (current==null) {
@@ -3707,7 +4389,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getLinkAccess().getServiceServiceCrossReference_1_0());
             				
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_31);
             ruleEString();
 
             state._fsp--;
@@ -3721,26 +4403,26 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDockerCompose.g:1285:3: (otherlv_2= ':' ( (lv_alias_3_0= ruleEString ) ) )?
-            int alt29=2;
-            int LA29_0 = input.LA(1);
+            // InternalDockerCompose.g:1554:3: (otherlv_2= ':' ( (lv_alias_3_0= ruleEString ) ) )?
+            int alt38=2;
+            int LA38_0 = input.LA(1);
 
-            if ( (LA29_0==21) ) {
-                alt29=1;
+            if ( (LA38_0==22) ) {
+                alt38=1;
             }
-            switch (alt29) {
+            switch (alt38) {
                 case 1 :
-                    // InternalDockerCompose.g:1286:4: otherlv_2= ':' ( (lv_alias_3_0= ruleEString ) )
+                    // InternalDockerCompose.g:1555:4: otherlv_2= ':' ( (lv_alias_3_0= ruleEString ) )
                     {
-                    otherlv_2=(Token)match(input,21,FOLLOW_5); 
+                    otherlv_2=(Token)match(input,22,FOLLOW_5); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getLinkAccess().getColonKeyword_2_0());
                     			
-                    // InternalDockerCompose.g:1290:4: ( (lv_alias_3_0= ruleEString ) )
-                    // InternalDockerCompose.g:1291:5: (lv_alias_3_0= ruleEString )
+                    // InternalDockerCompose.g:1559:4: ( (lv_alias_3_0= ruleEString ) )
+                    // InternalDockerCompose.g:1560:5: (lv_alias_3_0= ruleEString )
                     {
-                    // InternalDockerCompose.g:1291:5: (lv_alias_3_0= ruleEString )
-                    // InternalDockerCompose.g:1292:6: lv_alias_3_0= ruleEString
+                    // InternalDockerCompose.g:1560:5: (lv_alias_3_0= ruleEString )
+                    // InternalDockerCompose.g:1561:6: lv_alias_3_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getLinkAccess().getAliasEStringParserRuleCall_2_1_0());
@@ -3796,7 +4478,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDependency_short"
-    // InternalDockerCompose.g:1314:1: entryRuleDependency_short returns [EObject current=null] : iv_ruleDependency_short= ruleDependency_short EOF ;
+    // InternalDockerCompose.g:1583:1: entryRuleDependency_short returns [EObject current=null] : iv_ruleDependency_short= ruleDependency_short EOF ;
     public final EObject entryRuleDependency_short() throws RecognitionException {
         EObject current = null;
 
@@ -3804,8 +4486,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:1314:57: (iv_ruleDependency_short= ruleDependency_short EOF )
-            // InternalDockerCompose.g:1315:2: iv_ruleDependency_short= ruleDependency_short EOF
+            // InternalDockerCompose.g:1583:57: (iv_ruleDependency_short= ruleDependency_short EOF )
+            // InternalDockerCompose.g:1584:2: iv_ruleDependency_short= ruleDependency_short EOF
             {
              newCompositeNode(grammarAccess.getDependency_shortRule()); 
             pushFollow(FOLLOW_1);
@@ -3832,7 +4514,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDependency_short"
-    // InternalDockerCompose.g:1321:1: ruleDependency_short returns [EObject current=null] : ( () otherlv_1= '-' ( ( ruleEString ) ) ) ;
+    // InternalDockerCompose.g:1590:1: ruleDependency_short returns [EObject current=null] : ( () otherlv_1= '-' ( ( ruleEString ) ) ) ;
     public final EObject ruleDependency_short() throws RecognitionException {
         EObject current = null;
 
@@ -3842,14 +4524,14 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:1327:2: ( ( () otherlv_1= '-' ( ( ruleEString ) ) ) )
-            // InternalDockerCompose.g:1328:2: ( () otherlv_1= '-' ( ( ruleEString ) ) )
+            // InternalDockerCompose.g:1596:2: ( ( () otherlv_1= '-' ( ( ruleEString ) ) ) )
+            // InternalDockerCompose.g:1597:2: ( () otherlv_1= '-' ( ( ruleEString ) ) )
             {
-            // InternalDockerCompose.g:1328:2: ( () otherlv_1= '-' ( ( ruleEString ) ) )
-            // InternalDockerCompose.g:1329:3: () otherlv_1= '-' ( ( ruleEString ) )
+            // InternalDockerCompose.g:1597:2: ( () otherlv_1= '-' ( ( ruleEString ) ) )
+            // InternalDockerCompose.g:1598:3: () otherlv_1= '-' ( ( ruleEString ) )
             {
-            // InternalDockerCompose.g:1329:3: ()
-            // InternalDockerCompose.g:1330:4: 
+            // InternalDockerCompose.g:1598:3: ()
+            // InternalDockerCompose.g:1599:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3859,15 +4541,15 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,31,FOLLOW_5); 
+            otherlv_1=(Token)match(input,32,FOLLOW_5); 
 
             			newLeafNode(otherlv_1, grammarAccess.getDependency_shortAccess().getHyphenMinusKeyword_1());
             		
-            // InternalDockerCompose.g:1340:3: ( ( ruleEString ) )
-            // InternalDockerCompose.g:1341:4: ( ruleEString )
+            // InternalDockerCompose.g:1609:3: ( ( ruleEString ) )
+            // InternalDockerCompose.g:1610:4: ( ruleEString )
             {
-            // InternalDockerCompose.g:1341:4: ( ruleEString )
-            // InternalDockerCompose.g:1342:5: ruleEString
+            // InternalDockerCompose.g:1610:4: ( ruleEString )
+            // InternalDockerCompose.g:1611:5: ruleEString
             {
 
             					if (current==null) {
@@ -3914,7 +4596,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDependency_long"
-    // InternalDockerCompose.g:1360:1: entryRuleDependency_long returns [EObject current=null] : iv_ruleDependency_long= ruleDependency_long EOF ;
+    // InternalDockerCompose.g:1629:1: entryRuleDependency_long returns [EObject current=null] : iv_ruleDependency_long= ruleDependency_long EOF ;
     public final EObject entryRuleDependency_long() throws RecognitionException {
         EObject current = null;
 
@@ -3922,8 +4604,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:1360:56: (iv_ruleDependency_long= ruleDependency_long EOF )
-            // InternalDockerCompose.g:1361:2: iv_ruleDependency_long= ruleDependency_long EOF
+            // InternalDockerCompose.g:1629:56: (iv_ruleDependency_long= ruleDependency_long EOF )
+            // InternalDockerCompose.g:1630:2: iv_ruleDependency_long= ruleDependency_long EOF
             {
              newCompositeNode(grammarAccess.getDependency_longRule()); 
             pushFollow(FOLLOW_1);
@@ -3950,7 +4632,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDependency_long"
-    // InternalDockerCompose.g:1367:1: ruleDependency_long returns [EObject current=null] : ( () ( ( ruleEString ) ) otherlv_2= ':' otherlv_3= 'condition:' ( (lv_condition_4_0= ruleCondition ) ) ) ;
+    // InternalDockerCompose.g:1636:1: ruleDependency_long returns [EObject current=null] : ( () ( ( ruleEString ) ) otherlv_2= ':' otherlv_3= 'condition:' ( (lv_condition_4_0= ruleCondition ) ) ) ;
     public final EObject ruleDependency_long() throws RecognitionException {
         EObject current = null;
 
@@ -3963,14 +4645,14 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:1373:2: ( ( () ( ( ruleEString ) ) otherlv_2= ':' otherlv_3= 'condition:' ( (lv_condition_4_0= ruleCondition ) ) ) )
-            // InternalDockerCompose.g:1374:2: ( () ( ( ruleEString ) ) otherlv_2= ':' otherlv_3= 'condition:' ( (lv_condition_4_0= ruleCondition ) ) )
+            // InternalDockerCompose.g:1642:2: ( ( () ( ( ruleEString ) ) otherlv_2= ':' otherlv_3= 'condition:' ( (lv_condition_4_0= ruleCondition ) ) ) )
+            // InternalDockerCompose.g:1643:2: ( () ( ( ruleEString ) ) otherlv_2= ':' otherlv_3= 'condition:' ( (lv_condition_4_0= ruleCondition ) ) )
             {
-            // InternalDockerCompose.g:1374:2: ( () ( ( ruleEString ) ) otherlv_2= ':' otherlv_3= 'condition:' ( (lv_condition_4_0= ruleCondition ) ) )
-            // InternalDockerCompose.g:1375:3: () ( ( ruleEString ) ) otherlv_2= ':' otherlv_3= 'condition:' ( (lv_condition_4_0= ruleCondition ) )
+            // InternalDockerCompose.g:1643:2: ( () ( ( ruleEString ) ) otherlv_2= ':' otherlv_3= 'condition:' ( (lv_condition_4_0= ruleCondition ) ) )
+            // InternalDockerCompose.g:1644:3: () ( ( ruleEString ) ) otherlv_2= ':' otherlv_3= 'condition:' ( (lv_condition_4_0= ruleCondition ) )
             {
-            // InternalDockerCompose.g:1375:3: ()
-            // InternalDockerCompose.g:1376:4: 
+            // InternalDockerCompose.g:1644:3: ()
+            // InternalDockerCompose.g:1645:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3980,11 +4662,11 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDockerCompose.g:1382:3: ( ( ruleEString ) )
-            // InternalDockerCompose.g:1383:4: ( ruleEString )
+            // InternalDockerCompose.g:1651:3: ( ( ruleEString ) )
+            // InternalDockerCompose.g:1652:4: ( ruleEString )
             {
-            // InternalDockerCompose.g:1383:4: ( ruleEString )
-            // InternalDockerCompose.g:1384:5: ruleEString
+            // InternalDockerCompose.g:1652:4: ( ruleEString )
+            // InternalDockerCompose.g:1653:5: ruleEString
             {
 
             					if (current==null) {
@@ -4008,19 +4690,19 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,21,FOLLOW_25); 
+            otherlv_2=(Token)match(input,22,FOLLOW_32); 
 
             			newLeafNode(otherlv_2, grammarAccess.getDependency_longAccess().getColonKeyword_2());
             		
-            otherlv_3=(Token)match(input,36,FOLLOW_26); 
+            otherlv_3=(Token)match(input,41,FOLLOW_33); 
 
             			newLeafNode(otherlv_3, grammarAccess.getDependency_longAccess().getConditionKeyword_3());
             		
-            // InternalDockerCompose.g:1406:3: ( (lv_condition_4_0= ruleCondition ) )
-            // InternalDockerCompose.g:1407:4: (lv_condition_4_0= ruleCondition )
+            // InternalDockerCompose.g:1675:3: ( (lv_condition_4_0= ruleCondition ) )
+            // InternalDockerCompose.g:1676:4: (lv_condition_4_0= ruleCondition )
             {
-            // InternalDockerCompose.g:1407:4: (lv_condition_4_0= ruleCondition )
-            // InternalDockerCompose.g:1408:5: lv_condition_4_0= ruleCondition
+            // InternalDockerCompose.g:1676:4: (lv_condition_4_0= ruleCondition )
+            // InternalDockerCompose.g:1677:5: lv_condition_4_0= ruleCondition
             {
 
             					newCompositeNode(grammarAccess.getDependency_longAccess().getConditionConditionEnumRuleCall_4_0());
@@ -4070,7 +4752,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNetworkConnector"
-    // InternalDockerCompose.g:1429:1: entryRuleNetworkConnector returns [EObject current=null] : iv_ruleNetworkConnector= ruleNetworkConnector EOF ;
+    // InternalDockerCompose.g:1698:1: entryRuleNetworkConnector returns [EObject current=null] : iv_ruleNetworkConnector= ruleNetworkConnector EOF ;
     public final EObject entryRuleNetworkConnector() throws RecognitionException {
         EObject current = null;
 
@@ -4078,8 +4760,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:1429:57: (iv_ruleNetworkConnector= ruleNetworkConnector EOF )
-            // InternalDockerCompose.g:1430:2: iv_ruleNetworkConnector= ruleNetworkConnector EOF
+            // InternalDockerCompose.g:1698:57: (iv_ruleNetworkConnector= ruleNetworkConnector EOF )
+            // InternalDockerCompose.g:1699:2: iv_ruleNetworkConnector= ruleNetworkConnector EOF
             {
              newCompositeNode(grammarAccess.getNetworkConnectorRule()); 
             pushFollow(FOLLOW_1);
@@ -4106,7 +4788,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNetworkConnector"
-    // InternalDockerCompose.g:1436:1: ruleNetworkConnector returns [EObject current=null] : ( () ( (otherlv_1= '-' ( ( ruleEString ) ) ) | ( ( ( ruleEString ) ) otherlv_4= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )* ) ) ) ) ) ) ;
+    // InternalDockerCompose.g:1705:1: ruleNetworkConnector returns [EObject current=null] : ( () ( (otherlv_1= '-' ( ( ruleEString ) ) ) | ( ( ( ruleEString ) ) otherlv_4= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )* ) ) ) ) ) ) ;
     public final EObject ruleNetworkConnector() throws RecognitionException {
         EObject current = null;
 
@@ -4131,14 +4813,14 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:1442:2: ( ( () ( (otherlv_1= '-' ( ( ruleEString ) ) ) | ( ( ( ruleEString ) ) otherlv_4= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )* ) ) ) ) ) ) )
-            // InternalDockerCompose.g:1443:2: ( () ( (otherlv_1= '-' ( ( ruleEString ) ) ) | ( ( ( ruleEString ) ) otherlv_4= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )* ) ) ) ) ) )
+            // InternalDockerCompose.g:1711:2: ( ( () ( (otherlv_1= '-' ( ( ruleEString ) ) ) | ( ( ( ruleEString ) ) otherlv_4= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )* ) ) ) ) ) ) )
+            // InternalDockerCompose.g:1712:2: ( () ( (otherlv_1= '-' ( ( ruleEString ) ) ) | ( ( ( ruleEString ) ) otherlv_4= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )* ) ) ) ) ) )
             {
-            // InternalDockerCompose.g:1443:2: ( () ( (otherlv_1= '-' ( ( ruleEString ) ) ) | ( ( ( ruleEString ) ) otherlv_4= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )* ) ) ) ) ) )
-            // InternalDockerCompose.g:1444:3: () ( (otherlv_1= '-' ( ( ruleEString ) ) ) | ( ( ( ruleEString ) ) otherlv_4= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )* ) ) ) ) )
+            // InternalDockerCompose.g:1712:2: ( () ( (otherlv_1= '-' ( ( ruleEString ) ) ) | ( ( ( ruleEString ) ) otherlv_4= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )* ) ) ) ) ) )
+            // InternalDockerCompose.g:1713:3: () ( (otherlv_1= '-' ( ( ruleEString ) ) ) | ( ( ( ruleEString ) ) otherlv_4= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )* ) ) ) ) )
             {
-            // InternalDockerCompose.g:1444:3: ()
-            // InternalDockerCompose.g:1445:4: 
+            // InternalDockerCompose.g:1713:3: ()
+            // InternalDockerCompose.g:1714:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4148,38 +4830,38 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDockerCompose.g:1451:3: ( (otherlv_1= '-' ( ( ruleEString ) ) ) | ( ( ( ruleEString ) ) otherlv_4= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )* ) ) ) ) )
-            int alt33=2;
-            int LA33_0 = input.LA(1);
+            // InternalDockerCompose.g:1720:3: ( (otherlv_1= '-' ( ( ruleEString ) ) ) | ( ( ( ruleEString ) ) otherlv_4= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )* ) ) ) ) )
+            int alt42=2;
+            int LA42_0 = input.LA(1);
 
-            if ( (LA33_0==31) ) {
-                alt33=1;
+            if ( (LA42_0==32) ) {
+                alt42=1;
             }
-            else if ( (LA33_0==RULE_ID||LA33_0==RULE_STRING) ) {
-                alt33=2;
+            else if ( (LA42_0==RULE_ID||LA42_0==RULE_STRING) ) {
+                alt42=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 33, 0, input);
+                    new NoViableAltException("", 42, 0, input);
 
                 throw nvae;
             }
-            switch (alt33) {
+            switch (alt42) {
                 case 1 :
-                    // InternalDockerCompose.g:1452:4: (otherlv_1= '-' ( ( ruleEString ) ) )
+                    // InternalDockerCompose.g:1721:4: (otherlv_1= '-' ( ( ruleEString ) ) )
                     {
-                    // InternalDockerCompose.g:1452:4: (otherlv_1= '-' ( ( ruleEString ) ) )
-                    // InternalDockerCompose.g:1453:5: otherlv_1= '-' ( ( ruleEString ) )
+                    // InternalDockerCompose.g:1721:4: (otherlv_1= '-' ( ( ruleEString ) ) )
+                    // InternalDockerCompose.g:1722:5: otherlv_1= '-' ( ( ruleEString ) )
                     {
-                    otherlv_1=(Token)match(input,31,FOLLOW_5); 
+                    otherlv_1=(Token)match(input,32,FOLLOW_5); 
 
                     					newLeafNode(otherlv_1, grammarAccess.getNetworkConnectorAccess().getHyphenMinusKeyword_1_0_0());
                     				
-                    // InternalDockerCompose.g:1457:5: ( ( ruleEString ) )
-                    // InternalDockerCompose.g:1458:6: ( ruleEString )
+                    // InternalDockerCompose.g:1726:5: ( ( ruleEString ) )
+                    // InternalDockerCompose.g:1727:6: ( ruleEString )
                     {
-                    // InternalDockerCompose.g:1458:6: ( ruleEString )
-                    // InternalDockerCompose.g:1459:7: ruleEString
+                    // InternalDockerCompose.g:1727:6: ( ruleEString )
+                    // InternalDockerCompose.g:1728:7: ruleEString
                     {
 
                     							if (current==null) {
@@ -4210,16 +4892,16 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDockerCompose.g:1475:4: ( ( ( ruleEString ) ) otherlv_4= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )* ) ) ) )
+                    // InternalDockerCompose.g:1744:4: ( ( ( ruleEString ) ) otherlv_4= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )* ) ) ) )
                     {
-                    // InternalDockerCompose.g:1475:4: ( ( ( ruleEString ) ) otherlv_4= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )* ) ) ) )
-                    // InternalDockerCompose.g:1476:5: ( ( ruleEString ) ) otherlv_4= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )* ) ) )
+                    // InternalDockerCompose.g:1744:4: ( ( ( ruleEString ) ) otherlv_4= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )* ) ) ) )
+                    // InternalDockerCompose.g:1745:5: ( ( ruleEString ) ) otherlv_4= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )* ) ) )
                     {
-                    // InternalDockerCompose.g:1476:5: ( ( ruleEString ) )
-                    // InternalDockerCompose.g:1477:6: ( ruleEString )
+                    // InternalDockerCompose.g:1745:5: ( ( ruleEString ) )
+                    // InternalDockerCompose.g:1746:6: ( ruleEString )
                     {
-                    // InternalDockerCompose.g:1477:6: ( ruleEString )
-                    // InternalDockerCompose.g:1478:7: ruleEString
+                    // InternalDockerCompose.g:1746:6: ( ruleEString )
+                    // InternalDockerCompose.g:1747:7: ruleEString
                     {
 
                     							if (current==null) {
@@ -4243,81 +4925,81 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_4=(Token)match(input,21,FOLLOW_27); 
+                    otherlv_4=(Token)match(input,22,FOLLOW_34); 
 
                     					newLeafNode(otherlv_4, grammarAccess.getNetworkConnectorAccess().getColonKeyword_1_1_1());
                     				
-                    // InternalDockerCompose.g:1496:5: ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )* ) ) )
-                    // InternalDockerCompose.g:1497:6: ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )* ) )
+                    // InternalDockerCompose.g:1765:5: ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )* ) ) )
+                    // InternalDockerCompose.g:1766:6: ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )* ) )
                     {
-                    // InternalDockerCompose.g:1497:6: ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )* ) )
-                    // InternalDockerCompose.g:1498:7: ( ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )* )
+                    // InternalDockerCompose.g:1766:6: ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )* ) )
+                    // InternalDockerCompose.g:1767:7: ( ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )* )
                     {
                      
                     						  getUnorderedGroupHelper().enter(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_1_2());
                     						
-                    // InternalDockerCompose.g:1501:7: ( ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )* )
-                    // InternalDockerCompose.g:1502:8: ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )*
+                    // InternalDockerCompose.g:1770:7: ( ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )* )
+                    // InternalDockerCompose.g:1771:8: ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )*
                     {
-                    // InternalDockerCompose.g:1502:8: ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )*
-                    loop32:
+                    // InternalDockerCompose.g:1771:8: ( ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) ) )*
+                    loop41:
                     do {
-                        int alt32=5;
-                        int LA32_0 = input.LA(1);
+                        int alt41=5;
+                        int LA41_0 = input.LA(1);
 
-                        if ( LA32_0 == 37 && getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_1_2(), 0) ) {
-                            alt32=1;
+                        if ( LA41_0 == 42 && getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_1_2(), 0) ) {
+                            alt41=1;
                         }
-                        else if ( LA32_0 == 38 && getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_1_2(), 1) ) {
-                            alt32=2;
+                        else if ( LA41_0 == 43 && getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_1_2(), 1) ) {
+                            alt41=2;
                         }
-                        else if ( LA32_0 == 39 && getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_1_2(), 2) ) {
-                            alt32=3;
+                        else if ( LA41_0 == 44 && getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_1_2(), 2) ) {
+                            alt41=3;
                         }
-                        else if ( LA32_0 == 40 && getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_1_2(), 3) ) {
-                            alt32=4;
+                        else if ( LA41_0 == 45 && getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_1_2(), 3) ) {
+                            alt41=4;
                         }
 
 
-                        switch (alt32) {
+                        switch (alt41) {
                     	case 1 :
-                    	    // InternalDockerCompose.g:1503:6: ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) )
+                    	    // InternalDockerCompose.g:1772:6: ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) )
                     	    {
-                    	    // InternalDockerCompose.g:1503:6: ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) )
-                    	    // InternalDockerCompose.g:1504:7: {...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) )
+                    	    // InternalDockerCompose.g:1772:6: ({...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) ) )
+                    	    // InternalDockerCompose.g:1773:7: {...}? => ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) )
                     	    {
                     	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_1_2(), 0) ) {
                     	        throw new FailedPredicateException(input, "ruleNetworkConnector", "getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_1_2(), 0)");
                     	    }
-                    	    // InternalDockerCompose.g:1504:119: ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) )
-                    	    // InternalDockerCompose.g:1505:8: ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) )
+                    	    // InternalDockerCompose.g:1773:119: ( ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) ) )
+                    	    // InternalDockerCompose.g:1774:8: ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) )
                     	    {
 
                     	    								getUnorderedGroupHelper().select(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_1_2(), 0);
                     	    							
-                    	    // InternalDockerCompose.g:1508:11: ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) )
-                    	    // InternalDockerCompose.g:1508:12: {...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) )
+                    	    // InternalDockerCompose.g:1777:11: ({...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) ) )
+                    	    // InternalDockerCompose.g:1777:12: {...}? => (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) )
                     	    {
                     	    if ( !((true)) ) {
                     	        throw new FailedPredicateException(input, "ruleNetworkConnector", "true");
                     	    }
-                    	    // InternalDockerCompose.g:1508:21: (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) )
-                    	    // InternalDockerCompose.g:1508:22: otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) )
+                    	    // InternalDockerCompose.g:1777:21: (otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) ) )
+                    	    // InternalDockerCompose.g:1777:22: otherlv_6= 'ipv4_address:' ( (lv_ipv4_address_7_0= ruleDNS ) )
                     	    {
-                    	    otherlv_6=(Token)match(input,37,FOLLOW_21); 
+                    	    otherlv_6=(Token)match(input,42,FOLLOW_25); 
 
                     	    											newLeafNode(otherlv_6, grammarAccess.getNetworkConnectorAccess().getIpv4_addressKeyword_1_1_2_0_0());
                     	    										
-                    	    // InternalDockerCompose.g:1512:11: ( (lv_ipv4_address_7_0= ruleDNS ) )
-                    	    // InternalDockerCompose.g:1513:12: (lv_ipv4_address_7_0= ruleDNS )
+                    	    // InternalDockerCompose.g:1781:11: ( (lv_ipv4_address_7_0= ruleDNS ) )
+                    	    // InternalDockerCompose.g:1782:12: (lv_ipv4_address_7_0= ruleDNS )
                     	    {
-                    	    // InternalDockerCompose.g:1513:12: (lv_ipv4_address_7_0= ruleDNS )
-                    	    // InternalDockerCompose.g:1514:13: lv_ipv4_address_7_0= ruleDNS
+                    	    // InternalDockerCompose.g:1782:12: (lv_ipv4_address_7_0= ruleDNS )
+                    	    // InternalDockerCompose.g:1783:13: lv_ipv4_address_7_0= ruleDNS
                     	    {
 
                     	    													newCompositeNode(grammarAccess.getNetworkConnectorAccess().getIpv4_addressDNSParserRuleCall_1_1_2_0_1_0());
                     	    												
-                    	    pushFollow(FOLLOW_27);
+                    	    pushFollow(FOLLOW_34);
                     	    lv_ipv4_address_7_0=ruleDNS();
 
                     	    state._fsp--;
@@ -4358,43 +5040,43 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalDockerCompose.g:1537:6: ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) )
+                    	    // InternalDockerCompose.g:1806:6: ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) )
                     	    {
-                    	    // InternalDockerCompose.g:1537:6: ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) )
-                    	    // InternalDockerCompose.g:1538:7: {...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) )
+                    	    // InternalDockerCompose.g:1806:6: ({...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) ) )
+                    	    // InternalDockerCompose.g:1807:7: {...}? => ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) )
                     	    {
                     	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_1_2(), 1) ) {
                     	        throw new FailedPredicateException(input, "ruleNetworkConnector", "getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_1_2(), 1)");
                     	    }
-                    	    // InternalDockerCompose.g:1538:119: ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) )
-                    	    // InternalDockerCompose.g:1539:8: ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) )
+                    	    // InternalDockerCompose.g:1807:119: ( ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) ) )
+                    	    // InternalDockerCompose.g:1808:8: ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) )
                     	    {
 
                     	    								getUnorderedGroupHelper().select(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_1_2(), 1);
                     	    							
-                    	    // InternalDockerCompose.g:1542:11: ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) )
-                    	    // InternalDockerCompose.g:1542:12: {...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) )
+                    	    // InternalDockerCompose.g:1811:11: ({...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) ) )
+                    	    // InternalDockerCompose.g:1811:12: {...}? => (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) )
                     	    {
                     	    if ( !((true)) ) {
                     	        throw new FailedPredicateException(input, "ruleNetworkConnector", "true");
                     	    }
-                    	    // InternalDockerCompose.g:1542:21: (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) )
-                    	    // InternalDockerCompose.g:1542:22: otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) )
+                    	    // InternalDockerCompose.g:1811:21: (otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) ) )
+                    	    // InternalDockerCompose.g:1811:22: otherlv_8= 'priority:' ( (lv_priority_9_0= ruleEInt ) )
                     	    {
-                    	    otherlv_8=(Token)match(input,38,FOLLOW_11); 
+                    	    otherlv_8=(Token)match(input,43,FOLLOW_12); 
 
                     	    											newLeafNode(otherlv_8, grammarAccess.getNetworkConnectorAccess().getPriorityKeyword_1_1_2_1_0());
                     	    										
-                    	    // InternalDockerCompose.g:1546:11: ( (lv_priority_9_0= ruleEInt ) )
-                    	    // InternalDockerCompose.g:1547:12: (lv_priority_9_0= ruleEInt )
+                    	    // InternalDockerCompose.g:1815:11: ( (lv_priority_9_0= ruleEInt ) )
+                    	    // InternalDockerCompose.g:1816:12: (lv_priority_9_0= ruleEInt )
                     	    {
-                    	    // InternalDockerCompose.g:1547:12: (lv_priority_9_0= ruleEInt )
-                    	    // InternalDockerCompose.g:1548:13: lv_priority_9_0= ruleEInt
+                    	    // InternalDockerCompose.g:1816:12: (lv_priority_9_0= ruleEInt )
+                    	    // InternalDockerCompose.g:1817:13: lv_priority_9_0= ruleEInt
                     	    {
 
                     	    													newCompositeNode(grammarAccess.getNetworkConnectorAccess().getPriorityEIntParserRuleCall_1_1_2_1_1_0());
                     	    												
-                    	    pushFollow(FOLLOW_27);
+                    	    pushFollow(FOLLOW_34);
                     	    lv_priority_9_0=ruleEInt();
 
                     	    state._fsp--;
@@ -4435,72 +5117,72 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     	    }
                     	    break;
                     	case 3 :
-                    	    // InternalDockerCompose.g:1571:6: ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) )
+                    	    // InternalDockerCompose.g:1840:6: ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) )
                     	    {
-                    	    // InternalDockerCompose.g:1571:6: ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) )
-                    	    // InternalDockerCompose.g:1572:7: {...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) )
+                    	    // InternalDockerCompose.g:1840:6: ({...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) ) )
+                    	    // InternalDockerCompose.g:1841:7: {...}? => ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) )
                     	    {
                     	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_1_2(), 2) ) {
                     	        throw new FailedPredicateException(input, "ruleNetworkConnector", "getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_1_2(), 2)");
                     	    }
-                    	    // InternalDockerCompose.g:1572:119: ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) )
-                    	    // InternalDockerCompose.g:1573:8: ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) )
+                    	    // InternalDockerCompose.g:1841:119: ( ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) ) )
+                    	    // InternalDockerCompose.g:1842:8: ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) )
                     	    {
 
                     	    								getUnorderedGroupHelper().select(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_1_2(), 2);
                     	    							
-                    	    // InternalDockerCompose.g:1576:11: ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) )
-                    	    // InternalDockerCompose.g:1576:12: {...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ )
+                    	    // InternalDockerCompose.g:1845:11: ({...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ ) )
+                    	    // InternalDockerCompose.g:1845:12: {...}? => (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ )
                     	    {
                     	    if ( !((true)) ) {
                     	        throw new FailedPredicateException(input, "ruleNetworkConnector", "true");
                     	    }
-                    	    // InternalDockerCompose.g:1576:21: (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ )
-                    	    // InternalDockerCompose.g:1576:22: otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+
+                    	    // InternalDockerCompose.g:1845:21: (otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+ )
+                    	    // InternalDockerCompose.g:1845:22: otherlv_10= 'aliases:' (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+
                     	    {
-                    	    otherlv_10=(Token)match(input,39,FOLLOW_14); 
+                    	    otherlv_10=(Token)match(input,44,FOLLOW_15); 
 
                     	    											newLeafNode(otherlv_10, grammarAccess.getNetworkConnectorAccess().getAliasesKeyword_1_1_2_2_0());
                     	    										
-                    	    // InternalDockerCompose.g:1580:11: (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+
-                    	    int cnt30=0;
-                    	    loop30:
+                    	    // InternalDockerCompose.g:1849:11: (otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) ) )+
+                    	    int cnt39=0;
+                    	    loop39:
                     	    do {
-                    	        int alt30=2;
-                    	        int LA30_0 = input.LA(1);
+                    	        int alt39=2;
+                    	        int LA39_0 = input.LA(1);
 
-                    	        if ( (LA30_0==31) ) {
-                    	            int LA30_2 = input.LA(2);
+                    	        if ( (LA39_0==32) ) {
+                    	            int LA39_2 = input.LA(2);
 
-                    	            if ( (LA30_2==RULE_STRING) ) {
-                    	                alt30=1;
+                    	            if ( (LA39_2==RULE_STRING) ) {
+                    	                alt39=1;
                     	            }
-                    	            else if ( (LA30_2==RULE_ID) ) {
-                    	                alt30=1;
+                    	            else if ( (LA39_2==RULE_ID) ) {
+                    	                alt39=1;
                     	            }
 
 
                     	        }
 
 
-                    	        switch (alt30) {
+                    	        switch (alt39) {
                     	    	case 1 :
-                    	    	    // InternalDockerCompose.g:1581:12: otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) )
+                    	    	    // InternalDockerCompose.g:1850:12: otherlv_11= '-' ( (lv_aliases_12_0= ruleAlias ) )
                     	    	    {
-                    	    	    otherlv_11=(Token)match(input,31,FOLLOW_5); 
+                    	    	    otherlv_11=(Token)match(input,32,FOLLOW_5); 
 
                     	    	    												newLeafNode(otherlv_11, grammarAccess.getNetworkConnectorAccess().getHyphenMinusKeyword_1_1_2_2_1_0());
                     	    	    											
-                    	    	    // InternalDockerCompose.g:1585:12: ( (lv_aliases_12_0= ruleAlias ) )
-                    	    	    // InternalDockerCompose.g:1586:13: (lv_aliases_12_0= ruleAlias )
+                    	    	    // InternalDockerCompose.g:1854:12: ( (lv_aliases_12_0= ruleAlias ) )
+                    	    	    // InternalDockerCompose.g:1855:13: (lv_aliases_12_0= ruleAlias )
                     	    	    {
-                    	    	    // InternalDockerCompose.g:1586:13: (lv_aliases_12_0= ruleAlias )
-                    	    	    // InternalDockerCompose.g:1587:14: lv_aliases_12_0= ruleAlias
+                    	    	    // InternalDockerCompose.g:1855:13: (lv_aliases_12_0= ruleAlias )
+                    	    	    // InternalDockerCompose.g:1856:14: lv_aliases_12_0= ruleAlias
                     	    	    {
 
                     	    	    														newCompositeNode(grammarAccess.getNetworkConnectorAccess().getAliasesAliasParserRuleCall_1_1_2_2_1_1_0());
                     	    	    													
-                    	    	    pushFollow(FOLLOW_28);
+                    	    	    pushFollow(FOLLOW_35);
                     	    	    lv_aliases_12_0=ruleAlias();
 
                     	    	    state._fsp--;
@@ -4527,12 +5209,12 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     	    	    break;
 
                     	    	default :
-                    	    	    if ( cnt30 >= 1 ) break loop30;
+                    	    	    if ( cnt39 >= 1 ) break loop39;
                     	                EarlyExitException eee =
-                    	                    new EarlyExitException(30, input);
+                    	                    new EarlyExitException(39, input);
                     	                throw eee;
                     	        }
-                    	        cnt30++;
+                    	        cnt39++;
                     	    } while (true);
 
 
@@ -4554,69 +5236,69 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     	    }
                     	    break;
                     	case 4 :
-                    	    // InternalDockerCompose.g:1611:6: ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) )
+                    	    // InternalDockerCompose.g:1880:6: ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) )
                     	    {
-                    	    // InternalDockerCompose.g:1611:6: ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) )
-                    	    // InternalDockerCompose.g:1612:7: {...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) )
+                    	    // InternalDockerCompose.g:1880:6: ({...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) ) )
+                    	    // InternalDockerCompose.g:1881:7: {...}? => ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) )
                     	    {
                     	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_1_2(), 3) ) {
                     	        throw new FailedPredicateException(input, "ruleNetworkConnector", "getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_1_2(), 3)");
                     	    }
-                    	    // InternalDockerCompose.g:1612:119: ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) )
-                    	    // InternalDockerCompose.g:1613:8: ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) )
+                    	    // InternalDockerCompose.g:1881:119: ( ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) ) )
+                    	    // InternalDockerCompose.g:1882:8: ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) )
                     	    {
 
                     	    								getUnorderedGroupHelper().select(grammarAccess.getNetworkConnectorAccess().getUnorderedGroup_1_1_2(), 3);
                     	    							
-                    	    // InternalDockerCompose.g:1616:11: ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) )
-                    	    // InternalDockerCompose.g:1616:12: {...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ )
+                    	    // InternalDockerCompose.g:1885:11: ({...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ ) )
+                    	    // InternalDockerCompose.g:1885:12: {...}? => (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ )
                     	    {
                     	    if ( !((true)) ) {
                     	        throw new FailedPredicateException(input, "ruleNetworkConnector", "true");
                     	    }
-                    	    // InternalDockerCompose.g:1616:21: (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ )
-                    	    // InternalDockerCompose.g:1616:22: otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+
+                    	    // InternalDockerCompose.g:1885:21: (otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+ )
+                    	    // InternalDockerCompose.g:1885:22: otherlv_13= 'link_local_ips:' (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+
                     	    {
-                    	    otherlv_13=(Token)match(input,40,FOLLOW_14); 
+                    	    otherlv_13=(Token)match(input,45,FOLLOW_15); 
 
                     	    											newLeafNode(otherlv_13, grammarAccess.getNetworkConnectorAccess().getLink_local_ipsKeyword_1_1_2_3_0());
                     	    										
-                    	    // InternalDockerCompose.g:1620:11: (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+
-                    	    int cnt31=0;
-                    	    loop31:
+                    	    // InternalDockerCompose.g:1889:11: (otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) ) )+
+                    	    int cnt40=0;
+                    	    loop40:
                     	    do {
-                    	        int alt31=2;
-                    	        int LA31_0 = input.LA(1);
+                    	        int alt40=2;
+                    	        int LA40_0 = input.LA(1);
 
-                    	        if ( (LA31_0==31) ) {
-                    	            int LA31_2 = input.LA(2);
+                    	        if ( (LA40_0==32) ) {
+                    	            int LA40_2 = input.LA(2);
 
-                    	            if ( (LA31_2==RULE_INT) ) {
-                    	                alt31=1;
+                    	            if ( (LA40_2==RULE_INT) ) {
+                    	                alt40=1;
                     	            }
 
 
                     	        }
 
 
-                    	        switch (alt31) {
+                    	        switch (alt40) {
                     	    	case 1 :
-                    	    	    // InternalDockerCompose.g:1621:12: otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) )
+                    	    	    // InternalDockerCompose.g:1890:12: otherlv_14= '-' ( (lv_link_local_ips_15_0= ruleDNS ) )
                     	    	    {
-                    	    	    otherlv_14=(Token)match(input,31,FOLLOW_21); 
+                    	    	    otherlv_14=(Token)match(input,32,FOLLOW_25); 
 
                     	    	    												newLeafNode(otherlv_14, grammarAccess.getNetworkConnectorAccess().getHyphenMinusKeyword_1_1_2_3_1_0());
                     	    	    											
-                    	    	    // InternalDockerCompose.g:1625:12: ( (lv_link_local_ips_15_0= ruleDNS ) )
-                    	    	    // InternalDockerCompose.g:1626:13: (lv_link_local_ips_15_0= ruleDNS )
+                    	    	    // InternalDockerCompose.g:1894:12: ( (lv_link_local_ips_15_0= ruleDNS ) )
+                    	    	    // InternalDockerCompose.g:1895:13: (lv_link_local_ips_15_0= ruleDNS )
                     	    	    {
-                    	    	    // InternalDockerCompose.g:1626:13: (lv_link_local_ips_15_0= ruleDNS )
-                    	    	    // InternalDockerCompose.g:1627:14: lv_link_local_ips_15_0= ruleDNS
+                    	    	    // InternalDockerCompose.g:1895:13: (lv_link_local_ips_15_0= ruleDNS )
+                    	    	    // InternalDockerCompose.g:1896:14: lv_link_local_ips_15_0= ruleDNS
                     	    	    {
 
                     	    	    														newCompositeNode(grammarAccess.getNetworkConnectorAccess().getLink_local_ipsDNSParserRuleCall_1_1_2_3_1_1_0());
                     	    	    													
-                    	    	    pushFollow(FOLLOW_28);
+                    	    	    pushFollow(FOLLOW_35);
                     	    	    lv_link_local_ips_15_0=ruleDNS();
 
                     	    	    state._fsp--;
@@ -4643,12 +5325,12 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     	    	    break;
 
                     	    	default :
-                    	    	    if ( cnt31 >= 1 ) break loop31;
+                    	    	    if ( cnt40 >= 1 ) break loop40;
                     	                EarlyExitException eee =
-                    	                    new EarlyExitException(31, input);
+                    	                    new EarlyExitException(40, input);
                     	                throw eee;
                     	        }
-                    	        cnt31++;
+                    	        cnt40++;
                     	    } while (true);
 
 
@@ -4671,7 +5353,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop32;
+                    	    break loop41;
                         }
                     } while (true);
 
@@ -4719,7 +5401,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAlias"
-    // InternalDockerCompose.g:1664:1: entryRuleAlias returns [EObject current=null] : iv_ruleAlias= ruleAlias EOF ;
+    // InternalDockerCompose.g:1933:1: entryRuleAlias returns [EObject current=null] : iv_ruleAlias= ruleAlias EOF ;
     public final EObject entryRuleAlias() throws RecognitionException {
         EObject current = null;
 
@@ -4727,8 +5409,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:1664:46: (iv_ruleAlias= ruleAlias EOF )
-            // InternalDockerCompose.g:1665:2: iv_ruleAlias= ruleAlias EOF
+            // InternalDockerCompose.g:1933:46: (iv_ruleAlias= ruleAlias EOF )
+            // InternalDockerCompose.g:1934:2: iv_ruleAlias= ruleAlias EOF
             {
              newCompositeNode(grammarAccess.getAliasRule()); 
             pushFollow(FOLLOW_1);
@@ -4755,7 +5437,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAlias"
-    // InternalDockerCompose.g:1671:1: ruleAlias returns [EObject current=null] : ( () ( (lv_alias_1_0= ruleEString ) ) ) ;
+    // InternalDockerCompose.g:1940:1: ruleAlias returns [EObject current=null] : ( () ( (lv_alias_1_0= ruleEString ) ) ) ;
     public final EObject ruleAlias() throws RecognitionException {
         EObject current = null;
 
@@ -4766,14 +5448,14 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:1677:2: ( ( () ( (lv_alias_1_0= ruleEString ) ) ) )
-            // InternalDockerCompose.g:1678:2: ( () ( (lv_alias_1_0= ruleEString ) ) )
+            // InternalDockerCompose.g:1946:2: ( ( () ( (lv_alias_1_0= ruleEString ) ) ) )
+            // InternalDockerCompose.g:1947:2: ( () ( (lv_alias_1_0= ruleEString ) ) )
             {
-            // InternalDockerCompose.g:1678:2: ( () ( (lv_alias_1_0= ruleEString ) ) )
-            // InternalDockerCompose.g:1679:3: () ( (lv_alias_1_0= ruleEString ) )
+            // InternalDockerCompose.g:1947:2: ( () ( (lv_alias_1_0= ruleEString ) ) )
+            // InternalDockerCompose.g:1948:3: () ( (lv_alias_1_0= ruleEString ) )
             {
-            // InternalDockerCompose.g:1679:3: ()
-            // InternalDockerCompose.g:1680:4: 
+            // InternalDockerCompose.g:1948:3: ()
+            // InternalDockerCompose.g:1949:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4783,11 +5465,11 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDockerCompose.g:1686:3: ( (lv_alias_1_0= ruleEString ) )
-            // InternalDockerCompose.g:1687:4: (lv_alias_1_0= ruleEString )
+            // InternalDockerCompose.g:1955:3: ( (lv_alias_1_0= ruleEString ) )
+            // InternalDockerCompose.g:1956:4: (lv_alias_1_0= ruleEString )
             {
-            // InternalDockerCompose.g:1687:4: (lv_alias_1_0= ruleEString )
-            // InternalDockerCompose.g:1688:5: lv_alias_1_0= ruleEString
+            // InternalDockerCompose.g:1956:4: (lv_alias_1_0= ruleEString )
+            // InternalDockerCompose.g:1957:5: lv_alias_1_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getAliasAccess().getAliasEStringParserRuleCall_1_0());
@@ -4837,7 +5519,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVolumeConnector_long"
-    // InternalDockerCompose.g:1709:1: entryRuleVolumeConnector_long returns [EObject current=null] : iv_ruleVolumeConnector_long= ruleVolumeConnector_long EOF ;
+    // InternalDockerCompose.g:1978:1: entryRuleVolumeConnector_long returns [EObject current=null] : iv_ruleVolumeConnector_long= ruleVolumeConnector_long EOF ;
     public final EObject entryRuleVolumeConnector_long() throws RecognitionException {
         EObject current = null;
 
@@ -4845,8 +5527,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:1709:61: (iv_ruleVolumeConnector_long= ruleVolumeConnector_long EOF )
-            // InternalDockerCompose.g:1710:2: iv_ruleVolumeConnector_long= ruleVolumeConnector_long EOF
+            // InternalDockerCompose.g:1978:61: (iv_ruleVolumeConnector_long= ruleVolumeConnector_long EOF )
+            // InternalDockerCompose.g:1979:2: iv_ruleVolumeConnector_long= ruleVolumeConnector_long EOF
             {
              newCompositeNode(grammarAccess.getVolumeConnector_longRule()); 
             pushFollow(FOLLOW_1);
@@ -4873,7 +5555,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVolumeConnector_long"
-    // InternalDockerCompose.g:1716:1: ruleVolumeConnector_long returns [EObject current=null] : ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) ) ) ;
+    // InternalDockerCompose.g:1985:1: ruleVolumeConnector_long returns [EObject current=null] : ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) ) ) ;
     public final EObject ruleVolumeConnector_long() throws RecognitionException {
         EObject current = null;
 
@@ -4904,14 +5586,14 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:1722:2: ( ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) ) ) )
-            // InternalDockerCompose.g:1723:2: ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) ) )
+            // InternalDockerCompose.g:1991:2: ( ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) ) ) )
+            // InternalDockerCompose.g:1992:2: ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) ) )
             {
-            // InternalDockerCompose.g:1723:2: ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) ) )
-            // InternalDockerCompose.g:1724:3: () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) )
+            // InternalDockerCompose.g:1992:2: ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) ) )
+            // InternalDockerCompose.g:1993:3: () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) )
             {
-            // InternalDockerCompose.g:1724:3: ()
-            // InternalDockerCompose.g:1725:4: 
+            // InternalDockerCompose.g:1993:3: ()
+            // InternalDockerCompose.g:1994:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4921,58 +5603,58 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDockerCompose.g:1731:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) )
-            // InternalDockerCompose.g:1732:4: ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) ) ) )+ {...}?) )
+            // InternalDockerCompose.g:2000:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) )
+            // InternalDockerCompose.g:2001:4: ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) ) ) )+ {...}?) )
             {
-            // InternalDockerCompose.g:1732:4: ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) ) ) )+ {...}?) )
-            // InternalDockerCompose.g:1733:5: ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) ) ) )+ {...}?)
+            // InternalDockerCompose.g:2001:4: ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) ) ) )+ {...}?) )
+            // InternalDockerCompose.g:2002:5: ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) ) ) )+ {...}?)
             {
              
             				  getUnorderedGroupHelper().enter(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1());
             				
-            // InternalDockerCompose.g:1736:5: ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) ) ) )+ {...}?)
-            // InternalDockerCompose.g:1737:6: ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) ) ) )+ {...}?
+            // InternalDockerCompose.g:2005:5: ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) ) ) )+ {...}?)
+            // InternalDockerCompose.g:2006:6: ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) ) ) )+ {...}?
             {
-            // InternalDockerCompose.g:1737:6: ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) ) ) )+
-            int cnt34=0;
-            loop34:
+            // InternalDockerCompose.g:2006:6: ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) ) ) )+
+            int cnt43=0;
+            loop43:
             do {
-                int alt34=8;
-                alt34 = dfa34.predict(input);
-                switch (alt34) {
+                int alt43=8;
+                alt43 = dfa43.predict(input);
+                switch (alt43) {
             	case 1 :
-            	    // InternalDockerCompose.g:1738:4: ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2007:4: ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:1738:4: ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) )
-            	    // InternalDockerCompose.g:1739:5: {...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) )
+            	    // InternalDockerCompose.g:2007:4: ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2008:5: {...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 0) ) {
             	        throw new FailedPredicateException(input, "ruleVolumeConnector_long", "getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 0)");
             	    }
-            	    // InternalDockerCompose.g:1739:117: ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) )
-            	    // InternalDockerCompose.g:1740:6: ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) )
+            	    // InternalDockerCompose.g:2008:117: ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) )
+            	    // InternalDockerCompose.g:2009:6: ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 0);
             	    					
-            	    // InternalDockerCompose.g:1743:9: ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) )
-            	    // InternalDockerCompose.g:1743:10: {...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) )
+            	    // InternalDockerCompose.g:2012:9: ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) )
+            	    // InternalDockerCompose.g:2012:10: {...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleVolumeConnector_long", "true");
             	    }
-            	    // InternalDockerCompose.g:1743:19: (otherlv_2= 'source:' ( ( ruleEString ) ) )
-            	    // InternalDockerCompose.g:1743:20: otherlv_2= 'source:' ( ( ruleEString ) )
+            	    // InternalDockerCompose.g:2012:19: (otherlv_2= 'source:' ( ( ruleEString ) ) )
+            	    // InternalDockerCompose.g:2012:20: otherlv_2= 'source:' ( ( ruleEString ) )
             	    {
-            	    otherlv_2=(Token)match(input,41,FOLLOW_5); 
+            	    otherlv_2=(Token)match(input,46,FOLLOW_5); 
 
             	    									newLeafNode(otherlv_2, grammarAccess.getVolumeConnector_longAccess().getSourceKeyword_1_0_0());
             	    								
-            	    // InternalDockerCompose.g:1747:9: ( ( ruleEString ) )
-            	    // InternalDockerCompose.g:1748:10: ( ruleEString )
+            	    // InternalDockerCompose.g:2016:9: ( ( ruleEString ) )
+            	    // InternalDockerCompose.g:2017:10: ( ruleEString )
             	    {
-            	    // InternalDockerCompose.g:1748:10: ( ruleEString )
-            	    // InternalDockerCompose.g:1749:11: ruleEString
+            	    // InternalDockerCompose.g:2017:10: ( ruleEString )
+            	    // InternalDockerCompose.g:2018:11: ruleEString
             	    {
 
             	    											if (current==null) {
@@ -4982,7 +5664,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             	    											newCompositeNode(grammarAccess.getVolumeConnector_longAccess().getVolumeVolumeCrossReference_1_0_1_0());
             	    										
-            	    pushFollow(FOLLOW_29);
+            	    pushFollow(FOLLOW_36);
             	    ruleEString();
 
             	    state._fsp--;
@@ -5015,43 +5697,43 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // InternalDockerCompose.g:1769:4: ({...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2038:4: ({...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:1769:4: ({...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) ) )
-            	    // InternalDockerCompose.g:1770:5: {...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) )
+            	    // InternalDockerCompose.g:2038:4: ({...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2039:5: {...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 1) ) {
             	        throw new FailedPredicateException(input, "ruleVolumeConnector_long", "getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 1)");
             	    }
-            	    // InternalDockerCompose.g:1770:117: ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) )
-            	    // InternalDockerCompose.g:1771:6: ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) )
+            	    // InternalDockerCompose.g:2039:117: ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) )
+            	    // InternalDockerCompose.g:2040:6: ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 1);
             	    					
-            	    // InternalDockerCompose.g:1774:9: ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) )
-            	    // InternalDockerCompose.g:1774:10: {...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) )
+            	    // InternalDockerCompose.g:2043:9: ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) )
+            	    // InternalDockerCompose.g:2043:10: {...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleVolumeConnector_long", "true");
             	    }
-            	    // InternalDockerCompose.g:1774:19: (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) )
-            	    // InternalDockerCompose.g:1774:20: otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) )
+            	    // InternalDockerCompose.g:2043:19: (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) )
+            	    // InternalDockerCompose.g:2043:20: otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) )
             	    {
-            	    otherlv_4=(Token)match(input,42,FOLLOW_30); 
+            	    otherlv_4=(Token)match(input,47,FOLLOW_37); 
 
             	    									newLeafNode(otherlv_4, grammarAccess.getVolumeConnector_longAccess().getTypeKeyword_1_1_0());
             	    								
-            	    // InternalDockerCompose.g:1778:9: ( (lv_type_5_0= ruleMountType ) )
-            	    // InternalDockerCompose.g:1779:10: (lv_type_5_0= ruleMountType )
+            	    // InternalDockerCompose.g:2047:9: ( (lv_type_5_0= ruleMountType ) )
+            	    // InternalDockerCompose.g:2048:10: (lv_type_5_0= ruleMountType )
             	    {
-            	    // InternalDockerCompose.g:1779:10: (lv_type_5_0= ruleMountType )
-            	    // InternalDockerCompose.g:1780:11: lv_type_5_0= ruleMountType
+            	    // InternalDockerCompose.g:2048:10: (lv_type_5_0= ruleMountType )
+            	    // InternalDockerCompose.g:2049:11: lv_type_5_0= ruleMountType
             	    {
 
             	    											newCompositeNode(grammarAccess.getVolumeConnector_longAccess().getTypeMountTypeEnumRuleCall_1_1_1_0());
             	    										
-            	    pushFollow(FOLLOW_29);
+            	    pushFollow(FOLLOW_36);
             	    lv_type_5_0=ruleMountType();
 
             	    state._fsp--;
@@ -5092,43 +5774,43 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 3 :
-            	    // InternalDockerCompose.g:1803:4: ({...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2072:4: ({...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:1803:4: ({...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) ) )
-            	    // InternalDockerCompose.g:1804:5: {...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) )
+            	    // InternalDockerCompose.g:2072:4: ({...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2073:5: {...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 2) ) {
             	        throw new FailedPredicateException(input, "ruleVolumeConnector_long", "getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 2)");
             	    }
-            	    // InternalDockerCompose.g:1804:117: ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) )
-            	    // InternalDockerCompose.g:1805:6: ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) )
+            	    // InternalDockerCompose.g:2073:117: ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) )
+            	    // InternalDockerCompose.g:2074:6: ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 2);
             	    					
-            	    // InternalDockerCompose.g:1808:9: ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) )
-            	    // InternalDockerCompose.g:1808:10: {...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) )
+            	    // InternalDockerCompose.g:2077:9: ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) )
+            	    // InternalDockerCompose.g:2077:10: {...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleVolumeConnector_long", "true");
             	    }
-            	    // InternalDockerCompose.g:1808:19: (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) )
-            	    // InternalDockerCompose.g:1808:20: otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) )
+            	    // InternalDockerCompose.g:2077:19: (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) )
+            	    // InternalDockerCompose.g:2077:20: otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) )
             	    {
-            	    otherlv_6=(Token)match(input,43,FOLLOW_31); 
+            	    otherlv_6=(Token)match(input,48,FOLLOW_9); 
 
             	    									newLeafNode(otherlv_6, grammarAccess.getVolumeConnector_longAccess().getTargetKeyword_1_2_0());
             	    								
-            	    // InternalDockerCompose.g:1812:9: ( (lv_container_path_7_0= rulePATH ) )
-            	    // InternalDockerCompose.g:1813:10: (lv_container_path_7_0= rulePATH )
+            	    // InternalDockerCompose.g:2081:9: ( (lv_container_path_7_0= rulePATH ) )
+            	    // InternalDockerCompose.g:2082:10: (lv_container_path_7_0= rulePATH )
             	    {
-            	    // InternalDockerCompose.g:1813:10: (lv_container_path_7_0= rulePATH )
-            	    // InternalDockerCompose.g:1814:11: lv_container_path_7_0= rulePATH
+            	    // InternalDockerCompose.g:2082:10: (lv_container_path_7_0= rulePATH )
+            	    // InternalDockerCompose.g:2083:11: lv_container_path_7_0= rulePATH
             	    {
 
             	    											newCompositeNode(grammarAccess.getVolumeConnector_longAccess().getContainer_pathPATHParserRuleCall_1_2_1_0());
             	    										
-            	    pushFollow(FOLLOW_29);
+            	    pushFollow(FOLLOW_36);
             	    lv_container_path_7_0=rulePATH();
 
             	    state._fsp--;
@@ -5169,43 +5851,43 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 4 :
-            	    // InternalDockerCompose.g:1837:4: ({...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2106:4: ({...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:1837:4: ({...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) ) )
-            	    // InternalDockerCompose.g:1838:5: {...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) )
+            	    // InternalDockerCompose.g:2106:4: ({...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2107:5: {...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 3) ) {
             	        throw new FailedPredicateException(input, "ruleVolumeConnector_long", "getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 3)");
             	    }
-            	    // InternalDockerCompose.g:1838:117: ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) )
-            	    // InternalDockerCompose.g:1839:6: ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) )
+            	    // InternalDockerCompose.g:2107:117: ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) )
+            	    // InternalDockerCompose.g:2108:6: ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 3);
             	    					
-            	    // InternalDockerCompose.g:1842:9: ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) )
-            	    // InternalDockerCompose.g:1842:10: {...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) )
+            	    // InternalDockerCompose.g:2111:9: ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) )
+            	    // InternalDockerCompose.g:2111:10: {...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleVolumeConnector_long", "true");
             	    }
-            	    // InternalDockerCompose.g:1842:19: (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) )
-            	    // InternalDockerCompose.g:1842:20: otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) )
+            	    // InternalDockerCompose.g:2111:19: (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) )
+            	    // InternalDockerCompose.g:2111:20: otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) )
             	    {
-            	    otherlv_8=(Token)match(input,29,FOLLOW_13); 
+            	    otherlv_8=(Token)match(input,30,FOLLOW_14); 
 
             	    									newLeafNode(otherlv_8, grammarAccess.getVolumeConnector_longAccess().getRead_onlyKeyword_1_3_0());
             	    								
-            	    // InternalDockerCompose.g:1846:9: ( (lv_read_only_9_0= ruleEBoolean ) )
-            	    // InternalDockerCompose.g:1847:10: (lv_read_only_9_0= ruleEBoolean )
+            	    // InternalDockerCompose.g:2115:9: ( (lv_read_only_9_0= ruleEBoolean ) )
+            	    // InternalDockerCompose.g:2116:10: (lv_read_only_9_0= ruleEBoolean )
             	    {
-            	    // InternalDockerCompose.g:1847:10: (lv_read_only_9_0= ruleEBoolean )
-            	    // InternalDockerCompose.g:1848:11: lv_read_only_9_0= ruleEBoolean
+            	    // InternalDockerCompose.g:2116:10: (lv_read_only_9_0= ruleEBoolean )
+            	    // InternalDockerCompose.g:2117:11: lv_read_only_9_0= ruleEBoolean
             	    {
 
             	    											newCompositeNode(grammarAccess.getVolumeConnector_longAccess().getRead_onlyEBooleanParserRuleCall_1_3_1_0());
             	    										
-            	    pushFollow(FOLLOW_29);
+            	    pushFollow(FOLLOW_36);
             	    lv_read_only_9_0=ruleEBoolean();
 
             	    state._fsp--;
@@ -5246,47 +5928,47 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 5 :
-            	    // InternalDockerCompose.g:1871:4: ({...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2140:4: ({...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:1871:4: ({...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) ) )
-            	    // InternalDockerCompose.g:1872:5: {...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) )
+            	    // InternalDockerCompose.g:2140:4: ({...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2141:5: {...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 4) ) {
             	        throw new FailedPredicateException(input, "ruleVolumeConnector_long", "getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 4)");
             	    }
-            	    // InternalDockerCompose.g:1872:117: ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) )
-            	    // InternalDockerCompose.g:1873:6: ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) )
+            	    // InternalDockerCompose.g:2141:117: ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) )
+            	    // InternalDockerCompose.g:2142:6: ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 4);
             	    					
-            	    // InternalDockerCompose.g:1876:9: ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) )
-            	    // InternalDockerCompose.g:1876:10: {...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) )
+            	    // InternalDockerCompose.g:2145:9: ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) )
+            	    // InternalDockerCompose.g:2145:10: {...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleVolumeConnector_long", "true");
             	    }
-            	    // InternalDockerCompose.g:1876:19: (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) )
-            	    // InternalDockerCompose.g:1876:20: otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) )
+            	    // InternalDockerCompose.g:2145:19: (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) )
+            	    // InternalDockerCompose.g:2145:20: otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) )
             	    {
-            	    otherlv_10=(Token)match(input,44,FOLLOW_32); 
+            	    otherlv_10=(Token)match(input,49,FOLLOW_38); 
 
             	    									newLeafNode(otherlv_10, grammarAccess.getVolumeConnector_longAccess().getBindKeyword_1_4_0());
             	    								
-            	    otherlv_11=(Token)match(input,45,FOLLOW_33); 
+            	    otherlv_11=(Token)match(input,50,FOLLOW_39); 
 
             	    									newLeafNode(otherlv_11, grammarAccess.getVolumeConnector_longAccess().getPropagationKeyword_1_4_1());
             	    								
-            	    // InternalDockerCompose.g:1884:9: ( (lv_propagation_12_0= rulePropagationType ) )
-            	    // InternalDockerCompose.g:1885:10: (lv_propagation_12_0= rulePropagationType )
+            	    // InternalDockerCompose.g:2153:9: ( (lv_propagation_12_0= rulePropagationType ) )
+            	    // InternalDockerCompose.g:2154:10: (lv_propagation_12_0= rulePropagationType )
             	    {
-            	    // InternalDockerCompose.g:1885:10: (lv_propagation_12_0= rulePropagationType )
-            	    // InternalDockerCompose.g:1886:11: lv_propagation_12_0= rulePropagationType
+            	    // InternalDockerCompose.g:2154:10: (lv_propagation_12_0= rulePropagationType )
+            	    // InternalDockerCompose.g:2155:11: lv_propagation_12_0= rulePropagationType
             	    {
 
             	    											newCompositeNode(grammarAccess.getVolumeConnector_longAccess().getPropagationPropagationTypeEnumRuleCall_1_4_2_0());
             	    										
-            	    pushFollow(FOLLOW_29);
+            	    pushFollow(FOLLOW_36);
             	    lv_propagation_12_0=rulePropagationType();
 
             	    state._fsp--;
@@ -5327,47 +6009,47 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 6 :
-            	    // InternalDockerCompose.g:1909:4: ({...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2178:4: ({...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:1909:4: ({...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) ) )
-            	    // InternalDockerCompose.g:1910:5: {...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) )
+            	    // InternalDockerCompose.g:2178:4: ({...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2179:5: {...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 5) ) {
             	        throw new FailedPredicateException(input, "ruleVolumeConnector_long", "getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 5)");
             	    }
-            	    // InternalDockerCompose.g:1910:117: ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) )
-            	    // InternalDockerCompose.g:1911:6: ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) )
+            	    // InternalDockerCompose.g:2179:117: ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) )
+            	    // InternalDockerCompose.g:2180:6: ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 5);
             	    					
-            	    // InternalDockerCompose.g:1914:9: ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) )
-            	    // InternalDockerCompose.g:1914:10: {...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) )
+            	    // InternalDockerCompose.g:2183:9: ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) )
+            	    // InternalDockerCompose.g:2183:10: {...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleVolumeConnector_long", "true");
             	    }
-            	    // InternalDockerCompose.g:1914:19: (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) )
-            	    // InternalDockerCompose.g:1914:20: otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) )
+            	    // InternalDockerCompose.g:2183:19: (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) )
+            	    // InternalDockerCompose.g:2183:20: otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) )
             	    {
-            	    otherlv_13=(Token)match(input,46,FOLLOW_34); 
+            	    otherlv_13=(Token)match(input,51,FOLLOW_40); 
 
             	    									newLeafNode(otherlv_13, grammarAccess.getVolumeConnector_longAccess().getVolumeKeyword_1_5_0());
             	    								
-            	    otherlv_14=(Token)match(input,47,FOLLOW_13); 
+            	    otherlv_14=(Token)match(input,52,FOLLOW_14); 
 
             	    									newLeafNode(otherlv_14, grammarAccess.getVolumeConnector_longAccess().getNocopyKeyword_1_5_1());
             	    								
-            	    // InternalDockerCompose.g:1922:9: ( (lv_nocopy_15_0= ruleEBoolean ) )
-            	    // InternalDockerCompose.g:1923:10: (lv_nocopy_15_0= ruleEBoolean )
+            	    // InternalDockerCompose.g:2191:9: ( (lv_nocopy_15_0= ruleEBoolean ) )
+            	    // InternalDockerCompose.g:2192:10: (lv_nocopy_15_0= ruleEBoolean )
             	    {
-            	    // InternalDockerCompose.g:1923:10: (lv_nocopy_15_0= ruleEBoolean )
-            	    // InternalDockerCompose.g:1924:11: lv_nocopy_15_0= ruleEBoolean
+            	    // InternalDockerCompose.g:2192:10: (lv_nocopy_15_0= ruleEBoolean )
+            	    // InternalDockerCompose.g:2193:11: lv_nocopy_15_0= ruleEBoolean
             	    {
 
             	    											newCompositeNode(grammarAccess.getVolumeConnector_longAccess().getNocopyEBooleanParserRuleCall_1_5_2_0());
             	    										
-            	    pushFollow(FOLLOW_29);
+            	    pushFollow(FOLLOW_36);
             	    lv_nocopy_15_0=ruleEBoolean();
 
             	    state._fsp--;
@@ -5408,47 +6090,47 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 7 :
-            	    // InternalDockerCompose.g:1947:4: ({...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2216:4: ({...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:1947:4: ({...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) ) )
-            	    // InternalDockerCompose.g:1948:5: {...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) )
+            	    // InternalDockerCompose.g:2216:4: ({...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2217:5: {...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 6) ) {
             	        throw new FailedPredicateException(input, "ruleVolumeConnector_long", "getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 6)");
             	    }
-            	    // InternalDockerCompose.g:1948:117: ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) )
-            	    // InternalDockerCompose.g:1949:6: ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) )
+            	    // InternalDockerCompose.g:2217:117: ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) )
+            	    // InternalDockerCompose.g:2218:6: ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 6);
             	    					
-            	    // InternalDockerCompose.g:1952:9: ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) )
-            	    // InternalDockerCompose.g:1952:10: {...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) )
+            	    // InternalDockerCompose.g:2221:9: ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) )
+            	    // InternalDockerCompose.g:2221:10: {...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleVolumeConnector_long", "true");
             	    }
-            	    // InternalDockerCompose.g:1952:19: (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) )
-            	    // InternalDockerCompose.g:1952:20: otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) )
+            	    // InternalDockerCompose.g:2221:19: (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) )
+            	    // InternalDockerCompose.g:2221:20: otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) )
             	    {
-            	    otherlv_16=(Token)match(input,48,FOLLOW_35); 
+            	    otherlv_16=(Token)match(input,53,FOLLOW_41); 
 
             	    									newLeafNode(otherlv_16, grammarAccess.getVolumeConnector_longAccess().getTmpfsKeyword_1_6_0());
             	    								
-            	    otherlv_17=(Token)match(input,49,FOLLOW_11); 
+            	    otherlv_17=(Token)match(input,54,FOLLOW_12); 
 
             	    									newLeafNode(otherlv_17, grammarAccess.getVolumeConnector_longAccess().getSizeKeyword_1_6_1());
             	    								
-            	    // InternalDockerCompose.g:1960:9: ( (lv_size_18_0= ruleEInt ) )
-            	    // InternalDockerCompose.g:1961:10: (lv_size_18_0= ruleEInt )
+            	    // InternalDockerCompose.g:2229:9: ( (lv_size_18_0= ruleEInt ) )
+            	    // InternalDockerCompose.g:2230:10: (lv_size_18_0= ruleEInt )
             	    {
-            	    // InternalDockerCompose.g:1961:10: (lv_size_18_0= ruleEInt )
-            	    // InternalDockerCompose.g:1962:11: lv_size_18_0= ruleEInt
+            	    // InternalDockerCompose.g:2230:10: (lv_size_18_0= ruleEInt )
+            	    // InternalDockerCompose.g:2231:11: lv_size_18_0= ruleEInt
             	    {
 
             	    											newCompositeNode(grammarAccess.getVolumeConnector_longAccess().getSizeEIntParserRuleCall_1_6_2_0());
             	    										
-            	    pushFollow(FOLLOW_29);
+            	    pushFollow(FOLLOW_36);
             	    lv_size_18_0=ruleEInt();
 
             	    state._fsp--;
@@ -5490,12 +6172,12 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt34 >= 1 ) break loop34;
+            	    if ( cnt43 >= 1 ) break loop43;
                         EarlyExitException eee =
-                            new EarlyExitException(34, input);
+                            new EarlyExitException(43, input);
                         throw eee;
                 }
-                cnt34++;
+                cnt43++;
             } while (true);
 
             if ( ! getUnorderedGroupHelper().canLeave(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1()) ) {
@@ -5536,7 +6218,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVolumeConnector_short"
-    // InternalDockerCompose.g:1997:1: entryRuleVolumeConnector_short returns [EObject current=null] : iv_ruleVolumeConnector_short= ruleVolumeConnector_short EOF ;
+    // InternalDockerCompose.g:2266:1: entryRuleVolumeConnector_short returns [EObject current=null] : iv_ruleVolumeConnector_short= ruleVolumeConnector_short EOF ;
     public final EObject entryRuleVolumeConnector_short() throws RecognitionException {
         EObject current = null;
 
@@ -5544,8 +6226,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:1997:62: (iv_ruleVolumeConnector_short= ruleVolumeConnector_short EOF )
-            // InternalDockerCompose.g:1998:2: iv_ruleVolumeConnector_short= ruleVolumeConnector_short EOF
+            // InternalDockerCompose.g:2266:62: (iv_ruleVolumeConnector_short= ruleVolumeConnector_short EOF )
+            // InternalDockerCompose.g:2267:2: iv_ruleVolumeConnector_short= ruleVolumeConnector_short EOF
             {
              newCompositeNode(grammarAccess.getVolumeConnector_shortRule()); 
             pushFollow(FOLLOW_1);
@@ -5572,7 +6254,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVolumeConnector_short"
-    // InternalDockerCompose.g:2004:1: ruleVolumeConnector_short returns [EObject current=null] : ( () ( ( ruleEString ) ) otherlv_2= ':' ( (lv_container_path_3_0= rulePATH ) ) (otherlv_4= ':' ( (lv_access_mode_5_0= ruleAccessMode ) ) )? ) ;
+    // InternalDockerCompose.g:2273:1: ruleVolumeConnector_short returns [EObject current=null] : ( () ( ( ruleEString ) ) otherlv_2= ':' ( (lv_container_path_3_0= rulePATH ) ) (otherlv_4= ':' ( (lv_access_mode_5_0= ruleAccessMode ) ) )? ) ;
     public final EObject ruleVolumeConnector_short() throws RecognitionException {
         EObject current = null;
 
@@ -5587,14 +6269,14 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:2010:2: ( ( () ( ( ruleEString ) ) otherlv_2= ':' ( (lv_container_path_3_0= rulePATH ) ) (otherlv_4= ':' ( (lv_access_mode_5_0= ruleAccessMode ) ) )? ) )
-            // InternalDockerCompose.g:2011:2: ( () ( ( ruleEString ) ) otherlv_2= ':' ( (lv_container_path_3_0= rulePATH ) ) (otherlv_4= ':' ( (lv_access_mode_5_0= ruleAccessMode ) ) )? )
+            // InternalDockerCompose.g:2279:2: ( ( () ( ( ruleEString ) ) otherlv_2= ':' ( (lv_container_path_3_0= rulePATH ) ) (otherlv_4= ':' ( (lv_access_mode_5_0= ruleAccessMode ) ) )? ) )
+            // InternalDockerCompose.g:2280:2: ( () ( ( ruleEString ) ) otherlv_2= ':' ( (lv_container_path_3_0= rulePATH ) ) (otherlv_4= ':' ( (lv_access_mode_5_0= ruleAccessMode ) ) )? )
             {
-            // InternalDockerCompose.g:2011:2: ( () ( ( ruleEString ) ) otherlv_2= ':' ( (lv_container_path_3_0= rulePATH ) ) (otherlv_4= ':' ( (lv_access_mode_5_0= ruleAccessMode ) ) )? )
-            // InternalDockerCompose.g:2012:3: () ( ( ruleEString ) ) otherlv_2= ':' ( (lv_container_path_3_0= rulePATH ) ) (otherlv_4= ':' ( (lv_access_mode_5_0= ruleAccessMode ) ) )?
+            // InternalDockerCompose.g:2280:2: ( () ( ( ruleEString ) ) otherlv_2= ':' ( (lv_container_path_3_0= rulePATH ) ) (otherlv_4= ':' ( (lv_access_mode_5_0= ruleAccessMode ) ) )? )
+            // InternalDockerCompose.g:2281:3: () ( ( ruleEString ) ) otherlv_2= ':' ( (lv_container_path_3_0= rulePATH ) ) (otherlv_4= ':' ( (lv_access_mode_5_0= ruleAccessMode ) ) )?
             {
-            // InternalDockerCompose.g:2012:3: ()
-            // InternalDockerCompose.g:2013:4: 
+            // InternalDockerCompose.g:2281:3: ()
+            // InternalDockerCompose.g:2282:4: 
             {
 
             				current = forceCreateModelElement(
@@ -5604,11 +6286,11 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDockerCompose.g:2019:3: ( ( ruleEString ) )
-            // InternalDockerCompose.g:2020:4: ( ruleEString )
+            // InternalDockerCompose.g:2288:3: ( ( ruleEString ) )
+            // InternalDockerCompose.g:2289:4: ( ruleEString )
             {
-            // InternalDockerCompose.g:2020:4: ( ruleEString )
-            // InternalDockerCompose.g:2021:5: ruleEString
+            // InternalDockerCompose.g:2289:4: ( ruleEString )
+            // InternalDockerCompose.g:2290:5: ruleEString
             {
 
             					if (current==null) {
@@ -5632,20 +6314,20 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,21,FOLLOW_36); 
+            otherlv_2=(Token)match(input,22,FOLLOW_9); 
 
             			newLeafNode(otherlv_2, grammarAccess.getVolumeConnector_shortAccess().getColonKeyword_2());
             		
-            // InternalDockerCompose.g:2039:3: ( (lv_container_path_3_0= rulePATH ) )
-            // InternalDockerCompose.g:2040:4: (lv_container_path_3_0= rulePATH )
+            // InternalDockerCompose.g:2308:3: ( (lv_container_path_3_0= rulePATH ) )
+            // InternalDockerCompose.g:2309:4: (lv_container_path_3_0= rulePATH )
             {
-            // InternalDockerCompose.g:2040:4: (lv_container_path_3_0= rulePATH )
-            // InternalDockerCompose.g:2041:5: lv_container_path_3_0= rulePATH
+            // InternalDockerCompose.g:2309:4: (lv_container_path_3_0= rulePATH )
+            // InternalDockerCompose.g:2310:5: lv_container_path_3_0= rulePATH
             {
 
             					newCompositeNode(grammarAccess.getVolumeConnector_shortAccess().getContainer_pathPATHParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_31);
             lv_container_path_3_0=rulePATH();
 
             state._fsp--;
@@ -5667,26 +6349,26 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDockerCompose.g:2058:3: (otherlv_4= ':' ( (lv_access_mode_5_0= ruleAccessMode ) ) )?
-            int alt35=2;
-            int LA35_0 = input.LA(1);
+            // InternalDockerCompose.g:2327:3: (otherlv_4= ':' ( (lv_access_mode_5_0= ruleAccessMode ) ) )?
+            int alt44=2;
+            int LA44_0 = input.LA(1);
 
-            if ( (LA35_0==21) ) {
-                alt35=1;
+            if ( (LA44_0==22) ) {
+                alt44=1;
             }
-            switch (alt35) {
+            switch (alt44) {
                 case 1 :
-                    // InternalDockerCompose.g:2059:4: otherlv_4= ':' ( (lv_access_mode_5_0= ruleAccessMode ) )
+                    // InternalDockerCompose.g:2328:4: otherlv_4= ':' ( (lv_access_mode_5_0= ruleAccessMode ) )
                     {
-                    otherlv_4=(Token)match(input,21,FOLLOW_37); 
+                    otherlv_4=(Token)match(input,22,FOLLOW_42); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getVolumeConnector_shortAccess().getColonKeyword_4_0());
                     			
-                    // InternalDockerCompose.g:2063:4: ( (lv_access_mode_5_0= ruleAccessMode ) )
-                    // InternalDockerCompose.g:2064:5: (lv_access_mode_5_0= ruleAccessMode )
+                    // InternalDockerCompose.g:2332:4: ( (lv_access_mode_5_0= ruleAccessMode ) )
+                    // InternalDockerCompose.g:2333:5: (lv_access_mode_5_0= ruleAccessMode )
                     {
-                    // InternalDockerCompose.g:2064:5: (lv_access_mode_5_0= ruleAccessMode )
-                    // InternalDockerCompose.g:2065:6: lv_access_mode_5_0= ruleAccessMode
+                    // InternalDockerCompose.g:2333:5: (lv_access_mode_5_0= ruleAccessMode )
+                    // InternalDockerCompose.g:2334:6: lv_access_mode_5_0= ruleAccessMode
                     {
 
                     						newCompositeNode(grammarAccess.getVolumeConnector_shortAccess().getAccess_modeAccessModeEnumRuleCall_4_1_0());
@@ -5742,7 +6424,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConfigConnector_long"
-    // InternalDockerCompose.g:2087:1: entryRuleConfigConnector_long returns [EObject current=null] : iv_ruleConfigConnector_long= ruleConfigConnector_long EOF ;
+    // InternalDockerCompose.g:2356:1: entryRuleConfigConnector_long returns [EObject current=null] : iv_ruleConfigConnector_long= ruleConfigConnector_long EOF ;
     public final EObject entryRuleConfigConnector_long() throws RecognitionException {
         EObject current = null;
 
@@ -5750,8 +6432,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:2087:61: (iv_ruleConfigConnector_long= ruleConfigConnector_long EOF )
-            // InternalDockerCompose.g:2088:2: iv_ruleConfigConnector_long= ruleConfigConnector_long EOF
+            // InternalDockerCompose.g:2356:61: (iv_ruleConfigConnector_long= ruleConfigConnector_long EOF )
+            // InternalDockerCompose.g:2357:2: iv_ruleConfigConnector_long= ruleConfigConnector_long EOF
             {
              newCompositeNode(grammarAccess.getConfigConnector_longRule()); 
             pushFollow(FOLLOW_1);
@@ -5778,7 +6460,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConfigConnector_long"
-    // InternalDockerCompose.g:2094:1: ruleConfigConnector_long returns [EObject current=null] : ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) ) ) ;
+    // InternalDockerCompose.g:2363:1: ruleConfigConnector_long returns [EObject current=null] : ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) ) ) ;
     public final EObject ruleConfigConnector_long() throws RecognitionException {
         EObject current = null;
 
@@ -5798,14 +6480,14 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:2100:2: ( ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) ) ) )
-            // InternalDockerCompose.g:2101:2: ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) ) )
+            // InternalDockerCompose.g:2369:2: ( ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) ) ) )
+            // InternalDockerCompose.g:2370:2: ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) ) )
             {
-            // InternalDockerCompose.g:2101:2: ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) ) )
-            // InternalDockerCompose.g:2102:3: () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) )
+            // InternalDockerCompose.g:2370:2: ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) ) )
+            // InternalDockerCompose.g:2371:3: () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) )
             {
-            // InternalDockerCompose.g:2102:3: ()
-            // InternalDockerCompose.g:2103:4: 
+            // InternalDockerCompose.g:2371:3: ()
+            // InternalDockerCompose.g:2372:4: 
             {
 
             				current = forceCreateModelElement(
@@ -5815,76 +6497,76 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDockerCompose.g:2109:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) )
-            // InternalDockerCompose.g:2110:4: ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) )
+            // InternalDockerCompose.g:2378:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) )
+            // InternalDockerCompose.g:2379:4: ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) )
             {
-            // InternalDockerCompose.g:2110:4: ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) )
-            // InternalDockerCompose.g:2111:5: ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?)
+            // InternalDockerCompose.g:2379:4: ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) )
+            // InternalDockerCompose.g:2380:5: ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?)
             {
              
             				  getUnorderedGroupHelper().enter(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1());
             				
-            // InternalDockerCompose.g:2114:5: ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?)
-            // InternalDockerCompose.g:2115:6: ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?
+            // InternalDockerCompose.g:2383:5: ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?)
+            // InternalDockerCompose.g:2384:6: ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?
             {
-            // InternalDockerCompose.g:2115:6: ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+
-            int cnt36=0;
-            loop36:
+            // InternalDockerCompose.g:2384:6: ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+
+            int cnt45=0;
+            loop45:
             do {
-                int alt36=6;
-                int LA36_0 = input.LA(1);
+                int alt45=6;
+                int LA45_0 = input.LA(1);
 
-                if ( LA36_0 == 41 && getUnorderedGroupHelper().canSelect(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 0) ) {
-                    alt36=1;
+                if ( LA45_0 == 46 && getUnorderedGroupHelper().canSelect(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 0) ) {
+                    alt45=1;
                 }
-                else if ( LA36_0 == 43 && getUnorderedGroupHelper().canSelect(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 1) ) {
-                    alt36=2;
+                else if ( LA45_0 == 48 && getUnorderedGroupHelper().canSelect(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 1) ) {
+                    alt45=2;
                 }
-                else if ( LA36_0 == 50 && getUnorderedGroupHelper().canSelect(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 2) ) {
-                    alt36=3;
+                else if ( LA45_0 == 55 && getUnorderedGroupHelper().canSelect(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 2) ) {
+                    alt45=3;
                 }
-                else if ( LA36_0 == 51 && getUnorderedGroupHelper().canSelect(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 3) ) {
-                    alt36=4;
+                else if ( LA45_0 == 56 && getUnorderedGroupHelper().canSelect(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 3) ) {
+                    alt45=4;
                 }
-                else if ( LA36_0 == 52 && getUnorderedGroupHelper().canSelect(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 4) ) {
-                    alt36=5;
+                else if ( LA45_0 == 57 && getUnorderedGroupHelper().canSelect(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 4) ) {
+                    alt45=5;
                 }
 
 
-                switch (alt36) {
+                switch (alt45) {
             	case 1 :
-            	    // InternalDockerCompose.g:2116:4: ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2385:4: ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:2116:4: ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) )
-            	    // InternalDockerCompose.g:2117:5: {...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) )
+            	    // InternalDockerCompose.g:2385:4: ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2386:5: {...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 0) ) {
             	        throw new FailedPredicateException(input, "ruleConfigConnector_long", "getUnorderedGroupHelper().canSelect(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 0)");
             	    }
-            	    // InternalDockerCompose.g:2117:117: ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) )
-            	    // InternalDockerCompose.g:2118:6: ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) )
+            	    // InternalDockerCompose.g:2386:117: ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) )
+            	    // InternalDockerCompose.g:2387:6: ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 0);
             	    					
-            	    // InternalDockerCompose.g:2121:9: ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) )
-            	    // InternalDockerCompose.g:2121:10: {...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) )
+            	    // InternalDockerCompose.g:2390:9: ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) )
+            	    // InternalDockerCompose.g:2390:10: {...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleConfigConnector_long", "true");
             	    }
-            	    // InternalDockerCompose.g:2121:19: (otherlv_2= 'source:' ( ( ruleEString ) ) )
-            	    // InternalDockerCompose.g:2121:20: otherlv_2= 'source:' ( ( ruleEString ) )
+            	    // InternalDockerCompose.g:2390:19: (otherlv_2= 'source:' ( ( ruleEString ) ) )
+            	    // InternalDockerCompose.g:2390:20: otherlv_2= 'source:' ( ( ruleEString ) )
             	    {
-            	    otherlv_2=(Token)match(input,41,FOLLOW_5); 
+            	    otherlv_2=(Token)match(input,46,FOLLOW_5); 
 
             	    									newLeafNode(otherlv_2, grammarAccess.getConfigConnector_longAccess().getSourceKeyword_1_0_0());
             	    								
-            	    // InternalDockerCompose.g:2125:9: ( ( ruleEString ) )
-            	    // InternalDockerCompose.g:2126:10: ( ruleEString )
+            	    // InternalDockerCompose.g:2394:9: ( ( ruleEString ) )
+            	    // InternalDockerCompose.g:2395:10: ( ruleEString )
             	    {
-            	    // InternalDockerCompose.g:2126:10: ( ruleEString )
-            	    // InternalDockerCompose.g:2127:11: ruleEString
+            	    // InternalDockerCompose.g:2395:10: ( ruleEString )
+            	    // InternalDockerCompose.g:2396:11: ruleEString
             	    {
 
             	    											if (current==null) {
@@ -5894,7 +6576,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             	    											newCompositeNode(grammarAccess.getConfigConnector_longAccess().getConfigConfigCrossReference_1_0_1_0());
             	    										
-            	    pushFollow(FOLLOW_38);
+            	    pushFollow(FOLLOW_43);
             	    ruleEString();
 
             	    state._fsp--;
@@ -5927,43 +6609,43 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // InternalDockerCompose.g:2147:4: ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2416:4: ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:2147:4: ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) )
-            	    // InternalDockerCompose.g:2148:5: {...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) )
+            	    // InternalDockerCompose.g:2416:4: ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2417:5: {...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 1) ) {
             	        throw new FailedPredicateException(input, "ruleConfigConnector_long", "getUnorderedGroupHelper().canSelect(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 1)");
             	    }
-            	    // InternalDockerCompose.g:2148:117: ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) )
-            	    // InternalDockerCompose.g:2149:6: ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) )
+            	    // InternalDockerCompose.g:2417:117: ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) )
+            	    // InternalDockerCompose.g:2418:6: ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 1);
             	    					
-            	    // InternalDockerCompose.g:2152:9: ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) )
-            	    // InternalDockerCompose.g:2152:10: {...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) )
+            	    // InternalDockerCompose.g:2421:9: ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) )
+            	    // InternalDockerCompose.g:2421:10: {...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleConfigConnector_long", "true");
             	    }
-            	    // InternalDockerCompose.g:2152:19: (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) )
-            	    // InternalDockerCompose.g:2152:20: otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) )
+            	    // InternalDockerCompose.g:2421:19: (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) )
+            	    // InternalDockerCompose.g:2421:20: otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) )
             	    {
-            	    otherlv_4=(Token)match(input,43,FOLLOW_39); 
+            	    otherlv_4=(Token)match(input,48,FOLLOW_9); 
 
             	    									newLeafNode(otherlv_4, grammarAccess.getConfigConnector_longAccess().getTargetKeyword_1_1_0());
             	    								
-            	    // InternalDockerCompose.g:2156:9: ( (lv_target_5_0= rulePATH ) )
-            	    // InternalDockerCompose.g:2157:10: (lv_target_5_0= rulePATH )
+            	    // InternalDockerCompose.g:2425:9: ( (lv_target_5_0= rulePATH ) )
+            	    // InternalDockerCompose.g:2426:10: (lv_target_5_0= rulePATH )
             	    {
-            	    // InternalDockerCompose.g:2157:10: (lv_target_5_0= rulePATH )
-            	    // InternalDockerCompose.g:2158:11: lv_target_5_0= rulePATH
+            	    // InternalDockerCompose.g:2426:10: (lv_target_5_0= rulePATH )
+            	    // InternalDockerCompose.g:2427:11: lv_target_5_0= rulePATH
             	    {
 
             	    											newCompositeNode(grammarAccess.getConfigConnector_longAccess().getTargetPATHParserRuleCall_1_1_1_0());
             	    										
-            	    pushFollow(FOLLOW_38);
+            	    pushFollow(FOLLOW_43);
             	    lv_target_5_0=rulePATH();
 
             	    state._fsp--;
@@ -6004,40 +6686,40 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 3 :
-            	    // InternalDockerCompose.g:2181:4: ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2450:4: ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:2181:4: ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) )
-            	    // InternalDockerCompose.g:2182:5: {...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) )
+            	    // InternalDockerCompose.g:2450:4: ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2451:5: {...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 2) ) {
             	        throw new FailedPredicateException(input, "ruleConfigConnector_long", "getUnorderedGroupHelper().canSelect(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 2)");
             	    }
-            	    // InternalDockerCompose.g:2182:117: ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) )
-            	    // InternalDockerCompose.g:2183:6: ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) )
+            	    // InternalDockerCompose.g:2451:117: ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) )
+            	    // InternalDockerCompose.g:2452:6: ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 2);
             	    					
-            	    // InternalDockerCompose.g:2186:9: ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) )
-            	    // InternalDockerCompose.g:2186:10: {...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) )
+            	    // InternalDockerCompose.g:2455:9: ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) )
+            	    // InternalDockerCompose.g:2455:10: {...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleConfigConnector_long", "true");
             	    }
-            	    // InternalDockerCompose.g:2186:19: (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) )
-            	    // InternalDockerCompose.g:2186:20: otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) )
+            	    // InternalDockerCompose.g:2455:19: (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) )
+            	    // InternalDockerCompose.g:2455:20: otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) )
             	    {
-            	    otherlv_6=(Token)match(input,50,FOLLOW_40); 
+            	    otherlv_6=(Token)match(input,55,FOLLOW_44); 
 
             	    									newLeafNode(otherlv_6, grammarAccess.getConfigConnector_longAccess().getUidKeyword_1_2_0());
             	    								
-            	    // InternalDockerCompose.g:2190:9: ( (lv_uid_7_0= RULE_QUOTED_INT ) )
-            	    // InternalDockerCompose.g:2191:10: (lv_uid_7_0= RULE_QUOTED_INT )
+            	    // InternalDockerCompose.g:2459:9: ( (lv_uid_7_0= RULE_QUOTED_INT ) )
+            	    // InternalDockerCompose.g:2460:10: (lv_uid_7_0= RULE_QUOTED_INT )
             	    {
-            	    // InternalDockerCompose.g:2191:10: (lv_uid_7_0= RULE_QUOTED_INT )
-            	    // InternalDockerCompose.g:2192:11: lv_uid_7_0= RULE_QUOTED_INT
+            	    // InternalDockerCompose.g:2460:10: (lv_uid_7_0= RULE_QUOTED_INT )
+            	    // InternalDockerCompose.g:2461:11: lv_uid_7_0= RULE_QUOTED_INT
             	    {
-            	    lv_uid_7_0=(Token)match(input,RULE_QUOTED_INT,FOLLOW_38); 
+            	    lv_uid_7_0=(Token)match(input,RULE_QUOTED_INT,FOLLOW_43); 
 
             	    											newLeafNode(lv_uid_7_0, grammarAccess.getConfigConnector_longAccess().getUidQUOTED_INTTerminalRuleCall_1_2_1_0());
             	    										
@@ -6076,40 +6758,40 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 4 :
-            	    // InternalDockerCompose.g:2214:4: ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2483:4: ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:2214:4: ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) )
-            	    // InternalDockerCompose.g:2215:5: {...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) )
+            	    // InternalDockerCompose.g:2483:4: ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2484:5: {...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 3) ) {
             	        throw new FailedPredicateException(input, "ruleConfigConnector_long", "getUnorderedGroupHelper().canSelect(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 3)");
             	    }
-            	    // InternalDockerCompose.g:2215:117: ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) )
-            	    // InternalDockerCompose.g:2216:6: ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) )
+            	    // InternalDockerCompose.g:2484:117: ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) )
+            	    // InternalDockerCompose.g:2485:6: ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 3);
             	    					
-            	    // InternalDockerCompose.g:2219:9: ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) )
-            	    // InternalDockerCompose.g:2219:10: {...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) )
+            	    // InternalDockerCompose.g:2488:9: ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) )
+            	    // InternalDockerCompose.g:2488:10: {...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleConfigConnector_long", "true");
             	    }
-            	    // InternalDockerCompose.g:2219:19: (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) )
-            	    // InternalDockerCompose.g:2219:20: otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) )
+            	    // InternalDockerCompose.g:2488:19: (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) )
+            	    // InternalDockerCompose.g:2488:20: otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) )
             	    {
-            	    otherlv_8=(Token)match(input,51,FOLLOW_40); 
+            	    otherlv_8=(Token)match(input,56,FOLLOW_44); 
 
             	    									newLeafNode(otherlv_8, grammarAccess.getConfigConnector_longAccess().getGidKeyword_1_3_0());
             	    								
-            	    // InternalDockerCompose.g:2223:9: ( (lv_gid_9_0= RULE_QUOTED_INT ) )
-            	    // InternalDockerCompose.g:2224:10: (lv_gid_9_0= RULE_QUOTED_INT )
+            	    // InternalDockerCompose.g:2492:9: ( (lv_gid_9_0= RULE_QUOTED_INT ) )
+            	    // InternalDockerCompose.g:2493:10: (lv_gid_9_0= RULE_QUOTED_INT )
             	    {
-            	    // InternalDockerCompose.g:2224:10: (lv_gid_9_0= RULE_QUOTED_INT )
-            	    // InternalDockerCompose.g:2225:11: lv_gid_9_0= RULE_QUOTED_INT
+            	    // InternalDockerCompose.g:2493:10: (lv_gid_9_0= RULE_QUOTED_INT )
+            	    // InternalDockerCompose.g:2494:11: lv_gid_9_0= RULE_QUOTED_INT
             	    {
-            	    lv_gid_9_0=(Token)match(input,RULE_QUOTED_INT,FOLLOW_38); 
+            	    lv_gid_9_0=(Token)match(input,RULE_QUOTED_INT,FOLLOW_43); 
 
             	    											newLeafNode(lv_gid_9_0, grammarAccess.getConfigConnector_longAccess().getGidQUOTED_INTTerminalRuleCall_1_3_1_0());
             	    										
@@ -6148,43 +6830,43 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 5 :
-            	    // InternalDockerCompose.g:2247:4: ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2516:4: ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:2247:4: ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) )
-            	    // InternalDockerCompose.g:2248:5: {...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) )
+            	    // InternalDockerCompose.g:2516:4: ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2517:5: {...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 4) ) {
             	        throw new FailedPredicateException(input, "ruleConfigConnector_long", "getUnorderedGroupHelper().canSelect(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 4)");
             	    }
-            	    // InternalDockerCompose.g:2248:117: ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) )
-            	    // InternalDockerCompose.g:2249:6: ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) )
+            	    // InternalDockerCompose.g:2517:117: ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) )
+            	    // InternalDockerCompose.g:2518:6: ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1(), 4);
             	    					
-            	    // InternalDockerCompose.g:2252:9: ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) )
-            	    // InternalDockerCompose.g:2252:10: {...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) )
+            	    // InternalDockerCompose.g:2521:9: ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) )
+            	    // InternalDockerCompose.g:2521:10: {...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleConfigConnector_long", "true");
             	    }
-            	    // InternalDockerCompose.g:2252:19: (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) )
-            	    // InternalDockerCompose.g:2252:20: otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) )
+            	    // InternalDockerCompose.g:2521:19: (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) )
+            	    // InternalDockerCompose.g:2521:20: otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) )
             	    {
-            	    otherlv_10=(Token)match(input,52,FOLLOW_11); 
+            	    otherlv_10=(Token)match(input,57,FOLLOW_12); 
 
             	    									newLeafNode(otherlv_10, grammarAccess.getConfigConnector_longAccess().getModeKeyword_1_4_0());
             	    								
-            	    // InternalDockerCompose.g:2256:9: ( (lv_mode_11_0= ruleEInt ) )
-            	    // InternalDockerCompose.g:2257:10: (lv_mode_11_0= ruleEInt )
+            	    // InternalDockerCompose.g:2525:9: ( (lv_mode_11_0= ruleEInt ) )
+            	    // InternalDockerCompose.g:2526:10: (lv_mode_11_0= ruleEInt )
             	    {
-            	    // InternalDockerCompose.g:2257:10: (lv_mode_11_0= ruleEInt )
-            	    // InternalDockerCompose.g:2258:11: lv_mode_11_0= ruleEInt
+            	    // InternalDockerCompose.g:2526:10: (lv_mode_11_0= ruleEInt )
+            	    // InternalDockerCompose.g:2527:11: lv_mode_11_0= ruleEInt
             	    {
 
             	    											newCompositeNode(grammarAccess.getConfigConnector_longAccess().getModeEIntParserRuleCall_1_4_1_0());
             	    										
-            	    pushFollow(FOLLOW_38);
+            	    pushFollow(FOLLOW_43);
             	    lv_mode_11_0=ruleEInt();
 
             	    state._fsp--;
@@ -6226,12 +6908,12 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt36 >= 1 ) break loop36;
+            	    if ( cnt45 >= 1 ) break loop45;
                         EarlyExitException eee =
-                            new EarlyExitException(36, input);
+                            new EarlyExitException(45, input);
                         throw eee;
                 }
-                cnt36++;
+                cnt45++;
             } while (true);
 
             if ( ! getUnorderedGroupHelper().canLeave(grammarAccess.getConfigConnector_longAccess().getUnorderedGroup_1()) ) {
@@ -6272,7 +6954,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConfigConnector_short"
-    // InternalDockerCompose.g:2293:1: entryRuleConfigConnector_short returns [EObject current=null] : iv_ruleConfigConnector_short= ruleConfigConnector_short EOF ;
+    // InternalDockerCompose.g:2562:1: entryRuleConfigConnector_short returns [EObject current=null] : iv_ruleConfigConnector_short= ruleConfigConnector_short EOF ;
     public final EObject entryRuleConfigConnector_short() throws RecognitionException {
         EObject current = null;
 
@@ -6280,8 +6962,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:2293:62: (iv_ruleConfigConnector_short= ruleConfigConnector_short EOF )
-            // InternalDockerCompose.g:2294:2: iv_ruleConfigConnector_short= ruleConfigConnector_short EOF
+            // InternalDockerCompose.g:2562:62: (iv_ruleConfigConnector_short= ruleConfigConnector_short EOF )
+            // InternalDockerCompose.g:2563:2: iv_ruleConfigConnector_short= ruleConfigConnector_short EOF
             {
              newCompositeNode(grammarAccess.getConfigConnector_shortRule()); 
             pushFollow(FOLLOW_1);
@@ -6308,7 +6990,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConfigConnector_short"
-    // InternalDockerCompose.g:2300:1: ruleConfigConnector_short returns [EObject current=null] : ( () ( ( ruleEString ) ) ) ;
+    // InternalDockerCompose.g:2569:1: ruleConfigConnector_short returns [EObject current=null] : ( () ( ( ruleEString ) ) ) ;
     public final EObject ruleConfigConnector_short() throws RecognitionException {
         EObject current = null;
 
@@ -6316,14 +6998,14 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:2306:2: ( ( () ( ( ruleEString ) ) ) )
-            // InternalDockerCompose.g:2307:2: ( () ( ( ruleEString ) ) )
+            // InternalDockerCompose.g:2575:2: ( ( () ( ( ruleEString ) ) ) )
+            // InternalDockerCompose.g:2576:2: ( () ( ( ruleEString ) ) )
             {
-            // InternalDockerCompose.g:2307:2: ( () ( ( ruleEString ) ) )
-            // InternalDockerCompose.g:2308:3: () ( ( ruleEString ) )
+            // InternalDockerCompose.g:2576:2: ( () ( ( ruleEString ) ) )
+            // InternalDockerCompose.g:2577:3: () ( ( ruleEString ) )
             {
-            // InternalDockerCompose.g:2308:3: ()
-            // InternalDockerCompose.g:2309:4: 
+            // InternalDockerCompose.g:2577:3: ()
+            // InternalDockerCompose.g:2578:4: 
             {
 
             				current = forceCreateModelElement(
@@ -6333,11 +7015,11 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDockerCompose.g:2315:3: ( ( ruleEString ) )
-            // InternalDockerCompose.g:2316:4: ( ruleEString )
+            // InternalDockerCompose.g:2584:3: ( ( ruleEString ) )
+            // InternalDockerCompose.g:2585:4: ( ruleEString )
             {
-            // InternalDockerCompose.g:2316:4: ( ruleEString )
-            // InternalDockerCompose.g:2317:5: ruleEString
+            // InternalDockerCompose.g:2585:4: ( ruleEString )
+            // InternalDockerCompose.g:2586:5: ruleEString
             {
 
             					if (current==null) {
@@ -6384,7 +7066,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSecretConnector_long"
-    // InternalDockerCompose.g:2335:1: entryRuleSecretConnector_long returns [EObject current=null] : iv_ruleSecretConnector_long= ruleSecretConnector_long EOF ;
+    // InternalDockerCompose.g:2604:1: entryRuleSecretConnector_long returns [EObject current=null] : iv_ruleSecretConnector_long= ruleSecretConnector_long EOF ;
     public final EObject entryRuleSecretConnector_long() throws RecognitionException {
         EObject current = null;
 
@@ -6392,8 +7074,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:2335:61: (iv_ruleSecretConnector_long= ruleSecretConnector_long EOF )
-            // InternalDockerCompose.g:2336:2: iv_ruleSecretConnector_long= ruleSecretConnector_long EOF
+            // InternalDockerCompose.g:2604:61: (iv_ruleSecretConnector_long= ruleSecretConnector_long EOF )
+            // InternalDockerCompose.g:2605:2: iv_ruleSecretConnector_long= ruleSecretConnector_long EOF
             {
              newCompositeNode(grammarAccess.getSecretConnector_longRule()); 
             pushFollow(FOLLOW_1);
@@ -6420,7 +7102,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSecretConnector_long"
-    // InternalDockerCompose.g:2342:1: ruleSecretConnector_long returns [EObject current=null] : ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) ) ) ;
+    // InternalDockerCompose.g:2611:1: ruleSecretConnector_long returns [EObject current=null] : ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) ) ) ;
     public final EObject ruleSecretConnector_long() throws RecognitionException {
         EObject current = null;
 
@@ -6440,14 +7122,14 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:2348:2: ( ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) ) ) )
-            // InternalDockerCompose.g:2349:2: ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) ) )
+            // InternalDockerCompose.g:2617:2: ( ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) ) ) )
+            // InternalDockerCompose.g:2618:2: ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) ) )
             {
-            // InternalDockerCompose.g:2349:2: ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) ) )
-            // InternalDockerCompose.g:2350:3: () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) )
+            // InternalDockerCompose.g:2618:2: ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) ) )
+            // InternalDockerCompose.g:2619:3: () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) )
             {
-            // InternalDockerCompose.g:2350:3: ()
-            // InternalDockerCompose.g:2351:4: 
+            // InternalDockerCompose.g:2619:3: ()
+            // InternalDockerCompose.g:2620:4: 
             {
 
             				current = forceCreateModelElement(
@@ -6457,76 +7139,76 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDockerCompose.g:2357:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) )
-            // InternalDockerCompose.g:2358:4: ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) )
+            // InternalDockerCompose.g:2626:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) ) )
+            // InternalDockerCompose.g:2627:4: ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) )
             {
-            // InternalDockerCompose.g:2358:4: ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) )
-            // InternalDockerCompose.g:2359:5: ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?)
+            // InternalDockerCompose.g:2627:4: ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?) )
+            // InternalDockerCompose.g:2628:5: ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?)
             {
              
             				  getUnorderedGroupHelper().enter(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1());
             				
-            // InternalDockerCompose.g:2362:5: ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?)
-            // InternalDockerCompose.g:2363:6: ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?
+            // InternalDockerCompose.g:2631:5: ( ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?)
+            // InternalDockerCompose.g:2632:6: ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+ {...}?
             {
-            // InternalDockerCompose.g:2363:6: ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+
-            int cnt37=0;
-            loop37:
+            // InternalDockerCompose.g:2632:6: ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) ) )+
+            int cnt46=0;
+            loop46:
             do {
-                int alt37=6;
-                int LA37_0 = input.LA(1);
+                int alt46=6;
+                int LA46_0 = input.LA(1);
 
-                if ( LA37_0 == 41 && getUnorderedGroupHelper().canSelect(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 0) ) {
-                    alt37=1;
+                if ( LA46_0 == 46 && getUnorderedGroupHelper().canSelect(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 0) ) {
+                    alt46=1;
                 }
-                else if ( LA37_0 == 43 && getUnorderedGroupHelper().canSelect(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 1) ) {
-                    alt37=2;
+                else if ( LA46_0 == 48 && getUnorderedGroupHelper().canSelect(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 1) ) {
+                    alt46=2;
                 }
-                else if ( LA37_0 == 50 && getUnorderedGroupHelper().canSelect(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 2) ) {
-                    alt37=3;
+                else if ( LA46_0 == 55 && getUnorderedGroupHelper().canSelect(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 2) ) {
+                    alt46=3;
                 }
-                else if ( LA37_0 == 51 && getUnorderedGroupHelper().canSelect(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 3) ) {
-                    alt37=4;
+                else if ( LA46_0 == 56 && getUnorderedGroupHelper().canSelect(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 3) ) {
+                    alt46=4;
                 }
-                else if ( LA37_0 == 52 && getUnorderedGroupHelper().canSelect(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 4) ) {
-                    alt37=5;
+                else if ( LA46_0 == 57 && getUnorderedGroupHelper().canSelect(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 4) ) {
+                    alt46=5;
                 }
 
 
-                switch (alt37) {
+                switch (alt46) {
             	case 1 :
-            	    // InternalDockerCompose.g:2364:4: ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2633:4: ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:2364:4: ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) )
-            	    // InternalDockerCompose.g:2365:5: {...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) )
+            	    // InternalDockerCompose.g:2633:4: ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2634:5: {...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 0) ) {
             	        throw new FailedPredicateException(input, "ruleSecretConnector_long", "getUnorderedGroupHelper().canSelect(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 0)");
             	    }
-            	    // InternalDockerCompose.g:2365:117: ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) )
-            	    // InternalDockerCompose.g:2366:6: ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) )
+            	    // InternalDockerCompose.g:2634:117: ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) )
+            	    // InternalDockerCompose.g:2635:6: ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 0);
             	    					
-            	    // InternalDockerCompose.g:2369:9: ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) )
-            	    // InternalDockerCompose.g:2369:10: {...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) )
+            	    // InternalDockerCompose.g:2638:9: ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) )
+            	    // InternalDockerCompose.g:2638:10: {...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleSecretConnector_long", "true");
             	    }
-            	    // InternalDockerCompose.g:2369:19: (otherlv_2= 'source:' ( ( ruleEString ) ) )
-            	    // InternalDockerCompose.g:2369:20: otherlv_2= 'source:' ( ( ruleEString ) )
+            	    // InternalDockerCompose.g:2638:19: (otherlv_2= 'source:' ( ( ruleEString ) ) )
+            	    // InternalDockerCompose.g:2638:20: otherlv_2= 'source:' ( ( ruleEString ) )
             	    {
-            	    otherlv_2=(Token)match(input,41,FOLLOW_5); 
+            	    otherlv_2=(Token)match(input,46,FOLLOW_5); 
 
             	    									newLeafNode(otherlv_2, grammarAccess.getSecretConnector_longAccess().getSourceKeyword_1_0_0());
             	    								
-            	    // InternalDockerCompose.g:2373:9: ( ( ruleEString ) )
-            	    // InternalDockerCompose.g:2374:10: ( ruleEString )
+            	    // InternalDockerCompose.g:2642:9: ( ( ruleEString ) )
+            	    // InternalDockerCompose.g:2643:10: ( ruleEString )
             	    {
-            	    // InternalDockerCompose.g:2374:10: ( ruleEString )
-            	    // InternalDockerCompose.g:2375:11: ruleEString
+            	    // InternalDockerCompose.g:2643:10: ( ruleEString )
+            	    // InternalDockerCompose.g:2644:11: ruleEString
             	    {
 
             	    											if (current==null) {
@@ -6536,7 +7218,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             	    											newCompositeNode(grammarAccess.getSecretConnector_longAccess().getSecretSecretCrossReference_1_0_1_0());
             	    										
-            	    pushFollow(FOLLOW_38);
+            	    pushFollow(FOLLOW_43);
             	    ruleEString();
 
             	    state._fsp--;
@@ -6569,43 +7251,43 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // InternalDockerCompose.g:2395:4: ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2664:4: ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:2395:4: ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) )
-            	    // InternalDockerCompose.g:2396:5: {...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) )
+            	    // InternalDockerCompose.g:2664:4: ({...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2665:5: {...}? => ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 1) ) {
             	        throw new FailedPredicateException(input, "ruleSecretConnector_long", "getUnorderedGroupHelper().canSelect(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 1)");
             	    }
-            	    // InternalDockerCompose.g:2396:117: ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) )
-            	    // InternalDockerCompose.g:2397:6: ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) )
+            	    // InternalDockerCompose.g:2665:117: ( ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) ) )
+            	    // InternalDockerCompose.g:2666:6: ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 1);
             	    					
-            	    // InternalDockerCompose.g:2400:9: ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) )
-            	    // InternalDockerCompose.g:2400:10: {...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) )
+            	    // InternalDockerCompose.g:2669:9: ({...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) ) )
+            	    // InternalDockerCompose.g:2669:10: {...}? => (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleSecretConnector_long", "true");
             	    }
-            	    // InternalDockerCompose.g:2400:19: (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) )
-            	    // InternalDockerCompose.g:2400:20: otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) )
+            	    // InternalDockerCompose.g:2669:19: (otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) ) )
+            	    // InternalDockerCompose.g:2669:20: otherlv_4= 'target:' ( (lv_target_5_0= rulePATH ) )
             	    {
-            	    otherlv_4=(Token)match(input,43,FOLLOW_39); 
+            	    otherlv_4=(Token)match(input,48,FOLLOW_9); 
 
             	    									newLeafNode(otherlv_4, grammarAccess.getSecretConnector_longAccess().getTargetKeyword_1_1_0());
             	    								
-            	    // InternalDockerCompose.g:2404:9: ( (lv_target_5_0= rulePATH ) )
-            	    // InternalDockerCompose.g:2405:10: (lv_target_5_0= rulePATH )
+            	    // InternalDockerCompose.g:2673:9: ( (lv_target_5_0= rulePATH ) )
+            	    // InternalDockerCompose.g:2674:10: (lv_target_5_0= rulePATH )
             	    {
-            	    // InternalDockerCompose.g:2405:10: (lv_target_5_0= rulePATH )
-            	    // InternalDockerCompose.g:2406:11: lv_target_5_0= rulePATH
+            	    // InternalDockerCompose.g:2674:10: (lv_target_5_0= rulePATH )
+            	    // InternalDockerCompose.g:2675:11: lv_target_5_0= rulePATH
             	    {
 
             	    											newCompositeNode(grammarAccess.getSecretConnector_longAccess().getTargetPATHParserRuleCall_1_1_1_0());
             	    										
-            	    pushFollow(FOLLOW_38);
+            	    pushFollow(FOLLOW_43);
             	    lv_target_5_0=rulePATH();
 
             	    state._fsp--;
@@ -6646,40 +7328,40 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 3 :
-            	    // InternalDockerCompose.g:2429:4: ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2698:4: ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:2429:4: ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) )
-            	    // InternalDockerCompose.g:2430:5: {...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) )
+            	    // InternalDockerCompose.g:2698:4: ({...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2699:5: {...}? => ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 2) ) {
             	        throw new FailedPredicateException(input, "ruleSecretConnector_long", "getUnorderedGroupHelper().canSelect(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 2)");
             	    }
-            	    // InternalDockerCompose.g:2430:117: ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) )
-            	    // InternalDockerCompose.g:2431:6: ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) )
+            	    // InternalDockerCompose.g:2699:117: ( ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) ) )
+            	    // InternalDockerCompose.g:2700:6: ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 2);
             	    					
-            	    // InternalDockerCompose.g:2434:9: ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) )
-            	    // InternalDockerCompose.g:2434:10: {...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) )
+            	    // InternalDockerCompose.g:2703:9: ({...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) ) )
+            	    // InternalDockerCompose.g:2703:10: {...}? => (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleSecretConnector_long", "true");
             	    }
-            	    // InternalDockerCompose.g:2434:19: (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) )
-            	    // InternalDockerCompose.g:2434:20: otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) )
+            	    // InternalDockerCompose.g:2703:19: (otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) ) )
+            	    // InternalDockerCompose.g:2703:20: otherlv_6= 'uid:' ( (lv_uid_7_0= RULE_QUOTED_INT ) )
             	    {
-            	    otherlv_6=(Token)match(input,50,FOLLOW_40); 
+            	    otherlv_6=(Token)match(input,55,FOLLOW_44); 
 
             	    									newLeafNode(otherlv_6, grammarAccess.getSecretConnector_longAccess().getUidKeyword_1_2_0());
             	    								
-            	    // InternalDockerCompose.g:2438:9: ( (lv_uid_7_0= RULE_QUOTED_INT ) )
-            	    // InternalDockerCompose.g:2439:10: (lv_uid_7_0= RULE_QUOTED_INT )
+            	    // InternalDockerCompose.g:2707:9: ( (lv_uid_7_0= RULE_QUOTED_INT ) )
+            	    // InternalDockerCompose.g:2708:10: (lv_uid_7_0= RULE_QUOTED_INT )
             	    {
-            	    // InternalDockerCompose.g:2439:10: (lv_uid_7_0= RULE_QUOTED_INT )
-            	    // InternalDockerCompose.g:2440:11: lv_uid_7_0= RULE_QUOTED_INT
+            	    // InternalDockerCompose.g:2708:10: (lv_uid_7_0= RULE_QUOTED_INT )
+            	    // InternalDockerCompose.g:2709:11: lv_uid_7_0= RULE_QUOTED_INT
             	    {
-            	    lv_uid_7_0=(Token)match(input,RULE_QUOTED_INT,FOLLOW_38); 
+            	    lv_uid_7_0=(Token)match(input,RULE_QUOTED_INT,FOLLOW_43); 
 
             	    											newLeafNode(lv_uid_7_0, grammarAccess.getSecretConnector_longAccess().getUidQUOTED_INTTerminalRuleCall_1_2_1_0());
             	    										
@@ -6718,40 +7400,40 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 4 :
-            	    // InternalDockerCompose.g:2462:4: ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2731:4: ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:2462:4: ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) )
-            	    // InternalDockerCompose.g:2463:5: {...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) )
+            	    // InternalDockerCompose.g:2731:4: ({...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2732:5: {...}? => ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 3) ) {
             	        throw new FailedPredicateException(input, "ruleSecretConnector_long", "getUnorderedGroupHelper().canSelect(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 3)");
             	    }
-            	    // InternalDockerCompose.g:2463:117: ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) )
-            	    // InternalDockerCompose.g:2464:6: ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) )
+            	    // InternalDockerCompose.g:2732:117: ( ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) ) )
+            	    // InternalDockerCompose.g:2733:6: ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 3);
             	    					
-            	    // InternalDockerCompose.g:2467:9: ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) )
-            	    // InternalDockerCompose.g:2467:10: {...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) )
+            	    // InternalDockerCompose.g:2736:9: ({...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) ) )
+            	    // InternalDockerCompose.g:2736:10: {...}? => (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleSecretConnector_long", "true");
             	    }
-            	    // InternalDockerCompose.g:2467:19: (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) )
-            	    // InternalDockerCompose.g:2467:20: otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) )
+            	    // InternalDockerCompose.g:2736:19: (otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) ) )
+            	    // InternalDockerCompose.g:2736:20: otherlv_8= 'gid:' ( (lv_gid_9_0= RULE_QUOTED_INT ) )
             	    {
-            	    otherlv_8=(Token)match(input,51,FOLLOW_40); 
+            	    otherlv_8=(Token)match(input,56,FOLLOW_44); 
 
             	    									newLeafNode(otherlv_8, grammarAccess.getSecretConnector_longAccess().getGidKeyword_1_3_0());
             	    								
-            	    // InternalDockerCompose.g:2471:9: ( (lv_gid_9_0= RULE_QUOTED_INT ) )
-            	    // InternalDockerCompose.g:2472:10: (lv_gid_9_0= RULE_QUOTED_INT )
+            	    // InternalDockerCompose.g:2740:9: ( (lv_gid_9_0= RULE_QUOTED_INT ) )
+            	    // InternalDockerCompose.g:2741:10: (lv_gid_9_0= RULE_QUOTED_INT )
             	    {
-            	    // InternalDockerCompose.g:2472:10: (lv_gid_9_0= RULE_QUOTED_INT )
-            	    // InternalDockerCompose.g:2473:11: lv_gid_9_0= RULE_QUOTED_INT
+            	    // InternalDockerCompose.g:2741:10: (lv_gid_9_0= RULE_QUOTED_INT )
+            	    // InternalDockerCompose.g:2742:11: lv_gid_9_0= RULE_QUOTED_INT
             	    {
-            	    lv_gid_9_0=(Token)match(input,RULE_QUOTED_INT,FOLLOW_38); 
+            	    lv_gid_9_0=(Token)match(input,RULE_QUOTED_INT,FOLLOW_43); 
 
             	    											newLeafNode(lv_gid_9_0, grammarAccess.getSecretConnector_longAccess().getGidQUOTED_INTTerminalRuleCall_1_3_1_0());
             	    										
@@ -6790,43 +7472,43 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 5 :
-            	    // InternalDockerCompose.g:2495:4: ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2764:4: ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:2495:4: ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) )
-            	    // InternalDockerCompose.g:2496:5: {...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) )
+            	    // InternalDockerCompose.g:2764:4: ({...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) ) )
+            	    // InternalDockerCompose.g:2765:5: {...}? => ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 4) ) {
             	        throw new FailedPredicateException(input, "ruleSecretConnector_long", "getUnorderedGroupHelper().canSelect(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 4)");
             	    }
-            	    // InternalDockerCompose.g:2496:117: ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) )
-            	    // InternalDockerCompose.g:2497:6: ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) )
+            	    // InternalDockerCompose.g:2765:117: ( ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) ) )
+            	    // InternalDockerCompose.g:2766:6: ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1(), 4);
             	    					
-            	    // InternalDockerCompose.g:2500:9: ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) )
-            	    // InternalDockerCompose.g:2500:10: {...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) )
+            	    // InternalDockerCompose.g:2769:9: ({...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) ) )
+            	    // InternalDockerCompose.g:2769:10: {...}? => (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleSecretConnector_long", "true");
             	    }
-            	    // InternalDockerCompose.g:2500:19: (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) )
-            	    // InternalDockerCompose.g:2500:20: otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) )
+            	    // InternalDockerCompose.g:2769:19: (otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) ) )
+            	    // InternalDockerCompose.g:2769:20: otherlv_10= 'mode:' ( (lv_mode_11_0= ruleEInt ) )
             	    {
-            	    otherlv_10=(Token)match(input,52,FOLLOW_11); 
+            	    otherlv_10=(Token)match(input,57,FOLLOW_12); 
 
             	    									newLeafNode(otherlv_10, grammarAccess.getSecretConnector_longAccess().getModeKeyword_1_4_0());
             	    								
-            	    // InternalDockerCompose.g:2504:9: ( (lv_mode_11_0= ruleEInt ) )
-            	    // InternalDockerCompose.g:2505:10: (lv_mode_11_0= ruleEInt )
+            	    // InternalDockerCompose.g:2773:9: ( (lv_mode_11_0= ruleEInt ) )
+            	    // InternalDockerCompose.g:2774:10: (lv_mode_11_0= ruleEInt )
             	    {
-            	    // InternalDockerCompose.g:2505:10: (lv_mode_11_0= ruleEInt )
-            	    // InternalDockerCompose.g:2506:11: lv_mode_11_0= ruleEInt
+            	    // InternalDockerCompose.g:2774:10: (lv_mode_11_0= ruleEInt )
+            	    // InternalDockerCompose.g:2775:11: lv_mode_11_0= ruleEInt
             	    {
 
             	    											newCompositeNode(grammarAccess.getSecretConnector_longAccess().getModeEIntParserRuleCall_1_4_1_0());
             	    										
-            	    pushFollow(FOLLOW_38);
+            	    pushFollow(FOLLOW_43);
             	    lv_mode_11_0=ruleEInt();
 
             	    state._fsp--;
@@ -6868,12 +7550,12 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt37 >= 1 ) break loop37;
+            	    if ( cnt46 >= 1 ) break loop46;
                         EarlyExitException eee =
-                            new EarlyExitException(37, input);
+                            new EarlyExitException(46, input);
                         throw eee;
                 }
-                cnt37++;
+                cnt46++;
             } while (true);
 
             if ( ! getUnorderedGroupHelper().canLeave(grammarAccess.getSecretConnector_longAccess().getUnorderedGroup_1()) ) {
@@ -6914,7 +7596,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSecretConnector_short"
-    // InternalDockerCompose.g:2541:1: entryRuleSecretConnector_short returns [EObject current=null] : iv_ruleSecretConnector_short= ruleSecretConnector_short EOF ;
+    // InternalDockerCompose.g:2810:1: entryRuleSecretConnector_short returns [EObject current=null] : iv_ruleSecretConnector_short= ruleSecretConnector_short EOF ;
     public final EObject entryRuleSecretConnector_short() throws RecognitionException {
         EObject current = null;
 
@@ -6922,8 +7604,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:2541:62: (iv_ruleSecretConnector_short= ruleSecretConnector_short EOF )
-            // InternalDockerCompose.g:2542:2: iv_ruleSecretConnector_short= ruleSecretConnector_short EOF
+            // InternalDockerCompose.g:2810:62: (iv_ruleSecretConnector_short= ruleSecretConnector_short EOF )
+            // InternalDockerCompose.g:2811:2: iv_ruleSecretConnector_short= ruleSecretConnector_short EOF
             {
              newCompositeNode(grammarAccess.getSecretConnector_shortRule()); 
             pushFollow(FOLLOW_1);
@@ -6950,7 +7632,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSecretConnector_short"
-    // InternalDockerCompose.g:2548:1: ruleSecretConnector_short returns [EObject current=null] : ( () ( ( ruleEString ) ) ) ;
+    // InternalDockerCompose.g:2817:1: ruleSecretConnector_short returns [EObject current=null] : ( () ( ( ruleEString ) ) ) ;
     public final EObject ruleSecretConnector_short() throws RecognitionException {
         EObject current = null;
 
@@ -6958,14 +7640,14 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:2554:2: ( ( () ( ( ruleEString ) ) ) )
-            // InternalDockerCompose.g:2555:2: ( () ( ( ruleEString ) ) )
+            // InternalDockerCompose.g:2823:2: ( ( () ( ( ruleEString ) ) ) )
+            // InternalDockerCompose.g:2824:2: ( () ( ( ruleEString ) ) )
             {
-            // InternalDockerCompose.g:2555:2: ( () ( ( ruleEString ) ) )
-            // InternalDockerCompose.g:2556:3: () ( ( ruleEString ) )
+            // InternalDockerCompose.g:2824:2: ( () ( ( ruleEString ) ) )
+            // InternalDockerCompose.g:2825:3: () ( ( ruleEString ) )
             {
-            // InternalDockerCompose.g:2556:3: ()
-            // InternalDockerCompose.g:2557:4: 
+            // InternalDockerCompose.g:2825:3: ()
+            // InternalDockerCompose.g:2826:4: 
             {
 
             				current = forceCreateModelElement(
@@ -6975,11 +7657,11 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDockerCompose.g:2563:3: ( ( ruleEString ) )
-            // InternalDockerCompose.g:2564:4: ( ruleEString )
+            // InternalDockerCompose.g:2832:3: ( ( ruleEString ) )
+            // InternalDockerCompose.g:2833:4: ( ruleEString )
             {
-            // InternalDockerCompose.g:2564:4: ( ruleEString )
-            // InternalDockerCompose.g:2565:5: ruleEString
+            // InternalDockerCompose.g:2833:4: ( ruleEString )
+            // InternalDockerCompose.g:2834:5: ruleEString
             {
 
             					if (current==null) {
@@ -7026,7 +7708,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNetwork"
-    // InternalDockerCompose.g:2583:1: entryRuleNetwork returns [EObject current=null] : iv_ruleNetwork= ruleNetwork EOF ;
+    // InternalDockerCompose.g:2852:1: entryRuleNetwork returns [EObject current=null] : iv_ruleNetwork= ruleNetwork EOF ;
     public final EObject entryRuleNetwork() throws RecognitionException {
         EObject current = null;
 
@@ -7034,8 +7716,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:2583:48: (iv_ruleNetwork= ruleNetwork EOF )
-            // InternalDockerCompose.g:2584:2: iv_ruleNetwork= ruleNetwork EOF
+            // InternalDockerCompose.g:2852:48: (iv_ruleNetwork= ruleNetwork EOF )
+            // InternalDockerCompose.g:2853:2: iv_ruleNetwork= ruleNetwork EOF
             {
              newCompositeNode(grammarAccess.getNetworkRule()); 
             pushFollow(FOLLOW_1);
@@ -7062,7 +7744,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNetwork"
-    // InternalDockerCompose.g:2590:1: ruleNetwork returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (otherlv_3= '{' otherlv_4= '}' ) | ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) ) )* ) ) ) ) ) ;
+    // InternalDockerCompose.g:2859:1: ruleNetwork returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (otherlv_3= '{' otherlv_4= '}' ) | ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) ) )* ) ) ) ) ) ;
     public final EObject ruleNetwork() throws RecognitionException {
         EObject current = null;
 
@@ -7103,14 +7785,14 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:2596:2: ( ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (otherlv_3= '{' otherlv_4= '}' ) | ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) ) )* ) ) ) ) ) )
-            // InternalDockerCompose.g:2597:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (otherlv_3= '{' otherlv_4= '}' ) | ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) ) )* ) ) ) ) )
+            // InternalDockerCompose.g:2865:2: ( ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (otherlv_3= '{' otherlv_4= '}' ) | ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) ) )* ) ) ) ) ) )
+            // InternalDockerCompose.g:2866:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (otherlv_3= '{' otherlv_4= '}' ) | ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) ) )* ) ) ) ) )
             {
-            // InternalDockerCompose.g:2597:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (otherlv_3= '{' otherlv_4= '}' ) | ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) ) )* ) ) ) ) )
-            // InternalDockerCompose.g:2598:3: () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (otherlv_3= '{' otherlv_4= '}' ) | ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) ) )* ) ) ) )
+            // InternalDockerCompose.g:2866:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (otherlv_3= '{' otherlv_4= '}' ) | ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) ) )* ) ) ) ) )
+            // InternalDockerCompose.g:2867:3: () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (otherlv_3= '{' otherlv_4= '}' ) | ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) ) )* ) ) ) )
             {
-            // InternalDockerCompose.g:2598:3: ()
-            // InternalDockerCompose.g:2599:4: 
+            // InternalDockerCompose.g:2867:3: ()
+            // InternalDockerCompose.g:2868:4: 
             {
 
             				current = forceCreateModelElement(
@@ -7120,11 +7802,11 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDockerCompose.g:2605:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalDockerCompose.g:2606:4: (lv_name_1_0= ruleEString )
+            // InternalDockerCompose.g:2874:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalDockerCompose.g:2875:4: (lv_name_1_0= ruleEString )
             {
-            // InternalDockerCompose.g:2606:4: (lv_name_1_0= ruleEString )
-            // InternalDockerCompose.g:2607:5: lv_name_1_0= ruleEString
+            // InternalDockerCompose.g:2875:4: (lv_name_1_0= ruleEString )
+            // InternalDockerCompose.g:2876:5: lv_name_1_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getNetworkAccess().getNameEStringParserRuleCall_1_0());
@@ -7151,38 +7833,38 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,21,FOLLOW_41); 
+            otherlv_2=(Token)match(input,22,FOLLOW_45); 
 
             			newLeafNode(otherlv_2, grammarAccess.getNetworkAccess().getColonKeyword_2());
             		
-            // InternalDockerCompose.g:2628:3: ( (otherlv_3= '{' otherlv_4= '}' ) | ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) ) )* ) ) ) )
-            int alt41=2;
-            int LA41_0 = input.LA(1);
+            // InternalDockerCompose.g:2897:3: ( (otherlv_3= '{' otherlv_4= '}' ) | ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) ) )* ) ) ) )
+            int alt50=2;
+            int LA50_0 = input.LA(1);
 
-            if ( (LA41_0==53) ) {
-                alt41=1;
+            if ( (LA50_0==58) ) {
+                alt50=1;
             }
-            else if ( (LA41_0==EOF||LA41_0==RULE_ID||LA41_0==RULE_STRING||(LA41_0>=15 && LA41_0<=20)||(LA41_0>=55 && LA41_0<=63)) ) {
-                alt41=2;
+            else if ( (LA50_0==EOF||LA50_0==RULE_ID||LA50_0==RULE_STRING||(LA50_0>=16 && LA50_0<=21)||(LA50_0>=60 && LA50_0<=68)) ) {
+                alt50=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 41, 0, input);
+                    new NoViableAltException("", 50, 0, input);
 
                 throw nvae;
             }
-            switch (alt41) {
+            switch (alt50) {
                 case 1 :
-                    // InternalDockerCompose.g:2629:4: (otherlv_3= '{' otherlv_4= '}' )
+                    // InternalDockerCompose.g:2898:4: (otherlv_3= '{' otherlv_4= '}' )
                     {
-                    // InternalDockerCompose.g:2629:4: (otherlv_3= '{' otherlv_4= '}' )
-                    // InternalDockerCompose.g:2630:5: otherlv_3= '{' otherlv_4= '}'
+                    // InternalDockerCompose.g:2898:4: (otherlv_3= '{' otherlv_4= '}' )
+                    // InternalDockerCompose.g:2899:5: otherlv_3= '{' otherlv_4= '}'
                     {
-                    otherlv_3=(Token)match(input,53,FOLLOW_42); 
+                    otherlv_3=(Token)match(input,58,FOLLOW_46); 
 
                     					newLeafNode(otherlv_3, grammarAccess.getNetworkAccess().getLeftCurlyBracketKeyword_3_0_0());
                     				
-                    otherlv_4=(Token)match(input,54,FOLLOW_2); 
+                    otherlv_4=(Token)match(input,59,FOLLOW_2); 
 
                     					newLeafNode(otherlv_4, grammarAccess.getNetworkAccess().getRightCurlyBracketKeyword_3_0_1());
                     				
@@ -7193,64 +7875,64 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDockerCompose.g:2640:4: ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) ) )* ) ) )
+                    // InternalDockerCompose.g:2909:4: ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) ) )* ) ) )
                     {
-                    // InternalDockerCompose.g:2640:4: ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) ) )* ) ) )
-                    // InternalDockerCompose.g:2641:5: ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) ) )* ) )
+                    // InternalDockerCompose.g:2909:4: ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) ) )* ) ) )
+                    // InternalDockerCompose.g:2910:5: ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) ) )* ) )
                     {
-                    // InternalDockerCompose.g:2641:5: ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) ) )* ) )
-                    // InternalDockerCompose.g:2642:6: ( ( ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) ) )* )
+                    // InternalDockerCompose.g:2910:5: ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) ) )* ) )
+                    // InternalDockerCompose.g:2911:6: ( ( ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) ) )* )
                     {
                      
                     					  getUnorderedGroupHelper().enter(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1());
                     					
-                    // InternalDockerCompose.g:2645:6: ( ( ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) ) )* )
-                    // InternalDockerCompose.g:2646:7: ( ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) ) )*
+                    // InternalDockerCompose.g:2914:6: ( ( ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) ) )* )
+                    // InternalDockerCompose.g:2915:7: ( ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) ) )*
                     {
-                    // InternalDockerCompose.g:2646:7: ( ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) ) )*
-                    loop40:
+                    // InternalDockerCompose.g:2915:7: ( ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) ) )*
+                    loop49:
                     do {
-                        int alt40=10;
-                        alt40 = dfa40.predict(input);
-                        switch (alt40) {
+                        int alt49=10;
+                        alt49 = dfa49.predict(input);
+                        switch (alt49) {
                     	case 1 :
-                    	    // InternalDockerCompose.g:2647:5: ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) )
+                    	    // InternalDockerCompose.g:2916:5: ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) )
                     	    {
-                    	    // InternalDockerCompose.g:2647:5: ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) )
-                    	    // InternalDockerCompose.g:2648:6: {...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) )
+                    	    // InternalDockerCompose.g:2916:5: ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) )
+                    	    // InternalDockerCompose.g:2917:6: {...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) )
                     	    {
                     	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 0) ) {
                     	        throw new FailedPredicateException(input, "ruleNetwork", "getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 0)");
                     	    }
-                    	    // InternalDockerCompose.g:2648:107: ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) )
-                    	    // InternalDockerCompose.g:2649:7: ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) )
+                    	    // InternalDockerCompose.g:2917:107: ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) )
+                    	    // InternalDockerCompose.g:2918:7: ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) )
                     	    {
 
                     	    							getUnorderedGroupHelper().select(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 0);
                     	    						
-                    	    // InternalDockerCompose.g:2652:10: ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) )
-                    	    // InternalDockerCompose.g:2652:11: {...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) )
+                    	    // InternalDockerCompose.g:2921:10: ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) )
+                    	    // InternalDockerCompose.g:2921:11: {...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) )
                     	    {
                     	    if ( !((true)) ) {
                     	        throw new FailedPredicateException(input, "ruleNetwork", "true");
                     	    }
-                    	    // InternalDockerCompose.g:2652:20: (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) )
-                    	    // InternalDockerCompose.g:2652:21: otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) )
+                    	    // InternalDockerCompose.g:2921:20: (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) )
+                    	    // InternalDockerCompose.g:2921:21: otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) )
                     	    {
-                    	    otherlv_6=(Token)match(input,55,FOLLOW_5); 
+                    	    otherlv_6=(Token)match(input,60,FOLLOW_5); 
 
                     	    										newLeafNode(otherlv_6, grammarAccess.getNetworkAccess().getDriverKeyword_3_1_0_0());
                     	    									
-                    	    // InternalDockerCompose.g:2656:10: ( (lv_driver_7_0= ruleEString ) )
-                    	    // InternalDockerCompose.g:2657:11: (lv_driver_7_0= ruleEString )
+                    	    // InternalDockerCompose.g:2925:10: ( (lv_driver_7_0= ruleEString ) )
+                    	    // InternalDockerCompose.g:2926:11: (lv_driver_7_0= ruleEString )
                     	    {
-                    	    // InternalDockerCompose.g:2657:11: (lv_driver_7_0= ruleEString )
-                    	    // InternalDockerCompose.g:2658:12: lv_driver_7_0= ruleEString
+                    	    // InternalDockerCompose.g:2926:11: (lv_driver_7_0= ruleEString )
+                    	    // InternalDockerCompose.g:2927:12: lv_driver_7_0= ruleEString
                     	    {
 
                     	    												newCompositeNode(grammarAccess.getNetworkAccess().getDriverEStringParserRuleCall_3_1_0_1_0());
                     	    											
-                    	    pushFollow(FOLLOW_43);
+                    	    pushFollow(FOLLOW_47);
                     	    lv_driver_7_0=ruleEString();
 
                     	    state._fsp--;
@@ -7291,43 +7973,43 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalDockerCompose.g:2681:5: ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) )
+                    	    // InternalDockerCompose.g:2950:5: ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) )
                     	    {
-                    	    // InternalDockerCompose.g:2681:5: ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) )
-                    	    // InternalDockerCompose.g:2682:6: {...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) )
+                    	    // InternalDockerCompose.g:2950:5: ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) )
+                    	    // InternalDockerCompose.g:2951:6: {...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) )
                     	    {
                     	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 1) ) {
                     	        throw new FailedPredicateException(input, "ruleNetwork", "getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 1)");
                     	    }
-                    	    // InternalDockerCompose.g:2682:107: ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) )
-                    	    // InternalDockerCompose.g:2683:7: ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) )
+                    	    // InternalDockerCompose.g:2951:107: ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) )
+                    	    // InternalDockerCompose.g:2952:7: ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) )
                     	    {
 
                     	    							getUnorderedGroupHelper().select(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 1);
                     	    						
-                    	    // InternalDockerCompose.g:2686:10: ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) )
-                    	    // InternalDockerCompose.g:2686:11: {...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) )
+                    	    // InternalDockerCompose.g:2955:10: ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) )
+                    	    // InternalDockerCompose.g:2955:11: {...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) )
                     	    {
                     	    if ( !((true)) ) {
                     	        throw new FailedPredicateException(input, "ruleNetwork", "true");
                     	    }
-                    	    // InternalDockerCompose.g:2686:20: (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) )
-                    	    // InternalDockerCompose.g:2686:21: otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) )
+                    	    // InternalDockerCompose.g:2955:20: (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) )
+                    	    // InternalDockerCompose.g:2955:21: otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) )
                     	    {
-                    	    otherlv_8=(Token)match(input,56,FOLLOW_13); 
+                    	    otherlv_8=(Token)match(input,61,FOLLOW_14); 
 
                     	    										newLeafNode(otherlv_8, grammarAccess.getNetworkAccess().getAttachableKeyword_3_1_1_0());
                     	    									
-                    	    // InternalDockerCompose.g:2690:10: ( (lv_attachable_9_0= ruleEBoolean ) )
-                    	    // InternalDockerCompose.g:2691:11: (lv_attachable_9_0= ruleEBoolean )
+                    	    // InternalDockerCompose.g:2959:10: ( (lv_attachable_9_0= ruleEBoolean ) )
+                    	    // InternalDockerCompose.g:2960:11: (lv_attachable_9_0= ruleEBoolean )
                     	    {
-                    	    // InternalDockerCompose.g:2691:11: (lv_attachable_9_0= ruleEBoolean )
-                    	    // InternalDockerCompose.g:2692:12: lv_attachable_9_0= ruleEBoolean
+                    	    // InternalDockerCompose.g:2960:11: (lv_attachable_9_0= ruleEBoolean )
+                    	    // InternalDockerCompose.g:2961:12: lv_attachable_9_0= ruleEBoolean
                     	    {
 
                     	    												newCompositeNode(grammarAccess.getNetworkAccess().getAttachableEBooleanParserRuleCall_3_1_1_1_0());
                     	    											
-                    	    pushFollow(FOLLOW_43);
+                    	    pushFollow(FOLLOW_47);
                     	    lv_attachable_9_0=ruleEBoolean();
 
                     	    state._fsp--;
@@ -7368,43 +8050,43 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     	    }
                     	    break;
                     	case 3 :
-                    	    // InternalDockerCompose.g:2715:5: ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) )
+                    	    // InternalDockerCompose.g:2984:5: ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) )
                     	    {
-                    	    // InternalDockerCompose.g:2715:5: ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) )
-                    	    // InternalDockerCompose.g:2716:6: {...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) )
+                    	    // InternalDockerCompose.g:2984:5: ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) )
+                    	    // InternalDockerCompose.g:2985:6: {...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) )
                     	    {
                     	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 2) ) {
                     	        throw new FailedPredicateException(input, "ruleNetwork", "getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 2)");
                     	    }
-                    	    // InternalDockerCompose.g:2716:107: ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) )
-                    	    // InternalDockerCompose.g:2717:7: ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) )
+                    	    // InternalDockerCompose.g:2985:107: ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) )
+                    	    // InternalDockerCompose.g:2986:7: ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) )
                     	    {
 
                     	    							getUnorderedGroupHelper().select(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 2);
                     	    						
-                    	    // InternalDockerCompose.g:2720:10: ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) )
-                    	    // InternalDockerCompose.g:2720:11: {...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) )
+                    	    // InternalDockerCompose.g:2989:10: ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) )
+                    	    // InternalDockerCompose.g:2989:11: {...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) )
                     	    {
                     	    if ( !((true)) ) {
                     	        throw new FailedPredicateException(input, "ruleNetwork", "true");
                     	    }
-                    	    // InternalDockerCompose.g:2720:20: (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) )
-                    	    // InternalDockerCompose.g:2720:21: otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) )
+                    	    // InternalDockerCompose.g:2989:20: (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) )
+                    	    // InternalDockerCompose.g:2989:21: otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) )
                     	    {
-                    	    otherlv_10=(Token)match(input,57,FOLLOW_13); 
+                    	    otherlv_10=(Token)match(input,62,FOLLOW_14); 
 
                     	    										newLeafNode(otherlv_10, grammarAccess.getNetworkAccess().getEnable_ipv6Keyword_3_1_2_0());
                     	    									
-                    	    // InternalDockerCompose.g:2724:10: ( (lv_enable_ipv6_11_0= ruleEBoolean ) )
-                    	    // InternalDockerCompose.g:2725:11: (lv_enable_ipv6_11_0= ruleEBoolean )
+                    	    // InternalDockerCompose.g:2993:10: ( (lv_enable_ipv6_11_0= ruleEBoolean ) )
+                    	    // InternalDockerCompose.g:2994:11: (lv_enable_ipv6_11_0= ruleEBoolean )
                     	    {
-                    	    // InternalDockerCompose.g:2725:11: (lv_enable_ipv6_11_0= ruleEBoolean )
-                    	    // InternalDockerCompose.g:2726:12: lv_enable_ipv6_11_0= ruleEBoolean
+                    	    // InternalDockerCompose.g:2994:11: (lv_enable_ipv6_11_0= ruleEBoolean )
+                    	    // InternalDockerCompose.g:2995:12: lv_enable_ipv6_11_0= ruleEBoolean
                     	    {
 
                     	    												newCompositeNode(grammarAccess.getNetworkAccess().getEnable_ipv6EBooleanParserRuleCall_3_1_2_1_0());
                     	    											
-                    	    pushFollow(FOLLOW_43);
+                    	    pushFollow(FOLLOW_47);
                     	    lv_enable_ipv6_11_0=ruleEBoolean();
 
                     	    state._fsp--;
@@ -7445,43 +8127,43 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     	    }
                     	    break;
                     	case 4 :
-                    	    // InternalDockerCompose.g:2749:5: ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) )
+                    	    // InternalDockerCompose.g:3018:5: ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) )
                     	    {
-                    	    // InternalDockerCompose.g:2749:5: ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) )
-                    	    // InternalDockerCompose.g:2750:6: {...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) )
+                    	    // InternalDockerCompose.g:3018:5: ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) )
+                    	    // InternalDockerCompose.g:3019:6: {...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) )
                     	    {
                     	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 3) ) {
                     	        throw new FailedPredicateException(input, "ruleNetwork", "getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 3)");
                     	    }
-                    	    // InternalDockerCompose.g:2750:107: ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) )
-                    	    // InternalDockerCompose.g:2751:7: ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) )
+                    	    // InternalDockerCompose.g:3019:107: ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) )
+                    	    // InternalDockerCompose.g:3020:7: ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) )
                     	    {
 
                     	    							getUnorderedGroupHelper().select(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 3);
                     	    						
-                    	    // InternalDockerCompose.g:2754:10: ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) )
-                    	    // InternalDockerCompose.g:2754:11: {...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) )
+                    	    // InternalDockerCompose.g:3023:10: ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) )
+                    	    // InternalDockerCompose.g:3023:11: {...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) )
                     	    {
                     	    if ( !((true)) ) {
                     	        throw new FailedPredicateException(input, "ruleNetwork", "true");
                     	    }
-                    	    // InternalDockerCompose.g:2754:20: (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) )
-                    	    // InternalDockerCompose.g:2754:21: otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) )
+                    	    // InternalDockerCompose.g:3023:20: (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) )
+                    	    // InternalDockerCompose.g:3023:21: otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) )
                     	    {
-                    	    otherlv_12=(Token)match(input,58,FOLLOW_13); 
+                    	    otherlv_12=(Token)match(input,63,FOLLOW_14); 
 
                     	    										newLeafNode(otherlv_12, grammarAccess.getNetworkAccess().getInternalKeyword_3_1_3_0());
                     	    									
-                    	    // InternalDockerCompose.g:2758:10: ( (lv_internal_13_0= ruleEBoolean ) )
-                    	    // InternalDockerCompose.g:2759:11: (lv_internal_13_0= ruleEBoolean )
+                    	    // InternalDockerCompose.g:3027:10: ( (lv_internal_13_0= ruleEBoolean ) )
+                    	    // InternalDockerCompose.g:3028:11: (lv_internal_13_0= ruleEBoolean )
                     	    {
-                    	    // InternalDockerCompose.g:2759:11: (lv_internal_13_0= ruleEBoolean )
-                    	    // InternalDockerCompose.g:2760:12: lv_internal_13_0= ruleEBoolean
+                    	    // InternalDockerCompose.g:3028:11: (lv_internal_13_0= ruleEBoolean )
+                    	    // InternalDockerCompose.g:3029:12: lv_internal_13_0= ruleEBoolean
                     	    {
 
                     	    												newCompositeNode(grammarAccess.getNetworkAccess().getInternalEBooleanParserRuleCall_3_1_3_1_0());
                     	    											
-                    	    pushFollow(FOLLOW_43);
+                    	    pushFollow(FOLLOW_47);
                     	    lv_internal_13_0=ruleEBoolean();
 
                     	    state._fsp--;
@@ -7522,43 +8204,43 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     	    }
                     	    break;
                     	case 5 :
-                    	    // InternalDockerCompose.g:2783:5: ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) )
+                    	    // InternalDockerCompose.g:3052:5: ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) )
                     	    {
-                    	    // InternalDockerCompose.g:2783:5: ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) )
-                    	    // InternalDockerCompose.g:2784:6: {...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) )
+                    	    // InternalDockerCompose.g:3052:5: ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) )
+                    	    // InternalDockerCompose.g:3053:6: {...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) )
                     	    {
                     	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 4) ) {
                     	        throw new FailedPredicateException(input, "ruleNetwork", "getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 4)");
                     	    }
-                    	    // InternalDockerCompose.g:2784:107: ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) )
-                    	    // InternalDockerCompose.g:2785:7: ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) )
+                    	    // InternalDockerCompose.g:3053:107: ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) )
+                    	    // InternalDockerCompose.g:3054:7: ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) )
                     	    {
 
                     	    							getUnorderedGroupHelper().select(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 4);
                     	    						
-                    	    // InternalDockerCompose.g:2788:10: ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) )
-                    	    // InternalDockerCompose.g:2788:11: {...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) )
+                    	    // InternalDockerCompose.g:3057:10: ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) )
+                    	    // InternalDockerCompose.g:3057:11: {...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) )
                     	    {
                     	    if ( !((true)) ) {
                     	        throw new FailedPredicateException(input, "ruleNetwork", "true");
                     	    }
-                    	    // InternalDockerCompose.g:2788:20: (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) )
-                    	    // InternalDockerCompose.g:2788:21: otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) )
+                    	    // InternalDockerCompose.g:3057:20: (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) )
+                    	    // InternalDockerCompose.g:3057:21: otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) )
                     	    {
-                    	    otherlv_14=(Token)match(input,59,FOLLOW_13); 
+                    	    otherlv_14=(Token)match(input,64,FOLLOW_14); 
 
                     	    										newLeafNode(otherlv_14, grammarAccess.getNetworkAccess().getExternalKeyword_3_1_4_0());
                     	    									
-                    	    // InternalDockerCompose.g:2792:10: ( (lv_external_15_0= ruleEBoolean ) )
-                    	    // InternalDockerCompose.g:2793:11: (lv_external_15_0= ruleEBoolean )
+                    	    // InternalDockerCompose.g:3061:10: ( (lv_external_15_0= ruleEBoolean ) )
+                    	    // InternalDockerCompose.g:3062:11: (lv_external_15_0= ruleEBoolean )
                     	    {
-                    	    // InternalDockerCompose.g:2793:11: (lv_external_15_0= ruleEBoolean )
-                    	    // InternalDockerCompose.g:2794:12: lv_external_15_0= ruleEBoolean
+                    	    // InternalDockerCompose.g:3062:11: (lv_external_15_0= ruleEBoolean )
+                    	    // InternalDockerCompose.g:3063:12: lv_external_15_0= ruleEBoolean
                     	    {
 
                     	    												newCompositeNode(grammarAccess.getNetworkAccess().getExternalEBooleanParserRuleCall_3_1_4_1_0());
                     	    											
-                    	    pushFollow(FOLLOW_43);
+                    	    pushFollow(FOLLOW_47);
                     	    lv_external_15_0=ruleEBoolean();
 
                     	    state._fsp--;
@@ -7599,43 +8281,43 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     	    }
                     	    break;
                     	case 6 :
-                    	    // InternalDockerCompose.g:2817:5: ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) )
+                    	    // InternalDockerCompose.g:3086:5: ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) )
                     	    {
-                    	    // InternalDockerCompose.g:2817:5: ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) )
-                    	    // InternalDockerCompose.g:2818:6: {...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) )
+                    	    // InternalDockerCompose.g:3086:5: ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) )
+                    	    // InternalDockerCompose.g:3087:6: {...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) )
                     	    {
                     	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 5) ) {
                     	        throw new FailedPredicateException(input, "ruleNetwork", "getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 5)");
                     	    }
-                    	    // InternalDockerCompose.g:2818:107: ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) )
-                    	    // InternalDockerCompose.g:2819:7: ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) )
+                    	    // InternalDockerCompose.g:3087:107: ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) )
+                    	    // InternalDockerCompose.g:3088:7: ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) )
                     	    {
 
                     	    							getUnorderedGroupHelper().select(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 5);
                     	    						
-                    	    // InternalDockerCompose.g:2822:10: ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) )
-                    	    // InternalDockerCompose.g:2822:11: {...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) )
+                    	    // InternalDockerCompose.g:3091:10: ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) )
+                    	    // InternalDockerCompose.g:3091:11: {...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) )
                     	    {
                     	    if ( !((true)) ) {
                     	        throw new FailedPredicateException(input, "ruleNetwork", "true");
                     	    }
-                    	    // InternalDockerCompose.g:2822:20: (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) )
-                    	    // InternalDockerCompose.g:2822:21: otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) )
+                    	    // InternalDockerCompose.g:3091:20: (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) )
+                    	    // InternalDockerCompose.g:3091:21: otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) )
                     	    {
-                    	    otherlv_16=(Token)match(input,60,FOLLOW_5); 
+                    	    otherlv_16=(Token)match(input,65,FOLLOW_5); 
 
                     	    										newLeafNode(otherlv_16, grammarAccess.getNetworkAccess().getNameKeyword_3_1_5_0());
                     	    									
-                    	    // InternalDockerCompose.g:2826:10: ( (lv_network_name_17_0= ruleEString ) )
-                    	    // InternalDockerCompose.g:2827:11: (lv_network_name_17_0= ruleEString )
+                    	    // InternalDockerCompose.g:3095:10: ( (lv_network_name_17_0= ruleEString ) )
+                    	    // InternalDockerCompose.g:3096:11: (lv_network_name_17_0= ruleEString )
                     	    {
-                    	    // InternalDockerCompose.g:2827:11: (lv_network_name_17_0= ruleEString )
-                    	    // InternalDockerCompose.g:2828:12: lv_network_name_17_0= ruleEString
+                    	    // InternalDockerCompose.g:3096:11: (lv_network_name_17_0= ruleEString )
+                    	    // InternalDockerCompose.g:3097:12: lv_network_name_17_0= ruleEString
                     	    {
 
                     	    												newCompositeNode(grammarAccess.getNetworkAccess().getNetwork_nameEStringParserRuleCall_3_1_5_1_0());
                     	    											
-                    	    pushFollow(FOLLOW_43);
+                    	    pushFollow(FOLLOW_47);
                     	    lv_network_name_17_0=ruleEString();
 
                     	    state._fsp--;
@@ -7676,90 +8358,60 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     	    }
                     	    break;
                     	case 7 :
-                    	    // InternalDockerCompose.g:2851:5: ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) )
+                    	    // InternalDockerCompose.g:3120:5: ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) )
                     	    {
-                    	    // InternalDockerCompose.g:2851:5: ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) )
-                    	    // InternalDockerCompose.g:2852:6: {...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) )
+                    	    // InternalDockerCompose.g:3120:5: ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) )
+                    	    // InternalDockerCompose.g:3121:6: {...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) )
                     	    {
                     	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 6) ) {
                     	        throw new FailedPredicateException(input, "ruleNetwork", "getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 6)");
                     	    }
-                    	    // InternalDockerCompose.g:2852:107: ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) )
-                    	    // InternalDockerCompose.g:2853:7: ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) )
+                    	    // InternalDockerCompose.g:3121:107: ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) )
+                    	    // InternalDockerCompose.g:3122:7: ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) )
                     	    {
 
                     	    							getUnorderedGroupHelper().select(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 6);
                     	    						
-                    	    // InternalDockerCompose.g:2856:10: ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) )
-                    	    // InternalDockerCompose.g:2856:11: {...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ )
+                    	    // InternalDockerCompose.g:3125:10: ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) )
+                    	    // InternalDockerCompose.g:3125:11: {...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ )
                     	    {
                     	    if ( !((true)) ) {
                     	        throw new FailedPredicateException(input, "ruleNetwork", "true");
                     	    }
-                    	    // InternalDockerCompose.g:2856:20: (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ )
-                    	    // InternalDockerCompose.g:2856:21: otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+
+                    	    // InternalDockerCompose.g:3125:20: (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ )
+                    	    // InternalDockerCompose.g:3125:21: otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+
                     	    {
-                    	    otherlv_18=(Token)match(input,61,FOLLOW_5); 
+                    	    otherlv_18=(Token)match(input,66,FOLLOW_5); 
 
                     	    										newLeafNode(otherlv_18, grammarAccess.getNetworkAccess().getLabelsKeyword_3_1_6_0());
                     	    									
-                    	    // InternalDockerCompose.g:2860:10: ( (lv_labels_19_0= ruleNetworkLabel ) )+
-                    	    int cnt38=0;
-                    	    loop38:
+                    	    // InternalDockerCompose.g:3129:10: ( (lv_labels_19_0= ruleNetworkLabel ) )+
+                    	    int cnt47=0;
+                    	    loop47:
                     	    do {
-                    	        int alt38=2;
-                    	        int LA38_0 = input.LA(1);
+                    	        int alt47=2;
+                    	        int LA47_0 = input.LA(1);
 
-                    	        if ( (LA38_0==RULE_STRING) ) {
-                    	            int LA38_2 = input.LA(2);
+                    	        if ( (LA47_0==RULE_STRING) ) {
+                    	            int LA47_2 = input.LA(2);
 
-                    	            if ( (LA38_2==21) ) {
-                    	                int LA38_4 = input.LA(3);
+                    	            if ( (LA47_2==22) ) {
+                    	                int LA47_4 = input.LA(3);
 
-                    	                if ( (LA38_4==RULE_STRING) ) {
-                    	                    int LA38_5 = input.LA(4);
+                    	                if ( (LA47_4==RULE_STRING) ) {
+                    	                    int LA47_5 = input.LA(4);
 
-                    	                    if ( (LA38_5==EOF||LA38_5==RULE_ID||LA38_5==RULE_STRING||(LA38_5>=15 && LA38_5<=20)||(LA38_5>=55 && LA38_5<=63)) ) {
-                    	                        alt38=1;
+                    	                    if ( (LA47_5==EOF||LA47_5==RULE_ID||LA47_5==RULE_STRING||(LA47_5>=16 && LA47_5<=21)||(LA47_5>=60 && LA47_5<=68)) ) {
+                    	                        alt47=1;
                     	                    }
 
 
                     	                }
-                    	                else if ( (LA38_4==RULE_ID) ) {
-                    	                    int LA38_6 = input.LA(4);
+                    	                else if ( (LA47_4==RULE_ID) ) {
+                    	                    int LA47_6 = input.LA(4);
 
-                    	                    if ( (LA38_6==EOF||LA38_6==RULE_ID||LA38_6==RULE_STRING||(LA38_6>=15 && LA38_6<=20)||(LA38_6>=55 && LA38_6<=63)) ) {
-                    	                        alt38=1;
-                    	                    }
-
-
-                    	                }
-
-
-                    	            }
-
-
-                    	        }
-                    	        else if ( (LA38_0==RULE_ID) ) {
-                    	            int LA38_3 = input.LA(2);
-
-                    	            if ( (LA38_3==21) ) {
-                    	                int LA38_4 = input.LA(3);
-
-                    	                if ( (LA38_4==RULE_STRING) ) {
-                    	                    int LA38_5 = input.LA(4);
-
-                    	                    if ( (LA38_5==EOF||LA38_5==RULE_ID||LA38_5==RULE_STRING||(LA38_5>=15 && LA38_5<=20)||(LA38_5>=55 && LA38_5<=63)) ) {
-                    	                        alt38=1;
-                    	                    }
-
-
-                    	                }
-                    	                else if ( (LA38_4==RULE_ID) ) {
-                    	                    int LA38_6 = input.LA(4);
-
-                    	                    if ( (LA38_6==EOF||LA38_6==RULE_ID||LA38_6==RULE_STRING||(LA38_6>=15 && LA38_6<=20)||(LA38_6>=55 && LA38_6<=63)) ) {
-                    	                        alt38=1;
+                    	                    if ( (LA47_6==EOF||LA47_6==RULE_ID||LA47_6==RULE_STRING||(LA47_6>=16 && LA47_6<=21)||(LA47_6>=60 && LA47_6<=68)) ) {
+                    	                        alt47=1;
                     	                    }
 
 
@@ -7770,19 +8422,49 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
                     	        }
+                    	        else if ( (LA47_0==RULE_ID) ) {
+                    	            int LA47_3 = input.LA(2);
+
+                    	            if ( (LA47_3==22) ) {
+                    	                int LA47_4 = input.LA(3);
+
+                    	                if ( (LA47_4==RULE_STRING) ) {
+                    	                    int LA47_5 = input.LA(4);
+
+                    	                    if ( (LA47_5==EOF||LA47_5==RULE_ID||LA47_5==RULE_STRING||(LA47_5>=16 && LA47_5<=21)||(LA47_5>=60 && LA47_5<=68)) ) {
+                    	                        alt47=1;
+                    	                    }
 
 
-                    	        switch (alt38) {
+                    	                }
+                    	                else if ( (LA47_4==RULE_ID) ) {
+                    	                    int LA47_6 = input.LA(4);
+
+                    	                    if ( (LA47_6==EOF||LA47_6==RULE_ID||LA47_6==RULE_STRING||(LA47_6>=16 && LA47_6<=21)||(LA47_6>=60 && LA47_6<=68)) ) {
+                    	                        alt47=1;
+                    	                    }
+
+
+                    	                }
+
+
+                    	            }
+
+
+                    	        }
+
+
+                    	        switch (alt47) {
                     	    	case 1 :
-                    	    	    // InternalDockerCompose.g:2861:11: (lv_labels_19_0= ruleNetworkLabel )
+                    	    	    // InternalDockerCompose.g:3130:11: (lv_labels_19_0= ruleNetworkLabel )
                     	    	    {
-                    	    	    // InternalDockerCompose.g:2861:11: (lv_labels_19_0= ruleNetworkLabel )
-                    	    	    // InternalDockerCompose.g:2862:12: lv_labels_19_0= ruleNetworkLabel
+                    	    	    // InternalDockerCompose.g:3130:11: (lv_labels_19_0= ruleNetworkLabel )
+                    	    	    // InternalDockerCompose.g:3131:12: lv_labels_19_0= ruleNetworkLabel
                     	    	    {
 
                     	    	    												newCompositeNode(grammarAccess.getNetworkAccess().getLabelsNetworkLabelParserRuleCall_3_1_6_1_0());
                     	    	    											
-                    	    	    pushFollow(FOLLOW_44);
+                    	    	    pushFollow(FOLLOW_48);
                     	    	    lv_labels_19_0=ruleNetworkLabel();
 
                     	    	    state._fsp--;
@@ -7806,12 +8488,12 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     	    	    break;
 
                     	    	default :
-                    	    	    if ( cnt38 >= 1 ) break loop38;
+                    	    	    if ( cnt47 >= 1 ) break loop47;
                     	                EarlyExitException eee =
-                    	                    new EarlyExitException(38, input);
+                    	                    new EarlyExitException(47, input);
                     	                throw eee;
                     	        }
-                    	        cnt38++;
+                    	        cnt47++;
                     	    } while (true);
 
 
@@ -7833,90 +8515,60 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     	    }
                     	    break;
                     	case 8 :
-                    	    // InternalDockerCompose.g:2885:5: ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) )
+                    	    // InternalDockerCompose.g:3154:5: ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) )
                     	    {
-                    	    // InternalDockerCompose.g:2885:5: ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) )
-                    	    // InternalDockerCompose.g:2886:6: {...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) )
+                    	    // InternalDockerCompose.g:3154:5: ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) )
+                    	    // InternalDockerCompose.g:3155:6: {...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) )
                     	    {
                     	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 7) ) {
                     	        throw new FailedPredicateException(input, "ruleNetwork", "getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 7)");
                     	    }
-                    	    // InternalDockerCompose.g:2886:107: ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) )
-                    	    // InternalDockerCompose.g:2887:7: ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) )
+                    	    // InternalDockerCompose.g:3155:107: ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) )
+                    	    // InternalDockerCompose.g:3156:7: ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) )
                     	    {
 
                     	    							getUnorderedGroupHelper().select(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 7);
                     	    						
-                    	    // InternalDockerCompose.g:2890:10: ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) )
-                    	    // InternalDockerCompose.g:2890:11: {...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ )
+                    	    // InternalDockerCompose.g:3159:10: ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) )
+                    	    // InternalDockerCompose.g:3159:11: {...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ )
                     	    {
                     	    if ( !((true)) ) {
                     	        throw new FailedPredicateException(input, "ruleNetwork", "true");
                     	    }
-                    	    // InternalDockerCompose.g:2890:20: (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ )
-                    	    // InternalDockerCompose.g:2890:21: otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+
+                    	    // InternalDockerCompose.g:3159:20: (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ )
+                    	    // InternalDockerCompose.g:3159:21: otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+
                     	    {
-                    	    otherlv_20=(Token)match(input,62,FOLLOW_5); 
+                    	    otherlv_20=(Token)match(input,67,FOLLOW_5); 
 
                     	    										newLeafNode(otherlv_20, grammarAccess.getNetworkAccess().getDriver_optsKeyword_3_1_7_0());
                     	    									
-                    	    // InternalDockerCompose.g:2894:10: ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+
-                    	    int cnt39=0;
-                    	    loop39:
+                    	    // InternalDockerCompose.g:3163:10: ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+
+                    	    int cnt48=0;
+                    	    loop48:
                     	    do {
-                    	        int alt39=2;
-                    	        int LA39_0 = input.LA(1);
+                    	        int alt48=2;
+                    	        int LA48_0 = input.LA(1);
 
-                    	        if ( (LA39_0==RULE_STRING) ) {
-                    	            int LA39_2 = input.LA(2);
+                    	        if ( (LA48_0==RULE_STRING) ) {
+                    	            int LA48_2 = input.LA(2);
 
-                    	            if ( (LA39_2==21) ) {
-                    	                int LA39_4 = input.LA(3);
+                    	            if ( (LA48_2==22) ) {
+                    	                int LA48_4 = input.LA(3);
 
-                    	                if ( (LA39_4==RULE_STRING) ) {
-                    	                    int LA39_5 = input.LA(4);
+                    	                if ( (LA48_4==RULE_STRING) ) {
+                    	                    int LA48_5 = input.LA(4);
 
-                    	                    if ( (LA39_5==EOF||LA39_5==RULE_ID||LA39_5==RULE_STRING||(LA39_5>=15 && LA39_5<=20)||(LA39_5>=55 && LA39_5<=63)) ) {
-                    	                        alt39=1;
+                    	                    if ( (LA48_5==EOF||LA48_5==RULE_ID||LA48_5==RULE_STRING||(LA48_5>=16 && LA48_5<=21)||(LA48_5>=60 && LA48_5<=68)) ) {
+                    	                        alt48=1;
                     	                    }
 
 
                     	                }
-                    	                else if ( (LA39_4==RULE_ID) ) {
-                    	                    int LA39_6 = input.LA(4);
+                    	                else if ( (LA48_4==RULE_ID) ) {
+                    	                    int LA48_6 = input.LA(4);
 
-                    	                    if ( (LA39_6==EOF||LA39_6==RULE_ID||LA39_6==RULE_STRING||(LA39_6>=15 && LA39_6<=20)||(LA39_6>=55 && LA39_6<=63)) ) {
-                    	                        alt39=1;
-                    	                    }
-
-
-                    	                }
-
-
-                    	            }
-
-
-                    	        }
-                    	        else if ( (LA39_0==RULE_ID) ) {
-                    	            int LA39_3 = input.LA(2);
-
-                    	            if ( (LA39_3==21) ) {
-                    	                int LA39_4 = input.LA(3);
-
-                    	                if ( (LA39_4==RULE_STRING) ) {
-                    	                    int LA39_5 = input.LA(4);
-
-                    	                    if ( (LA39_5==EOF||LA39_5==RULE_ID||LA39_5==RULE_STRING||(LA39_5>=15 && LA39_5<=20)||(LA39_5>=55 && LA39_5<=63)) ) {
-                    	                        alt39=1;
-                    	                    }
-
-
-                    	                }
-                    	                else if ( (LA39_4==RULE_ID) ) {
-                    	                    int LA39_6 = input.LA(4);
-
-                    	                    if ( (LA39_6==EOF||LA39_6==RULE_ID||LA39_6==RULE_STRING||(LA39_6>=15 && LA39_6<=20)||(LA39_6>=55 && LA39_6<=63)) ) {
-                    	                        alt39=1;
+                    	                    if ( (LA48_6==EOF||LA48_6==RULE_ID||LA48_6==RULE_STRING||(LA48_6>=16 && LA48_6<=21)||(LA48_6>=60 && LA48_6<=68)) ) {
+                    	                        alt48=1;
                     	                    }
 
 
@@ -7927,19 +8579,49 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
                     	        }
+                    	        else if ( (LA48_0==RULE_ID) ) {
+                    	            int LA48_3 = input.LA(2);
+
+                    	            if ( (LA48_3==22) ) {
+                    	                int LA48_4 = input.LA(3);
+
+                    	                if ( (LA48_4==RULE_STRING) ) {
+                    	                    int LA48_5 = input.LA(4);
+
+                    	                    if ( (LA48_5==EOF||LA48_5==RULE_ID||LA48_5==RULE_STRING||(LA48_5>=16 && LA48_5<=21)||(LA48_5>=60 && LA48_5<=68)) ) {
+                    	                        alt48=1;
+                    	                    }
 
 
-                    	        switch (alt39) {
+                    	                }
+                    	                else if ( (LA48_4==RULE_ID) ) {
+                    	                    int LA48_6 = input.LA(4);
+
+                    	                    if ( (LA48_6==EOF||LA48_6==RULE_ID||LA48_6==RULE_STRING||(LA48_6>=16 && LA48_6<=21)||(LA48_6>=60 && LA48_6<=68)) ) {
+                    	                        alt48=1;
+                    	                    }
+
+
+                    	                }
+
+
+                    	            }
+
+
+                    	        }
+
+
+                    	        switch (alt48) {
                     	    	case 1 :
-                    	    	    // InternalDockerCompose.g:2895:11: (lv_driver_opts_21_0= ruleNetworkDriverOpt )
+                    	    	    // InternalDockerCompose.g:3164:11: (lv_driver_opts_21_0= ruleNetworkDriverOpt )
                     	    	    {
-                    	    	    // InternalDockerCompose.g:2895:11: (lv_driver_opts_21_0= ruleNetworkDriverOpt )
-                    	    	    // InternalDockerCompose.g:2896:12: lv_driver_opts_21_0= ruleNetworkDriverOpt
+                    	    	    // InternalDockerCompose.g:3164:11: (lv_driver_opts_21_0= ruleNetworkDriverOpt )
+                    	    	    // InternalDockerCompose.g:3165:12: lv_driver_opts_21_0= ruleNetworkDriverOpt
                     	    	    {
 
                     	    	    												newCompositeNode(grammarAccess.getNetworkAccess().getDriver_optsNetworkDriverOptParserRuleCall_3_1_7_1_0());
                     	    	    											
-                    	    	    pushFollow(FOLLOW_44);
+                    	    	    pushFollow(FOLLOW_48);
                     	    	    lv_driver_opts_21_0=ruleNetworkDriverOpt();
 
                     	    	    state._fsp--;
@@ -7963,12 +8645,12 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     	    	    break;
 
                     	    	default :
-                    	    	    if ( cnt39 >= 1 ) break loop39;
+                    	    	    if ( cnt48 >= 1 ) break loop48;
                     	                EarlyExitException eee =
-                    	                    new EarlyExitException(39, input);
+                    	                    new EarlyExitException(48, input);
                     	                throw eee;
                     	        }
-                    	        cnt39++;
+                    	        cnt48++;
                     	    } while (true);
 
 
@@ -7990,43 +8672,43 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     	    }
                     	    break;
                     	case 9 :
-                    	    // InternalDockerCompose.g:2919:5: ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) )
+                    	    // InternalDockerCompose.g:3188:5: ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) )
                     	    {
-                    	    // InternalDockerCompose.g:2919:5: ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) )
-                    	    // InternalDockerCompose.g:2920:6: {...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) )
+                    	    // InternalDockerCompose.g:3188:5: ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) )
+                    	    // InternalDockerCompose.g:3189:6: {...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) )
                     	    {
                     	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 8) ) {
                     	        throw new FailedPredicateException(input, "ruleNetwork", "getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 8)");
                     	    }
-                    	    // InternalDockerCompose.g:2920:107: ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) )
-                    	    // InternalDockerCompose.g:2921:7: ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) )
+                    	    // InternalDockerCompose.g:3189:107: ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) )
+                    	    // InternalDockerCompose.g:3190:7: ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) )
                     	    {
 
                     	    							getUnorderedGroupHelper().select(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 8);
                     	    						
-                    	    // InternalDockerCompose.g:2924:10: ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) )
-                    	    // InternalDockerCompose.g:2924:11: {...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) )
+                    	    // InternalDockerCompose.g:3193:10: ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) )
+                    	    // InternalDockerCompose.g:3193:11: {...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) )
                     	    {
                     	    if ( !((true)) ) {
                     	        throw new FailedPredicateException(input, "ruleNetwork", "true");
                     	    }
-                    	    // InternalDockerCompose.g:2924:20: (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) )
-                    	    // InternalDockerCompose.g:2924:21: otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) )
+                    	    // InternalDockerCompose.g:3193:20: (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) )
+                    	    // InternalDockerCompose.g:3193:21: otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) )
                     	    {
-                    	    otherlv_22=(Token)match(input,63,FOLLOW_45); 
+                    	    otherlv_22=(Token)match(input,68,FOLLOW_49); 
 
                     	    										newLeafNode(otherlv_22, grammarAccess.getNetworkAccess().getIpamKeyword_3_1_8_0());
                     	    									
-                    	    // InternalDockerCompose.g:2928:10: ( (lv_ipam_23_0= ruleIPAM ) )
-                    	    // InternalDockerCompose.g:2929:11: (lv_ipam_23_0= ruleIPAM )
+                    	    // InternalDockerCompose.g:3197:10: ( (lv_ipam_23_0= ruleIPAM ) )
+                    	    // InternalDockerCompose.g:3198:11: (lv_ipam_23_0= ruleIPAM )
                     	    {
-                    	    // InternalDockerCompose.g:2929:11: (lv_ipam_23_0= ruleIPAM )
-                    	    // InternalDockerCompose.g:2930:12: lv_ipam_23_0= ruleIPAM
+                    	    // InternalDockerCompose.g:3198:11: (lv_ipam_23_0= ruleIPAM )
+                    	    // InternalDockerCompose.g:3199:12: lv_ipam_23_0= ruleIPAM
                     	    {
 
                     	    												newCompositeNode(grammarAccess.getNetworkAccess().getIpamIPAMParserRuleCall_3_1_8_1_0());
                     	    											
-                    	    pushFollow(FOLLOW_43);
+                    	    pushFollow(FOLLOW_47);
                     	    lv_ipam_23_0=ruleIPAM();
 
                     	    state._fsp--;
@@ -8068,7 +8750,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop40;
+                    	    break loop49;
                         }
                     } while (true);
 
@@ -8113,7 +8795,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVolume"
-    // InternalDockerCompose.g:2965:1: entryRuleVolume returns [EObject current=null] : iv_ruleVolume= ruleVolume EOF ;
+    // InternalDockerCompose.g:3234:1: entryRuleVolume returns [EObject current=null] : iv_ruleVolume= ruleVolume EOF ;
     public final EObject entryRuleVolume() throws RecognitionException {
         EObject current = null;
 
@@ -8121,8 +8803,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:2965:47: (iv_ruleVolume= ruleVolume EOF )
-            // InternalDockerCompose.g:2966:2: iv_ruleVolume= ruleVolume EOF
+            // InternalDockerCompose.g:3234:47: (iv_ruleVolume= ruleVolume EOF )
+            // InternalDockerCompose.g:3235:2: iv_ruleVolume= ruleVolume EOF
             {
              newCompositeNode(grammarAccess.getVolumeRule()); 
             pushFollow(FOLLOW_1);
@@ -8149,7 +8831,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVolume"
-    // InternalDockerCompose.g:2972:1: ruleVolume returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) ) ) )* ) ) ) ) ;
+    // InternalDockerCompose.g:3241:1: ruleVolume returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) ) ) )* ) ) ) ) ;
     public final EObject ruleVolume() throws RecognitionException {
         EObject current = null;
 
@@ -8176,14 +8858,14 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:2978:2: ( ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) ) ) )* ) ) ) ) )
-            // InternalDockerCompose.g:2979:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) ) ) )* ) ) ) )
+            // InternalDockerCompose.g:3247:2: ( ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) ) ) )* ) ) ) ) )
+            // InternalDockerCompose.g:3248:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) ) ) )* ) ) ) )
             {
-            // InternalDockerCompose.g:2979:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) ) ) )* ) ) ) )
-            // InternalDockerCompose.g:2980:3: () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) ) ) )* ) ) )
+            // InternalDockerCompose.g:3248:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) ) ) )* ) ) ) )
+            // InternalDockerCompose.g:3249:3: () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) ) ) )* ) ) )
             {
-            // InternalDockerCompose.g:2980:3: ()
-            // InternalDockerCompose.g:2981:4: 
+            // InternalDockerCompose.g:3249:3: ()
+            // InternalDockerCompose.g:3250:4: 
             {
 
             				current = forceCreateModelElement(
@@ -8193,11 +8875,11 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDockerCompose.g:2987:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalDockerCompose.g:2988:4: (lv_name_1_0= ruleEString )
+            // InternalDockerCompose.g:3256:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalDockerCompose.g:3257:4: (lv_name_1_0= ruleEString )
             {
-            // InternalDockerCompose.g:2988:4: (lv_name_1_0= ruleEString )
-            // InternalDockerCompose.g:2989:5: lv_name_1_0= ruleEString
+            // InternalDockerCompose.g:3257:4: (lv_name_1_0= ruleEString )
+            // InternalDockerCompose.g:3258:5: lv_name_1_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getVolumeAccess().getNameEStringParserRuleCall_1_0());
@@ -8224,84 +8906,84 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,21,FOLLOW_46); 
+            otherlv_2=(Token)match(input,22,FOLLOW_50); 
 
             			newLeafNode(otherlv_2, grammarAccess.getVolumeAccess().getColonKeyword_2());
             		
-            // InternalDockerCompose.g:3010:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) ) ) )* ) ) )
-            // InternalDockerCompose.g:3011:4: ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) ) ) )* ) )
+            // InternalDockerCompose.g:3279:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) ) ) )* ) ) )
+            // InternalDockerCompose.g:3280:4: ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) ) ) )* ) )
             {
-            // InternalDockerCompose.g:3011:4: ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) ) ) )* ) )
-            // InternalDockerCompose.g:3012:5: ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) ) ) )* )
+            // InternalDockerCompose.g:3280:4: ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) ) ) )* ) )
+            // InternalDockerCompose.g:3281:5: ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) ) ) )* )
             {
              
             				  getUnorderedGroupHelper().enter(grammarAccess.getVolumeAccess().getUnorderedGroup_3());
             				
-            // InternalDockerCompose.g:3015:5: ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) ) ) )* )
-            // InternalDockerCompose.g:3016:6: ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) ) ) )*
+            // InternalDockerCompose.g:3284:5: ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) ) ) )* )
+            // InternalDockerCompose.g:3285:6: ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) ) ) )*
             {
-            // InternalDockerCompose.g:3016:6: ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) ) ) )*
-            loop44:
+            // InternalDockerCompose.g:3285:6: ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) ) ) )*
+            loop53:
             do {
-                int alt44=6;
-                int LA44_0 = input.LA(1);
+                int alt53=6;
+                int LA53_0 = input.LA(1);
 
-                if ( LA44_0 == 59 && getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeAccess().getUnorderedGroup_3(), 0) ) {
-                    alt44=1;
+                if ( LA53_0 == 64 && getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeAccess().getUnorderedGroup_3(), 0) ) {
+                    alt53=1;
                 }
-                else if ( LA44_0 == 55 && getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeAccess().getUnorderedGroup_3(), 1) ) {
-                    alt44=2;
+                else if ( LA53_0 == 60 && getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeAccess().getUnorderedGroup_3(), 1) ) {
+                    alt53=2;
                 }
-                else if ( LA44_0 == 60 && getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeAccess().getUnorderedGroup_3(), 2) ) {
-                    alt44=3;
+                else if ( LA53_0 == 65 && getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeAccess().getUnorderedGroup_3(), 2) ) {
+                    alt53=3;
                 }
-                else if ( LA44_0 == 61 && getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeAccess().getUnorderedGroup_3(), 3) ) {
-                    alt44=4;
+                else if ( LA53_0 == 66 && getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeAccess().getUnorderedGroup_3(), 3) ) {
+                    alt53=4;
                 }
-                else if ( LA44_0 == 62 && getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeAccess().getUnorderedGroup_3(), 4) ) {
-                    alt44=5;
+                else if ( LA53_0 == 67 && getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeAccess().getUnorderedGroup_3(), 4) ) {
+                    alt53=5;
                 }
 
 
-                switch (alt44) {
+                switch (alt53) {
             	case 1 :
-            	    // InternalDockerCompose.g:3017:4: ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) )
+            	    // InternalDockerCompose.g:3286:4: ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:3017:4: ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) )
-            	    // InternalDockerCompose.g:3018:5: {...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) )
+            	    // InternalDockerCompose.g:3286:4: ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) )
+            	    // InternalDockerCompose.g:3287:5: {...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeAccess().getUnorderedGroup_3(), 0) ) {
             	        throw new FailedPredicateException(input, "ruleVolume", "getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeAccess().getUnorderedGroup_3(), 0)");
             	    }
-            	    // InternalDockerCompose.g:3018:103: ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) )
-            	    // InternalDockerCompose.g:3019:6: ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) )
+            	    // InternalDockerCompose.g:3287:103: ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) )
+            	    // InternalDockerCompose.g:3288:6: ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getVolumeAccess().getUnorderedGroup_3(), 0);
             	    					
-            	    // InternalDockerCompose.g:3022:9: ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) )
-            	    // InternalDockerCompose.g:3022:10: {...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) )
+            	    // InternalDockerCompose.g:3291:9: ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) )
+            	    // InternalDockerCompose.g:3291:10: {...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleVolume", "true");
             	    }
-            	    // InternalDockerCompose.g:3022:19: (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) )
-            	    // InternalDockerCompose.g:3022:20: otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) )
+            	    // InternalDockerCompose.g:3291:19: (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) )
+            	    // InternalDockerCompose.g:3291:20: otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) )
             	    {
-            	    otherlv_4=(Token)match(input,59,FOLLOW_13); 
+            	    otherlv_4=(Token)match(input,64,FOLLOW_14); 
 
             	    									newLeafNode(otherlv_4, grammarAccess.getVolumeAccess().getExternalKeyword_3_0_0());
             	    								
-            	    // InternalDockerCompose.g:3026:9: ( (lv_external_5_0= ruleEBoolean ) )
-            	    // InternalDockerCompose.g:3027:10: (lv_external_5_0= ruleEBoolean )
+            	    // InternalDockerCompose.g:3295:9: ( (lv_external_5_0= ruleEBoolean ) )
+            	    // InternalDockerCompose.g:3296:10: (lv_external_5_0= ruleEBoolean )
             	    {
-            	    // InternalDockerCompose.g:3027:10: (lv_external_5_0= ruleEBoolean )
-            	    // InternalDockerCompose.g:3028:11: lv_external_5_0= ruleEBoolean
+            	    // InternalDockerCompose.g:3296:10: (lv_external_5_0= ruleEBoolean )
+            	    // InternalDockerCompose.g:3297:11: lv_external_5_0= ruleEBoolean
             	    {
 
             	    											newCompositeNode(grammarAccess.getVolumeAccess().getExternalEBooleanParserRuleCall_3_0_1_0());
             	    										
-            	    pushFollow(FOLLOW_46);
+            	    pushFollow(FOLLOW_50);
             	    lv_external_5_0=ruleEBoolean();
 
             	    state._fsp--;
@@ -8342,43 +9024,43 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // InternalDockerCompose.g:3051:4: ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) )
+            	    // InternalDockerCompose.g:3320:4: ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:3051:4: ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) )
-            	    // InternalDockerCompose.g:3052:5: {...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) )
+            	    // InternalDockerCompose.g:3320:4: ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) )
+            	    // InternalDockerCompose.g:3321:5: {...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeAccess().getUnorderedGroup_3(), 1) ) {
             	        throw new FailedPredicateException(input, "ruleVolume", "getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeAccess().getUnorderedGroup_3(), 1)");
             	    }
-            	    // InternalDockerCompose.g:3052:103: ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) )
-            	    // InternalDockerCompose.g:3053:6: ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) )
+            	    // InternalDockerCompose.g:3321:103: ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) )
+            	    // InternalDockerCompose.g:3322:6: ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getVolumeAccess().getUnorderedGroup_3(), 1);
             	    					
-            	    // InternalDockerCompose.g:3056:9: ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) )
-            	    // InternalDockerCompose.g:3056:10: {...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) )
+            	    // InternalDockerCompose.g:3325:9: ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) )
+            	    // InternalDockerCompose.g:3325:10: {...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleVolume", "true");
             	    }
-            	    // InternalDockerCompose.g:3056:19: (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) )
-            	    // InternalDockerCompose.g:3056:20: otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) )
+            	    // InternalDockerCompose.g:3325:19: (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) )
+            	    // InternalDockerCompose.g:3325:20: otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) )
             	    {
-            	    otherlv_6=(Token)match(input,55,FOLLOW_5); 
+            	    otherlv_6=(Token)match(input,60,FOLLOW_5); 
 
             	    									newLeafNode(otherlv_6, grammarAccess.getVolumeAccess().getDriverKeyword_3_1_0());
             	    								
-            	    // InternalDockerCompose.g:3060:9: ( (lv_driver_7_0= ruleEString ) )
-            	    // InternalDockerCompose.g:3061:10: (lv_driver_7_0= ruleEString )
+            	    // InternalDockerCompose.g:3329:9: ( (lv_driver_7_0= ruleEString ) )
+            	    // InternalDockerCompose.g:3330:10: (lv_driver_7_0= ruleEString )
             	    {
-            	    // InternalDockerCompose.g:3061:10: (lv_driver_7_0= ruleEString )
-            	    // InternalDockerCompose.g:3062:11: lv_driver_7_0= ruleEString
+            	    // InternalDockerCompose.g:3330:10: (lv_driver_7_0= ruleEString )
+            	    // InternalDockerCompose.g:3331:11: lv_driver_7_0= ruleEString
             	    {
 
             	    											newCompositeNode(grammarAccess.getVolumeAccess().getDriverEStringParserRuleCall_3_1_1_0());
             	    										
-            	    pushFollow(FOLLOW_46);
+            	    pushFollow(FOLLOW_50);
             	    lv_driver_7_0=ruleEString();
 
             	    state._fsp--;
@@ -8419,43 +9101,43 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 3 :
-            	    // InternalDockerCompose.g:3085:4: ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) ) )
+            	    // InternalDockerCompose.g:3354:4: ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:3085:4: ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) ) )
-            	    // InternalDockerCompose.g:3086:5: {...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) )
+            	    // InternalDockerCompose.g:3354:4: ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) ) )
+            	    // InternalDockerCompose.g:3355:5: {...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeAccess().getUnorderedGroup_3(), 2) ) {
             	        throw new FailedPredicateException(input, "ruleVolume", "getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeAccess().getUnorderedGroup_3(), 2)");
             	    }
-            	    // InternalDockerCompose.g:3086:103: ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) )
-            	    // InternalDockerCompose.g:3087:6: ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) )
+            	    // InternalDockerCompose.g:3355:103: ( ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) ) )
+            	    // InternalDockerCompose.g:3356:6: ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getVolumeAccess().getUnorderedGroup_3(), 2);
             	    					
-            	    // InternalDockerCompose.g:3090:9: ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) )
-            	    // InternalDockerCompose.g:3090:10: {...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) )
+            	    // InternalDockerCompose.g:3359:9: ({...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) ) )
+            	    // InternalDockerCompose.g:3359:10: {...}? => (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleVolume", "true");
             	    }
-            	    // InternalDockerCompose.g:3090:19: (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) )
-            	    // InternalDockerCompose.g:3090:20: otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) )
+            	    // InternalDockerCompose.g:3359:19: (otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) ) )
+            	    // InternalDockerCompose.g:3359:20: otherlv_8= 'name:' ( (lv_volume_name_9_0= ruleEString ) )
             	    {
-            	    otherlv_8=(Token)match(input,60,FOLLOW_5); 
+            	    otherlv_8=(Token)match(input,65,FOLLOW_5); 
 
             	    									newLeafNode(otherlv_8, grammarAccess.getVolumeAccess().getNameKeyword_3_2_0());
             	    								
-            	    // InternalDockerCompose.g:3094:9: ( (lv_volume_name_9_0= ruleEString ) )
-            	    // InternalDockerCompose.g:3095:10: (lv_volume_name_9_0= ruleEString )
+            	    // InternalDockerCompose.g:3363:9: ( (lv_volume_name_9_0= ruleEString ) )
+            	    // InternalDockerCompose.g:3364:10: (lv_volume_name_9_0= ruleEString )
             	    {
-            	    // InternalDockerCompose.g:3095:10: (lv_volume_name_9_0= ruleEString )
-            	    // InternalDockerCompose.g:3096:11: lv_volume_name_9_0= ruleEString
+            	    // InternalDockerCompose.g:3364:10: (lv_volume_name_9_0= ruleEString )
+            	    // InternalDockerCompose.g:3365:11: lv_volume_name_9_0= ruleEString
             	    {
 
             	    											newCompositeNode(grammarAccess.getVolumeAccess().getVolume_nameEStringParserRuleCall_3_2_1_0());
             	    										
-            	    pushFollow(FOLLOW_46);
+            	    pushFollow(FOLLOW_50);
             	    lv_volume_name_9_0=ruleEString();
 
             	    state._fsp--;
@@ -8496,90 +9178,60 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 4 :
-            	    // InternalDockerCompose.g:3119:4: ({...}? => ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) ) )
+            	    // InternalDockerCompose.g:3388:4: ({...}? => ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:3119:4: ({...}? => ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) ) )
-            	    // InternalDockerCompose.g:3120:5: {...}? => ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) )
+            	    // InternalDockerCompose.g:3388:4: ({...}? => ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) ) )
+            	    // InternalDockerCompose.g:3389:5: {...}? => ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeAccess().getUnorderedGroup_3(), 3) ) {
             	        throw new FailedPredicateException(input, "ruleVolume", "getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeAccess().getUnorderedGroup_3(), 3)");
             	    }
-            	    // InternalDockerCompose.g:3120:103: ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) )
-            	    // InternalDockerCompose.g:3121:6: ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) )
+            	    // InternalDockerCompose.g:3389:103: ( ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) ) )
+            	    // InternalDockerCompose.g:3390:6: ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getVolumeAccess().getUnorderedGroup_3(), 3);
             	    					
-            	    // InternalDockerCompose.g:3124:9: ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) )
-            	    // InternalDockerCompose.g:3124:10: {...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ )
+            	    // InternalDockerCompose.g:3393:9: ({...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ ) )
+            	    // InternalDockerCompose.g:3393:10: {...}? => (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleVolume", "true");
             	    }
-            	    // InternalDockerCompose.g:3124:19: (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ )
-            	    // InternalDockerCompose.g:3124:20: otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+
+            	    // InternalDockerCompose.g:3393:19: (otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+ )
+            	    // InternalDockerCompose.g:3393:20: otherlv_10= 'labels:' ( (lv_labels_11_0= ruleVolumeLabel ) )+
             	    {
-            	    otherlv_10=(Token)match(input,61,FOLLOW_5); 
+            	    otherlv_10=(Token)match(input,66,FOLLOW_5); 
 
             	    									newLeafNode(otherlv_10, grammarAccess.getVolumeAccess().getLabelsKeyword_3_3_0());
             	    								
-            	    // InternalDockerCompose.g:3128:9: ( (lv_labels_11_0= ruleVolumeLabel ) )+
-            	    int cnt42=0;
-            	    loop42:
+            	    // InternalDockerCompose.g:3397:9: ( (lv_labels_11_0= ruleVolumeLabel ) )+
+            	    int cnt51=0;
+            	    loop51:
             	    do {
-            	        int alt42=2;
-            	        int LA42_0 = input.LA(1);
+            	        int alt51=2;
+            	        int LA51_0 = input.LA(1);
 
-            	        if ( (LA42_0==RULE_STRING) ) {
-            	            int LA42_2 = input.LA(2);
+            	        if ( (LA51_0==RULE_STRING) ) {
+            	            int LA51_2 = input.LA(2);
 
-            	            if ( (LA42_2==21) ) {
-            	                int LA42_4 = input.LA(3);
+            	            if ( (LA51_2==22) ) {
+            	                int LA51_4 = input.LA(3);
 
-            	                if ( (LA42_4==RULE_STRING) ) {
-            	                    int LA42_5 = input.LA(4);
+            	                if ( (LA51_4==RULE_STRING) ) {
+            	                    int LA51_5 = input.LA(4);
 
-            	                    if ( (LA42_5==EOF||LA42_5==RULE_ID||LA42_5==RULE_STRING||(LA42_5>=15 && LA42_5<=20)||LA42_5==55||(LA42_5>=59 && LA42_5<=62)) ) {
-            	                        alt42=1;
+            	                    if ( (LA51_5==EOF||LA51_5==RULE_ID||LA51_5==RULE_STRING||(LA51_5>=16 && LA51_5<=21)||LA51_5==60||(LA51_5>=64 && LA51_5<=67)) ) {
+            	                        alt51=1;
             	                    }
 
 
             	                }
-            	                else if ( (LA42_4==RULE_ID) ) {
-            	                    int LA42_6 = input.LA(4);
+            	                else if ( (LA51_4==RULE_ID) ) {
+            	                    int LA51_6 = input.LA(4);
 
-            	                    if ( (LA42_6==EOF||LA42_6==RULE_ID||LA42_6==RULE_STRING||(LA42_6>=15 && LA42_6<=20)||LA42_6==55||(LA42_6>=59 && LA42_6<=62)) ) {
-            	                        alt42=1;
-            	                    }
-
-
-            	                }
-
-
-            	            }
-
-
-            	        }
-            	        else if ( (LA42_0==RULE_ID) ) {
-            	            int LA42_3 = input.LA(2);
-
-            	            if ( (LA42_3==21) ) {
-            	                int LA42_4 = input.LA(3);
-
-            	                if ( (LA42_4==RULE_STRING) ) {
-            	                    int LA42_5 = input.LA(4);
-
-            	                    if ( (LA42_5==EOF||LA42_5==RULE_ID||LA42_5==RULE_STRING||(LA42_5>=15 && LA42_5<=20)||LA42_5==55||(LA42_5>=59 && LA42_5<=62)) ) {
-            	                        alt42=1;
-            	                    }
-
-
-            	                }
-            	                else if ( (LA42_4==RULE_ID) ) {
-            	                    int LA42_6 = input.LA(4);
-
-            	                    if ( (LA42_6==EOF||LA42_6==RULE_ID||LA42_6==RULE_STRING||(LA42_6>=15 && LA42_6<=20)||LA42_6==55||(LA42_6>=59 && LA42_6<=62)) ) {
-            	                        alt42=1;
+            	                    if ( (LA51_6==EOF||LA51_6==RULE_ID||LA51_6==RULE_STRING||(LA51_6>=16 && LA51_6<=21)||LA51_6==60||(LA51_6>=64 && LA51_6<=67)) ) {
+            	                        alt51=1;
             	                    }
 
 
@@ -8590,19 +9242,49 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
             	        }
+            	        else if ( (LA51_0==RULE_ID) ) {
+            	            int LA51_3 = input.LA(2);
+
+            	            if ( (LA51_3==22) ) {
+            	                int LA51_4 = input.LA(3);
+
+            	                if ( (LA51_4==RULE_STRING) ) {
+            	                    int LA51_5 = input.LA(4);
+
+            	                    if ( (LA51_5==EOF||LA51_5==RULE_ID||LA51_5==RULE_STRING||(LA51_5>=16 && LA51_5<=21)||LA51_5==60||(LA51_5>=64 && LA51_5<=67)) ) {
+            	                        alt51=1;
+            	                    }
 
 
-            	        switch (alt42) {
+            	                }
+            	                else if ( (LA51_4==RULE_ID) ) {
+            	                    int LA51_6 = input.LA(4);
+
+            	                    if ( (LA51_6==EOF||LA51_6==RULE_ID||LA51_6==RULE_STRING||(LA51_6>=16 && LA51_6<=21)||LA51_6==60||(LA51_6>=64 && LA51_6<=67)) ) {
+            	                        alt51=1;
+            	                    }
+
+
+            	                }
+
+
+            	            }
+
+
+            	        }
+
+
+            	        switch (alt51) {
             	    	case 1 :
-            	    	    // InternalDockerCompose.g:3129:10: (lv_labels_11_0= ruleVolumeLabel )
+            	    	    // InternalDockerCompose.g:3398:10: (lv_labels_11_0= ruleVolumeLabel )
             	    	    {
-            	    	    // InternalDockerCompose.g:3129:10: (lv_labels_11_0= ruleVolumeLabel )
-            	    	    // InternalDockerCompose.g:3130:11: lv_labels_11_0= ruleVolumeLabel
+            	    	    // InternalDockerCompose.g:3398:10: (lv_labels_11_0= ruleVolumeLabel )
+            	    	    // InternalDockerCompose.g:3399:11: lv_labels_11_0= ruleVolumeLabel
             	    	    {
 
             	    	    											newCompositeNode(grammarAccess.getVolumeAccess().getLabelsVolumeLabelParserRuleCall_3_3_1_0());
             	    	    										
-            	    	    pushFollow(FOLLOW_47);
+            	    	    pushFollow(FOLLOW_51);
             	    	    lv_labels_11_0=ruleVolumeLabel();
 
             	    	    state._fsp--;
@@ -8626,12 +9308,12 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    	    break;
 
             	    	default :
-            	    	    if ( cnt42 >= 1 ) break loop42;
+            	    	    if ( cnt51 >= 1 ) break loop51;
             	                EarlyExitException eee =
-            	                    new EarlyExitException(42, input);
+            	                    new EarlyExitException(51, input);
             	                throw eee;
             	        }
-            	        cnt42++;
+            	        cnt51++;
             	    } while (true);
 
 
@@ -8653,90 +9335,60 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 5 :
-            	    // InternalDockerCompose.g:3153:4: ({...}? => ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) ) )
+            	    // InternalDockerCompose.g:3422:4: ({...}? => ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:3153:4: ({...}? => ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) ) )
-            	    // InternalDockerCompose.g:3154:5: {...}? => ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) )
+            	    // InternalDockerCompose.g:3422:4: ({...}? => ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) ) )
+            	    // InternalDockerCompose.g:3423:5: {...}? => ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeAccess().getUnorderedGroup_3(), 4) ) {
             	        throw new FailedPredicateException(input, "ruleVolume", "getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeAccess().getUnorderedGroup_3(), 4)");
             	    }
-            	    // InternalDockerCompose.g:3154:103: ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) )
-            	    // InternalDockerCompose.g:3155:6: ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) )
+            	    // InternalDockerCompose.g:3423:103: ( ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) ) )
+            	    // InternalDockerCompose.g:3424:6: ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getVolumeAccess().getUnorderedGroup_3(), 4);
             	    					
-            	    // InternalDockerCompose.g:3158:9: ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) )
-            	    // InternalDockerCompose.g:3158:10: {...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ )
+            	    // InternalDockerCompose.g:3427:9: ({...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ ) )
+            	    // InternalDockerCompose.g:3427:10: {...}? => (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleVolume", "true");
             	    }
-            	    // InternalDockerCompose.g:3158:19: (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ )
-            	    // InternalDockerCompose.g:3158:20: otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+
+            	    // InternalDockerCompose.g:3427:19: (otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+ )
+            	    // InternalDockerCompose.g:3427:20: otherlv_12= 'driver_opts:' ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+
             	    {
-            	    otherlv_12=(Token)match(input,62,FOLLOW_5); 
+            	    otherlv_12=(Token)match(input,67,FOLLOW_5); 
 
             	    									newLeafNode(otherlv_12, grammarAccess.getVolumeAccess().getDriver_optsKeyword_3_4_0());
             	    								
-            	    // InternalDockerCompose.g:3162:9: ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+
-            	    int cnt43=0;
-            	    loop43:
+            	    // InternalDockerCompose.g:3431:9: ( (lv_driver_opts_13_0= ruleVolumeDriverOpt ) )+
+            	    int cnt52=0;
+            	    loop52:
             	    do {
-            	        int alt43=2;
-            	        int LA43_0 = input.LA(1);
+            	        int alt52=2;
+            	        int LA52_0 = input.LA(1);
 
-            	        if ( (LA43_0==RULE_STRING) ) {
-            	            int LA43_2 = input.LA(2);
+            	        if ( (LA52_0==RULE_STRING) ) {
+            	            int LA52_2 = input.LA(2);
 
-            	            if ( (LA43_2==21) ) {
-            	                int LA43_4 = input.LA(3);
+            	            if ( (LA52_2==22) ) {
+            	                int LA52_4 = input.LA(3);
 
-            	                if ( (LA43_4==RULE_STRING) ) {
-            	                    int LA43_5 = input.LA(4);
+            	                if ( (LA52_4==RULE_STRING) ) {
+            	                    int LA52_5 = input.LA(4);
 
-            	                    if ( (LA43_5==EOF||LA43_5==RULE_ID||LA43_5==RULE_STRING||(LA43_5>=15 && LA43_5<=20)||LA43_5==55||(LA43_5>=59 && LA43_5<=62)) ) {
-            	                        alt43=1;
+            	                    if ( (LA52_5==EOF||LA52_5==RULE_ID||LA52_5==RULE_STRING||(LA52_5>=16 && LA52_5<=21)||LA52_5==60||(LA52_5>=64 && LA52_5<=67)) ) {
+            	                        alt52=1;
             	                    }
 
 
             	                }
-            	                else if ( (LA43_4==RULE_ID) ) {
-            	                    int LA43_6 = input.LA(4);
+            	                else if ( (LA52_4==RULE_ID) ) {
+            	                    int LA52_6 = input.LA(4);
 
-            	                    if ( (LA43_6==EOF||LA43_6==RULE_ID||LA43_6==RULE_STRING||(LA43_6>=15 && LA43_6<=20)||LA43_6==55||(LA43_6>=59 && LA43_6<=62)) ) {
-            	                        alt43=1;
-            	                    }
-
-
-            	                }
-
-
-            	            }
-
-
-            	        }
-            	        else if ( (LA43_0==RULE_ID) ) {
-            	            int LA43_3 = input.LA(2);
-
-            	            if ( (LA43_3==21) ) {
-            	                int LA43_4 = input.LA(3);
-
-            	                if ( (LA43_4==RULE_STRING) ) {
-            	                    int LA43_5 = input.LA(4);
-
-            	                    if ( (LA43_5==EOF||LA43_5==RULE_ID||LA43_5==RULE_STRING||(LA43_5>=15 && LA43_5<=20)||LA43_5==55||(LA43_5>=59 && LA43_5<=62)) ) {
-            	                        alt43=1;
-            	                    }
-
-
-            	                }
-            	                else if ( (LA43_4==RULE_ID) ) {
-            	                    int LA43_6 = input.LA(4);
-
-            	                    if ( (LA43_6==EOF||LA43_6==RULE_ID||LA43_6==RULE_STRING||(LA43_6>=15 && LA43_6<=20)||LA43_6==55||(LA43_6>=59 && LA43_6<=62)) ) {
-            	                        alt43=1;
+            	                    if ( (LA52_6==EOF||LA52_6==RULE_ID||LA52_6==RULE_STRING||(LA52_6>=16 && LA52_6<=21)||LA52_6==60||(LA52_6>=64 && LA52_6<=67)) ) {
+            	                        alt52=1;
             	                    }
 
 
@@ -8747,19 +9399,49 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
             	        }
+            	        else if ( (LA52_0==RULE_ID) ) {
+            	            int LA52_3 = input.LA(2);
+
+            	            if ( (LA52_3==22) ) {
+            	                int LA52_4 = input.LA(3);
+
+            	                if ( (LA52_4==RULE_STRING) ) {
+            	                    int LA52_5 = input.LA(4);
+
+            	                    if ( (LA52_5==EOF||LA52_5==RULE_ID||LA52_5==RULE_STRING||(LA52_5>=16 && LA52_5<=21)||LA52_5==60||(LA52_5>=64 && LA52_5<=67)) ) {
+            	                        alt52=1;
+            	                    }
 
 
-            	        switch (alt43) {
+            	                }
+            	                else if ( (LA52_4==RULE_ID) ) {
+            	                    int LA52_6 = input.LA(4);
+
+            	                    if ( (LA52_6==EOF||LA52_6==RULE_ID||LA52_6==RULE_STRING||(LA52_6>=16 && LA52_6<=21)||LA52_6==60||(LA52_6>=64 && LA52_6<=67)) ) {
+            	                        alt52=1;
+            	                    }
+
+
+            	                }
+
+
+            	            }
+
+
+            	        }
+
+
+            	        switch (alt52) {
             	    	case 1 :
-            	    	    // InternalDockerCompose.g:3163:10: (lv_driver_opts_13_0= ruleVolumeDriverOpt )
+            	    	    // InternalDockerCompose.g:3432:10: (lv_driver_opts_13_0= ruleVolumeDriverOpt )
             	    	    {
-            	    	    // InternalDockerCompose.g:3163:10: (lv_driver_opts_13_0= ruleVolumeDriverOpt )
-            	    	    // InternalDockerCompose.g:3164:11: lv_driver_opts_13_0= ruleVolumeDriverOpt
+            	    	    // InternalDockerCompose.g:3432:10: (lv_driver_opts_13_0= ruleVolumeDriverOpt )
+            	    	    // InternalDockerCompose.g:3433:11: lv_driver_opts_13_0= ruleVolumeDriverOpt
             	    	    {
 
             	    	    											newCompositeNode(grammarAccess.getVolumeAccess().getDriver_optsVolumeDriverOptParserRuleCall_3_4_1_0());
             	    	    										
-            	    	    pushFollow(FOLLOW_47);
+            	    	    pushFollow(FOLLOW_51);
             	    	    lv_driver_opts_13_0=ruleVolumeDriverOpt();
 
             	    	    state._fsp--;
@@ -8783,12 +9465,12 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    	    break;
 
             	    	default :
-            	    	    if ( cnt43 >= 1 ) break loop43;
+            	    	    if ( cnt52 >= 1 ) break loop52;
             	                EarlyExitException eee =
-            	                    new EarlyExitException(43, input);
+            	                    new EarlyExitException(52, input);
             	                throw eee;
             	        }
-            	        cnt43++;
+            	        cnt52++;
             	    } while (true);
 
 
@@ -8811,7 +9493,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop44;
+            	    break loop53;
                 }
             } while (true);
 
@@ -8850,7 +9532,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConfig"
-    // InternalDockerCompose.g:3198:1: entryRuleConfig returns [EObject current=null] : iv_ruleConfig= ruleConfig EOF ;
+    // InternalDockerCompose.g:3467:1: entryRuleConfig returns [EObject current=null] : iv_ruleConfig= ruleConfig EOF ;
     public final EObject entryRuleConfig() throws RecognitionException {
         EObject current = null;
 
@@ -8858,8 +9540,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:3198:47: (iv_ruleConfig= ruleConfig EOF )
-            // InternalDockerCompose.g:3199:2: iv_ruleConfig= ruleConfig EOF
+            // InternalDockerCompose.g:3467:47: (iv_ruleConfig= ruleConfig EOF )
+            // InternalDockerCompose.g:3468:2: iv_ruleConfig= ruleConfig EOF
             {
              newCompositeNode(grammarAccess.getConfigRule()); 
             pushFollow(FOLLOW_1);
@@ -8886,7 +9568,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConfig"
-    // InternalDockerCompose.g:3205:1: ruleConfig returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) ) ) )* ) ) ) ) ;
+    // InternalDockerCompose.g:3474:1: ruleConfig returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) ) ) )* ) ) ) ) ;
     public final EObject ruleConfig() throws RecognitionException {
         EObject current = null;
 
@@ -8907,14 +9589,14 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:3211:2: ( ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) ) ) )* ) ) ) ) )
-            // InternalDockerCompose.g:3212:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) ) ) )* ) ) ) )
+            // InternalDockerCompose.g:3480:2: ( ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) ) ) )* ) ) ) ) )
+            // InternalDockerCompose.g:3481:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) ) ) )* ) ) ) )
             {
-            // InternalDockerCompose.g:3212:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) ) ) )* ) ) ) )
-            // InternalDockerCompose.g:3213:3: () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) ) ) )* ) ) )
+            // InternalDockerCompose.g:3481:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) ) ) )* ) ) ) )
+            // InternalDockerCompose.g:3482:3: () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) ) ) )* ) ) )
             {
-            // InternalDockerCompose.g:3213:3: ()
-            // InternalDockerCompose.g:3214:4: 
+            // InternalDockerCompose.g:3482:3: ()
+            // InternalDockerCompose.g:3483:4: 
             {
 
             				current = forceCreateModelElement(
@@ -8924,11 +9606,11 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDockerCompose.g:3220:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalDockerCompose.g:3221:4: (lv_name_1_0= ruleEString )
+            // InternalDockerCompose.g:3489:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalDockerCompose.g:3490:4: (lv_name_1_0= ruleEString )
             {
-            // InternalDockerCompose.g:3221:4: (lv_name_1_0= ruleEString )
-            // InternalDockerCompose.g:3222:5: lv_name_1_0= ruleEString
+            // InternalDockerCompose.g:3490:4: (lv_name_1_0= ruleEString )
+            // InternalDockerCompose.g:3491:5: lv_name_1_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getConfigAccess().getNameEStringParserRuleCall_1_0());
@@ -8955,78 +9637,78 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,21,FOLLOW_48); 
+            otherlv_2=(Token)match(input,22,FOLLOW_52); 
 
             			newLeafNode(otherlv_2, grammarAccess.getConfigAccess().getColonKeyword_2());
             		
-            // InternalDockerCompose.g:3243:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) ) ) )* ) ) )
-            // InternalDockerCompose.g:3244:4: ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) ) ) )* ) )
+            // InternalDockerCompose.g:3512:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) ) ) )* ) ) )
+            // InternalDockerCompose.g:3513:4: ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) ) ) )* ) )
             {
-            // InternalDockerCompose.g:3244:4: ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) ) ) )* ) )
-            // InternalDockerCompose.g:3245:5: ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) ) ) )* )
+            // InternalDockerCompose.g:3513:4: ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) ) ) )* ) )
+            // InternalDockerCompose.g:3514:5: ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) ) ) )* )
             {
              
             				  getUnorderedGroupHelper().enter(grammarAccess.getConfigAccess().getUnorderedGroup_3());
             				
-            // InternalDockerCompose.g:3248:5: ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) ) ) )* )
-            // InternalDockerCompose.g:3249:6: ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) ) ) )*
+            // InternalDockerCompose.g:3517:5: ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) ) ) )* )
+            // InternalDockerCompose.g:3518:6: ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) ) ) )*
             {
-            // InternalDockerCompose.g:3249:6: ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) ) ) )*
-            loop45:
+            // InternalDockerCompose.g:3518:6: ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) ) ) )*
+            loop54:
             do {
-                int alt45=4;
-                int LA45_0 = input.LA(1);
+                int alt54=4;
+                int LA54_0 = input.LA(1);
 
-                if ( LA45_0 == 59 && getUnorderedGroupHelper().canSelect(grammarAccess.getConfigAccess().getUnorderedGroup_3(), 0) ) {
-                    alt45=1;
+                if ( LA54_0 == 64 && getUnorderedGroupHelper().canSelect(grammarAccess.getConfigAccess().getUnorderedGroup_3(), 0) ) {
+                    alt54=1;
                 }
-                else if ( LA45_0 == 64 && getUnorderedGroupHelper().canSelect(grammarAccess.getConfigAccess().getUnorderedGroup_3(), 1) ) {
-                    alt45=2;
+                else if ( LA54_0 == 69 && getUnorderedGroupHelper().canSelect(grammarAccess.getConfigAccess().getUnorderedGroup_3(), 1) ) {
+                    alt54=2;
                 }
-                else if ( LA45_0 == 60 && getUnorderedGroupHelper().canSelect(grammarAccess.getConfigAccess().getUnorderedGroup_3(), 2) ) {
-                    alt45=3;
+                else if ( LA54_0 == 65 && getUnorderedGroupHelper().canSelect(grammarAccess.getConfigAccess().getUnorderedGroup_3(), 2) ) {
+                    alt54=3;
                 }
 
 
-                switch (alt45) {
+                switch (alt54) {
             	case 1 :
-            	    // InternalDockerCompose.g:3250:4: ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) )
+            	    // InternalDockerCompose.g:3519:4: ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:3250:4: ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) )
-            	    // InternalDockerCompose.g:3251:5: {...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) )
+            	    // InternalDockerCompose.g:3519:4: ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) )
+            	    // InternalDockerCompose.g:3520:5: {...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getConfigAccess().getUnorderedGroup_3(), 0) ) {
             	        throw new FailedPredicateException(input, "ruleConfig", "getUnorderedGroupHelper().canSelect(grammarAccess.getConfigAccess().getUnorderedGroup_3(), 0)");
             	    }
-            	    // InternalDockerCompose.g:3251:103: ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) )
-            	    // InternalDockerCompose.g:3252:6: ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) )
+            	    // InternalDockerCompose.g:3520:103: ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) )
+            	    // InternalDockerCompose.g:3521:6: ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getConfigAccess().getUnorderedGroup_3(), 0);
             	    					
-            	    // InternalDockerCompose.g:3255:9: ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) )
-            	    // InternalDockerCompose.g:3255:10: {...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) )
+            	    // InternalDockerCompose.g:3524:9: ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) )
+            	    // InternalDockerCompose.g:3524:10: {...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleConfig", "true");
             	    }
-            	    // InternalDockerCompose.g:3255:19: (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) )
-            	    // InternalDockerCompose.g:3255:20: otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) )
+            	    // InternalDockerCompose.g:3524:19: (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) )
+            	    // InternalDockerCompose.g:3524:20: otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) )
             	    {
-            	    otherlv_4=(Token)match(input,59,FOLLOW_13); 
+            	    otherlv_4=(Token)match(input,64,FOLLOW_14); 
 
             	    									newLeafNode(otherlv_4, grammarAccess.getConfigAccess().getExternalKeyword_3_0_0());
             	    								
-            	    // InternalDockerCompose.g:3259:9: ( (lv_external_5_0= ruleEBoolean ) )
-            	    // InternalDockerCompose.g:3260:10: (lv_external_5_0= ruleEBoolean )
+            	    // InternalDockerCompose.g:3528:9: ( (lv_external_5_0= ruleEBoolean ) )
+            	    // InternalDockerCompose.g:3529:10: (lv_external_5_0= ruleEBoolean )
             	    {
-            	    // InternalDockerCompose.g:3260:10: (lv_external_5_0= ruleEBoolean )
-            	    // InternalDockerCompose.g:3261:11: lv_external_5_0= ruleEBoolean
+            	    // InternalDockerCompose.g:3529:10: (lv_external_5_0= ruleEBoolean )
+            	    // InternalDockerCompose.g:3530:11: lv_external_5_0= ruleEBoolean
             	    {
 
             	    											newCompositeNode(grammarAccess.getConfigAccess().getExternalEBooleanParserRuleCall_3_0_1_0());
             	    										
-            	    pushFollow(FOLLOW_48);
+            	    pushFollow(FOLLOW_52);
             	    lv_external_5_0=ruleEBoolean();
 
             	    state._fsp--;
@@ -9067,43 +9749,43 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // InternalDockerCompose.g:3284:4: ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) )
+            	    // InternalDockerCompose.g:3553:4: ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:3284:4: ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) )
-            	    // InternalDockerCompose.g:3285:5: {...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) )
+            	    // InternalDockerCompose.g:3553:4: ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) )
+            	    // InternalDockerCompose.g:3554:5: {...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getConfigAccess().getUnorderedGroup_3(), 1) ) {
             	        throw new FailedPredicateException(input, "ruleConfig", "getUnorderedGroupHelper().canSelect(grammarAccess.getConfigAccess().getUnorderedGroup_3(), 1)");
             	    }
-            	    // InternalDockerCompose.g:3285:103: ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) )
-            	    // InternalDockerCompose.g:3286:6: ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) )
+            	    // InternalDockerCompose.g:3554:103: ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) )
+            	    // InternalDockerCompose.g:3555:6: ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getConfigAccess().getUnorderedGroup_3(), 1);
             	    					
-            	    // InternalDockerCompose.g:3289:9: ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) )
-            	    // InternalDockerCompose.g:3289:10: {...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) )
+            	    // InternalDockerCompose.g:3558:9: ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) )
+            	    // InternalDockerCompose.g:3558:10: {...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleConfig", "true");
             	    }
-            	    // InternalDockerCompose.g:3289:19: (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) )
-            	    // InternalDockerCompose.g:3289:20: otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) )
+            	    // InternalDockerCompose.g:3558:19: (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) )
+            	    // InternalDockerCompose.g:3558:20: otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) )
             	    {
-            	    otherlv_6=(Token)match(input,64,FOLLOW_5); 
+            	    otherlv_6=(Token)match(input,69,FOLLOW_5); 
 
             	    									newLeafNode(otherlv_6, grammarAccess.getConfigAccess().getFileKeyword_3_1_0());
             	    								
-            	    // InternalDockerCompose.g:3293:9: ( (lv_file_7_0= ruleEString ) )
-            	    // InternalDockerCompose.g:3294:10: (lv_file_7_0= ruleEString )
+            	    // InternalDockerCompose.g:3562:9: ( (lv_file_7_0= ruleEString ) )
+            	    // InternalDockerCompose.g:3563:10: (lv_file_7_0= ruleEString )
             	    {
-            	    // InternalDockerCompose.g:3294:10: (lv_file_7_0= ruleEString )
-            	    // InternalDockerCompose.g:3295:11: lv_file_7_0= ruleEString
+            	    // InternalDockerCompose.g:3563:10: (lv_file_7_0= ruleEString )
+            	    // InternalDockerCompose.g:3564:11: lv_file_7_0= ruleEString
             	    {
 
             	    											newCompositeNode(grammarAccess.getConfigAccess().getFileEStringParserRuleCall_3_1_1_0());
             	    										
-            	    pushFollow(FOLLOW_48);
+            	    pushFollow(FOLLOW_52);
             	    lv_file_7_0=ruleEString();
 
             	    state._fsp--;
@@ -9144,43 +9826,43 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 3 :
-            	    // InternalDockerCompose.g:3318:4: ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) ) )
+            	    // InternalDockerCompose.g:3587:4: ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:3318:4: ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) ) )
-            	    // InternalDockerCompose.g:3319:5: {...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) )
+            	    // InternalDockerCompose.g:3587:4: ({...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) ) )
+            	    // InternalDockerCompose.g:3588:5: {...}? => ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getConfigAccess().getUnorderedGroup_3(), 2) ) {
             	        throw new FailedPredicateException(input, "ruleConfig", "getUnorderedGroupHelper().canSelect(grammarAccess.getConfigAccess().getUnorderedGroup_3(), 2)");
             	    }
-            	    // InternalDockerCompose.g:3319:103: ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) )
-            	    // InternalDockerCompose.g:3320:6: ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) )
+            	    // InternalDockerCompose.g:3588:103: ( ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) ) )
+            	    // InternalDockerCompose.g:3589:6: ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getConfigAccess().getUnorderedGroup_3(), 2);
             	    					
-            	    // InternalDockerCompose.g:3323:9: ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) )
-            	    // InternalDockerCompose.g:3323:10: {...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) )
+            	    // InternalDockerCompose.g:3592:9: ({...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) ) )
+            	    // InternalDockerCompose.g:3592:10: {...}? => (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleConfig", "true");
             	    }
-            	    // InternalDockerCompose.g:3323:19: (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) )
-            	    // InternalDockerCompose.g:3323:20: otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) )
+            	    // InternalDockerCompose.g:3592:19: (otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) ) )
+            	    // InternalDockerCompose.g:3592:20: otherlv_8= 'name:' ( (lv_config_name_9_0= ruleEString ) )
             	    {
-            	    otherlv_8=(Token)match(input,60,FOLLOW_5); 
+            	    otherlv_8=(Token)match(input,65,FOLLOW_5); 
 
             	    									newLeafNode(otherlv_8, grammarAccess.getConfigAccess().getNameKeyword_3_2_0());
             	    								
-            	    // InternalDockerCompose.g:3327:9: ( (lv_config_name_9_0= ruleEString ) )
-            	    // InternalDockerCompose.g:3328:10: (lv_config_name_9_0= ruleEString )
+            	    // InternalDockerCompose.g:3596:9: ( (lv_config_name_9_0= ruleEString ) )
+            	    // InternalDockerCompose.g:3597:10: (lv_config_name_9_0= ruleEString )
             	    {
-            	    // InternalDockerCompose.g:3328:10: (lv_config_name_9_0= ruleEString )
-            	    // InternalDockerCompose.g:3329:11: lv_config_name_9_0= ruleEString
+            	    // InternalDockerCompose.g:3597:10: (lv_config_name_9_0= ruleEString )
+            	    // InternalDockerCompose.g:3598:11: lv_config_name_9_0= ruleEString
             	    {
 
             	    											newCompositeNode(grammarAccess.getConfigAccess().getConfig_nameEStringParserRuleCall_3_2_1_0());
             	    										
-            	    pushFollow(FOLLOW_48);
+            	    pushFollow(FOLLOW_52);
             	    lv_config_name_9_0=ruleEString();
 
             	    state._fsp--;
@@ -9222,7 +9904,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop45;
+            	    break loop54;
                 }
             } while (true);
 
@@ -9261,7 +9943,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSecret"
-    // InternalDockerCompose.g:3363:1: entryRuleSecret returns [EObject current=null] : iv_ruleSecret= ruleSecret EOF ;
+    // InternalDockerCompose.g:3632:1: entryRuleSecret returns [EObject current=null] : iv_ruleSecret= ruleSecret EOF ;
     public final EObject entryRuleSecret() throws RecognitionException {
         EObject current = null;
 
@@ -9269,8 +9951,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:3363:47: (iv_ruleSecret= ruleSecret EOF )
-            // InternalDockerCompose.g:3364:2: iv_ruleSecret= ruleSecret EOF
+            // InternalDockerCompose.g:3632:47: (iv_ruleSecret= ruleSecret EOF )
+            // InternalDockerCompose.g:3633:2: iv_ruleSecret= ruleSecret EOF
             {
              newCompositeNode(grammarAccess.getSecretRule()); 
             pushFollow(FOLLOW_1);
@@ -9297,7 +9979,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSecret"
-    // InternalDockerCompose.g:3370:1: ruleSecret returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) ) ) )* ) ) ) ) ;
+    // InternalDockerCompose.g:3639:1: ruleSecret returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) ) ) )* ) ) ) ) ;
     public final EObject ruleSecret() throws RecognitionException {
         EObject current = null;
 
@@ -9321,14 +10003,14 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:3376:2: ( ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) ) ) )* ) ) ) ) )
-            // InternalDockerCompose.g:3377:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) ) ) )* ) ) ) )
+            // InternalDockerCompose.g:3645:2: ( ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) ) ) )* ) ) ) ) )
+            // InternalDockerCompose.g:3646:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) ) ) )* ) ) ) )
             {
-            // InternalDockerCompose.g:3377:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) ) ) )* ) ) ) )
-            // InternalDockerCompose.g:3378:3: () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) ) ) )* ) ) )
+            // InternalDockerCompose.g:3646:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) ) ) )* ) ) ) )
+            // InternalDockerCompose.g:3647:3: () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) ) ) )* ) ) )
             {
-            // InternalDockerCompose.g:3378:3: ()
-            // InternalDockerCompose.g:3379:4: 
+            // InternalDockerCompose.g:3647:3: ()
+            // InternalDockerCompose.g:3648:4: 
             {
 
             				current = forceCreateModelElement(
@@ -9338,11 +10020,11 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDockerCompose.g:3385:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalDockerCompose.g:3386:4: (lv_name_1_0= ruleEString )
+            // InternalDockerCompose.g:3654:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalDockerCompose.g:3655:4: (lv_name_1_0= ruleEString )
             {
-            // InternalDockerCompose.g:3386:4: (lv_name_1_0= ruleEString )
-            // InternalDockerCompose.g:3387:5: lv_name_1_0= ruleEString
+            // InternalDockerCompose.g:3655:4: (lv_name_1_0= ruleEString )
+            // InternalDockerCompose.g:3656:5: lv_name_1_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getSecretAccess().getNameEStringParserRuleCall_1_0());
@@ -9369,81 +10051,81 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,21,FOLLOW_49); 
+            otherlv_2=(Token)match(input,22,FOLLOW_53); 
 
             			newLeafNode(otherlv_2, grammarAccess.getSecretAccess().getColonKeyword_2());
             		
-            // InternalDockerCompose.g:3408:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) ) ) )* ) ) )
-            // InternalDockerCompose.g:3409:4: ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) ) ) )* ) )
+            // InternalDockerCompose.g:3677:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) ) ) )* ) ) )
+            // InternalDockerCompose.g:3678:4: ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) ) ) )* ) )
             {
-            // InternalDockerCompose.g:3409:4: ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) ) ) )* ) )
-            // InternalDockerCompose.g:3410:5: ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) ) ) )* )
+            // InternalDockerCompose.g:3678:4: ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) ) ) )* ) )
+            // InternalDockerCompose.g:3679:5: ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) ) ) )* )
             {
              
             				  getUnorderedGroupHelper().enter(grammarAccess.getSecretAccess().getUnorderedGroup_3());
             				
-            // InternalDockerCompose.g:3413:5: ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) ) ) )* )
-            // InternalDockerCompose.g:3414:6: ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) ) ) )*
+            // InternalDockerCompose.g:3682:5: ( ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) ) ) )* )
+            // InternalDockerCompose.g:3683:6: ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) ) ) )*
             {
-            // InternalDockerCompose.g:3414:6: ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) ) ) )*
-            loop46:
+            // InternalDockerCompose.g:3683:6: ( ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) ) ) )*
+            loop55:
             do {
-                int alt46=5;
-                int LA46_0 = input.LA(1);
+                int alt55=5;
+                int LA55_0 = input.LA(1);
 
-                if ( LA46_0 == 59 && getUnorderedGroupHelper().canSelect(grammarAccess.getSecretAccess().getUnorderedGroup_3(), 0) ) {
-                    alt46=1;
+                if ( LA55_0 == 64 && getUnorderedGroupHelper().canSelect(grammarAccess.getSecretAccess().getUnorderedGroup_3(), 0) ) {
+                    alt55=1;
                 }
-                else if ( LA46_0 == 64 && getUnorderedGroupHelper().canSelect(grammarAccess.getSecretAccess().getUnorderedGroup_3(), 1) ) {
-                    alt46=2;
+                else if ( LA55_0 == 69 && getUnorderedGroupHelper().canSelect(grammarAccess.getSecretAccess().getUnorderedGroup_3(), 1) ) {
+                    alt55=2;
                 }
-                else if ( LA46_0 == 65 && getUnorderedGroupHelper().canSelect(grammarAccess.getSecretAccess().getUnorderedGroup_3(), 2) ) {
-                    alt46=3;
+                else if ( LA55_0 == 34 && getUnorderedGroupHelper().canSelect(grammarAccess.getSecretAccess().getUnorderedGroup_3(), 2) ) {
+                    alt55=3;
                 }
-                else if ( LA46_0 == 60 && getUnorderedGroupHelper().canSelect(grammarAccess.getSecretAccess().getUnorderedGroup_3(), 3) ) {
-                    alt46=4;
+                else if ( LA55_0 == 65 && getUnorderedGroupHelper().canSelect(grammarAccess.getSecretAccess().getUnorderedGroup_3(), 3) ) {
+                    alt55=4;
                 }
 
 
-                switch (alt46) {
+                switch (alt55) {
             	case 1 :
-            	    // InternalDockerCompose.g:3415:4: ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) )
+            	    // InternalDockerCompose.g:3684:4: ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:3415:4: ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) )
-            	    // InternalDockerCompose.g:3416:5: {...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) )
+            	    // InternalDockerCompose.g:3684:4: ({...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) ) )
+            	    // InternalDockerCompose.g:3685:5: {...}? => ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getSecretAccess().getUnorderedGroup_3(), 0) ) {
             	        throw new FailedPredicateException(input, "ruleSecret", "getUnorderedGroupHelper().canSelect(grammarAccess.getSecretAccess().getUnorderedGroup_3(), 0)");
             	    }
-            	    // InternalDockerCompose.g:3416:103: ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) )
-            	    // InternalDockerCompose.g:3417:6: ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) )
+            	    // InternalDockerCompose.g:3685:103: ( ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) ) )
+            	    // InternalDockerCompose.g:3686:6: ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getSecretAccess().getUnorderedGroup_3(), 0);
             	    					
-            	    // InternalDockerCompose.g:3420:9: ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) )
-            	    // InternalDockerCompose.g:3420:10: {...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) )
+            	    // InternalDockerCompose.g:3689:9: ({...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) ) )
+            	    // InternalDockerCompose.g:3689:10: {...}? => (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleSecret", "true");
             	    }
-            	    // InternalDockerCompose.g:3420:19: (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) )
-            	    // InternalDockerCompose.g:3420:20: otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) )
+            	    // InternalDockerCompose.g:3689:19: (otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) ) )
+            	    // InternalDockerCompose.g:3689:20: otherlv_4= 'external:' ( (lv_external_5_0= ruleEBoolean ) )
             	    {
-            	    otherlv_4=(Token)match(input,59,FOLLOW_13); 
+            	    otherlv_4=(Token)match(input,64,FOLLOW_14); 
 
             	    									newLeafNode(otherlv_4, grammarAccess.getSecretAccess().getExternalKeyword_3_0_0());
             	    								
-            	    // InternalDockerCompose.g:3424:9: ( (lv_external_5_0= ruleEBoolean ) )
-            	    // InternalDockerCompose.g:3425:10: (lv_external_5_0= ruleEBoolean )
+            	    // InternalDockerCompose.g:3693:9: ( (lv_external_5_0= ruleEBoolean ) )
+            	    // InternalDockerCompose.g:3694:10: (lv_external_5_0= ruleEBoolean )
             	    {
-            	    // InternalDockerCompose.g:3425:10: (lv_external_5_0= ruleEBoolean )
-            	    // InternalDockerCompose.g:3426:11: lv_external_5_0= ruleEBoolean
+            	    // InternalDockerCompose.g:3694:10: (lv_external_5_0= ruleEBoolean )
+            	    // InternalDockerCompose.g:3695:11: lv_external_5_0= ruleEBoolean
             	    {
 
             	    											newCompositeNode(grammarAccess.getSecretAccess().getExternalEBooleanParserRuleCall_3_0_1_0());
             	    										
-            	    pushFollow(FOLLOW_49);
+            	    pushFollow(FOLLOW_53);
             	    lv_external_5_0=ruleEBoolean();
 
             	    state._fsp--;
@@ -9484,43 +10166,43 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // InternalDockerCompose.g:3449:4: ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) )
+            	    // InternalDockerCompose.g:3718:4: ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:3449:4: ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) )
-            	    // InternalDockerCompose.g:3450:5: {...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) )
+            	    // InternalDockerCompose.g:3718:4: ({...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) ) )
+            	    // InternalDockerCompose.g:3719:5: {...}? => ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getSecretAccess().getUnorderedGroup_3(), 1) ) {
             	        throw new FailedPredicateException(input, "ruleSecret", "getUnorderedGroupHelper().canSelect(grammarAccess.getSecretAccess().getUnorderedGroup_3(), 1)");
             	    }
-            	    // InternalDockerCompose.g:3450:103: ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) )
-            	    // InternalDockerCompose.g:3451:6: ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) )
+            	    // InternalDockerCompose.g:3719:103: ( ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) ) )
+            	    // InternalDockerCompose.g:3720:6: ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getSecretAccess().getUnorderedGroup_3(), 1);
             	    					
-            	    // InternalDockerCompose.g:3454:9: ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) )
-            	    // InternalDockerCompose.g:3454:10: {...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) )
+            	    // InternalDockerCompose.g:3723:9: ({...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) ) )
+            	    // InternalDockerCompose.g:3723:10: {...}? => (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleSecret", "true");
             	    }
-            	    // InternalDockerCompose.g:3454:19: (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) )
-            	    // InternalDockerCompose.g:3454:20: otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) )
+            	    // InternalDockerCompose.g:3723:19: (otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) ) )
+            	    // InternalDockerCompose.g:3723:20: otherlv_6= 'file:' ( (lv_file_7_0= ruleEString ) )
             	    {
-            	    otherlv_6=(Token)match(input,64,FOLLOW_5); 
+            	    otherlv_6=(Token)match(input,69,FOLLOW_5); 
 
             	    									newLeafNode(otherlv_6, grammarAccess.getSecretAccess().getFileKeyword_3_1_0());
             	    								
-            	    // InternalDockerCompose.g:3458:9: ( (lv_file_7_0= ruleEString ) )
-            	    // InternalDockerCompose.g:3459:10: (lv_file_7_0= ruleEString )
+            	    // InternalDockerCompose.g:3727:9: ( (lv_file_7_0= ruleEString ) )
+            	    // InternalDockerCompose.g:3728:10: (lv_file_7_0= ruleEString )
             	    {
-            	    // InternalDockerCompose.g:3459:10: (lv_file_7_0= ruleEString )
-            	    // InternalDockerCompose.g:3460:11: lv_file_7_0= ruleEString
+            	    // InternalDockerCompose.g:3728:10: (lv_file_7_0= ruleEString )
+            	    // InternalDockerCompose.g:3729:11: lv_file_7_0= ruleEString
             	    {
 
             	    											newCompositeNode(grammarAccess.getSecretAccess().getFileEStringParserRuleCall_3_1_1_0());
             	    										
-            	    pushFollow(FOLLOW_49);
+            	    pushFollow(FOLLOW_53);
             	    lv_file_7_0=ruleEString();
 
             	    state._fsp--;
@@ -9561,43 +10243,43 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 3 :
-            	    // InternalDockerCompose.g:3483:4: ({...}? => ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) ) )
+            	    // InternalDockerCompose.g:3752:4: ({...}? => ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:3483:4: ({...}? => ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) ) )
-            	    // InternalDockerCompose.g:3484:5: {...}? => ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) )
+            	    // InternalDockerCompose.g:3752:4: ({...}? => ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) ) )
+            	    // InternalDockerCompose.g:3753:5: {...}? => ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getSecretAccess().getUnorderedGroup_3(), 2) ) {
             	        throw new FailedPredicateException(input, "ruleSecret", "getUnorderedGroupHelper().canSelect(grammarAccess.getSecretAccess().getUnorderedGroup_3(), 2)");
             	    }
-            	    // InternalDockerCompose.g:3484:103: ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) )
-            	    // InternalDockerCompose.g:3485:6: ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) )
+            	    // InternalDockerCompose.g:3753:103: ( ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) ) )
+            	    // InternalDockerCompose.g:3754:6: ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getSecretAccess().getUnorderedGroup_3(), 2);
             	    					
-            	    // InternalDockerCompose.g:3488:9: ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) )
-            	    // InternalDockerCompose.g:3488:10: {...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) )
+            	    // InternalDockerCompose.g:3757:9: ({...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) ) )
+            	    // InternalDockerCompose.g:3757:10: {...}? => (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleSecret", "true");
             	    }
-            	    // InternalDockerCompose.g:3488:19: (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) )
-            	    // InternalDockerCompose.g:3488:20: otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) )
+            	    // InternalDockerCompose.g:3757:19: (otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) ) )
+            	    // InternalDockerCompose.g:3757:20: otherlv_8= 'environment:' ( (lv_environment_9_0= ruleEString ) )
             	    {
-            	    otherlv_8=(Token)match(input,65,FOLLOW_5); 
+            	    otherlv_8=(Token)match(input,34,FOLLOW_5); 
 
             	    									newLeafNode(otherlv_8, grammarAccess.getSecretAccess().getEnvironmentKeyword_3_2_0());
             	    								
-            	    // InternalDockerCompose.g:3492:9: ( (lv_environment_9_0= ruleEString ) )
-            	    // InternalDockerCompose.g:3493:10: (lv_environment_9_0= ruleEString )
+            	    // InternalDockerCompose.g:3761:9: ( (lv_environment_9_0= ruleEString ) )
+            	    // InternalDockerCompose.g:3762:10: (lv_environment_9_0= ruleEString )
             	    {
-            	    // InternalDockerCompose.g:3493:10: (lv_environment_9_0= ruleEString )
-            	    // InternalDockerCompose.g:3494:11: lv_environment_9_0= ruleEString
+            	    // InternalDockerCompose.g:3762:10: (lv_environment_9_0= ruleEString )
+            	    // InternalDockerCompose.g:3763:11: lv_environment_9_0= ruleEString
             	    {
 
             	    											newCompositeNode(grammarAccess.getSecretAccess().getEnvironmentEStringParserRuleCall_3_2_1_0());
             	    										
-            	    pushFollow(FOLLOW_49);
+            	    pushFollow(FOLLOW_53);
             	    lv_environment_9_0=ruleEString();
 
             	    state._fsp--;
@@ -9638,43 +10320,43 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 4 :
-            	    // InternalDockerCompose.g:3517:4: ({...}? => ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) ) )
+            	    // InternalDockerCompose.g:3786:4: ({...}? => ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:3517:4: ({...}? => ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) ) )
-            	    // InternalDockerCompose.g:3518:5: {...}? => ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) )
+            	    // InternalDockerCompose.g:3786:4: ({...}? => ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) ) )
+            	    // InternalDockerCompose.g:3787:5: {...}? => ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getSecretAccess().getUnorderedGroup_3(), 3) ) {
             	        throw new FailedPredicateException(input, "ruleSecret", "getUnorderedGroupHelper().canSelect(grammarAccess.getSecretAccess().getUnorderedGroup_3(), 3)");
             	    }
-            	    // InternalDockerCompose.g:3518:103: ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) )
-            	    // InternalDockerCompose.g:3519:6: ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) )
+            	    // InternalDockerCompose.g:3787:103: ( ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) ) )
+            	    // InternalDockerCompose.g:3788:6: ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getSecretAccess().getUnorderedGroup_3(), 3);
             	    					
-            	    // InternalDockerCompose.g:3522:9: ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) )
-            	    // InternalDockerCompose.g:3522:10: {...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) )
+            	    // InternalDockerCompose.g:3791:9: ({...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) ) )
+            	    // InternalDockerCompose.g:3791:10: {...}? => (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleSecret", "true");
             	    }
-            	    // InternalDockerCompose.g:3522:19: (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) )
-            	    // InternalDockerCompose.g:3522:20: otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) )
+            	    // InternalDockerCompose.g:3791:19: (otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) ) )
+            	    // InternalDockerCompose.g:3791:20: otherlv_10= 'name:' ( (lv_secret_name_11_0= ruleEString ) )
             	    {
-            	    otherlv_10=(Token)match(input,60,FOLLOW_5); 
+            	    otherlv_10=(Token)match(input,65,FOLLOW_5); 
 
             	    									newLeafNode(otherlv_10, grammarAccess.getSecretAccess().getNameKeyword_3_3_0());
             	    								
-            	    // InternalDockerCompose.g:3526:9: ( (lv_secret_name_11_0= ruleEString ) )
-            	    // InternalDockerCompose.g:3527:10: (lv_secret_name_11_0= ruleEString )
+            	    // InternalDockerCompose.g:3795:9: ( (lv_secret_name_11_0= ruleEString ) )
+            	    // InternalDockerCompose.g:3796:10: (lv_secret_name_11_0= ruleEString )
             	    {
-            	    // InternalDockerCompose.g:3527:10: (lv_secret_name_11_0= ruleEString )
-            	    // InternalDockerCompose.g:3528:11: lv_secret_name_11_0= ruleEString
+            	    // InternalDockerCompose.g:3796:10: (lv_secret_name_11_0= ruleEString )
+            	    // InternalDockerCompose.g:3797:11: lv_secret_name_11_0= ruleEString
             	    {
 
             	    											newCompositeNode(grammarAccess.getSecretAccess().getSecret_nameEStringParserRuleCall_3_3_1_0());
             	    										
-            	    pushFollow(FOLLOW_49);
+            	    pushFollow(FOLLOW_53);
             	    lv_secret_name_11_0=ruleEString();
 
             	    state._fsp--;
@@ -9716,7 +10398,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop46;
+            	    break loop55;
                 }
             } while (true);
 
@@ -9755,7 +10437,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVolumeLabel"
-    // InternalDockerCompose.g:3562:1: entryRuleVolumeLabel returns [EObject current=null] : iv_ruleVolumeLabel= ruleVolumeLabel EOF ;
+    // InternalDockerCompose.g:3831:1: entryRuleVolumeLabel returns [EObject current=null] : iv_ruleVolumeLabel= ruleVolumeLabel EOF ;
     public final EObject entryRuleVolumeLabel() throws RecognitionException {
         EObject current = null;
 
@@ -9763,8 +10445,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:3562:52: (iv_ruleVolumeLabel= ruleVolumeLabel EOF )
-            // InternalDockerCompose.g:3563:2: iv_ruleVolumeLabel= ruleVolumeLabel EOF
+            // InternalDockerCompose.g:3831:52: (iv_ruleVolumeLabel= ruleVolumeLabel EOF )
+            // InternalDockerCompose.g:3832:2: iv_ruleVolumeLabel= ruleVolumeLabel EOF
             {
              newCompositeNode(grammarAccess.getVolumeLabelRule()); 
             pushFollow(FOLLOW_1);
@@ -9791,7 +10473,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVolumeLabel"
-    // InternalDockerCompose.g:3569:1: ruleVolumeLabel returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) ) ;
+    // InternalDockerCompose.g:3838:1: ruleVolumeLabel returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) ) ;
     public final EObject ruleVolumeLabel() throws RecognitionException {
         EObject current = null;
 
@@ -9805,14 +10487,14 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:3575:2: ( ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) ) )
-            // InternalDockerCompose.g:3576:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) )
+            // InternalDockerCompose.g:3844:2: ( ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) ) )
+            // InternalDockerCompose.g:3845:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) )
             {
-            // InternalDockerCompose.g:3576:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) )
-            // InternalDockerCompose.g:3577:3: () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) )
+            // InternalDockerCompose.g:3845:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) )
+            // InternalDockerCompose.g:3846:3: () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) )
             {
-            // InternalDockerCompose.g:3577:3: ()
-            // InternalDockerCompose.g:3578:4: 
+            // InternalDockerCompose.g:3846:3: ()
+            // InternalDockerCompose.g:3847:4: 
             {
 
             				current = forceCreateModelElement(
@@ -9822,11 +10504,11 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDockerCompose.g:3584:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalDockerCompose.g:3585:4: (lv_name_1_0= ruleEString )
+            // InternalDockerCompose.g:3853:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalDockerCompose.g:3854:4: (lv_name_1_0= ruleEString )
             {
-            // InternalDockerCompose.g:3585:4: (lv_name_1_0= ruleEString )
-            // InternalDockerCompose.g:3586:5: lv_name_1_0= ruleEString
+            // InternalDockerCompose.g:3854:4: (lv_name_1_0= ruleEString )
+            // InternalDockerCompose.g:3855:5: lv_name_1_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getVolumeLabelAccess().getNameEStringParserRuleCall_1_0());
@@ -9853,15 +10535,15 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,21,FOLLOW_5); 
+            otherlv_2=(Token)match(input,22,FOLLOW_5); 
 
             			newLeafNode(otherlv_2, grammarAccess.getVolumeLabelAccess().getColonKeyword_2());
             		
-            // InternalDockerCompose.g:3607:3: ( (lv_value_3_0= ruleEString ) )
-            // InternalDockerCompose.g:3608:4: (lv_value_3_0= ruleEString )
+            // InternalDockerCompose.g:3876:3: ( (lv_value_3_0= ruleEString ) )
+            // InternalDockerCompose.g:3877:4: (lv_value_3_0= ruleEString )
             {
-            // InternalDockerCompose.g:3608:4: (lv_value_3_0= ruleEString )
-            // InternalDockerCompose.g:3609:5: lv_value_3_0= ruleEString
+            // InternalDockerCompose.g:3877:4: (lv_value_3_0= ruleEString )
+            // InternalDockerCompose.g:3878:5: lv_value_3_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getVolumeLabelAccess().getValueEStringParserRuleCall_3_0());
@@ -9911,7 +10593,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVolumeDriverOpt"
-    // InternalDockerCompose.g:3630:1: entryRuleVolumeDriverOpt returns [EObject current=null] : iv_ruleVolumeDriverOpt= ruleVolumeDriverOpt EOF ;
+    // InternalDockerCompose.g:3899:1: entryRuleVolumeDriverOpt returns [EObject current=null] : iv_ruleVolumeDriverOpt= ruleVolumeDriverOpt EOF ;
     public final EObject entryRuleVolumeDriverOpt() throws RecognitionException {
         EObject current = null;
 
@@ -9919,8 +10601,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:3630:56: (iv_ruleVolumeDriverOpt= ruleVolumeDriverOpt EOF )
-            // InternalDockerCompose.g:3631:2: iv_ruleVolumeDriverOpt= ruleVolumeDriverOpt EOF
+            // InternalDockerCompose.g:3899:56: (iv_ruleVolumeDriverOpt= ruleVolumeDriverOpt EOF )
+            // InternalDockerCompose.g:3900:2: iv_ruleVolumeDriverOpt= ruleVolumeDriverOpt EOF
             {
              newCompositeNode(grammarAccess.getVolumeDriverOptRule()); 
             pushFollow(FOLLOW_1);
@@ -9947,7 +10629,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVolumeDriverOpt"
-    // InternalDockerCompose.g:3637:1: ruleVolumeDriverOpt returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) ) ;
+    // InternalDockerCompose.g:3906:1: ruleVolumeDriverOpt returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) ) ;
     public final EObject ruleVolumeDriverOpt() throws RecognitionException {
         EObject current = null;
 
@@ -9961,14 +10643,14 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:3643:2: ( ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) ) )
-            // InternalDockerCompose.g:3644:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) )
+            // InternalDockerCompose.g:3912:2: ( ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) ) )
+            // InternalDockerCompose.g:3913:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) )
             {
-            // InternalDockerCompose.g:3644:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) )
-            // InternalDockerCompose.g:3645:3: () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) )
+            // InternalDockerCompose.g:3913:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) )
+            // InternalDockerCompose.g:3914:3: () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) )
             {
-            // InternalDockerCompose.g:3645:3: ()
-            // InternalDockerCompose.g:3646:4: 
+            // InternalDockerCompose.g:3914:3: ()
+            // InternalDockerCompose.g:3915:4: 
             {
 
             				current = forceCreateModelElement(
@@ -9978,11 +10660,11 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDockerCompose.g:3652:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalDockerCompose.g:3653:4: (lv_name_1_0= ruleEString )
+            // InternalDockerCompose.g:3921:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalDockerCompose.g:3922:4: (lv_name_1_0= ruleEString )
             {
-            // InternalDockerCompose.g:3653:4: (lv_name_1_0= ruleEString )
-            // InternalDockerCompose.g:3654:5: lv_name_1_0= ruleEString
+            // InternalDockerCompose.g:3922:4: (lv_name_1_0= ruleEString )
+            // InternalDockerCompose.g:3923:5: lv_name_1_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getVolumeDriverOptAccess().getNameEStringParserRuleCall_1_0());
@@ -10009,15 +10691,15 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,21,FOLLOW_5); 
+            otherlv_2=(Token)match(input,22,FOLLOW_5); 
 
             			newLeafNode(otherlv_2, grammarAccess.getVolumeDriverOptAccess().getColonKeyword_2());
             		
-            // InternalDockerCompose.g:3675:3: ( (lv_value_3_0= ruleEString ) )
-            // InternalDockerCompose.g:3676:4: (lv_value_3_0= ruleEString )
+            // InternalDockerCompose.g:3944:3: ( (lv_value_3_0= ruleEString ) )
+            // InternalDockerCompose.g:3945:4: (lv_value_3_0= ruleEString )
             {
-            // InternalDockerCompose.g:3676:4: (lv_value_3_0= ruleEString )
-            // InternalDockerCompose.g:3677:5: lv_value_3_0= ruleEString
+            // InternalDockerCompose.g:3945:4: (lv_value_3_0= ruleEString )
+            // InternalDockerCompose.g:3946:5: lv_value_3_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getVolumeDriverOptAccess().getValueEStringParserRuleCall_3_0());
@@ -10067,7 +10749,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNetworkLabel"
-    // InternalDockerCompose.g:3698:1: entryRuleNetworkLabel returns [EObject current=null] : iv_ruleNetworkLabel= ruleNetworkLabel EOF ;
+    // InternalDockerCompose.g:3967:1: entryRuleNetworkLabel returns [EObject current=null] : iv_ruleNetworkLabel= ruleNetworkLabel EOF ;
     public final EObject entryRuleNetworkLabel() throws RecognitionException {
         EObject current = null;
 
@@ -10075,8 +10757,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:3698:53: (iv_ruleNetworkLabel= ruleNetworkLabel EOF )
-            // InternalDockerCompose.g:3699:2: iv_ruleNetworkLabel= ruleNetworkLabel EOF
+            // InternalDockerCompose.g:3967:53: (iv_ruleNetworkLabel= ruleNetworkLabel EOF )
+            // InternalDockerCompose.g:3968:2: iv_ruleNetworkLabel= ruleNetworkLabel EOF
             {
              newCompositeNode(grammarAccess.getNetworkLabelRule()); 
             pushFollow(FOLLOW_1);
@@ -10103,7 +10785,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNetworkLabel"
-    // InternalDockerCompose.g:3705:1: ruleNetworkLabel returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) ) ;
+    // InternalDockerCompose.g:3974:1: ruleNetworkLabel returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) ) ;
     public final EObject ruleNetworkLabel() throws RecognitionException {
         EObject current = null;
 
@@ -10117,14 +10799,14 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:3711:2: ( ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) ) )
-            // InternalDockerCompose.g:3712:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) )
+            // InternalDockerCompose.g:3980:2: ( ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) ) )
+            // InternalDockerCompose.g:3981:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) )
             {
-            // InternalDockerCompose.g:3712:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) )
-            // InternalDockerCompose.g:3713:3: () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) )
+            // InternalDockerCompose.g:3981:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) )
+            // InternalDockerCompose.g:3982:3: () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) )
             {
-            // InternalDockerCompose.g:3713:3: ()
-            // InternalDockerCompose.g:3714:4: 
+            // InternalDockerCompose.g:3982:3: ()
+            // InternalDockerCompose.g:3983:4: 
             {
 
             				current = forceCreateModelElement(
@@ -10134,11 +10816,11 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDockerCompose.g:3720:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalDockerCompose.g:3721:4: (lv_name_1_0= ruleEString )
+            // InternalDockerCompose.g:3989:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalDockerCompose.g:3990:4: (lv_name_1_0= ruleEString )
             {
-            // InternalDockerCompose.g:3721:4: (lv_name_1_0= ruleEString )
-            // InternalDockerCompose.g:3722:5: lv_name_1_0= ruleEString
+            // InternalDockerCompose.g:3990:4: (lv_name_1_0= ruleEString )
+            // InternalDockerCompose.g:3991:5: lv_name_1_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getNetworkLabelAccess().getNameEStringParserRuleCall_1_0());
@@ -10165,15 +10847,15 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,21,FOLLOW_5); 
+            otherlv_2=(Token)match(input,22,FOLLOW_5); 
 
             			newLeafNode(otherlv_2, grammarAccess.getNetworkLabelAccess().getColonKeyword_2());
             		
-            // InternalDockerCompose.g:3743:3: ( (lv_value_3_0= ruleEString ) )
-            // InternalDockerCompose.g:3744:4: (lv_value_3_0= ruleEString )
+            // InternalDockerCompose.g:4012:3: ( (lv_value_3_0= ruleEString ) )
+            // InternalDockerCompose.g:4013:4: (lv_value_3_0= ruleEString )
             {
-            // InternalDockerCompose.g:3744:4: (lv_value_3_0= ruleEString )
-            // InternalDockerCompose.g:3745:5: lv_value_3_0= ruleEString
+            // InternalDockerCompose.g:4013:4: (lv_value_3_0= ruleEString )
+            // InternalDockerCompose.g:4014:5: lv_value_3_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getNetworkLabelAccess().getValueEStringParserRuleCall_3_0());
@@ -10223,7 +10905,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNetworkDriverOpt"
-    // InternalDockerCompose.g:3766:1: entryRuleNetworkDriverOpt returns [EObject current=null] : iv_ruleNetworkDriverOpt= ruleNetworkDriverOpt EOF ;
+    // InternalDockerCompose.g:4035:1: entryRuleNetworkDriverOpt returns [EObject current=null] : iv_ruleNetworkDriverOpt= ruleNetworkDriverOpt EOF ;
     public final EObject entryRuleNetworkDriverOpt() throws RecognitionException {
         EObject current = null;
 
@@ -10231,8 +10913,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:3766:57: (iv_ruleNetworkDriverOpt= ruleNetworkDriverOpt EOF )
-            // InternalDockerCompose.g:3767:2: iv_ruleNetworkDriverOpt= ruleNetworkDriverOpt EOF
+            // InternalDockerCompose.g:4035:57: (iv_ruleNetworkDriverOpt= ruleNetworkDriverOpt EOF )
+            // InternalDockerCompose.g:4036:2: iv_ruleNetworkDriverOpt= ruleNetworkDriverOpt EOF
             {
              newCompositeNode(grammarAccess.getNetworkDriverOptRule()); 
             pushFollow(FOLLOW_1);
@@ -10259,7 +10941,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNetworkDriverOpt"
-    // InternalDockerCompose.g:3773:1: ruleNetworkDriverOpt returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) ) ;
+    // InternalDockerCompose.g:4042:1: ruleNetworkDriverOpt returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) ) ;
     public final EObject ruleNetworkDriverOpt() throws RecognitionException {
         EObject current = null;
 
@@ -10273,14 +10955,14 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:3779:2: ( ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) ) )
-            // InternalDockerCompose.g:3780:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) )
+            // InternalDockerCompose.g:4048:2: ( ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) ) )
+            // InternalDockerCompose.g:4049:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) )
             {
-            // InternalDockerCompose.g:3780:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) )
-            // InternalDockerCompose.g:3781:3: () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) )
+            // InternalDockerCompose.g:4049:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) )
+            // InternalDockerCompose.g:4050:3: () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) )
             {
-            // InternalDockerCompose.g:3781:3: ()
-            // InternalDockerCompose.g:3782:4: 
+            // InternalDockerCompose.g:4050:3: ()
+            // InternalDockerCompose.g:4051:4: 
             {
 
             				current = forceCreateModelElement(
@@ -10290,11 +10972,11 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDockerCompose.g:3788:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalDockerCompose.g:3789:4: (lv_name_1_0= ruleEString )
+            // InternalDockerCompose.g:4057:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalDockerCompose.g:4058:4: (lv_name_1_0= ruleEString )
             {
-            // InternalDockerCompose.g:3789:4: (lv_name_1_0= ruleEString )
-            // InternalDockerCompose.g:3790:5: lv_name_1_0= ruleEString
+            // InternalDockerCompose.g:4058:4: (lv_name_1_0= ruleEString )
+            // InternalDockerCompose.g:4059:5: lv_name_1_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getNetworkDriverOptAccess().getNameEStringParserRuleCall_1_0());
@@ -10321,15 +11003,15 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,21,FOLLOW_5); 
+            otherlv_2=(Token)match(input,22,FOLLOW_5); 
 
             			newLeafNode(otherlv_2, grammarAccess.getNetworkDriverOptAccess().getColonKeyword_2());
             		
-            // InternalDockerCompose.g:3811:3: ( (lv_value_3_0= ruleEString ) )
-            // InternalDockerCompose.g:3812:4: (lv_value_3_0= ruleEString )
+            // InternalDockerCompose.g:4080:3: ( (lv_value_3_0= ruleEString ) )
+            // InternalDockerCompose.g:4081:4: (lv_value_3_0= ruleEString )
             {
-            // InternalDockerCompose.g:3812:4: (lv_value_3_0= ruleEString )
-            // InternalDockerCompose.g:3813:5: lv_value_3_0= ruleEString
+            // InternalDockerCompose.g:4081:4: (lv_value_3_0= ruleEString )
+            // InternalDockerCompose.g:4082:5: lv_value_3_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getNetworkDriverOptAccess().getValueEStringParserRuleCall_3_0());
@@ -10379,7 +11061,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIPAM"
-    // InternalDockerCompose.g:3834:1: entryRuleIPAM returns [EObject current=null] : iv_ruleIPAM= ruleIPAM EOF ;
+    // InternalDockerCompose.g:4103:1: entryRuleIPAM returns [EObject current=null] : iv_ruleIPAM= ruleIPAM EOF ;
     public final EObject entryRuleIPAM() throws RecognitionException {
         EObject current = null;
 
@@ -10387,8 +11069,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:3834:45: (iv_ruleIPAM= ruleIPAM EOF )
-            // InternalDockerCompose.g:3835:2: iv_ruleIPAM= ruleIPAM EOF
+            // InternalDockerCompose.g:4103:45: (iv_ruleIPAM= ruleIPAM EOF )
+            // InternalDockerCompose.g:4104:2: iv_ruleIPAM= ruleIPAM EOF
             {
              newCompositeNode(grammarAccess.getIPAMRule()); 
             pushFollow(FOLLOW_1);
@@ -10415,7 +11097,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIPAM"
-    // InternalDockerCompose.g:3841:1: ruleIPAM returns [EObject current=null] : ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) ) ) )* ) ) ) ) ;
+    // InternalDockerCompose.g:4110:1: ruleIPAM returns [EObject current=null] : ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) ) ) )* ) ) ) ) ;
     public final EObject ruleIPAM() throws RecognitionException {
         EObject current = null;
 
@@ -10434,14 +11116,14 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:3847:2: ( ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) ) ) )* ) ) ) ) )
-            // InternalDockerCompose.g:3848:2: ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) ) ) )* ) ) ) )
+            // InternalDockerCompose.g:4116:2: ( ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) ) ) )* ) ) ) ) )
+            // InternalDockerCompose.g:4117:2: ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) ) ) )* ) ) ) )
             {
-            // InternalDockerCompose.g:3848:2: ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) ) ) )* ) ) ) )
-            // InternalDockerCompose.g:3849:3: () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) ) ) )* ) ) )
+            // InternalDockerCompose.g:4117:2: ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) ) ) )* ) ) ) )
+            // InternalDockerCompose.g:4118:3: () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) ) ) )* ) ) )
             {
-            // InternalDockerCompose.g:3849:3: ()
-            // InternalDockerCompose.g:3850:4: 
+            // InternalDockerCompose.g:4118:3: ()
+            // InternalDockerCompose.g:4119:4: 
             {
 
             				current = forceCreateModelElement(
@@ -10451,41 +11133,41 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDockerCompose.g:3856:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) ) ) )* ) ) )
-            // InternalDockerCompose.g:3857:4: ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) ) ) )* ) )
+            // InternalDockerCompose.g:4125:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) ) ) )* ) ) )
+            // InternalDockerCompose.g:4126:4: ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) ) ) )* ) )
             {
-            // InternalDockerCompose.g:3857:4: ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) ) ) )* ) )
-            // InternalDockerCompose.g:3858:5: ( ( ({...}? => ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) ) ) )* )
+            // InternalDockerCompose.g:4126:4: ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) ) ) )* ) )
+            // InternalDockerCompose.g:4127:5: ( ( ({...}? => ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) ) ) )* )
             {
              
             				  getUnorderedGroupHelper().enter(grammarAccess.getIPAMAccess().getUnorderedGroup_1());
             				
-            // InternalDockerCompose.g:3861:5: ( ( ({...}? => ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) ) ) )* )
-            // InternalDockerCompose.g:3862:6: ( ({...}? => ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) ) ) )*
+            // InternalDockerCompose.g:4130:5: ( ( ({...}? => ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) ) ) )* )
+            // InternalDockerCompose.g:4131:6: ( ({...}? => ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) ) ) )*
             {
-            // InternalDockerCompose.g:3862:6: ( ({...}? => ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) ) ) )*
-            loop49:
+            // InternalDockerCompose.g:4131:6: ( ({...}? => ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) ) ) )*
+            loop58:
             do {
-                int alt49=4;
-                int LA49_0 = input.LA(1);
+                int alt58=4;
+                int LA58_0 = input.LA(1);
 
-                if ( (LA49_0==55) ) {
-                    int LA49_2 = input.LA(2);
+                if ( (LA58_0==60) ) {
+                    int LA58_2 = input.LA(2);
 
-                    if ( (LA49_2==RULE_STRING) ) {
-                        int LA49_5 = input.LA(3);
+                    if ( (LA58_2==RULE_STRING) ) {
+                        int LA58_5 = input.LA(3);
 
                         if ( getUnorderedGroupHelper().canSelect(grammarAccess.getIPAMAccess().getUnorderedGroup_1(), 0) ) {
-                            alt49=1;
+                            alt58=1;
                         }
 
 
                     }
-                    else if ( (LA49_2==RULE_ID) ) {
-                        int LA49_6 = input.LA(3);
+                    else if ( (LA58_2==RULE_ID) ) {
+                        int LA58_6 = input.LA(3);
 
                         if ( getUnorderedGroupHelper().canSelect(grammarAccess.getIPAMAccess().getUnorderedGroup_1(), 0) ) {
-                            alt49=1;
+                            alt58=1;
                         }
 
 
@@ -10493,53 +11175,53 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
                 }
-                else if ( LA49_0 == 66 && getUnorderedGroupHelper().canSelect(grammarAccess.getIPAMAccess().getUnorderedGroup_1(), 1) ) {
-                    alt49=2;
+                else if ( LA58_0 == 70 && getUnorderedGroupHelper().canSelect(grammarAccess.getIPAMAccess().getUnorderedGroup_1(), 1) ) {
+                    alt58=2;
                 }
-                else if ( LA49_0 == 67 && getUnorderedGroupHelper().canSelect(grammarAccess.getIPAMAccess().getUnorderedGroup_1(), 2) ) {
-                    alt49=3;
+                else if ( LA58_0 == 71 && getUnorderedGroupHelper().canSelect(grammarAccess.getIPAMAccess().getUnorderedGroup_1(), 2) ) {
+                    alt58=3;
                 }
 
 
-                switch (alt49) {
+                switch (alt58) {
             	case 1 :
-            	    // InternalDockerCompose.g:3863:4: ({...}? => ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) ) )
+            	    // InternalDockerCompose.g:4132:4: ({...}? => ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:3863:4: ({...}? => ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) ) )
-            	    // InternalDockerCompose.g:3864:5: {...}? => ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) )
+            	    // InternalDockerCompose.g:4132:4: ({...}? => ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) ) )
+            	    // InternalDockerCompose.g:4133:5: {...}? => ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getIPAMAccess().getUnorderedGroup_1(), 0) ) {
             	        throw new FailedPredicateException(input, "ruleIPAM", "getUnorderedGroupHelper().canSelect(grammarAccess.getIPAMAccess().getUnorderedGroup_1(), 0)");
             	    }
-            	    // InternalDockerCompose.g:3864:101: ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) )
-            	    // InternalDockerCompose.g:3865:6: ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) )
+            	    // InternalDockerCompose.g:4133:101: ( ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) ) )
+            	    // InternalDockerCompose.g:4134:6: ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getIPAMAccess().getUnorderedGroup_1(), 0);
             	    					
-            	    // InternalDockerCompose.g:3868:9: ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) )
-            	    // InternalDockerCompose.g:3868:10: {...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) )
+            	    // InternalDockerCompose.g:4137:9: ({...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) ) )
+            	    // InternalDockerCompose.g:4137:10: {...}? => (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleIPAM", "true");
             	    }
-            	    // InternalDockerCompose.g:3868:19: (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) )
-            	    // InternalDockerCompose.g:3868:20: otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) )
+            	    // InternalDockerCompose.g:4137:19: (otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) ) )
+            	    // InternalDockerCompose.g:4137:20: otherlv_2= 'driver:' ( (lv_driver_3_0= ruleEString ) )
             	    {
-            	    otherlv_2=(Token)match(input,55,FOLLOW_5); 
+            	    otherlv_2=(Token)match(input,60,FOLLOW_5); 
 
             	    									newLeafNode(otherlv_2, grammarAccess.getIPAMAccess().getDriverKeyword_1_0_0());
             	    								
-            	    // InternalDockerCompose.g:3872:9: ( (lv_driver_3_0= ruleEString ) )
-            	    // InternalDockerCompose.g:3873:10: (lv_driver_3_0= ruleEString )
+            	    // InternalDockerCompose.g:4141:9: ( (lv_driver_3_0= ruleEString ) )
+            	    // InternalDockerCompose.g:4142:10: (lv_driver_3_0= ruleEString )
             	    {
-            	    // InternalDockerCompose.g:3873:10: (lv_driver_3_0= ruleEString )
-            	    // InternalDockerCompose.g:3874:11: lv_driver_3_0= ruleEString
+            	    // InternalDockerCompose.g:4142:10: (lv_driver_3_0= ruleEString )
+            	    // InternalDockerCompose.g:4143:11: lv_driver_3_0= ruleEString
             	    {
 
             	    											newCompositeNode(grammarAccess.getIPAMAccess().getDriverEStringParserRuleCall_1_0_1_0());
             	    										
-            	    pushFollow(FOLLOW_50);
+            	    pushFollow(FOLLOW_54);
             	    lv_driver_3_0=ruleEString();
 
             	    state._fsp--;
@@ -10580,63 +11262,63 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // InternalDockerCompose.g:3897:4: ({...}? => ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) ) )
+            	    // InternalDockerCompose.g:4166:4: ({...}? => ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:3897:4: ({...}? => ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) ) )
-            	    // InternalDockerCompose.g:3898:5: {...}? => ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) )
+            	    // InternalDockerCompose.g:4166:4: ({...}? => ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) ) )
+            	    // InternalDockerCompose.g:4167:5: {...}? => ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getIPAMAccess().getUnorderedGroup_1(), 1) ) {
             	        throw new FailedPredicateException(input, "ruleIPAM", "getUnorderedGroupHelper().canSelect(grammarAccess.getIPAMAccess().getUnorderedGroup_1(), 1)");
             	    }
-            	    // InternalDockerCompose.g:3898:101: ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) )
-            	    // InternalDockerCompose.g:3899:6: ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) )
+            	    // InternalDockerCompose.g:4167:101: ( ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) ) )
+            	    // InternalDockerCompose.g:4168:6: ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getIPAMAccess().getUnorderedGroup_1(), 1);
             	    					
-            	    // InternalDockerCompose.g:3902:9: ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) )
-            	    // InternalDockerCompose.g:3902:10: {...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ )
+            	    // InternalDockerCompose.g:4171:9: ({...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ ) )
+            	    // InternalDockerCompose.g:4171:10: {...}? => (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleIPAM", "true");
             	    }
-            	    // InternalDockerCompose.g:3902:19: (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ )
-            	    // InternalDockerCompose.g:3902:20: otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+
+            	    // InternalDockerCompose.g:4171:19: (otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+ )
+            	    // InternalDockerCompose.g:4171:20: otherlv_4= 'config:' (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+
             	    {
-            	    otherlv_4=(Token)match(input,66,FOLLOW_14); 
+            	    otherlv_4=(Token)match(input,70,FOLLOW_15); 
 
             	    									newLeafNode(otherlv_4, grammarAccess.getIPAMAccess().getConfigKeyword_1_1_0());
             	    								
-            	    // InternalDockerCompose.g:3906:9: (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+
-            	    int cnt47=0;
-            	    loop47:
+            	    // InternalDockerCompose.g:4175:9: (otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) ) )+
+            	    int cnt56=0;
+            	    loop56:
             	    do {
-            	        int alt47=2;
-            	        int LA47_0 = input.LA(1);
+            	        int alt56=2;
+            	        int LA56_0 = input.LA(1);
 
-            	        if ( (LA47_0==31) ) {
-            	            alt47=1;
+            	        if ( (LA56_0==32) ) {
+            	            alt56=1;
             	        }
 
 
-            	        switch (alt47) {
+            	        switch (alt56) {
             	    	case 1 :
-            	    	    // InternalDockerCompose.g:3907:10: otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) )
+            	    	    // InternalDockerCompose.g:4176:10: otherlv_5= '-' ( (lv_configs_6_0= ruleIPAMConfig ) )
             	    	    {
-            	    	    otherlv_5=(Token)match(input,31,FOLLOW_51); 
+            	    	    otherlv_5=(Token)match(input,32,FOLLOW_55); 
 
             	    	    										newLeafNode(otherlv_5, grammarAccess.getIPAMAccess().getHyphenMinusKeyword_1_1_1_0());
             	    	    									
-            	    	    // InternalDockerCompose.g:3911:10: ( (lv_configs_6_0= ruleIPAMConfig ) )
-            	    	    // InternalDockerCompose.g:3912:11: (lv_configs_6_0= ruleIPAMConfig )
+            	    	    // InternalDockerCompose.g:4180:10: ( (lv_configs_6_0= ruleIPAMConfig ) )
+            	    	    // InternalDockerCompose.g:4181:11: (lv_configs_6_0= ruleIPAMConfig )
             	    	    {
-            	    	    // InternalDockerCompose.g:3912:11: (lv_configs_6_0= ruleIPAMConfig )
-            	    	    // InternalDockerCompose.g:3913:12: lv_configs_6_0= ruleIPAMConfig
+            	    	    // InternalDockerCompose.g:4181:11: (lv_configs_6_0= ruleIPAMConfig )
+            	    	    // InternalDockerCompose.g:4182:12: lv_configs_6_0= ruleIPAMConfig
             	    	    {
 
             	    	    												newCompositeNode(grammarAccess.getIPAMAccess().getConfigsIPAMConfigParserRuleCall_1_1_1_1_0());
             	    	    											
-            	    	    pushFollow(FOLLOW_52);
+            	    	    pushFollow(FOLLOW_56);
             	    	    lv_configs_6_0=ruleIPAMConfig();
 
             	    	    state._fsp--;
@@ -10663,12 +11345,12 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    	    break;
 
             	    	default :
-            	    	    if ( cnt47 >= 1 ) break loop47;
+            	    	    if ( cnt56 >= 1 ) break loop56;
             	                EarlyExitException eee =
-            	                    new EarlyExitException(47, input);
+            	                    new EarlyExitException(56, input);
             	                throw eee;
             	        }
-            	        cnt47++;
+            	        cnt56++;
             	    } while (true);
 
 
@@ -10690,90 +11372,60 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 3 :
-            	    // InternalDockerCompose.g:3937:4: ({...}? => ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) ) )
+            	    // InternalDockerCompose.g:4206:4: ({...}? => ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:3937:4: ({...}? => ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) ) )
-            	    // InternalDockerCompose.g:3938:5: {...}? => ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) )
+            	    // InternalDockerCompose.g:4206:4: ({...}? => ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) ) )
+            	    // InternalDockerCompose.g:4207:5: {...}? => ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getIPAMAccess().getUnorderedGroup_1(), 2) ) {
             	        throw new FailedPredicateException(input, "ruleIPAM", "getUnorderedGroupHelper().canSelect(grammarAccess.getIPAMAccess().getUnorderedGroup_1(), 2)");
             	    }
-            	    // InternalDockerCompose.g:3938:101: ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) )
-            	    // InternalDockerCompose.g:3939:6: ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) )
+            	    // InternalDockerCompose.g:4207:101: ( ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) ) )
+            	    // InternalDockerCompose.g:4208:6: ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getIPAMAccess().getUnorderedGroup_1(), 2);
             	    					
-            	    // InternalDockerCompose.g:3942:9: ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) )
-            	    // InternalDockerCompose.g:3942:10: {...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ )
+            	    // InternalDockerCompose.g:4211:9: ({...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ ) )
+            	    // InternalDockerCompose.g:4211:10: {...}? => (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleIPAM", "true");
             	    }
-            	    // InternalDockerCompose.g:3942:19: (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ )
-            	    // InternalDockerCompose.g:3942:20: otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+
+            	    // InternalDockerCompose.g:4211:19: (otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+ )
+            	    // InternalDockerCompose.g:4211:20: otherlv_7= 'options:' ( (lv_options_8_0= ruleIPAMOption ) )+
             	    {
-            	    otherlv_7=(Token)match(input,67,FOLLOW_5); 
+            	    otherlv_7=(Token)match(input,71,FOLLOW_5); 
 
             	    									newLeafNode(otherlv_7, grammarAccess.getIPAMAccess().getOptionsKeyword_1_2_0());
             	    								
-            	    // InternalDockerCompose.g:3946:9: ( (lv_options_8_0= ruleIPAMOption ) )+
-            	    int cnt48=0;
-            	    loop48:
+            	    // InternalDockerCompose.g:4215:9: ( (lv_options_8_0= ruleIPAMOption ) )+
+            	    int cnt57=0;
+            	    loop57:
             	    do {
-            	        int alt48=2;
-            	        int LA48_0 = input.LA(1);
+            	        int alt57=2;
+            	        int LA57_0 = input.LA(1);
 
-            	        if ( (LA48_0==RULE_STRING) ) {
-            	            int LA48_2 = input.LA(2);
+            	        if ( (LA57_0==RULE_STRING) ) {
+            	            int LA57_2 = input.LA(2);
 
-            	            if ( (LA48_2==21) ) {
-            	                int LA48_4 = input.LA(3);
+            	            if ( (LA57_2==22) ) {
+            	                int LA57_4 = input.LA(3);
 
-            	                if ( (LA48_4==RULE_STRING) ) {
-            	                    int LA48_5 = input.LA(4);
+            	                if ( (LA57_4==RULE_STRING) ) {
+            	                    int LA57_5 = input.LA(4);
 
-            	                    if ( (LA48_5==EOF||LA48_5==RULE_ID||LA48_5==RULE_STRING||(LA48_5>=15 && LA48_5<=20)||(LA48_5>=55 && LA48_5<=63)||(LA48_5>=66 && LA48_5<=67)) ) {
-            	                        alt48=1;
+            	                    if ( (LA57_5==EOF||LA57_5==RULE_ID||LA57_5==RULE_STRING||(LA57_5>=16 && LA57_5<=21)||(LA57_5>=60 && LA57_5<=68)||(LA57_5>=70 && LA57_5<=71)) ) {
+            	                        alt57=1;
             	                    }
 
 
             	                }
-            	                else if ( (LA48_4==RULE_ID) ) {
-            	                    int LA48_6 = input.LA(4);
+            	                else if ( (LA57_4==RULE_ID) ) {
+            	                    int LA57_6 = input.LA(4);
 
-            	                    if ( (LA48_6==EOF||LA48_6==RULE_ID||LA48_6==RULE_STRING||(LA48_6>=15 && LA48_6<=20)||(LA48_6>=55 && LA48_6<=63)||(LA48_6>=66 && LA48_6<=67)) ) {
-            	                        alt48=1;
-            	                    }
-
-
-            	                }
-
-
-            	            }
-
-
-            	        }
-            	        else if ( (LA48_0==RULE_ID) ) {
-            	            int LA48_3 = input.LA(2);
-
-            	            if ( (LA48_3==21) ) {
-            	                int LA48_4 = input.LA(3);
-
-            	                if ( (LA48_4==RULE_STRING) ) {
-            	                    int LA48_5 = input.LA(4);
-
-            	                    if ( (LA48_5==EOF||LA48_5==RULE_ID||LA48_5==RULE_STRING||(LA48_5>=15 && LA48_5<=20)||(LA48_5>=55 && LA48_5<=63)||(LA48_5>=66 && LA48_5<=67)) ) {
-            	                        alt48=1;
-            	                    }
-
-
-            	                }
-            	                else if ( (LA48_4==RULE_ID) ) {
-            	                    int LA48_6 = input.LA(4);
-
-            	                    if ( (LA48_6==EOF||LA48_6==RULE_ID||LA48_6==RULE_STRING||(LA48_6>=15 && LA48_6<=20)||(LA48_6>=55 && LA48_6<=63)||(LA48_6>=66 && LA48_6<=67)) ) {
-            	                        alt48=1;
+            	                    if ( (LA57_6==EOF||LA57_6==RULE_ID||LA57_6==RULE_STRING||(LA57_6>=16 && LA57_6<=21)||(LA57_6>=60 && LA57_6<=68)||(LA57_6>=70 && LA57_6<=71)) ) {
+            	                        alt57=1;
             	                    }
 
 
@@ -10784,19 +11436,49 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
             	        }
+            	        else if ( (LA57_0==RULE_ID) ) {
+            	            int LA57_3 = input.LA(2);
+
+            	            if ( (LA57_3==22) ) {
+            	                int LA57_4 = input.LA(3);
+
+            	                if ( (LA57_4==RULE_STRING) ) {
+            	                    int LA57_5 = input.LA(4);
+
+            	                    if ( (LA57_5==EOF||LA57_5==RULE_ID||LA57_5==RULE_STRING||(LA57_5>=16 && LA57_5<=21)||(LA57_5>=60 && LA57_5<=68)||(LA57_5>=70 && LA57_5<=71)) ) {
+            	                        alt57=1;
+            	                    }
 
 
-            	        switch (alt48) {
+            	                }
+            	                else if ( (LA57_4==RULE_ID) ) {
+            	                    int LA57_6 = input.LA(4);
+
+            	                    if ( (LA57_6==EOF||LA57_6==RULE_ID||LA57_6==RULE_STRING||(LA57_6>=16 && LA57_6<=21)||(LA57_6>=60 && LA57_6<=68)||(LA57_6>=70 && LA57_6<=71)) ) {
+            	                        alt57=1;
+            	                    }
+
+
+            	                }
+
+
+            	            }
+
+
+            	        }
+
+
+            	        switch (alt57) {
             	    	case 1 :
-            	    	    // InternalDockerCompose.g:3947:10: (lv_options_8_0= ruleIPAMOption )
+            	    	    // InternalDockerCompose.g:4216:10: (lv_options_8_0= ruleIPAMOption )
             	    	    {
-            	    	    // InternalDockerCompose.g:3947:10: (lv_options_8_0= ruleIPAMOption )
-            	    	    // InternalDockerCompose.g:3948:11: lv_options_8_0= ruleIPAMOption
+            	    	    // InternalDockerCompose.g:4216:10: (lv_options_8_0= ruleIPAMOption )
+            	    	    // InternalDockerCompose.g:4217:11: lv_options_8_0= ruleIPAMOption
             	    	    {
 
             	    	    											newCompositeNode(grammarAccess.getIPAMAccess().getOptionsIPAMOptionParserRuleCall_1_2_1_0());
             	    	    										
-            	    	    pushFollow(FOLLOW_53);
+            	    	    pushFollow(FOLLOW_57);
             	    	    lv_options_8_0=ruleIPAMOption();
 
             	    	    state._fsp--;
@@ -10820,12 +11502,12 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    	    break;
 
             	    	default :
-            	    	    if ( cnt48 >= 1 ) break loop48;
+            	    	    if ( cnt57 >= 1 ) break loop57;
             	                EarlyExitException eee =
-            	                    new EarlyExitException(48, input);
+            	                    new EarlyExitException(57, input);
             	                throw eee;
             	        }
-            	        cnt48++;
+            	        cnt57++;
             	    } while (true);
 
 
@@ -10848,7 +11530,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop49;
+            	    break loop58;
                 }
             } while (true);
 
@@ -10887,7 +11569,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIPAMConfig"
-    // InternalDockerCompose.g:3982:1: entryRuleIPAMConfig returns [EObject current=null] : iv_ruleIPAMConfig= ruleIPAMConfig EOF ;
+    // InternalDockerCompose.g:4251:1: entryRuleIPAMConfig returns [EObject current=null] : iv_ruleIPAMConfig= ruleIPAMConfig EOF ;
     public final EObject entryRuleIPAMConfig() throws RecognitionException {
         EObject current = null;
 
@@ -10895,8 +11577,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:3982:51: (iv_ruleIPAMConfig= ruleIPAMConfig EOF )
-            // InternalDockerCompose.g:3983:2: iv_ruleIPAMConfig= ruleIPAMConfig EOF
+            // InternalDockerCompose.g:4251:51: (iv_ruleIPAMConfig= ruleIPAMConfig EOF )
+            // InternalDockerCompose.g:4252:2: iv_ruleIPAMConfig= ruleIPAMConfig EOF
             {
              newCompositeNode(grammarAccess.getIPAMConfigRule()); 
             pushFollow(FOLLOW_1);
@@ -10923,7 +11605,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIPAMConfig"
-    // InternalDockerCompose.g:3989:1: ruleIPAMConfig returns [EObject current=null] : ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) ) ) )* ) ) ) ) ;
+    // InternalDockerCompose.g:4258:1: ruleIPAMConfig returns [EObject current=null] : ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) ) ) )* ) ) ) ) ;
     public final EObject ruleIPAMConfig() throws RecognitionException {
         EObject current = null;
 
@@ -10944,14 +11626,14 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:3995:2: ( ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) ) ) )* ) ) ) ) )
-            // InternalDockerCompose.g:3996:2: ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) ) ) )* ) ) ) )
+            // InternalDockerCompose.g:4264:2: ( ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) ) ) )* ) ) ) ) )
+            // InternalDockerCompose.g:4265:2: ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) ) ) )* ) ) ) )
             {
-            // InternalDockerCompose.g:3996:2: ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) ) ) )* ) ) ) )
-            // InternalDockerCompose.g:3997:3: () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) ) ) )* ) ) )
+            // InternalDockerCompose.g:4265:2: ( () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) ) ) )* ) ) ) )
+            // InternalDockerCompose.g:4266:3: () ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) ) ) )* ) ) )
             {
-            // InternalDockerCompose.g:3997:3: ()
-            // InternalDockerCompose.g:3998:4: 
+            // InternalDockerCompose.g:4266:3: ()
+            // InternalDockerCompose.g:4267:4: 
             {
 
             				current = forceCreateModelElement(
@@ -10961,77 +11643,77 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDockerCompose.g:4004:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) ) ) )* ) ) )
-            // InternalDockerCompose.g:4005:4: ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) ) ) )* ) )
+            // InternalDockerCompose.g:4273:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) ) ) )* ) ) )
+            // InternalDockerCompose.g:4274:4: ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) ) ) )* ) )
             {
-            // InternalDockerCompose.g:4005:4: ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) ) ) )* ) )
-            // InternalDockerCompose.g:4006:5: ( ( ({...}? => ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) ) ) )* )
+            // InternalDockerCompose.g:4274:4: ( ( ( ({...}? => ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) ) ) )* ) )
+            // InternalDockerCompose.g:4275:5: ( ( ({...}? => ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) ) ) )* )
             {
              
             				  getUnorderedGroupHelper().enter(grammarAccess.getIPAMConfigAccess().getUnorderedGroup_1());
             				
-            // InternalDockerCompose.g:4009:5: ( ( ({...}? => ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) ) ) )* )
-            // InternalDockerCompose.g:4010:6: ( ({...}? => ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) ) ) )*
+            // InternalDockerCompose.g:4278:5: ( ( ({...}? => ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) ) ) )* )
+            // InternalDockerCompose.g:4279:6: ( ({...}? => ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) ) ) )*
             {
-            // InternalDockerCompose.g:4010:6: ( ({...}? => ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) ) ) )*
-            loop51:
+            // InternalDockerCompose.g:4279:6: ( ({...}? => ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) ) ) )*
+            loop60:
             do {
-                int alt51=5;
-                int LA51_0 = input.LA(1);
+                int alt60=5;
+                int LA60_0 = input.LA(1);
 
-                if ( LA51_0 == 68 && getUnorderedGroupHelper().canSelect(grammarAccess.getIPAMConfigAccess().getUnorderedGroup_1(), 0) ) {
-                    alt51=1;
+                if ( LA60_0 == 72 && getUnorderedGroupHelper().canSelect(grammarAccess.getIPAMConfigAccess().getUnorderedGroup_1(), 0) ) {
+                    alt60=1;
                 }
-                else if ( LA51_0 == 69 && getUnorderedGroupHelper().canSelect(grammarAccess.getIPAMConfigAccess().getUnorderedGroup_1(), 1) ) {
-                    alt51=2;
+                else if ( LA60_0 == 73 && getUnorderedGroupHelper().canSelect(grammarAccess.getIPAMConfigAccess().getUnorderedGroup_1(), 1) ) {
+                    alt60=2;
                 }
-                else if ( LA51_0 == 70 && getUnorderedGroupHelper().canSelect(grammarAccess.getIPAMConfigAccess().getUnorderedGroup_1(), 2) ) {
-                    alt51=3;
+                else if ( LA60_0 == 74 && getUnorderedGroupHelper().canSelect(grammarAccess.getIPAMConfigAccess().getUnorderedGroup_1(), 2) ) {
+                    alt60=3;
                 }
-                else if ( LA51_0 == 71 && getUnorderedGroupHelper().canSelect(grammarAccess.getIPAMConfigAccess().getUnorderedGroup_1(), 3) ) {
-                    alt51=4;
+                else if ( LA60_0 == 75 && getUnorderedGroupHelper().canSelect(grammarAccess.getIPAMConfigAccess().getUnorderedGroup_1(), 3) ) {
+                    alt60=4;
                 }
 
 
-                switch (alt51) {
+                switch (alt60) {
             	case 1 :
-            	    // InternalDockerCompose.g:4011:4: ({...}? => ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) ) )
+            	    // InternalDockerCompose.g:4280:4: ({...}? => ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:4011:4: ({...}? => ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) ) )
-            	    // InternalDockerCompose.g:4012:5: {...}? => ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) )
+            	    // InternalDockerCompose.g:4280:4: ({...}? => ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) ) )
+            	    // InternalDockerCompose.g:4281:5: {...}? => ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getIPAMConfigAccess().getUnorderedGroup_1(), 0) ) {
             	        throw new FailedPredicateException(input, "ruleIPAMConfig", "getUnorderedGroupHelper().canSelect(grammarAccess.getIPAMConfigAccess().getUnorderedGroup_1(), 0)");
             	    }
-            	    // InternalDockerCompose.g:4012:107: ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) )
-            	    // InternalDockerCompose.g:4013:6: ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) )
+            	    // InternalDockerCompose.g:4281:107: ( ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) ) )
+            	    // InternalDockerCompose.g:4282:6: ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getIPAMConfigAccess().getUnorderedGroup_1(), 0);
             	    					
-            	    // InternalDockerCompose.g:4016:9: ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) )
-            	    // InternalDockerCompose.g:4016:10: {...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) )
+            	    // InternalDockerCompose.g:4285:9: ({...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) ) )
+            	    // InternalDockerCompose.g:4285:10: {...}? => (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleIPAMConfig", "true");
             	    }
-            	    // InternalDockerCompose.g:4016:19: (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) )
-            	    // InternalDockerCompose.g:4016:20: otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) )
+            	    // InternalDockerCompose.g:4285:19: (otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) ) )
+            	    // InternalDockerCompose.g:4285:20: otherlv_2= 'subnet:' ( (lv_subnet_3_0= ruleNetworkAddress ) )
             	    {
-            	    otherlv_2=(Token)match(input,68,FOLLOW_11); 
+            	    otherlv_2=(Token)match(input,72,FOLLOW_12); 
 
             	    									newLeafNode(otherlv_2, grammarAccess.getIPAMConfigAccess().getSubnetKeyword_1_0_0());
             	    								
-            	    // InternalDockerCompose.g:4020:9: ( (lv_subnet_3_0= ruleNetworkAddress ) )
-            	    // InternalDockerCompose.g:4021:10: (lv_subnet_3_0= ruleNetworkAddress )
+            	    // InternalDockerCompose.g:4289:9: ( (lv_subnet_3_0= ruleNetworkAddress ) )
+            	    // InternalDockerCompose.g:4290:10: (lv_subnet_3_0= ruleNetworkAddress )
             	    {
-            	    // InternalDockerCompose.g:4021:10: (lv_subnet_3_0= ruleNetworkAddress )
-            	    // InternalDockerCompose.g:4022:11: lv_subnet_3_0= ruleNetworkAddress
+            	    // InternalDockerCompose.g:4290:10: (lv_subnet_3_0= ruleNetworkAddress )
+            	    // InternalDockerCompose.g:4291:11: lv_subnet_3_0= ruleNetworkAddress
             	    {
 
             	    											newCompositeNode(grammarAccess.getIPAMConfigAccess().getSubnetNetworkAddressParserRuleCall_1_0_1_0());
             	    										
-            	    pushFollow(FOLLOW_54);
+            	    pushFollow(FOLLOW_58);
             	    lv_subnet_3_0=ruleNetworkAddress();
 
             	    state._fsp--;
@@ -11072,43 +11754,43 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // InternalDockerCompose.g:4045:4: ({...}? => ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) ) )
+            	    // InternalDockerCompose.g:4314:4: ({...}? => ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:4045:4: ({...}? => ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) ) )
-            	    // InternalDockerCompose.g:4046:5: {...}? => ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) )
+            	    // InternalDockerCompose.g:4314:4: ({...}? => ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) ) )
+            	    // InternalDockerCompose.g:4315:5: {...}? => ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getIPAMConfigAccess().getUnorderedGroup_1(), 1) ) {
             	        throw new FailedPredicateException(input, "ruleIPAMConfig", "getUnorderedGroupHelper().canSelect(grammarAccess.getIPAMConfigAccess().getUnorderedGroup_1(), 1)");
             	    }
-            	    // InternalDockerCompose.g:4046:107: ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) )
-            	    // InternalDockerCompose.g:4047:6: ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) )
+            	    // InternalDockerCompose.g:4315:107: ( ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) ) )
+            	    // InternalDockerCompose.g:4316:6: ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getIPAMConfigAccess().getUnorderedGroup_1(), 1);
             	    					
-            	    // InternalDockerCompose.g:4050:9: ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) )
-            	    // InternalDockerCompose.g:4050:10: {...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) )
+            	    // InternalDockerCompose.g:4319:9: ({...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) ) )
+            	    // InternalDockerCompose.g:4319:10: {...}? => (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleIPAMConfig", "true");
             	    }
-            	    // InternalDockerCompose.g:4050:19: (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) )
-            	    // InternalDockerCompose.g:4050:20: otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) )
+            	    // InternalDockerCompose.g:4319:19: (otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) ) )
+            	    // InternalDockerCompose.g:4319:20: otherlv_4= 'ip_range:' ( (lv_ip_range_5_0= ruleNetworkAddress ) )
             	    {
-            	    otherlv_4=(Token)match(input,69,FOLLOW_11); 
+            	    otherlv_4=(Token)match(input,73,FOLLOW_12); 
 
             	    									newLeafNode(otherlv_4, grammarAccess.getIPAMConfigAccess().getIp_rangeKeyword_1_1_0());
             	    								
-            	    // InternalDockerCompose.g:4054:9: ( (lv_ip_range_5_0= ruleNetworkAddress ) )
-            	    // InternalDockerCompose.g:4055:10: (lv_ip_range_5_0= ruleNetworkAddress )
+            	    // InternalDockerCompose.g:4323:9: ( (lv_ip_range_5_0= ruleNetworkAddress ) )
+            	    // InternalDockerCompose.g:4324:10: (lv_ip_range_5_0= ruleNetworkAddress )
             	    {
-            	    // InternalDockerCompose.g:4055:10: (lv_ip_range_5_0= ruleNetworkAddress )
-            	    // InternalDockerCompose.g:4056:11: lv_ip_range_5_0= ruleNetworkAddress
+            	    // InternalDockerCompose.g:4324:10: (lv_ip_range_5_0= ruleNetworkAddress )
+            	    // InternalDockerCompose.g:4325:11: lv_ip_range_5_0= ruleNetworkAddress
             	    {
 
             	    											newCompositeNode(grammarAccess.getIPAMConfigAccess().getIp_rangeNetworkAddressParserRuleCall_1_1_1_0());
             	    										
-            	    pushFollow(FOLLOW_54);
+            	    pushFollow(FOLLOW_58);
             	    lv_ip_range_5_0=ruleNetworkAddress();
 
             	    state._fsp--;
@@ -11149,43 +11831,43 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 3 :
-            	    // InternalDockerCompose.g:4079:4: ({...}? => ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) ) )
+            	    // InternalDockerCompose.g:4348:4: ({...}? => ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:4079:4: ({...}? => ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) ) )
-            	    // InternalDockerCompose.g:4080:5: {...}? => ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) )
+            	    // InternalDockerCompose.g:4348:4: ({...}? => ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) ) )
+            	    // InternalDockerCompose.g:4349:5: {...}? => ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getIPAMConfigAccess().getUnorderedGroup_1(), 2) ) {
             	        throw new FailedPredicateException(input, "ruleIPAMConfig", "getUnorderedGroupHelper().canSelect(grammarAccess.getIPAMConfigAccess().getUnorderedGroup_1(), 2)");
             	    }
-            	    // InternalDockerCompose.g:4080:107: ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) )
-            	    // InternalDockerCompose.g:4081:6: ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) )
+            	    // InternalDockerCompose.g:4349:107: ( ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) ) )
+            	    // InternalDockerCompose.g:4350:6: ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getIPAMConfigAccess().getUnorderedGroup_1(), 2);
             	    					
-            	    // InternalDockerCompose.g:4084:9: ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) )
-            	    // InternalDockerCompose.g:4084:10: {...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) )
+            	    // InternalDockerCompose.g:4353:9: ({...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) ) )
+            	    // InternalDockerCompose.g:4353:10: {...}? => (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleIPAMConfig", "true");
             	    }
-            	    // InternalDockerCompose.g:4084:19: (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) )
-            	    // InternalDockerCompose.g:4084:20: otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) )
+            	    // InternalDockerCompose.g:4353:19: (otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) ) )
+            	    // InternalDockerCompose.g:4353:20: otherlv_6= 'gateway:' ( (lv_gateway_7_0= ruleDNS ) )
             	    {
-            	    otherlv_6=(Token)match(input,70,FOLLOW_21); 
+            	    otherlv_6=(Token)match(input,74,FOLLOW_25); 
 
             	    									newLeafNode(otherlv_6, grammarAccess.getIPAMConfigAccess().getGatewayKeyword_1_2_0());
             	    								
-            	    // InternalDockerCompose.g:4088:9: ( (lv_gateway_7_0= ruleDNS ) )
-            	    // InternalDockerCompose.g:4089:10: (lv_gateway_7_0= ruleDNS )
+            	    // InternalDockerCompose.g:4357:9: ( (lv_gateway_7_0= ruleDNS ) )
+            	    // InternalDockerCompose.g:4358:10: (lv_gateway_7_0= ruleDNS )
             	    {
-            	    // InternalDockerCompose.g:4089:10: (lv_gateway_7_0= ruleDNS )
-            	    // InternalDockerCompose.g:4090:11: lv_gateway_7_0= ruleDNS
+            	    // InternalDockerCompose.g:4358:10: (lv_gateway_7_0= ruleDNS )
+            	    // InternalDockerCompose.g:4359:11: lv_gateway_7_0= ruleDNS
             	    {
 
             	    											newCompositeNode(grammarAccess.getIPAMConfigAccess().getGatewayDNSParserRuleCall_1_2_1_0());
             	    										
-            	    pushFollow(FOLLOW_54);
+            	    pushFollow(FOLLOW_58);
             	    lv_gateway_7_0=ruleDNS();
 
             	    state._fsp--;
@@ -11226,48 +11908,48 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 4 :
-            	    // InternalDockerCompose.g:4113:4: ({...}? => ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) ) )
+            	    // InternalDockerCompose.g:4382:4: ({...}? => ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) ) )
             	    {
-            	    // InternalDockerCompose.g:4113:4: ({...}? => ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) ) )
-            	    // InternalDockerCompose.g:4114:5: {...}? => ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) )
+            	    // InternalDockerCompose.g:4382:4: ({...}? => ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) ) )
+            	    // InternalDockerCompose.g:4383:5: {...}? => ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getIPAMConfigAccess().getUnorderedGroup_1(), 3) ) {
             	        throw new FailedPredicateException(input, "ruleIPAMConfig", "getUnorderedGroupHelper().canSelect(grammarAccess.getIPAMConfigAccess().getUnorderedGroup_1(), 3)");
             	    }
-            	    // InternalDockerCompose.g:4114:107: ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) )
-            	    // InternalDockerCompose.g:4115:6: ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) )
+            	    // InternalDockerCompose.g:4383:107: ( ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) ) )
+            	    // InternalDockerCompose.g:4384:6: ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getIPAMConfigAccess().getUnorderedGroup_1(), 3);
             	    					
-            	    // InternalDockerCompose.g:4118:9: ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) )
-            	    // InternalDockerCompose.g:4118:10: {...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ )
+            	    // InternalDockerCompose.g:4387:9: ({...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ ) )
+            	    // InternalDockerCompose.g:4387:10: {...}? => (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleIPAMConfig", "true");
             	    }
-            	    // InternalDockerCompose.g:4118:19: (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ )
-            	    // InternalDockerCompose.g:4118:20: otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+
+            	    // InternalDockerCompose.g:4387:19: (otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+ )
+            	    // InternalDockerCompose.g:4387:20: otherlv_8= 'aux_addresses:' ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+
             	    {
-            	    otherlv_8=(Token)match(input,71,FOLLOW_5); 
+            	    otherlv_8=(Token)match(input,75,FOLLOW_5); 
 
             	    									newLeafNode(otherlv_8, grammarAccess.getIPAMConfigAccess().getAux_addressesKeyword_1_3_0());
             	    								
-            	    // InternalDockerCompose.g:4122:9: ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+
-            	    int cnt50=0;
-            	    loop50:
+            	    // InternalDockerCompose.g:4391:9: ( (lv_aux_addresses_9_0= ruleIPAMAddress ) )+
+            	    int cnt59=0;
+            	    loop59:
             	    do {
-            	        int alt50=2;
-            	        int LA50_0 = input.LA(1);
+            	        int alt59=2;
+            	        int LA59_0 = input.LA(1);
 
-            	        if ( (LA50_0==RULE_STRING) ) {
-            	            int LA50_2 = input.LA(2);
+            	        if ( (LA59_0==RULE_STRING) ) {
+            	            int LA59_2 = input.LA(2);
 
-            	            if ( (LA50_2==21) ) {
-            	                int LA50_4 = input.LA(3);
+            	            if ( (LA59_2==22) ) {
+            	                int LA59_4 = input.LA(3);
 
-            	                if ( (LA50_4==RULE_INT) ) {
-            	                    alt50=1;
+            	                if ( (LA59_4==RULE_INT) ) {
+            	                    alt59=1;
             	                }
 
 
@@ -11275,14 +11957,14 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
             	        }
-            	        else if ( (LA50_0==RULE_ID) ) {
-            	            int LA50_3 = input.LA(2);
+            	        else if ( (LA59_0==RULE_ID) ) {
+            	            int LA59_3 = input.LA(2);
 
-            	            if ( (LA50_3==21) ) {
-            	                int LA50_4 = input.LA(3);
+            	            if ( (LA59_3==22) ) {
+            	                int LA59_4 = input.LA(3);
 
-            	                if ( (LA50_4==RULE_INT) ) {
-            	                    alt50=1;
+            	                if ( (LA59_4==RULE_INT) ) {
+            	                    alt59=1;
             	                }
 
 
@@ -11292,17 +11974,17 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	        }
 
 
-            	        switch (alt50) {
+            	        switch (alt59) {
             	    	case 1 :
-            	    	    // InternalDockerCompose.g:4123:10: (lv_aux_addresses_9_0= ruleIPAMAddress )
+            	    	    // InternalDockerCompose.g:4392:10: (lv_aux_addresses_9_0= ruleIPAMAddress )
             	    	    {
-            	    	    // InternalDockerCompose.g:4123:10: (lv_aux_addresses_9_0= ruleIPAMAddress )
-            	    	    // InternalDockerCompose.g:4124:11: lv_aux_addresses_9_0= ruleIPAMAddress
+            	    	    // InternalDockerCompose.g:4392:10: (lv_aux_addresses_9_0= ruleIPAMAddress )
+            	    	    // InternalDockerCompose.g:4393:11: lv_aux_addresses_9_0= ruleIPAMAddress
             	    	    {
 
             	    	    											newCompositeNode(grammarAccess.getIPAMConfigAccess().getAux_addressesIPAMAddressParserRuleCall_1_3_1_0());
             	    	    										
-            	    	    pushFollow(FOLLOW_55);
+            	    	    pushFollow(FOLLOW_59);
             	    	    lv_aux_addresses_9_0=ruleIPAMAddress();
 
             	    	    state._fsp--;
@@ -11326,12 +12008,12 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    	    break;
 
             	    	default :
-            	    	    if ( cnt50 >= 1 ) break loop50;
+            	    	    if ( cnt59 >= 1 ) break loop59;
             	                EarlyExitException eee =
-            	                    new EarlyExitException(50, input);
+            	                    new EarlyExitException(59, input);
             	                throw eee;
             	        }
-            	        cnt50++;
+            	        cnt59++;
             	    } while (true);
 
 
@@ -11354,7 +12036,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop51;
+            	    break loop60;
                 }
             } while (true);
 
@@ -11393,7 +12075,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIPAMOption"
-    // InternalDockerCompose.g:4158:1: entryRuleIPAMOption returns [EObject current=null] : iv_ruleIPAMOption= ruleIPAMOption EOF ;
+    // InternalDockerCompose.g:4427:1: entryRuleIPAMOption returns [EObject current=null] : iv_ruleIPAMOption= ruleIPAMOption EOF ;
     public final EObject entryRuleIPAMOption() throws RecognitionException {
         EObject current = null;
 
@@ -11401,8 +12083,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:4158:51: (iv_ruleIPAMOption= ruleIPAMOption EOF )
-            // InternalDockerCompose.g:4159:2: iv_ruleIPAMOption= ruleIPAMOption EOF
+            // InternalDockerCompose.g:4427:51: (iv_ruleIPAMOption= ruleIPAMOption EOF )
+            // InternalDockerCompose.g:4428:2: iv_ruleIPAMOption= ruleIPAMOption EOF
             {
              newCompositeNode(grammarAccess.getIPAMOptionRule()); 
             pushFollow(FOLLOW_1);
@@ -11429,7 +12111,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIPAMOption"
-    // InternalDockerCompose.g:4165:1: ruleIPAMOption returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) ) ;
+    // InternalDockerCompose.g:4434:1: ruleIPAMOption returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) ) ;
     public final EObject ruleIPAMOption() throws RecognitionException {
         EObject current = null;
 
@@ -11443,14 +12125,14 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:4171:2: ( ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) ) )
-            // InternalDockerCompose.g:4172:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) )
+            // InternalDockerCompose.g:4440:2: ( ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) ) )
+            // InternalDockerCompose.g:4441:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) )
             {
-            // InternalDockerCompose.g:4172:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) )
-            // InternalDockerCompose.g:4173:3: () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) )
+            // InternalDockerCompose.g:4441:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) ) )
+            // InternalDockerCompose.g:4442:3: () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_value_3_0= ruleEString ) )
             {
-            // InternalDockerCompose.g:4173:3: ()
-            // InternalDockerCompose.g:4174:4: 
+            // InternalDockerCompose.g:4442:3: ()
+            // InternalDockerCompose.g:4443:4: 
             {
 
             				current = forceCreateModelElement(
@@ -11460,11 +12142,11 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDockerCompose.g:4180:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalDockerCompose.g:4181:4: (lv_name_1_0= ruleEString )
+            // InternalDockerCompose.g:4449:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalDockerCompose.g:4450:4: (lv_name_1_0= ruleEString )
             {
-            // InternalDockerCompose.g:4181:4: (lv_name_1_0= ruleEString )
-            // InternalDockerCompose.g:4182:5: lv_name_1_0= ruleEString
+            // InternalDockerCompose.g:4450:4: (lv_name_1_0= ruleEString )
+            // InternalDockerCompose.g:4451:5: lv_name_1_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getIPAMOptionAccess().getNameEStringParserRuleCall_1_0());
@@ -11491,15 +12173,15 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,21,FOLLOW_5); 
+            otherlv_2=(Token)match(input,22,FOLLOW_5); 
 
             			newLeafNode(otherlv_2, grammarAccess.getIPAMOptionAccess().getColonKeyword_2());
             		
-            // InternalDockerCompose.g:4203:3: ( (lv_value_3_0= ruleEString ) )
-            // InternalDockerCompose.g:4204:4: (lv_value_3_0= ruleEString )
+            // InternalDockerCompose.g:4472:3: ( (lv_value_3_0= ruleEString ) )
+            // InternalDockerCompose.g:4473:4: (lv_value_3_0= ruleEString )
             {
-            // InternalDockerCompose.g:4204:4: (lv_value_3_0= ruleEString )
-            // InternalDockerCompose.g:4205:5: lv_value_3_0= ruleEString
+            // InternalDockerCompose.g:4473:4: (lv_value_3_0= ruleEString )
+            // InternalDockerCompose.g:4474:5: lv_value_3_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getIPAMOptionAccess().getValueEStringParserRuleCall_3_0());
@@ -11549,7 +12231,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIPAMAddress"
-    // InternalDockerCompose.g:4226:1: entryRuleIPAMAddress returns [EObject current=null] : iv_ruleIPAMAddress= ruleIPAMAddress EOF ;
+    // InternalDockerCompose.g:4495:1: entryRuleIPAMAddress returns [EObject current=null] : iv_ruleIPAMAddress= ruleIPAMAddress EOF ;
     public final EObject entryRuleIPAMAddress() throws RecognitionException {
         EObject current = null;
 
@@ -11557,8 +12239,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:4226:52: (iv_ruleIPAMAddress= ruleIPAMAddress EOF )
-            // InternalDockerCompose.g:4227:2: iv_ruleIPAMAddress= ruleIPAMAddress EOF
+            // InternalDockerCompose.g:4495:52: (iv_ruleIPAMAddress= ruleIPAMAddress EOF )
+            // InternalDockerCompose.g:4496:2: iv_ruleIPAMAddress= ruleIPAMAddress EOF
             {
              newCompositeNode(grammarAccess.getIPAMAddressRule()); 
             pushFollow(FOLLOW_1);
@@ -11585,7 +12267,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIPAMAddress"
-    // InternalDockerCompose.g:4233:1: ruleIPAMAddress returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_dns_3_0= ruleDNS ) ) ) ;
+    // InternalDockerCompose.g:4502:1: ruleIPAMAddress returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_dns_3_0= ruleDNS ) ) ) ;
     public final EObject ruleIPAMAddress() throws RecognitionException {
         EObject current = null;
 
@@ -11599,14 +12281,14 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:4239:2: ( ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_dns_3_0= ruleDNS ) ) ) )
-            // InternalDockerCompose.g:4240:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_dns_3_0= ruleDNS ) ) )
+            // InternalDockerCompose.g:4508:2: ( ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_dns_3_0= ruleDNS ) ) ) )
+            // InternalDockerCompose.g:4509:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_dns_3_0= ruleDNS ) ) )
             {
-            // InternalDockerCompose.g:4240:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_dns_3_0= ruleDNS ) ) )
-            // InternalDockerCompose.g:4241:3: () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_dns_3_0= ruleDNS ) )
+            // InternalDockerCompose.g:4509:2: ( () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_dns_3_0= ruleDNS ) ) )
+            // InternalDockerCompose.g:4510:3: () ( (lv_name_1_0= ruleEString ) ) otherlv_2= ':' ( (lv_dns_3_0= ruleDNS ) )
             {
-            // InternalDockerCompose.g:4241:3: ()
-            // InternalDockerCompose.g:4242:4: 
+            // InternalDockerCompose.g:4510:3: ()
+            // InternalDockerCompose.g:4511:4: 
             {
 
             				current = forceCreateModelElement(
@@ -11616,11 +12298,11 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDockerCompose.g:4248:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalDockerCompose.g:4249:4: (lv_name_1_0= ruleEString )
+            // InternalDockerCompose.g:4517:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalDockerCompose.g:4518:4: (lv_name_1_0= ruleEString )
             {
-            // InternalDockerCompose.g:4249:4: (lv_name_1_0= ruleEString )
-            // InternalDockerCompose.g:4250:5: lv_name_1_0= ruleEString
+            // InternalDockerCompose.g:4518:4: (lv_name_1_0= ruleEString )
+            // InternalDockerCompose.g:4519:5: lv_name_1_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getIPAMAddressAccess().getNameEStringParserRuleCall_1_0());
@@ -11647,15 +12329,15 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,21,FOLLOW_21); 
+            otherlv_2=(Token)match(input,22,FOLLOW_25); 
 
             			newLeafNode(otherlv_2, grammarAccess.getIPAMAddressAccess().getColonKeyword_2());
             		
-            // InternalDockerCompose.g:4271:3: ( (lv_dns_3_0= ruleDNS ) )
-            // InternalDockerCompose.g:4272:4: (lv_dns_3_0= ruleDNS )
+            // InternalDockerCompose.g:4540:3: ( (lv_dns_3_0= ruleDNS ) )
+            // InternalDockerCompose.g:4541:4: (lv_dns_3_0= ruleDNS )
             {
-            // InternalDockerCompose.g:4272:4: (lv_dns_3_0= ruleDNS )
-            // InternalDockerCompose.g:4273:5: lv_dns_3_0= ruleDNS
+            // InternalDockerCompose.g:4541:4: (lv_dns_3_0= ruleDNS )
+            // InternalDockerCompose.g:4542:5: lv_dns_3_0= ruleDNS
             {
 
             					newCompositeNode(grammarAccess.getIPAMAddressAccess().getDnsDNSParserRuleCall_3_0());
@@ -11705,7 +12387,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePATH"
-    // InternalDockerCompose.g:4294:1: entryRulePATH returns [String current=null] : iv_rulePATH= rulePATH EOF ;
+    // InternalDockerCompose.g:4563:1: entryRulePATH returns [String current=null] : iv_rulePATH= rulePATH EOF ;
     public final String entryRulePATH() throws RecognitionException {
         String current = null;
 
@@ -11713,8 +12395,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:4294:44: (iv_rulePATH= rulePATH EOF )
-            // InternalDockerCompose.g:4295:2: iv_rulePATH= rulePATH EOF
+            // InternalDockerCompose.g:4563:44: (iv_rulePATH= rulePATH EOF )
+            // InternalDockerCompose.g:4564:2: iv_rulePATH= rulePATH EOF
             {
              newCompositeNode(grammarAccess.getPATHRule()); 
             pushFollow(FOLLOW_1);
@@ -11741,113 +12423,601 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePATH"
-    // InternalDockerCompose.g:4301:1: rulePATH returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '.' )? (kw= '/' )? (this_ID_2= RULE_ID )* ) ;
+    // InternalDockerCompose.g:4570:1: rulePATH returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( ( ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) | kw= '.' | kw= '..' ) (kw= '/' ( (this_ID_6= RULE_ID (kw= '.' this_ID_8= RULE_ID )* ) | kw= '.' | kw= '..' ) )* (kw= '/' )? ) | (kw= '/' ( ( (this_ID_13= RULE_ID (kw= '.' this_ID_15= RULE_ID )* ) | kw= '.' | kw= '..' ) kw= '/' )* ( (this_ID_19= RULE_ID (kw= '.' this_ID_21= RULE_ID )* ) | kw= '.' | kw= '..' )? ) ) ;
     public final AntlrDatatypeRuleToken rulePATH() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
+        Token this_ID_0=null;
         Token kw=null;
         Token this_ID_2=null;
+        Token this_ID_6=null;
+        Token this_ID_8=null;
+        Token this_ID_13=null;
+        Token this_ID_15=null;
+        Token this_ID_19=null;
+        Token this_ID_21=null;
 
 
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:4307:2: ( ( (kw= '.' )? (kw= '/' )? (this_ID_2= RULE_ID )* ) )
-            // InternalDockerCompose.g:4308:2: ( (kw= '.' )? (kw= '/' )? (this_ID_2= RULE_ID )* )
+            // InternalDockerCompose.g:4576:2: ( ( ( ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) | kw= '.' | kw= '..' ) (kw= '/' ( (this_ID_6= RULE_ID (kw= '.' this_ID_8= RULE_ID )* ) | kw= '.' | kw= '..' ) )* (kw= '/' )? ) | (kw= '/' ( ( (this_ID_13= RULE_ID (kw= '.' this_ID_15= RULE_ID )* ) | kw= '.' | kw= '..' ) kw= '/' )* ( (this_ID_19= RULE_ID (kw= '.' this_ID_21= RULE_ID )* ) | kw= '.' | kw= '..' )? ) ) )
+            // InternalDockerCompose.g:4577:2: ( ( ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) | kw= '.' | kw= '..' ) (kw= '/' ( (this_ID_6= RULE_ID (kw= '.' this_ID_8= RULE_ID )* ) | kw= '.' | kw= '..' ) )* (kw= '/' )? ) | (kw= '/' ( ( (this_ID_13= RULE_ID (kw= '.' this_ID_15= RULE_ID )* ) | kw= '.' | kw= '..' ) kw= '/' )* ( (this_ID_19= RULE_ID (kw= '.' this_ID_21= RULE_ID )* ) | kw= '.' | kw= '..' )? ) )
             {
-            // InternalDockerCompose.g:4308:2: ( (kw= '.' )? (kw= '/' )? (this_ID_2= RULE_ID )* )
-            // InternalDockerCompose.g:4309:3: (kw= '.' )? (kw= '/' )? (this_ID_2= RULE_ID )*
-            {
-            // InternalDockerCompose.g:4309:3: (kw= '.' )?
-            int alt52=2;
-            int LA52_0 = input.LA(1);
+            // InternalDockerCompose.g:4577:2: ( ( ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) | kw= '.' | kw= '..' ) (kw= '/' ( (this_ID_6= RULE_ID (kw= '.' this_ID_8= RULE_ID )* ) | kw= '.' | kw= '..' ) )* (kw= '/' )? ) | (kw= '/' ( ( (this_ID_13= RULE_ID (kw= '.' this_ID_15= RULE_ID )* ) | kw= '.' | kw= '..' ) kw= '/' )* ( (this_ID_19= RULE_ID (kw= '.' this_ID_21= RULE_ID )* ) | kw= '.' | kw= '..' )? ) )
+            int alt72=2;
+            int LA72_0 = input.LA(1);
 
-            if ( (LA52_0==72) ) {
-                alt52=1;
+            if ( (LA72_0==RULE_ID||(LA72_0>=76 && LA72_0<=77)) ) {
+                alt72=1;
             }
-            switch (alt52) {
+            else if ( (LA72_0==39) ) {
+                alt72=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 72, 0, input);
+
+                throw nvae;
+            }
+            switch (alt72) {
                 case 1 :
-                    // InternalDockerCompose.g:4310:4: kw= '.'
+                    // InternalDockerCompose.g:4578:3: ( ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) | kw= '.' | kw= '..' ) (kw= '/' ( (this_ID_6= RULE_ID (kw= '.' this_ID_8= RULE_ID )* ) | kw= '.' | kw= '..' ) )* (kw= '/' )? )
                     {
-                    kw=(Token)match(input,72,FOLLOW_56); 
-
-                    				current.merge(kw);
-                    				newLeafNode(kw, grammarAccess.getPATHAccess().getFullStopKeyword_0());
-                    			
-
-                    }
-                    break;
-
-            }
-
-            // InternalDockerCompose.g:4316:3: (kw= '/' )?
-            int alt53=2;
-            int LA53_0 = input.LA(1);
-
-            if ( (LA53_0==73) ) {
-                alt53=1;
-            }
-            switch (alt53) {
-                case 1 :
-                    // InternalDockerCompose.g:4317:4: kw= '/'
+                    // InternalDockerCompose.g:4578:3: ( ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) | kw= '.' | kw= '..' ) (kw= '/' ( (this_ID_6= RULE_ID (kw= '.' this_ID_8= RULE_ID )* ) | kw= '.' | kw= '..' ) )* (kw= '/' )? )
+                    // InternalDockerCompose.g:4579:4: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) | kw= '.' | kw= '..' ) (kw= '/' ( (this_ID_6= RULE_ID (kw= '.' this_ID_8= RULE_ID )* ) | kw= '.' | kw= '..' ) )* (kw= '/' )?
                     {
-                    kw=(Token)match(input,73,FOLLOW_57); 
+                    // InternalDockerCompose.g:4579:4: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) | kw= '.' | kw= '..' )
+                    int alt62=3;
+                    switch ( input.LA(1) ) {
+                    case RULE_ID:
+                        {
+                        alt62=1;
+                        }
+                        break;
+                    case 76:
+                        {
+                        alt62=2;
+                        }
+                        break;
+                    case 77:
+                        {
+                        alt62=3;
+                        }
+                        break;
+                    default:
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 62, 0, input);
 
-                    				current.merge(kw);
-                    				newLeafNode(kw, grammarAccess.getPATHAccess().getSolidusKeyword_1());
-                    			
+                        throw nvae;
+                    }
+
+                    switch (alt62) {
+                        case 1 :
+                            // InternalDockerCompose.g:4580:5: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+                            {
+                            // InternalDockerCompose.g:4580:5: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+                            // InternalDockerCompose.g:4581:6: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
+                            {
+                            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_60); 
+
+                            						current.merge(this_ID_0);
+                            					
+
+                            						newLeafNode(this_ID_0, grammarAccess.getPATHAccess().getIDTerminalRuleCall_0_0_0_0());
+                            					
+                            // InternalDockerCompose.g:4588:6: (kw= '.' this_ID_2= RULE_ID )*
+                            loop61:
+                            do {
+                                int alt61=2;
+                                int LA61_0 = input.LA(1);
+
+                                if ( (LA61_0==76) ) {
+                                    alt61=1;
+                                }
+
+
+                                switch (alt61) {
+                            	case 1 :
+                            	    // InternalDockerCompose.g:4589:7: kw= '.' this_ID_2= RULE_ID
+                            	    {
+                            	    kw=(Token)match(input,76,FOLLOW_11); 
+
+                            	    							current.merge(kw);
+                            	    							newLeafNode(kw, grammarAccess.getPATHAccess().getFullStopKeyword_0_0_0_1_0());
+                            	    						
+                            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_60); 
+
+                            	    							current.merge(this_ID_2);
+                            	    						
+
+                            	    							newLeafNode(this_ID_2, grammarAccess.getPATHAccess().getIDTerminalRuleCall_0_0_0_1_1());
+                            	    						
+
+                            	    }
+                            	    break;
+
+                            	default :
+                            	    break loop61;
+                                }
+                            } while (true);
+
+
+                            }
+
+
+                            }
+                            break;
+                        case 2 :
+                            // InternalDockerCompose.g:4604:5: kw= '.'
+                            {
+                            kw=(Token)match(input,76,FOLLOW_61); 
+
+                            					current.merge(kw);
+                            					newLeafNode(kw, grammarAccess.getPATHAccess().getFullStopKeyword_0_0_1());
+                            				
+
+                            }
+                            break;
+                        case 3 :
+                            // InternalDockerCompose.g:4610:5: kw= '..'
+                            {
+                            kw=(Token)match(input,77,FOLLOW_61); 
+
+                            					current.merge(kw);
+                            					newLeafNode(kw, grammarAccess.getPATHAccess().getFullStopFullStopKeyword_0_0_2());
+                            				
+
+                            }
+                            break;
 
                     }
-                    break;
 
-            }
+                    // InternalDockerCompose.g:4616:4: (kw= '/' ( (this_ID_6= RULE_ID (kw= '.' this_ID_8= RULE_ID )* ) | kw= '.' | kw= '..' ) )*
+                    loop65:
+                    do {
+                        int alt65=2;
+                        int LA65_0 = input.LA(1);
 
-            // InternalDockerCompose.g:4323:3: (this_ID_2= RULE_ID )*
-            loop54:
-            do {
-                int alt54=2;
-                int LA54_0 = input.LA(1);
+                        if ( (LA65_0==39) ) {
+                            int LA65_1 = input.LA(2);
 
-                if ( (LA54_0==RULE_ID) ) {
-                    int LA54_2 = input.LA(2);
+                            if ( (LA65_1==RULE_ID) ) {
+                                int LA65_3 = input.LA(3);
 
-                    if ( (LA54_2==EOF||LA54_2==RULE_ID||LA54_2==RULE_STRING||(LA54_2>=15 && LA54_2<=20)||(LA54_2>=22 && LA54_2<=35)||(LA54_2>=41 && LA54_2<=44)||LA54_2==46||LA54_2==48||(LA54_2>=50 && LA54_2<=52)) ) {
-                        alt54=1;
-                    }
-                    else if ( (LA54_2==21) ) {
-                        int LA54_4 = input.LA(3);
+                                if ( (LA65_3==22) ) {
+                                    int LA65_5 = input.LA(4);
 
-                        if ( ((LA54_4>=80 && LA54_4<=82)) ) {
-                            alt54=1;
+                                    if ( ((LA65_5>=84 && LA65_5<=86)) ) {
+                                        alt65=1;
+                                    }
+
+
+                                }
+                                else if ( (LA65_3==EOF||LA65_3==RULE_ID||LA65_3==RULE_STRING||(LA65_3>=16 && LA65_3<=21)||(LA65_3>=23 && LA65_3<=37)||LA65_3==39||(LA65_3>=46 && LA65_3<=49)||LA65_3==51||LA65_3==53||(LA65_3>=55 && LA65_3<=57)||LA65_3==76) ) {
+                                    alt65=1;
+                                }
+
+
+                            }
+                            else if ( ((LA65_1>=76 && LA65_1<=77)) ) {
+                                alt65=1;
+                            }
+
+
                         }
 
 
+                        switch (alt65) {
+                    	case 1 :
+                    	    // InternalDockerCompose.g:4617:5: kw= '/' ( (this_ID_6= RULE_ID (kw= '.' this_ID_8= RULE_ID )* ) | kw= '.' | kw= '..' )
+                    	    {
+                    	    kw=(Token)match(input,39,FOLLOW_62); 
+
+                    	    					current.merge(kw);
+                    	    					newLeafNode(kw, grammarAccess.getPATHAccess().getSolidusKeyword_0_1_0());
+                    	    				
+                    	    // InternalDockerCompose.g:4622:5: ( (this_ID_6= RULE_ID (kw= '.' this_ID_8= RULE_ID )* ) | kw= '.' | kw= '..' )
+                    	    int alt64=3;
+                    	    switch ( input.LA(1) ) {
+                    	    case RULE_ID:
+                    	        {
+                    	        alt64=1;
+                    	        }
+                    	        break;
+                    	    case 76:
+                    	        {
+                    	        alt64=2;
+                    	        }
+                    	        break;
+                    	    case 77:
+                    	        {
+                    	        alt64=3;
+                    	        }
+                    	        break;
+                    	    default:
+                    	        NoViableAltException nvae =
+                    	            new NoViableAltException("", 64, 0, input);
+
+                    	        throw nvae;
+                    	    }
+
+                    	    switch (alt64) {
+                    	        case 1 :
+                    	            // InternalDockerCompose.g:4623:6: (this_ID_6= RULE_ID (kw= '.' this_ID_8= RULE_ID )* )
+                    	            {
+                    	            // InternalDockerCompose.g:4623:6: (this_ID_6= RULE_ID (kw= '.' this_ID_8= RULE_ID )* )
+                    	            // InternalDockerCompose.g:4624:7: this_ID_6= RULE_ID (kw= '.' this_ID_8= RULE_ID )*
+                    	            {
+                    	            this_ID_6=(Token)match(input,RULE_ID,FOLLOW_60); 
+
+                    	            							current.merge(this_ID_6);
+                    	            						
+
+                    	            							newLeafNode(this_ID_6, grammarAccess.getPATHAccess().getIDTerminalRuleCall_0_1_1_0_0());
+                    	            						
+                    	            // InternalDockerCompose.g:4631:7: (kw= '.' this_ID_8= RULE_ID )*
+                    	            loop63:
+                    	            do {
+                    	                int alt63=2;
+                    	                int LA63_0 = input.LA(1);
+
+                    	                if ( (LA63_0==76) ) {
+                    	                    alt63=1;
+                    	                }
+
+
+                    	                switch (alt63) {
+                    	            	case 1 :
+                    	            	    // InternalDockerCompose.g:4632:8: kw= '.' this_ID_8= RULE_ID
+                    	            	    {
+                    	            	    kw=(Token)match(input,76,FOLLOW_11); 
+
+                    	            	    								current.merge(kw);
+                    	            	    								newLeafNode(kw, grammarAccess.getPATHAccess().getFullStopKeyword_0_1_1_0_1_0());
+                    	            	    							
+                    	            	    this_ID_8=(Token)match(input,RULE_ID,FOLLOW_60); 
+
+                    	            	    								current.merge(this_ID_8);
+                    	            	    							
+
+                    	            	    								newLeafNode(this_ID_8, grammarAccess.getPATHAccess().getIDTerminalRuleCall_0_1_1_0_1_1());
+                    	            	    							
+
+                    	            	    }
+                    	            	    break;
+
+                    	            	default :
+                    	            	    break loop63;
+                    	                }
+                    	            } while (true);
+
+
+                    	            }
+
+
+                    	            }
+                    	            break;
+                    	        case 2 :
+                    	            // InternalDockerCompose.g:4647:6: kw= '.'
+                    	            {
+                    	            kw=(Token)match(input,76,FOLLOW_61); 
+
+                    	            						current.merge(kw);
+                    	            						newLeafNode(kw, grammarAccess.getPATHAccess().getFullStopKeyword_0_1_1_1());
+                    	            					
+
+                    	            }
+                    	            break;
+                    	        case 3 :
+                    	            // InternalDockerCompose.g:4653:6: kw= '..'
+                    	            {
+                    	            kw=(Token)match(input,77,FOLLOW_61); 
+
+                    	            						current.merge(kw);
+                    	            						newLeafNode(kw, grammarAccess.getPATHAccess().getFullStopFullStopKeyword_0_1_1_2());
+                    	            					
+
+                    	            }
+                    	            break;
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop65;
+                        }
+                    } while (true);
+
+                    // InternalDockerCompose.g:4660:4: (kw= '/' )?
+                    int alt66=2;
+                    int LA66_0 = input.LA(1);
+
+                    if ( (LA66_0==39) ) {
+                        alt66=1;
+                    }
+                    switch (alt66) {
+                        case 1 :
+                            // InternalDockerCompose.g:4661:5: kw= '/'
+                            {
+                            kw=(Token)match(input,39,FOLLOW_2); 
+
+                            					current.merge(kw);
+                            					newLeafNode(kw, grammarAccess.getPATHAccess().getSolidusKeyword_0_2());
+                            				
+
+                            }
+                            break;
+
                     }
 
 
-                }
+                    }
 
 
-                switch (alt54) {
-            	case 1 :
-            	    // InternalDockerCompose.g:4324:4: this_ID_2= RULE_ID
-            	    {
-            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_57); 
+                    }
+                    break;
+                case 2 :
+                    // InternalDockerCompose.g:4669:3: (kw= '/' ( ( (this_ID_13= RULE_ID (kw= '.' this_ID_15= RULE_ID )* ) | kw= '.' | kw= '..' ) kw= '/' )* ( (this_ID_19= RULE_ID (kw= '.' this_ID_21= RULE_ID )* ) | kw= '.' | kw= '..' )? )
+                    {
+                    // InternalDockerCompose.g:4669:3: (kw= '/' ( ( (this_ID_13= RULE_ID (kw= '.' this_ID_15= RULE_ID )* ) | kw= '.' | kw= '..' ) kw= '/' )* ( (this_ID_19= RULE_ID (kw= '.' this_ID_21= RULE_ID )* ) | kw= '.' | kw= '..' )? )
+                    // InternalDockerCompose.g:4670:4: kw= '/' ( ( (this_ID_13= RULE_ID (kw= '.' this_ID_15= RULE_ID )* ) | kw= '.' | kw= '..' ) kw= '/' )* ( (this_ID_19= RULE_ID (kw= '.' this_ID_21= RULE_ID )* ) | kw= '.' | kw= '..' )?
+                    {
+                    kw=(Token)match(input,39,FOLLOW_63); 
 
-            	    				current.merge(this_ID_2);
-            	    			
+                    				current.merge(kw);
+                    				newLeafNode(kw, grammarAccess.getPATHAccess().getSolidusKeyword_1_0());
+                    			
+                    // InternalDockerCompose.g:4675:4: ( ( (this_ID_13= RULE_ID (kw= '.' this_ID_15= RULE_ID )* ) | kw= '.' | kw= '..' ) kw= '/' )*
+                    loop69:
+                    do {
+                        int alt69=2;
+                        alt69 = dfa69.predict(input);
+                        switch (alt69) {
+                    	case 1 :
+                    	    // InternalDockerCompose.g:4676:5: ( (this_ID_13= RULE_ID (kw= '.' this_ID_15= RULE_ID )* ) | kw= '.' | kw= '..' ) kw= '/'
+                    	    {
+                    	    // InternalDockerCompose.g:4676:5: ( (this_ID_13= RULE_ID (kw= '.' this_ID_15= RULE_ID )* ) | kw= '.' | kw= '..' )
+                    	    int alt68=3;
+                    	    switch ( input.LA(1) ) {
+                    	    case RULE_ID:
+                    	        {
+                    	        alt68=1;
+                    	        }
+                    	        break;
+                    	    case 76:
+                    	        {
+                    	        alt68=2;
+                    	        }
+                    	        break;
+                    	    case 77:
+                    	        {
+                    	        alt68=3;
+                    	        }
+                    	        break;
+                    	    default:
+                    	        NoViableAltException nvae =
+                    	            new NoViableAltException("", 68, 0, input);
 
-            	    				newLeafNode(this_ID_2, grammarAccess.getPATHAccess().getIDTerminalRuleCall_2());
-            	    			
+                    	        throw nvae;
+                    	    }
 
-            	    }
-            	    break;
+                    	    switch (alt68) {
+                    	        case 1 :
+                    	            // InternalDockerCompose.g:4677:6: (this_ID_13= RULE_ID (kw= '.' this_ID_15= RULE_ID )* )
+                    	            {
+                    	            // InternalDockerCompose.g:4677:6: (this_ID_13= RULE_ID (kw= '.' this_ID_15= RULE_ID )* )
+                    	            // InternalDockerCompose.g:4678:7: this_ID_13= RULE_ID (kw= '.' this_ID_15= RULE_ID )*
+                    	            {
+                    	            this_ID_13=(Token)match(input,RULE_ID,FOLLOW_64); 
 
-            	default :
-            	    break loop54;
-                }
-            } while (true);
+                    	            							current.merge(this_ID_13);
+                    	            						
 
+                    	            							newLeafNode(this_ID_13, grammarAccess.getPATHAccess().getIDTerminalRuleCall_1_1_0_0_0());
+                    	            						
+                    	            // InternalDockerCompose.g:4685:7: (kw= '.' this_ID_15= RULE_ID )*
+                    	            loop67:
+                    	            do {
+                    	                int alt67=2;
+                    	                int LA67_0 = input.LA(1);
+
+                    	                if ( (LA67_0==76) ) {
+                    	                    alt67=1;
+                    	                }
+
+
+                    	                switch (alt67) {
+                    	            	case 1 :
+                    	            	    // InternalDockerCompose.g:4686:8: kw= '.' this_ID_15= RULE_ID
+                    	            	    {
+                    	            	    kw=(Token)match(input,76,FOLLOW_11); 
+
+                    	            	    								current.merge(kw);
+                    	            	    								newLeafNode(kw, grammarAccess.getPATHAccess().getFullStopKeyword_1_1_0_0_1_0());
+                    	            	    							
+                    	            	    this_ID_15=(Token)match(input,RULE_ID,FOLLOW_64); 
+
+                    	            	    								current.merge(this_ID_15);
+                    	            	    							
+
+                    	            	    								newLeafNode(this_ID_15, grammarAccess.getPATHAccess().getIDTerminalRuleCall_1_1_0_0_1_1());
+                    	            	    							
+
+                    	            	    }
+                    	            	    break;
+
+                    	            	default :
+                    	            	    break loop67;
+                    	                }
+                    	            } while (true);
+
+
+                    	            }
+
+
+                    	            }
+                    	            break;
+                    	        case 2 :
+                    	            // InternalDockerCompose.g:4701:6: kw= '.'
+                    	            {
+                    	            kw=(Token)match(input,76,FOLLOW_65); 
+
+                    	            						current.merge(kw);
+                    	            						newLeafNode(kw, grammarAccess.getPATHAccess().getFullStopKeyword_1_1_0_1());
+                    	            					
+
+                    	            }
+                    	            break;
+                    	        case 3 :
+                    	            // InternalDockerCompose.g:4707:6: kw= '..'
+                    	            {
+                    	            kw=(Token)match(input,77,FOLLOW_65); 
+
+                    	            						current.merge(kw);
+                    	            						newLeafNode(kw, grammarAccess.getPATHAccess().getFullStopFullStopKeyword_1_1_0_2());
+                    	            					
+
+                    	            }
+                    	            break;
+
+                    	    }
+
+                    	    kw=(Token)match(input,39,FOLLOW_63); 
+
+                    	    					current.merge(kw);
+                    	    					newLeafNode(kw, grammarAccess.getPATHAccess().getSolidusKeyword_1_1_1());
+                    	    				
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop69;
+                        }
+                    } while (true);
+
+                    // InternalDockerCompose.g:4719:4: ( (this_ID_19= RULE_ID (kw= '.' this_ID_21= RULE_ID )* ) | kw= '.' | kw= '..' )?
+                    int alt71=4;
+                    switch ( input.LA(1) ) {
+                        case RULE_ID:
+                            {
+                            int LA71_1 = input.LA(2);
+
+                            if ( (LA71_1==EOF||LA71_1==RULE_ID||LA71_1==RULE_STRING||(LA71_1>=16 && LA71_1<=21)||(LA71_1>=23 && LA71_1<=37)||(LA71_1>=46 && LA71_1<=49)||LA71_1==51||LA71_1==53||(LA71_1>=55 && LA71_1<=57)||LA71_1==76) ) {
+                                alt71=1;
+                            }
+                            else if ( (LA71_1==22) ) {
+                                int LA71_6 = input.LA(3);
+
+                                if ( ((LA71_6>=84 && LA71_6<=86)) ) {
+                                    alt71=1;
+                                }
+                            }
+                            }
+                            break;
+                        case 76:
+                            {
+                            alt71=2;
+                            }
+                            break;
+                        case 77:
+                            {
+                            alt71=3;
+                            }
+                            break;
+                    }
+
+                    switch (alt71) {
+                        case 1 :
+                            // InternalDockerCompose.g:4720:5: (this_ID_19= RULE_ID (kw= '.' this_ID_21= RULE_ID )* )
+                            {
+                            // InternalDockerCompose.g:4720:5: (this_ID_19= RULE_ID (kw= '.' this_ID_21= RULE_ID )* )
+                            // InternalDockerCompose.g:4721:6: this_ID_19= RULE_ID (kw= '.' this_ID_21= RULE_ID )*
+                            {
+                            this_ID_19=(Token)match(input,RULE_ID,FOLLOW_66); 
+
+                            						current.merge(this_ID_19);
+                            					
+
+                            						newLeafNode(this_ID_19, grammarAccess.getPATHAccess().getIDTerminalRuleCall_1_2_0_0());
+                            					
+                            // InternalDockerCompose.g:4728:6: (kw= '.' this_ID_21= RULE_ID )*
+                            loop70:
+                            do {
+                                int alt70=2;
+                                int LA70_0 = input.LA(1);
+
+                                if ( (LA70_0==76) ) {
+                                    alt70=1;
+                                }
+
+
+                                switch (alt70) {
+                            	case 1 :
+                            	    // InternalDockerCompose.g:4729:7: kw= '.' this_ID_21= RULE_ID
+                            	    {
+                            	    kw=(Token)match(input,76,FOLLOW_11); 
+
+                            	    							current.merge(kw);
+                            	    							newLeafNode(kw, grammarAccess.getPATHAccess().getFullStopKeyword_1_2_0_1_0());
+                            	    						
+                            	    this_ID_21=(Token)match(input,RULE_ID,FOLLOW_66); 
+
+                            	    							current.merge(this_ID_21);
+                            	    						
+
+                            	    							newLeafNode(this_ID_21, grammarAccess.getPATHAccess().getIDTerminalRuleCall_1_2_0_1_1());
+                            	    						
+
+                            	    }
+                            	    break;
+
+                            	default :
+                            	    break loop70;
+                                }
+                            } while (true);
+
+
+                            }
+
+
+                            }
+                            break;
+                        case 2 :
+                            // InternalDockerCompose.g:4744:5: kw= '.'
+                            {
+                            kw=(Token)match(input,76,FOLLOW_2); 
+
+                            					current.merge(kw);
+                            					newLeafNode(kw, grammarAccess.getPATHAccess().getFullStopKeyword_1_2_1());
+                            				
+
+                            }
+                            break;
+                        case 3 :
+                            // InternalDockerCompose.g:4750:5: kw= '..'
+                            {
+                            kw=(Token)match(input,77,FOLLOW_2); 
+
+                            					current.merge(kw);
+                            					newLeafNode(kw, grammarAccess.getPATHAccess().getFullStopFullStopKeyword_1_2_2());
+                            				
+
+                            }
+                            break;
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -11871,7 +13041,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEString"
-    // InternalDockerCompose.g:4336:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
+    // InternalDockerCompose.g:4761:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
     public final String entryRuleEString() throws RecognitionException {
         String current = null;
 
@@ -11879,8 +13049,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:4336:47: (iv_ruleEString= ruleEString EOF )
-            // InternalDockerCompose.g:4337:2: iv_ruleEString= ruleEString EOF
+            // InternalDockerCompose.g:4761:47: (iv_ruleEString= ruleEString EOF )
+            // InternalDockerCompose.g:4762:2: iv_ruleEString= ruleEString EOF
             {
              newCompositeNode(grammarAccess.getEStringRule()); 
             pushFollow(FOLLOW_1);
@@ -11907,7 +13077,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEString"
-    // InternalDockerCompose.g:4343:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
+    // InternalDockerCompose.g:4768:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
     public final AntlrDatatypeRuleToken ruleEString() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -11918,28 +13088,28 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:4349:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
-            // InternalDockerCompose.g:4350:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            // InternalDockerCompose.g:4774:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
+            // InternalDockerCompose.g:4775:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             {
-            // InternalDockerCompose.g:4350:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
-            int alt55=2;
-            int LA55_0 = input.LA(1);
+            // InternalDockerCompose.g:4775:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            int alt73=2;
+            int LA73_0 = input.LA(1);
 
-            if ( (LA55_0==RULE_STRING) ) {
-                alt55=1;
+            if ( (LA73_0==RULE_STRING) ) {
+                alt73=1;
             }
-            else if ( (LA55_0==RULE_ID) ) {
-                alt55=2;
+            else if ( (LA73_0==RULE_ID) ) {
+                alt73=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 55, 0, input);
+                    new NoViableAltException("", 73, 0, input);
 
                 throw nvae;
             }
-            switch (alt55) {
+            switch (alt73) {
                 case 1 :
-                    // InternalDockerCompose.g:4351:3: this_STRING_0= RULE_STRING
+                    // InternalDockerCompose.g:4776:3: this_STRING_0= RULE_STRING
                     {
                     this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -11952,7 +13122,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDockerCompose.g:4359:3: this_ID_1= RULE_ID
+                    // InternalDockerCompose.g:4784:3: this_ID_1= RULE_ID
                     {
                     this_ID_1=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -11987,7 +13157,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEInt"
-    // InternalDockerCompose.g:4370:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
+    // InternalDockerCompose.g:4795:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
     public final String entryRuleEInt() throws RecognitionException {
         String current = null;
 
@@ -11995,8 +13165,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:4370:44: (iv_ruleEInt= ruleEInt EOF )
-            // InternalDockerCompose.g:4371:2: iv_ruleEInt= ruleEInt EOF
+            // InternalDockerCompose.g:4795:44: (iv_ruleEInt= ruleEInt EOF )
+            // InternalDockerCompose.g:4796:2: iv_ruleEInt= ruleEInt EOF
             {
              newCompositeNode(grammarAccess.getEIntRule()); 
             pushFollow(FOLLOW_1);
@@ -12023,7 +13193,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEInt"
-    // InternalDockerCompose.g:4377:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
+    // InternalDockerCompose.g:4802:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
     public final AntlrDatatypeRuleToken ruleEInt() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -12033,8 +13203,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:4383:2: (this_INT_0= RULE_INT )
-            // InternalDockerCompose.g:4384:2: this_INT_0= RULE_INT
+            // InternalDockerCompose.g:4808:2: (this_INT_0= RULE_INT )
+            // InternalDockerCompose.g:4809:2: this_INT_0= RULE_INT
             {
             this_INT_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -12063,7 +13233,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDNS"
-    // InternalDockerCompose.g:4394:1: entryRuleDNS returns [EObject current=null] : iv_ruleDNS= ruleDNS EOF ;
+    // InternalDockerCompose.g:4819:1: entryRuleDNS returns [EObject current=null] : iv_ruleDNS= ruleDNS EOF ;
     public final EObject entryRuleDNS() throws RecognitionException {
         EObject current = null;
 
@@ -12071,8 +13241,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:4394:44: (iv_ruleDNS= ruleDNS EOF )
-            // InternalDockerCompose.g:4395:2: iv_ruleDNS= ruleDNS EOF
+            // InternalDockerCompose.g:4819:44: (iv_ruleDNS= ruleDNS EOF )
+            // InternalDockerCompose.g:4820:2: iv_ruleDNS= ruleDNS EOF
             {
              newCompositeNode(grammarAccess.getDNSRule()); 
             pushFollow(FOLLOW_1);
@@ -12099,7 +13269,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDNS"
-    // InternalDockerCompose.g:4401:1: ruleDNS returns [EObject current=null] : ( ( (lv_dns1_0_0= ruleEInt ) ) otherlv_1= '.' ( (lv_dns2_2_0= ruleEInt ) ) otherlv_3= '.' ( (lv_dns3_4_0= ruleEInt ) ) otherlv_5= '.' ( (lv_dns4_6_0= ruleEInt ) ) ) ;
+    // InternalDockerCompose.g:4826:1: ruleDNS returns [EObject current=null] : ( ( (lv_dns1_0_0= ruleEInt ) ) otherlv_1= '.' ( (lv_dns2_2_0= ruleEInt ) ) otherlv_3= '.' ( (lv_dns3_4_0= ruleEInt ) ) otherlv_5= '.' ( (lv_dns4_6_0= ruleEInt ) ) ) ;
     public final EObject ruleDNS() throws RecognitionException {
         EObject current = null;
 
@@ -12119,22 +13289,22 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:4407:2: ( ( ( (lv_dns1_0_0= ruleEInt ) ) otherlv_1= '.' ( (lv_dns2_2_0= ruleEInt ) ) otherlv_3= '.' ( (lv_dns3_4_0= ruleEInt ) ) otherlv_5= '.' ( (lv_dns4_6_0= ruleEInt ) ) ) )
-            // InternalDockerCompose.g:4408:2: ( ( (lv_dns1_0_0= ruleEInt ) ) otherlv_1= '.' ( (lv_dns2_2_0= ruleEInt ) ) otherlv_3= '.' ( (lv_dns3_4_0= ruleEInt ) ) otherlv_5= '.' ( (lv_dns4_6_0= ruleEInt ) ) )
+            // InternalDockerCompose.g:4832:2: ( ( ( (lv_dns1_0_0= ruleEInt ) ) otherlv_1= '.' ( (lv_dns2_2_0= ruleEInt ) ) otherlv_3= '.' ( (lv_dns3_4_0= ruleEInt ) ) otherlv_5= '.' ( (lv_dns4_6_0= ruleEInt ) ) ) )
+            // InternalDockerCompose.g:4833:2: ( ( (lv_dns1_0_0= ruleEInt ) ) otherlv_1= '.' ( (lv_dns2_2_0= ruleEInt ) ) otherlv_3= '.' ( (lv_dns3_4_0= ruleEInt ) ) otherlv_5= '.' ( (lv_dns4_6_0= ruleEInt ) ) )
             {
-            // InternalDockerCompose.g:4408:2: ( ( (lv_dns1_0_0= ruleEInt ) ) otherlv_1= '.' ( (lv_dns2_2_0= ruleEInt ) ) otherlv_3= '.' ( (lv_dns3_4_0= ruleEInt ) ) otherlv_5= '.' ( (lv_dns4_6_0= ruleEInt ) ) )
-            // InternalDockerCompose.g:4409:3: ( (lv_dns1_0_0= ruleEInt ) ) otherlv_1= '.' ( (lv_dns2_2_0= ruleEInt ) ) otherlv_3= '.' ( (lv_dns3_4_0= ruleEInt ) ) otherlv_5= '.' ( (lv_dns4_6_0= ruleEInt ) )
+            // InternalDockerCompose.g:4833:2: ( ( (lv_dns1_0_0= ruleEInt ) ) otherlv_1= '.' ( (lv_dns2_2_0= ruleEInt ) ) otherlv_3= '.' ( (lv_dns3_4_0= ruleEInt ) ) otherlv_5= '.' ( (lv_dns4_6_0= ruleEInt ) ) )
+            // InternalDockerCompose.g:4834:3: ( (lv_dns1_0_0= ruleEInt ) ) otherlv_1= '.' ( (lv_dns2_2_0= ruleEInt ) ) otherlv_3= '.' ( (lv_dns3_4_0= ruleEInt ) ) otherlv_5= '.' ( (lv_dns4_6_0= ruleEInt ) )
             {
-            // InternalDockerCompose.g:4409:3: ( (lv_dns1_0_0= ruleEInt ) )
-            // InternalDockerCompose.g:4410:4: (lv_dns1_0_0= ruleEInt )
+            // InternalDockerCompose.g:4834:3: ( (lv_dns1_0_0= ruleEInt ) )
+            // InternalDockerCompose.g:4835:4: (lv_dns1_0_0= ruleEInt )
             {
-            // InternalDockerCompose.g:4410:4: (lv_dns1_0_0= ruleEInt )
-            // InternalDockerCompose.g:4411:5: lv_dns1_0_0= ruleEInt
+            // InternalDockerCompose.g:4835:4: (lv_dns1_0_0= ruleEInt )
+            // InternalDockerCompose.g:4836:5: lv_dns1_0_0= ruleEInt
             {
 
             					newCompositeNode(grammarAccess.getDNSAccess().getDns1EIntParserRuleCall_0_0());
             				
-            pushFollow(FOLLOW_58);
+            pushFollow(FOLLOW_67);
             lv_dns1_0_0=ruleEInt();
 
             state._fsp--;
@@ -12156,20 +13326,20 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,72,FOLLOW_11); 
+            otherlv_1=(Token)match(input,76,FOLLOW_12); 
 
             			newLeafNode(otherlv_1, grammarAccess.getDNSAccess().getFullStopKeyword_1());
             		
-            // InternalDockerCompose.g:4432:3: ( (lv_dns2_2_0= ruleEInt ) )
-            // InternalDockerCompose.g:4433:4: (lv_dns2_2_0= ruleEInt )
+            // InternalDockerCompose.g:4857:3: ( (lv_dns2_2_0= ruleEInt ) )
+            // InternalDockerCompose.g:4858:4: (lv_dns2_2_0= ruleEInt )
             {
-            // InternalDockerCompose.g:4433:4: (lv_dns2_2_0= ruleEInt )
-            // InternalDockerCompose.g:4434:5: lv_dns2_2_0= ruleEInt
+            // InternalDockerCompose.g:4858:4: (lv_dns2_2_0= ruleEInt )
+            // InternalDockerCompose.g:4859:5: lv_dns2_2_0= ruleEInt
             {
 
             					newCompositeNode(grammarAccess.getDNSAccess().getDns2EIntParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_58);
+            pushFollow(FOLLOW_67);
             lv_dns2_2_0=ruleEInt();
 
             state._fsp--;
@@ -12191,20 +13361,20 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,72,FOLLOW_11); 
+            otherlv_3=(Token)match(input,76,FOLLOW_12); 
 
             			newLeafNode(otherlv_3, grammarAccess.getDNSAccess().getFullStopKeyword_3());
             		
-            // InternalDockerCompose.g:4455:3: ( (lv_dns3_4_0= ruleEInt ) )
-            // InternalDockerCompose.g:4456:4: (lv_dns3_4_0= ruleEInt )
+            // InternalDockerCompose.g:4880:3: ( (lv_dns3_4_0= ruleEInt ) )
+            // InternalDockerCompose.g:4881:4: (lv_dns3_4_0= ruleEInt )
             {
-            // InternalDockerCompose.g:4456:4: (lv_dns3_4_0= ruleEInt )
-            // InternalDockerCompose.g:4457:5: lv_dns3_4_0= ruleEInt
+            // InternalDockerCompose.g:4881:4: (lv_dns3_4_0= ruleEInt )
+            // InternalDockerCompose.g:4882:5: lv_dns3_4_0= ruleEInt
             {
 
             					newCompositeNode(grammarAccess.getDNSAccess().getDns3EIntParserRuleCall_4_0());
             				
-            pushFollow(FOLLOW_58);
+            pushFollow(FOLLOW_67);
             lv_dns3_4_0=ruleEInt();
 
             state._fsp--;
@@ -12226,15 +13396,15 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,72,FOLLOW_11); 
+            otherlv_5=(Token)match(input,76,FOLLOW_12); 
 
             			newLeafNode(otherlv_5, grammarAccess.getDNSAccess().getFullStopKeyword_5());
             		
-            // InternalDockerCompose.g:4478:3: ( (lv_dns4_6_0= ruleEInt ) )
-            // InternalDockerCompose.g:4479:4: (lv_dns4_6_0= ruleEInt )
+            // InternalDockerCompose.g:4903:3: ( (lv_dns4_6_0= ruleEInt ) )
+            // InternalDockerCompose.g:4904:4: (lv_dns4_6_0= ruleEInt )
             {
-            // InternalDockerCompose.g:4479:4: (lv_dns4_6_0= ruleEInt )
-            // InternalDockerCompose.g:4480:5: lv_dns4_6_0= ruleEInt
+            // InternalDockerCompose.g:4904:4: (lv_dns4_6_0= ruleEInt )
+            // InternalDockerCompose.g:4905:5: lv_dns4_6_0= ruleEInt
             {
 
             					newCompositeNode(grammarAccess.getDNSAccess().getDns4EIntParserRuleCall_6_0());
@@ -12284,7 +13454,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNetworkAddress"
-    // InternalDockerCompose.g:4501:1: entryRuleNetworkAddress returns [EObject current=null] : iv_ruleNetworkAddress= ruleNetworkAddress EOF ;
+    // InternalDockerCompose.g:4926:1: entryRuleNetworkAddress returns [EObject current=null] : iv_ruleNetworkAddress= ruleNetworkAddress EOF ;
     public final EObject entryRuleNetworkAddress() throws RecognitionException {
         EObject current = null;
 
@@ -12292,8 +13462,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:4501:55: (iv_ruleNetworkAddress= ruleNetworkAddress EOF )
-            // InternalDockerCompose.g:4502:2: iv_ruleNetworkAddress= ruleNetworkAddress EOF
+            // InternalDockerCompose.g:4926:55: (iv_ruleNetworkAddress= ruleNetworkAddress EOF )
+            // InternalDockerCompose.g:4927:2: iv_ruleNetworkAddress= ruleNetworkAddress EOF
             {
              newCompositeNode(grammarAccess.getNetworkAddressRule()); 
             pushFollow(FOLLOW_1);
@@ -12320,7 +13490,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNetworkAddress"
-    // InternalDockerCompose.g:4508:1: ruleNetworkAddress returns [EObject current=null] : ( ( (lv_dns1_0_0= ruleEInt ) ) otherlv_1= '.' ( (lv_dns2_2_0= ruleEInt ) ) otherlv_3= '.' ( (lv_dns3_4_0= ruleEInt ) ) otherlv_5= '.' ( (lv_dns4_6_0= ruleEInt ) ) otherlv_7= '/' ( (lv_netId_8_0= ruleEInt ) ) ) ;
+    // InternalDockerCompose.g:4933:1: ruleNetworkAddress returns [EObject current=null] : ( ( (lv_dns1_0_0= ruleEInt ) ) otherlv_1= '.' ( (lv_dns2_2_0= ruleEInt ) ) otherlv_3= '.' ( (lv_dns3_4_0= ruleEInt ) ) otherlv_5= '.' ( (lv_dns4_6_0= ruleEInt ) ) otherlv_7= '/' ( (lv_netId_8_0= ruleEInt ) ) ) ;
     public final EObject ruleNetworkAddress() throws RecognitionException {
         EObject current = null;
 
@@ -12343,22 +13513,22 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:4514:2: ( ( ( (lv_dns1_0_0= ruleEInt ) ) otherlv_1= '.' ( (lv_dns2_2_0= ruleEInt ) ) otherlv_3= '.' ( (lv_dns3_4_0= ruleEInt ) ) otherlv_5= '.' ( (lv_dns4_6_0= ruleEInt ) ) otherlv_7= '/' ( (lv_netId_8_0= ruleEInt ) ) ) )
-            // InternalDockerCompose.g:4515:2: ( ( (lv_dns1_0_0= ruleEInt ) ) otherlv_1= '.' ( (lv_dns2_2_0= ruleEInt ) ) otherlv_3= '.' ( (lv_dns3_4_0= ruleEInt ) ) otherlv_5= '.' ( (lv_dns4_6_0= ruleEInt ) ) otherlv_7= '/' ( (lv_netId_8_0= ruleEInt ) ) )
+            // InternalDockerCompose.g:4939:2: ( ( ( (lv_dns1_0_0= ruleEInt ) ) otherlv_1= '.' ( (lv_dns2_2_0= ruleEInt ) ) otherlv_3= '.' ( (lv_dns3_4_0= ruleEInt ) ) otherlv_5= '.' ( (lv_dns4_6_0= ruleEInt ) ) otherlv_7= '/' ( (lv_netId_8_0= ruleEInt ) ) ) )
+            // InternalDockerCompose.g:4940:2: ( ( (lv_dns1_0_0= ruleEInt ) ) otherlv_1= '.' ( (lv_dns2_2_0= ruleEInt ) ) otherlv_3= '.' ( (lv_dns3_4_0= ruleEInt ) ) otherlv_5= '.' ( (lv_dns4_6_0= ruleEInt ) ) otherlv_7= '/' ( (lv_netId_8_0= ruleEInt ) ) )
             {
-            // InternalDockerCompose.g:4515:2: ( ( (lv_dns1_0_0= ruleEInt ) ) otherlv_1= '.' ( (lv_dns2_2_0= ruleEInt ) ) otherlv_3= '.' ( (lv_dns3_4_0= ruleEInt ) ) otherlv_5= '.' ( (lv_dns4_6_0= ruleEInt ) ) otherlv_7= '/' ( (lv_netId_8_0= ruleEInt ) ) )
-            // InternalDockerCompose.g:4516:3: ( (lv_dns1_0_0= ruleEInt ) ) otherlv_1= '.' ( (lv_dns2_2_0= ruleEInt ) ) otherlv_3= '.' ( (lv_dns3_4_0= ruleEInt ) ) otherlv_5= '.' ( (lv_dns4_6_0= ruleEInt ) ) otherlv_7= '/' ( (lv_netId_8_0= ruleEInt ) )
+            // InternalDockerCompose.g:4940:2: ( ( (lv_dns1_0_0= ruleEInt ) ) otherlv_1= '.' ( (lv_dns2_2_0= ruleEInt ) ) otherlv_3= '.' ( (lv_dns3_4_0= ruleEInt ) ) otherlv_5= '.' ( (lv_dns4_6_0= ruleEInt ) ) otherlv_7= '/' ( (lv_netId_8_0= ruleEInt ) ) )
+            // InternalDockerCompose.g:4941:3: ( (lv_dns1_0_0= ruleEInt ) ) otherlv_1= '.' ( (lv_dns2_2_0= ruleEInt ) ) otherlv_3= '.' ( (lv_dns3_4_0= ruleEInt ) ) otherlv_5= '.' ( (lv_dns4_6_0= ruleEInt ) ) otherlv_7= '/' ( (lv_netId_8_0= ruleEInt ) )
             {
-            // InternalDockerCompose.g:4516:3: ( (lv_dns1_0_0= ruleEInt ) )
-            // InternalDockerCompose.g:4517:4: (lv_dns1_0_0= ruleEInt )
+            // InternalDockerCompose.g:4941:3: ( (lv_dns1_0_0= ruleEInt ) )
+            // InternalDockerCompose.g:4942:4: (lv_dns1_0_0= ruleEInt )
             {
-            // InternalDockerCompose.g:4517:4: (lv_dns1_0_0= ruleEInt )
-            // InternalDockerCompose.g:4518:5: lv_dns1_0_0= ruleEInt
+            // InternalDockerCompose.g:4942:4: (lv_dns1_0_0= ruleEInt )
+            // InternalDockerCompose.g:4943:5: lv_dns1_0_0= ruleEInt
             {
 
             					newCompositeNode(grammarAccess.getNetworkAddressAccess().getDns1EIntParserRuleCall_0_0());
             				
-            pushFollow(FOLLOW_58);
+            pushFollow(FOLLOW_67);
             lv_dns1_0_0=ruleEInt();
 
             state._fsp--;
@@ -12380,20 +13550,20 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,72,FOLLOW_11); 
+            otherlv_1=(Token)match(input,76,FOLLOW_12); 
 
             			newLeafNode(otherlv_1, grammarAccess.getNetworkAddressAccess().getFullStopKeyword_1());
             		
-            // InternalDockerCompose.g:4539:3: ( (lv_dns2_2_0= ruleEInt ) )
-            // InternalDockerCompose.g:4540:4: (lv_dns2_2_0= ruleEInt )
+            // InternalDockerCompose.g:4964:3: ( (lv_dns2_2_0= ruleEInt ) )
+            // InternalDockerCompose.g:4965:4: (lv_dns2_2_0= ruleEInt )
             {
-            // InternalDockerCompose.g:4540:4: (lv_dns2_2_0= ruleEInt )
-            // InternalDockerCompose.g:4541:5: lv_dns2_2_0= ruleEInt
+            // InternalDockerCompose.g:4965:4: (lv_dns2_2_0= ruleEInt )
+            // InternalDockerCompose.g:4966:5: lv_dns2_2_0= ruleEInt
             {
 
             					newCompositeNode(grammarAccess.getNetworkAddressAccess().getDns2EIntParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_58);
+            pushFollow(FOLLOW_67);
             lv_dns2_2_0=ruleEInt();
 
             state._fsp--;
@@ -12415,20 +13585,20 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,72,FOLLOW_11); 
+            otherlv_3=(Token)match(input,76,FOLLOW_12); 
 
             			newLeafNode(otherlv_3, grammarAccess.getNetworkAddressAccess().getFullStopKeyword_3());
             		
-            // InternalDockerCompose.g:4562:3: ( (lv_dns3_4_0= ruleEInt ) )
-            // InternalDockerCompose.g:4563:4: (lv_dns3_4_0= ruleEInt )
+            // InternalDockerCompose.g:4987:3: ( (lv_dns3_4_0= ruleEInt ) )
+            // InternalDockerCompose.g:4988:4: (lv_dns3_4_0= ruleEInt )
             {
-            // InternalDockerCompose.g:4563:4: (lv_dns3_4_0= ruleEInt )
-            // InternalDockerCompose.g:4564:5: lv_dns3_4_0= ruleEInt
+            // InternalDockerCompose.g:4988:4: (lv_dns3_4_0= ruleEInt )
+            // InternalDockerCompose.g:4989:5: lv_dns3_4_0= ruleEInt
             {
 
             					newCompositeNode(grammarAccess.getNetworkAddressAccess().getDns3EIntParserRuleCall_4_0());
             				
-            pushFollow(FOLLOW_58);
+            pushFollow(FOLLOW_67);
             lv_dns3_4_0=ruleEInt();
 
             state._fsp--;
@@ -12450,20 +13620,20 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,72,FOLLOW_11); 
+            otherlv_5=(Token)match(input,76,FOLLOW_12); 
 
             			newLeafNode(otherlv_5, grammarAccess.getNetworkAddressAccess().getFullStopKeyword_5());
             		
-            // InternalDockerCompose.g:4585:3: ( (lv_dns4_6_0= ruleEInt ) )
-            // InternalDockerCompose.g:4586:4: (lv_dns4_6_0= ruleEInt )
+            // InternalDockerCompose.g:5010:3: ( (lv_dns4_6_0= ruleEInt ) )
+            // InternalDockerCompose.g:5011:4: (lv_dns4_6_0= ruleEInt )
             {
-            // InternalDockerCompose.g:4586:4: (lv_dns4_6_0= ruleEInt )
-            // InternalDockerCompose.g:4587:5: lv_dns4_6_0= ruleEInt
+            // InternalDockerCompose.g:5011:4: (lv_dns4_6_0= ruleEInt )
+            // InternalDockerCompose.g:5012:5: lv_dns4_6_0= ruleEInt
             {
 
             					newCompositeNode(grammarAccess.getNetworkAddressAccess().getDns4EIntParserRuleCall_6_0());
             				
-            pushFollow(FOLLOW_59);
+            pushFollow(FOLLOW_65);
             lv_dns4_6_0=ruleEInt();
 
             state._fsp--;
@@ -12485,15 +13655,15 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,73,FOLLOW_11); 
+            otherlv_7=(Token)match(input,39,FOLLOW_12); 
 
             			newLeafNode(otherlv_7, grammarAccess.getNetworkAddressAccess().getSolidusKeyword_7());
             		
-            // InternalDockerCompose.g:4608:3: ( (lv_netId_8_0= ruleEInt ) )
-            // InternalDockerCompose.g:4609:4: (lv_netId_8_0= ruleEInt )
+            // InternalDockerCompose.g:5033:3: ( (lv_netId_8_0= ruleEInt ) )
+            // InternalDockerCompose.g:5034:4: (lv_netId_8_0= ruleEInt )
             {
-            // InternalDockerCompose.g:4609:4: (lv_netId_8_0= ruleEInt )
-            // InternalDockerCompose.g:4610:5: lv_netId_8_0= ruleEInt
+            // InternalDockerCompose.g:5034:4: (lv_netId_8_0= ruleEInt )
+            // InternalDockerCompose.g:5035:5: lv_netId_8_0= ruleEInt
             {
 
             					newCompositeNode(grammarAccess.getNetworkAddressAccess().getNetIdEIntParserRuleCall_8_0());
@@ -12543,7 +13713,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEBoolean"
-    // InternalDockerCompose.g:4631:1: entryRuleEBoolean returns [String current=null] : iv_ruleEBoolean= ruleEBoolean EOF ;
+    // InternalDockerCompose.g:5056:1: entryRuleEBoolean returns [String current=null] : iv_ruleEBoolean= ruleEBoolean EOF ;
     public final String entryRuleEBoolean() throws RecognitionException {
         String current = null;
 
@@ -12551,8 +13721,8 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDockerCompose.g:4631:48: (iv_ruleEBoolean= ruleEBoolean EOF )
-            // InternalDockerCompose.g:4632:2: iv_ruleEBoolean= ruleEBoolean EOF
+            // InternalDockerCompose.g:5056:48: (iv_ruleEBoolean= ruleEBoolean EOF )
+            // InternalDockerCompose.g:5057:2: iv_ruleEBoolean= ruleEBoolean EOF
             {
              newCompositeNode(grammarAccess.getEBooleanRule()); 
             pushFollow(FOLLOW_1);
@@ -12579,7 +13749,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEBoolean"
-    // InternalDockerCompose.g:4638:1: ruleEBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'true' | kw= 'false' ) ;
+    // InternalDockerCompose.g:5063:1: ruleEBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'true' | kw= 'false' ) ;
     public final AntlrDatatypeRuleToken ruleEBoolean() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -12589,30 +13759,30 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:4644:2: ( (kw= 'true' | kw= 'false' ) )
-            // InternalDockerCompose.g:4645:2: (kw= 'true' | kw= 'false' )
+            // InternalDockerCompose.g:5069:2: ( (kw= 'true' | kw= 'false' ) )
+            // InternalDockerCompose.g:5070:2: (kw= 'true' | kw= 'false' )
             {
-            // InternalDockerCompose.g:4645:2: (kw= 'true' | kw= 'false' )
-            int alt56=2;
-            int LA56_0 = input.LA(1);
+            // InternalDockerCompose.g:5070:2: (kw= 'true' | kw= 'false' )
+            int alt74=2;
+            int LA74_0 = input.LA(1);
 
-            if ( (LA56_0==74) ) {
-                alt56=1;
+            if ( (LA74_0==78) ) {
+                alt74=1;
             }
-            else if ( (LA56_0==75) ) {
-                alt56=2;
+            else if ( (LA74_0==79) ) {
+                alt74=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 56, 0, input);
+                    new NoViableAltException("", 74, 0, input);
 
                 throw nvae;
             }
-            switch (alt56) {
+            switch (alt74) {
                 case 1 :
-                    // InternalDockerCompose.g:4646:3: kw= 'true'
+                    // InternalDockerCompose.g:5071:3: kw= 'true'
                     {
-                    kw=(Token)match(input,74,FOLLOW_2); 
+                    kw=(Token)match(input,78,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getEBooleanAccess().getTrueKeyword_0());
@@ -12621,9 +13791,9 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDockerCompose.g:4652:3: kw= 'false'
+                    // InternalDockerCompose.g:5077:3: kw= 'false'
                     {
-                    kw=(Token)match(input,75,FOLLOW_2); 
+                    kw=(Token)match(input,79,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getEBooleanAccess().getFalseKeyword_1());
@@ -12654,7 +13824,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRestartPolicy"
-    // InternalDockerCompose.g:4661:1: ruleRestartPolicy returns [Enumerator current=null] : ( (enumLiteral_0= '\"no\"' ) | (enumLiteral_1= 'always' ) | (enumLiteral_2= 'on-failure' ) | (enumLiteral_3= 'unless-stopped' ) ) ;
+    // InternalDockerCompose.g:5086:1: ruleRestartPolicy returns [Enumerator current=null] : ( (enumLiteral_0= '\"no\"' ) | (enumLiteral_1= 'always' ) | (enumLiteral_2= 'on-failure' ) | (enumLiteral_3= 'unless-stopped' ) ) ;
     public final Enumerator ruleRestartPolicy() throws RecognitionException {
         Enumerator current = null;
 
@@ -12667,47 +13837,47 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:4667:2: ( ( (enumLiteral_0= '\"no\"' ) | (enumLiteral_1= 'always' ) | (enumLiteral_2= 'on-failure' ) | (enumLiteral_3= 'unless-stopped' ) ) )
-            // InternalDockerCompose.g:4668:2: ( (enumLiteral_0= '\"no\"' ) | (enumLiteral_1= 'always' ) | (enumLiteral_2= 'on-failure' ) | (enumLiteral_3= 'unless-stopped' ) )
+            // InternalDockerCompose.g:5092:2: ( ( (enumLiteral_0= '\"no\"' ) | (enumLiteral_1= 'always' ) | (enumLiteral_2= 'on-failure' ) | (enumLiteral_3= 'unless-stopped' ) ) )
+            // InternalDockerCompose.g:5093:2: ( (enumLiteral_0= '\"no\"' ) | (enumLiteral_1= 'always' ) | (enumLiteral_2= 'on-failure' ) | (enumLiteral_3= 'unless-stopped' ) )
             {
-            // InternalDockerCompose.g:4668:2: ( (enumLiteral_0= '\"no\"' ) | (enumLiteral_1= 'always' ) | (enumLiteral_2= 'on-failure' ) | (enumLiteral_3= 'unless-stopped' ) )
-            int alt57=4;
+            // InternalDockerCompose.g:5093:2: ( (enumLiteral_0= '\"no\"' ) | (enumLiteral_1= 'always' ) | (enumLiteral_2= 'on-failure' ) | (enumLiteral_3= 'unless-stopped' ) )
+            int alt75=4;
             switch ( input.LA(1) ) {
-            case 76:
+            case 80:
                 {
-                alt57=1;
+                alt75=1;
                 }
                 break;
-            case 77:
+            case 81:
                 {
-                alt57=2;
+                alt75=2;
                 }
                 break;
-            case 78:
+            case 82:
                 {
-                alt57=3;
+                alt75=3;
                 }
                 break;
-            case 79:
+            case 83:
                 {
-                alt57=4;
+                alt75=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 57, 0, input);
+                    new NoViableAltException("", 75, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt57) {
+            switch (alt75) {
                 case 1 :
-                    // InternalDockerCompose.g:4669:3: (enumLiteral_0= '\"no\"' )
+                    // InternalDockerCompose.g:5094:3: (enumLiteral_0= '\"no\"' )
                     {
-                    // InternalDockerCompose.g:4669:3: (enumLiteral_0= '\"no\"' )
-                    // InternalDockerCompose.g:4670:4: enumLiteral_0= '\"no\"'
+                    // InternalDockerCompose.g:5094:3: (enumLiteral_0= '\"no\"' )
+                    // InternalDockerCompose.g:5095:4: enumLiteral_0= '\"no\"'
                     {
-                    enumLiteral_0=(Token)match(input,76,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,80,FOLLOW_2); 
 
                     				current = grammarAccess.getRestartPolicyAccess().getNoEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getRestartPolicyAccess().getNoEnumLiteralDeclaration_0());
@@ -12719,12 +13889,12 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDockerCompose.g:4677:3: (enumLiteral_1= 'always' )
+                    // InternalDockerCompose.g:5102:3: (enumLiteral_1= 'always' )
                     {
-                    // InternalDockerCompose.g:4677:3: (enumLiteral_1= 'always' )
-                    // InternalDockerCompose.g:4678:4: enumLiteral_1= 'always'
+                    // InternalDockerCompose.g:5102:3: (enumLiteral_1= 'always' )
+                    // InternalDockerCompose.g:5103:4: enumLiteral_1= 'always'
                     {
-                    enumLiteral_1=(Token)match(input,77,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,81,FOLLOW_2); 
 
                     				current = grammarAccess.getRestartPolicyAccess().getAlwaysEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getRestartPolicyAccess().getAlwaysEnumLiteralDeclaration_1());
@@ -12736,12 +13906,12 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalDockerCompose.g:4685:3: (enumLiteral_2= 'on-failure' )
+                    // InternalDockerCompose.g:5110:3: (enumLiteral_2= 'on-failure' )
                     {
-                    // InternalDockerCompose.g:4685:3: (enumLiteral_2= 'on-failure' )
-                    // InternalDockerCompose.g:4686:4: enumLiteral_2= 'on-failure'
+                    // InternalDockerCompose.g:5110:3: (enumLiteral_2= 'on-failure' )
+                    // InternalDockerCompose.g:5111:4: enumLiteral_2= 'on-failure'
                     {
-                    enumLiteral_2=(Token)match(input,78,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,82,FOLLOW_2); 
 
                     				current = grammarAccess.getRestartPolicyAccess().getOnfailureEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getRestartPolicyAccess().getOnfailureEnumLiteralDeclaration_2());
@@ -12753,12 +13923,12 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalDockerCompose.g:4693:3: (enumLiteral_3= 'unless-stopped' )
+                    // InternalDockerCompose.g:5118:3: (enumLiteral_3= 'unless-stopped' )
                     {
-                    // InternalDockerCompose.g:4693:3: (enumLiteral_3= 'unless-stopped' )
-                    // InternalDockerCompose.g:4694:4: enumLiteral_3= 'unless-stopped'
+                    // InternalDockerCompose.g:5118:3: (enumLiteral_3= 'unless-stopped' )
+                    // InternalDockerCompose.g:5119:4: enumLiteral_3= 'unless-stopped'
                     {
-                    enumLiteral_3=(Token)match(input,79,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,83,FOLLOW_2); 
 
                     				current = grammarAccess.getRestartPolicyAccess().getUnlessstoppedEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getRestartPolicyAccess().getUnlessstoppedEnumLiteralDeclaration_3());
@@ -12792,7 +13962,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAccessMode"
-    // InternalDockerCompose.g:4704:1: ruleAccessMode returns [Enumerator current=null] : ( (enumLiteral_0= 'rw' ) | (enumLiteral_1= 'ro' ) | (enumLiteral_2= 'z' ) ) ;
+    // InternalDockerCompose.g:5129:1: ruleAccessMode returns [Enumerator current=null] : ( (enumLiteral_0= 'rw' ) | (enumLiteral_1= 'ro' ) | (enumLiteral_2= 'z' ) ) ;
     public final Enumerator ruleAccessMode() throws RecognitionException {
         Enumerator current = null;
 
@@ -12804,42 +13974,42 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:4710:2: ( ( (enumLiteral_0= 'rw' ) | (enumLiteral_1= 'ro' ) | (enumLiteral_2= 'z' ) ) )
-            // InternalDockerCompose.g:4711:2: ( (enumLiteral_0= 'rw' ) | (enumLiteral_1= 'ro' ) | (enumLiteral_2= 'z' ) )
+            // InternalDockerCompose.g:5135:2: ( ( (enumLiteral_0= 'rw' ) | (enumLiteral_1= 'ro' ) | (enumLiteral_2= 'z' ) ) )
+            // InternalDockerCompose.g:5136:2: ( (enumLiteral_0= 'rw' ) | (enumLiteral_1= 'ro' ) | (enumLiteral_2= 'z' ) )
             {
-            // InternalDockerCompose.g:4711:2: ( (enumLiteral_0= 'rw' ) | (enumLiteral_1= 'ro' ) | (enumLiteral_2= 'z' ) )
-            int alt58=3;
+            // InternalDockerCompose.g:5136:2: ( (enumLiteral_0= 'rw' ) | (enumLiteral_1= 'ro' ) | (enumLiteral_2= 'z' ) )
+            int alt76=3;
             switch ( input.LA(1) ) {
-            case 80:
+            case 84:
                 {
-                alt58=1;
+                alt76=1;
                 }
                 break;
-            case 81:
+            case 85:
                 {
-                alt58=2;
+                alt76=2;
                 }
                 break;
-            case 82:
+            case 86:
                 {
-                alt58=3;
+                alt76=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 58, 0, input);
+                    new NoViableAltException("", 76, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt58) {
+            switch (alt76) {
                 case 1 :
-                    // InternalDockerCompose.g:4712:3: (enumLiteral_0= 'rw' )
+                    // InternalDockerCompose.g:5137:3: (enumLiteral_0= 'rw' )
                     {
-                    // InternalDockerCompose.g:4712:3: (enumLiteral_0= 'rw' )
-                    // InternalDockerCompose.g:4713:4: enumLiteral_0= 'rw'
+                    // InternalDockerCompose.g:5137:3: (enumLiteral_0= 'rw' )
+                    // InternalDockerCompose.g:5138:4: enumLiteral_0= 'rw'
                     {
-                    enumLiteral_0=(Token)match(input,80,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,84,FOLLOW_2); 
 
                     				current = grammarAccess.getAccessModeAccess().getRwEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getAccessModeAccess().getRwEnumLiteralDeclaration_0());
@@ -12851,12 +14021,12 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDockerCompose.g:4720:3: (enumLiteral_1= 'ro' )
+                    // InternalDockerCompose.g:5145:3: (enumLiteral_1= 'ro' )
                     {
-                    // InternalDockerCompose.g:4720:3: (enumLiteral_1= 'ro' )
-                    // InternalDockerCompose.g:4721:4: enumLiteral_1= 'ro'
+                    // InternalDockerCompose.g:5145:3: (enumLiteral_1= 'ro' )
+                    // InternalDockerCompose.g:5146:4: enumLiteral_1= 'ro'
                     {
-                    enumLiteral_1=(Token)match(input,81,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,85,FOLLOW_2); 
 
                     				current = grammarAccess.getAccessModeAccess().getRoEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getAccessModeAccess().getRoEnumLiteralDeclaration_1());
@@ -12868,12 +14038,12 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalDockerCompose.g:4728:3: (enumLiteral_2= 'z' )
+                    // InternalDockerCompose.g:5153:3: (enumLiteral_2= 'z' )
                     {
-                    // InternalDockerCompose.g:4728:3: (enumLiteral_2= 'z' )
-                    // InternalDockerCompose.g:4729:4: enumLiteral_2= 'z'
+                    // InternalDockerCompose.g:5153:3: (enumLiteral_2= 'z' )
+                    // InternalDockerCompose.g:5154:4: enumLiteral_2= 'z'
                     {
-                    enumLiteral_2=(Token)match(input,82,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,86,FOLLOW_2); 
 
                     				current = grammarAccess.getAccessModeAccess().getZEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getAccessModeAccess().getZEnumLiteralDeclaration_2());
@@ -12907,7 +14077,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMountType"
-    // InternalDockerCompose.g:4739:1: ruleMountType returns [Enumerator current=null] : ( (enumLiteral_0= 'volume' ) | (enumLiteral_1= 'bind' ) | (enumLiteral_2= 'tmpfs' ) | (enumLiteral_3= 'npipe' ) ) ;
+    // InternalDockerCompose.g:5164:1: ruleMountType returns [Enumerator current=null] : ( (enumLiteral_0= 'volume' ) | (enumLiteral_1= 'bind' ) | (enumLiteral_2= 'tmpfs' ) | (enumLiteral_3= 'npipe' ) ) ;
     public final Enumerator ruleMountType() throws RecognitionException {
         Enumerator current = null;
 
@@ -12920,47 +14090,47 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:4745:2: ( ( (enumLiteral_0= 'volume' ) | (enumLiteral_1= 'bind' ) | (enumLiteral_2= 'tmpfs' ) | (enumLiteral_3= 'npipe' ) ) )
-            // InternalDockerCompose.g:4746:2: ( (enumLiteral_0= 'volume' ) | (enumLiteral_1= 'bind' ) | (enumLiteral_2= 'tmpfs' ) | (enumLiteral_3= 'npipe' ) )
+            // InternalDockerCompose.g:5170:2: ( ( (enumLiteral_0= 'volume' ) | (enumLiteral_1= 'bind' ) | (enumLiteral_2= 'tmpfs' ) | (enumLiteral_3= 'npipe' ) ) )
+            // InternalDockerCompose.g:5171:2: ( (enumLiteral_0= 'volume' ) | (enumLiteral_1= 'bind' ) | (enumLiteral_2= 'tmpfs' ) | (enumLiteral_3= 'npipe' ) )
             {
-            // InternalDockerCompose.g:4746:2: ( (enumLiteral_0= 'volume' ) | (enumLiteral_1= 'bind' ) | (enumLiteral_2= 'tmpfs' ) | (enumLiteral_3= 'npipe' ) )
-            int alt59=4;
+            // InternalDockerCompose.g:5171:2: ( (enumLiteral_0= 'volume' ) | (enumLiteral_1= 'bind' ) | (enumLiteral_2= 'tmpfs' ) | (enumLiteral_3= 'npipe' ) )
+            int alt77=4;
             switch ( input.LA(1) ) {
-            case 83:
+            case 87:
                 {
-                alt59=1;
+                alt77=1;
                 }
                 break;
-            case 84:
+            case 88:
                 {
-                alt59=2;
+                alt77=2;
                 }
                 break;
-            case 85:
+            case 89:
                 {
-                alt59=3;
+                alt77=3;
                 }
                 break;
-            case 86:
+            case 90:
                 {
-                alt59=4;
+                alt77=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 59, 0, input);
+                    new NoViableAltException("", 77, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt59) {
+            switch (alt77) {
                 case 1 :
-                    // InternalDockerCompose.g:4747:3: (enumLiteral_0= 'volume' )
+                    // InternalDockerCompose.g:5172:3: (enumLiteral_0= 'volume' )
                     {
-                    // InternalDockerCompose.g:4747:3: (enumLiteral_0= 'volume' )
-                    // InternalDockerCompose.g:4748:4: enumLiteral_0= 'volume'
+                    // InternalDockerCompose.g:5172:3: (enumLiteral_0= 'volume' )
+                    // InternalDockerCompose.g:5173:4: enumLiteral_0= 'volume'
                     {
-                    enumLiteral_0=(Token)match(input,83,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,87,FOLLOW_2); 
 
                     				current = grammarAccess.getMountTypeAccess().getVolumeEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getMountTypeAccess().getVolumeEnumLiteralDeclaration_0());
@@ -12972,12 +14142,12 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDockerCompose.g:4755:3: (enumLiteral_1= 'bind' )
+                    // InternalDockerCompose.g:5180:3: (enumLiteral_1= 'bind' )
                     {
-                    // InternalDockerCompose.g:4755:3: (enumLiteral_1= 'bind' )
-                    // InternalDockerCompose.g:4756:4: enumLiteral_1= 'bind'
+                    // InternalDockerCompose.g:5180:3: (enumLiteral_1= 'bind' )
+                    // InternalDockerCompose.g:5181:4: enumLiteral_1= 'bind'
                     {
-                    enumLiteral_1=(Token)match(input,84,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,88,FOLLOW_2); 
 
                     				current = grammarAccess.getMountTypeAccess().getBindEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getMountTypeAccess().getBindEnumLiteralDeclaration_1());
@@ -12989,12 +14159,12 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalDockerCompose.g:4763:3: (enumLiteral_2= 'tmpfs' )
+                    // InternalDockerCompose.g:5188:3: (enumLiteral_2= 'tmpfs' )
                     {
-                    // InternalDockerCompose.g:4763:3: (enumLiteral_2= 'tmpfs' )
-                    // InternalDockerCompose.g:4764:4: enumLiteral_2= 'tmpfs'
+                    // InternalDockerCompose.g:5188:3: (enumLiteral_2= 'tmpfs' )
+                    // InternalDockerCompose.g:5189:4: enumLiteral_2= 'tmpfs'
                     {
-                    enumLiteral_2=(Token)match(input,85,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,89,FOLLOW_2); 
 
                     				current = grammarAccess.getMountTypeAccess().getTmpfsEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getMountTypeAccess().getTmpfsEnumLiteralDeclaration_2());
@@ -13006,12 +14176,12 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalDockerCompose.g:4771:3: (enumLiteral_3= 'npipe' )
+                    // InternalDockerCompose.g:5196:3: (enumLiteral_3= 'npipe' )
                     {
-                    // InternalDockerCompose.g:4771:3: (enumLiteral_3= 'npipe' )
-                    // InternalDockerCompose.g:4772:4: enumLiteral_3= 'npipe'
+                    // InternalDockerCompose.g:5196:3: (enumLiteral_3= 'npipe' )
+                    // InternalDockerCompose.g:5197:4: enumLiteral_3= 'npipe'
                     {
-                    enumLiteral_3=(Token)match(input,86,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,90,FOLLOW_2); 
 
                     				current = grammarAccess.getMountTypeAccess().getNpipeEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getMountTypeAccess().getNpipeEnumLiteralDeclaration_3());
@@ -13045,7 +14215,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePropagationType"
-    // InternalDockerCompose.g:4782:1: rulePropagationType returns [Enumerator current=null] : ( (enumLiteral_0= 'rprivate' ) | (enumLiteral_1= 'private' ) | (enumLiteral_2= 'rshared' ) | (enumLiteral_3= 'shared' ) | (enumLiteral_4= 'rslave' ) | (enumLiteral_5= 'slave' ) ) ;
+    // InternalDockerCompose.g:5207:1: rulePropagationType returns [Enumerator current=null] : ( (enumLiteral_0= 'rprivate' ) | (enumLiteral_1= 'private' ) | (enumLiteral_2= 'rshared' ) | (enumLiteral_3= 'shared' ) | (enumLiteral_4= 'rslave' ) | (enumLiteral_5= 'slave' ) ) ;
     public final Enumerator rulePropagationType() throws RecognitionException {
         Enumerator current = null;
 
@@ -13060,57 +14230,57 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:4788:2: ( ( (enumLiteral_0= 'rprivate' ) | (enumLiteral_1= 'private' ) | (enumLiteral_2= 'rshared' ) | (enumLiteral_3= 'shared' ) | (enumLiteral_4= 'rslave' ) | (enumLiteral_5= 'slave' ) ) )
-            // InternalDockerCompose.g:4789:2: ( (enumLiteral_0= 'rprivate' ) | (enumLiteral_1= 'private' ) | (enumLiteral_2= 'rshared' ) | (enumLiteral_3= 'shared' ) | (enumLiteral_4= 'rslave' ) | (enumLiteral_5= 'slave' ) )
+            // InternalDockerCompose.g:5213:2: ( ( (enumLiteral_0= 'rprivate' ) | (enumLiteral_1= 'private' ) | (enumLiteral_2= 'rshared' ) | (enumLiteral_3= 'shared' ) | (enumLiteral_4= 'rslave' ) | (enumLiteral_5= 'slave' ) ) )
+            // InternalDockerCompose.g:5214:2: ( (enumLiteral_0= 'rprivate' ) | (enumLiteral_1= 'private' ) | (enumLiteral_2= 'rshared' ) | (enumLiteral_3= 'shared' ) | (enumLiteral_4= 'rslave' ) | (enumLiteral_5= 'slave' ) )
             {
-            // InternalDockerCompose.g:4789:2: ( (enumLiteral_0= 'rprivate' ) | (enumLiteral_1= 'private' ) | (enumLiteral_2= 'rshared' ) | (enumLiteral_3= 'shared' ) | (enumLiteral_4= 'rslave' ) | (enumLiteral_5= 'slave' ) )
-            int alt60=6;
+            // InternalDockerCompose.g:5214:2: ( (enumLiteral_0= 'rprivate' ) | (enumLiteral_1= 'private' ) | (enumLiteral_2= 'rshared' ) | (enumLiteral_3= 'shared' ) | (enumLiteral_4= 'rslave' ) | (enumLiteral_5= 'slave' ) )
+            int alt78=6;
             switch ( input.LA(1) ) {
-            case 87:
-                {
-                alt60=1;
-                }
-                break;
-            case 88:
-                {
-                alt60=2;
-                }
-                break;
-            case 89:
-                {
-                alt60=3;
-                }
-                break;
-            case 90:
-                {
-                alt60=4;
-                }
-                break;
             case 91:
                 {
-                alt60=5;
+                alt78=1;
                 }
                 break;
             case 92:
                 {
-                alt60=6;
+                alt78=2;
+                }
+                break;
+            case 93:
+                {
+                alt78=3;
+                }
+                break;
+            case 94:
+                {
+                alt78=4;
+                }
+                break;
+            case 95:
+                {
+                alt78=5;
+                }
+                break;
+            case 96:
+                {
+                alt78=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 60, 0, input);
+                    new NoViableAltException("", 78, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt60) {
+            switch (alt78) {
                 case 1 :
-                    // InternalDockerCompose.g:4790:3: (enumLiteral_0= 'rprivate' )
+                    // InternalDockerCompose.g:5215:3: (enumLiteral_0= 'rprivate' )
                     {
-                    // InternalDockerCompose.g:4790:3: (enumLiteral_0= 'rprivate' )
-                    // InternalDockerCompose.g:4791:4: enumLiteral_0= 'rprivate'
+                    // InternalDockerCompose.g:5215:3: (enumLiteral_0= 'rprivate' )
+                    // InternalDockerCompose.g:5216:4: enumLiteral_0= 'rprivate'
                     {
-                    enumLiteral_0=(Token)match(input,87,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,91,FOLLOW_2); 
 
                     				current = grammarAccess.getPropagationTypeAccess().getRprivateEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getPropagationTypeAccess().getRprivateEnumLiteralDeclaration_0());
@@ -13122,12 +14292,12 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDockerCompose.g:4798:3: (enumLiteral_1= 'private' )
+                    // InternalDockerCompose.g:5223:3: (enumLiteral_1= 'private' )
                     {
-                    // InternalDockerCompose.g:4798:3: (enumLiteral_1= 'private' )
-                    // InternalDockerCompose.g:4799:4: enumLiteral_1= 'private'
+                    // InternalDockerCompose.g:5223:3: (enumLiteral_1= 'private' )
+                    // InternalDockerCompose.g:5224:4: enumLiteral_1= 'private'
                     {
-                    enumLiteral_1=(Token)match(input,88,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,92,FOLLOW_2); 
 
                     				current = grammarAccess.getPropagationTypeAccess().getPrivateEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getPropagationTypeAccess().getPrivateEnumLiteralDeclaration_1());
@@ -13139,12 +14309,12 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalDockerCompose.g:4806:3: (enumLiteral_2= 'rshared' )
+                    // InternalDockerCompose.g:5231:3: (enumLiteral_2= 'rshared' )
                     {
-                    // InternalDockerCompose.g:4806:3: (enumLiteral_2= 'rshared' )
-                    // InternalDockerCompose.g:4807:4: enumLiteral_2= 'rshared'
+                    // InternalDockerCompose.g:5231:3: (enumLiteral_2= 'rshared' )
+                    // InternalDockerCompose.g:5232:4: enumLiteral_2= 'rshared'
                     {
-                    enumLiteral_2=(Token)match(input,89,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,93,FOLLOW_2); 
 
                     				current = grammarAccess.getPropagationTypeAccess().getRsharedEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getPropagationTypeAccess().getRsharedEnumLiteralDeclaration_2());
@@ -13156,12 +14326,12 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalDockerCompose.g:4814:3: (enumLiteral_3= 'shared' )
+                    // InternalDockerCompose.g:5239:3: (enumLiteral_3= 'shared' )
                     {
-                    // InternalDockerCompose.g:4814:3: (enumLiteral_3= 'shared' )
-                    // InternalDockerCompose.g:4815:4: enumLiteral_3= 'shared'
+                    // InternalDockerCompose.g:5239:3: (enumLiteral_3= 'shared' )
+                    // InternalDockerCompose.g:5240:4: enumLiteral_3= 'shared'
                     {
-                    enumLiteral_3=(Token)match(input,90,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,94,FOLLOW_2); 
 
                     				current = grammarAccess.getPropagationTypeAccess().getSharedEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getPropagationTypeAccess().getSharedEnumLiteralDeclaration_3());
@@ -13173,12 +14343,12 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalDockerCompose.g:4822:3: (enumLiteral_4= 'rslave' )
+                    // InternalDockerCompose.g:5247:3: (enumLiteral_4= 'rslave' )
                     {
-                    // InternalDockerCompose.g:4822:3: (enumLiteral_4= 'rslave' )
-                    // InternalDockerCompose.g:4823:4: enumLiteral_4= 'rslave'
+                    // InternalDockerCompose.g:5247:3: (enumLiteral_4= 'rslave' )
+                    // InternalDockerCompose.g:5248:4: enumLiteral_4= 'rslave'
                     {
-                    enumLiteral_4=(Token)match(input,91,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,95,FOLLOW_2); 
 
                     				current = grammarAccess.getPropagationTypeAccess().getRslaveEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getPropagationTypeAccess().getRslaveEnumLiteralDeclaration_4());
@@ -13190,12 +14360,12 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalDockerCompose.g:4830:3: (enumLiteral_5= 'slave' )
+                    // InternalDockerCompose.g:5255:3: (enumLiteral_5= 'slave' )
                     {
-                    // InternalDockerCompose.g:4830:3: (enumLiteral_5= 'slave' )
-                    // InternalDockerCompose.g:4831:4: enumLiteral_5= 'slave'
+                    // InternalDockerCompose.g:5255:3: (enumLiteral_5= 'slave' )
+                    // InternalDockerCompose.g:5256:4: enumLiteral_5= 'slave'
                     {
-                    enumLiteral_5=(Token)match(input,92,FOLLOW_2); 
+                    enumLiteral_5=(Token)match(input,96,FOLLOW_2); 
 
                     				current = grammarAccess.getPropagationTypeAccess().getSlaveEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_5, grammarAccess.getPropagationTypeAccess().getSlaveEnumLiteralDeclaration_5());
@@ -13229,7 +14399,7 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCondition"
-    // InternalDockerCompose.g:4841:1: ruleCondition returns [Enumerator current=null] : ( (enumLiteral_0= 'service_started' ) | (enumLiteral_1= 'service_healthy' ) | (enumLiteral_2= 'service_completed_successfully' ) ) ;
+    // InternalDockerCompose.g:5266:1: ruleCondition returns [Enumerator current=null] : ( (enumLiteral_0= 'service_started' ) | (enumLiteral_1= 'service_healthy' ) | (enumLiteral_2= 'service_completed_successfully' ) ) ;
     public final Enumerator ruleCondition() throws RecognitionException {
         Enumerator current = null;
 
@@ -13241,42 +14411,42 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDockerCompose.g:4847:2: ( ( (enumLiteral_0= 'service_started' ) | (enumLiteral_1= 'service_healthy' ) | (enumLiteral_2= 'service_completed_successfully' ) ) )
-            // InternalDockerCompose.g:4848:2: ( (enumLiteral_0= 'service_started' ) | (enumLiteral_1= 'service_healthy' ) | (enumLiteral_2= 'service_completed_successfully' ) )
+            // InternalDockerCompose.g:5272:2: ( ( (enumLiteral_0= 'service_started' ) | (enumLiteral_1= 'service_healthy' ) | (enumLiteral_2= 'service_completed_successfully' ) ) )
+            // InternalDockerCompose.g:5273:2: ( (enumLiteral_0= 'service_started' ) | (enumLiteral_1= 'service_healthy' ) | (enumLiteral_2= 'service_completed_successfully' ) )
             {
-            // InternalDockerCompose.g:4848:2: ( (enumLiteral_0= 'service_started' ) | (enumLiteral_1= 'service_healthy' ) | (enumLiteral_2= 'service_completed_successfully' ) )
-            int alt61=3;
+            // InternalDockerCompose.g:5273:2: ( (enumLiteral_0= 'service_started' ) | (enumLiteral_1= 'service_healthy' ) | (enumLiteral_2= 'service_completed_successfully' ) )
+            int alt79=3;
             switch ( input.LA(1) ) {
-            case 93:
+            case 97:
                 {
-                alt61=1;
+                alt79=1;
                 }
                 break;
-            case 94:
+            case 98:
                 {
-                alt61=2;
+                alt79=2;
                 }
                 break;
-            case 95:
+            case 99:
                 {
-                alt61=3;
+                alt79=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 61, 0, input);
+                    new NoViableAltException("", 79, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt61) {
+            switch (alt79) {
                 case 1 :
-                    // InternalDockerCompose.g:4849:3: (enumLiteral_0= 'service_started' )
+                    // InternalDockerCompose.g:5274:3: (enumLiteral_0= 'service_started' )
                     {
-                    // InternalDockerCompose.g:4849:3: (enumLiteral_0= 'service_started' )
-                    // InternalDockerCompose.g:4850:4: enumLiteral_0= 'service_started'
+                    // InternalDockerCompose.g:5274:3: (enumLiteral_0= 'service_started' )
+                    // InternalDockerCompose.g:5275:4: enumLiteral_0= 'service_started'
                     {
-                    enumLiteral_0=(Token)match(input,93,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,97,FOLLOW_2); 
 
                     				current = grammarAccess.getConditionAccess().getService_startedEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getConditionAccess().getService_startedEnumLiteralDeclaration_0());
@@ -13288,12 +14458,12 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDockerCompose.g:4857:3: (enumLiteral_1= 'service_healthy' )
+                    // InternalDockerCompose.g:5282:3: (enumLiteral_1= 'service_healthy' )
                     {
-                    // InternalDockerCompose.g:4857:3: (enumLiteral_1= 'service_healthy' )
-                    // InternalDockerCompose.g:4858:4: enumLiteral_1= 'service_healthy'
+                    // InternalDockerCompose.g:5282:3: (enumLiteral_1= 'service_healthy' )
+                    // InternalDockerCompose.g:5283:4: enumLiteral_1= 'service_healthy'
                     {
-                    enumLiteral_1=(Token)match(input,94,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,98,FOLLOW_2); 
 
                     				current = grammarAccess.getConditionAccess().getService_healthyEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getConditionAccess().getService_healthyEnumLiteralDeclaration_1());
@@ -13305,12 +14475,12 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalDockerCompose.g:4865:3: (enumLiteral_2= 'service_completed_successfully' )
+                    // InternalDockerCompose.g:5290:3: (enumLiteral_2= 'service_completed_successfully' )
                     {
-                    // InternalDockerCompose.g:4865:3: (enumLiteral_2= 'service_completed_successfully' )
-                    // InternalDockerCompose.g:4866:4: enumLiteral_2= 'service_completed_successfully'
+                    // InternalDockerCompose.g:5290:3: (enumLiteral_2= 'service_completed_successfully' )
+                    // InternalDockerCompose.g:5291:4: enumLiteral_2= 'service_completed_successfully'
                     {
-                    enumLiteral_2=(Token)match(input,95,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,99,FOLLOW_2); 
 
                     				current = grammarAccess.getConditionAccess().getService_completed_successfullyEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getConditionAccess().getService_completed_successfullyEnumLiteralDeclaration_2());
@@ -13345,24 +14515,24 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
     // Delegated rules
 
 
-    protected DFA26 dfa26 = new DFA26(this);
-    protected DFA34 dfa34 = new DFA34(this);
-    protected DFA40 dfa40 = new DFA40(this);
-    static final String dfa_1s = "\31\uffff";
-    static final String dfa_2s = "\1\1\30\uffff";
-    static final String dfa_3s = "\1\7\1\uffff\4\7\17\uffff\2\25\1\uffff\1\0";
-    static final String dfa_4s = "\1\43\1\uffff\4\37\17\uffff\2\25\1\uffff\1\0";
-    static final String dfa_5s = "\1\uffff\1\21\4\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\16\1\17\1\20\1\13\1\14\1\15\2\uffff\1\12\1\uffff";
-    static final String dfa_6s = "\1\0\1\uffff\1\5\1\3\1\4\1\1\22\uffff\1\2}>";
+    protected DFA29 dfa29 = new DFA29(this);
+    protected DFA33 dfa33 = new DFA33(this);
+    protected DFA43 dfa43 = new DFA43(this);
+    protected DFA49 dfa49 = new DFA49(this);
+    protected DFA69 dfa69 = new DFA69(this);
+    static final String dfa_1s = "\32\uffff";
+    static final String dfa_2s = "\1\1\31\uffff";
+    static final String dfa_3s = "\1\5\1\uffff\4\5\21\uffff\2\26\1\0";
+    static final String dfa_4s = "\1\45\1\uffff\4\40\21\uffff\2\26\1\0";
+    static final String dfa_5s = "\1\uffff\1\22\4\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\16\1\17\1\20\1\21\1\13\1\14\1\15\1\12\3\uffff";
+    static final String dfa_6s = "\1\1\1\uffff\1\4\1\2\1\3\1\0\23\uffff\1\5}>";
     static final String[] dfa_7s = {
-            "\1\1\1\uffff\1\1\5\uffff\2\1\1\2\1\3\1\4\1\5\1\uffff\2\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\uffff\1\16\1\17\1\20\1\21",
+            "\1\1\3\uffff\1\1\6\uffff\2\1\1\2\1\3\1\4\1\5\1\uffff\2\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\uffff\1\16\1\17\1\20\1\21\1\22",
             "",
-            "\1\1\1\uffff\1\1\25\uffff\1\22",
-            "\1\1\1\uffff\1\1\25\uffff\1\23",
-            "\1\1\1\uffff\1\1\25\uffff\1\24",
-            "\1\26\1\uffff\1\25\25\uffff\1\27",
-            "",
-            "",
+            "\1\1\3\uffff\1\1\26\uffff\1\23",
+            "\1\1\3\uffff\1\1\26\uffff\1\24",
+            "\1\1\3\uffff\1\1\26\uffff\1\25",
+            "\1\30\3\uffff\1\27\26\uffff\1\26",
             "",
             "",
             "",
@@ -13376,9 +14546,12 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             "",
             "",
             "",
-            "\1\30",
-            "\1\30",
             "",
+            "",
+            "",
+            "",
+            "\1\31",
+            "\1\31",
             "\1\uffff"
     };
 
@@ -13390,11 +14563,11 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
     static final short[] dfa_6 = DFA.unpackEncodedString(dfa_6s);
     static final short[][] dfa_7 = unpackEncodedStringArray(dfa_7s);
 
-    class DFA26 extends DFA {
+    class DFA29 extends DFA {
 
-        public DFA26(BaseRecognizer recognizer) {
+        public DFA29(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 26;
+            this.decisionNumber = 29;
             this.eot = dfa_1;
             this.eof = dfa_2;
             this.min = dfa_3;
@@ -13404,149 +14577,193 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             this.transition = dfa_7;
         }
         public String getDescription() {
-            return "()+ loopback of 351:6: ( ({...}? => ( ({...}? => ( (otherlv_4= 'build:' ( (lv_build_5_0= rulePATH ) ) ) | (otherlv_6= 'image:' ( (lv_image_7_0= ruleImage ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'cpu_count:' ( (lv_cpu_count_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'devices:' (otherlv_44= '-' ( (lv_devices_45_0= ruleDevice ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_46= 'dns:' ( (otherlv_47= '-' ( (lv_dns_48_0= ruleDNS ) ) )+ | ( (lv_dns_49_0= ruleDNS ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_50= 'ports:' (otherlv_51= '-' ( (lv_ports_52_0= rulePort ) ) )+ ) ) ) ) )+";
+            return "()+ loopback of 351:6: ( ({...}? => ( ({...}? => ( (otherlv_4= 'build:' ( (lv_build_5_0= rulePATH ) ) ) | (otherlv_6= 'image:' ( (lv_image_7_0= ruleImage ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'cpu_count:' ( (lv_cpu_count_9_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'command:' ( (lv_command_11_0= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'container_name:' ( (lv_container_name_13_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'restart:' ( (lv_restart_15_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'init:' ( (lv_init_17_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'read_only:' ( (lv_read_only_19_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'links:' (otherlv_21= '-' ( (lv_links_22_0= ruleLink ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_23= 'depends_on:' ( ( (lv_depends_on_24_0= ruleDependency_short ) )+ | ( (lv_depends_on_25_0= ruleDependency_long ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'networks:' ( (lv_networks_27_0= ruleNetworkConnector ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'volumes:' ( (otherlv_29= '-' ( (lv_volumes_30_0= ruleVolumeConnector_short ) ) )+ | (otherlv_31= '-' ( (lv_volumes_32_0= ruleVolumeConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'configs:' ( (otherlv_34= '-' ( (lv_configs_35_0= ruleConfigConnector_short ) ) )+ | (otherlv_36= '-' ( (lv_configs_37_0= ruleConfigConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_38= 'secrets:' ( (otherlv_39= '-' ( (lv_secrets_40_0= ruleSecretConnector_short ) ) )+ | (otherlv_41= '-' ( (lv_secrets_42_0= ruleSecretConnector_long ) ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'environment:' ( ( (lv_environment_44_0= ruleEnvironmentVariableMap ) )+ | ( (lv_environment_45_0= ruleEnvironmentVariableList ) )+ ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_46= 'devices:' (otherlv_47= '-' ( (lv_devices_48_0= ruleDevice ) ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'dns:' ( (otherlv_50= '-' ( (lv_dns_51_0= ruleDNS ) ) )+ | ( (lv_dns_52_0= ruleDNS ) ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'ports:' (otherlv_54= '-' ( (lv_ports_55_0= rulePort ) ) )+ ) ) ) ) )+";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA26_0 = input.LA(1);
+                        int LA29_5 = input.LA(1);
 
                          
-                        int index26_0 = input.index();
+                        int index29_5 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA26_0==EOF||LA26_0==RULE_ID||LA26_0==RULE_STRING||(LA26_0>=15 && LA26_0<=16)) ) {s = 1;}
+                        if ( LA29_5 == 32 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 9) ) {s = 22;}
 
-                        else if ( (LA26_0==17) ) {s = 2;}
+                        else if ( (LA29_5==RULE_STRING) ) {s = 23;}
 
-                        else if ( (LA26_0==18) ) {s = 3;}
-
-                        else if ( (LA26_0==19) ) {s = 4;}
-
-                        else if ( (LA26_0==20) ) {s = 5;}
-
-                        else if ( LA26_0 >= 22 && LA26_0 <= 23 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 0) ) {s = 6;}
-
-                        else if ( LA26_0 == 24 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 1) ) {s = 7;}
-
-                        else if ( LA26_0 == 25 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 2) ) {s = 8;}
-
-                        else if ( LA26_0 == 26 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 3) ) {s = 9;}
-
-                        else if ( LA26_0 == 27 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 4) ) {s = 10;}
-
-                        else if ( LA26_0 == 28 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 5) ) {s = 11;}
-
-                        else if ( LA26_0 == 29 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 6) ) {s = 12;}
-
-                        else if ( LA26_0 == 30 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 7) ) {s = 13;}
-
-                        else if ( LA26_0 == 32 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 8) ) {s = 14;}
-
-                        else if ( LA26_0 == 33 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 13) ) {s = 15;}
-
-                        else if ( LA26_0 == 34 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 14) ) {s = 16;}
-
-                        else if ( LA26_0 == 35 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 15) ) {s = 17;}
+                        else if ( (LA29_5==RULE_ID) ) {s = 24;}
 
                          
-                        input.seek(index26_0);
+                        input.seek(index29_5);
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA26_5 = input.LA(1);
+                        int LA29_0 = input.LA(1);
 
                          
-                        int index26_5 = input.index();
+                        int index29_0 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA26_5==RULE_STRING) ) {s = 21;}
+                        if ( (LA29_0==EOF||LA29_0==RULE_ID||LA29_0==RULE_STRING||(LA29_0>=16 && LA29_0<=17)) ) {s = 1;}
 
-                        else if ( (LA26_5==RULE_ID) ) {s = 22;}
+                        else if ( (LA29_0==18) ) {s = 2;}
 
-                        else if ( LA26_5 == 31 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 9) ) {s = 23;}
+                        else if ( (LA29_0==19) ) {s = 3;}
+
+                        else if ( (LA29_0==20) ) {s = 4;}
+
+                        else if ( (LA29_0==21) ) {s = 5;}
+
+                        else if ( LA29_0 >= 23 && LA29_0 <= 24 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 0) ) {s = 6;}
+
+                        else if ( LA29_0 == 25 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 1) ) {s = 7;}
+
+                        else if ( LA29_0 == 26 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 2) ) {s = 8;}
+
+                        else if ( LA29_0 == 27 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 3) ) {s = 9;}
+
+                        else if ( LA29_0 == 28 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 4) ) {s = 10;}
+
+                        else if ( LA29_0 == 29 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 5) ) {s = 11;}
+
+                        else if ( LA29_0 == 30 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 6) ) {s = 12;}
+
+                        else if ( LA29_0 == 31 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 7) ) {s = 13;}
+
+                        else if ( LA29_0 == 33 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 8) ) {s = 14;}
+
+                        else if ( LA29_0 == 34 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 13) ) {s = 15;}
+
+                        else if ( LA29_0 == 35 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 14) ) {s = 16;}
+
+                        else if ( LA29_0 == 36 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 15) ) {s = 17;}
+
+                        else if ( LA29_0 == 37 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 16) ) {s = 18;}
 
                          
-                        input.seek(index26_5);
+                        input.seek(index29_0);
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA26_24 = input.LA(1);
+                        int LA29_3 = input.LA(1);
 
                          
-                        int index26_24 = input.index();
+                        int index29_3 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 9) ) {s = 23;}
+                        if ( LA29_3 == 32 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 11) ) {s = 20;}
+
+                        else if ( (LA29_3==RULE_ID||LA29_3==RULE_STRING) ) {s = 1;}
+
+                         
+                        input.seek(index29_3);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 3 : 
+                        int LA29_4 = input.LA(1);
+
+                         
+                        int index29_4 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA29_4==RULE_ID||LA29_4==RULE_STRING) ) {s = 1;}
+
+                        else if ( LA29_4 == 32 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 12) ) {s = 21;}
+
+                         
+                        input.seek(index29_4);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 4 : 
+                        int LA29_2 = input.LA(1);
+
+                         
+                        int index29_2 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA29_2==RULE_ID||LA29_2==RULE_STRING) ) {s = 1;}
+
+                        else if ( LA29_2 == 32 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 10) ) {s = 19;}
+
+                         
+                        input.seek(index29_2);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 5 : 
+                        int LA29_25 = input.LA(1);
+
+                         
+                        int index29_25 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 9) ) {s = 22;}
 
                         else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getServiceAccess().getUnorderedGroup_3()) ) {s = 1;}
 
                          
-                        input.seek(index26_24);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
-                        int LA26_3 = input.LA(1);
-
-                         
-                        int index26_3 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA26_3==RULE_ID||LA26_3==RULE_STRING) ) {s = 1;}
-
-                        else if ( LA26_3 == 31 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 11) ) {s = 19;}
-
-                         
-                        input.seek(index26_3);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 4 : 
-                        int LA26_4 = input.LA(1);
-
-                         
-                        int index26_4 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( LA26_4 == 31 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 12) ) {s = 20;}
-
-                        else if ( (LA26_4==RULE_ID||LA26_4==RULE_STRING) ) {s = 1;}
-
-                         
-                        input.seek(index26_4);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 5 : 
-                        int LA26_2 = input.LA(1);
-
-                         
-                        int index26_2 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( LA26_2 == 31 && getUnorderedGroupHelper().canSelect(grammarAccess.getServiceAccess().getUnorderedGroup_3(), 10) ) {s = 18;}
-
-                        else if ( (LA26_2==RULE_ID||LA26_2==RULE_STRING) ) {s = 1;}
-
-                         
-                        input.seek(index26_2);
+                        input.seek(index29_25);
                         if ( s>=0 ) return s;
                         break;
             }
             NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 26, _s, input);
+                new NoViableAltException(getDescription(), 29, _s, input);
             error(nvae);
             throw nvae;
         }
     }
-    static final String dfa_8s = "\14\uffff";
-    static final String dfa_9s = "\1\1\13\uffff";
-    static final String dfa_10s = "\1\7\1\uffff\1\112\6\uffff\2\0\1\uffff";
-    static final String dfa_11s = "\1\60\1\uffff\1\113\6\uffff\2\0\1\uffff";
-    static final String dfa_12s = "\1\uffff\1\10\1\uffff\1\1\1\2\1\3\1\5\1\6\1\7\2\uffff\1\4";
-    static final String dfa_13s = "\1\0\10\uffff\1\1\1\2\1\uffff}>";
+    static final String dfa_8s = "\10\uffff";
+    static final String dfa_9s = "\1\uffff\1\4\3\uffff\1\4\2\uffff";
+    static final String dfa_10s = "\3\5\2\uffff\2\5\1\26";
+    static final String dfa_11s = "\1\5\1\50\1\5\2\uffff\1\47\1\5\1\47";
+    static final String dfa_12s = "\3\uffff\1\1\1\2\3\uffff";
+    static final String dfa_13s = "\10\uffff}>";
     static final String[] dfa_14s = {
-            "\1\1\1\uffff\1\1\5\uffff\6\1\1\uffff\7\1\1\2\6\1\5\uffff\1\3\1\4\1\5\1\6\1\uffff\1\7\1\uffff\1\10",
+            "\1\1",
+            "\1\4\3\uffff\1\4\6\uffff\6\4\1\2\11\4\1\uffff\5\4\1\uffff\1\3\1\4",
+            "\1\5",
+            "",
+            "",
+            "\1\4\3\uffff\1\4\6\uffff\6\4\1\6\11\4\1\uffff\5\4\1\uffff\1\3",
+            "\1\7",
+            "\1\6\20\uffff\1\3"
+    };
+
+    static final short[] dfa_8 = DFA.unpackEncodedString(dfa_8s);
+    static final short[] dfa_9 = DFA.unpackEncodedString(dfa_9s);
+    static final char[] dfa_10 = DFA.unpackEncodedStringToUnsignedChars(dfa_10s);
+    static final char[] dfa_11 = DFA.unpackEncodedStringToUnsignedChars(dfa_11s);
+    static final short[] dfa_12 = DFA.unpackEncodedString(dfa_12s);
+    static final short[] dfa_13 = DFA.unpackEncodedString(dfa_13s);
+    static final short[][] dfa_14 = unpackEncodedStringArray(dfa_14s);
+
+    class DFA33 extends DFA {
+
+        public DFA33(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 33;
+            this.eot = dfa_8;
+            this.eof = dfa_9;
+            this.min = dfa_10;
+            this.max = dfa_11;
+            this.accept = dfa_12;
+            this.special = dfa_13;
+            this.transition = dfa_14;
+        }
+        public String getDescription() {
+            return "1404:3: (this_ID_0= RULE_ID (kw= ':' this_ID_2= RULE_ID )* kw= '/' )?";
+        }
+    }
+    static final String dfa_15s = "\14\uffff";
+    static final String dfa_16s = "\1\1\13\uffff";
+    static final String dfa_17s = "\1\5\1\uffff\1\116\6\uffff\2\0\1\uffff";
+    static final String dfa_18s = "\1\65\1\uffff\1\117\6\uffff\2\0\1\uffff";
+    static final String dfa_19s = "\1\uffff\1\10\1\uffff\1\1\1\2\1\3\1\5\1\6\1\7\2\uffff\1\4";
+    static final String dfa_20s = "\1\0\10\uffff\1\1\1\2\1\uffff}>";
+    static final String[] dfa_21s = {
+            "\1\1\3\uffff\1\1\6\uffff\6\1\1\uffff\7\1\1\2\7\1\10\uffff\1\3\1\4\1\5\1\6\1\uffff\1\7\1\uffff\1\10",
             "",
             "\1\11\1\12",
             "",
@@ -13560,66 +14777,66 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             ""
     };
 
-    static final short[] dfa_8 = DFA.unpackEncodedString(dfa_8s);
-    static final short[] dfa_9 = DFA.unpackEncodedString(dfa_9s);
-    static final char[] dfa_10 = DFA.unpackEncodedStringToUnsignedChars(dfa_10s);
-    static final char[] dfa_11 = DFA.unpackEncodedStringToUnsignedChars(dfa_11s);
-    static final short[] dfa_12 = DFA.unpackEncodedString(dfa_12s);
-    static final short[] dfa_13 = DFA.unpackEncodedString(dfa_13s);
-    static final short[][] dfa_14 = unpackEncodedStringArray(dfa_14s);
+    static final short[] dfa_15 = DFA.unpackEncodedString(dfa_15s);
+    static final short[] dfa_16 = DFA.unpackEncodedString(dfa_16s);
+    static final char[] dfa_17 = DFA.unpackEncodedStringToUnsignedChars(dfa_17s);
+    static final char[] dfa_18 = DFA.unpackEncodedStringToUnsignedChars(dfa_18s);
+    static final short[] dfa_19 = DFA.unpackEncodedString(dfa_19s);
+    static final short[] dfa_20 = DFA.unpackEncodedString(dfa_20s);
+    static final short[][] dfa_21 = unpackEncodedStringArray(dfa_21s);
 
-    class DFA34 extends DFA {
+    class DFA43 extends DFA {
 
-        public DFA34(BaseRecognizer recognizer) {
+        public DFA43(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 34;
-            this.eot = dfa_8;
-            this.eof = dfa_9;
-            this.min = dfa_10;
-            this.max = dfa_11;
-            this.accept = dfa_12;
-            this.special = dfa_13;
-            this.transition = dfa_14;
+            this.decisionNumber = 43;
+            this.eot = dfa_15;
+            this.eof = dfa_16;
+            this.min = dfa_17;
+            this.max = dfa_18;
+            this.accept = dfa_19;
+            this.special = dfa_20;
+            this.transition = dfa_21;
         }
         public String getDescription() {
-            return "()+ loopback of 1737:6: ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) ) ) )+";
+            return "()+ loopback of 2006:6: ( ({...}? => ( ({...}? => (otherlv_2= 'source:' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'type:' ( (lv_type_5_0= ruleMountType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'target:' ( (lv_container_path_7_0= rulePATH ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'read_only:' ( (lv_read_only_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'bind:' otherlv_11= 'propagation:' ( (lv_propagation_12_0= rulePropagationType ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'volume:' otherlv_14= 'nocopy:' ( (lv_nocopy_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'tmpfs:' otherlv_17= 'size:' ( (lv_size_18_0= ruleEInt ) ) ) ) ) ) )+";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA34_0 = input.LA(1);
+                        int LA43_0 = input.LA(1);
 
                          
-                        int index34_0 = input.index();
+                        int index43_0 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA34_0==EOF||LA34_0==RULE_ID||LA34_0==RULE_STRING||(LA34_0>=15 && LA34_0<=20)||(LA34_0>=22 && LA34_0<=28)||(LA34_0>=30 && LA34_0<=35)) ) {s = 1;}
+                        if ( (LA43_0==EOF||LA43_0==RULE_ID||LA43_0==RULE_STRING||(LA43_0>=16 && LA43_0<=21)||(LA43_0>=23 && LA43_0<=29)||(LA43_0>=31 && LA43_0<=37)) ) {s = 1;}
 
-                        else if ( (LA34_0==29) ) {s = 2;}
+                        else if ( (LA43_0==30) ) {s = 2;}
 
-                        else if ( LA34_0 == 41 && getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 0) ) {s = 3;}
+                        else if ( LA43_0 == 46 && getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 0) ) {s = 3;}
 
-                        else if ( LA34_0 == 42 && getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 1) ) {s = 4;}
+                        else if ( LA43_0 == 47 && getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 1) ) {s = 4;}
 
-                        else if ( LA34_0 == 43 && getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 2) ) {s = 5;}
+                        else if ( LA43_0 == 48 && getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 2) ) {s = 5;}
 
-                        else if ( LA34_0 == 44 && getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 4) ) {s = 6;}
+                        else if ( LA43_0 == 49 && getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 4) ) {s = 6;}
 
-                        else if ( LA34_0 == 46 && getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 5) ) {s = 7;}
+                        else if ( LA43_0 == 51 && getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 5) ) {s = 7;}
 
-                        else if ( LA34_0 == 48 && getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 6) ) {s = 8;}
+                        else if ( LA43_0 == 53 && getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 6) ) {s = 8;}
 
                          
-                        input.seek(index34_0);
+                        input.seek(index43_0);
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA34_9 = input.LA(1);
+                        int LA43_9 = input.LA(1);
 
                          
-                        int index34_9 = input.index();
+                        int index43_9 = input.index();
                         input.rewind();
                         s = -1;
                         if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 3) ) {s = 11;}
@@ -13627,14 +14844,14 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                         else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1()) ) {s = 1;}
 
                          
-                        input.seek(index34_9);
+                        input.seek(index43_9);
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA34_10 = input.LA(1);
+                        int LA43_10 = input.LA(1);
 
                          
-                        int index34_10 = input.index();
+                        int index43_10 = input.index();
                         input.rewind();
                         s = -1;
                         if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1(), 3) ) {s = 11;}
@@ -13642,24 +14859,24 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
                         else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVolumeConnector_longAccess().getUnorderedGroup_1()) ) {s = 1;}
 
                          
-                        input.seek(index34_10);
+                        input.seek(index43_10);
                         if ( s>=0 ) return s;
                         break;
             }
             NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 34, _s, input);
+                new NoViableAltException(getDescription(), 43, _s, input);
             error(nvae);
             throw nvae;
         }
     }
-    static final String dfa_15s = "\13\uffff";
-    static final String dfa_16s = "\1\1\12\uffff";
-    static final String dfa_17s = "\1\7\12\uffff";
-    static final String dfa_18s = "\1\77\12\uffff";
-    static final String dfa_19s = "\1\uffff\1\12\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11";
-    static final String dfa_20s = "\1\0\12\uffff}>";
-    static final String[] dfa_21s = {
-            "\1\1\1\uffff\1\1\5\uffff\6\1\42\uffff\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12",
+    static final String dfa_22s = "\13\uffff";
+    static final String dfa_23s = "\1\1\12\uffff";
+    static final String dfa_24s = "\1\5\12\uffff";
+    static final String dfa_25s = "\1\104\12\uffff";
+    static final String dfa_26s = "\1\uffff\1\12\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11";
+    static final String dfa_27s = "\1\0\12\uffff}>";
+    static final String[] dfa_28s = {
+            "\1\1\3\uffff\1\1\6\uffff\6\1\46\uffff\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12",
             "",
             "",
             "",
@@ -13672,70 +14889,107 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
             ""
     };
 
-    static final short[] dfa_15 = DFA.unpackEncodedString(dfa_15s);
-    static final short[] dfa_16 = DFA.unpackEncodedString(dfa_16s);
-    static final char[] dfa_17 = DFA.unpackEncodedStringToUnsignedChars(dfa_17s);
-    static final char[] dfa_18 = DFA.unpackEncodedStringToUnsignedChars(dfa_18s);
-    static final short[] dfa_19 = DFA.unpackEncodedString(dfa_19s);
-    static final short[] dfa_20 = DFA.unpackEncodedString(dfa_20s);
-    static final short[][] dfa_21 = unpackEncodedStringArray(dfa_21s);
+    static final short[] dfa_22 = DFA.unpackEncodedString(dfa_22s);
+    static final short[] dfa_23 = DFA.unpackEncodedString(dfa_23s);
+    static final char[] dfa_24 = DFA.unpackEncodedStringToUnsignedChars(dfa_24s);
+    static final char[] dfa_25 = DFA.unpackEncodedStringToUnsignedChars(dfa_25s);
+    static final short[] dfa_26 = DFA.unpackEncodedString(dfa_26s);
+    static final short[] dfa_27 = DFA.unpackEncodedString(dfa_27s);
+    static final short[][] dfa_28 = unpackEncodedStringArray(dfa_28s);
 
-    class DFA40 extends DFA {
+    class DFA49 extends DFA {
 
-        public DFA40(BaseRecognizer recognizer) {
+        public DFA49(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 40;
-            this.eot = dfa_15;
-            this.eof = dfa_16;
-            this.min = dfa_17;
-            this.max = dfa_18;
-            this.accept = dfa_19;
-            this.special = dfa_20;
-            this.transition = dfa_21;
+            this.decisionNumber = 49;
+            this.eot = dfa_22;
+            this.eof = dfa_23;
+            this.min = dfa_24;
+            this.max = dfa_25;
+            this.accept = dfa_26;
+            this.special = dfa_27;
+            this.transition = dfa_28;
         }
         public String getDescription() {
-            return "()* loopback of 2646:7: ( ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) ) )*";
+            return "()* loopback of 2915:7: ( ({...}? => ( ({...}? => (otherlv_6= 'driver:' ( (lv_driver_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'attachable:' ( (lv_attachable_9_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'enable_ipv6:' ( (lv_enable_ipv6_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internal:' ( (lv_internal_13_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'external:' ( (lv_external_15_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'name:' ( (lv_network_name_17_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'labels:' ( (lv_labels_19_0= ruleNetworkLabel ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'driver_opts:' ( (lv_driver_opts_21_0= ruleNetworkDriverOpt ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'ipam:' ( (lv_ipam_23_0= ruleIPAM ) ) ) ) ) ) )*";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA40_0 = input.LA(1);
+                        int LA49_0 = input.LA(1);
 
                          
-                        int index40_0 = input.index();
+                        int index49_0 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA40_0==EOF||LA40_0==RULE_ID||LA40_0==RULE_STRING||(LA40_0>=15 && LA40_0<=20)) ) {s = 1;}
+                        if ( (LA49_0==EOF||LA49_0==RULE_ID||LA49_0==RULE_STRING||(LA49_0>=16 && LA49_0<=21)) ) {s = 1;}
 
-                        else if ( LA40_0 == 55 && getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 0) ) {s = 2;}
+                        else if ( LA49_0 == 60 && getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 0) ) {s = 2;}
 
-                        else if ( LA40_0 == 56 && getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 1) ) {s = 3;}
+                        else if ( LA49_0 == 61 && getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 1) ) {s = 3;}
 
-                        else if ( LA40_0 == 57 && getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 2) ) {s = 4;}
+                        else if ( LA49_0 == 62 && getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 2) ) {s = 4;}
 
-                        else if ( LA40_0 == 58 && getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 3) ) {s = 5;}
+                        else if ( LA49_0 == 63 && getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 3) ) {s = 5;}
 
-                        else if ( LA40_0 == 59 && getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 4) ) {s = 6;}
+                        else if ( LA49_0 == 64 && getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 4) ) {s = 6;}
 
-                        else if ( LA40_0 == 60 && getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 5) ) {s = 7;}
+                        else if ( LA49_0 == 65 && getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 5) ) {s = 7;}
 
-                        else if ( LA40_0 == 61 && getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 6) ) {s = 8;}
+                        else if ( LA49_0 == 66 && getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 6) ) {s = 8;}
 
-                        else if ( LA40_0 == 62 && getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 7) ) {s = 9;}
+                        else if ( LA49_0 == 67 && getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 7) ) {s = 9;}
 
-                        else if ( LA40_0 == 63 && getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 8) ) {s = 10;}
+                        else if ( LA49_0 == 68 && getUnorderedGroupHelper().canSelect(grammarAccess.getNetworkAccess().getUnorderedGroup_3_1(), 8) ) {s = 10;}
 
                          
-                        input.seek(index40_0);
+                        input.seek(index49_0);
                         if ( s>=0 ) return s;
                         break;
             }
             NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 40, _s, input);
+                new NoViableAltException(getDescription(), 49, _s, input);
             error(nvae);
             throw nvae;
+        }
+    }
+    static final String dfa_29s = "\4\4\3\uffff\1\4";
+    static final String dfa_30s = "\4\5\1\uffff\1\5\1\uffff\1\5";
+    static final String dfa_31s = "\1\115\1\114\2\71\1\uffff\1\5\1\uffff\1\114";
+    static final String dfa_32s = "\4\uffff\1\2\1\uffff\1\1\1\uffff";
+    static final String[] dfa_33s = {
+            "\1\1\3\uffff\1\4\6\uffff\26\4\10\uffff\4\4\1\uffff\1\4\1\uffff\1\4\1\uffff\3\4\22\uffff\1\2\1\3",
+            "\1\4\3\uffff\1\4\6\uffff\26\4\1\uffff\1\6\6\uffff\4\4\1\uffff\1\4\1\uffff\1\4\1\uffff\3\4\22\uffff\1\5",
+            "\1\4\3\uffff\1\4\6\uffff\26\4\1\uffff\1\6\6\uffff\4\4\1\uffff\1\4\1\uffff\1\4\1\uffff\3\4",
+            "\1\4\3\uffff\1\4\6\uffff\26\4\1\uffff\1\6\6\uffff\4\4\1\uffff\1\4\1\uffff\1\4\1\uffff\3\4",
+            "",
+            "\1\7",
+            "",
+            "\1\4\3\uffff\1\4\6\uffff\26\4\1\uffff\1\6\6\uffff\4\4\1\uffff\1\4\1\uffff\1\4\1\uffff\3\4\22\uffff\1\5"
+    };
+    static final short[] dfa_29 = DFA.unpackEncodedString(dfa_29s);
+    static final char[] dfa_30 = DFA.unpackEncodedStringToUnsignedChars(dfa_30s);
+    static final char[] dfa_31 = DFA.unpackEncodedStringToUnsignedChars(dfa_31s);
+    static final short[] dfa_32 = DFA.unpackEncodedString(dfa_32s);
+    static final short[][] dfa_33 = unpackEncodedStringArray(dfa_33s);
+
+    class DFA69 extends DFA {
+
+        public DFA69(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 69;
+            this.eot = dfa_8;
+            this.eof = dfa_29;
+            this.min = dfa_30;
+            this.max = dfa_31;
+            this.accept = dfa_32;
+            this.special = dfa_13;
+            this.transition = dfa_33;
+        }
+        public String getDescription() {
+            return "()* loopback of 4675:4: ( ( (this_ID_13= RULE_ID (kw= '.' this_ID_15= RULE_ID )* ) | kw= '.' | kw= '..' ) kw= '/' )*";
         }
     }
  
@@ -13743,61 +14997,69 @@ public class InternalDockerComposeParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x00000000001F8002L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000280L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x00000000001F8282L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000F7FDE0000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000F7FDE0080L,0x0000000000000300L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000F7FDE0002L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000000L,0x000000000000F000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000C00L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000FFFDE0002L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000080000280L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000FFFDE0282L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x00015E0020000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x001C0A0000000000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000080000400L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000200002L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000000000L,0x00000000E0000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x000001E000000002L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x000001E080000002L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x00015E0020000002L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000000000L,0x0000000000780000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x00015E0020000080L,0x0000000000000300L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000000000L,0x000000001F800000L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000000200080L,0x0000000000000300L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000000000L,0x0000000000070000L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x001C0A0000000002L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x001C0A0000000080L,0x0000000000000300L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0xFFA0000000000002L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0040000000000000L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0xFF80000000000002L});
-    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0xFF80000000000282L});
-    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0xFF80000000000000L,0x000000000000000CL});
-    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x7880000000000002L});
-    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x7880000000000282L});
-    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x1800000000000002L,0x0000000000000001L});
-    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x1800000000000002L,0x0000000000000003L});
-    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0080000000000002L,0x000000000000000CL});
-    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x0080000080000000L,0x00000000000000FCL});
-    public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0080000080000002L,0x000000000000000CL});
-    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0080000000000282L,0x000000000000000CL});
-    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0000000000000002L,0x00000000000000F0L});
-    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x0000000000000282L,0x00000000000000F0L});
-    public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x0000000000000082L,0x0000000000000200L});
-    public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x0000000000000082L});
-    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x00000000003F0002L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000220L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x00000000003F0222L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000003EFFBC0000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000008000000020L,0x0000000000003000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000003EFFBC0002L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000000L,0x00000000000F0000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000000000L,0x000000000000C000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000003FFFBC0002L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000100000220L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000003FFFBC0222L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x002BC00040000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0381400000000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000100000020L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000003EFFBC0022L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000003FFFBC0022L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000100000400L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000000222L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000008000400000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000010000400002L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000400002L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000000000L,0x0000000E00000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x00003C0000000002L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x00003C0100000002L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x002BC00040000002L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000000000L,0x0000000007800000L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000000000L,0x00000001F8000000L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0010000000000000L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0040000000000000L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000000000000000L,0x0000000000700000L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0381400000000002L});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0xF400000000000002L,0x000000000000001FL});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0800000000000000L});
+    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0xF000000000000002L,0x000000000000001FL});
+    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0xF000000000000222L,0x000000000000001FL});
+    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0xF000000000000000L,0x00000000000000DFL});
+    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x1000000000000002L,0x000000000000000FL});
+    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x1000000000000222L,0x000000000000000FL});
+    public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000023L});
+    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0000000400000002L,0x0000000000000023L});
+    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x1000000000000002L,0x00000000000000C0L});
+    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x1000000100000000L,0x0000000000000FC0L});
+    public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x1000000100000002L,0x00000000000000C0L});
+    public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x1000000000000222L,0x00000000000000C0L});
+    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000F00L});
+    public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0000000000000222L,0x0000000000000F00L});
+    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0000008000000002L,0x0000000000001000L});
+    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x0000008000000002L});
+    public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x0000000000000020L,0x0000000000003000L});
+    public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x0000000000000022L,0x0000000000003000L});
+    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x0000008000000000L,0x0000000000001000L});
+    public static final BitSet FOLLOW_65 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_66 = new BitSet(new long[]{0x0000000000000002L,0x0000000000001000L});
+    public static final BitSet FOLLOW_67 = new BitSet(new long[]{0x0000000000000000L,0x0000000000001000L});
 
 }

@@ -647,6 +647,29 @@ public class DockercomposeItemProviderAdapterFactory extends DockercomposeAdapte
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link dockercompose.EnvironmentVariable} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EnvironmentVariableItemProvider environmentVariableItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dockercompose.EnvironmentVariable}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEnvironmentVariableAdapter() {
+		if (environmentVariableItemProvider == null) {
+			environmentVariableItemProvider = new EnvironmentVariableItemProvider(this);
+		}
+
+		return environmentVariableItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -776,6 +799,7 @@ public class DockercomposeItemProviderAdapterFactory extends DockercomposeAdapte
 		if (ipamConfigItemProvider != null) ipamConfigItemProvider.dispose();
 		if (portItemProvider != null) portItemProvider.dispose();
 		if (linkItemProvider != null) linkItemProvider.dispose();
+		if (environmentVariableItemProvider != null) environmentVariableItemProvider.dispose();
 	}
 
 }
