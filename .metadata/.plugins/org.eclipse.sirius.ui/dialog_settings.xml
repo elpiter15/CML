@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExportRepresentationsAsImagesDialog">
+		<item key="ExportRepresentationsAsImagesDialog.imageFormat" value="SVG"/>
+		<list key="ExportRepresentationsAsImagesDialog.file">
+			<item value="C:\Users\loren\OneDrive\Desktop\UNI\4º\TFG\images\a.a"/>
+			<item value="C:\Users\loren\OneDrive\Desktop\UNI\4º\TFG\images\a.a\metamodel6.svg"/>
+		</list>
+	</section>
+</section>

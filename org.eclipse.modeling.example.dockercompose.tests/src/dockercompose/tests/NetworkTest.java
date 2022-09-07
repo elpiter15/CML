@@ -13,6 +13,13 @@ import junit.textui.TestRunner;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Network</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link dockercompose.Network#different_labels(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Different labels</em>}</li>
+ *   <li>{@link dockercompose.Network#different_driver_opts(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Different driver opts</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class NetworkTest extends TestCase {
@@ -84,6 +91,32 @@ public class NetworkTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link dockercompose.Network#different_labels(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Different labels</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dockercompose.Network#different_labels(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	public void testDifferent_labels__DiagnosticChain_Map() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link dockercompose.Network#different_driver_opts(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Different driver opts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dockercompose.Network#different_driver_opts(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	public void testDifferent_driver_opts__DiagnosticChain_Map() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //NetworkTest

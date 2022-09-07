@@ -1,0 +1,5 @@
+package dockercompose.project.design.volume;
+
+public class DockerComposeServices {
+
+}

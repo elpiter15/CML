@@ -245,7 +245,23 @@
     <metamodels href="http://www.eclipse.org/modeling/example/dockercompose/DockerCompose#/"/>
     <categories name="Default">
       <pages name="XtextPage" labelExpression="XText" domainClass="dockercompose::Service" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0"/>
-      <groups name="XtextGroup" labelExpression="Xtext" domainClass="dockercompose::Service" semanticCandidateExpression="var:self">
+      <pages name="XtextPage" labelExpression="XText" domainClass="dockercompose::Volume" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.1"/>
+      <pages name="XtextPage" labelExpression="XText" domainClass="dockercompose::Network" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.2"/>
+      <pages name="XtextPage" labelExpression="XText" domainClass="dockercompose::Secret" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.3"/>
+      <pages name="XtextPage" labelExpression="XText" domainClass="dockercompose::Config" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.4"/>
+      <groups name="XtextGroup" labelExpression="XtextGroup" domainClass="dockercompose::Service" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:CustomDescription" name="org.eclipse.sirius.example.xtextwidget.XtextPartialViewer"/>
+      </groups>
+      <groups name="XtextGroup" labelExpression="Xtext" domainClass="dockercompose::Volume" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:CustomDescription" name="org.eclipse.sirius.example.xtextwidget.XtextPartialViewer"/>
+      </groups>
+      <groups name="XtextGroup" labelExpression="Xtext" domainClass="dockercompose::Network" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:CustomDescription" name="org.eclipse.sirius.example.xtextwidget.XtextPartialViewer"/>
+      </groups>
+      <groups name="XtextGroup" labelExpression="Xtext" domainClass="dockercompose::Secret" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:CustomDescription" name="org.eclipse.sirius.example.xtextwidget.XtextPartialViewer"/>
+      </groups>
+      <groups name="XtextGroup" labelExpression="Xtext" domainClass="dockercompose::Config" semanticCandidateExpression="var:self">
         <controls xsi:type="properties:CustomDescription" name="org.eclipse.sirius.example.xtextwidget.XtextPartialViewer"/>
       </groups>
     </categories>

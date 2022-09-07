@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see dockercompose.DockercomposePackage#getIPAM()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='any_property'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='different_options'"
  * @generated
  */
 public interface IPAM extends EObject {
@@ -81,5 +81,13 @@ public interface IPAM extends EObject {
 	 * @generated
 	 */
 	boolean any_property(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.options-&gt;isUnique(name)'"
+	 * @generated
+	 */
+	boolean different_options(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // IPAM

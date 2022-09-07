@@ -332,22 +332,22 @@ public interface DockercomposePackage extends EPackage {
 	int SERVICE_FEATURE_COUNT = 19;
 
 	/**
-	 * The operation id for the '<em>Different dependencies</em>' operation.
+	 * The operation id for the '<em>No self links</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE___DIFFERENT_DEPENDENCIES__DIAGNOSTICCHAIN_MAP = 0;
+	int SERVICE___NO_SELF_LINKS__DIAGNOSTICCHAIN_MAP = 0;
 
 	/**
-	 * The operation id for the '<em>No self dependencies</em>' operation.
+	 * The operation id for the '<em>Image or build</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE___NO_SELF_DEPENDENCIES__DIAGNOSTICCHAIN_MAP = 1;
+	int SERVICE___IMAGE_OR_BUILD__DIAGNOSTICCHAIN_MAP = 1;
 
 	/**
 	 * The operation id for the '<em>Different configs</em>' operation.
@@ -359,40 +359,13 @@ public interface DockercomposePackage extends EPackage {
 	int SERVICE___DIFFERENT_CONFIGS__DIAGNOSTICCHAIN_MAP = 2;
 
 	/**
-	 * The operation id for the '<em>Different secrets</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE___DIFFERENT_SECRETS__DIAGNOSTICCHAIN_MAP = 3;
-
-	/**
-	 * The operation id for the '<em>Image or build</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE___IMAGE_OR_BUILD__DIAGNOSTICCHAIN_MAP = 4;
-
-	/**
 	 * The operation id for the '<em>Different volumes</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE___DIFFERENT_VOLUMES__DIAGNOSTICCHAIN_MAP = 5;
-
-	/**
-	 * The operation id for the '<em>Different links</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE___DIFFERENT_LINKS__DIAGNOSTICCHAIN_MAP = 6;
+	int SERVICE___DIFFERENT_VOLUMES__DIAGNOSTICCHAIN_MAP = 3;
 
 	/**
 	 * The operation id for the '<em>Different networks</em>' operation.
@@ -401,7 +374,52 @@ public interface DockercomposePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE___DIFFERENT_NETWORKS__DIAGNOSTICCHAIN_MAP = 7;
+	int SERVICE___DIFFERENT_NETWORKS__DIAGNOSTICCHAIN_MAP = 4;
+
+	/**
+	 * The operation id for the '<em>Different links</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE___DIFFERENT_LINKS__DIAGNOSTICCHAIN_MAP = 5;
+
+	/**
+	 * The operation id for the '<em>Different dependencies</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE___DIFFERENT_DEPENDENCIES__DIAGNOSTICCHAIN_MAP = 6;
+
+	/**
+	 * The operation id for the '<em>Different environment variables</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE___DIFFERENT_ENVIRONMENT_VARIABLES__DIAGNOSTICCHAIN_MAP = 7;
+
+	/**
+	 * The operation id for the '<em>No self dependencies</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE___NO_SELF_DEPENDENCIES__DIAGNOSTICCHAIN_MAP = 8;
+
+	/**
+	 * The operation id for the '<em>Different secrets</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE___DIFFERENT_SECRETS__DIAGNOSTICCHAIN_MAP = 9;
 
 	/**
 	 * The number of operations of the '<em>Service</em>' class.
@@ -410,7 +428,7 @@ public interface DockercomposePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_OPERATION_COUNT = 8;
+	int SERVICE_OPERATION_COUNT = 10;
 
 	/**
 	 * The meta object id for the '{@link dockercompose.impl.NetworkImpl <em>Network</em>}' class.
@@ -522,13 +540,31 @@ public interface DockercomposePackage extends EPackage {
 	int NETWORK_FEATURE_COUNT = 10;
 
 	/**
+	 * The operation id for the '<em>Different labels</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK___DIFFERENT_LABELS__DIAGNOSTICCHAIN_MAP = 0;
+
+	/**
+	 * The operation id for the '<em>Different driver opts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK___DIFFERENT_DRIVER_OPTS__DIAGNOSTICCHAIN_MAP = 1;
+
+	/**
 	 * The number of operations of the '<em>Network</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NETWORK_OPERATION_COUNT = 0;
+	int NETWORK_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link dockercompose.impl.VolumeImpl <em>Volume</em>}' class.
@@ -604,13 +640,31 @@ public interface DockercomposePackage extends EPackage {
 	int VOLUME_FEATURE_COUNT = 6;
 
 	/**
+	 * The operation id for the '<em>Different labels</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VOLUME___DIFFERENT_LABELS__DIAGNOSTICCHAIN_MAP = 0;
+
+	/**
+	 * The operation id for the '<em>Different driver opts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VOLUME___DIFFERENT_DRIVER_OPTS__DIAGNOSTICCHAIN_MAP = 1;
+
+	/**
 	 * The number of operations of the '<em>Volume</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VOLUME_OPERATION_COUNT = 0;
+	int VOLUME_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link dockercompose.impl.ConfigImpl <em>Config</em>}' class.
@@ -1135,13 +1189,22 @@ public interface DockercomposePackage extends EPackage {
 	int IPAM___ANY_PROPERTY__DIAGNOSTICCHAIN_MAP = 0;
 
 	/**
+	 * The operation id for the '<em>Different options</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPAM___DIFFERENT_OPTIONS__DIAGNOSTICCHAIN_MAP = 1;
+
+	/**
 	 * The number of operations of the '<em>IPAM</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IPAM_OPERATION_COUNT = 1;
+	int IPAM_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link dockercompose.impl.IPAMOptionImpl <em>IPAM Option</em>}' class.
@@ -1546,13 +1609,22 @@ public interface DockercomposePackage extends EPackage {
 	int NETWORK_CONNECTOR_FEATURE_COUNT = 5;
 
 	/**
+	 * The operation id for the '<em>Different aliases</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR___DIFFERENT_ALIASES__DIAGNOSTICCHAIN_MAP = 0;
+
+	/**
 	 * The number of operations of the '<em>Network Connector</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NETWORK_CONNECTOR_OPERATION_COUNT = 0;
+	int NETWORK_CONNECTOR_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link dockercompose.impl.NetworkAddressImpl <em>Network Address</em>}' class.
@@ -1784,13 +1856,22 @@ public interface DockercomposePackage extends EPackage {
 	int IPAM_CONFIG___ANY_PROPERTY__DIAGNOSTICCHAIN_MAP = 0;
 
 	/**
+	 * The operation id for the '<em>Different addresses</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPAM_CONFIG___DIFFERENT_ADDRESSES__DIAGNOSTICCHAIN_MAP = 1;
+
+	/**
 	 * The number of operations of the '<em>IPAM Config</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IPAM_CONFIG_OPERATION_COUNT = 1;
+	int IPAM_CONFIG_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link dockercompose.impl.PortImpl <em>Port</em>}' class.
@@ -2183,6 +2264,16 @@ public interface DockercomposePackage extends EPackage {
 	EReference getService_Environment();
 
 	/**
+	 * Returns the meta object for the '{@link dockercompose.Service#no_self_links(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>No self links</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>No self links</em>' operation.
+	 * @see dockercompose.Service#no_self_links(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getService__No_self_links__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for the attribute '{@link dockercompose.Service#isRead_only <em>Read only</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2319,6 +2410,16 @@ public interface DockercomposePackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getService__Different_dependencies__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link dockercompose.Service#different_environment_variables(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Different environment variables</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Different environment variables</em>' operation.
+	 * @see dockercompose.Service#different_environment_variables(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getService__Different_environment_variables__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link dockercompose.Service#no_self_dependencies(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>No self dependencies</em>}' operation.
@@ -2471,6 +2572,26 @@ public interface DockercomposePackage extends EPackage {
 	EReference getNetwork_Ipam();
 
 	/**
+	 * Returns the meta object for the '{@link dockercompose.Network#different_labels(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Different labels</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Different labels</em>' operation.
+	 * @see dockercompose.Network#different_labels(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getNetwork__Different_labels__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link dockercompose.Network#different_driver_opts(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Different driver opts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Different driver opts</em>' operation.
+	 * @see dockercompose.Network#different_driver_opts(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getNetwork__Different_driver_opts__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for class '{@link dockercompose.Volume <em>Volume</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2545,6 +2666,26 @@ public interface DockercomposePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getVolume_Labels();
+
+	/**
+	 * Returns the meta object for the '{@link dockercompose.Volume#different_labels(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Different labels</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Different labels</em>' operation.
+	 * @see dockercompose.Volume#different_labels(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getVolume__Different_labels__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link dockercompose.Volume#different_driver_opts(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Different driver opts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Different driver opts</em>' operation.
+	 * @see dockercompose.Volume#different_driver_opts(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getVolume__Different_driver_opts__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link dockercompose.Config <em>Config</em>}'.
@@ -2972,6 +3113,16 @@ public interface DockercomposePackage extends EPackage {
 	EOperation getIPAM__Any_property__DiagnosticChain_Map();
 
 	/**
+	 * Returns the meta object for the '{@link dockercompose.IPAM#different_options(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Different options</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Different options</em>' operation.
+	 * @see dockercompose.IPAM#different_options(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getIPAM__Different_options__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for class '{@link dockercompose.IPAMOption <em>IPAM Option</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3329,6 +3480,16 @@ public interface DockercomposePackage extends EPackage {
 	EReference getNetworkConnector_Aliases();
 
 	/**
+	 * Returns the meta object for the '{@link dockercompose.NetworkConnector#different_aliases(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Different aliases</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Different aliases</em>' operation.
+	 * @see dockercompose.NetworkConnector#different_aliases(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getNetworkConnector__Different_aliases__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for class '{@link dockercompose.NetworkAddress <em>Network Address</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3465,6 +3626,16 @@ public interface DockercomposePackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getIPAMConfig__Any_property__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link dockercompose.IPAMConfig#different_addresses(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Different addresses</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Different addresses</em>' operation.
+	 * @see dockercompose.IPAMConfig#different_addresses(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getIPAMConfig__Different_addresses__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link dockercompose.Port <em>Port</em>}'.
@@ -3781,6 +3952,14 @@ public interface DockercomposePackage extends EPackage {
 		EReference SERVICE__ENVIRONMENT = eINSTANCE.getService_Environment();
 
 		/**
+		 * The meta object literal for the '<em><b>No self links</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SERVICE___NO_SELF_LINKS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getService__No_self_links__DiagnosticChain_Map();
+
+		/**
 		 * The meta object literal for the '<em><b>Read only</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3883,6 +4062,14 @@ public interface DockercomposePackage extends EPackage {
 		 * @generated
 		 */
 		EOperation SERVICE___DIFFERENT_DEPENDENCIES__DIAGNOSTICCHAIN_MAP = eINSTANCE.getService__Different_dependencies__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Different environment variables</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SERVICE___DIFFERENT_ENVIRONMENT_VARIABLES__DIAGNOSTICCHAIN_MAP = eINSTANCE.getService__Different_environment_variables__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>No self dependencies</b></em>' operation.
@@ -3999,6 +4186,22 @@ public interface DockercomposePackage extends EPackage {
 		EReference NETWORK__IPAM = eINSTANCE.getNetwork_Ipam();
 
 		/**
+		 * The meta object literal for the '<em><b>Different labels</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation NETWORK___DIFFERENT_LABELS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getNetwork__Different_labels__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Different driver opts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation NETWORK___DIFFERENT_DRIVER_OPTS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getNetwork__Different_driver_opts__DiagnosticChain_Map();
+
+		/**
 		 * The meta object literal for the '{@link dockercompose.impl.VolumeImpl <em>Volume</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4055,6 +4258,22 @@ public interface DockercomposePackage extends EPackage {
 		 * @generated
 		 */
 		EReference VOLUME__LABELS = eINSTANCE.getVolume_Labels();
+
+		/**
+		 * The meta object literal for the '<em><b>Different labels</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation VOLUME___DIFFERENT_LABELS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getVolume__Different_labels__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Different driver opts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation VOLUME___DIFFERENT_DRIVER_OPTS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getVolume__Different_driver_opts__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link dockercompose.impl.ConfigImpl <em>Config</em>}' class.
@@ -4395,6 +4614,14 @@ public interface DockercomposePackage extends EPackage {
 		EOperation IPAM___ANY_PROPERTY__DIAGNOSTICCHAIN_MAP = eINSTANCE.getIPAM__Any_property__DiagnosticChain_Map();
 
 		/**
+		 * The meta object literal for the '<em><b>Different options</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IPAM___DIFFERENT_OPTIONS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getIPAM__Different_options__DiagnosticChain_Map();
+
+		/**
 		 * The meta object literal for the '{@link dockercompose.impl.IPAMOptionImpl <em>IPAM Option</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4671,6 +4898,14 @@ public interface DockercomposePackage extends EPackage {
 		EReference NETWORK_CONNECTOR__ALIASES = eINSTANCE.getNetworkConnector_Aliases();
 
 		/**
+		 * The meta object literal for the '<em><b>Different aliases</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation NETWORK_CONNECTOR___DIFFERENT_ALIASES__DIAGNOSTICCHAIN_MAP = eINSTANCE.getNetworkConnector__Different_aliases__DiagnosticChain_Map();
+
+		/**
 		 * The meta object literal for the '{@link dockercompose.impl.NetworkAddressImpl <em>Network Address</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4781,6 +5016,14 @@ public interface DockercomposePackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IPAM_CONFIG___ANY_PROPERTY__DIAGNOSTICCHAIN_MAP = eINSTANCE.getIPAMConfig__Any_property__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Different addresses</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IPAM_CONFIG___DIFFERENT_ADDRESSES__DIAGNOSTICCHAIN_MAP = eINSTANCE.getIPAMConfig__Different_addresses__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link dockercompose.impl.PortImpl <em>Port</em>}' class.

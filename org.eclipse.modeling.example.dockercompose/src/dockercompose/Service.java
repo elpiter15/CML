@@ -40,7 +40,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see dockercompose.DockercomposePackage#getService()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='different_networks'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='different_secrets'"
  * @generated
  */
 public interface Service extends EObject {
@@ -247,6 +247,14 @@ public interface Service extends EObject {
 	EList<EnvironmentVariable> getEnvironment();
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.links.service-&gt;excludes(self)'"
+	 * @generated
+	 */
+	boolean no_self_links(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
 	 * Returns the value of the '<em><b>Read only</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -404,6 +412,14 @@ public interface Service extends EObject {
 	 * @generated
 	 */
 	boolean different_dependencies(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.environment-&gt;isUnique(name)'"
+	 * @generated
+	 */
+	boolean different_environment_variables(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

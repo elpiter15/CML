@@ -621,6 +621,66 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * @generated
 	 */
 	@Override
+	public boolean no_self_links(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		final String constraintName = "Service::no_self_links";
+		try {
+			/**
+			 *
+			 * inv no_self_links:
+			 *   let severity : Integer[1] = constraintName.getSeverity()
+			 *   in
+			 *     if severity <= 0
+			 *     then true
+			 *     else
+			 *       let result : Boolean[1] = self.links.service->excludes(self)
+			 *       in
+			 *         constraintName.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+			 *     endif
+			 */
+			final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this, context);
+			final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
+			final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, DockercomposePackage.Literals.SERVICE___NO_SELF_LINKS__DIAGNOSTICCHAIN_MAP);
+			final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, DockercomposeTables.INT_0).booleanValue();
+			/*@NonInvalid*/ boolean local_0;
+			if (le) {
+				local_0 = true;
+			}
+			else {
+				final /*@NonInvalid*/ List<Link> links = this.getLinks();
+				final /*@NonInvalid*/ OrderedSetValue BOXED_links = idResolver.createOrderedSetOfAll(DockercomposeTables.ORD_CLSSid_Link, links);
+				/*@Thrown*/ Accumulator accumulator = ValueUtil.createSequenceAccumulatorValue(DockercomposeTables.SEQ_CLSSid_Service);
+				Iterator<Object> ITERATOR__1 = BOXED_links.iterator();
+				/*@NonInvalid*/ SequenceValue collect;
+				while (true) {
+					if (!ITERATOR__1.hasNext()) {
+						collect = accumulator;
+						break;
+					}
+					/*@NonInvalid*/ Link _1 = (Link)ITERATOR__1.next();
+					/**
+					 * service
+					 */
+					final /*@NonInvalid*/ Service service = _1.getService();
+					//
+					accumulator.add(service);
+				}
+				final /*@NonInvalid*/ boolean result = CollectionExcludesOperation.INSTANCE.evaluate(collect, this).booleanValue();
+				final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, constraintName, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, DockercomposeTables.INT_0).booleanValue();
+				local_0 = logDiagnostic;
+			}
+			return local_0;
+		}
+		catch (Throwable e) {
+			return ValueUtil.validationFailedDiagnostic(constraintName, this, diagnostics, context, e);
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public boolean isRead_only() {
 		return read_only;
 	}
@@ -1241,6 +1301,71 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * @generated
 	 */
 	@Override
+	public boolean different_environment_variables(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		final String constraintName = "Service::different_environment_variables";
+		try {
+			/**
+			 *
+			 * inv different_environment_variables:
+			 *   let severity : Integer[1] = constraintName.getSeverity()
+			 *   in
+			 *     if severity <= 0
+			 *     then true
+			 *     else
+			 *       let result : Boolean[1] = self.environment->isUnique(name)
+			 *       in
+			 *         constraintName.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+			 *     endif
+			 */
+			final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this, context);
+			final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
+			final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, DockercomposePackage.Literals.SERVICE___DIFFERENT_ENVIRONMENT_VARIABLES__DIAGNOSTICCHAIN_MAP);
+			final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, DockercomposeTables.INT_0).booleanValue();
+			/*@NonInvalid*/ boolean local_0;
+			if (le) {
+				local_0 = true;
+			}
+			else {
+				final /*@NonInvalid*/ List<EnvironmentVariable> environment = this.getEnvironment();
+				final /*@NonInvalid*/ OrderedSetValue BOXED_environment = idResolver.createOrderedSetOfAll(DockercomposeTables.ORD_CLSSid_EnvironmentVariable, environment);
+				/*@Thrown*/ org.eclipse.ocl.pivot.values.SetValue.Accumulator accumulator = ValueUtil.createSetAccumulatorValue(DockercomposeTables.ORD_CLSSid_EnvironmentVariable);
+				Iterator<Object> ITERATOR__1 = BOXED_environment.iterator();
+				/*@NonInvalid*/ boolean result;
+				while (true) {
+					if (!ITERATOR__1.hasNext()) {
+						result = true;
+						break;
+					}
+					/*@NonInvalid*/ EnvironmentVariable _1 = (EnvironmentVariable)ITERATOR__1.next();
+					/**
+					 * name
+					 */
+					final /*@NonInvalid*/ String name = _1.getName();
+					//
+					if (accumulator.includes(name) == ValueUtil.TRUE_VALUE) {
+						result = false;
+						break;			// Abort after second find
+					}
+					else {
+						accumulator.add(name);
+					}
+				}
+				final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, constraintName, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, DockercomposeTables.INT_0).booleanValue();
+				local_0 = logDiagnostic;
+			}
+			return local_0;
+		}
+		catch (Throwable e) {
+			return ValueUtil.validationFailedDiagnostic(constraintName, this, diagnostics, context, e);
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public boolean no_self_dependencies(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
 		final String constraintName = "Service::no_self_dependencies";
 		try {
@@ -1747,22 +1872,26 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case DockercomposePackage.SERVICE___DIFFERENT_DEPENDENCIES__DIAGNOSTICCHAIN_MAP:
-				return different_dependencies((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case DockercomposePackage.SERVICE___NO_SELF_DEPENDENCIES__DIAGNOSTICCHAIN_MAP:
-				return no_self_dependencies((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case DockercomposePackage.SERVICE___DIFFERENT_CONFIGS__DIAGNOSTICCHAIN_MAP:
-				return different_configs((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case DockercomposePackage.SERVICE___DIFFERENT_SECRETS__DIAGNOSTICCHAIN_MAP:
-				return different_secrets((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case DockercomposePackage.SERVICE___NO_SELF_LINKS__DIAGNOSTICCHAIN_MAP:
+				return no_self_links((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 			case DockercomposePackage.SERVICE___IMAGE_OR_BUILD__DIAGNOSTICCHAIN_MAP:
 				return image_or_build((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case DockercomposePackage.SERVICE___DIFFERENT_CONFIGS__DIAGNOSTICCHAIN_MAP:
+				return different_configs((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 			case DockercomposePackage.SERVICE___DIFFERENT_VOLUMES__DIAGNOSTICCHAIN_MAP:
 				return different_volumes((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case DockercomposePackage.SERVICE___DIFFERENT_LINKS__DIAGNOSTICCHAIN_MAP:
-				return different_links((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 			case DockercomposePackage.SERVICE___DIFFERENT_NETWORKS__DIAGNOSTICCHAIN_MAP:
 				return different_networks((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case DockercomposePackage.SERVICE___DIFFERENT_LINKS__DIAGNOSTICCHAIN_MAP:
+				return different_links((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case DockercomposePackage.SERVICE___DIFFERENT_DEPENDENCIES__DIAGNOSTICCHAIN_MAP:
+				return different_dependencies((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case DockercomposePackage.SERVICE___DIFFERENT_ENVIRONMENT_VARIABLES__DIAGNOSTICCHAIN_MAP:
+				return different_environment_variables((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case DockercomposePackage.SERVICE___NO_SELF_DEPENDENCIES__DIAGNOSTICCHAIN_MAP:
+				return no_self_dependencies((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case DockercomposePackage.SERVICE___DIFFERENT_SECRETS__DIAGNOSTICCHAIN_MAP:
+				return different_secrets((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

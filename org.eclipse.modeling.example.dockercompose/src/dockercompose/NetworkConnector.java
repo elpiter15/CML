@@ -2,6 +2,8 @@
  */
 package dockercompose;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -23,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see dockercompose.DockercomposePackage#getNetworkConnector()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='different_aliases'"
  * @generated
  */
 public interface NetworkConnector extends EObject {
@@ -116,5 +118,13 @@ public interface NetworkConnector extends EObject {
 	 * @generated
 	 */
 	EList<Alias> getAliases();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.aliases-&gt;isUnique(alias)'"
+	 * @generated
+	 */
+	boolean different_aliases(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // NetworkConnector

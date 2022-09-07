@@ -40,12 +40,20 @@ public class DockercomposeValidator extends EObjectValidator {
 	public static final String DIAGNOSTIC_SOURCE = "dockercompose";
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'No self links' of 'Service'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SERVICE__NO_SELF_LINKS = 1;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Image or build' of 'Service'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SERVICE__IMAGE_OR_BUILD = 5;
+	public static final int SERVICE__IMAGE_OR_BUILD = 2;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Different volumes' of 'Service'.
@@ -53,7 +61,7 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SERVICE__DIFFERENT_VOLUMES = 6;
+	public static final int SERVICE__DIFFERENT_VOLUMES = 4;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Different links' of 'Service'.
@@ -61,7 +69,7 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SERVICE__DIFFERENT_LINKS = 7;
+	public static final int SERVICE__DIFFERENT_LINKS = 6;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Different networks' of 'Service'.
@@ -69,7 +77,7 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SERVICE__DIFFERENT_NETWORKS = 8;
+	public static final int SERVICE__DIFFERENT_NETWORKS = 5;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Different dependencies' of 'Service'.
@@ -77,7 +85,15 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SERVICE__DIFFERENT_DEPENDENCIES = 1;
+	public static final int SERVICE__DIFFERENT_DEPENDENCIES = 7;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Different environment variables' of 'Service'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SERVICE__DIFFERENT_ENVIRONMENT_VARIABLES = 8;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'No self dependencies' of 'Service'.
@@ -85,7 +101,7 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SERVICE__NO_SELF_DEPENDENCIES = 2;
+	public static final int SERVICE__NO_SELF_DEPENDENCIES = 9;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Different secrets' of 'Service'.
@@ -93,7 +109,39 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SERVICE__DIFFERENT_SECRETS = 4;
+	public static final int SERVICE__DIFFERENT_SECRETS = 10;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Different labels' of 'Network'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int NETWORK__DIFFERENT_LABELS = 11;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Different driver opts' of 'Network'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int NETWORK__DIFFERENT_DRIVER_OPTS = 12;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Different labels' of 'Volume'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int VOLUME__DIFFERENT_LABELS = 13;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Different driver opts' of 'Volume'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int VOLUME__DIFFERENT_DRIVER_OPTS = 14;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Different configs' of 'Service'.
@@ -109,7 +157,7 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONFIG__FILE_OR_EXTERNAL = 9;
+	public static final int CONFIG__FILE_OR_EXTERNAL = 15;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'External name' of 'Config'.
@@ -117,7 +165,7 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONFIG__EXTERNAL_NAME = 10;
+	public static final int CONFIG__EXTERNAL_NAME = 16;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'File or external' of 'Secret'.
@@ -125,7 +173,7 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SECRET__FILE_OR_EXTERNAL = 11;
+	public static final int SECRET__FILE_OR_EXTERNAL = 17;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'External name' of 'Secret'.
@@ -133,7 +181,7 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SECRET__EXTERNAL_NAME = 12;
+	public static final int SECRET__EXTERNAL_NAME = 18;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Correct Ip Format' of 'DNS'.
@@ -141,7 +189,7 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int DNS__CORRECT_IP_FORMAT = 13;
+	public static final int DNS__CORRECT_IP_FORMAT = 19;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Any property' of 'IPAM'.
@@ -149,7 +197,23 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int IPAM__ANY_PROPERTY = 14;
+	public static final int IPAM__ANY_PROPERTY = 20;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Different options' of 'IPAM'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int IPAM__DIFFERENT_OPTIONS = 21;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Different aliases' of 'Network Connector'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int NETWORK_CONNECTOR__DIFFERENT_ALIASES = 22;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Any property' of 'IPAM Config'.
@@ -157,7 +221,15 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int IPAM_CONFIG__ANY_PROPERTY = 15;
+	public static final int IPAM_CONFIG__ANY_PROPERTY = 23;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Different addresses' of 'IPAM Config'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int IPAM_CONFIG__DIFFERENT_ADDRESSES = 24;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -165,7 +237,7 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 15;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 24;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -296,14 +368,16 @@ public class DockercomposeValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(service, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(service, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(service, diagnostics, context);
-		if (result || diagnostics != null) result &= validateService_different_networks(service, diagnostics, context);
-		if (result || diagnostics != null) result &= validateService_different_dependencies(service, diagnostics, context);
-		if (result || diagnostics != null) result &= validateService_no_self_dependencies(service, diagnostics, context);
-		if (result || diagnostics != null) result &= validateService_different_configs(service, diagnostics, context);
 		if (result || diagnostics != null) result &= validateService_different_secrets(service, diagnostics, context);
+		if (result || diagnostics != null) result &= validateService_no_self_links(service, diagnostics, context);
 		if (result || diagnostics != null) result &= validateService_image_or_build(service, diagnostics, context);
+		if (result || diagnostics != null) result &= validateService_different_configs(service, diagnostics, context);
 		if (result || diagnostics != null) result &= validateService_different_volumes(service, diagnostics, context);
+		if (result || diagnostics != null) result &= validateService_different_networks(service, diagnostics, context);
 		if (result || diagnostics != null) result &= validateService_different_links(service, diagnostics, context);
+		if (result || diagnostics != null) result &= validateService_different_dependencies(service, diagnostics, context);
+		if (result || diagnostics != null) result &= validateService_different_environment_variables(service, diagnostics, context);
+		if (result || diagnostics != null) result &= validateService_no_self_dependencies(service, diagnostics, context);
 		return result;
 	}
 
@@ -325,6 +399,16 @@ public class DockercomposeValidator extends EObjectValidator {
 	 */
 	public boolean validateService_different_secrets(Service service, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return service.different_secrets(diagnostics, context);
+	}
+
+	/**
+	 * Validates the no_self_links constraint of '<em>Service</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateService_no_self_links(Service service, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return service.no_self_links(diagnostics, context);
 	}
 
 	/**
@@ -388,12 +472,53 @@ public class DockercomposeValidator extends EObjectValidator {
 	}
 
 	/**
+	 * Validates the different_environment_variables constraint of '<em>Service</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateService_different_environment_variables(Service service, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return service.different_environment_variables(diagnostics, context);
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateNetwork(Network network, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(network, diagnostics, context);
+		if (!validate_NoCircularContainment(network, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(network, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(network, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(network, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(network, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(network, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(network, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(network, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(network, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNetwork_different_driver_opts(network, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNetwork_different_labels(network, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the different_driver_opts constraint of '<em>Network</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateNetwork_different_driver_opts(Network network, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return network.different_driver_opts(diagnostics, context);
+	}
+
+	/**
+	 * Validates the different_labels constraint of '<em>Network</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateNetwork_different_labels(Network network, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return network.different_labels(diagnostics, context);
 	}
 
 	/**
@@ -402,7 +527,38 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateVolume(Volume volume, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(volume, diagnostics, context);
+		if (!validate_NoCircularContainment(volume, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(volume, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(volume, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(volume, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(volume, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(volume, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(volume, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(volume, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(volume, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVolume_different_driver_opts(volume, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVolume_different_labels(volume, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the different_driver_opts constraint of '<em>Volume</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVolume_different_driver_opts(Volume volume, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return volume.different_driver_opts(diagnostics, context);
+	}
+
+	/**
+	 * Validates the different_labels constraint of '<em>Volume</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVolume_different_labels(Volume volume, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return volume.different_labels(diagnostics, context);
 	}
 
 	/**
@@ -574,8 +730,19 @@ public class DockercomposeValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(ipam, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(ipam, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(ipam, diagnostics, context);
+		if (result || diagnostics != null) result &= validateIPAM_different_options(ipam, diagnostics, context);
 		if (result || diagnostics != null) result &= validateIPAM_any_property(ipam, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * Validates the different_options constraint of '<em>IPAM</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIPAM_different_options(IPAM ipam, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ipam.different_options(diagnostics, context);
 	}
 
 	/**
@@ -639,7 +806,27 @@ public class DockercomposeValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateNetworkConnector(NetworkConnector networkConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(networkConnector, diagnostics, context);
+		if (!validate_NoCircularContainment(networkConnector, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(networkConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(networkConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(networkConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(networkConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(networkConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(networkConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(networkConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(networkConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNetworkConnector_different_aliases(networkConnector, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the different_aliases constraint of '<em>Network Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateNetworkConnector_different_aliases(NetworkConnector networkConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return networkConnector.different_aliases(diagnostics, context);
 	}
 
 	/**
@@ -694,8 +881,19 @@ public class DockercomposeValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(ipamConfig, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(ipamConfig, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(ipamConfig, diagnostics, context);
+		if (result || diagnostics != null) result &= validateIPAMConfig_different_addresses(ipamConfig, diagnostics, context);
 		if (result || diagnostics != null) result &= validateIPAMConfig_any_property(ipamConfig, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * Validates the different_addresses constraint of '<em>IPAM Config</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIPAMConfig_different_addresses(IPAMConfig ipamConfig, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ipamConfig.different_addresses(diagnostics, context);
 	}
 
 	/**

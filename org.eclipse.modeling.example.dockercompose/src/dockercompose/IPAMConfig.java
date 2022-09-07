@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see dockercompose.DockercomposePackage#getIPAMConfig()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='any_property'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='different_addresses'"
  * @generated
  */
 public interface IPAMConfig extends EObject {
@@ -114,5 +114,13 @@ public interface IPAMConfig extends EObject {
 	 * @generated
 	 */
 	boolean any_property(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.aux_addresses-&gt;isUnique(name)'"
+	 * @generated
+	 */
+	boolean different_addresses(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // IPAMConfig

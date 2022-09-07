@@ -29,7 +29,7 @@ public interface NetworkDriverOpt extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see dockercompose.DockercomposePackage#getNetworkDriverOpt_Name()
-	 * @model id="true" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();

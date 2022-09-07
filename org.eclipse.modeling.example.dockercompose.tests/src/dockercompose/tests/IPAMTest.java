@@ -17,6 +17,7 @@ import junit.textui.TestRunner;
  * The following operations are tested:
  * <ul>
  *   <li>{@link dockercompose.IPAM#any_property(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Any property</em>}</li>
+ *   <li>{@link dockercompose.IPAM#different_options(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Different options</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -100,6 +101,19 @@ public class IPAMTest extends TestCase {
 	 * @generated
 	 */
 	public void testAny_property__DiagnosticChain_Map() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link dockercompose.IPAM#different_options(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Different options</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dockercompose.IPAM#different_options(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	public void testDifferent_options__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

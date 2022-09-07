@@ -538,6 +538,16 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	 * @generated
 	 */
 	@Override
+	public EOperation getService__No_self_links__DiagnosticChain_Map() {
+		return serviceEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getService_Read_only() {
 		return (EAttribute)serviceEClass.getEStructuralFeatures().get(9);
 	}
@@ -619,56 +629,6 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	 */
 	@Override
 	public EOperation getService__Image_or_build__DiagnosticChain_Map() {
-		return serviceEClass.getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getService__Different_volumes__DiagnosticChain_Map() {
-		return serviceEClass.getEOperations().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getService__Different_links__DiagnosticChain_Map() {
-		return serviceEClass.getEOperations().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getService__Different_networks__DiagnosticChain_Map() {
-		return serviceEClass.getEOperations().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getService__Different_dependencies__DiagnosticChain_Map() {
-		return serviceEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getService__No_self_dependencies__DiagnosticChain_Map() {
 		return serviceEClass.getEOperations().get(1);
 	}
 
@@ -678,8 +638,68 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	 * @generated
 	 */
 	@Override
-	public EOperation getService__Different_secrets__DiagnosticChain_Map() {
+	public EOperation getService__Different_volumes__DiagnosticChain_Map() {
 		return serviceEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getService__Different_links__DiagnosticChain_Map() {
+		return serviceEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getService__Different_networks__DiagnosticChain_Map() {
+		return serviceEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getService__Different_dependencies__DiagnosticChain_Map() {
+		return serviceEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getService__Different_environment_variables__DiagnosticChain_Map() {
+		return serviceEClass.getEOperations().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getService__No_self_dependencies__DiagnosticChain_Map() {
+		return serviceEClass.getEOperations().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getService__Different_secrets__DiagnosticChain_Map() {
+		return serviceEClass.getEOperations().get(9);
 	}
 
 	/**
@@ -808,6 +828,26 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	 * @generated
 	 */
 	@Override
+	public EOperation getNetwork__Different_labels__DiagnosticChain_Map() {
+		return networkEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getNetwork__Different_driver_opts__DiagnosticChain_Map() {
+		return networkEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getVolume() {
 		return volumeEClass;
 	}
@@ -870,6 +910,26 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	@Override
 	public EReference getVolume_Labels() {
 		return (EReference)volumeEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getVolume__Different_labels__DiagnosticChain_Map() {
+		return volumeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getVolume__Different_driver_opts__DiagnosticChain_Map() {
+		return volumeEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -1278,6 +1338,16 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	 * @generated
 	 */
 	@Override
+	public EOperation getIPAM__Different_options__DiagnosticChain_Map() {
+		return ipamEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getIPAMOption() {
 		return ipamOptionEClass;
 	}
@@ -1608,6 +1678,16 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	 * @generated
 	 */
 	@Override
+	public EOperation getNetworkConnector__Different_aliases__DiagnosticChain_Map() {
+		return networkConnectorEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getNetworkAddress() {
 		return networkAddressEClass;
 	}
@@ -1730,6 +1810,16 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	@Override
 	public EOperation getIPAMConfig__Any_property__DiagnosticChain_Map() {
 		return ipamConfigEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getIPAMConfig__Different_addresses__DiagnosticChain_Map() {
+		return ipamConfigEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -1919,14 +2009,16 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		createEReference(serviceEClass, SERVICE__PORTS);
 		createEReference(serviceEClass, SERVICE__LINKS);
 		createEReference(serviceEClass, SERVICE__ENVIRONMENT);
-		createEOperation(serviceEClass, SERVICE___DIFFERENT_DEPENDENCIES__DIAGNOSTICCHAIN_MAP);
-		createEOperation(serviceEClass, SERVICE___NO_SELF_DEPENDENCIES__DIAGNOSTICCHAIN_MAP);
-		createEOperation(serviceEClass, SERVICE___DIFFERENT_CONFIGS__DIAGNOSTICCHAIN_MAP);
-		createEOperation(serviceEClass, SERVICE___DIFFERENT_SECRETS__DIAGNOSTICCHAIN_MAP);
+		createEOperation(serviceEClass, SERVICE___NO_SELF_LINKS__DIAGNOSTICCHAIN_MAP);
 		createEOperation(serviceEClass, SERVICE___IMAGE_OR_BUILD__DIAGNOSTICCHAIN_MAP);
+		createEOperation(serviceEClass, SERVICE___DIFFERENT_CONFIGS__DIAGNOSTICCHAIN_MAP);
 		createEOperation(serviceEClass, SERVICE___DIFFERENT_VOLUMES__DIAGNOSTICCHAIN_MAP);
-		createEOperation(serviceEClass, SERVICE___DIFFERENT_LINKS__DIAGNOSTICCHAIN_MAP);
 		createEOperation(serviceEClass, SERVICE___DIFFERENT_NETWORKS__DIAGNOSTICCHAIN_MAP);
+		createEOperation(serviceEClass, SERVICE___DIFFERENT_LINKS__DIAGNOSTICCHAIN_MAP);
+		createEOperation(serviceEClass, SERVICE___DIFFERENT_DEPENDENCIES__DIAGNOSTICCHAIN_MAP);
+		createEOperation(serviceEClass, SERVICE___DIFFERENT_ENVIRONMENT_VARIABLES__DIAGNOSTICCHAIN_MAP);
+		createEOperation(serviceEClass, SERVICE___NO_SELF_DEPENDENCIES__DIAGNOSTICCHAIN_MAP);
+		createEOperation(serviceEClass, SERVICE___DIFFERENT_SECRETS__DIAGNOSTICCHAIN_MAP);
 
 		networkEClass = createEClass(NETWORK);
 		createEAttribute(networkEClass, NETWORK__NAME);
@@ -1939,6 +2031,8 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		createEReference(networkEClass, NETWORK__DRIVER_OPTS);
 		createEAttribute(networkEClass, NETWORK__DRIVER);
 		createEReference(networkEClass, NETWORK__IPAM);
+		createEOperation(networkEClass, NETWORK___DIFFERENT_LABELS__DIAGNOSTICCHAIN_MAP);
+		createEOperation(networkEClass, NETWORK___DIFFERENT_DRIVER_OPTS__DIAGNOSTICCHAIN_MAP);
 
 		volumeEClass = createEClass(VOLUME);
 		createEAttribute(volumeEClass, VOLUME__NAME);
@@ -1947,6 +2041,8 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		createEAttribute(volumeEClass, VOLUME__VOLUME_NAME);
 		createEReference(volumeEClass, VOLUME__DRIVER_OPTS);
 		createEReference(volumeEClass, VOLUME__LABELS);
+		createEOperation(volumeEClass, VOLUME___DIFFERENT_LABELS__DIAGNOSTICCHAIN_MAP);
+		createEOperation(volumeEClass, VOLUME___DIFFERENT_DRIVER_OPTS__DIAGNOSTICCHAIN_MAP);
 
 		configEClass = createEClass(CONFIG);
 		createEAttribute(configEClass, CONFIG__NAME);
@@ -1996,6 +2092,7 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		createEReference(ipamEClass, IPAM__OPTIONS);
 		createEReference(ipamEClass, IPAM__CONFIGS);
 		createEOperation(ipamEClass, IPAM___ANY_PROPERTY__DIAGNOSTICCHAIN_MAP);
+		createEOperation(ipamEClass, IPAM___DIFFERENT_OPTIONS__DIAGNOSTICCHAIN_MAP);
 
 		ipamOptionEClass = createEClass(IPAM_OPTION);
 		createEAttribute(ipamOptionEClass, IPAM_OPTION__NAME);
@@ -2035,6 +2132,7 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		createEReference(networkConnectorEClass, NETWORK_CONNECTOR__IPV4_ADDRESS);
 		createEReference(networkConnectorEClass, NETWORK_CONNECTOR__LINK_LOCAL_IPS);
 		createEReference(networkConnectorEClass, NETWORK_CONNECTOR__ALIASES);
+		createEOperation(networkConnectorEClass, NETWORK_CONNECTOR___DIFFERENT_ALIASES__DIAGNOSTICCHAIN_MAP);
 
 		networkAddressEClass = createEClass(NETWORK_ADDRESS);
 		createEAttribute(networkAddressEClass, NETWORK_ADDRESS__NET_ID);
@@ -2052,6 +2150,7 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		createEReference(ipamConfigEClass, IPAM_CONFIG__IP_RANGE);
 		createEReference(ipamConfigEClass, IPAM_CONFIG__AUX_ADDRESSES);
 		createEOperation(ipamConfigEClass, IPAM_CONFIG___ANY_PROPERTY__DIAGNOSTICCHAIN_MAP);
+		createEOperation(ipamConfigEClass, IPAM_CONFIG___DIFFERENT_ADDRESSES__DIAGNOSTICCHAIN_MAP);
 
 		portEClass = createEClass(PORT);
 		createEAttribute(portEClass, PORT__VALUE);
@@ -2132,7 +2231,7 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		initEReference(getService_Links(), this.getLink(), null, "links", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getService_Environment(), this.getEnvironmentVariable(), null, "environment", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = initEOperation(getService__Different_dependencies__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "different_dependencies", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getService__No_self_links__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "no_self_links", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
 		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2141,7 +2240,7 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getService__No_self_dependencies__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "no_self_dependencies", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getService__Image_or_build__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "image_or_build", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2159,25 +2258,16 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getService__Different_secrets__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "different_secrets", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getService__Image_or_build__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "image_or_build", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		op = initEOperation(getService__Different_volumes__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "different_volumes", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getService__Different_networks__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "different_networks", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2195,7 +2285,34 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getService__Different_networks__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "different_networks", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getService__Different_dependencies__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "different_dependencies", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getService__Different_environment_variables__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "different_environment_variables", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getService__No_self_dependencies__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "no_self_dependencies", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getService__Different_secrets__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "different_secrets", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2216,6 +2333,24 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		initEAttribute(getNetwork_Driver(), ecorePackage.getEString(), "driver", null, 0, 1, Network.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getNetwork_Ipam(), this.getIPAM(), null, "ipam", null, 0, 1, Network.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		op = initEOperation(getNetwork__Different_labels__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "different_labels", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getNetwork__Different_driver_opts__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "different_driver_opts", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(volumeEClass, Volume.class, "Volume", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVolume_Name(), ecorePackage.getEString(), "name", null, 1, 1, Volume.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVolume_Driver(), ecorePackage.getEString(), "driver", null, 0, 1, Volume.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2223,6 +2358,24 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		initEAttribute(getVolume_Volume_name(), ecorePackage.getEString(), "volume_name", null, 0, 1, Volume.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVolume_Driver_opts(), this.getVolumeDriverOpt(), null, "driver_opts", null, 0, -1, Volume.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVolume_Labels(), this.getVolumeLabel(), null, "labels", null, 0, -1, Volume.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = initEOperation(getVolume__Different_labels__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "different_labels", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getVolume__Different_driver_opts__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "different_driver_opts", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(configEClass, Config.class, "Config", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getConfig_Name(), ecorePackage.getEString(), "name", null, 1, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2292,19 +2445,19 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(volumeDriverOptEClass, VolumeDriverOpt.class, "VolumeDriverOpt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVolumeDriverOpt_Name(), ecorePackage.getEString(), "name", null, 1, 1, VolumeDriverOpt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVolumeDriverOpt_Name(), ecorePackage.getEString(), "name", null, 1, 1, VolumeDriverOpt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVolumeDriverOpt_Value(), ecorePackage.getEString(), "value", null, 1, 1, VolumeDriverOpt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(volumeLabelEClass, VolumeLabel.class, "VolumeLabel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVolumeLabel_Name(), ecorePackage.getEString(), "name", null, 1, 1, VolumeLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVolumeLabel_Name(), ecorePackage.getEString(), "name", null, 1, 1, VolumeLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVolumeLabel_Value(), ecorePackage.getEString(), "value", null, 1, 1, VolumeLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(networkLabelEClass, NetworkLabel.class, "NetworkLabel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNetworkLabel_Name(), ecorePackage.getEString(), "name", null, 1, 1, NetworkLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNetworkLabel_Name(), ecorePackage.getEString(), "name", null, 1, 1, NetworkLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNetworkLabel_Value(), ecorePackage.getEString(), "value", null, 1, 1, NetworkLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(networkDriverOptEClass, NetworkDriverOpt.class, "NetworkDriverOpt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNetworkDriverOpt_Name(), ecorePackage.getEString(), "name", null, 1, 1, NetworkDriverOpt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNetworkDriverOpt_Name(), ecorePackage.getEString(), "name", null, 1, 1, NetworkDriverOpt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNetworkDriverOpt_Value(), ecorePackage.getEString(), "value", null, 1, 1, NetworkDriverOpt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ipamEClass, dockercompose.IPAM.class, "IPAM", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2321,8 +2474,17 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = initEOperation(getIPAM__Different_options__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "different_options", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(ipamOptionEClass, IPAMOption.class, "IPAMOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getIPAMOption_Name(), ecorePackage.getEString(), "name", null, 1, 1, IPAMOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIPAMOption_Name(), ecorePackage.getEString(), "name", null, 1, 1, IPAMOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIPAMOption_Value(), ecorePackage.getEString(), "value", null, 1, 1, IPAMOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(volumeConnectorEClass, VolumeConnector.class, "VolumeConnector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2360,6 +2522,15 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		initEReference(getNetworkConnector_Link_local_ips(), this.getDNS(), null, "link_local_ips", null, 0, -1, NetworkConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getNetworkConnector_Aliases(), this.getAlias(), null, "aliases", null, 0, -1, NetworkConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		op = initEOperation(getNetworkConnector__Different_aliases__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "different_aliases", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(networkAddressEClass, NetworkAddress.class, "NetworkAddress", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNetworkAddress_NetId(), ecorePackage.getEInt(), "netId", null, 1, 1, NetworkAddress.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2377,6 +2548,15 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		initEReference(getIPAMConfig_Aux_addresses(), this.getIPAMAddress(), null, "aux_addresses", null, 0, -1, IPAMConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = initEOperation(getIPAMConfig__Any_property__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "any_property", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getIPAMConfig__Different_addresses__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "different_addresses", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2454,7 +2634,19 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		  (serviceEClass,
 		   source,
 		   new String[] {
-			   "constraints", "different_networks"
+			   "constraints", "different_secrets"
+		   });
+		addAnnotation
+		  (networkEClass,
+		   source,
+		   new String[] {
+			   "constraints", "different_driver_opts"
+		   });
+		addAnnotation
+		  (volumeEClass,
+		   source,
+		   new String[] {
+			   "constraints", "different_driver_opts"
 		   });
 		addAnnotation
 		  (configEClass,
@@ -2478,13 +2670,19 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		  (ipamEClass,
 		   source,
 		   new String[] {
-			   "constraints", "any_property"
+			   "constraints", "different_options"
+		   });
+		addAnnotation
+		  (networkConnectorEClass,
+		   source,
+		   new String[] {
+			   "constraints", "different_aliases"
 		   });
 		addAnnotation
 		  (ipamConfigEClass,
 		   source,
 		   new String[] {
-			   "constraints", "any_property"
+			   "constraints", "different_addresses"
 		   });
 	}
 
@@ -2497,28 +2695,10 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	protected void createPivotAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";
 		addAnnotation
-		  (getService__Different_dependencies__DiagnosticChain_Map(),
+		  (getService__No_self_links__DiagnosticChain_Map(),
 		   source,
 		   new String[] {
-			   "body", "self.depends_on.service->isUnique(name)"
-		   });
-		addAnnotation
-		  (getService__No_self_dependencies__DiagnosticChain_Map(),
-		   source,
-		   new String[] {
-			   "body", "self.depends_on.service->excludes(self)"
-		   });
-		addAnnotation
-		  (getService__Different_configs__DiagnosticChain_Map(),
-		   source,
-		   new String[] {
-			   "body", "self.configs.config->isUnique(name)"
-		   });
-		addAnnotation
-		  (getService__Different_secrets__DiagnosticChain_Map(),
-		   source,
-		   new String[] {
-			   "body", "self.secrets.secret->isUnique(name)"
+			   "body", "self.links.service->excludes(self)"
 		   });
 		addAnnotation
 		  (getService__Image_or_build__DiagnosticChain_Map(),
@@ -2527,10 +2707,22 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 			   "body", "(image->excluding(\'\')->notEmpty() and build->excluding(\'\')->isEmpty()) or (image->excluding(\'\')->isEmpty() and build->excluding(\'\')->notEmpty())"
 		   });
 		addAnnotation
+		  (getService__Different_configs__DiagnosticChain_Map(),
+		   source,
+		   new String[] {
+			   "body", "self.configs.config->isUnique(name)"
+		   });
+		addAnnotation
 		  (getService__Different_volumes__DiagnosticChain_Map(),
 		   source,
 		   new String[] {
 			   "body", "self.volumes.volume->isUnique(name)"
+		   });
+		addAnnotation
+		  (getService__Different_networks__DiagnosticChain_Map(),
+		   source,
+		   new String[] {
+			   "body", "self.networks.network->isUnique(name)"
 		   });
 		addAnnotation
 		  (getService__Different_links__DiagnosticChain_Map(),
@@ -2539,10 +2731,52 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 			   "body", "self.links.service->isUnique(name)"
 		   });
 		addAnnotation
-		  (getService__Different_networks__DiagnosticChain_Map(),
+		  (getService__Different_dependencies__DiagnosticChain_Map(),
 		   source,
 		   new String[] {
-			   "body", "self.networks.network->isUnique(name)"
+			   "body", "self.depends_on.service->isUnique(name)"
+		   });
+		addAnnotation
+		  (getService__Different_environment_variables__DiagnosticChain_Map(),
+		   source,
+		   new String[] {
+			   "body", "self.environment->isUnique(name)"
+		   });
+		addAnnotation
+		  (getService__No_self_dependencies__DiagnosticChain_Map(),
+		   source,
+		   new String[] {
+			   "body", "self.depends_on.service->excludes(self)"
+		   });
+		addAnnotation
+		  (getService__Different_secrets__DiagnosticChain_Map(),
+		   source,
+		   new String[] {
+			   "body", "self.secrets.secret->isUnique(name)"
+		   });
+		addAnnotation
+		  (getNetwork__Different_labels__DiagnosticChain_Map(),
+		   source,
+		   new String[] {
+			   "body", "self.labels->isUnique(name)"
+		   });
+		addAnnotation
+		  (getNetwork__Different_driver_opts__DiagnosticChain_Map(),
+		   source,
+		   new String[] {
+			   "body", "self.driver_opts->isUnique(name)"
+		   });
+		addAnnotation
+		  (getVolume__Different_labels__DiagnosticChain_Map(),
+		   source,
+		   new String[] {
+			   "body", "self.labels->isUnique(name)"
+		   });
+		addAnnotation
+		  (getVolume__Different_driver_opts__DiagnosticChain_Map(),
+		   source,
+		   new String[] {
+			   "body", "self.driver_opts->isUnique(name)"
 		   });
 		addAnnotation
 		  (getConfig__File_or_external__DiagnosticChain_Map(),
@@ -2581,10 +2815,28 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 			   "body", "(driver->excluding(\'\')->notEmpty()) or (options->size()>0) or (configs->size()>0)"
 		   });
 		addAnnotation
+		  (getIPAM__Different_options__DiagnosticChain_Map(),
+		   source,
+		   new String[] {
+			   "body", "self.options->isUnique(name)"
+		   });
+		addAnnotation
+		  (getNetworkConnector__Different_aliases__DiagnosticChain_Map(),
+		   source,
+		   new String[] {
+			   "body", "self.aliases->isUnique(alias)"
+		   });
+		addAnnotation
 		  (getIPAMConfig__Any_property__DiagnosticChain_Map(),
 		   source,
 		   new String[] {
 			   "body", "(gateway->notEmpty()) or (subnet->size()>0) or (ip_range->size()>0) or (aux_addresses->size()>0)"
+		   });
+		addAnnotation
+		  (getIPAMConfig__Different_addresses__DiagnosticChain_Map(),
+		   source,
+		   new String[] {
+			   "body", "self.aux_addresses->isUnique(name)"
 		   });
 	}
 

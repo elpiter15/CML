@@ -11,6 +11,7 @@ import dockercompose.IPAMOption;
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -52,6 +53,7 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
 import org.eclipse.ocl.pivot.values.InvalidValueException;
 import org.eclipse.ocl.pivot.values.OrderedSetValue;
 import org.eclipse.ocl.pivot.values.SetValue;
+import org.eclipse.ocl.pivot.values.SetValue.Accumulator;
 
 /**
  * <!-- begin-user-doc -->
@@ -296,6 +298,71 @@ public class IPAMImpl extends MinimalEObjectImpl.Container implements IPAM {
 	 * @generated
 	 */
 	@Override
+	public boolean different_options(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		final String constraintName = "IPAM::different_options";
+		try {
+			/**
+			 *
+			 * inv different_options:
+			 *   let severity : Integer[1] = constraintName.getSeverity()
+			 *   in
+			 *     if severity <= 0
+			 *     then true
+			 *     else
+			 *       let result : Boolean[1] = self.options->isUnique(name)
+			 *       in
+			 *         constraintName.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+			 *     endif
+			 */
+			final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this, context);
+			final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
+			final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, DockercomposePackage.Literals.IPAM___DIFFERENT_OPTIONS__DIAGNOSTICCHAIN_MAP);
+			final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, DockercomposeTables.INT_0).booleanValue();
+			/*@NonInvalid*/ boolean local_0;
+			if (le) {
+				local_0 = true;
+			}
+			else {
+				final /*@NonInvalid*/ List<IPAMOption> options = this.getOptions();
+				final /*@NonInvalid*/ OrderedSetValue BOXED_options = idResolver.createOrderedSetOfAll(DockercomposeTables.ORD_CLSSid_IPAMOption, options);
+				/*@Thrown*/ Accumulator accumulator = ValueUtil.createSetAccumulatorValue(DockercomposeTables.ORD_CLSSid_IPAMOption);
+				Iterator<Object> ITERATOR__1 = BOXED_options.iterator();
+				/*@NonInvalid*/ boolean result;
+				while (true) {
+					if (!ITERATOR__1.hasNext()) {
+						result = true;
+						break;
+					}
+					/*@NonInvalid*/ IPAMOption _1 = (IPAMOption)ITERATOR__1.next();
+					/**
+					 * name
+					 */
+					final /*@NonInvalid*/ String name = _1.getName();
+					//
+					if (accumulator.includes(name) == ValueUtil.TRUE_VALUE) {
+						result = false;
+						break;			// Abort after second find
+					}
+					else {
+						accumulator.add(name);
+					}
+				}
+				final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, constraintName, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, DockercomposeTables.INT_0).booleanValue();
+				local_0 = logDiagnostic;
+			}
+			return local_0;
+		}
+		catch (Throwable e) {
+			return ValueUtil.validationFailedDiagnostic(constraintName, this, diagnostics, context, e);
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case DockercomposePackage.IPAM__OPTIONS:
@@ -398,6 +465,8 @@ public class IPAMImpl extends MinimalEObjectImpl.Container implements IPAM {
 		switch (operationID) {
 			case DockercomposePackage.IPAM___ANY_PROPERTY__DIAGNOSTICCHAIN_MAP:
 				return any_property((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case DockercomposePackage.IPAM___DIFFERENT_OPTIONS__DIAGNOSTICCHAIN_MAP:
+				return different_options((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -2,6 +2,8 @@
  */
 package dockercompose;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -28,7 +30,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see dockercompose.DockercomposePackage#getNetwork()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='different_driver_opts'"
  * @generated
  */
 public interface Network extends EObject {
@@ -231,5 +233,21 @@ public interface Network extends EObject {
 	 * @generated
 	 */
 	void setIpam(IPAM value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.labels-&gt;isUnique(name)'"
+	 * @generated
+	 */
+	boolean different_labels(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.driver_opts-&gt;isUnique(name)'"
+	 * @generated
+	 */
+	boolean different_driver_opts(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // Network

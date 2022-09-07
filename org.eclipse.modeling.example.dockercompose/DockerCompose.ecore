@@ -25,17 +25,19 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Service">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="image_or_build no_self_dependencies different_networks different_volumes different_configs different_secrets different_dependencies different_links"/>
+      <details key="constraints" value="image_or_build no_self_dependencies no_self_links different_networks different_volumes different_configs different_secrets different_dependencies different_links different_environment_variables"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="image_or_build" value="(image->excluding('')->notEmpty() and build->excluding('')->isEmpty()) or (image->excluding('')->isEmpty() and build->excluding('')->notEmpty())"/>
       <details key="no_self_dependencies" value="self.depends_on.service->excludes(self)"/>
+      <details key="no_self_links" value="self.links.service->excludes(self)"/>
       <details key="different_networks" value="self.networks.network->isUnique(name)"/>
       <details key="different_volumes" value="self.volumes.volume->isUnique(name)"/>
       <details key="different_configs" value="self.configs.config->isUnique(name)"/>
       <details key="different_secrets" value="self.secrets.secret->isUnique(name)"/>
       <details key="different_dependencies" value="self.depends_on.service->isUnique(name)"/>
       <details key="different_links" value="self.links.service->isUnique(name)"/>
+      <details key="different_environment_variables" value="self.environment->isUnique(name)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
@@ -71,6 +73,13 @@
         eType="#//EnvironmentVariable" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Network">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="different_labels different_driver_opts"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="different_labels" value="self.labels->isUnique(name)"/>
+      <details key="different_driver_opts" value="self.driver_opts->isUnique(name)"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="attachable" lowerBound="1"
@@ -90,6 +99,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ipam" eType="#//IPAM" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Volume">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="different_labels different_driver_opts"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="different_labels" value="self.labels->isUnique(name)"/>
+      <details key="different_driver_opts" value="self.driver_opts->isUnique(name)"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="driver" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -154,31 +170,28 @@
     <eLiterals name="unlessstopped" value="3" literal="unless-stopped"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VolumeDriverOpt">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VolumeLabel">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NetworkLabel">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NetworkDriverOpt">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IPAM">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="any_property"/>
+      <details key="constraints" value="any_property different_options"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="any_property" value="(driver->excluding('')->notEmpty()) or (options->size()>0) or (configs->size()>0)"/>
+      <details key="different_options" value="self.options->isUnique(name)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="driver" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="options" upperBound="-1"
@@ -187,8 +200,7 @@
         eType="#//IPAMConfig" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IPAMOption">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VolumeConnector">
@@ -227,6 +239,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NetworkConnector">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="different_aliases"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="different_aliases" value="self.aliases->isUnique(alias)"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="network" lowerBound="1"
         eType="#//Network"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" lowerBound="1"
@@ -256,10 +274,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IPAMConfig">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="any_property"/>
+      <details key="constraints" value="any_property different_addresses"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="any_property" value="(gateway->notEmpty()) or (subnet->size()>0) or (ip_range->size()>0) or (aux_addresses->size()>0)"/>
+      <details key="different_addresses" value="self.aux_addresses->isUnique(name)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="gateway" eType="#//DNS"
         containment="true"/>

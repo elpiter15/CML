@@ -12,6 +12,7 @@ import dockercompose.NetworkAddress;
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -52,6 +53,7 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
 import org.eclipse.ocl.pivot.values.InvalidValueException;
 import org.eclipse.ocl.pivot.values.OrderedSetValue;
 import org.eclipse.ocl.pivot.values.SetValue;
+import org.eclipse.ocl.pivot.values.SetValue.Accumulator;
 
 /**
  * <!-- begin-user-doc -->
@@ -446,6 +448,71 @@ public class IPAMConfigImpl extends MinimalEObjectImpl.Container implements IPAM
 	 * @generated
 	 */
 	@Override
+	public boolean different_addresses(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		final String constraintName = "IPAMConfig::different_addresses";
+		try {
+			/**
+			 *
+			 * inv different_addresses:
+			 *   let severity : Integer[1] = constraintName.getSeverity()
+			 *   in
+			 *     if severity <= 0
+			 *     then true
+			 *     else
+			 *       let result : Boolean[1] = self.aux_addresses->isUnique(name)
+			 *       in
+			 *         constraintName.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+			 *     endif
+			 */
+			final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this, context);
+			final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
+			final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, DockercomposePackage.Literals.IPAM_CONFIG___DIFFERENT_ADDRESSES__DIAGNOSTICCHAIN_MAP);
+			final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, DockercomposeTables.INT_0).booleanValue();
+			/*@NonInvalid*/ boolean local_0;
+			if (le) {
+				local_0 = true;
+			}
+			else {
+				final /*@NonInvalid*/ List<IPAMAddress> aux_addresses = this.getAux_addresses();
+				final /*@NonInvalid*/ OrderedSetValue BOXED_aux_addresses = idResolver.createOrderedSetOfAll(DockercomposeTables.ORD_CLSSid_IPAMAddress, aux_addresses);
+				/*@Thrown*/ Accumulator accumulator = ValueUtil.createSetAccumulatorValue(DockercomposeTables.ORD_CLSSid_IPAMAddress);
+				Iterator<Object> ITERATOR__1 = BOXED_aux_addresses.iterator();
+				/*@NonInvalid*/ boolean result;
+				while (true) {
+					if (!ITERATOR__1.hasNext()) {
+						result = true;
+						break;
+					}
+					/*@NonInvalid*/ IPAMAddress _1 = (IPAMAddress)ITERATOR__1.next();
+					/**
+					 * name
+					 */
+					final /*@NonInvalid*/ String name = _1.getName();
+					//
+					if (accumulator.includes(name) == ValueUtil.TRUE_VALUE) {
+						result = false;
+						break;			// Abort after second find
+					}
+					else {
+						accumulator.add(name);
+					}
+				}
+				final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, constraintName, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, DockercomposeTables.INT_0).booleanValue();
+				local_0 = logDiagnostic;
+			}
+			return local_0;
+		}
+		catch (Throwable e) {
+			return ValueUtil.validationFailedDiagnostic(constraintName, this, diagnostics, context, e);
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case DockercomposePackage.IPAM_CONFIG__GATEWAY:
@@ -561,6 +628,8 @@ public class IPAMConfigImpl extends MinimalEObjectImpl.Container implements IPAM
 		switch (operationID) {
 			case DockercomposePackage.IPAM_CONFIG___ANY_PROPERTY__DIAGNOSTICCHAIN_MAP:
 				return any_property((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case DockercomposePackage.IPAM_CONFIG___DIFFERENT_ADDRESSES__DIAGNOSTICCHAIN_MAP:
+				return different_addresses((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -29,7 +29,7 @@ public interface VolumeLabel extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see dockercompose.DockercomposePackage#getVolumeLabel_Name()
-	 * @model id="true" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();

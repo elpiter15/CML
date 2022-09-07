@@ -32,10 +32,13 @@ public class DockercomposeTests extends TestSuite {
 	public static Test suite() {
 		TestSuite suite = new DockercomposeTests("dockercompose Tests");
 		suite.addTestSuite(ServiceTest.class);
+		suite.addTestSuite(NetworkTest.class);
+		suite.addTestSuite(VolumeTest.class);
 		suite.addTestSuite(ConfigTest.class);
 		suite.addTestSuite(SecretTest.class);
 		suite.addTestSuite(DNSTest.class);
 		suite.addTestSuite(IPAMTest.class);
+		suite.addTestSuite(NetworkConnectorTest.class);
 		suite.addTestSuite(NetworkAddressTest.class);
 		suite.addTestSuite(IPAMConfigTest.class);
 		return suite;
